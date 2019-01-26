@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-16T03:47:49.154Z</updated>
+  <updated>2019-01-17T02:57:02.179Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Flask-Migrate进行管理数据库升级</title>
+    <link href="http://yoursite.com/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
+    <id>http://yoursite.com/2019/01/17/使用Flask-Migrate进行管理数据库升级/</id>
+    <published>2019-01-17T02:54:35.000Z</published>
+    <updated>2019-01-17T02:57:02.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。&lt;br&gt;现在我们可以使用&lt;a href=&quot;https://flask-migrate.readthedocs.org/en/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Flask-Migrate&lt;/a&gt;插件来解决之，Flask-Migrate插件是基于&lt;a href=&quot;http://alembic.readthedocs.org/en/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alembic&lt;/a&gt;，Alembic是由大名鼎鼎的&lt;a href=&quot;http://www.sqlalchemy.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SQLAlchemy&lt;/a&gt;作者开发数据迁移工具。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>换电脑hexo源码迁移</title>
@@ -91,7 +115,7 @@
     <link href="http://yoursite.com/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
     <id>http://yoursite.com/2018/06/02/使用阿里云OSS图床/</id>
     <published>2018-06-02T15:41:57.000Z</published>
-    <updated>2018-06-02T16:09:05.000Z</updated>
+    <updated>2019-01-17T03:00:46.450Z</updated>
     
     <summary type="html">
     

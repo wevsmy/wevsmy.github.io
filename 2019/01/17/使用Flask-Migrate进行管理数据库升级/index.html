@@ -49,7 +49,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/tag.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -87,7 +87,7 @@
 	
 	<script type="text/javascript" src="/js/love.js"></script>
 	
-    <title>标签: hexo | wilson's blog - Life is short, you need Python</title>
+    <title>使用Flask-Migrate进行管理数据库升级 | wilson's blog - Life is short, you need Python</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw"  data-spy="scroll" data-target=".list-group">
     
@@ -130,33 +130,150 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag">
-  <div class="tag-container">
-    <h1 class="tag-title">hexo</h1>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/01/15/换电脑hexo源码迁移/" itemprop="url">换电脑hexo源码迁移</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-15T10:08:43+08:00">01-15</time>
+<div id="post" class="post">
+  
+  <article class="post-container card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/17/使用Flask-Migrate进行管理数据库升级/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
-      
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/04/一键创建blog文/" itemprop="url">一键创建blog文</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-04T16:57:52+08:00">06-04</time>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
       </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">使用Flask-Migrate进行管理数据库升级</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-17T10:54:35+08:00">2019-01-17 10:54:35</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2019/01/17/使用Flask-Migrate进行管理数据库升级/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/01/17/使用Flask-Migrate进行管理数据库升级/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。<br>现在我们可以使用<a href="https://flask-migrate.readthedocs.org/en/latest/" target="_blank" rel="noopener">Flask-Migrate</a>插件来解决之，Flask-Migrate插件是基于<a href="http://alembic.readthedocs.org/en/latest/" target="_blank" rel="noopener">Alembic</a>，Alembic是由大名鼎鼎的<a href="http://www.sqlalchemy.org/" target="_blank" rel="noopener">SQLAlchemy</a>作者开发数据迁移工具。</p>
+<a id="more"></a>
+<h1 id="使用Flask-Migrate进行管理数据库升级"><a href="#使用Flask-Migrate进行管理数据库升级" class="headerlink" title="使用Flask-Migrate进行管理数据库升级"></a>使用Flask-Migrate进行管理数据库升级</h1><p>我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。<br>现在我们可以使用<a href="https://flask-migrate.readthedocs.org/en/latest/" target="_blank" rel="noopener">Flask-Migrate</a>插件来解决之，Flask-Migrate插件是基于<a href="http://alembic.readthedocs.org/en/latest/" target="_blank" rel="noopener">Alembic</a>，Alembic是由大名鼎鼎的<a href="http://www.sqlalchemy.org/" target="_blank" rel="noopener">SQLAlchemy</a>作者开发数据迁移工具。</p>
+<p>具体操作如下：</p>
+<ul>
+<li>1.安装Flask-Migrate插件<br><code>$ pip install Flask-Migrate</code></li>
+<li><p>2.修改Flask App部分的代码，以增加Migrate相关的Command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">db = SQLAlchemy(app)<br>migrate = Migrate(app, db)<br><br>manager = Manager(app)<br>manager.add_command(&apos;db&apos;, MigrateCommand)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>3.初始化<br><code>$ python app.py db init</code></p>
+</li>
+<li>4.数据迁移，自动创建迁移代码<br><code>$ python app.py db migrate</code></li>
+<li>5.更新数据库<br><code>$ python app.py db upgrade</code><br>后面如果有Model变更的话，在开发环境下只需要重复执行第4、5步即可。</li>
+</ul>
+<p>而在服务器端只需要执行第5步即可实现数据库的迁移工作。</p>
+<p><a href="http://www.cnblogs.com/maplye/p/5351060.html" target="_blank" rel="noopener">参考链接</a></p>
+
+    </main>
+
+    
+    <footer class="post-footer">
       
-    </article>
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/笔记/" style="background: #13af72;" rel="tag"><i class="fas fa-tags"></i>笔记</a>
+        
+        <a class="post-tag button" href="/tags/Flask/" style="background: #0f233e;" rel="tag"><i class="fas fa-tags"></i>Flask</a>
+        
+        <a class="post-tag button" href="/tags/Python/" style="background: #4a0035;" rel="tag"><i class="fas fa-tags"></i>Python</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
     
   </div>
+</div>
+
+
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2019/01/15/换电脑hexo源码迁移/" rel="next" title="换电脑hexo源码迁移"><i class="fas fa-angle-left"></i><span class="nav-title">换电脑hexo源码迁移</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+    </div>
+  </div>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "http://yoursite.com/2019/01/17/使用Flask-Migrate进行管理数据库升级/";
+    this.page.identifier = "2019/01/17/使用Flask-Migrate进行管理数据库升级/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
   
 </div>
 
@@ -215,6 +332,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用Flask-Migrate进行管理数据库升级"><span class="toc-text">使用Flask-Migrate进行管理数据库升级</span></a></li></ol></div>
+</div>
+
+
+
     
     
     

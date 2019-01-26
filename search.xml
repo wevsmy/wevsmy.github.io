@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>使用Flask-Migrate进行管理数据库升级</title>
+      <link href="/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
+      <url>/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</url>
+      <content type="html"><![CDATA[<p>我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。<br>现在我们可以使用<a href="https://flask-migrate.readthedocs.org/en/latest/" target="_blank" rel="noopener">Flask-Migrate</a>插件来解决之，Flask-Migrate插件是基于<a href="http://alembic.readthedocs.org/en/latest/" target="_blank" rel="noopener">Alembic</a>，Alembic是由大名鼎鼎的<a href="http://www.sqlalchemy.org/" target="_blank" rel="noopener">SQLAlchemy</a>作者开发数据迁移工具。</p><a id="more"></a><h1 id="使用Flask-Migrate进行管理数据库升级"><a href="#使用Flask-Migrate进行管理数据库升级" class="headerlink" title="使用Flask-Migrate进行管理数据库升级"></a>使用Flask-Migrate进行管理数据库升级</h1><p>我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。<br>现在我们可以使用<a href="https://flask-migrate.readthedocs.org/en/latest/" target="_blank" rel="noopener">Flask-Migrate</a>插件来解决之，Flask-Migrate插件是基于<a href="http://alembic.readthedocs.org/en/latest/" target="_blank" rel="noopener">Alembic</a>，Alembic是由大名鼎鼎的<a href="http://www.sqlalchemy.org/" target="_blank" rel="noopener">SQLAlchemy</a>作者开发数据迁移工具。</p><p>具体操作如下：</p><ul><li>1.安装Flask-Migrate插件<br><code>$ pip install Flask-Migrate</code></li><li><p>2.修改Flask App部分的代码，以增加Migrate相关的Command</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">db = SQLAlchemy(app)<br>migrate = Migrate(app, db)<br><br>manager = Manager(app)<br>manager.add_command(&apos;db&apos;, MigrateCommand)<br></code></pre></td></tr></table></figure></li><li><p>3.初始化<br><code>$ python app.py db init</code></p></li><li>4.数据迁移，自动创建迁移代码<br><code>$ python app.py db migrate</code></li><li>5.更新数据库<br><code>$ python app.py db upgrade</code><br>后面如果有Model变更的话，在开发环境下只需要重复执行第4、5步即可。</li></ul><p>而在服务器端只需要执行第5步即可实现数据库的迁移工作。</p><p><a href="http://www.cnblogs.com/maplye/p/5351060.html" target="_blank" rel="noopener">参考链接</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> Flask </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>换电脑hexo源码迁移</title>
       <link href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
       <url>/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</url>
@@ -79,7 +104,7 @@
       <title>使用阿里云OSS图床</title>
       <link href="/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
       <url>/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/</url>
-      <content type="html"><![CDATA[<p>本Blog中所有文章图片都采用阿里云OSS对象存储作为图床<br>下面简单说一下如何使用oss作为图床</p><a id="more"></a><hr><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><ol><li><a href="https://shimo.im/docs/vbmdsh2LSwoo628P/" target="_blank" rel="noopener">开通阿里云OSS对象储存</a></li><li>使用<a href="https://jiantuku.com" target="_blank" rel="noopener">极简图床</a></li><li>下载谷歌插件<a href="https://chrome.google.com/webstore/detail/%E6%9E%81%E7%AE%80%E5%9B%BE%E5%BA%8A/heebflcbemenefckkgfnnklbhdbdkagg" target="_blank" rel="noopener">极简图床</a>方便采集上传图片</li><li>获取图片链接插入博客中即可</li></ol><p><img src="https://wevsmy.github.io/favicons/android-chrome-96x96.png" alt="就是这么简单，讲完了" title="end" style="width:96px;height:96px"></p>]]></content>
+      <content type="html"><![CDATA[<p>本Blog中所有文章图片都采用阿里云OSS对象存储作为图床<br>下面简单说一下如何使用oss作为图床</p><a id="more"></a><hr><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><ol><li><a href="https://shimo.im/docs/vbmdsh2LSwoo628P/" target="_blank" rel="noopener">开通阿里云OSS对象储存</a></li><li>使用<a href="https://jiantuku.com" target="_blank" rel="noopener">极简图床</a></li><li>下载谷歌插件<a href="https://chrome.google.com/webstore/detail/%E6%9E%81%E7%AE%80%E5%9B%BE%E5%BA%8A/heebflcbemenefckkgfnnklbhdbdkagg" target="_blank" rel="noopener">极简图床</a>方便采集上传图片</li><li>获取图片链接插入博客中即可</li></ol><p><img src="https://wevsmy.github.io/favicons/android-chrome-96x96.png" alt="就是这么简单，讲完了" title="end" style="width:96px;height:96px"></p><hr><p>date: 2019-01-17 13:41:57</p><p>换成静态资源了，怕图床挂了 🌚</p>]]></content>
       
       <categories>
           

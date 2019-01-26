@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wilson&#39;s blog</title>
+  
+  <subtitle>Life is short, you need Python</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-01-16T03:47:49.154Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>wilson</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>换电脑hexo源码迁移</title>
+    <link href="http://yoursite.com/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
+    <id>http://yoursite.com/2019/01/15/换电脑hexo源码迁移/</id>
+    <published>2019-01-15T02:08:43.000Z</published>
+    <updated>2019-01-16T03:47:49.154Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;更换电脑后迁移hexo源代码😂&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker镜像部署Flask</title>
+    <link href="http://yoursite.com/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/"/>
+    <id>http://yoursite.com/2018/06/05/Docker镜像部署Flask/</id>
+    <published>2018-06-05T11:24:43.000Z</published>
+    <updated>2019-01-16T06:06:07.326Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;入坑了，入了Docker的坑，了解了一下docker安装，&lt;br&gt;照着教程学着部署了一下Flask，&lt;br&gt;Docker使用uwsgi+nginx+python3.6镜像部署Flask&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+    
+    
+      <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一键创建blog文</title>
+    <link href="http://yoursite.com/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/"/>
+    <id>http://yoursite.com/2018/06/04/一键创建blog文/</id>
+    <published>2018-06-04T08:57:52.000Z</published>
+    <updated>2019-01-15T07:19:41.906Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;使用hexo搭建静态博客确实方便,页面托管到github pages上&lt;br&gt;写博客只需编写md文件即可,markdown语法简单,使用方便&lt;br&gt;原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Win10" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Win10/"/>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用阿里云OSS图床</title>
+    <link href="http://yoursite.com/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
+    <id>http://yoursite.com/2018/06/02/使用阿里云OSS图床/</id>
+    <published>2018-06-02T15:41:57.000Z</published>
+    <updated>2018-06-02T16:09:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本Blog中所有文章图片都采用阿里云OSS对象存储作为图床&lt;br&gt;下面简单说一下如何使用oss作为图床&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="阿里云" scheme="http://yoursite.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于本Blog的评论系统</title>
+    <link href="http://yoursite.com/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2018/06/02/关于本Blog的评论系统/</id>
+    <published>2018-06-02T14:06:37.000Z</published>
+    <updated>2018-06-02T14:19:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本博客采用的是Disqus评论系统，国内加载不出来&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Disqus" scheme="http://yoursite.com/tags/Disqus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2018/06/02/test/"/>
+    <id>http://yoursite.com/2018/06/02/test/</id>
+    <published>2018-06-02T12:16:09.000Z</published>
+    <updated>2018-06-02T14:37:28.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一篇测试文章，用于测试Hexo搭建的github静态网站&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+  </entry>
+  
+</feed>

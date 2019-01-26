@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>换电脑hexo源码迁移</title>
+      <link href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
+      <url>/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</url>
+      <content type="html"><![CDATA[<p>更换电脑后迁移hexo源代码😂<br><a id="more"></a></p><h1 id="备份必要文件"><a href="#备份必要文件" class="headerlink" title="备份必要文件"></a>备份必要文件</h1><p>进入原来电脑的 hexo 博客目录，只拷如下几个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">scaffolds            文章模版                          必须备份<br>source               博客文章                          必须备份<br>themes               主题                             必须备份<br>.gitignore           限定在push时那些文件可以忽略         必须备份<br>_config.yml          站点配置文件                       必须备份<br>package.json         安装包的名称                       必须备份<br><br>.ssh                 密钥文件                          必须备份<br></code></pre></td></tr></table></figure></p><p><code>ps:上面的文件可以存U盘或者打包上传到xx网盘。</code></p><h1 id="安装配置-Hexo"><a href="#安装配置-Hexo" class="headerlink" title="安装配置 Hexo"></a>安装配置 Hexo</h1><p>用之前的套路安装 Node.js 环境  Git 环境</p><ul><li>打开 开始菜单 运行 cmd</li><li>新建 blog 文件夹<br><code>md d:\blog</code></li><li>进入 blog 文件夹<br><code>cd blog</code></li><li>安装 Hexo<br><code>npm install -g hexo</code></li><li>初始化 Hexo<br><code>hexo init</code></li><li>安装依赖包<br><code>npm install</code></li></ul><p>上面的命令执行完了，你的博客目录会生成新的 hexo 博客文件，我们把刚才拷贝过来的文件，替换掉新生成的 博客文件，然后在复制 密钥文件 到新的密钥文件夹<br>在blog文件夹中打开 <code>Git Bash Here</code></p><ul><li>初始化git本地仓库<br><code>git init</code></li><li>安装上传插件<br><code>npm install hexo-deployer-git --save</code></li><li>RSS插件<br><code>npm install hexo-generator-feed</code></li><li>字数统计 阅读时长 插件<br><code>npm i --save hexo-wordcount</code></li><li><p>搜索插件<br><code>npm install hexo-generator-searchdb --save</code><br>如果你使用了更多的插件，在这里安装就可以了。<br>配置Git 输入你自己的邮箱地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">git config --global user.name<br>git config --global user.email<br></code></pre></td></tr></table></figure></li><li><p>生成新的 public 文件夹<br><code>hexo g</code></p></li><li>开始上传 hexo博客<br><code>hexo d</code></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Docker镜像部署Flask</title>
+      <link href="/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/"/>
+      <url>/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/</url>
+      <content type="html"><![CDATA[<p>入坑了，入了Docker的坑，了解了一下docker安装，<br>照着教程学着部署了一下Flask，<br>Docker使用uwsgi+nginx+python3.6镜像部署Flask<br><a id="more"></a></p><h1 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h1><p>占坑，因为我已经装过了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sudo apt-get install docker<br></code></pre></td></tr></table></figure></p><p>然后查看是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sudo docker -v<br></code></pre></td></tr></table></figure></p><h1 id="Docker-镜像制作"><a href="#Docker-镜像制作" class="headerlink" title="Docker 镜像制作"></a>Docker 镜像制作</h1><p>编写Dockerfile 文件<br>因为我是用的flask项目是一个简单的demo没有使用第三方库<br>也就不用安装第三方库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">FROM tiangolo/uwsgi-nginx-flask:python3.6<br>COPY ./app /app<br></code></pre></td></tr></table></figure></p><ul><li>第一句表示，该镜像由 tiangolo/uwsgi-nginx-flask:python3.6 继承而来</li><li>第二句 拷贝项目文件到镜像中</li></ul><p>我的项目结构<br><img src="/2018/06/05/Docker镜像部署Flask/33765843.jpg" alt="项目结构" title="项目结构" style="width:197px;height:213px"></p><p>uwsgi.ini 文件：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[uwsgi]</span><br><span class="hljs-attr">module</span> = main<br><span class="hljs-attr">callable</span> = app<br></code></pre></td></tr></table></figure></p><p>完成后，在跟目录，即 Dockerfile 所在目录运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sudo docker build -t myimage .<br></code></pre></td></tr></table></figure></p><p>构建镜像。（注意后面的 点 ）</p><h1 id="Docker-启动"><a href="#Docker-启动" class="headerlink" title="Docker 启动"></a>Docker 启动</h1><p>运行以下命令启动 容器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker container run --name mycon --rm -d -p 9001:80 -it myimage<br></code></pre></td></tr></table></figure></p><p>其中 –name 表示容器名， –rm 表示停止容器后删除容器， -p 9001:80 表示将当前宿主机 9001 端口对应到容器中 80 端口， -it myimage 表示使用 myimage 镜像（即上面生成的镜像）。</p><p><a href="https://blog.csdn.net/Bear_861110453/article/details/80356153" target="_blank" rel="noopener">参考文章</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+          <category> Linux </category>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>一键创建blog文</title>
+      <link href="/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/"/>
+      <url>/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用hexo搭建静态博客确实方便,页面托管到github pages上<br>写博客只需编写md文件即可,markdown语法简单,使用方便<br>原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便<br><a id="more"></a></p><h1 id="使用hexo优点"><a href="#使用hexo优点" class="headerlink" title="使用hexo优点"></a>使用hexo优点</h1><ul><li>熟练git使用方法</li><li>掌握markdown语法</li><li>GitHub pages托管静态页面</li><li>可以加入最大同性交友社区(误)</li></ul><hr><h1 id="hexo使用"><a href="#hexo使用" class="headerlink" title="hexo使用"></a>hexo使用</h1><p>hexo具体安装自己google</p><p>生成页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo g<br></code></pre></td></tr></table></figure></p><p>创建博文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo n 博文名<br></code></pre></td></tr></table></figure></p><p>发布博文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo d<br></code></pre></td></tr></table></figure></p><h1 id="改进创建博文的不便捷"><a href="#改进创建博文的不便捷" class="headerlink" title="改进创建博文的不便捷"></a>改进创建博文的不便捷</h1><p>创建博文需要到blog根目录打开powershell 运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo n name<br></code></pre></td></tr></table></figure></p><p>然后需要到_posts目录下打开刚才创建的name.md 进行编写博文<br>个人觉得比较繁琐,就想着改进一下</p><h2 id="一键创建blog文原理"><a href="#一键创建blog文原理" class="headerlink" title="一键创建blog文原理"></a>一键创建blog文原理</h2><p>就是把几个命令组合到一起,很简单<br>比如我的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cd D:\python\WilsonBlog | hexo n &#123;query&#125; | notepad++.exe D:\python\WilsonBlog\source\_posts\&#123;query&#125;.md<br></code></pre></td></tr></table></figure></p><ul><li>先cd到博客目录</li><li>运行hexo n name 创建博文</li><li>调用notepad++打开刚创建的博文<br>这样就能在任何地方打开powershell就能创建博文了<br>但是这个还不够好,因为还需要手敲命令,麻烦!<h2 id="在改进一下"><a href="#在改进一下" class="headerlink" title="在改进一下"></a>在改进一下</h2>个人非常喜欢使用listary这个快速搜索工具<br>其支持自定义命令,每次启动只需双击ctrl就可以<br>具体如下图所示:<br><img src="/2018/06/04/一键创建blog文/82574636.jpg" alt="我的自定义命令"><br>这样在任何地方只需双击ctrl键输入关键字blog 博文名 即可创建博文<h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><img src="/2018/06/04/一键创建blog文/46250370.jpg" alt="gif"></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+          <category> Win10 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>使用阿里云OSS图床</title>
+      <link href="/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
+      <url>/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/</url>
+      <content type="html"><![CDATA[<p>本Blog中所有文章图片都采用阿里云OSS对象存储作为图床<br>下面简单说一下如何使用oss作为图床</p><a id="more"></a><hr><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><ol><li><a href="https://shimo.im/docs/vbmdsh2LSwoo628P/" target="_blank" rel="noopener">开通阿里云OSS对象储存</a></li><li>使用<a href="https://jiantuku.com" target="_blank" rel="noopener">极简图床</a></li><li>下载谷歌插件<a href="https://chrome.google.com/webstore/detail/%E6%9E%81%E7%AE%80%E5%9B%BE%E5%BA%8A/heebflcbemenefckkgfnnklbhdbdkagg" target="_blank" rel="noopener">极简图床</a>方便采集上传图片</li><li>获取图片链接插入博客中即可</li></ol><p><img src="https://wevsmy.github.io/favicons/android-chrome-96x96.png" alt="就是这么简单，讲完了" title="end" style="width:96px;height:96px"></p>]]></content>
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 阿里云 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>关于本Blog的评论系统</title>
+      <link href="/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+      <content type="html"><![CDATA[<p>本博客采用的是Disqus评论系统，国内加载不出来<br><a id="more"></a></p><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>评论系统Disqus需使用google账号登陆，并FQ才能评论，<br>哈哈，并不是没个人都能评论的！！！<br>(整的好像有人会评论似的😂)<br>换句话说，留下的评论的都会FQ，开门社区送温暖！！！</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Disqus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>test</title>
+      <link href="/2018/06/02/test/"/>
+      <url>/2018/06/02/test/</url>
+      <content type="html"><![CDATA[<p>这是一篇测试文章，用于测试Hexo搭建的github静态网站<br><a id="more"></a></p><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><ul><li>添加分类</li><li>添加标签<h1 id="hexo添加分类and标签的方法"><a href="#hexo添加分类and标签的方法" class="headerlink" title="hexo添加分类and标签的方法"></a>hexo添加分类and标签的方法</h1>只需要在文章分类中加入以下代码即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">---<br>title: test<br>date: 2018-06-02 20:16:09<br>categories:<br>- 计算机<br>- Linux<br>- Docker<br>tags:<br>- Python<br>- Docker<br>- HTML<br>---<br></code></pre></td></tr></table></figure></li></ul><p>上述代码即是本片文章的分类and标签</p><h1 id="测试图片外链"><a href="#测试图片外链" class="headerlink" title="测试图片外链"></a>测试图片外链</h1><ol><li>markdown语法不支持指定宽高<br>代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">![Dog](https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg &quot;神烦狗&quot;)<br></code></pre></td></tr></table></figure></li></ol><p><img src="https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg" alt="Dog" title="神烦狗"></p><ol start="2"><li>使用img标签指定宽高<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;img src=&quot;https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg&quot; alt=&quot;Dog&quot; title=&quot;神烦狗&quot; style=&quot;width:100px;height:100px&quot;&gt;<br></code></pre></td></tr></table></figure></li></ol><p><img src="https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg" alt="Dog" title="神烦狗" style="width:100px;height:100px"></p>]]></content>
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+          <category> Linux </category>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Docker </tag>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title>404 Not Found 页面走丢了😭</title>
+      <link href="//404.html"/>
+      <url>//404.html</url>
+      <content type="html"><![CDATA[<hr><h1 id="👉回主页"><a href="#👉回主页" class="headerlink" title="👉回主页"></a><a href="https://wevsmy.github.io" target="_blank" rel="noopener">👉回主页</a></h1>]]></content>
+    </entry>
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<h1 id="wilson"><a href="#wilson" class="headerlink" title="wilson"></a>wilson</h1><ul><li>Email:<a href="wevsmy@gmail.com">wevsmy@gmail.com</a></li><li>Homepage:<a href="https:wevsmy.github.io" target="_blank" rel="noopener">Wilson’s Blog</a></li><li>GitHub:<a href="https:github.com/wevsmy" target="_blank" rel="noopener">@wison</a></li><li>Weibo:<a href="https://weibo.com/wevsmy" target="_blank" rel="noopener">@wison</a></li></ul><hr><h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><p>长方体混凝土瞬间移动攻城狮<br>专职Python后端开发<br>略懂前端，略懂脚本，略懂机器学习</p>]]></content>
+    </entry>
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+  
+</search>

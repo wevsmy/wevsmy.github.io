@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-19T04:30:52.432Z</updated>
+  <updated>2019-02-19T04:33:51.419Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://yoursite.com/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     <id>http://yoursite.com/2019/02/19/基于docker-compose构建数据库/</id>
     <published>2019-02-19T03:38:46.000Z</published>
-    <updated>2019-02-19T04:30:52.432Z</updated>
+    <updated>2019-02-19T04:33:51.419Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;基于docker-compose构建数据库&quot;&gt;&lt;a href=&quot;#基于docker-compose构建数据库&quot; class=&quot;headerlink&quot; title=&quot;基于docker-compose构建数据库&quot;&gt;&lt;/a&gt;基于docker-compose构建数据库&lt;/h2&gt;&lt;p&gt;使用docker构建mysql、mongo、redis数据库，可以直接使用，免去安装的繁琐。&lt;/p&gt;
+      &lt;p&gt;使用docker构建mysql、mongo、redis数据库，可以直接使用，免去安装的繁琐。&lt;/p&gt;
     
     </summary>
     

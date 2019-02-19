@@ -158,7 +158,7 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
         </span>
         
         
@@ -174,9 +174,9 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>基于docker-compose构建数据库</p>
+      <h2 id="基于docker-compose构建数据库"><a href="#基于docker-compose构建数据库" class="headerlink" title="基于docker-compose构建数据库"></a>基于docker-compose构建数据库</h2><p>使用docker构建mysql、mongo、redis数据库，可以直接使用，免去安装的繁琐。</p>
 <a id="more"></a>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><br><span class="hljs-attr">  mysql:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-attr">mysql:5.7</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mysql</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"3306:3306"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_DATABASE:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_USER:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_PASSWORD:</span> <span class="hljs-string">willson</span><br><br><span class="hljs-attr">  mongo:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-number">27017</span><span class="hljs-string">:27017</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_USERNAME:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_PASSWORD:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_DATABASE_NAME:</span> <span class="hljs-string">test</span><br><span class="hljs-attr">    command:</span> <span class="hljs-string">["mongod","--bind_ip","0.0.0.0"]</span><br><br><span class="hljs-attr">  redis:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">"redis:alpine"</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">redis</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"6379:6379"</span><br><span class="hljs-comment">#    volumes:</span><br><span class="hljs-comment">#      - "/mnt/data2/test:/data"</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><br><span class="hljs-attr">  mysql:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-attr">mysql:5.7</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mysql</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"3306:3306"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_DATABASE:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_USER:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_PASSWORD:</span> <span class="hljs-string">willson</span><br><br><span class="hljs-attr">  mongo:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-number">27017</span><span class="hljs-string">:27017</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_USERNAME:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_PASSWORD:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_DATABASE_NAME:</span> <span class="hljs-string">test</span><br><span class="hljs-attr">    command:</span> <span class="hljs-string">["mongod","--bind_ip","0.0.0.0"]</span><br><br><span class="hljs-attr">  redis:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">"redis:alpine"</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">redis</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"6379:6379"</span><br>	<span class="hljs-attr">command:</span> <span class="hljs-string">["redis-server","--bind","0.0.0.0"]</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"/mnt/data2/test:/data"</span><br></code></pre></td></tr></table></figure>
     </main>
 
     
@@ -189,6 +189,8 @@
         
         
         <a class="post-tag button" href="/tags/Docker/" style="background: #13af72;" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        
+        <a class="post-tag button" href="/tags/笔记/" style="background: #0f233e;" rel="tag"><i class="fas fa-tags"></i>笔记</a>
         
       </div>
       
@@ -292,7 +294,7 @@
     
     <div class="categories-count">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">6</a></div>
+      <div><a href="/categories/">5</a></div>
     </div>
     
     
@@ -319,6 +321,12 @@
 
 
 
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基于docker-compose构建数据库"><span class="toc-text">基于docker-compose构建数据库</span></a></li></ol></div>
+</div>
 
 
 

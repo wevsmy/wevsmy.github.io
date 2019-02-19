@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>数据库的docker使用</title>
+      <link href="/2019/02/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84docker%E4%BD%BF%E7%94%A8/"/>
+      <url>/2019/02/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84docker%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>数据库的docker使用<br><code>`</code>version: ‘3.1’<br>services:</p><p>  mysql:<br>    image: mysql:5.7<br>    container_name: mysql<br>    restart: always<br>    ports:</p><pre><code>  - &quot;3306:3306&quot;environment:  MYSQL_ROOT_PASSWORD: willson  MYSQL_DATABASE: willson  MYSQL_USER: willson  MYSQL_PASSWORD: willson</code></pre><p>  mongo:<br>    image: mongo<br>    container_name: mongo<br>    restart: always<br>    ports:</p><pre><code>  - 27017:27017environment:  MONGO_INITDB_ROOT_USERNAME: root  MONGO_INITDB_ROOT_PASSWORD: root  MONGO_INITDB_DATABASE_NAME: testcommand: [&quot;mongod&quot;,&quot;--bind_ip&quot;,&quot;0.0.0.0&quot;]</code></pre><p>  redis:<br>    image: “redis:alpine”<br>    container_name: redis<br>    restart: always<br>    ports:</p><pre><code>- &quot;6379:6379&quot;</code></pre><h1 id="volumes"><a href="#volumes" class="headerlink" title="volumes:"></a>volumes:</h1><h1 id="“-mnt-data2-test-data”"><a href="#“-mnt-data2-test-data”" class="headerlink" title="- “/mnt/data2/test:/data”"></a>- “/mnt/data2/test:/data”</h1><p><code>`</code>yml</p><a id="more"></a>]]></content>
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>使用Flask-Migrate进行管理数据库升级</title>
       <link href="/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
       <url>/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</url>
@@ -178,13 +201,6 @@
     </entry>
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[<h1 id="wilson"><a href="#wilson" class="headerlink" title="wilson"></a>wilson</h1><ul><li>Email:<a href="wevsmy@gmail.com">wevsmy@gmail.com</a></li><li>Homepage:<a href="https:wevsmy.github.io" target="_blank" rel="noopener">Wilson’s Blog</a></li><li>GitHub:<a href="https:github.com/wevsmy" target="_blank" rel="noopener">@wison</a></li><li>Weibo:<a href="https://weibo.com/wevsmy" target="_blank" rel="noopener">@wison</a></li></ul><hr><h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><p>长方体混凝土瞬间移动攻城狮<br>专职Python后端开发<br>略懂前端，略懂脚本，略懂机器学习</p>]]></content>
-    </entry>
-    
-    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -196,6 +212,13 @@
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<h1 id="wilson"><a href="#wilson" class="headerlink" title="wilson"></a>wilson</h1><ul><li>Email:<a href="wevsmy@gmail.com">wevsmy@gmail.com</a></li><li>Homepage:<a href="https:wevsmy.github.io" target="_blank" rel="noopener">Wilson’s Blog</a></li><li>GitHub:<a href="https:github.com/wevsmy" target="_blank" rel="noopener">@wison</a></li><li>Weibo:<a href="https://weibo.com/wevsmy" target="_blank" rel="noopener">@wison</a></li></ul><hr><h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><p>长方体混凝土瞬间移动攻城狮<br>专职Python后端开发<br>略懂前端，略懂脚本，略懂机器学习</p>]]></content>
     </entry>
     
   

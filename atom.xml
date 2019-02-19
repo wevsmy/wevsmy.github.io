@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-19T03:41:03.966Z</updated>
+  <updated>2019-02-19T04:24:54.498Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,38 +17,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数据库的docker使用</title>
-    <link href="http://yoursite.com/2019/02/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84docker%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2019/02/19/数据库的docker使用/</id>
+    <title>基于docker-compose构建数据库</title>
+    <link href="http://yoursite.com/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://yoursite.com/2019/02/19/基于docker-compose构建数据库/</id>
     <published>2019-02-19T03:38:46.000Z</published>
-    <updated>2019-02-19T03:41:03.966Z</updated>
+    <updated>2019-02-19T04:24:54.498Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;数据库的docker使用&lt;br&gt;&lt;code&gt;`&lt;/code&gt;version: ‘3.1’&lt;br&gt;services:&lt;/p&gt;
-&lt;p&gt;  mysql:&lt;br&gt;    image: mysql:5.7&lt;br&gt;    container_name: mysql&lt;br&gt;    restart: always&lt;br&gt;    ports:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  - &amp;quot;3306:3306&amp;quot;
-environment:
-  MYSQL_ROOT_PASSWORD: willson
-  MYSQL_DATABASE: willson
-  MYSQL_USER: willson
-  MYSQL_PASSWORD: willson
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  mongo:&lt;br&gt;    image: mongo&lt;br&gt;    container_name: mongo&lt;br&gt;    restart: always&lt;br&gt;    ports:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  - 27017:27017
-environment:
-  MONGO_INITDB_ROOT_USERNAME: root
-  MONGO_INITDB_ROOT_PASSWORD: root
-  MONGO_INITDB_DATABASE_NAME: test
-command: [&amp;quot;mongod&amp;quot;,&amp;quot;--bind_ip&amp;quot;,&amp;quot;0.0.0.0&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  redis:&lt;br&gt;    image: “redis:alpine”&lt;br&gt;    container_name: redis&lt;br&gt;    restart: always&lt;br&gt;    ports:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- &amp;quot;6379:6379&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;volumes&quot;&gt;&lt;a href=&quot;#volumes&quot; class=&quot;headerlink&quot; title=&quot;volumes:&quot;&gt;&lt;/a&gt;volumes:&lt;/h1&gt;&lt;h1 id=&quot;“-mnt-data2-test-data”&quot;&gt;&lt;a href=&quot;#“-mnt-data2-test-data”&quot; class=&quot;headerlink&quot; title=&quot;- “/mnt/data2/test:/data”&quot;&gt;&lt;/a&gt;- “/mnt/data2/test:/data”&lt;/h1&gt;&lt;p&gt;&lt;code&gt;`&lt;/code&gt;yml&lt;/p&gt;
+      &lt;p&gt;基于docker-compose构建数据库&lt;/p&gt;
     
     </summary>
     
-      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="http://yoursite.com/categories/Docker/Linux/"/>
+      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Docker/"/>
     
     
       <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>

@@ -87,7 +87,7 @@
 	
 	<script type="text/javascript" src="/js/love.js"></script>
 	
-    <title>基于docker-compose构建数据库 | wilson's blog - Life is short, you need Python</title>
+    <title>docker安装宝塔管理面板 | wilson's blog - Life is short, you need Python</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw"  data-spy="scroll" data-target=".list-group">
     
@@ -134,7 +134,7 @@
   
   <article class="post-container card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/基于docker-compose构建数据库/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/docker安装宝塔管理面板/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="wilson">
        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
@@ -145,11 +145,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">基于docker-compose构建数据库</h1>
+      <h1 class="post-title" itemprop="name headline">docker安装宝塔管理面板</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-19T11:38:46+08:00">2019-02-19 11:38:46</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-12T11:41:08+08:00">2019-03-12 11:41:08</time></span>
         </span>
         
         
@@ -167,16 +167,19 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2019/02/19/基于docker-compose构建数据库/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/02/19/基于docker-compose构建数据库/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2019/03/12/docker安装宝塔管理面板/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/03/12/docker安装宝塔管理面板/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>使用docker构建mysql、mongo、redis数据库，可以直接使用，免去安装的繁琐。</p>
-<a id="more"></a>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><br><span class="hljs-attr">  mysql:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-attr">mysql:5.7</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mysql</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"3306:3306"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_DATABASE:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_USER:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_PASSWORD:</span> <span class="hljs-string">willson</span><br><br><span class="hljs-attr">  mongo:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-number">27017</span><span class="hljs-string">:27017</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_USERNAME:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_PASSWORD:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_DATABASE_NAME:</span> <span class="hljs-string">test</span><br><span class="hljs-attr">    command:</span> <span class="hljs-string">["mongod","--bind_ip","0.0.0.0"]</span><br><br><span class="hljs-attr">  redis:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">"redis:alpine"</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">redis</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"6379:6379"</span><br>	<span class="hljs-attr">command:</span> <span class="hljs-string">["redis-server","--bind","0.0.0.0"]</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"/mnt/data2/test:/data"</span><br></code></pre></td></tr></table></figure>
+      <p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1 拉取纯净系统镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker pull centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
+<p>2 启动镜像，映射主机与容器内8888端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
+<p>如果映射多个端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 -p 80:80  centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
+<p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3 <code>docker ps</code>查看容器id，并进入容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -it 容器ID bash<br></code></pre></td></tr></table></figure></p>
+<p>4 执行宝塔面板Centos安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh<br></code></pre></td></tr></table></figure></p>
+
     </main>
 
     
@@ -224,12 +227,10 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2019/01/17/使用Flask-Migrate进行管理数据库升级/" rel="next" title="使用Flask-Migrate进行管理数据库升级"><i class="fas fa-angle-left"></i><span class="nav-title">使用Flask-Migrate进行管理数据库升级</span></a>
+      <a href="/2019/02/19/基于docker-compose构建数据库/" rel="next" title="基于docker-compose构建数据库"><i class="fas fa-angle-left"></i><span class="nav-title">基于docker-compose构建数据库</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
-      
-      <a href="/2019/03/12/docker安装宝塔管理面板/" rel="prev" title="docker安装宝塔管理面板"><span class="nav-title">docker安装宝塔管理面板</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -244,8 +245,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "http://yoursite.com/2019/02/19/基于docker-compose构建数据库/";
-    this.page.identifier = "2019/02/19/基于docker-compose构建数据库/";
+    this.page.url = "http://yoursite.com/2019/03/12/docker安装宝塔管理面板/";
+    this.page.identifier = "2019/03/12/docker安装宝塔管理面板/";
   };
   (function() {
     var d = document, s = d.createElement("script");

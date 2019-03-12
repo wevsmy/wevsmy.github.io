@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-19T04:33:51.419Z</updated>
+  <updated>2019-03-12T03:46:44.710Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker安装宝塔管理面板</title>
+    <link href="http://yoursite.com/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
+    <id>http://yoursite.com/2019/03/12/docker安装宝塔管理面板/</id>
+    <published>2019-03-12T03:41:08.000Z</published>
+    <updated>2019-03-12T03:46:44.710Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>基于docker-compose构建数据库</title>
@@ -60,9 +86,9 @@
     
       <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
   </entry>
   
@@ -196,9 +222,9 @@
       <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
       <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
       <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
     

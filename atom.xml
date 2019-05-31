@@ -5,9 +5,9 @@
   <subtitle>Life is short, you need Python</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://wevsmy.github.io/"/>
   <updated>2019-03-12T03:49:04.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://wevsmy.github.io/</id>
   
   <author>
     <name>wilson</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>docker安装宝塔管理面板</title>
-    <link href="http://yoursite.com/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
-    <id>http://yoursite.com/2019/03/12/docker安装宝塔管理面板/</id>
+    <link href="https://wevsmy.github.io/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
+    <id>https://wevsmy.github.io/2019/03/12/docker安装宝塔管理面板/</id>
     <published>2019-03-12T03:41:08.000Z</published>
     <updated>2019-03-12T03:49:04.000Z</updated>
     
@@ -29,23 +29,23 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>基于docker-compose构建数据库</title>
-    <link href="http://yoursite.com/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>http://yoursite.com/2019/02/19/基于docker-compose构建数据库/</id>
+    <link href="https://wevsmy.github.io/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://wevsmy.github.io/2019/02/19/基于docker-compose构建数据库/</id>
     <published>2019-02-19T03:38:46.000Z</published>
     <updated>2019-02-19T04:33:51.000Z</updated>
     
@@ -55,23 +55,23 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>使用Flask-Migrate进行管理数据库升级</title>
-    <link href="http://yoursite.com/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
-    <id>http://yoursite.com/2019/01/17/使用Flask-Migrate进行管理数据库升级/</id>
+    <link href="https://wevsmy.github.io/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
+    <id>https://wevsmy.github.io/2019/01/17/使用Flask-Migrate进行管理数据库升级/</id>
     <published>2019-01-17T02:54:35.000Z</published>
     <updated>2019-01-17T02:57:02.000Z</updated>
     
@@ -81,23 +81,23 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
+      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+      <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="Flask" scheme="https://wevsmy.github.io/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>换电脑hexo源码迁移</title>
-    <link href="http://yoursite.com/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
-    <id>http://yoursite.com/2019/01/15/换电脑hexo源码迁移/</id>
+    <link href="https://wevsmy.github.io/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
+    <id>https://wevsmy.github.io/2019/01/15/换电脑hexo源码迁移/</id>
     <published>2019-01-15T02:08:43.000Z</published>
-    <updated>2019-05-31T01:56:59.630Z</updated>
+    <updated>2019-05-31T02:21:18.673Z</updated>
     
     <summary type="html">
     
@@ -105,19 +105,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://wevsmy.github.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Docker镜像部署Flask</title>
-    <link href="http://yoursite.com/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/"/>
-    <id>http://yoursite.com/2018/06/05/Docker镜像部署Flask/</id>
+    <link href="https://wevsmy.github.io/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/"/>
+    <id>https://wevsmy.github.io/2018/06/05/Docker镜像部署Flask/</id>
     <published>2018-06-05T11:24:43.000Z</published>
     <updated>2019-01-16T06:06:07.000Z</updated>
     
@@ -127,21 +127,21 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
+      <category term="Flask" scheme="https://wevsmy.github.io/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>一键创建blog文</title>
-    <link href="http://yoursite.com/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/"/>
-    <id>http://yoursite.com/2018/06/04/一键创建blog文/</id>
+    <link href="https://wevsmy.github.io/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/"/>
+    <id>https://wevsmy.github.io/2018/06/04/一键创建blog文/</id>
     <published>2018-06-04T08:57:52.000Z</published>
     <updated>2019-01-15T07:19:41.000Z</updated>
     
@@ -151,21 +151,21 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Win10" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Win10/"/>
+      <category term="Win10" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Win10/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://wevsmy.github.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>使用阿里云OSS图床</title>
-    <link href="http://yoursite.com/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
-    <id>http://yoursite.com/2018/06/02/使用阿里云OSS图床/</id>
+    <link href="https://wevsmy.github.io/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://wevsmy.github.io/2018/06/02/使用阿里云OSS图床/</id>
     <published>2018-06-02T15:41:57.000Z</published>
     <updated>2019-01-17T03:00:46.000Z</updated>
     
@@ -175,19 +175,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="阿里云" scheme="http://yoursite.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+      <category term="阿里云" scheme="https://wevsmy.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>关于本Blog的评论系统</title>
-    <link href="http://yoursite.com/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://yoursite.com/2018/06/02/关于本Blog的评论系统/</id>
+    <link href="https://wevsmy.github.io/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://wevsmy.github.io/2018/06/02/关于本Blog的评论系统/</id>
     <published>2018-06-02T14:06:37.000Z</published>
     <updated>2018-06-02T14:19:42.000Z</updated>
     
@@ -198,14 +198,14 @@
     </summary>
     
     
-      <category term="Disqus" scheme="http://yoursite.com/tags/Disqus/"/>
+      <category term="Disqus" scheme="https://wevsmy.github.io/tags/Disqus/"/>
     
   </entry>
   
   <entry>
     <title>test</title>
-    <link href="http://yoursite.com/2018/06/02/test/"/>
-    <id>http://yoursite.com/2018/06/02/test/</id>
+    <link href="https://wevsmy.github.io/2018/06/02/test/"/>
+    <id>https://wevsmy.github.io/2018/06/02/test/</id>
     <published>2018-06-02T12:16:09.000Z</published>
     <updated>2018-06-02T14:37:28.000Z</updated>
     
@@ -215,18 +215,18 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
     
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+      <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
     
-      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+      <category term="HTML" scheme="https://wevsmy.github.io/tags/HTML/"/>
     
   </entry>
   

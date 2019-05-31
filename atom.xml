@@ -84,11 +84,11 @@
       <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
     
       <category term="Flask" scheme="https://wevsmy.github.io/tags/Flask/"/>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -207,7 +207,7 @@
     <link href="https://wevsmy.github.io/2018/06/02/test/"/>
     <id>https://wevsmy.github.io/2018/06/02/test/</id>
     <published>2018-06-02T12:16:09.000Z</published>
-    <updated>2018-06-02T14:37:28.000Z</updated>
+    <updated>2019-05-31T15:46:25.909Z</updated>
     
     <summary type="html">
     
@@ -222,9 +222,9 @@
       <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
-    
       <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
+    
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
     
       <category term="HTML" scheme="https://wevsmy.github.io/tags/HTML/"/>
     

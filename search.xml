@@ -71,11 +71,11 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> Python </tag>
             
             <tag> Flask </tag>
+            
+            <tag> 笔记 </tag>
             
         </tags>
       
@@ -196,7 +196,7 @@
       <title>test</title>
       <link href="/2018/06/02/test/"/>
       <url>/2018/06/02/test/</url>
-      <content type="html"><![CDATA[<p>这是一篇测试文章，用于测试Hexo搭建的github静态网站<br><a id="more"></a></p><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><ul><li>添加分类</li><li>添加标签<h1 id="hexo添加分类and标签的方法"><a href="#hexo添加分类and标签的方法" class="headerlink" title="hexo添加分类and标签的方法"></a>hexo添加分类and标签的方法</h1>只需要在文章分类中加入以下代码即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">---<br>title: test<br>date: 2018-06-02 20:16:09<br>categories:<br>- 计算机<br>- Linux<br>- Docker<br>tags:<br>- Python<br>- Docker<br>- HTML<br>---<br></code></pre></td></tr></table></figure></li></ul><p>上述代码即是本片文章的分类and标签</p><h1 id="测试图片外链"><a href="#测试图片外链" class="headerlink" title="测试图片外链"></a>测试图片外链</h1><ol><li>markdown语法不支持指定宽高<br>代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">![Dog](https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg &quot;神烦狗&quot;)<br></code></pre></td></tr></table></figure></li></ol><p><img src="https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg" alt="Dog" title="神烦狗"></p><ol start="2"><li>使用img标签指定宽高<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;img src=&quot;https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg&quot; alt=&quot;Dog&quot; title=&quot;神烦狗&quot; style=&quot;width:100px;height:100px&quot;&gt;<br></code></pre></td></tr></table></figure></li></ol><p><img src="https://jiantuku-images.oss-cn-shanghai.aliyuncs.com/18-6-2/63035737.jpg" alt="Dog" title="神烦狗" style="width:100px;height:100px"></p>]]></content>
+      <content type="html"><![CDATA[<p>这是一篇测试文章，用于测试Hexo搭建的github静态网站<br><a id="more"></a></p><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><ul><li>添加分类</li><li>添加标签<h1 id="hexo添加分类and标签的方法"><a href="#hexo添加分类and标签的方法" class="headerlink" title="hexo添加分类and标签的方法"></a>hexo添加分类and标签的方法</h1>只需要在文章分类中加入以下代码即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">---<br>title: test<br>date: 2018-06-02 20:16:09<br>categories:<br>- 计算机<br>- Linux<br>- Docker<br>tags:<br>- Python<br>- Docker<br>- HTML<br>---<br></code></pre></td></tr></table></figure></li></ul><p>上述代码即是本片文章的分类and标签</p><h1 id="测试插入图片"><a href="#测试插入图片" class="headerlink" title="测试插入图片"></a>测试插入图片</h1><ol><li>markdown语法不支持指定宽高<br>代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">![Dog](test/63035737.jpg )<br></code></pre></td></tr></table></figure></li></ol><p><img src="/2018/06/02/test/63035737.jpg" alt="Dog"></p><ol start="2"><li>使用img标签指定宽高<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;img src=&quot;test/63035737.jpg&quot; alt=&quot;Dog&quot; title=&quot;神烦狗&quot; style=&quot;width:100px;height:100px&quot;&gt;<br></code></pre></td></tr></table></figure></li></ol><p><img src="/2018/06/02/test/63035737.jpg" alt="Dog" title="神烦狗" style="width:100px;height:100px"></p>]]></content>
       
       <categories>
           
@@ -211,9 +211,9 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Docker </tag>
             
             <tag> HTML </tag>
             
@@ -232,16 +232,16 @@
     </entry>
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

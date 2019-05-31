@@ -2,9 +2,9 @@
   text-align: center;
 }
 .info .author-avatar {
-  max-width: 90%;
+  width: 90%;
   display: block;
-  margin: 0 auto;
+  margin: 1em auto;
   border: 0.3em solid #fff;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 1em 0.5em rgba(0,0,0,0.19);
@@ -23,13 +23,13 @@
   color: #26272b;
   font-size: 1.8em;
   font-weight: normal;
-  margin: 0.5em;
+  margin: 0.5em 0;
 }
 .info .author-description {
   color: #444;
   font-size: 1.2em;
   font-weight: normal;
-  margin: 0.5em;
+  margin: 0.5em 0;
 }
 .info .site-count {
   display: -webkit-box;
@@ -63,27 +63,42 @@
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   width: 100%;
-  padding: 0.5em 0em;
+  margin: 1em 0;
   text-align: center;
   font-size: 1em;
 }
-.info .site-count .site-count-divider {
-  line-height: 1.5em;
-  font-size: 2em;
+.info .site-count div.count-block {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  border-left: 0.05em #666 solid;
+  border-right: 0.05em #666 solid;
+}
+.info .site-count div.count-block:first-child {
+  border-left: none;
+}
+.info .site-count div.count-block:last-child {
+  border-right: none;
 }
 .info .site-count .site-count-title {
   margin: 0;
   font-size: 1.2em;
 }
 .info .rss {
-  padding: 0.5em;
+  margin: 1em 0;
+  padding: 0;
 }
 .info .rss .rss-link {
   display: block;
   text-align: center;
   font-size: 1.5em;
   color: #fff;
-  background: #fc6423;
+  background: #ff2a2a;
+  border: 0.1em solid #f5c6cb;
   padding: 0.2em;
   line-height: 1.25em;
 }

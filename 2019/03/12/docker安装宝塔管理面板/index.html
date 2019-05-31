@@ -174,11 +174,11 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1 拉取纯净系统镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker pull centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
-<p>2 启动镜像，映射主机与容器内8888端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
+      <p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1.拉取纯净系统镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker pull centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
+<p>2.启动镜像，映射主机与容器内8888端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
 <p>如果映射多个端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 -p 80:80  centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
-<p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3 <code>docker ps</code>查看容器id，并进入容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -it 容器ID bash<br></code></pre></td></tr></table></figure></p>
-<p>4 执行宝塔面板Centos安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh<br></code></pre></td></tr></table></figure></p>
+<p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3.<code>docker ps</code>查看容器id，并进入容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -it 容器ID bash<br></code></pre></td></tr></table></figure></p>
+<p>4.执行宝塔面板Centos安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh<br></code></pre></td></tr></table></figure></p>
 
     </main>
 

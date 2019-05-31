@@ -6,7 +6,7 @@
       <title>docker安装宝塔管理面板</title>
       <link href="/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
       <url>/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</url>
-      <content type="html"><![CDATA[<p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1 拉取纯净系统镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker pull centos:7.2.1511<br></code></pre></td></tr></table></figure></p><p>2 启动镜像，映射主机与容器内8888端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 centos:7.2.1511<br></code></pre></td></tr></table></figure></p><p>如果映射多个端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 -p 80:80  centos:7.2.1511<br></code></pre></td></tr></table></figure></p><p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3 <code>docker ps</code>查看容器id，并进入容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -it 容器ID bash<br></code></pre></td></tr></table></figure></p><p>4 执行宝塔面板Centos安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh<br></code></pre></td></tr></table></figure></p>]]></content>
+      <content type="html"><![CDATA[<p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1.拉取纯净系统镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker pull centos:7.2.1511<br></code></pre></td></tr></table></figure></p><p>2.启动镜像，映射主机与容器内8888端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 centos:7.2.1511<br></code></pre></td></tr></table></figure></p><p>如果映射多个端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 -p 80:80  centos:7.2.1511<br></code></pre></td></tr></table></figure></p><p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3.<code>docker ps</code>查看容器id，并进入容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -it 容器ID bash<br></code></pre></td></tr></table></figure></p><p>4.执行宝塔面板Centos安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh<br></code></pre></td></tr></table></figure></p>]]></content>
       
       <categories>
           
@@ -73,9 +73,9 @@
             
             <tag> Flask </tag>
             
-            <tag> 笔记 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 笔记 </tag>
             
         </tags>
       
@@ -85,7 +85,7 @@
       <title>换电脑hexo源码迁移</title>
       <link href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
       <url>/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</url>
-      <content type="html"><![CDATA[<p>更换电脑后迁移hexo源代码😂<br><a id="more"></a></p><h1 id="备份必要文件"><a href="#备份必要文件" class="headerlink" title="备份必要文件"></a>备份必要文件</h1><p>进入原来电脑的 hexo 博客目录，只拷如下几个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">scaffolds            文章模版                          必须备份<br>source               博客文章                          必须备份<br>themes               主题                             必须备份<br>.gitignore           限定在push时那些文件可以忽略         必须备份<br>_config.yml          站点配置文件                       必须备份<br>package.json         安装包的名称                       必须备份<br><br>.ssh                 密钥文件                          必须备份<br></code></pre></td></tr></table></figure></p><p><code>ps:上面的文件可以存U盘或者打包上传到xx网盘。</code></p><h1 id="安装配置-Hexo"><a href="#安装配置-Hexo" class="headerlink" title="安装配置 Hexo"></a>安装配置 Hexo</h1><p>用之前的套路安装 Node.js 环境  Git 环境</p><ul><li>打开 开始菜单 运行 cmd</li><li>新建 blog 文件夹<br><code>md d:\blog</code></li><li>进入 blog 文件夹<br><code>cd blog</code></li><li>安装 Hexo<br><code>npm install -g hexo</code></li><li>初始化 Hexo<br><code>hexo init</code></li><li>安装依赖包<br><code>npm install</code></li></ul><p>上面的命令执行完了，你的博客目录会生成新的 hexo 博客文件，我们把刚才拷贝过来的文件，替换掉新生成的 博客文件，然后在复制 密钥文件 到新的密钥文件夹<br>在blog文件夹中打开 <code>Git Bash Here</code></p><ul><li>初始化git本地仓库<br><code>git init</code></li><li>安装上传插件<br><code>npm install hexo-deployer-git --save</code></li><li>RSS插件<br><code>npm install hexo-generator-feed</code></li><li>字数统计 阅读时长 插件<br><code>npm i --save hexo-wordcount</code></li><li><p>搜索插件<br><code>npm install hexo-generator-searchdb --save</code><br>如果你使用了更多的插件，在这里安装就可以了。<br>配置Git 输入你自己的邮箱地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">git config --global user.name<br>git config --global user.email<br></code></pre></td></tr></table></figure></li><li><p>生成新的 public 文件夹<br><code>hexo g</code></p></li><li>开始上传 hexo博客<br><code>hexo d</code></li></ul>]]></content>
+      <content type="html"><![CDATA[<p>更换电脑后迁移hexo源代码😂<br><a id="more"></a></p><h1 id="备份必要文件"><a href="#备份必要文件" class="headerlink" title="备份必要文件"></a>备份必要文件</h1><p>进入原来电脑的 hexo 博客目录，只拷如下几个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">scaffolds            文章模版                          必须备份<br>source               博客文章                          必须备份<br>themes               主题                             必须备份<br>.gitignore           限定在push时那些文件可以忽略         必须备份<br>_config.yml          站点配置文件                       必须备份<br>package.json         安装包的名称                       必须备份<br><br>.ssh                 密钥文件                          必须备份<br></code></pre></td></tr></table></figure></p><p><code>ps:上面的文件可以存U盘或者打包上传到xx网盘。</code></p><h1 id="安装配置-Hexo"><a href="#安装配置-Hexo" class="headerlink" title="安装配置 Hexo"></a>安装配置 Hexo</h1><p>用之前的套路安装 Node.js 环境  Git 环境</p><ul><li>打开 开始菜单 运行 cmd</li><li>新建 blog 文件夹<br><code>md d:\blog</code></li><li>进入 blog 文件夹<br><code>cd blog</code></li><li>安装 Hexo<br><code>npm install -g hexo</code></li><li>初始化 Hexo<br><code>hexo init</code></li><li>安装依赖包<br><code>npm install</code></li></ul><p>上面的命令执行完了，你的博客目录会生成新的 hexo 博客文件，我们把刚才拷贝过来的文件，替换掉新生成的 博客文件，然后在复制 密钥文件 到新的密钥文件夹<br>在blog文件夹中打开 <code>Git Bash Here</code></p><ul><li>初始化git本地仓库<br><code>git init</code></li><li>安装上传插件<br><code>npm install hexo-deployer-git --save</code></li><li>RSS插件<br><code>npm install hexo-generator-feed</code></li><li>字数统计 阅读时长 插件<br><code>npm i --save hexo-wordcount</code></li><li><p>搜索插件<br><code>npm install hexo-generator-searchdb --save</code><br>如果你使用了更多的插件，在这里安装就可以了。<br>配置Git 输入你自己的邮箱地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">git config --global user.name<br>git config --global user.email<br></code></pre></td></tr></table></figure></li><li><p>生成新的 public 文件夹<br><code>hexo g</code></p></li><li>开始上传 hexo博客<br><code>hexo d</code></li></ul><hr><p>date: 2019-05-31 09:41:53</p><p>采用Onedrive备份hexo博客源码</p><ul><li><p>备份文件</p><p>简单方便，只要把blog文件目录放到Onedrive中，其会自动备份的。新电脑登录Onedrive拉取blog文件。</p></li><li><p>安装环境</p><ul><li>安装node.js</li><li>安装hexo <code>npm install -g hexo</code></li><li>预览blog <code>hexo s</code></li></ul></li></ul>]]></content>
       
       <categories>
           
@@ -211,9 +211,9 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Docker </tag>
             
             <tag> HTML </tag>
             
@@ -239,17 +239,17 @@
     </entry>
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[<h1 id="wilson"><a href="#wilson" class="headerlink" title="wilson"></a>wilson</h1><ul><li>Email:<a href="mailto:wevsmy@gmail.com" target="_blank" rel="noopener">wevsmy@gmail.com</a></li><li>Homepage:<a href="https://wevsmy.github.io" target="_blank" rel="noopener">Wilson’s Blog</a></li><li>GitHub:<a href="https://github.com/wevsmy" target="_blank" rel="noopener">@wilson</a></li><li>Weibo:<a href="https://weibo.com/wevsmy" target="_blank" rel="noopener">@wilson</a></li></ul><hr><h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><p>长方体混凝土瞬间移动攻城狮<br>专职Python后端开发<br>略懂前端，略懂脚本，略懂机器学习</p>]]></content>
-    </entry>
-    
-    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<h1 id="wilson"><a href="#wilson" class="headerlink" title="wilson"></a>wilson</h1><ul><li>Email:<a href="mailto:wevsmy@gmail.com" target="_blank" rel="noopener">wevsmy@gmail.com</a></li><li>Homepage:<a href="https://wevsmy.github.io" target="_blank" rel="noopener">Wilson’s Blog</a></li><li>GitHub:<a href="https://github.com/wevsmy" target="_blank" rel="noopener">@wilson</a></li><li>Weibo:<a href="https://weibo.com/wevsmy" target="_blank" rel="noopener">@wilson</a></li></ul><hr><h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><p>长方体混凝土瞬间移动攻城狮<br>专职Python后端开发<br>略懂前端，略懂脚本，略懂机器学习</p>]]></content>
     </entry>
     
   

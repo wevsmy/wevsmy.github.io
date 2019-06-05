@@ -385,6 +385,15 @@
   width: 100%;
   word-wrap: break-word;
 }
+.footer .footer-container .with-love {
+  display: inline-block;
+  color: #f00;
+  -webkit-animation: iconAnimate 1.33s ease-in-out infinite;
+  -moz-animation: iconAnimate 1.33s ease-in-out infinite;
+  -o-animation: iconAnimate 1.33s ease-in-out infinite;
+  -ms-animation: iconAnimate 1.33s ease-in-out infinite;
+  animation: iconAnimate 1.33s ease-in-out infinite;
+}
 .footer a {
   position: relative;
   color: #ddd;

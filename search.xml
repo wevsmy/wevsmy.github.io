@@ -71,11 +71,11 @@
       
         <tags>
             
-            <tag> Flask </tag>
+            <tag> 笔记 </tag>
             
             <tag> Python </tag>
             
-            <tag> 笔记 </tag>
+            <tag> Flask </tag>
             
         </tags>
       
@@ -211,9 +211,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Python </tag>
             
             <tag> HTML </tag>
             

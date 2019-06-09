@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wevsmy.github.io/"/>
-  <updated>2019-03-12T03:49:04.000Z</updated>
+  <updated>2019-06-09T17:54:06.566Z</updated>
   <id>https://wevsmy.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客园不在更新</title>
+    <link href="https://wevsmy.github.io/2019/03/22/cnblog_10576224/"/>
+    <id>https://wevsmy.github.io/2019/03/22/cnblog_10576224/</id>
+    <published>2019-03-21T17:24:00.000Z</published>
+    <updated>2019-06-09T17:54:06.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;不更新了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新的地址👉&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+    
+  </entry>
   
   <entry>
     <title>docker安装宝塔管理面板</title>
@@ -36,9 +69,9 @@
       <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
-    
       <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -62,9 +95,9 @@
       <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
-    
       <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -86,9 +119,9 @@
     
       <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
-    
       <category term="Flask" scheme="https://wevsmy.github.io/tags/Flask/"/>
+    
+      <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
     
   </entry>
   
@@ -222,11 +255,209 @@
       <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
-    
       <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
     
+      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
+    
       <category term="HTML" scheme="https://wevsmy.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django基础01</title>
+    <link href="https://wevsmy.github.io/2018/03/22/cnblog_8621513/"/>
+    <id>https://wevsmy.github.io/2018/03/22/cnblog_8621513/</id>
+    <published>2018-03-21T17:17:00.000Z</published>
+    <updated>2019-06-09T17:54:06.629Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Web框架本质&quot;&gt;&lt;a href=&quot;#Web框架本质&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python连接MySQL数据库之pymysql模块使用</title>
+    <link href="https://wevsmy.github.io/2018/03/21/cnblog_8616189/"/>
+    <id>https://wevsmy.github.io/2018/03/21/cnblog_8616189/</id>
+    <published>2018-03-20T19:58:00.000Z</published>
+    <updated>2019-06-09T17:57:16.485Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python3连接MySQL&quot;&gt;&lt;a href=&quot;#Python3连接MySQL&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 语法说明 (简体中文版)</title>
+    <link href="https://wevsmy.github.io/2018/03/14/cnblog_8565323/"/>
+    <id>https://wevsmy.github.io/2018/03/14/cnblog_8565323/</id>
+    <published>2018-03-13T17:58:00.000Z</published>
+    <updated>2019-06-09T17:54:06.712Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Markdown-语法说明-简体中文版&quot;&gt;&lt;a href=&quot;#Markdown-语法说明-简体中文版&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法说明 (简体中文版)&quot;&gt;&lt;/a&gt;Markdown 语法说明
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery</title>
+    <link href="https://wevsmy.github.io/2018/03/14/cnblog_8565153/"/>
+    <id>https://wevsmy.github.io/2018/03/14/cnblog_8565153/</id>
+    <published>2018-03-13T17:40:00.000Z</published>
+    <updated>2019-06-09T17:54:07.035Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;jQuery&quot;&gt;&lt;a href=&quot;#jQuery&quot; class=&quot;headerlink&quot; title=&quot;jQuery&quot;&gt;&lt;/a&gt;jQuery&lt;/h1&gt;&lt;h2 id=&quot;jQuery介绍&quot;&gt;&lt;a href=&quot;#jQuery介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux screen 常用命令</title>
+    <link href="https://wevsmy.github.io/2018/03/13/cnblog_8554604/"/>
+    <id>https://wevsmy.github.io/2018/03/13/cnblog_8554604/</id>
+    <published>2018-03-12T18:38:00.000Z</published>
+    <updated>2019-06-09T17:54:07.057Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;screen  -s  yourname   # 创建一个名字为yourname的screen
+
+screen  -ls   # 查看所有screen
+
+screen -r  yourname   # 回到yourname这个screen
+
+screen
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端基础之BOM和DOM</title>
+    <link href="https://wevsmy.github.io/2018/03/12/cnblog_8550048/"/>
+    <id>https://wevsmy.github.io/2018/03/12/cnblog_8550048/</id>
+    <published>2018-03-12T00:34:00.000Z</published>
+    <updated>2019-06-09T17:54:07.081Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前戏&quot;&gt;&lt;a href=&quot;#前戏&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
     
   </entry>
   

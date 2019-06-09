@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    <meta name="theme-color" content="#333333" />
+    <meta name="msapplication-TileColor" content="#333333" />
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs" />
+    
+    
+    <meta name="keywords" content="life, hexo, wilson, wevsmy" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png" />
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333" />
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+	
+	<script type="text/javascript" src="/js/love.js"></script>
+	
+    <title>jQuery | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      <div class="logo">
+        <img src="/images/Site_logo.png" alt="logo">
+      </div>
+    </div>
+    
+
+<nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="accessibility.nav_toggle"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-container card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://wevsmy.github.io/2018/03/14/cnblog_8565153/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">jQuery</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-14T01:40:00+08:00">2018-03-14 01:40:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/03/14/cnblog_8565153/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/03/14/cnblog_8565153/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="jQuery介绍"><a href="#jQuery介绍" class="headerlink" title="jQuery介绍"></a>jQuery介绍</h2><ol>
+<li>jQuery是一个轻量级的、兼容多浏览器的JavaScript库。</li>
+<li>jQuery使用户能够更方便地处理HTML Document、Events、实现动画效果、方便地进行Ajax交互，能够极大地简化JavaScript编程。它的宗旨就是：”Write less, do more.”</li>
+</ol>
+<h2 id="jQuery的优势"><a href="#jQuery的优势" class="headerlink" title="jQuery的优势"></a>jQuery的优势</h2><ol>
+<li>一款轻量级的JS框架。jQuery核心js文件才几十kb，不会影响页面加载速度。</li>
+<li>丰富的DOM选择器,jQuery的选择器用起来很方便，比如要找到某个DOM对象的相邻元素，JS可能要写好几行代码，而jQuery一行代码就搞定了，再比如要将一个表格的隔行变色，jQuery也是一行代码搞定。</li>
+<li>链式表达式。jQuery的链式操作可以把多个操作写在一行代码里，更加简洁。</li>
+<li>事件、样式、动画支持。jQuery还简化了js操作css的代码，并且代码的可读性也比js要强。</li>
+<li>Ajax操作支持。jQuery简化了AJAX操作，后端只需返回一个JSON格式的字符串就能完成与前端的通信。</li>
+<li>跨浏览器兼容。jQuery基本兼容了现在主流的浏览器，不用再为浏览器的兼容问题而伤透脑筋。</li>
+<li>插件扩展开发。jQuery有着丰富的第三方的插件，例如：树形菜单、日期控件、图片切换插件、弹出窗口等等基本前端页面上的组件都有对应插件，并且用jQuery插件做出来的效果很炫，并且可以根据自己需要去改写和封装插件，简单实用。</li>
+</ol>
+<h2 id="jQuery内容："><a href="#jQuery内容：" class="headerlink" title="jQuery内容："></a>jQuery内容：</h2><ol>
+<li>选择器</li>
+<li>筛选器</li>
+<li>样式操作</li>
+<li>文本操作</li>
+<li>属性操作</li>
+<li>文档处理</li>
+<li>事件</li>
+<li>动画效果</li>
+<li>插件</li>
+<li>each、data、Ajax</li>
+</ol>
+<p>下载链接：<a href="https://jquery.com/" target="_blank" rel="noopener">jQuery官网</a></p>
+<h2 id="jQuery版本"><a href="#jQuery版本" class="headerlink" title="jQuery版本"></a>jQuery版本</h2><ul>
+<li>1.x：兼容IE678,使用最为广泛的，官方只做BUG维护，功能不再新增。因此一般项目来说，使用1.x版本就可以了，最终版本：1.12.4 (2016年5月20日)</li>
+<li>2.x：不兼容IE678，很少有人使用，官方只做BUG维护，功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，最终版本：2.2.4 (2016年5月20日)</li>
+<li>3.x：不兼容IE678，只支持最新的浏览器。需要注意的是很多老的jQuery插件不支持3.x版。目前该版本是官方主要更新维护的版本。</li>
+</ul>
+<p><em>维护IE678是一件让人头疼的事情，一般我们都会额外加载一个CSS和JS单独处理。值得庆幸的是使用这些浏览器的人也逐步减少，PC端用户已经逐步被移动端用户所取代，如果没有特殊要求的话，一般都会选择放弃对678的支持。</em></p>
+<h2 id="jQuery对象"><a href="#jQuery对象" class="headerlink" title="jQuery对象"></a>jQuery对象</h2><p><strong>jQuery对象</strong> 就是通过jQuery包装DOM对象后产生的对象。 <strong>jQuery对象</strong> 是 jQuery独有的。如果一个对象是<br><strong>jQuery对象</strong> ，那么它就可以使用 <strong>jQuery</strong> 里的方法：例如$(“#i1”).html()。</p>
+<p><code>$(&quot;#i1&quot;).html()</code>的意思是：获取id值为 <code>i1</code>的元素的html代码。其中 <code>html()</code>是jQuery里的方法。</p>
+<p>相当于： <code>document.getElementById(&quot;i1&quot;).innerHTML;</code></p>
+<p>虽然 <code>jQuery对象</code>是包装 <code>DOM对象</code>后产生的，但是 <code>jQuery对象</code>无法使用 <code>DOM对象</code>的任何方法，同理 <code>DOM对象</code>也没不能使用<br><code>jQuery</code>里的方法。</p>
+<p>一个约定，我们在声明一个jQuery对象变量的时候在变量名前面加上$：</p>
+<pre><code>var $variable = jQuery对像
+var variable = DOM对象
+$variable[0]//jQuery对象转成DOM对象
+</code></pre><p>拿上面那个例子举例，jQuery对象和DOM对象的使用：</p>
+<pre><code>$(&quot;#i1&quot;).html();//jQuery对象可以使用jQuery的方法
+$(&quot;#i1&quot;)[0].innerHTML;// DOM对象使用DOM的方法
+</code></pre><h2 id="jQuery基础语法"><a href="#jQuery基础语法" class="headerlink" title="jQuery基础语法"></a>jQuery基础语法</h2><p><code>$(selector).action()</code></p>
+<h2 id="查找标签"><a href="#查找标签" class="headerlink" title="查找标签"></a>查找标签</h2><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p><strong>id选择器：</strong></p>
+<pre><code>$(&quot;#id&quot;)
+</code></pre><p><strong>标签选择器：</strong></p>
+<pre><code>$(&quot;tagName&quot;)
+</code></pre><p><strong>class选择器：</strong></p>
+<pre><code>$(&quot;.className&quot;)
+</code></pre><p><strong>配合使用：</strong></p>
+<pre><code>$(&quot;div.c1&quot;)   // 找到有c1 class类的div标签
+</code></pre><p><strong>所有元素选择器：</strong></p>
+<pre><code>$(&quot;*&quot;)
+</code></pre><p><strong>组合选择器：</strong></p>
+<pre><code>$(&quot;#id, .className, tagName&quot;)
+</code></pre><p><strong>层级选择器：</strong></p>
+<p><em>x和y可以为任意选择器</em></p>
+<pre><code>$(&quot;x y&quot;); // x的所有后代y（子子孙孙）
+$(&quot;x &gt; y&quot;);// x的所有儿子y（儿子）
+$(&quot;x + y&quot;)// 找到所有紧挨在x后面的y
+$(&quot;x ~ y&quot;)// x之后所有的兄弟y
+</code></pre><p><strong>基本筛选器：</strong></p>
+<pre><code>:first  // 第一个
+:last // 最后一个
+:eq(index)// 索引等于index的那个元素
+:even // 匹配所有索引值为偶数的元素，从 0 开始计数
+:odd // 匹配所有索引值为奇数的元素，从 0 开始计数
+:gt(index)// 匹配所有大于给定索引值的元素
+:lt(index)// 匹配所有小于给定索引值的元素
+:not(元素选择器)// 移除所有满足not条件的标签
+:has(元素选择器)// 选取所有包含一个或多个标签在其内的标签(指的是从后代元素找)
+</code></pre><p><strong>例子：</strong></p>
+<pre><code>$(&quot;div:has(h1)&quot;) // 找到所有后代中有h1标签的div标签
+$(&quot;div:has(.c1)&quot;)// 找到所有后代中有c1样式类的div标签
+$(&quot;li:not(.c1)&quot;)// 找到所有不包含c1样式类的li标签
+$(&quot;li:not(:has(a))&quot;)// 找到所有后代中不含a标签的li标签
+</code></pre><p>练习：</p>
+<p>自定义模态框，使用jQuery实现弹出和隐藏功能。</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;自定义模态框&lt;/title&gt;
+  &lt;style&gt;
+    .cover {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: darkgrey;
+      z-index: 999;
+    }
+    .modal {
+      width: 600px;
+      height: 400px;
+      background-color: white;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      margin-left: -300px;
+      margin-top: -200px;
+      z-index: 1000;
+    }
+    .hide {
+      display: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type=&quot;button&quot; value=&quot;弹&quot; id=&quot;i0&quot;&gt;
+
+&lt;div class=&quot;cover hide&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;modal hide&quot;&gt;
+  &lt;label for=&quot;i1&quot;&gt;姓名&lt;/label&gt;
+  &lt;input id=&quot;i1&quot; type=&quot;text&quot;&gt;
+   &lt;label for=&quot;i2&quot;&gt;爱好&lt;/label&gt;
+  &lt;input id=&quot;i2&quot; type=&quot;text&quot;&gt;
+  &lt;input type=&quot;button&quot; id=&quot;i3&quot; value=&quot;关闭&quot;&gt;
+&lt;/div&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  var tButton = $(&quot;#i0&quot;)[0];
+  tButton.onclick=function () {
+    var coverEle = $(&quot;.cover&quot;)[0];
+    var modalEle = $(&quot;.modal&quot;)[0];
+
+    $(coverEle).removeClass(&quot;hide&quot;);
+    $(modalEle).removeClass(&quot;hide&quot;);
+  };
+
+  var cButton = $(&quot;#i3&quot;)[0];
+  cButton.onclick=function () {
+    var coverEle = $(&quot;.cover&quot;)[0];
+    var modalEle = $(&quot;.modal&quot;)[0];
+
+    $(coverEle).addClass(&quot;hide&quot;);
+    $(modalEle).addClass(&quot;hide&quot;);
+  }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>jQuery版自定义模态框</p>
+<p><strong>属性选择器：</strong></p>
+<pre><code> [attribute]
+[attribute=value]// 属性等于
+[attribute!=value]// 属性不等于  
+</code></pre><p><strong>例子：</strong></p>
+<pre><code> // 示例
+&lt;input type=&quot;text&quot;&gt;
+&lt;input type=&quot;password&quot;&gt;
+&lt;input type=&quot;checkbox&quot;&gt;
+$(&quot;input[type=&apos;checkbox&apos;]&quot;);// 取到checkbox类型的input标签
+$(&quot;input[type!=&apos;text&apos;]&quot;);// 取到类型不是text的input标签
+</code></pre><p><strong>表单常用筛选</strong> ：</p>
+<pre><code>:text
+:password  
+:file
+
+
+:radio
+:checkbox  
+
+:submit
+:reset
+:button  
+</code></pre><p><strong>例子：</strong></p>
+<pre><code>$(&quot;:checkbox&quot;)   // 找到所有的checkbox
+</code></pre><p>表单对象属性:</p>
+<pre><code>:enabled
+:disabled
+:checked
+:selected
+</code></pre><p><strong>例子：</strong></p>
+<pre><code>&lt;form&gt;
+  &lt;input name=&quot;email&quot; disabled=&quot;disabled&quot; /&gt;
+  &lt;input name=&quot;id&quot; /&gt;
+&lt;/form&gt;
+
+$( &quot;input:enabled&quot;)  // 找到可用的input标签
+
+
+
+
+
+&lt;select id=&quot;s1&quot;&gt;
+  &lt;option value=&quot;beijing&quot;&gt;北京市&lt;/option&gt;
+  &lt;option value=&quot;shanghai&quot;&gt;上海市&lt;/option&gt;
+  &lt;option selected value=&quot;guangzhou&quot;&gt;广州市&lt;/option&gt;
+  &lt;option value=&quot;shenzhen&quot;&gt;深圳市&lt;/option&gt;
+&lt;/select&gt;
+
+$(&quot;:selected&quot;)  // 找到所有被选中的option
+</code></pre><h3 id="筛选器"><a href="#筛选器" class="headerlink" title="筛选器"></a>筛选器</h3><p>下一个元素：</p>
+<pre><code>$(&quot;#id&quot;).next()
+$(&quot;#id&quot;).nextAll()
+$(&quot;#id&quot;).nextUntil(&quot;#i2&quot;)
+</code></pre><p>上一个元素：</p>
+<pre><code>$(&quot;#id&quot;).prev()
+$(&quot;#id&quot;).prevAll()
+$(&quot;#id&quot;).prevUntil(&quot;#i2&quot;)
+</code></pre><p>父亲元素：</p>
+<pre><code>$(&quot;#id&quot;).parent()
+$(&quot;#id&quot;).parents()  // 查找当前元素的所有的父辈元素  
+$(&quot;#id&quot;).parentsUntil() // 查找当前元素的所有的父辈元素，直到遇到匹配的那个元素为止。
+</code></pre><p>儿子和兄弟元素：</p>
+<pre><code>$(&quot;#id&quot;).children();// 儿子们
+$(&quot;#id&quot;).siblings();// 兄弟们
+</code></pre><p>查找元素：</p>
+<pre><code>$(&quot;#id&quot;).find()// 搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。
+</code></pre><p>补充：</p>
+<pre><code>.first()// 获取匹配的第一个元素
+.last()// 获取匹配的最后一个元素
+.not()// 从匹配元素的集合中删除与指定表达式匹配的元素
+.has()// 保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+</code></pre><p>示例：左侧菜单</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;左侧菜单示例&lt;/title&gt;
+  &lt;style&gt;
+    .left {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 20%;
+      height: 100%;
+      background-color: rgb(47, 53, 61);
+    }
+
+    .right {
+      width: 80%;
+      height: 100%;
+    }
+
+    .menu {
+      color: white;
+    }
+
+    .title {
+      text-align: center;
+      padding: 10px 15px;
+      border-bottom: 1px solid #23282e;
+    }
+
+    .items {
+      background-color: #181c20;
+
+    }
+    .item {
+      padding: 5px 10px;
+      border-bottom: 1px solid #23282e;
+    }
+
+    .hide {
+      display: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;left&quot;&gt;
+  &lt;div class=&quot;menu&quot;&gt;
+    &lt;div class=&quot;title&quot;&gt;菜单一&lt;/div&gt;
+    &lt;div class=&quot;items&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;111&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;222&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;333&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;title&quot;&gt;菜单二&lt;/div&gt;
+    &lt;div class=&quot;items hide&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;111&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;222&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;333&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;title&quot;&gt;菜单三&lt;/div&gt;
+    &lt;div class=&quot;items hide&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;111&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;222&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;333&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  $(&quot;.title&quot;).click(function (){  // jQuery绑定事件
+    // 隐藏所有class里有.items的标签
+    $(&quot;.items&quot;).addClass(&quot;hide&quot;);  //批量操作
+    $(this).next().removeClass(&quot;hide&quot;);
+  });
+&lt;/script&gt;
+</code></pre><p>左侧菜单示例</p>
+<h2 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h2><h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h3><p>样式类</p>
+<pre><code>addClass();// 添加指定的CSS类名。
+removeClass();// 移除指定的CSS类名。
+hasClass();// 判断样式存不存在
+toggleClass();// 切换CSS类名，如果有就移除，如果没有就添加。
+</code></pre><p>示例：开关灯和模态框</p>
+<p>CSS</p>
+<pre><code>css(&quot;color&quot;,&quot;red&quot;)//DOM操作：tag.style.color=&quot;red&quot;
+</code></pre><p>示例：</p>
+<pre><code>$(&quot;p&quot;).css(&quot;color&quot;, &quot;red&quot;); //将所有p标签的字体设置为红色
+</code></pre><p>位置：</p>
+<pre><code>offset()// 获取匹配元素在当前窗口的相对偏移或设置元素位置
+position()// 获取匹配元素相对父元素的偏移
+scrollTop()// 获取匹配元素相对滚动条顶部的偏移
+scrollLeft()// 获取匹配元素相对滚动条左侧的偏移
+</code></pre><p><code>.offset()</code>方法允许我们检索一个元素相对于文档（document）的当前位置。</p>
+<p>和 <code>.position()</code>的差别在于： <code>.position()</code>是相对于相对于父级元素的位移。</p>
+<p>示例：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;位置相关示例之返回顶部&lt;/title&gt;
+  &lt;style&gt;
+    .c1 {
+      width: 100px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .c2 {
+      height: 50px;
+      width: 50px;
+
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background-color: #2b669a;
+    }
+    .hide {
+      display: none;
+    }
+    .c3 {
+      height: 100px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;b1&quot; class=&quot;btn btn-default&quot;&gt;点我&lt;/button&gt;
+&lt;div class=&quot;c1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;1&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;2&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;3&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;4&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;5&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;6&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;7&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;8&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;9&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;10&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;11&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;12&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;13&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;14&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;15&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;16&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;17&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;18&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;19&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;20&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;21&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;22&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;23&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;24&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;25&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;26&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;27&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;28&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;29&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;30&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;31&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;32&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;33&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;34&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;35&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;36&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;37&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;38&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;39&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;40&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;41&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;42&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;43&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;44&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;45&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;46&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;47&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;48&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;49&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;50&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;51&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;52&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;53&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;54&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;55&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;56&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;57&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;58&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;59&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;60&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;61&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;62&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;63&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;64&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;65&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;66&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;67&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;68&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;69&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;70&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;71&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;72&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;73&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;74&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;75&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;76&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;77&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;78&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;79&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;80&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;81&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;82&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;83&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;84&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;85&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;86&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;87&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;88&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;89&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;90&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;91&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;92&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;93&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;94&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;95&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;96&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;97&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;98&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;99&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;100&lt;/div&gt;
+
+&lt;button id=&quot;b2&quot; class=&quot;btn btn-default c2 hide&quot;&gt;返回顶部&lt;/button&gt;
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;#b1&quot;).on(&quot;click&quot;, function () {
+    $(&quot;.c1&quot;).offset({left: 200, top:200});
+  });
+
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() &gt; 100) {
+      $(&quot;#b2&quot;).removeClass(&quot;hide&quot;);
+    }else {
+      $(&quot;#b2&quot;).addClass(&quot;hide&quot;);
+    }
+  });
+  $(&quot;#b2&quot;).on(&quot;click&quot;, function () {
+    $(window).scrollTop(0);
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>返回顶部示例</p>
+<p>尺寸：</p>
+<pre><code>height()
+width()
+innerHeight()
+innerWidth()
+outerHeight()
+outerWidth()
+</code></pre><h3 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h3><p>HTML代码：</p>
+<pre><code>html()// 取得第一个匹配元素的html内容
+html(val)// 设置所有匹配元素的html内容
+</code></pre><p>文本值：</p>
+<pre><code>text()// 取得所有匹配元素的内容
+text(val)// 设置所有匹配元素的内容
+</code></pre><p>值：</p>
+<pre><code>val()// 取得第一个匹配元素的当前值
+val(val)// 设置所有匹配元素的值
+val([val1, val2])// 设置checkbox、select的值
+</code></pre><p>示例：</p>
+<p>获取被选中的checkbox或radio的值：</p>
+<pre><code>&lt;label for=&quot;c1&quot;&gt;女&lt;/label&gt;
+&lt;input name=&quot;gender&quot; id=&quot;c1&quot; type=&quot;radio&quot; value=&quot;0&quot;&gt;
+&lt;label for=&quot;c2&quot;&gt;男&lt;/label&gt;
+&lt;input name=&quot;gender&quot; id=&quot;c2&quot; type=&quot;radio&quot; value=&quot;1&quot;&gt;
+</code></pre><p>可以使用：</p>
+<pre><code>$(&quot;input[name=&apos;gender&apos;]:checked&quot;).val()
+</code></pre><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;jQuery val示例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;label for=&quot;s1&quot;&gt;城市&lt;/label&gt;
+&lt;select id=&quot;s1&quot;&gt;
+  &lt;option value=&quot;beijing&quot;&gt;北京市&lt;/option&gt;
+  &lt;option value=&quot;shanghai&quot;&gt;上海市&lt;/option&gt;
+  &lt;option selected value=&quot;guangzhou&quot;&gt;广州市&lt;/option&gt;
+  &lt;option value=&quot;shenzhen&quot;&gt;深圳市&lt;/option&gt;
+&lt;/select&gt;
+&lt;hr&gt;
+&lt;label for=&quot;s2&quot;&gt;爱好&lt;/label&gt;
+&lt;select id=&quot;s2&quot; multiple=&quot;multiple&quot;&gt;
+  &lt;option value=&quot;basketball&quot; selected&gt;篮球&lt;/option&gt;
+  &lt;option value=&quot;football&quot;&gt;足球&lt;/option&gt;
+  &lt;option value=&quot;doublecolorball&quot; selected&gt;双色球&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // 单选下拉框
+  $(&quot;#s1&quot;).val(&quot;shanghai&quot;);
+  // 多选下拉框
+   $(&quot;#s2&quot;).val([&quot;basketball&quot;, &quot;football&quot;]);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>jQuery val赋值示例</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;文本操作之登录验证&lt;/title&gt;
+  &lt;style&gt;
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action=&quot;&quot;&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;input-name&quot;&gt;用户名&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input-name&quot; name=&quot;name&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;input-password&quot;&gt;密码&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;input-password&quot; name=&quot;password&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;提交&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;#btn&quot;).click(function () {
+    var username = $(&quot;#input-name&quot;).val();
+    var password = $(&quot;#input-password&quot;).val();
+
+    if (username.length === 0) {
+      $(&quot;#input-name&quot;).siblings(&quot;.error&quot;).text(&quot;用户名不能为空&quot;);
+    }
+    if (password.length === 0) {
+      $(&quot;#input-password&quot;).siblings(&quot;.error&quot;).text(&quot;密码不能为空&quot;);
+    }
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>自定义登录校验示例</p>
+<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><p>用于ID等或自定义属性：</p>
+<pre><code>attr(attrName)// 返回第一个匹配元素的属性值
+attr(attrName, attrValue)// 为所有匹配元素设置一个属性值
+attr({k1: v1, k2:v2})// 为所有匹配元素设置多个属性值
+removeAttr()// 从每一个匹配的元素中删除一个属性
+</code></pre><p>用于checkbox和radio</p>
+<pre><code>prop() // 获取属性
+removeProp() // 移除属性
+</code></pre><p><strong>注意：</strong></p>
+<p>在1.x及2.x版本的jQuery中使用attr对checkbox进行复制操作时会出bug，在3.x版本的jQuery中则没有这个问题。为了兼容性，我们在处理checkbox和radio的时候尽量使用特定的prop()，不要使用attr(“checked”,<br>“checked”)。</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; value=&quot;1&quot;&gt;
+&lt;input type=&quot;radio&quot; value=&quot;2&quot;&gt;
+&lt;script&gt;
+  $(&quot;:checkbox[value=&apos;1&apos;]&quot;).prop(&quot;checked&quot;, true);
+  $(&quot;:radio[value=&apos;2&apos;]&quot;).prop(&quot;checked&quot;, true);
+&lt;/script&gt;
+</code></pre><p>示例：全选、反选、取消</p>
+<h3 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h3><p>添加到指定元素 <strong>内部</strong> 的后面</p>
+<pre><code>$(A).append(B)// 把B追加到A
+$(A).appendTo(B)// 把A追加到B
+</code></pre><p>添加到指定元素 <strong>内部</strong> 的前面</p>
+<pre><code>$(A).prepend(B)// 把B前置到A
+$(A).prependTo(B)// 把A前置到B
+</code></pre><p>添加到指定元素 <strong>外部</strong> 的后面</p>
+<pre><code>$(A).after(B)// 把B放到A的后面
+$(A).insertAfter(B)// 把A放到B的后面
+</code></pre><p>添加到指定元素 <strong>外部</strong> 的前面</p>
+<pre><code>$(A).before(B)// 把B放到A的前面
+$(A).insertBefore(B)// 把A放到B的前面
+</code></pre><p>移除和清空元素</p>
+<pre><code>remove()// 从DOM中删除所有匹配的元素。
+empty()// 删除匹配的元素集合中所有的子节点。
+</code></pre><p>例子：</p>
+<p>点击按钮在表格添加一行数据。</p>
+<p>点击每一行的删除按钮删除当前行数据。</p>
+<p>替换</p>
+<pre><code>replaceWith()
+replaceAll()
+</code></pre><p>克隆</p>
+<pre><code>clone()// 参数
+</code></pre><p>克隆示例：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;克隆&lt;/title&gt;
+  &lt;style&gt;
+    #b1 {
+      background-color: deeppink;
+      padding: 5px;
+      color: white;
+      margin: 5px;
+    }
+    #b2 {
+      background-color: dodgerblue;
+      padding: 5px;
+      color: white;
+      margin: 5px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button id=&quot;b1&quot;&gt;屠龙宝刀，点击就送&lt;/button&gt;
+&lt;hr&gt;
+&lt;button id=&quot;b2&quot;&gt;屠龙宝刀，点击就送&lt;/button&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // clone方法不加参数true，克隆标签但不克隆标签带的事件
+  $(&quot;#b1&quot;).on(&quot;click&quot;, function () {
+    $(this).clone().insertAfter(this);
+  });
+  // clone方法加参数true，克隆标签并且克隆标签带的事件
+  $(&quot;#b2&quot;).on(&quot;click&quot;, function () {
+    $(this).clone(true).insertAfter(this);
+  });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>点击复制按钮</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><pre><code>click(function(){...})
+hover(function(){...})
+blur(function(){...})
+focus(function(){...})
+change(function(){...})
+keyup(function(){...})
+</code></pre><p>keydown和keyup事件组合示例：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;键盘事件示例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table border=&quot;1&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;#&lt;/th&gt;
+    &lt;th&gt;姓名&lt;/th&gt;
+    &lt;th&gt;操作&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Egon&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Alex&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Yuan&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;EvaJ&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Gold&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;input type=&quot;button&quot; id=&quot;b1&quot; value=&quot;全选&quot;&gt;
+&lt;input type=&quot;button&quot; id=&quot;b2&quot; value=&quot;取消&quot;&gt;
+&lt;input type=&quot;button&quot; id=&quot;b3&quot; value=&quot;反选&quot;&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // 全选
+  $(&quot;#b1&quot;).on(&quot;click&quot;, function () {
+    $(&quot;:checkbox&quot;).prop(&quot;checked&quot;, true);
+  });
+  // 取消
+  $(&quot;#b2&quot;).on(&quot;click&quot;, function () {
+    $(&quot;:checkbox&quot;).prop(&quot;checked&quot;, false);
+  });
+  // 反选
+  $(&quot;#b3&quot;).on(&quot;click&quot;, function () {
+    $(&quot;:checkbox&quot;).each(function () {
+      var flag = $(this).prop(&quot;checked&quot;);
+      $(this).prop(&quot;checked&quot;, !flag);
+    })
+  });
+  // 按住shift键，批量操作
+  // 定义全局变量
+  var flag = false;
+  // 全局事件，监听键盘shift按键是否被按下
+  $(window).on(&quot;keydown&quot;, function (e) {
+//    alert(e.keyCode);
+    if (e.keyCode === 16){
+      flag = true;
+    }
+  });
+  // 全局事件,shift按键抬起时将全局变量置为false
+  $(window).on(&quot;keyup&quot;, function (e) {
+    if (e.keyCode === 16){
+      flag = false;
+    }
+  });
+  // select绑定change事件
+  $(&quot;table select&quot;).on(&quot;change&quot;, function () {
+    // 是否为批量操作模式
+    if (flag) {
+      var selectValue = $(this).val();
+      // 找到所有被选中的那一行的select，选中指定值
+      $(&quot;input:checked&quot;).parent().parent().find(&quot;select&quot;).val(selectValue);
+    }
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>按住shift键批量操作</p>
+<p>实时监听input输入值变化示例：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;实时监听input输入值变化&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type=&quot;text&quot; id=&quot;i1&quot;&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  /*
+  * oninput是HTML5的标准事件
+  * 能够检测textarea,input:text,input:password和input:search这几个元素的内容变化，
+  * 在内容修改后立即被触发，不像onchange事件需要失去焦点才触发
+  * oninput事件在IE9以下版本不支持，需要使用IE特有的onpropertychange事件替代
+  * 使用jQuery库的话直接使用on同时绑定这两个事件即可。
+  * */
+  $(&quot;#i1&quot;).on(&quot;input propertychange&quot;, function () {
+    alert($(this).val());
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>input值变化事件</p>
+<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><ol>
+<li><code>.on( events [, selector ],function(){})</code></li>
+</ol>
+<ul>
+<li>events： 事件</li>
+<li>selector: 选择器（可选的）</li>
+<li>function: 事件处理函数</li>
+</ul>
+<h3 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h3><ol>
+<li><code>.off( events [, selector ][,function(){}])</code></li>
+</ol>
+<p><code>off()</code> 方法移除用 <code>.on()</code>绑定的事件处理程序。</p>
+<ul>
+<li>events： 事件</li>
+<li>selector: 选择器（可选的）</li>
+<li>function: 事件处理函数</li>
+</ul>
+<h3 id="阻止后续事件执行"><a href="#阻止后续事件执行" class="headerlink" title="阻止后续事件执行"></a>阻止后续事件执行</h3><ol>
+<li><code>return false; // 常见阻止表单提交等</code></li>
+</ol>
+<p>注意：</p>
+<p>像click、keydown等DOM中定义的事件，我们都可以使用<code>.on()</code>方法来绑定事件，但是<code>hover</code>这种jQuery中定义的事件就不能用<code>.on()</code>方法来绑定了。</p>
+<p>想使用事件委托的方式绑定hover事件处理函数，可以参照如下代码分两步绑定事件：</p>
+<pre><code>$(&apos;ul&apos;).on(&apos;mouseenter&apos;, &apos;li&apos;, function() {//绑定鼠标进入事件
+    $(this).addClass(&apos;hover&apos;);
+});
+$(&apos;ul&apos;).on(&apos;mouseleave&apos;, &apos;li&apos;, function() {//绑定鼠标划出事件
+    $(this).removeClass(&apos;hover&apos;);
+});
+</code></pre><h3 id="页面载入"><a href="#页面载入" class="headerlink" title="页面载入"></a>页面载入</h3><p>当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。这是事件模块中最重要的一个函数，因为它可以极大地提高web应用程序的响应速度。</p>
+<p>两种写法：</p>
+<pre><code>$(document).ready(function(){
+// 在这里写你的JS代码...
+})
+</code></pre><p>简写：</p>
+<pre><code>$(function(){
+// 你在这里写你的代码
+})
+</code></pre><p>文档加载完绑定事件，并且阻止默认事件发生：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;登录注册示例&lt;/title&gt;
+  &lt;style&gt;
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form id=&quot;myForm&quot;&gt;
+  &lt;label for=&quot;name&quot;&gt;姓名&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;name&quot;&gt;
+  &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;label for=&quot;passwd&quot;&gt;密码&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;passwd&quot;&gt;
+  &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;input type=&quot;submit&quot; id=&quot;modal-submit&quot; value=&quot;登录&quot;&gt;
+&lt;/form&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;s7validate.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  function myValidation() {
+    // 多次用到的jQuery对象存储到一个变量，避免重复查询文档树
+    var $myForm = $(&quot;#myForm&quot;);
+    $myForm.find(&quot;:submit&quot;).on(&quot;click&quot;, function () {
+      // 定义一个标志位，记录表单填写是否正常
+      var flag = true;
+      $myForm.find(&quot;:text, :password&quot;).each(function () {
+        var val = $(this).val();
+        if (val.length &lt;= 0 ){
+          var labelName = $(this).prev(&quot;label&quot;).text();
+          $(this).next(&quot;span&quot;).text(labelName + &quot;不能为空&quot;);
+          flag = false;
+        }
+      });
+      // 表单填写有误就会返回false，阻止submit按钮默认的提交表单事件
+      return flag;
+    });
+    // input输入框获取焦点后移除之前的错误提示信息
+    $myForm.find(&quot;input[type!=&apos;submit&apos;]&quot;).on(&quot;focus&quot;, function () {
+      $(this).next(&quot;.error&quot;).text(&quot;&quot;);
+    })
+  }
+  // 文档树就绪后执行
+  $(document).ready(function () {
+    myValidation();
+  });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>登录校验示例</p>
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托是通过事件冒泡的原理，利用父标签去捕获子标签的事件。</p>
+<p>示例：</p>
+<p>表格中每一行的编辑和删除按钮都能触发相应的事件。</p>
+<pre><code>$(&quot;table&quot;).on(&quot;click&quot;, &quot;.delete&quot;, function () {
+  // 删除按钮绑定的事件
+})
+</code></pre><h2 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h2><pre><code>// 基本
+show([s,[e],[fn]])
+hide([s,[e],[fn]])
+toggle([s],[e],[fn])
+// 滑动
+slideDown([s],[e],[fn])
+slideUp([s,[e],[fn]])
+slideToggle([s],[e],[fn])
+// 淡入淡出
+fadeIn([s],[e],[fn])
+fadeOut([s],[e],[fn])
+fadeTo([[s],o,[e],[fn]])
+fadeToggle([s,[e],[fn]])
+// 自定义（了解即可）
+animate(p,[s],[e],[fn])
+</code></pre><p>自定义动画示例：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;点赞动画示例&lt;/title&gt;
+  &lt;style&gt;
+    div {
+      position: relative;
+      display: inline-block;
+    }
+    div&gt;i {
+      display: inline-block;
+      color: red;
+      position: absolute;
+      right: -16px;
+      top: -5px;
+      opacity: 1;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;d1&quot;&gt;点赞&lt;/div&gt;
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;#d1&quot;).on(&quot;click&quot;, function () {
+    var newI = document.createElement(&quot;i&quot;);
+    newI.innerText = &quot;+1&quot;;
+    $(this).append(newI);
+    $(this).children(&quot;i&quot;).animate({
+      opacity: 0
+    }, 1000)
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>点赞特效简单示例</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="each"><a href="#each" class="headerlink" title="each"></a>each</h3><p><strong>jQuery.each(collection, callback(indexInArray, valueOfElement))：</strong></p>
+<p>描述：一个通用的迭代函数，它可以用来无缝迭代对象和数组。数组和类似数组的对象通过一个长度属性（如一个函数的参数对象）来迭代数字索引，从0到length -<br>1。其他对象通过其属性名进行迭代。</p>
+<pre><code>li =[10,20,30,40]
+$.each(li,function(i, v){
+  console.log(i, v);//index是索引，ele是每次循环的具体元素。
+})
+</code></pre><p>输出：</p>
+<pre><code>010
+120
+230
+340
+</code></pre><p><strong>.each(function(index, Element))：</strong></p>
+<p>描述：遍历一个jQuery对象，为每个匹配元素执行一个函数。</p>
+<p><code>.each()</code><br>方法用来迭代jQuery对象中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)。由于回调函数是在当前DOM元素为上下文的语境中触发的，所以关键字<br><code>this</code> 总是指向这个元素。</p>
+<pre><code>// 为每一个li标签添加foo
+$(&quot;li&quot;).each(function(){
+  $(this).addClass(&quot;c1&quot;);
+});
+</code></pre><p>注意: jQuery的方法返回一个jQuery对象，遍历jQuery集合中的元素 - 被称为隐式 _迭代_<br>的过程。当这种情况发生时，它通常不需要显式地循环的 <code>.each()</code>方法：</p>
+<p>也就是说，上面的例子没有必要使用each()方法，直接像下面这样写就可以了：</p>
+<pre><code>$(&quot;li&quot;).addClass(&quot;c1&quot;);  // 对所有标签做统一操作
+</code></pre><p><strong>注意：</strong></p>
+<p>在遍历过程中可以使用 <code>return false</code>提前结束each循环。</p>
+<p><strong>终止each循环</strong></p>
+<pre><code>return false；
+</code></pre><p>伏笔…</p>
+<h3 id="data"><a href="#data" class="headerlink" title=".data()"></a>.data()</h3><p>在匹配的元素集合中的所有元素上存储任意相关数据或返回匹配的元素集合中的第一个元素的给定名称的数据存储的值。</p>
+<p><strong>.data(key, value):</strong></p>
+<p>描述：在匹配的元素上存储任意相关数据。</p>
+<pre><code>$(&quot;div&quot;).data(&quot;k&quot;,100);//给所有div标签都保存一个名为k，值为100
+</code></pre><p><strong>.data(key):</strong></p>
+<p>描述: 返回匹配的元素集合中的第一个元素的给定名称的数据存储的值–通过 <code>.data(name, value)</code>或 <code>HTML5 data-*</code>属性设置。</p>
+<pre><code>$(&quot;div&quot;).data(&quot;k&quot;);//返回第一个div标签中保存的&quot;k&quot;的值
+</code></pre><p>.removeData(key):</p>
+<p>描述：移除存放在元素上的数据，不加key参数表示移除所有保存的数据。</p>
+<pre><code>$(&quot;div&quot;).removeData(&quot;k&quot;);  //移除元素上存放k对应的数据
+</code></pre><p>示例：</p>
+<p>模态框编辑的数据回填表格</p>
+<h3 id="插件-了解即可"><a href="#插件-了解即可" class="headerlink" title="插件(了解即可)"></a>插件(了解即可)</h3><p>jQuery.extend(object)</p>
+<p>jQuery的命名空间下添加新的功能。多用于插件开发者向 jQuery 中添加新函数时使用。</p>
+<p>示例：</p>
+<pre><code>&lt;script&gt;
+jQuery.extend({
+  min:function(a, b){return a &lt; b ? a : b;},
+  max:function(a, b){return a &gt; b ? a : b;}
+});
+jQuery.min(2,3);// =&gt; 2
+jQuery.max(4,5);// =&gt; 5
+&lt;/script&gt;
+</code></pre><p>jQuery.fn.extend(object)</p>
+<p>一个对象的内容合并到jQuery的原型，以提供新的jQuery实例方法。</p>
+<pre><code>&lt;script&gt;
+  jQuery.fn.extend({
+    check:function(){
+      return this.each(function(){this.checked =true;});
+    },
+    uncheck:function(){
+      return this.each(function(){this.checked =false;});
+    }
+  });
+// jQuery对象可以使用新添加的check()方法了。
+$(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
+&lt;/script&gt;
+</code></pre><p>单独写在文件中的扩展：</p>
+<pre><code>(function(jq){
+  jq.extend({
+    funcName:function(){
+    ...
+    },
+  });
+})(jQuery);
+</code></pre><p>例子：</p>
+<p>自定义的jQuery登录验证插件</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;登录校验示例&lt;/title&gt;
+  &lt;style&gt;
+    .login-form {
+      margin: 100px auto 0;
+      max-width: 330px;
+    }
+    .login-form &gt; div {
+      margin: 15px 0;
+    }
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;div&gt;
+  &lt;form action=&quot;&quot; class=&quot;login-form&quot; novalidate&gt;
+
+    &lt;div&gt;
+      &lt;label for=&quot;username&quot;&gt;姓名&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;name&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;passwd&quot;&gt;密码&lt;/label&gt;
+      &lt;input id=&quot;passwd&quot; type=&quot;password&quot; name=&quot;password&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;mobile&quot;&gt;手机&lt;/label&gt;
+      &lt;input id=&quot;mobile&quot; type=&quot;text&quot; name=&quot;mobile&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;where&quot;&gt;来自&lt;/label&gt;
+      &lt;input id=&quot;where&quot; type=&quot;text&quot; name=&quot;where&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;validate.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $.validate();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>HTML文件</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&quot;use strict&quot;;
+(function ($) {
+  function check() {
+    // 定义一个标志位，表示验证通过还是验证不通过
+    var flag = true;
+    var errMsg;
+    // 校验规则
+    $(&quot;form input[type!=&apos;:submit&apos;]&quot;).each(function () {
+      var labelName = $(this).prev().text();
+      var inputName = $(this).attr(&quot;name&quot;);
+      var inputValue = $(this).val();
+      if ($(this).attr(&quot;required&quot;)) {
+        // 如果是必填项
+        if (inputValue.length === 0) {
+          // 值为空
+          errMsg = labelName + &quot;不能为空&quot;;
+          $(this).next().text(errMsg);
+          flag = false;
+          return false;
+        }
+        // 如果是密码类型，我们就要判断密码的长度是否大于6位
+        if (inputName === &quot;password&quot;) {
+          // 除了上面判断为不为空还要判断密码长度是否大于6位
+          if (inputValue.length &lt; 6) {
+            errMsg = labelName + &quot;必须大于6位&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+        // 如果是手机类型，我们需要判断手机的格式是否正确
+        if (inputName === &quot;mobile&quot;) {
+          // 使用正则表达式校验inputValue是否为正确的手机号码
+          if (!/^1[345678]\d{9}$/.test(inputValue)) {
+            // 不是有效的手机号码格式
+            errMsg = labelName + &quot;格式不正确&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+      }
+    });
+    return flag;
+  }
+
+  function clearError(arg) {
+    // 清空之前的错误提示
+    $(arg).next().text(&quot;&quot;);
+  }
+  // 上面都是我定义的工具函数
+  $.extend({
+    validate: function () {
+      $(&quot;form :submit&quot;).on(&quot;click&quot;, function () {
+      return check();
+    });
+    $(&quot;form :input[type!=&apos;submit&apos;]&quot;).on(&quot;focus&quot;, function () {
+      clearError(this);
+    });
+    }
+  });
+})(jQuery);
+</code></pre><p>JS文件</p>
+<p> 传参版插件：</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;登录校验示例&lt;/title&gt;
+  &lt;style&gt;
+    .login-form {
+      margin: 100px auto 0;
+      max-width: 330px;
+    }
+    .login-form &gt; div {
+      margin: 15px 0;
+    }
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;div&gt;
+  &lt;form action=&quot;&quot; class=&quot;login-form&quot; novalidate&gt;
+
+    &lt;div&gt;
+      &lt;label for=&quot;username&quot;&gt;姓名&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;name&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;passwd&quot;&gt;密码&lt;/label&gt;
+      &lt;input id=&quot;passwd&quot; type=&quot;password&quot; name=&quot;password&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;mobile&quot;&gt;手机&lt;/label&gt;
+      &lt;input id=&quot;mobile&quot; type=&quot;text&quot; name=&quot;mobile&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;where&quot;&gt;来自&lt;/label&gt;
+      &lt;input id=&quot;where&quot; type=&quot;text&quot; name=&quot;where&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;validate3.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $.validate({&quot;name&quot;:{&quot;required&quot;: true}, &quot;password&quot;: {&quot;required&quot;: true, &quot;minLength&quot;: 8}, &quot;mobile&quot;: {&quot;required&quot;: true}});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>HTML文件</p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>&quot;use strict&quot;;
+(function ($) {
+  function check(arg) {
+    // 定义一个标志位，表示验证通过还是验证不通过
+    var flag = true;
+    var errMsg;
+    // 校验规则
+    $(&quot;form input[type!=&apos;:submit&apos;]&quot;).each(function () {
+      var labelName = $(this).prev().text();
+      var inputName = $(this).attr(&quot;name&quot;);
+      var inputValue = $(this).val();
+      if (arg[inputName].required) {
+        // 如果是必填项
+        if (inputValue.length === 0) {
+          // 值为空
+          errMsg = labelName + &quot;不能为空&quot;;
+          $(this).next().text(errMsg);
+          flag = false;
+          return false;
+        }
+        // 如果是密码类型，我们就要判断密码的长度是否大于6位
+        if (inputName === &quot;password&quot;) {
+          // 除了上面判断为不为空还要判断密码长度是否大于6位
+          if (inputValue.length &lt; arg[inputName].minLength) {
+            errMsg = labelName + &quot;必须大于&quot;+arg[inputName].minLength+&quot;位&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+        // 如果是手机类型，我们需要判断手机的格式是否正确
+        if (inputName === &quot;mobile&quot;) {
+          // 使用正则表达式校验inputValue是否为正确的手机号码
+          if (!/^1[345678]\d{9}$/.test(inputValue)) {
+            // 不是有效的手机号码格式
+            errMsg = labelName + &quot;格式不正确&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+      }
+    });
+    return flag;
+  }
+
+  function clearError(arg) {
+    // 清空之前的错误提示
+    $(arg).next().text(&quot;&quot;);
+  }
+  // 上面都是我定义的工具函数
+  $.extend({
+    validate: function (arg) {
+      $(&quot;form :submit&quot;).on(&quot;click&quot;, function () {
+      return check(arg);
+    });
+    $(&quot;form :input[type!=&apos;submit&apos;]&quot;).on(&quot;focus&quot;, function () {
+      clearError(this);
+    });
+    }
+  });
+})(jQuery);
+</code></pre><p>JS文件</p>
+<p>课后习题：</p>
+<ol>
+<li>登录+验证</li>
+<li>左侧菜单</li>
+<li>表格-增、删、改、查</li>
+</ol>
+
+    </main>
+
+    
+    <footer class="post-footer">
+      
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/博客园/" style="background: #13af72;" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" style="background: #0f233e;" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" style="background: #4a0035;" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/03/13/cnblog_8554604/" rel="next" title="linux screen 常用命令"><i class="fas fa-angle-left"></i><span class="nav-title">linux screen 常用命令</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/14/cnblog_8565323/" rel="prev" title="Markdown 语法说明 (简体中文版)"><span class="nav-title">Markdown 语法说明 (简体中文版)</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://wevsmy.github.io/2018/03/14/cnblog_8565153/";
+    this.page.identifier = "2018/03/14/cnblog_8565153/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">16</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery"><span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery介绍"><span class="toc-text">jQuery介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery的优势"><span class="toc-text">jQuery的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery内容："><span class="toc-text">jQuery内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery版本"><span class="toc-text">jQuery版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery对象"><span class="toc-text">jQuery对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery基础语法"><span class="toc-text">jQuery基础语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找标签"><span class="toc-text">查找标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择器"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#筛选器"><span class="toc-text">筛选器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作标签"><span class="toc-text">操作标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#样式操作"><span class="toc-text">样式操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本操作"><span class="toc-text">文本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性操作"><span class="toc-text">属性操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档处理"><span class="toc-text">文档处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用事件"><span class="toc-text">常用事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件绑定"><span class="toc-text">事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移除事件"><span class="toc-text">移除事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻止后续事件执行"><span class="toc-text">阻止后续事件执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面载入"><span class="toc-text">页面载入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托"><span class="toc-text">事件委托</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动画效果"><span class="toc-text">动画效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#补充"><span class="toc-text">补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#each"><span class="toc-text">each</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data"><span class="toc-text">.data()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件-了解即可"><span class="toc-text">插件(了解即可)</span></a></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+	
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          
+		 
+			  <span class="year">
+				  <i class="far fa-copyright"></i>
+				  2014 - 2019
+			  </span>
+
+			<span class="with-love">
+				<i class="fa fa-heart"></i>
+			</span>		 
+		 
+		  <span class="author">wilson</span>
+		  
+		  
+		  
+			<span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+		  
+        </div>
+        
+        
+<div class="busuanzi">
+  <span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv"></span></span>
+</div>
+
+
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题由 <a href="https://github.com/wevsmy/" target="_blank">Wilson</a> 修改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  
+  </body>
+</html>

@@ -44,35 +44,26 @@
   -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   text-align: left;
-  max-width: 50%;
+  width: 50%;
 }
 .footer .footer-container .footer-right {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -webkit-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   text-align: right;
-  max-width: 50%;
+  width: 50%;
 }
 .footer .footer-container .footer-right .custom-info {
   width: 100%;
   word-wrap: break-word;
-}
-.footer .footer-container .with-love {
-  display: inline-block;
-  color: #f00;
-  -webkit-animation: iconAnimate 1.33s ease-in-out infinite;
-  -moz-animation: iconAnimate 1.33s ease-in-out infinite;
-  -o-animation: iconAnimate 1.33s ease-in-out infinite;
-  -ms-animation: iconAnimate 1.33s ease-in-out infinite;
-  animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .footer a {
   position: relative;
@@ -96,28 +87,22 @@
   display: block;
   text-align: center;
 }
-.footer .back-to-top .svg-inline--fa {
-  margin: 0;
-}
-.footer .back-to-top a {
-  position: relative;
-  border-bottom: none;
+.footer .back-to-top button {
+  border: none;
+  outline: 0;
   background: #ccc;
   color: #666;
   overflow: hidden;
   display: inline-block;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 0.7em;
   cursor: pointer;
-  border-bottom-left-radius: 0.2em;
-  border-bottom-right-radius: 0.2em;
+  border-bottom-left-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
   font-size: 2em;
 }
-.footer .back-to-top a:hover {
-  color: #33363b;
-}
-.footer .back-to-top a:active {
-  top: 0;
+.footer .back-to-top button:hover {
+  color: #36e;
 }
 @media (max-width: 40em) {
   .footer .footer-container {
@@ -139,10 +124,10 @@
   }
   .footer .footer-container .footer-left {
     text-align: center;
-    max-width: 100%;
+    width: auto;
   }
   .footer .footer-container .footer-right {
     text-align: center;
-    max-width: 100%;
+    width: auto;
   }
 }

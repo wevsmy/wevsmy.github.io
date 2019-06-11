@@ -1,3 +1,6 @@
 .comments .disqus_thread {
-  padding: 2em;
+  margin: 1em 2em;
+}
+.comments .vcomments {
+  margin: 1em 2em;
 }

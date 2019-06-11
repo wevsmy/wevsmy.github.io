@@ -222,20 +222,20 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1.拉取纯净系统镜像<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker pull centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
-<p>2.启动镜像，映射主机与容器内8888端口<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
-<p>如果映射多个端口<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -p 8888:8888 -p 80:80  centos:7.2.1511<br></code></pre></td></tr></table></figure></p>
-<p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3.<code>docker ps</code>查看容器id，并进入容器<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -it 容器ID bash<br></code></pre></td></tr></table></figure></p>
-<p>4.执行宝塔面板Centos安装命令<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh<br></code></pre></td></tr></table></figure></p>
+      <p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br><a id="more"></a><br>1.拉取纯净系统镜像<br><figure class="hljs highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">docker</span> <span class="hljs-selector-tag">pull</span> <span class="hljs-selector-tag">centos</span><span class="hljs-selector-pseudo">:7.2.1511</span><br></code></pre></td></tr></table></figure></p>
+<p>2.启动镜像，映射主机与容器内8888端口<br><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker <span class="hljs-built_in">run</span> -d -<span class="hljs-keyword">it</span> -p <span class="hljs-number">8888</span>:<span class="hljs-number">8888</span> centos:<span class="hljs-number">7.2</span><span class="hljs-number">.1511</span><br></code></pre></td></tr></table></figure></p>
+<p>如果映射多个端口<br><figure class="hljs highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker run -d -it -<span class="hljs-selector-tag">p</span> <span class="hljs-number">8888</span>:<span class="hljs-number">8888</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-number">80</span>:<span class="hljs-number">80</span>  centos:<span class="hljs-number">7.2</span>.<span class="hljs-number">1511</span><br></code></pre></td></tr></table></figure></p>
+<p>一般我们再映射时候。都会把  8888  80 443  3306  21 等一些常用端口都映射过去。<br>注：<code>-p 80:80</code> 前面80是宿主机本机端口，后面的80是docker容器的。<br>3.<code>docker ps</code>查看容器id，并进入容器<br><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker exec -<span class="hljs-keyword">it</span> 容器ID bash<br></code></pre></td></tr></table></figure></p>
+<p>4.执行宝塔面板Centos安装命令<br><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">yum <span class="hljs-keyword">install</span> -y wget &amp;&amp; wget -O <span class="hljs-keyword">install</span>.sh http://download.bt.cn/<span class="hljs-keyword">install</span>/<span class="hljs-keyword">install</span>.sh &amp;&amp; sh <span class="hljs-keyword">install</span>.sh<br></code></pre></td></tr></table></figure></p>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
-        
         <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        
+        <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
         
       </div>
       
@@ -391,6 +391,8 @@
     <div class="blogroll sidebar-item">
       <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">charles的博客</a></li>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
         

@@ -3,20 +3,26 @@
   $(document).ready(function () {
     // To top button.
     $("#back-to-top").on("click", function () {
-      $("body, html").animate({ "scrollTop": 0 }, 600);
+      $("body, html").animate({"scrollTop": 0}, 600);
     });
 
     $("#reward-button").on("click", function () {
+      if ($("#qr").attr("aria-hidden") === "true") {
+        $("#qr").attr("aria-hidden", "false");
+      } else {
+        $("#qr").attr("aria-hidden", "true");
+      }
       $("#qr").slideToggle();
     });
 
     $("#nav-toggle").on("click", function () {
+      if ($("#menu").attr("aria-hidden") === "true") {
+        $("#menu").attr("aria-hidden", "false");
+      } else {
+        $("#menu").attr("aria-hidden", "true");
+      }
       $("#menu").slideToggle();
     });
-
-    // Bootstrap toc scrollspy needs such classes.
-    $(".toc").addClass("list-group");
-    $(".toc-link").addClass("list-group-item");
 
     // (40em - 0.6em) * 16px
     // 40 is total size and 0.4 is scroll bar size.
@@ -25,58 +31,47 @@
     // Auto hide main nav menus in small screen.
     if ($(window).width() <= minWidth) {
       $("#menu").hide();
+      $("#menu").attr("aria-hidden", "true");
+      $("#nav-toggle").attr("aria-hidden", "false");
     }
     var windowWidth = $(window).width();
     // Show menu again when window becomes bigger.
     $(window).resize(function () {
       if ($(window).width() > minWidth) {
         $("#menu").show();
+        $("#menu").attr("aria-hidden", "false");
+        $("#nav-toggle").attr("aria-hidden", "true");
       } else {
         // Android chrome fires resize when scroll down.
         // Because it hides address bar to enlarge window height.
         // To avoid it, check width.
         if ($(window).width() !== windowWidth) {
           $("#menu").hide();
+          $("#menu").attr("aria-hidden", "true");
+          $("#nav-toggle").attr("aria-hidden", "false");
           windowWidth = $(window).width();
         }
       }
     });
 
-    $(".content").each(function (i) {
-      $(this).find("img").each(function () {
-        // if (this.alt && !(!!$.prototype.justifiedGallery && $(this).parent(".justified-gallery").length)) {
-        if (this.title) {
+    $(".post img").each(function (i) {
+      if ($(this).parent().prop("tagName") !== "A") {
+        if (this.alt) {
+          $(this).after("<span class=\"caption\">" + this.alt + "</span>");
+        } else if (this.title) {
+          // Hexo asset_img tag generates title instead of alt.
           $(this).after("<span class=\"caption\">" + this.title + "</span>");
         }
+          $(this).wrap("<a href=\"" + this.src + "\" class=\"gallery-item\"></a>");
+      } else {
         // If img is already a link, ignore it.
-        if ($(this).parent().prop("tagName") !== "A") {
-          $(this).wrap("<a href=\"" + this.src + "\" title=\"" + this.alt + "\" class=\"gallery-item\"></a>");
-        } else {
-          $(this).parent().addClass("img-link");
-        }
-      });
+        $(this).parent().addClass("img-link");
+      }
     });
     if (typeof lightGallery != "undefined") {
-      var options = {
-        selector: ".gallery-item",
-      };
-      $(".content").each(function (i, entry) {
-        lightGallery(entry, options);
+      $(".post").each(function (i, entry) {
+        lightGallery(entry, {"selector": ".gallery-item"});
       });
-      // lightGallery($(".article-gallery")[0], options);
     }
-    // if (!!$.prototype.justifiedGallery) {  // if justifiedGallery method is defined
-    //   var options = {
-    //     rowHeight: 140,
-    //     margins: 4,
-    //     lastRow: "justify"
-    //   };
-    //   $(".justified-gallery").justifiedGallery(options);
-    // }
-
-    // Hexo-util generates <figure> tag with `highlight` class, but hljs uses `hljs` class.
-    $(".highlight").each(function (i) {
-      $(this).addClass("hljs");
-    });
   });
 })(jQuery);

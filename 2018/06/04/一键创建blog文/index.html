@@ -231,12 +231,12 @@
 </ul>
 <hr>
 <h1 id="hexo使用"><a href="#hexo使用" class="headerlink" title="hexo使用"></a>hexo使用</h1><p>hexo具体安装自己google</p>
-<p>生成页面<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo g<br></code></pre></td></tr></table></figure></p>
-<p>创建博文<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo n 博文名<br></code></pre></td></tr></table></figure></p>
-<p>发布博文<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo d<br></code></pre></td></tr></table></figure></p>
-<h1 id="改进创建博文的不便捷"><a href="#改进创建博文的不便捷" class="headerlink" title="改进创建博文的不便捷"></a>改进创建博文的不便捷</h1><p>创建博文需要到blog根目录打开powershell 运行<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo n name<br></code></pre></td></tr></table></figure></p>
+<p>生成页面<br><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure></p>
+<p>创建博文<br><figure class="hljs highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo <span class="hljs-built_in">n</span> 博文名<br></code></pre></td></tr></table></figure></p>
+<p>发布博文<br><figure class="hljs highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure></p>
+<h1 id="改进创建博文的不便捷"><a href="#改进创建博文的不便捷" class="headerlink" title="改进创建博文的不便捷"></a>改进创建博文的不便捷</h1><p>创建博文需要到blog根目录打开powershell 运行<br><figure class="hljs highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">hexo n <span class="hljs-built_in">name</span><br></code></pre></td></tr></table></figure></p>
 <p>然后需要到_posts目录下打开刚才创建的name.md 进行编写博文<br>个人觉得比较繁琐,就想着改进一下</p>
-<h2 id="一键创建blog文原理"><a href="#一键创建blog文原理" class="headerlink" title="一键创建blog文原理"></a>一键创建blog文原理</h2><p>就是把几个命令组合到一起,很简单<br>比如我的:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cd D:\python\WilsonBlog | hexo n &#123;query&#125; | notepad++.exe D:\python\WilsonBlog\source\_posts\&#123;query&#125;.md<br></code></pre></td></tr></table></figure></p>
+<h2 id="一键创建blog文原理"><a href="#一键创建blog文原理" class="headerlink" title="一键创建blog文原理"></a>一键创建blog文原理</h2><p>就是把几个命令组合到一起,很简单<br>比如我的:<br><figure class="hljs highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">cd D:<span class="hljs-symbol">\p</span>ython<span class="hljs-symbol">\W</span>ilsonBlog | hexo n &#123;query&#125; | notepad++.exe D:<span class="hljs-symbol">\p</span>ython<span class="hljs-symbol">\W</span>ilsonBlog<span class="hljs-symbol">\s</span>ource<span class="hljs-symbol">\_</span>posts<span class="hljs-symbol">\&#123;</span>query&#125;.md<br></code></pre></td></tr></table></figure></p>
 <ul>
 <li>先cd到博客目录</li>
 <li>运行hexo n name 创建博文</li>
@@ -248,9 +248,9 @@
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
-        
         <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
+        
+        <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
         
       </div>
       
@@ -412,6 +412,8 @@
     <div class="blogroll sidebar-item">
       <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">charles的博客</a></li>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
         

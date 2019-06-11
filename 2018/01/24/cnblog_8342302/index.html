@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
+    
+    
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <title>python logging模块 | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/01/24/cnblog_8342302/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">python logging模块</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-24T08:29:00+08:00">2018-01-24 08:29:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/01/24/cnblog_8342302/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/01/24/cnblog_8342302/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="这是👉python-logging模块👈的摘要"><a href="#这是👉python-logging模块👈的摘要" class="headerlink" title="这是👉python logging模块👈的摘要"></a><a href="/2018/01/24/cnblog_8342302/">这是👉python logging模块👈的摘要</a></h1><a id="more"></a>
+<h3 id="函数式简单配置"><a href="#函数式简单配置" class="headerlink" title="函数式简单配置"></a>函数式简单配置</h3><pre><code>import logging  
+logging.debug(&apos;debug message&apos;)  
+logging.info(&apos;info message&apos;)  
+logging.warning(&apos;warning message&apos;)  
+logging.error(&apos;error message&apos;)  
+logging.critical(&apos;critical message&apos;) 
+</code></pre><p>默认情况下Python的logging模块将日志打印到了标准输出中，且只显示了大于等于WARNING级别的日志，这说明默认的日志级别设置为WARNING（日志级别等级CRITICAL</p>
+<blockquote>
+<p>ERROR &gt; WARNING &gt; INFO &gt; DEBUG），默认的日志格式为日志级别：Logger名称：用户输出消息。</p>
+</blockquote>
+<p><strong>灵活配置日志级别，日志格式，输出位置:</strong></p>
+<pre><code> import logging  
+logging.basicConfig(level=logging.DEBUG,  
+                    format=&apos;%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s&apos;,  
+                    datefmt=&apos;%a, %d %b %Y %H:%M:%S&apos;,  
+                    filename=&apos;/tmp/test.log&apos;,  
+                    filemode=&apos;w&apos;)  
+
+logging.debug(&apos;debug message&apos;)  
+logging.info(&apos;info message&apos;)  
+logging.warning(&apos;warning message&apos;)  
+logging.error(&apos;error message&apos;)  
+logging.critical(&apos;critical message&apos;)
+</code></pre><p>配置参数：</p>
+<pre><code>logging.basicConfig()函数中可通过具体参数来更改logging模块默认行为，可用参数有：
+
+filename：用指定的文件名创建FiledHandler，这样日志会被存储在指定的文件中。
+filemode：文件打开方式，在指定了filename时使用这个参数，默认值为&quot;a&quot;还可指定为&quot;w&quot;。
+format：指定handler使用的日志显示格式。
+datefmt：指定日期时间格式。
+level：设置rootlogger（后边会讲解具体概念）的日志级别
+stream：用指定的stream创建StreamHandler。可以指定输出到sys.stderr,sys.stdout或者文件(f=open(&apos;test.log&apos;,&apos;w&apos;))，默认为sys.stderr。若同时列出了filename和stream两个参数，则stream参数会被忽略。
+
+format参数中可能用到的格式化串：
+%(name)s Logger的名字
+%(levelno)s 数字形式的日志级别
+%(levelname)s 文本形式的日志级别
+%(pathname)s 调用日志输出函数的模块的完整路径名，可能没有
+%(filename)s 调用日志输出函数的模块的文件名
+%(module)s 调用日志输出函数的模块名
+%(funcName)s 调用日志输出函数的函数名
+%(lineno)d 调用日志输出函数的语句所在的代码行
+%(created)f 当前时间，用UNIX标准的表示时间的浮 点数表示
+%(relativeCreated)d 输出日志信息时的，自Logger创建以 来的毫秒数
+%(asctime)s 字符串形式的当前时间。默认格式是 &quot;2003-07-08 16:49:45,896&quot;。逗号后面的是毫秒
+%(thread)d 线程ID。可能没有
+%(threadName)s 线程名。可能没有
+%(process)d 进程ID。可能没有
+%(message)s用户输出的消息
+</code></pre><h3 id="logger对象配置"><a href="#logger对象配置" class="headerlink" title="logger对象配置"></a>logger对象配置</h3><pre><code>import logging
+
+logger = logging.getLogger()
+# 创建一个handler，用于写入日志文件
+fh = logging.FileHandler(&apos;test.log&apos;,encoding=&apos;utf-8&apos;) 
+
+# 再创建一个handler，用于输出到控制台 
+ch = logging.StreamHandler() 
+formatter = logging.Formatter(&apos;%(asctime)s - %(name)s - %(levelname)s - %(message)s&apos;)
+fh.setLevel(logging.DEBUG)
+
+fh.setFormatter(formatter) 
+ch.setFormatter(formatter) 
+logger.addHandler(fh) #logger对象可以添加多个fh和ch对象 
+logger.addHandler(ch) 
+
+logger.debug(&apos;logger debug message&apos;) 
+logger.info(&apos;logger info message&apos;) 
+logger.warning(&apos;logger warning message&apos;) 
+logger.error(&apos;logger error message&apos;) 
+logger.critical(&apos;logger critical message&apos;)
+</code></pre><p>logging库提供了多个组件：Logger、Handler、Filter、Formatter。Logger对象提供应用程序可直接使用的接口，Handler发送日志到适当的目的地，Filter提供了过滤日志信息的方法，Formatter指定日志显示格式。另外，可以通过：logger.setLevel(logging.Debug)设置级别,当然，也可以通过</p>
+<p>fh.setLevel(logging.Debug)单对文件流设置某个级别。</p>
+<h3 id="字典配置法："><a href="#字典配置法：" class="headerlink" title="字典配置法："></a>字典配置法：</h3><pre><code>import os
+import logging.config
+
+
+# 记录文件日志输出的格式
+standard_format = &apos;[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]&apos; \
+                  &apos;[%(levelname)s][%(message)s]&apos; #其中name为getlogger指定的名字
+# 终端日志输出的格式
+simple_format = &apos;%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s:%(message)s&apos;
+
+
+logfile_dir = r&apos;%s\log&apos; %os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # log文件的目录
+
+logfile_name = &apos;log.log&apos;  # log文件名
+
+# 如果不存在定义的日志目录就创建一个
+if not os.path.isdir(logfile_dir):
+    os.mkdir(logfile_dir)
+
+# log文件的全路径
+logfile_path = os.path.join(logfile_dir, logfile_name)
+
+# log配置字典
+LOGGING_DIC = {
+    &apos;version&apos;: 1,
+    &apos;disable_existing_loggers&apos;: False,
+    &apos;formatters&apos;: {
+        &apos;standard&apos;: {
+            &apos;format&apos;: standard_format
+        },
+        &apos;simple&apos;: {
+            &apos;format&apos;: simple_format
+        },
+    },
+    &apos;filters&apos;: {},
+    &apos;handlers&apos;: {
+        #打印到终端的日志
+        &apos;console&apos;: {
+            &apos;level&apos;: &apos;DEBUG&apos;,
+            &apos;class&apos;: &apos;logging.StreamHandler&apos;,  # 打印到屏幕
+            &apos;formatter&apos;: &apos;simple&apos;
+        },
+        #打印到文件的日志,收集info及以上的日志
+        &apos;default&apos;: {
+            &apos;level&apos;: &apos;DEBUG&apos;,
+            &apos;class&apos;: &apos;logging.handlers.RotatingFileHandler&apos;,  # 保存到文件
+            &apos;formatter&apos;: &apos;standard&apos;,
+            &apos;filename&apos;: logfile_path,  # 日志文件
+            &apos;maxBytes&apos;: 1024*1024*5,  # 日志大小 5M
+            &apos;backupCount&apos;: 5,
+            &apos;encoding&apos;: &apos;utf-8&apos;,  # 日志文件的编码，再也不用担心中文log乱码了
+        },
+    },
+    &apos;loggers&apos;: {
+        #logging.getLogger(__name__)拿到的logger配置
+        &apos;&apos;: {
+            &apos;handlers&apos;: [&apos;default&apos;, &apos;console&apos;],  # 这里把上面定义的两个handler都加上，即log数据既写入文件又打印到屏幕
+            &apos;level&apos;: &apos;DEBUG&apos;,
+            &apos;propagate&apos;: True,  # 向上（更高level的logger）传递
+        },
+    },
+}
+
+def load_my_logging_cfg():
+    logging.config.dictConfig(LOGGING_DIC)  # 导入上面定义的logging配置
+
+if __name__ == &apos;__main__&apos;:
+    load_my_logging_cfg()
+    logger = logging.getLogger(__name__)  # 生成一个log实例
+    logger.info(&apos;info message&apos;)
+    logger.debug(&apos;debug message&apos;)
+    logger.warning(&apos;warning message&apos;)
+    logger.error(&apos;error message&apos;)
+    logger.critical(&apos;critical message&apos;)
+</code></pre>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/01/22/cnblog_8329568/" rel="next" title="python 面向对象进阶之对象内置方法"><i class="fas fa-angle-left"></i><span class="nav-title">python 面向对象进阶之对象内置方法</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/01/24/cnblog_8343168/" rel="prev" title="python Tkinter 基础 创建一行文字的窗体并设置窗体的标题 Label,title"><span class="nav-title">python Tkinter 基础 创建一行文字的窗体并设置窗体的标题 Label,title</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://bolg.weii.ink/2018/01/24/cnblog_8342302/";
+    this.page.identifier = "2018/01/24/cnblog_8342302/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">68</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉python-logging模块👈的摘要"><span class="toc-text">这是👉python logging模块👈的摘要</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#函数式简单配置"><span class="toc-text">函数式简单配置</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#logger对象配置"><span class="toc-text">logger对象配置</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#字典配置法："><span class="toc-text">字典配置法：</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  </body>
+</html>

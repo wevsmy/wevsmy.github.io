@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
+    
+    
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <title>博客园文章迁移到Hexo | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/06/10/cnblog_to_hexo/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">博客园文章迁移到Hexo</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-10T16:16:09+08:00">2019-06-10 16:16:09</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2019/06/10/cnblog_to_hexo/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/06/10/cnblog_to_hexo/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.</p>
+<p>毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）</p>
+<a id="more"></a>
+<h1 id="迁移准备"><a href="#迁移准备" class="headerlink" title="迁移准备"></a>迁移准备</h1><ul>
+<li>下载博客园备份文件</li>
+<li>使用python写个脚本</li>
+</ul>
+<h1 id="脚本原理"><a href="#脚本原理" class="headerlink" title="脚本原理"></a>脚本原理</h1><p>使用sax解析xml数据，然后使用html2text转换成markdown文档，然后分成单个文件存储。<br>就这么简单，没啥难度。</p>
+<h1 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h1><p>运行python脚本，迁移就算完成了，简不简单，意不意外，惊不惊喜！</p>
+<p>迁移脚本：</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> xml.sax<br><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br><br><span class="hljs-keyword">import</span> html2text<br><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CNBlogsHandler</span><span class="hljs-params">(xml.sax.ContentHandler)</span>:</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span><br>        self.CurrentData = <span class="hljs-string">""</span><br>        self.title = <span class="hljs-string">""</span><br>        self.author = <span class="hljs-string">""</span><br>        self.pubDate = <span class="hljs-string">""</span><br>        self.guid = <span class="hljs-string">""</span><br>        self.description = <span class="hljs-string">""</span><br><br>        self.fileName = <span class="hljs-string">""</span><br>        self.date = <span class="hljs-string">""</span><br>        self.url = <span class="hljs-string">""</span><br><br>    <span class="hljs-comment"># 元素开始调用</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">startElement</span><span class="hljs-params">(self, tag, attributes)</span>:</span><br>        self.CurrentData = tag<br>        <span class="hljs-keyword">if</span> tag == <span class="hljs-string">"item"</span>:<br>            print(<span class="hljs-string">"*****item*****"</span>)<br><br>    <span class="hljs-comment"># 元素结束调用</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">endElement</span><span class="hljs-params">(self, tag)</span>:</span><br>        <span class="hljs-keyword">if</span> self.CurrentData == <span class="hljs-string">"title"</span>:<br>            print(<span class="hljs-string">"title:"</span>, self.title)<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"author"</span>:<br>            print(<span class="hljs-string">"author:"</span>, self.author)<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"pubDate"</span>:<br>            print(<span class="hljs-string">"pubDate:"</span>, self.pubDate)<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"guid"</span>:<br>            print(<span class="hljs-string">"guid:"</span>, self.guid)<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"description"</span>:<br>            <span class="hljs-comment"># print("description:", self.description)</span><br>            self.saveFile()<br>        self.CurrentData = <span class="hljs-string">""</span><br><br>    <span class="hljs-comment"># 读取字符时调用</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">characters</span><span class="hljs-params">(self, content)</span>:</span><br>        <span class="hljs-keyword">if</span> self.CurrentData == <span class="hljs-string">"title"</span>:<br>            self.title = content<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"author"</span>:<br>            self.author = content<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"pubDate"</span>:<br>            self.pubDate = content<br>            GMT_FORMAT = <span class="hljs-string">'%a, %d %b %Y %H:%M:%S GMT'</span><br>            self.date = datetime.strptime(self.pubDate, GMT_FORMAT)<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"guid"</span>:<br>            self.guid = content<br>            name = <span class="hljs-string">"cnblog_"</span> + self.guid.split(<span class="hljs-string">"/"</span>)[<span class="hljs-number">-1</span>].replace(<span class="hljs-string">".html"</span>, <span class="hljs-string">""</span>).replace(<span class="hljs-string">"_"</span>, <span class="hljs-string">"-"</span>)<br>            self.fileName = name + <span class="hljs-string">".md"</span><br>            self.url = <span class="hljs-string">"../../../../&#123;&#125;/&#123;:0&gt;2&#125;/&#123;:0&gt;2&#125;/&#123;&#125;/"</span>.format(self.date.year, self.date.month, self.date.day, name)<br>        <span class="hljs-keyword">elif</span> self.CurrentData == <span class="hljs-string">"description"</span>:<br>            self.description += content<br><br>    <span class="hljs-comment"># 保存Md文件</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">saveFile</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">if</span> self.fileName != <span class="hljs-string">""</span>:<br>            md = html2text.html2text(self.description)<br>            <span class="hljs-keyword">with</span> open(self.fileName, mode=<span class="hljs-string">"w"</span>, encoding=<span class="hljs-string">"utf-8"</span>) <span class="hljs-keyword">as</span> f:<br>                s = <span class="hljs-string">"""---<br>title: &#123;0&#125;<br>date: &#123;1&#125;<br>categories:<br>- 笔记<br>- 博客园<br>tags:<br>- 博客园<br>- 搬家<br>- cnblogs<br>---<br># [这是👉&#123;0&#125;👈的摘要](&#123;3&#125;)<br>&lt;!--more--&gt;<br>&#123;2&#125;<br>"""</span>.format(self.title, self.date, md, self.url)<br>                f.write(s)<br>                self.description = <span class="hljs-string">""</span><br><br><br><span class="hljs-keyword">if</span> (__name__ == <span class="hljs-string">"__main__"</span>):<br>    <span class="hljs-comment"># 创建一个 XMLReader</span><br>    parser = xml.sax.make_parser()<br>    <span class="hljs-comment"># 关闭命名空间</span><br>    parser.setFeature(xml.sax.handler.feature_namespaces, <span class="hljs-number">0</span>)<br><br>    <span class="hljs-comment"># 重写 ContextHandler</span><br>    Handler = CNBlogsHandler()<br>    parser.setContentHandler(Handler)<br><br>    parser.parse(<span class="hljs-string">"CNBlogs_BlogBackup_131_201712_201906.xml"</span>)<br></code></pre></td></tr></table></figure>
+<p><a href="/2019/06/10/cnblog_to_hexo/CNBlogs_BlogBackup_131_201712_201906.xml">博客园备份xml文件</a></p>
+<p><a href="/2019/06/10/cnblog_to_hexo/cnblogToHexo.py">迁移脚本py文件</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
+        
+        <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
+        
+        <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/03/12/docker安装宝塔管理面板/" rel="next" title="docker安装宝塔管理面板"><i class="fas fa-angle-left"></i><span class="nav-title">docker安装宝塔管理面板</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://bolg.weii.ink/2019/06/10/cnblog_to_hexo/";
+    this.page.identifier = "2019/06/10/cnblog_to_hexo/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">68</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#迁移准备"><span class="toc-text">迁移准备</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#脚本原理"><span class="toc-text">脚本原理</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#运行脚本"><span class="toc-text">运行脚本</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  </body>
+</html>

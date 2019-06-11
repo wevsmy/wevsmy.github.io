@@ -3,43 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="theme-color" content="#333333" />
-    <meta name="msapplication-TileColor" content="#333333" />
-    
-    
-    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs" />
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
     
     
-    <meta name="keywords" content="life, hexo, wilson, wevsmy" />
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     
     
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
     
     
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     
     
-    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
     
     
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     
     
     <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
     
     
-    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -49,13 +50,14 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/tag.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
     <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
     <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
     <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
@@ -82,14 +84,61 @@
     
     
     <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-	
-	<script type="text/javascript" src="/js/love.js"></script>
-	
+    <script type="text/javascript" src="/js/love.js"></script>
     <title>标签: cnblogs | wilson's blog - Life is short, you need Python</title>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw"  data-spy="scroll" data-target=".list-group">
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
 <header id="header" class="header" style="background: #333333;">
   <div class="container">
@@ -98,14 +147,14 @@
         <h1 class="title"><a href="/">wilson's blog</a></h1>
         <h2 class="subtitle">Life is short, you need Python</h2>
       </div>
+      
       <div class="logo">
-        <img src="/images/Site_logo.png" alt="logo">
+        <img src="/images/logo.png" alt="logo">
       </div>
+      
     </div>
-    
-
-<nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="accessibility.nav_toggle"></i></a>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
         <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
@@ -120,8 +169,6 @@
         
       </ul>
     </nav>
-
-
   </div>
 </header>
 
@@ -131,23 +178,25 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tag" class="tag">
-  <div class="tag-container">
-    <h1 class="tag-title">cnblogs</h1>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/03/22/cnblog_10576224/" itemprop="url">博客园不在更新</a>
+<div id="tag" class="tag page">
+  <h1 class="page-title">cnblogs</h1>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/06/10/cnblog_to_hexo/" itemprop="url">博客园文章迁移到Hexo</a>
       </h1>
       
       <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-22T01:24:00+08:00">03-22</time>
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-10T16:16:09+08:00">06-10</time>
       </span>
       
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
         <a class="post-title-link post-title-link-external" href="/2018/03/22/cnblog_8621513/" itemprop="url">Django基础01</a>
       </h1>
       
@@ -155,10 +204,12 @@
         <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-22T01:17:00+08:00">03-22</time>
       </span>
       
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
         <a class="post-title-link post-title-link-external" href="/2018/03/21/cnblog_8616189/" itemprop="url">Python连接MySQL数据库之pymysql模块使用</a>
       </h1>
       
@@ -166,21 +217,25 @@
         <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-21T03:58:00+08:00">03-21</time>
       </span>
       
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/03/14/cnblog_8565323/" itemprop="url">Markdown 语法说明 (简体中文版)</a>
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/03/14/cnblog_8565323/" itemprop="url">Markdown 语法</a>
       </h1>
       
       <span class="post-date">
         <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-14T01:58:00+08:00">03-14</time>
       </span>
       
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
         <a class="post-title-link post-title-link-external" href="/2018/03/14/cnblog_8565153/" itemprop="url">jQuery</a>
       </h1>
       
@@ -188,10 +243,12 @@
         <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-14T01:40:00+08:00">03-14</time>
       </span>
       
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
         <a class="post-title-link post-title-link-external" href="/2018/03/13/cnblog_8554604/" itemprop="url">linux screen 常用命令</a>
       </h1>
       
@@ -199,10 +256,12 @@
         <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-13T02:38:00+08:00">03-13</time>
       </span>
       
-    </article>
-    
-    <article class="tag-post card" itemscope itemtype="http://schema.org/Article">
-      <h1 class="post-title" itemprop="name headline">
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
         <a class="post-title-link post-title-link-external" href="/2018/03/12/cnblog_8550048/" itemprop="url">前端基础之BOM和DOM</a>
       </h1>
       
@@ -210,9 +269,52 @@
         <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-12T08:34:00+08:00">03-12</time>
       </span>
       
-    </article>
-    
-  </div>
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/03/08/cnblog_8527506/" itemprop="url">前端基础之JavaScript</a>
+      </h1>
+      
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-08T03:44:00+08:00">03-08</time>
+      </span>
+      
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/03/08/cnblog_8527496/" itemprop="url">前端基础之CSS</a>
+      </h1>
+      
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-08T03:43:00+08:00">03-08</time>
+      </span>
+      
+    </header>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/03/05/cnblog_8508917/" itemprop="url">前端知识之HTML内容</a>
+      </h1>
+      
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-05T06:46:00+08:00">03-05</time>
+      </span>
+      
+    </header>
+  </article>
+  
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/tags/cnblogs/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/tags/cnblogs/page/6/">6</a><a class="extend next" rel="next" href="/tags/cnblogs/page/2/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
   
 </div>
 
@@ -220,7 +322,7 @@
           
           
           
-<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
   
   <div class="search">
     <div class="form-group">
@@ -243,7 +345,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">16</a></div>
+      <div><a href="/archives/">68</a></div>
     </div>
     
     
@@ -271,39 +373,34 @@
   
 </div>
 
+
   <div class="sidebar-sticky">
     
     
-    
-<hr>
-<div class="social-link sidebar-item">
-  <div><i class="far fa-address-card"></i>社交链接</p></div>
-  <ul>
-    
-    <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
-    
-    <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
-    
-    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
-    
-  </ul>
-</div>
-
-
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
     
     
-    
-<hr>
-<div class="blogroll sidebar-item">
-  <div><i class="fas fa-link"></i>友情链接</div>
-  <ul>
-    
-    <li><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
-    
-  </ul>
-</div>
-
-
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
     
   </div>
 </aside>
@@ -312,42 +409,22 @@
           
         </div>
       </div>
-	
     </main>
     
 <footer id="footer" class="footer" style="background: #333333;">
   <div class="container">
     <div class="back-to-top">
-      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          
-		 
-			  <span class="year">
-				  <i class="far fa-copyright"></i>
-				  2014 - 2019
-			  </span>
-
-			<span class="with-love">
-				<i class="fa fa-heart"></i>
-			</span>		 
-		 
-		  <span class="author">wilson</span>
-		  
-		  
-		  
-			<span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-		  
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
         </div>
         
-        
-<div class="busuanzi">
-  <span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv"></span></span>
-</div>
-
-
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
         
       </div>
       <div class="footer-right">
@@ -357,7 +434,7 @@
           
         </div>
         <div class="powered-by">
-          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题由 <a href="https://github.com/wevsmy/" target="_blank">Wilson</a> 修改
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
         </div>
       </div>
     </div>
@@ -365,7 +442,6 @@
 </footer>
 
 
-  <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-  
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
   </body>
 </html>

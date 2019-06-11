@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
+    
+    
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <title>python 装饰器 | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2017/12/28/cnblog_8134274/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">python 装饰器</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-12-28T02:23:00+08:00">2017-12-28 02:23:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2017/12/28/cnblog_8134274/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2017/12/28/cnblog_8134274/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="这是👉python-装饰器👈的摘要"><a href="#这是👉python-装饰器👈的摘要" class="headerlink" title="这是👉python 装饰器👈的摘要"></a><a href="/2017/12/28/cnblog_8134274/">这是👉python 装饰器👈的摘要</a></h1><a id="more"></a>
+<h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><p>装饰器是程序开发中经常会用到的一个功能，用好了装饰器，开发效率如虎添翼，所以这也是Python面试中必问的问题，但对于好多初次接触这个知识的人来讲，这个功能有点绕，自学时直接绕过去了，然后面试问到了就挂了，因为装饰器是程序开发的基础知识，这个都不会，别跟人家说你会Python,<br>看了下面的文章，保证你学会装饰器。</p>
+<h2 id="1、先明白这段代码"><a href="#1、先明白这段代码" class="headerlink" title="1、先明白这段代码"></a>1、先明白这段代码</h2><pre><code>#### 第一波 ####
+def foo():
+    print(&apos;foo&apos;)
+
+foo     #表示是函数
+foo()   #表示执行foo函数
+
+#### 第二波 ####
+def foo():
+    print(&apos;foo&apos;)
+
+foo = lambda x: x + 1
+
+foo()   # 执行下面的lambda表达式，而不再是原来的foo函数，因为foo这个名字被重新指向了另外一个匿名函数
+</code></pre><h2 id="2、需求来了"><a href="#2、需求来了" class="headerlink" title="2、需求来了"></a>2、需求来了</h2><p>初创公司有N个业务部门，1个基础平台部门，基础平台负责提供底层的功能，如：数据库操作、redis调用、监控API等功能。业务部门使用基础功能时，只需调用基础平台提供的功能即可。如下：</p>
+<pre><code>############### 基础平台提供的功能如下 ###############
+
+def f1():
+    print(&apos;f1&apos;)
+
+def f2():
+    print(&apos;f2&apos;)
+
+def f3():
+    print(&apos;f3&apos;)
+
+def f4():
+    print(&apos;f4&apos;)
+
+############### 业务部门A 调用基础平台提供的功能 ###############
+
+f1()
+f2()
+f3()
+f4()
+
+############### 业务部门B 调用基础平台提供的功能 ###############
+
+f1()
+f2()
+f3()
+f4()
+</code></pre><p>目前公司有条不紊的进行着，但是，以前基础平台的开发人员在写代码时候没有关注验证相关的问题，即：基础平台的提供的功能可以被任何人使用。现在需要对基础平台的所有功能进行重构，为平台提供的所有功能添加验证机制，即：执行功能前，先进行验证。</p>
+<h4 id="老大把工作交给-Low-B，他是这么做的："><a href="#老大把工作交给-Low-B，他是这么做的：" class="headerlink" title="老大把工作交给 Low B，他是这么做的："></a>老大把工作交给 Low B，他是这么做的：</h4><blockquote>
+<p>跟每个业务部门交涉，每个业务部门自己写代码，调用基础平台的功能之前先验证。诶，这样一来基础平台就不需要做任何修改了。太棒了，有充足的时间泡妹子…</p>
+</blockquote>
+<p>当天Low B 被开除了…</p>
+<h4 id="老大把工作交给-Low-BB，他是这么做的："><a href="#老大把工作交给-Low-BB，他是这么做的：" class="headerlink" title="老大把工作交给 Low BB，他是这么做的："></a>老大把工作交给 Low BB，他是这么做的：</h4><pre><code>############### 基础平台提供的功能如下 ############### 
+
+def f1():
+    # 验证1
+    # 验证2
+    # 验证3
+    print(&apos;f1&apos;)
+
+def f2():
+    # 验证1
+    # 验证2
+    # 验证3
+    print(&apos;f2&apos;)
+
+def f3():
+    # 验证1
+    # 验证2
+    # 验证3
+    print(&apos;f3&apos;)
+
+def f4():
+    # 验证1
+    # 验证2
+    # 验证3
+    print(&apos;f4&apos;)
+
+############### 业务部门不变 ############### 
+### 业务部门A 调用基础平台提供的功能### 
+
+f1()
+f2()
+f3()
+f4()
+
+### 业务部门B 调用基础平台提供的功能 ### 
+
+f1()
+f2()
+f3()
+f4()
+</code></pre><p>过了一周 Low BB 被开除了…</p>
+<h4 id="老大把工作交给-Low-BBB，他是这么做的："><a href="#老大把工作交给-Low-BBB，他是这么做的：" class="headerlink" title="老大把工作交给 Low BBB，他是这么做的："></a>老大把工作交给 Low BBB，他是这么做的：</h4><blockquote>
+<p>只对基础平台的代码进行重构，其他业务部门无需做任何修改</p>
+</blockquote>
+<pre><code>############### 基础平台提供的功能如下 ############### 
+
+def check_login():
+    # 验证1
+    # 验证2
+    # 验证3
+    pass
+
+
+def f1():
+
+    check_login()
+
+    print(&apos;f1&apos;)
+
+def f2():
+
+    check_login()
+
+    print(&apos;f2&apos;)
+
+def f3():
+
+    check_login()
+
+    print(&apos;f3&apos;)
+
+def f4():
+
+    check_login()
+
+    print(&apos;f4&apos;)
+</code></pre><p>老大看了下Low BBB 的实现，嘴角漏出了一丝的欣慰的笑，语重心长的跟Low BBB聊了个天：</p>
+<h5 id="老大说："><a href="#老大说：" class="headerlink" title="老大说："></a>老大说：</h5><p>写代码要遵循<code>开放封闭</code>原则，虽然在这个原则是用的面向对象开发，但是也适用于函数式编程，简单来说，它规定已经实现的功能代码不允许被修改，但可以被扩展，即：</p>
+<ul>
+<li>封闭：已实现的功能代码块</li>
+<li>开放：对扩展开发</li>
+</ul>
+<p>如果将开放封闭原则应用在上述需求中，那么就不允许在函数 f1 、f2、f3、f4的内部进行修改代码，老板就给了Low BBB一个实现方案：</p>
+<pre><code>def w1(func):
+    def inner():
+        # 验证1
+        # 验证2
+        # 验证3
+        func()
+    return inner
+
+@w1
+def f1():
+    print(&apos;f1&apos;)
+@w1
+def f2():
+    print(&apos;f2&apos;)
+@w1
+def f3():
+    print(&apos;f3&apos;)
+@w1
+def f4():
+    print(&apos;f4&apos;)
+</code></pre><p>对于上述代码，也是仅仅对基础平台的代码进行修改，就可以实现在其他人调用函数 f1 f2 f3 f4 之前都进行【验证】操作，并且其他业务部门无需做任何操作。</p>
+<p>Low BBB心惊胆战的问了下，这段代码的内部执行原理是什么呢？</p>
+<p>老大正要生气，突然Low BBB的手机掉到地上，恰巧屏保就是Low BBB的女友照片，老大一看一紧一抖，喜笑颜开，决定和Low BBB交个好朋友。</p>
+<p>详细的开始讲解了：</p>
+<p>单独以f1为例：</p>
+<pre><code>def w1(func):
+    def inner():
+        # 验证1
+        # 验证2
+        # 验证3
+        func()
+    return inner
+
+@w1
+def f1():
+    print(&apos;f1&apos;)
+</code></pre><p>python解释器就会从上到下解释代码，步骤如下：</p>
+<ol>
+<li>def w1(func): ==&gt;将w1函数加载到内存</li>
+<li>@w1</li>
+</ol>
+<p>没错， 从表面上看解释器仅仅会解释这两句代码，因为函数在 没有被调用之前其内部代码不会被执行。</p>
+<p>从表面上看解释器着实会执行这两句，但是 @w1 这一句代码里却有大文章， @函数名 是python的一种语法糖。</p>
+<h3 id="上例-w1内部会执行一下操作："><a href="#上例-w1内部会执行一下操作：" class="headerlink" title="上例@w1内部会执行一下操作："></a>上例@w1内部会执行一下操作：</h3><h4 id="执行w1函数"><a href="#执行w1函数" class="headerlink" title="执行w1函数"></a>执行w1函数</h4><blockquote>
+<p>执行w1函数 ，并将 @w1 下面的函数作为w1函数的参数，即：@w1 等价于 w1(f1) 所以，内部就会去执行：</p>
+</blockquote>
+<blockquote>
+<pre><code>def inner():
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#验证 1
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#验证 2
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#验证 3
+</code></pre></blockquote>
+<blockquote>
+<pre><code>f1()     # func是参数，此时 func 等于 f1
+</code></pre></blockquote>
+<blockquote>
+<pre><code>return inner# 返回的 inner，inner代表的是函数，非执行函数 ,其实就是将原来的 f1 函数塞进另外一个函数中
+</code></pre></blockquote>
+<h4 id="w1的返回值"><a href="#w1的返回值" class="headerlink" title="w1的返回值"></a>w1的返回值</h4><blockquote>
+<p>将执行完的w1函数返回值 赋值 给@w1下面的函数的函数名f1 即将w1的返回值再重新赋值给 f1，即：</p>
+</blockquote>
+<blockquote>
+<pre><code>新f1 = def inner():
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#验证 1
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#验证 2
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#验证 3
+</code></pre></blockquote>
+<blockquote>
+<pre><code>原来f1()
+</code></pre></blockquote>
+<blockquote>
+<pre><code>return inner
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>所以，以后业务部门想要执行 f1 函数时，就会执行 新f1 函数，在新f1 函数内部先执行验证，再执行原来的f1函数，然后将原来f1<br>函数的返回值返回给了业务调用者。</p>
+</blockquote>
+<p>如此一来， 即执行了验证的功能，又执行了原来f1函数的内容，并将原f1函数返回值 返回给业务调用着</p>
+<p>Low BBB 你明白了吗？要是没明白的话，我晚上去你家帮你解决吧！！！</p>
+<h2 id="3-再议装饰器"><a href="#3-再议装饰器" class="headerlink" title="3. 再议装饰器"></a>3. 再议装饰器</h2><pre><code>#定义函数：完成包裹数据
+def makeBold(fn):
+    def wrapped():
+        return &quot;&lt;b&gt;&quot; + fn() + &quot;&lt;/b&gt;&quot;
+    return wrapped
+
+#定义函数：完成包裹数据
+def makeItalic(fn):
+    def wrapped():
+        return &quot;&lt;i&gt;&quot; + fn() + &quot;&lt;/i&gt;&quot;
+    return wrapped
+
+@makeBold
+def test1():
+    return &quot;hello world-1&quot;
+
+@makeItalic
+def test2():
+    return &quot;hello world-2&quot;
+
+@makeBold
+@makeItalic
+def test3():
+    return &quot;hello world-3&quot;
+
+print(test1()))
+print(test2()))
+print(test3()))
+运行结果:
+
+&lt;b&gt;hello world-1&lt;/b&gt;
+&lt;i&gt;hello world-2&lt;/i&gt;
+&lt;b&gt;&lt;i&gt;hello world-3&lt;/i&gt;&lt;/b&gt;
+</code></pre><h2 id="4-装饰器-decorator-功能"><a href="#4-装饰器-decorator-功能" class="headerlink" title="4. 装饰器(decorator)功能"></a>4. 装饰器(decorator)功能</h2><ol>
+<li>引入日志</li>
+<li>函数执行时间统计</li>
+<li>执行函数前预备处理</li>
+<li>执行函数后清理功能</li>
+<li>权限校验等场景</li>
+<li>缓存</li>
+</ol>
+<h2 id="5-装饰器示例"><a href="#5-装饰器示例" class="headerlink" title="5. 装饰器示例"></a>5. 装饰器示例</h2><h3 id="例1-无参数的函数"><a href="#例1-无参数的函数" class="headerlink" title="例1:无参数的函数"></a>例1:无参数的函数</h3><pre><code>from time import ctime, sleep
+
+def timefun(func):
+    def wrappedfunc():
+        print(&quot;%s called at %s&quot;%(func.__name__, ctime()))
+        func()
+    return wrappedfunc
+
+@timefun
+def foo():
+    print(&quot;I am foo&quot;)
+
+foo()
+sleep(2)
+foo()
+</code></pre><p>上面代码理解装饰器执行行为可理解成</p>
+<pre><code>foo = timefun(foo)
+#foo先作为参数赋值给func后,foo接收指向timefun返回的wrappedfunc
+foo()
+#调用foo(),即等价调用wrappedfunc()
+#内部函数wrappedfunc被引用，所以外部函数的func变量(自由变量)并没有释放
+#func里保存的是原foo函数对象
+</code></pre><h3 id="例2-被装饰的函数有参数"><a href="#例2-被装饰的函数有参数" class="headerlink" title="例2:被装饰的函数有参数"></a>例2:被装饰的函数有参数</h3><pre><code>from time import ctime, sleep
+
+def timefun(func):
+    def wrappedfunc(a, b):
+        print(&quot;%s called at %s&quot;%(func.__name__, ctime()))
+        print(a, b)
+        func(a, b)
+    return wrappedfunc
+
+@timefun
+def foo(a, b):
+    print(a+b)
+
+foo(3,5)
+sleep(2)
+foo(2,4)
+</code></pre><h3 id="例3-被装饰的函数有不定长参数"><a href="#例3-被装饰的函数有不定长参数" class="headerlink" title="例3:被装饰的函数有不定长参数"></a>例3:被装饰的函数有不定长参数</h3><pre><code>from time import ctime, sleep
+
+def timefun(func):
+    def wrappedfunc(*args, **kwargs):
+        print(&quot;%s called at %s&quot;%(func.__name__, ctime()))
+        func(*args, **kwargs)
+    return wrappedfunc
+
+@timefun
+def foo(a, b, c):
+    print(a+b+c)
+
+foo(3,5,7)
+sleep(2)
+foo(2,4,9)
+</code></pre><h3 id="例4-装饰器中的return"><a href="#例4-装饰器中的return" class="headerlink" title="例4:装饰器中的return"></a>例4:装饰器中的return</h3><pre><code>from time import ctime, sleep
+
+def timefun(func):
+    def wrappedfunc():
+        print(&quot;%s called at %s&quot;%(func.__name__, ctime()))
+        func()
+    return wrappedfunc
+
+@timefun
+def foo():
+    print(&quot;I am foo&quot;)
+
+@timefun
+def getInfo():
+    return &apos;----hahah---&apos;
+
+foo()
+sleep(2)
+foo()
+
+
+print(getInfo())
+</code></pre><p>执行结果:</p>
+<pre><code>foo called at Fri Nov  4 21:55:35 2016
+I am foo
+foo called at Fri Nov  4 21:55:37 2016
+I am foo
+getInfo called at Fri Nov  4 21:55:37 2016
+None
+</code></pre><p>如果修改装饰器为<code>return func()</code>，则运行结果：</p>
+<pre><code>foo called at Fri Nov  4 21:55:57 2016
+I am foo
+foo called at Fri Nov  4 21:55:59 2016
+I am foo
+getInfo called at Fri Nov  4 21:55:59 2016
+----hahah---
+</code></pre><h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><ul>
+<li>一般情况下为了让装饰器更通用，可以有return</li>
+</ul>
+<h3 id="例5-装饰器带参数-在原有装饰器的基础上，设置外部变量"><a href="#例5-装饰器带参数-在原有装饰器的基础上，设置外部变量" class="headerlink" title="例5:装饰器带参数,在原有装饰器的基础上，设置外部变量"></a>例5:装饰器带参数,在原有装饰器的基础上，设置外部变量</h3><pre><code>#decorator2.py
+
+from time import ctime, sleep
+
+def timefun_arg(pre=&quot;hello&quot;):
+    def timefun(func):
+        def wrappedfunc():
+            print(&quot;%s called at %s %s&quot;%(func.__name__, ctime(), pre))
+            return func()
+        return wrappedfunc
+    return timefun
+
+@timefun_arg(&quot;itcast&quot;)
+def foo():
+    print(&quot;I am foo&quot;)
+
+@timefun_arg(&quot;python&quot;)
+def too():
+    print(&quot;I am too&quot;)
+
+foo()
+sleep(2)
+foo()
+
+too()
+sleep(2)
+too()
+</code></pre><p>可以理解为</p>
+<pre><code>foo()==timefun_arg(&quot;itcast&quot;)(foo)()
+</code></pre><h3 id="例6：类装饰器（扩展，非重点）"><a href="#例6：类装饰器（扩展，非重点）" class="headerlink" title="例6：类装饰器（扩展，非重点）"></a>例6：类装饰器（扩展，非重点）</h3><p>装饰器函数其实是这样一个接口约束，它必须接受一个callable对象作为参数，然后返回一个callable对象。在Python中一般callable对象都是函数，但也有例外。只要某个对象重写了<br><code>__call__()</code> 方法，那么这个对象就是callable的。</p>
+<pre><code>class Test():
+    def __call__(self):
+        print(&apos;call me!&apos;)
+
+t = Test()
+t()  # call me
+</code></pre><p>类装饰器demo</p>
+<pre><code>class Test(object):
+    def __init__(self, func):
+        print(&quot;---初始化---&quot;)
+        print(&quot;func name is %s&quot;%func.__name__)
+        self.__func = func
+    def __call__(self):
+        print(&quot;---装饰器中的功能---&quot;)
+        self.__func()
+
+
+#说明：
+#1. 当用Test来装作装饰器对test函数进行装饰的时候，首先会创建Test的实例对象
+#    并且会把test这个函数名当做参数传递到__init__方法中
+#    即在__init__方法中的func变量指向了test函数体
+#
+#2. test函数相当于指向了用Test创建出来的实例对象
+#
+#3. 当在使用test()进行调用时，就相当于让这个对象()，因此会调用这个对象的__call__方法
+#
+#4. 为了能够在__call__方法中调用原来test指向的函数体，所以在__init__方法中就需要一个实例属性来保存这个函数体的引用
+#    所以才有了self.__func = func这句代码，从而在调用__call__方法中能够调用到test之前的函数体
+@Test
+def test():
+    print(&quot;----test---&quot;)
+test()
+showpy()#如果把这句话注释，重新运行程序，依然会看到&quot;--初始化--&quot;
+</code></pre><p>运行结果如下：</p>
+<pre><code>---初始化---
+func name is test
+---装饰器中的功能---
+----test---
+</code></pre>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2017/12/28/cnblog_8134268/" rel="next" title="python 三元运算符"><i class="fas fa-angle-left"></i><span class="nav-title">python 三元运算符</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/01/03/cnblog_8183568/" rel="prev" title="python 迭代器"><span class="nav-title">python 迭代器</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://bolg.weii.ink/2017/12/28/cnblog_8134274/";
+    this.page.identifier = "2017/12/28/cnblog_8134274/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">68</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉python-装饰器👈的摘要"><span class="toc-text">这是👉python 装饰器👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#装饰器"><span class="toc-text">装饰器</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1、先明白这段代码"><span class="toc-text">1、先明白这段代码</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2、需求来了"><span class="toc-text">2、需求来了</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#老大把工作交给-Low-B，他是这么做的："><span class="toc-text">老大把工作交给 Low B，他是这么做的：</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#老大把工作交给-Low-BB，他是这么做的："><span class="toc-text">老大把工作交给 Low BB，他是这么做的：</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#老大把工作交给-Low-BBB，他是这么做的："><span class="toc-text">老大把工作交给 Low BBB，他是这么做的：</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#老大说："><span class="toc-text">老大说：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#上例-w1内部会执行一下操作："><span class="toc-text">上例@w1内部会执行一下操作：</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#执行w1函数"><span class="toc-text">执行w1函数</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#w1的返回值"><span class="toc-text">w1的返回值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-再议装饰器"><span class="toc-text">3. 再议装饰器</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-装饰器-decorator-功能"><span class="toc-text">4. 装饰器(decorator)功能</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-装饰器示例"><span class="toc-text">5. 装饰器示例</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例1-无参数的函数"><span class="toc-text">例1:无参数的函数</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例2-被装饰的函数有参数"><span class="toc-text">例2:被装饰的函数有参数</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例3-被装饰的函数有不定长参数"><span class="toc-text">例3:被装饰的函数有不定长参数</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例4-装饰器中的return"><span class="toc-text">例4:装饰器中的return</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例5-装饰器带参数-在原有装饰器的基础上，设置外部变量"><span class="toc-text">例5:装饰器带参数,在原有装饰器的基础上，设置外部变量</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#例6：类装饰器（扩展，非重点）"><span class="toc-text">例6：类装饰器（扩展，非重点）</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  </body>
+</html>

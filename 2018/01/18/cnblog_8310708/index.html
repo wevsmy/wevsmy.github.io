@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
+    
+    
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <title>python 面向对象之老王开枪 | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/01/18/cnblog_8310708/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">python 面向对象之老王开枪</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-18T08:04:00+08:00">2018-01-18 08:04:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/01/18/cnblog_8310708/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/01/18/cnblog_8310708/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="这是👉python-面向对象之老王开枪👈的摘要"><a href="#这是👉python-面向对象之老王开枪👈的摘要" class="headerlink" title="这是👉python 面向对象之老王开枪👈的摘要"></a><a href="/2018/01/18/cnblog_8310708/">这是👉python 面向对象之老王开枪👈的摘要</a></h1><a id="more"></a>
+<h1 id="老王开枪"><a href="#老王开枪" class="headerlink" title="老王开枪"></a>老王开枪</h1><p><img src="http://images2017.cnblogs.com/blog/1301576/201801/1301576-20180118160430068-1998370869.png" alt=""></p>
+<h3 id="1-人类"><a href="#1-人类" class="headerlink" title="1. 人类"></a>1. 人类</h3><ul>
+<li>属性 <ul>
+<li>姓名</li>
+<li>血量</li>
+<li>持有的枪</li>
+</ul>
+</li>
+<li>方法 <ul>
+<li>安子弹</li>
+<li>安弹夹</li>
+<li>拿枪（持有抢）</li>
+<li>开枪</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-子弹类"><a href="#2-子弹类" class="headerlink" title="2. 子弹类"></a>2. 子弹类</h3><ul>
+<li>属性 <ul>
+<li>杀伤力</li>
+</ul>
+</li>
+<li>方法 <ul>
+<li>伤害敌人(让敌人掉血)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-弹夹类"><a href="#3-弹夹类" class="headerlink" title="3. 弹夹类"></a>3. 弹夹类</h3><ul>
+<li>属性 <ul>
+<li>容量（子弹存储的最大值）</li>
+<li>当前保存的子弹</li>
+</ul>
+</li>
+<li>方法 <ul>
+<li>保存子弹（安装子弹的时候）</li>
+<li>弹出子弹（开枪的时候）</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-枪类"><a href="#4-枪类" class="headerlink" title="4. 枪类"></a>4. 枪类</h3><ul>
+<li>属性 <ul>
+<li>弹夹（默认没有弹夹，需要安装）</li>
+</ul>
+</li>
+<li>方法 <ul>
+<li>连接弹夹（保存弹夹）</li>
+<li>射子弹</li>
+</ul>
+</li>
+</ul>
+<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><p><img src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>#人类
+class Ren:
+    def __init__(self,name):
+        self.name = name
+        self.xue = 100
+        self.qiang = None
+
+    def __str__(self):
+        return self.name + &quot;剩余血量为:&quot; + str(self.xue)
+
+    def anzidan(self,danjia,zidan):
+        danjia.baocunzidan(zidan)
+
+    def andanjia(self,qiang,danjia):
+        qiang.lianjiedanjia(danjia)
+
+    def naqiang(self,qiang):
+        self.qiang = qiang
+
+    def kaiqiang(self,diren):
+        self.qiang.she(diren)
+
+    def diaoxue(self,shashangli):
+        self.xue -= shashangli
+
+#弹夹类
+class Danjia:
+    def __init__(self, rongliang):
+        self.rongliang = rongliang
+        self.rongnaList = []
+
+    def __str__(self):
+        return &quot;弹夹当前的子弹数量为:&quot; + str(len(self.rongnaList)) + &quot;/&quot; + str(self.rongliang)
+
+    def baocunzidan(self,zidan):
+        if len(self.rongnaList) &lt; self.rongliang:
+            self.rongnaList.append(zidan)
+
+    def chuzidan(self):
+        #判断当前弹夹中是否还有子弹
+        if len(self.rongnaList) &gt; 0:
+            #获取最后压入到单间中的子弹
+            zidan = self.rongnaList[-1]
+            self.rongnaList.pop()
+            return zidan
+        else:
+            return None
+
+#子弹类
+class Zidan:
+    def __init__(self,shashangli):
+        self.shashangli = shashangli
+
+    def shanghai(self,diren):
+        diren.diaoxue(self.shashangli)
+
+#枪类
+class Qiang:
+    def __init__(self):
+        self.danjia = None
+
+    def __str__(self):
+        if self.danjia:
+            return &quot;枪当前有弹夹&quot;
+        else:
+            return &quot;枪没有弹夹&quot;
+
+    def lianjiedanjia(self,danjia):
+        if not self.danjia:
+            self.danjia = danjia
+
+
+    def she(self,diren):
+        zidan = self.danjia.chuzidan()
+        if zidan:
+            zidan.shanghai(diren)
+        else:
+            print(&quot;没有子弹了，放了空枪....&quot;)
+
+
+#创建一个人对象
+laowang = Ren(&quot;老王&quot;)
+
+#创建一个弹夹
+danjia = Danjia(20)
+print(danjia)
+
+#循环的方式创建一颗子弹，然后让老王把这颗子弹压入到弹夹中
+i=0
+while i&lt;5:
+    zidan = Zidan(5)
+    laowang.anzidan(danjia,zidan)
+    i+=1
+#测试一下，安装完子弹后，弹夹中的信息
+print(danjia)
+
+#创建一个枪对象
+qiang = Qiang()
+print(qiang)
+#让老王，把弹夹连接到枪中
+laowang.andanjia(qiang,danjia)
+print(qiang)
+
+
+#创建一个敌人
+diren = Ren(&quot;敌人&quot;)
+print(diren)
+
+#让老王拿起枪
+laowang.naqiang(qiang)
+
+#老王开枪射敌人
+laowang.kaiqiang(diren)
+print(diren)
+print(danjia)
+
+laowang.kaiqiang(diren)
+print(diren)
+print(danjia)
+</code></pre><p>View Code</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/01/15/cnblog_8286595/" rel="next" title="python 面向对象"><i class="fas fa-angle-left"></i><span class="nav-title">python 面向对象</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/01/18/cnblog_8310762/" rel="prev" title="python 面向对象之继承"><span class="nav-title">python 面向对象之继承</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://bolg.weii.ink/2018/01/18/cnblog_8310708/";
+    this.page.identifier = "2018/01/18/cnblog_8310708/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">68</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉python-面向对象之老王开枪👈的摘要"><span class="toc-text">这是👉python 面向对象之老王开枪👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#老王开枪"><span class="toc-text">老王开枪</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#1-人类"><span class="toc-text">1. 人类</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#2-子弹类"><span class="toc-text">2. 子弹类</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-弹夹类"><span class="toc-text">3. 弹夹类</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#4-枪类"><span class="toc-text">4. 枪类</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#参考代码"><span class="toc-text">参考代码</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  </body>
+</html>

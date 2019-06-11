@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
+    
+    
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <title>MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】 | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/02/28/cnblog_8485209/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-28T10:46:00+08:00">2018-02-28 10:46:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/02/28/cnblog_8485209/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/02/28/cnblog_8485209/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="这是👉MySQL-之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要"><a href="#这是👉MySQL-之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要" class="headerlink" title="这是👉MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要"></a><a href="/2018/02/28/cnblog_8485209/">这是👉MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要</a></h1><a id="more"></a>
+<h1 id="浏览目录"><a href="#浏览目录" class="headerlink" title="浏览目录:"></a>浏览目录:</h1><ul>
+<li><p>1.视图  </p>
+</li>
+<li><p>2.触发器</p>
+</li>
+<li>3.存储过程</li>
+<li>4.函数</li>
+<li>5.事物</li>
+<li>6.数据库锁</li>
+<li>7.数据库备份</li>
+</ul>
+<h2 id="1-视图"><a href="#1-视图" class="headerlink" title="1.视图"></a>1.视图</h2><blockquote>
+<p>  <strong>视图:</strong> 是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含一系列带有名称的列和行数据</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>视图有如下特点;<br> 1. 视图的列可以来自不同的表，是表的抽象和逻辑意义上建立的新关系。<br> 2. 视图是由基本表（实表）产生的表（虚表）。<br> 3. 视图的建立和删除不影响基本表。<br> 4. 对视图内容的更新（添加、删除和修改）直接影响基本表。<br> 5. 当视图来自多个基本表时，不允许添加和删除数据,但是能修改数据!</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1.创建视图</p>
+</blockquote>
+<blockquote>
+<pre><code>create view 视图名称  as sql 查询语句
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.使用视图</p>
+</blockquote>
+<blockquote>
+<pre><code>select * from 视图名称;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>3.更新视图</p>
+</blockquote>
+<blockquote>
+<pre><code>alter view 视图名称 AS SQL语句
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>4. 删除视图</p>
+</blockquote>
+<blockquote>
+<pre><code>drop view ren_view;
+</code></pre></blockquote>
+<h2 id="2-触发器-trigger"><a href="#2-触发器-trigger" class="headerlink" title="2.触发器-trigger"></a>2.触发器-trigger</h2><blockquote>
+<p><strong>触发器</strong> ：监视某种情况，并触发某种操作。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>触发器创建语法四要素：1.监视地点(table)</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.监视事件(insert/update/delete)</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>   3.触发时间(after/before)</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>4.触发事件(insert/update/delete)</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1.创建触发器语法</p>
+</blockquote>
+<blockquote>
+<pre><code>create trigger triggerName  after/before  insert/update/delete
+</code></pre></blockquote>
+<blockquote>
+<pre><code>on 表名 for each row #这句话是固定的
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#需要执行的sql语句
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+<pre><code>注意1:after/before: 只能选一个 ,after 表示 后置触发, before 表示前置触发
+</code></pre></blockquote>
+<blockquote>
+<pre><code>注意2:insert/update/delete:只能选一个
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>创建两张表</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>#商品表</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>create table goods(</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>  id int primary key auto_increment,</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>  name varchar(20),</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>  num int</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>);</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>|</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>#订单表</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>create table order_table(</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<pre><code>oid int primary key auto_increment,
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<pre><code>gid int,
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<pre><code>much int
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>);  </p>
+<p>—|—  </p>
+<p>添加3条商品数据</p>
+</blockquote>
+<blockquote>
+<pre><code>insert into goods(name,num) values(&apos;商品1&apos;,10),(&apos;商品2&apos;,10),(&apos;商品3&apos;,10);
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>如果我们在没使用触发器之前：假设我们现在卖了3个商品1，我们需要做两件事</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1.往订单表插入一条记录</p>
+</blockquote>
+<blockquote>
+<pre><code>insert into order_table(gid,much) values(1,3);
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.更新商品表商品1的剩余数量</p>
+</blockquote>
+<blockquote>
+<pre><code>update goods set num=num-3 where id=1;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>现在，我们来创建一个触发器：</p>
+</blockquote>
+<blockquote>
+<pre><code>create trigger tg1 after insert on  order_table
+</code></pre></blockquote>
+<blockquote>
+<pre><code>for each row
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin  
+  update goods set num = num -3 where id = 1;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>这时候我们只要执行：</p>
+</blockquote>
+<blockquote>
+<pre><code>insert into order_table(gid,much) values(1,3);  
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>会发现商品1的数量变为7了，说明在我们插入一条订单的时候，</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>触发器自动帮我们做了更新操作。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>但现在会有一个问题，因为我们触发器里面num和id都是写死的，所以不管我们买哪个商品，最终更新的都是商品1的数量。比如：我们往订单表再插入一条记录：</p>
+</blockquote>
+<blockquote>
+<pre><code>insert into order_table(gid,much) values(2,3);
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>执行完后会发现商品1的数量变4了，而商品2的数量没变，这样显然不是我们想要的结果。我们需要改改我们之前创建的触发器。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>我们如何在触发器引用行的值，也就是说我们要得到我们新插入的订单记录中的gid或much的值。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>对于insert而言，新插入的行用new来表示，行中的每一列的值用new.列名来表示。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>所以现在我们可以这样来改我们的触发器:</p>
+</blockquote>
+<blockquote>
+<pre><code>create trigger tg2 after insert on order_table
+</code></pre></blockquote>
+<blockquote>
+<pre><code>for each row
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>update goods set num = num-new.much  where id = new.gid;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>第二个触发器创建完毕，我们先把第一个触发器删掉</p>
+</blockquote>
+<blockquote>
+<pre><code>drop trigger tg1;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>再来测试一下，插入一条订单记录：</p>
+</blockquote>
+<blockquote>
+<pre><code>insert into order_table(gid,much) values(2,3)
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>执行完发现商品2的数量变为7了，现在就对了。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>现在还存在两种情况：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1.当用户撤销一个订单的时候，我们这边直接删除一个订单，我们是不是需要把对应的商品数量再加回去呢？</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p> 对于delete而言：原本有一行,后来被删除，想引用被删除的这一行，用old来表示旧表中的值，old.列名可以引用原(旧)表中的值。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>那我们的触发器就该这样写：</p>
+</blockquote>
+<blockquote>
+<pre><code>create trigger tg3 afert delete  on order_table
+</code></pre></blockquote>
+<blockquote>
+<pre><code>for each row
+</code></pre></blockquote>
+<blockquote>
+<pre><code>bigen
+</code></pre></blockquote>
+<blockquote>
+<pre><code>update goods set num = num + old.much where id = old.gid;--
+</code></pre><p>(注意这边的变化)</p>
+</blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.当用户修改一个订单的数量时，我们触发器修改怎么写?</p>
+</blockquote>
+<blockquote>
+<pre><code>create trigger tg4 after update on order_table
+</code></pre></blockquote>
+<blockquote>
+<pre><code>for each row
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>update goods set num = num+old.much-new.much where id = old.gid;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<h2 id="3-存储过程"><a href="#3-存储过程" class="headerlink" title="3.存储过程"></a>3.存储过程</h2><blockquote>
+<p> MySQL数据库在5.0版本后开始支持存储过程，那么什么是存储过程呢？怎么创建、查看和删除存储过程呢？存储过程有什么优点？</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>存储过程</strong><br>：类似于函数(方法),简单的说存储过程是为了完成某个数据库中的特定功能而编写的语句集合，该语句集包括SQL语句（对数据的增删改查）、条件语句和循环语句等。  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ol>
+<li>查看现有的存储过程</li>
+</ol>
+</blockquote>
+<blockquote>
+<pre><code>show procedure status;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2 .删除存储过程</p>
+</blockquote>
+<blockquote>
+<pre><code>drop procedure 存储过程名称;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>调用 存储过程</li>
+</ol>
+</blockquote>
+<blockquote>
+<pre><code>call 存储过程名称(参数入/出类型 参数名 数据类型);
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p> 4.创建存储过程</p>
+</blockquote>
+<blockquote>
+<pre><code>1.体会封装
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#1.体会封装
+</code></pre></blockquote>
+<blockquote>
+<pre><code>create procedure p1 ()
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>    select * from account;  
+end
+</code></pre></blockquote>
+<blockquote>
+<pre><code>2.SQL 体会参数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>create procedure p2(in i int,out n varchar(50))
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select name into n from account where id = i;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-- 调用
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set @name =null;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CALL p2(1,@name);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select @name;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>注意1: mysql中有三种出入参数类型:分别为:1. <strong>in</strong> 入参类型   2. <strong>out</strong> 出参类型    3. <strong>inout</strong><br>出入参类型  </p>
+</blockquote>
+<blockquote>
+<p>注意2: into 关键字 可以 将前面字段的查询结果 执行 给 into 后面的变量.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>3.SQL 体会控制</p>
+</blockquote>
+<blockquote>
+<pre><code>#3.SQL 体会控制
+</code></pre></blockquote>
+<blockquote>
+<pre><code>create procedure p3(in x int,in c char(1))
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>if c =&apos;d&apos; then
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select * from account where money &gt;x;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>else
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select * from account where money &lt;x;  
+ 　　end if;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p> 4.体会循环:计算1-100累加的和,并且返回计算结果.</p>
+</blockquote>
+<blockquote>
+<pre><code>#4.体会循环:计算1-100累加的和,并且返回计算结果.
+</code></pre></blockquote>
+<blockquote>
+<pre><code>create procedure p4(inout n int)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>begin
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DECLARE sum int default 0; -- 设置总和变量,并且指定初始值0
+</code></pre></blockquote>
+<blockquote>
+<pre><code>declare i int; -- 声明变量
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set i = 0;    -- 通过set为变量设置值
+</code></pre></blockquote>
+<blockquote>
+<pre><code>　　  while i&lt;=n DO  -- 开始循环
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set sum = sum +i;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set i = i+1;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end while; -- 结束循环
+</code></pre></blockquote>
+<blockquote>
+<pre><code>　　  select sum; -- 提供结果
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set n = sum;--将计算结果提供给 输出变量 n;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-- 调用:
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set @n = 100;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>call p4(@n);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select @n;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>存储过程优点</strong> ：<br>         1、存储过程增强了SQL语言灵活性。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>存储过程可以使用控制语句编写，可以完成复杂的判断和较复杂的运算，有很强的灵活性；<br>         2、减少网络流量，降低了网络负载。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>存储过程在服务器端创建成功后，只需要调用该存储过程即可，而传统的做法是每次都将大量的SQL语句通过网络发送至数据库服务器端然后再执行<br>         3、存储过程只在创造时进行编译，以后每次执行存储过程都不需再重新编译。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>一般SQL语句每执行一次就编译一次,所以使用存储过程可提高数据库执行速度。<br> <strong>存储过程缺点</strong> ：  </p>
+</blockquote>
+<blockquote>
+<p>  1、扩展功能不方便</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2、不便于系统后期维护</p>
+</blockquote>
+<h2 id="4-函数"><a href="#4-函数" class="headerlink" title="4.函数"></a>4.函数</h2><blockquote>
+<p>  <strong>MySQL提供的内建函数:</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<blockquote>
+<pre><code>一、数学函数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>ROUND(x,y)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>返回参数x的四舍五入的有y位小数的值
+</code></pre></blockquote>
+<blockquote>
+<pre><code>RAND()
+</code></pre></blockquote>
+<blockquote>
+<pre><code>返回０到１内的随机值,可以通过提供一个参数(种子)使RAND()随机数生成器生成一个指定的值。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>二、聚合函数(常用于GROUP BY从句的SELECT查询中)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>AVG(col)返回指定列的平均值
+</code></pre></blockquote>
+<blockquote>
+<pre><code>COUNT(col)返回指定列中非NULL值的个数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>MIN(col)返回指定列的最小值
+</code></pre></blockquote>
+<blockquote>
+<pre><code>MAX(col)返回指定列的最大值
+</code></pre></blockquote>
+<blockquote>
+<pre><code>SUM(col)返回指定列的所有值之和
+</code></pre></blockquote>
+<blockquote>
+<pre><code>    GROUP_CONCAT(col) 返回由属于一组的列值连接组合而成的结果  
+
+三、字符串函数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CHAR_LENGTH(str)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>返回值为字符串str 的长度，长度的单位为字符。一个多字节字符算作一个单字符。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CONCAT(str1,str2,...)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>字符串拼接
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如有任何一个参数为NULL ，则返回值为 NULL。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CONCAT_WS(separator,str1,str2,...)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>字符串拼接（自定义连接符）
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CONCAT_WS()不会忽略任何空字符串。 (然而会忽略所有的 NULL）。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CONV(N,from_base,to_base)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>进制转换
+</code></pre></blockquote>
+<blockquote>
+<pre><code>例如：
+</code></pre></blockquote>
+<blockquote>
+<pre><code>SELECT CONV(&apos;a&apos;,16,2); 表示将 a 由16进制转换为2进制字符串表示
+</code></pre></blockquote>
+<blockquote>
+<pre><code>FORMAT(X,D)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>将数字X 的格式写为&apos;#,###,###.##&apos;,以四舍五入的方式保留小数点后 D 位， 并将结果以字符串的形式返回。若  D
+</code></pre><p>为 0, 则返回结果不带有小数点，或不含小数部分。</p>
+</blockquote>
+<blockquote>
+<pre><code>例如：
+</code></pre></blockquote>
+<blockquote>
+<pre><code>SELECT FORMAT(12332.1,4); 结果为： &apos;12,332.1000&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>INSERT(str,pos,len,newstr)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在str的指定位置插入字符串
+</code></pre></blockquote>
+<blockquote>
+<pre><code>pos：要替换位置其实位置
+</code></pre></blockquote>
+<blockquote>
+<pre><code>len：替换的长度
+</code></pre></blockquote>
+<blockquote>
+<pre><code>newstr：新字符串
+</code></pre></blockquote>
+<blockquote>
+<pre><code>特别的：
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如果pos超过原字符串长度，则返回原字符串
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如果len超过原字符串长度，则由新字符串完全替换
+</code></pre></blockquote>
+<blockquote>
+<pre><code>INSTR(str,substr)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>返回字符串 str 中子字符串的第一个出现位置。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>LEFT(str,len)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>返回字符串str 从开始的len位置的子序列字符。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>LOWER(str)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>变小写
+</code></pre></blockquote>
+<blockquote>
+<pre><code>UPPER(str)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>变大写
+</code></pre></blockquote>
+<blockquote>
+<pre><code>REVERSE(str)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>返回字符串 str ，顺序和字符顺序相反。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>SUBSTRING(str,pos) , SUBSTRING(str FROM pos) SUBSTRING(str,pos,len)
+</code></pre><p>, SUBSTRING(str FROM pos FOR len)</p>
+</blockquote>
+<blockquote>
+<pre><code>不带有len 参数的格式从字符串str返回一个子字符串，起始于位置
+</code></pre><p>pos。带有len参数的格式从字符串str返回一个长度同len字符相同的子字符串，起始于位置 pos。 使用 FROM的格式为标准 SQL<br>语法。也可能对pos使用一个负值。假若这样，则子字符串的位置起始于字符串结尾的pos 字符，而不是字符串的开头位置。在以下格式的函数中可以对pos<br>使用一个负值。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT SUBSTRING(&apos;Quadratically&apos;,5);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;ratically&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT SUBSTRING(&apos;foobarbar&apos; FROM 4);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;barbar&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT SUBSTRING(&apos;Quadratically&apos;,5,6);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;ratica&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT SUBSTRING(&apos;Sakila&apos;, -3);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;ila&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT SUBSTRING(&apos;Sakila&apos;, -5, 3);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;aki&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT SUBSTRING(&apos;Sakila&apos; FROM -4 FOR 2);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;ki&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>四、日期和时间函数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CURDATE()或CURRENT_DATE() 返回当前的日期
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CURTIME()或CURRENT_TIME() 返回当前的时间
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DAYOFWEEK(date)   返回date所代表的一星期中的第几天(1~7)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DAYOFMONTH(date)  返回date是一个月的第几天(1~31)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DAYOFYEAR(date)   返回date是一年的第几天(1~366)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DAYNAME(date)   返回date的星期名，如：SELECT DAYNAME(CURRENT_DATE);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>FROM_UNIXTIME(ts,fmt)  根据指定的fmt格式，格式化UNIX时间戳ts
+</code></pre></blockquote>
+<blockquote>
+<pre><code>HOUR(time)   返回time的小时值(0~23)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>MINUTE(time)   返回time的分钟值(0~59)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>MONTH(date)   返回date的月份值(1~12)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>MONTHNAME(date)   返回date的月份名，如：SELECT MONTHNAME(CURRENT_DATE);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>NOW()    返回当前的日期和时间
+</code></pre></blockquote>
+<blockquote>
+<pre><code>QUARTER(date)   返回date在一年中的季度(1~4)，如SELECT QUARTER(CURRENT_DATE);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>WEEK(date)   返回日期date为一年中第几周(0~53)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>YEAR(date)   返回日期date的年份(1000~9999)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>重点:
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DATE_FORMAT(date,format) 根据format字符串格式化date值
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT DATE_FORMAT(&apos;2009-10-04 22:23:00&apos;, &apos;%W %M %Y&apos;);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;Sunday October 2009&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT DATE_FORMAT(&apos;2007-10-04 22:23:00&apos;, &apos;%H:%i:%s&apos;);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;22:23:00&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT DATE_FORMAT(&apos;1900-10-04 22:23:00&apos;,
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt;                 &apos;%D %y %a %d %m %b %j&apos;);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;4th 00 Thu 04 10 Oct 277&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT DATE_FORMAT(&apos;1997-10-04 22:23:00&apos;,
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt;                 &apos;%H %k %I %r %T %S %w&apos;);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;22 22 10 10:23:00 PM 22:23:00 00 6&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT DATE_FORMAT(&apos;1999-01-01&apos;, &apos;%X %V&apos;);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;1998 52&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt; SELECT DATE_FORMAT(&apos;2006-06-00&apos;, &apos;%d&apos;);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-&gt; &apos;00&apos;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>五、加密函数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>MD5()  
+    计算字符串str的MD5校验和
+</code></pre></blockquote>
+<blockquote>
+<pre><code>PASSWORD(str)  
+    返回字符串str的加密版本，这个加密过程是不可逆转的，和UNIX密码加密过程使用不同的算法。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>六、控制流函数  
+    CASE WHEN[test1] THEN [result1]...ELSE [default] END
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如果testN是真，则返回resultN，否则返回default
+</code></pre></blockquote>
+<blockquote>
+<pre><code>CASE [test] WHEN[val1] THEN [result]...ELSE [default]END  
+    如果test和valN相等，则返回resultN，否则返回default
+</code></pre></blockquote>
+<blockquote>
+<pre><code>IF(test,t,f)  
+    如果test是真，返回t；否则返回f
+</code></pre></blockquote>
+<blockquote>
+<pre><code>IFNULL(arg1,arg2)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如果arg1不是空，返回arg1，否则返回arg2
+</code></pre></blockquote>
+<blockquote>
+<pre><code>NULLIF(arg1,arg2)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如果arg1=arg2返回NULL；否则返回arg1  
+</code></pre></blockquote>
+<blockquote>
+<p>MySQL内建函数</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>更多函数: <a href="https://dev.mysql.com/doc/refman/5.7/en/functions.html" target="_blank" rel="noopener">官方猛击这里</a></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1、自定义函数</p>
+</blockquote>
+<blockquote>
+<pre><code>CREATE FUNCTION fun1(i1 int,i2 int)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>RETURNS INT //设置返回类型
+</code></pre></blockquote>
+<blockquote>
+<pre><code>BEGIN
+</code></pre></blockquote>
+<blockquote>
+<pre><code>DECLARE sum int default 0;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set sum = i1+i2;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>RETURN(sum); //返回结果
+</code></pre></blockquote>
+<blockquote>
+<pre><code>end
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.调用自定义函数</p>
+</blockquote>
+<blockquote>
+<pre><code>#直接调用自定义函数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select fun1(1,5);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#在sql语句中使用自定义函数
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select fun1(参数1,参数2),name from 表名
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>3.删除自定义函数</p>
+</blockquote>
+<blockquote>
+<pre><code>DROP FUNCTION fun_name;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p> 4.函数与存储过程的区别:</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p><img src="https://images2017.cnblogs.com/blog/1284211/201801/1284211-20180110165949129-789952402.png" alt=""></p>
+<h2 id="5-事物处理"><a href="#5-事物处理" class="headerlink" title="5.事物处理"></a>5.事物处理</h2><blockquote>
+<p><strong>  一、 什么是事务</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>事务就是一段sql 语句的批处理，但是这个批处理是一个原子的，不可分割，要么都执行，要么回滚（rollback）都不执行。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>二、为什么出现这种技术</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>为什么要使用事务这个技术呢？<br>现在的很多软件都是多用户，多程序，多线程的，对同一个表可能同时有很多人在用，为保持数据的一致性，所以提出了事务的概念。这样很抽象，举个例子：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>A 给B 要划钱，A 的账户-1000元， B 的账户就要+1000元，这两个update 语句必须作为一个整体来执行，不然A 扣钱了，B<br>没有加钱这种情况很难处理（找出原因）。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>三、事物的特性</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>80年代中国人结婚四大件：手表、自行车、缝纫机、收音机（三转一响）。要把事务娶回家同样需要四大件，所以事务很刻薄（ACID），四大件清单：原子性(Atom）、一致性（Consistent）、隔离性（Isolate）、持久性（Durable）。ACID就是数据库事务正确执行的四个特性的缩写。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>原子性</strong> ：要么不谈，要谈就要结婚！</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>对于其数据修改，要么全都执行，要么全都不执行。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>一致性</strong> ：恋爱时，什么方式爱我；结婚后还得什么方式爱我；</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>数据库原来有什么样的约束，事务执行之后还需要存在这样的约束，所有规则都必须应用于事务的修改，以保持所有数据的完整性。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>隔离性</strong> ：闹完洞房后，是俩人的私事。</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>一个事务不能知道另外一个事务的执行情况（中间状态）</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>持久性</strong> ：一旦领了结婚证，无法后悔。</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>即使出现致命的系统故障也将一直保持。不要告诉我系统说commit成功了，回头电话告诉我，服务器机房断电了，我的事务涉及到的数据修改可能没有进入数据库。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>另外需要注意:</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>在 MySQL 中只有使用了 Innodb 数据库引擎的数据库或表才支持事务。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>事务处理可以用来维护数据库的完整性，保证成批的 SQL 语句要么全部执行，要么全部不执行。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>事务用来管理 insert,update,delete 语句</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<h5 id="四、事务控制语句："><a href="#四、事务控制语句：" class="headerlink" title="四、事务控制语句："></a>四、事务控制语句：</h5></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>BEGIN 或 START TRANSACTION；显式地开启一个事务；</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>COMMIT；也可以使用COMMIT WORK，不过二者是等价的。COMMIT会提交事务，并使已对数据库进行的所有修改称为永久性的；</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>ROLLBACK；有可以使用ROLLBACK WORK，不过二者是等价的。回滚会结束用户的事务，并撤销正在进行的所有未提交的修改；</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>SAVEPOINT : 保存点,可以把一个事物分割成几部分.在执行ROLLBACK 时 可以指定在什么位置上进行回滚操作.</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>注意: SET AUTOCOMMIT=0 ;禁止自动提交 和 SET AUTOCOMMIT=1 开启自动提交.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>五、例子: 鲁班转账给后羿</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1.创建表</p>
+</blockquote>
+<blockquote>
+<pre><code>create table account(
+</code></pre></blockquote>
+<blockquote>
+<pre><code>id int(50) not null auto_increment primary key,
+</code></pre></blockquote>
+<blockquote>
+<pre><code>name VARCHAR(50) not null,
+</code></pre></blockquote>
+<blockquote>
+<pre><code>money DOUBLE(5,2) not NULL
+</code></pre></blockquote>
+<blockquote>
+<pre><code>);
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.插入数据</p>
+</blockquote>
+<blockquote>
+<pre><code>insert into account (name,money) values(&apos;鲁班&apos;,250),(&apos;后羿&apos;,5000);
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>3.执行转账</p>
+</blockquote>
+<blockquote>
+<pre><code>start transaction; -- 开启事物
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--  执行sql语句操作
+</code></pre></blockquote>
+<blockquote>
+<pre><code>update account set money = money - 500 where id =&apos;1&apos;;  
+update account set money = money+500 where id = &apos;2&apos;;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>commit;  -- 手动提交事物
+</code></pre></blockquote>
+<blockquote>
+<pre><code>rollback; -- 回滚事物
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--  查看结果
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select * from account;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<blockquote>
+<pre><code>START TRANSACTION ;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>insert into account (name,money) values(&apos;李元芳&apos;,1000);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>SAVEPOINT s1;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>insert into account (name,money) values(&apos;张桂枝&apos;,1500);
+</code></pre></blockquote>
+<blockquote>
+<pre><code>ROLLBACK to s1;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>保存点示例</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>最后<br>我们了解几个数据库不得不知的秘密，事务一旦启动，读数据分成两种，被别人读和读别人的数据。被别人读会产生脏数据的问题。读别人的会产生不可重复读和幻读两种情况。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>  *<br><a href="http://www.cnblogs.com/wangfengming/articles/8269290.html" target="_blank" rel="noopener"><strong>脏读</strong></a>：读到的数据不是此刻真实的数据。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>脏读就是指,当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据。打个比方：</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>我的支付宝余额3000元，事务A改为2000，但事务A尚未提交。与此同时，事务B正在读取，并且<br>“成功”读取到余额为2000。随后，事务A由于网络或者IO原因执行失败，回滚成3000元，事务B拿到的值继续运算，就是错误的.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>银行转帐，A给B转1000元，B+1000，这个时候，B就能够读取到。这个时候A还没有减掉1000元，后悔了，没有提交，这个时候B把钱提走了，这不扯吗？<br>银行在早年代出现类似情形的bug.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>  *<br><a href="http://www.cnblogs.com/wangfengming/articles/8269400.html" target="_blank" rel="noopener"><strong>不可重复读</strong></a>：读了两次，值不一样。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>一个事务对同一行数据重复读取两次，但是却得到了不同的结果。例如，在两次读取的中途，有人对该行数据进行了update操作，并提交，结果就让当前这个事务郁闷了<br>…</p>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>还是余额3000元，事务A是一个比较长的事务，一开始读取到3000，结果恰好我的水电自动扣款100成功(事务B执行成功)，事务A在最后读取到的余额成了2900元。这就是不可重复读现象。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>  *<br><a href="http://www.cnblogs.com/wangfengming/articles/8269088.html" target="_blank" rel="noopener"><strong>幻读</strong></a>：原来没有，现在有了…</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>事务在操作过程中进行两次查询，第二次查询的结果包含了第一次查询中未出现的数据（这里并不要求两次查询的SQL语句相同）。这是因为在两次查询过程中有另外一个事务插入数据造成的。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>事务A正在统计到目前为止的订单数量，一开始读到的是10笔。结果恰好这个时候，家人用此支付宝买了一个家电。等事务A打算提交的时候发现成了11笔。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>事物的 4种 隔离机制:</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<ol>
+<li>读未提交（read uncommitted）：隔离级别是最低，会导致引发脏读，不可重复读，和幻读。</li>
+</ol>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>这种隔离级别可以让当前事务读取到其它事物还没有提交的数据。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.读已提交（read committed）：可避免脏读情况发生,  但引发 不可重复读，和幻读。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>这种隔离级别可以让当前事务读取到其它事物已经提交的数据。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>3.可重复读取（repeatable read）:MySQL默认的事务隔离级别</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>它可以避免脏读、不可重复读的问题，确保同一个事务的多个实例在并发操作数据的时候，会看到相同的数据行。但是理论上，该级别会出现幻读情况，不过MySQL的存储引擎通过多版本并发控制机制解决了该问题，因此该级别是可以避免幻读的。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>4.串行（serializable）：隔离级别最高,可避免以上所有问题, 但会降低可并发性.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>这种隔离级别将事物放在一个队列中，每个事物开始之后，别的事物被挂起。同一个时间点只能有一个事物能操作数据库对象。这种隔离级别对于数据的完整性是最高的，但是同时大大降低了系统的可并发性。</p>
+<h2 id="6-数据锁"><a href="#6-数据锁" class="headerlink" title="6.数据锁"></a>6.数据锁</h2><blockquote>
+<p><strong>1.  </strong> <strong>锁的基本概念</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>当并发事务同时访问一个资源时，有可能导致数据不一致，因此需要一种机制来将数据访问顺序化，以保证数据库数据的一致性。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>2.  </strong> <strong>锁的基本类型</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>** 多个事务同时读取一个对象的时候，是不会有冲突的。同时读和写，或者同时写才会产生冲突。因此为了提高数据库的并发性能，通常会定义两种锁：
+</strong>共享锁和排它锁。**</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>2.1  </strong> <strong>共享锁（</strong> <strong>Shared Lock</strong> <strong>，也叫</strong> <strong>S</strong> <strong>锁）</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>共享锁(S)表示对数据进行读操作。因此多个事务可以同时为一个对象加共享锁。（如果试衣间的门还没被锁上，顾客都能够同时进去参观）</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>2.2  </strong> <strong>排他锁</strong> <strong>(Exclusive Lock</strong> <strong>，也叫</strong> <strong>X</strong> <strong>锁</strong> <strong>)</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>排他锁(X)表示对数据进行写操作。如果一个事务对<br>对象加了排他锁，其他事务就不能再给它加任何锁了。(某个顾客把试衣间从里面反锁了，其他顾客想要使用这个试衣间，就只有等待锁从里面给打开了).</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>3. 实际开发中常见的两种锁:</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><em>**</em> 3.1悲观锁<br>顾名思义，就是很悲观，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block(阻塞)直到它拿到锁。传统的关系型<a href="http://lib.csdn.net/base/mysql" title="MySQL知识库" target="_blank" rel="noopener">数据库</a>里边就用到了很多这种锁机制.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>注意：要使用悲观锁，我们必须关闭mysql数据库的自动提交属性.因为MySQL默认使用autocommit模式，也就是说，当你执行一个更新操作后，MySQL会立刻将结果进行提交。关闭自动提交命令为：set<br>autocommit=0;</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>设置完autocommit后，我们就可以执行我们的正常业务了。具体如下：</p>
+</blockquote>
+<blockquote>
+<pre><code>-- 0.开始事务
+</code></pre></blockquote>
+<blockquote>
+<pre><code>set autocommit=0;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-- 1.查询出数据信息
+</code></pre></blockquote>
+<blockquote>
+<pre><code>select * from ren where p_id=&apos;p001&apos; for update;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-- 2.修改当前人员信息
+</code></pre></blockquote>
+<blockquote>
+<pre><code>update ren set p_name=&apos;张1丰&apos; where p_id=&apos;p001&apos;;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-- 3. 提交事务
+</code></pre></blockquote>
+<blockquote>
+<pre><code>-- commit;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>在另外的查询页面执行:</p>
+</blockquote>
+<blockquote>
+<pre><code>select * from ren where p_id=&apos;p001&apos; for update;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>会发现当前查询会进入到等待状态,不会显示出数据,当上面的sql执行完毕提交事物后,当前sql才会显示结果.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>注意1:在使用悲观锁时,如果表中没有指定主键,则会进行锁表操作.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>注意2: 悲观锁的确保了数据的安全性，在数据被操作的时候锁定数据不被访问，但是这样会带来很大的性能问题。因此悲观锁在实际开发中使用是相对比较少的。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p> 3.2 <strong>  乐观锁</strong>,<br>顾名思义，就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>使用乐观锁的两种方式:</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>1.使用数据版本（Version）记录机制实现，这是乐观锁最常用的一种实现<br>方式。何谓数据版本？即为数据增加一个版本标识，一般是通过为数据库表增加一个数字类型的 “version”<br>字段来实现。当读取数据时，将version字段的值一同读出，数据每更新一次，对此version值加一。当我们提交更新的时候，判断数据库表对应记录<br>的当前版本信息与第一次取出来的version值进行比对，如果数据库表当前版本号与第一次取出来的version值相等，则予以更新，否则认为是过期数 据。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p> 代码示例:</p>
+</blockquote>
+<blockquote>
+<pre><code>update account set name=&apos;ygz&apos; , version = version+1 where id = &apos;1&apos; and
+</code></pre><p>version = 1;</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>2.乐观锁定的第二种实现方式和第一种差不多，同样是在需要乐观锁控制的table中增加一个字段，名称无所谓，字段类型使用时间戳 （datatime）,<br>和上面的version类似，也是在更新提交的时候检查当前数据库中数据的时间戳和自己更新前取到的时间戳进行对比，如果一致则OK，否则就是版本冲突。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>两种锁各有优缺点:</strong></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>不可认为一种好于另一种，像乐观锁适用于写入比较少的情况下，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。但如果经常产生冲突，上层应用会不断的进行retry(重试)，这样反倒是降低了性能，所以这种情况下用悲观锁就比较合适.</p>
+<h2 id="7-数据库备份"><a href="#7-数据库备份" class="headerlink" title="7.数据库备份"></a>7.数据库备份</h2><p>mysqldump 命令将数据库中的数据备份成一个文本文件。表的结构和表中的数据将存储在生成的文本文件中。</p>
+<p>mysqldump命令的工作原理很简单。它先查出需要备份的表的结构，再在文本文件中生成一个CREATE语句。然后，将表中的所有记录转换成一条INSERT语句。然后通过这些语句，就能够创建表并插入数据。</p>
+<blockquote>
+<p><strong>1. </strong>使用mysqldump实现逻辑备份<em>**</em></p>
+</blockquote>
+<blockquote>
+<pre><code>#语法：
+</code></pre></blockquote>
+<blockquote>
+<pre><code># mysqldump -h 服务器 -u用户名 -p密码 数据库名 &gt; 备份文件.sql
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#示例：
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#单库备份
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump -uroot -p123456 db1 &gt; c:/db1.sql
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump -uroot -p123456 db1 table1 table2 &gt; c:/db1-table1-table2.sql
+</code></pre></blockquote>
+<blockquote>
+<pre><code>#多库备份
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump -uroot -p123456 --databases db1 db2 mysql db3 &gt;
+</code></pre><p>c:/db1_db2_mysql_db3.sql</p>
+</blockquote>
+<blockquote>
+<pre><code>#备份所有库
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump -uroot -p123456 --all-databases &gt; c:/all.sql
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<blockquote>
+<pre><code>--all-databases  , - A
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出全部数据库。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--all-tablespaces  , -Y
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出全部表空间。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --all-tablespaces
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--no-tablespaces  , -y
+</code></pre></blockquote>
+<blockquote>
+<pre><code>不导出任何表空间信息。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --no-tablespaces
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--add-drop-database
+</code></pre></blockquote>
+<blockquote>
+<pre><code>每个数据库创建之前添加drop数据库语句。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --add-drop-database
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--add-drop-table
+</code></pre></blockquote>
+<blockquote>
+<pre><code>每个数据表创建之前添加drop数据表语句。(默认为打开状态，使用--skip-add-drop-table取消选项)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases  (默认添加drop语句)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases -skip-add-drop-table  (取消drop语句)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--add-locks
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在每个表导出之前增加LOCK TABLES并且之后UNLOCK  TABLE。(默认为打开状态，使用--skip-add-locks取消选项)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases  (默认添加LOCK语句)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases -skip-add-locks   (取消LOCK语句)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--allow-keywords
+</code></pre></blockquote>
+<blockquote>
+<pre><code>允许创建是关键词的列名字。这由表名前缀于每个列名做到。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --allow-keywords
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--apply-slave-statements
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在&apos;CHANGE MASTER&apos;前添加&apos;STOP SLAVE&apos;，并且在导出的最后添加&apos;START SLAVE&apos;。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --apply-slave-statements
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--character-sets-dir
+</code></pre></blockquote>
+<blockquote>
+<pre><code>字符集文件的目录
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases  --character-sets-
+</code></pre><p>dir=/usr/local/mysql/share/mysql/charsets</p>
+</blockquote>
+<blockquote>
+<pre><code>--comments
+</code></pre></blockquote>
+<blockquote>
+<pre><code>附加注释信息。默认为打开，可以用--skip-comments取消
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases  (默认记录注释)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --skip-comments   (取消注释)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--compatible
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出的数据将和其它数据库或旧版本的MySQL
+</code></pre><p>相兼容。值可以为ansi、mysql323、mysql40、postgresql、oracle、mssql、db2、maxdb、no_key_options、no_tables_options、no_field_options等，</p>
+</blockquote>
+<blockquote>
+<pre><code>要使用几个值，用逗号将它们隔开。它并不保证能完全兼容，而是尽量兼容。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --compatible=ansi
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--compact
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出更少的输出信息(用于调试)。去掉注释和头尾等结构。可以使用选项：--skip-add-drop-table  --skip-add-
+</code></pre><p>locks –skip-comments –skip-disable-keys</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --compact
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--complete-insert,  -c
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用完整的insert语句(包含列名称)。这么做能提高插入效率，但是可能会受到max_allowed_packet参数的影响而导致插入失败。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --complete-insert
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--compress, -C
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在客户端和服务器之间启用压缩传递所有信息
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --compress
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--create-options,  -a
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在CREATE TABLE语句中包括所有MySQL特性选项。(默认为打开状态)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--databases,  -B
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出几个数据库。参数后面所有名字参量都被看作数据库名。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --databases test mysql
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--debug
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出debug信息，用于调试。默认值为：d:t,/tmp/mysqldump.trace
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --debug
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --debug=&quot; d:t,/tmp/debug.trace&quot;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--debug-check
+</code></pre></blockquote>
+<blockquote>
+<pre><code>检查内存和打开文件使用说明并退出。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --debug-check
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--debug-info
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出调试信息并退出
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --debug-info
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--default-character-set
+</code></pre></blockquote>
+<blockquote>
+<pre><code>设置默认字符集，默认值为utf8
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --default-character-set=utf8
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--delayed-insert
+</code></pre></blockquote>
+<blockquote>
+<pre><code>采用延时插入方式（INSERT DELAYED）导出数据
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --delayed-insert
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--delete-master-logs
+</code></pre></blockquote>
+<blockquote>
+<pre><code>master备份后删除日志. 这个参数将自动激活--master-data。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --delete-master-logs
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--disable-keys
+</code></pre></blockquote>
+<blockquote>
+<pre><code>对于每个表，用/*!40000 ALTER TABLE tbl_name DISABLE KEYS */;和/*!40000 ALTER
+</code></pre><p>TABLE tbl_name ENABLE KEYS<br>*/;语句引用INSERT语句。这样可以更快地导入dump出来的文件，因为它是在插入所有行后创建索引的。该选项只适合MyISAM表，默认为打开状态。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--dump-slave
+</code></pre></blockquote>
+<blockquote>
+<pre><code>该选项将主的binlog位置和文件名追加到导出数据的文件中(show slave status)。设置为1时，将会以CHANGE
+</code></pre><p>MASTER命令输出到数据文件；设置为2时，会在change前加上注释。该选项将会打开–lock-all-tables，除非–single-<br>transaction被指定。该选项会自动关闭–lock-tables选项。默认值为0。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --dump-slave=1
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --dump-slave=2
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--master-data
+</code></pre></blockquote>
+<blockquote>
+<pre><code>该选项将当前服务器的binlog的位置和文件名追加到输出文件中(show master status)。如果为1，将会输出CHANGE
+</code></pre><p>MASTER 命令；如果为2，输出的CHANGE  MASTER命令前添加注释信息。该选项将打开–lock-all-tables 选项，除非–<br>single-transaction也被指定（在这种情况下，全局读锁在开始导出时获得很短的时间；其他内容参考下面的–single-<br>transaction选项）。该选项自动关闭–lock-tables选项。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --master-data=1;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --master-data=2;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--events, -E
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出事件。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --events
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--extended-insert,  -e
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用具有多个VALUES列的INSERT语法。这样使导出文件更小，并加速导入时的速度。默认为打开状态，使用--skip-extended-
+</code></pre><p>insert取消选项。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases--skip-extended-insert   (取消选项)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--fields-terminated-by
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出文件中忽略给定字段。与--tab选项一起使用，不能用于--databases和--all-databases选项
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p test test --tab=&quot;/home/mysql&quot; --fields-terminated-
+</code></pre><p>by=”#”</p>
+</blockquote>
+<blockquote>
+<pre><code>--fields-enclosed-by
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出文件中的各个字段用给定字符包裹。与--tab选项一起使用，不能用于--databases和--all-databases选项
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p test test --tab=&quot;/home/mysql&quot; --fields-enclosed-
+</code></pre><p>by=”#”</p>
+</blockquote>
+<blockquote>
+<pre><code>--fields-optionally-enclosed-by
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出文件中的各个字段用给定字符选择性包裹。与--tab选项一起使用，不能用于--databases和--all-databases选项
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p test test --tab=&quot;/home/mysql&quot;  --fields-enclosed-
+</code></pre><p>by=”#” –fields-optionally-enclosed-by  =”#”</p>
+</blockquote>
+<blockquote>
+<pre><code>--fields-escaped-by
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出文件中的各个字段忽略给定字符。与--tab选项一起使用，不能用于--databases和--all-databases选项
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p mysql user --tab=&quot;/home/mysql&quot; --fields-escaped-
+</code></pre><p>by=”#”</p>
+</blockquote>
+<blockquote>
+<pre><code>--flush-logs
+</code></pre></blockquote>
+<blockquote>
+<pre><code>开始导出之前刷新日志。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>请注意：假如一次导出多个数据库(使用选项--databases或者--all-databases)，将会逐个数据库刷新日志。除使用--lock-
+</code></pre><p>all-tables或者–master-data外。在这种情况下，日志将会被刷新一次，相应的所以表同时被锁定。因此，如果打算同时导出和刷新日志应该使用–<br>lock-all-tables 或者–master-data 和–flush-logs。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --flush-logs
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--flush-privileges
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在导出mysql数据库之后，发出一条FLUSH  PRIVILEGES
+</code></pre><p>语句。为了正确恢复，该选项应该用于导出mysql数据库和依赖mysql数据库数据的任何时候。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --flush-privileges
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--force
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在导出过程中忽略出现的SQL错误。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --force
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--help
+</code></pre></blockquote>
+<blockquote>
+<pre><code>显示帮助信息并退出。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  --help
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--hex-blob
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用十六进制格式导出二进制字符串字段。如果有二进制数据就必须使用该选项。影响到的字段类型有BINARY、VARBINARY、BLOB。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --all-databases --hex-blob
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--host, -h
+</code></pre></blockquote>
+<blockquote>
+<pre><code>需要导出的主机信息
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--ignore-table
+</code></pre></blockquote>
+<blockquote>
+<pre><code>不导出指定表。指定忽略多个表时，需要重复多次，每次一个表。每个表必须同时指定数据库和表名。例如：--ignore-
+</code></pre><p>table=database.table1 –ignore-table=database.table2 ……</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --ignore-
+</code></pre><p>table=mysql.user</p>
+</blockquote>
+<blockquote>
+<pre><code>--include-master-host-port
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在--dump-slave产生的&apos;CHANGE  MASTER
+</code></pre><p>TO..’语句中增加’MASTER_HOST=<host>，MASTER_PORT=<port>‘<br>    mysqldump  -uroot -p –host=localhost –all-databases –include-master-<br>host-port</port></host></p>
+</blockquote>
+<blockquote>
+<pre><code>--insert-ignore
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在插入行时使用INSERT IGNORE语句.
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --insert-ignore
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--lines-terminated-by
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出文件的每行用给定字符串划分。与--tab选项一起使用，不能用于--databases和--all-databases选项。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost test test --tab=&quot;/tmp/mysql&quot;
+</code></pre><p>–lines-terminated-by=”##”</p>
+</blockquote>
+<blockquote>
+<pre><code>--lock-all-tables,  -x
+</code></pre></blockquote>
+<blockquote>
+<pre><code>提交请求锁定所有数据库中的所有表，以保证数据的一致性。这是一个全局读锁，并且自动关闭--single-transaction 和--lock-
+</code></pre><p>tables 选项。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --lock-all-tables
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--lock-tables,  -l
+</code></pre></blockquote>
+<blockquote>
+<pre><code>开始导出前，锁定所有表。用READ  LOCAL锁定表以允许MyISAM表并行插入。对于支持事务的表例如InnoDB和BDB，--single-
+</code></pre><p>transaction是一个更好的选择，因为它根本不需要锁定表。</p>
+</blockquote>
+<blockquote>
+<pre><code>请注意当导出多个数据库时，--lock-
+</code></pre><p>tables分别为每个数据库锁定表。因此，该选项不能保证导出文件中的表在数据库之间的逻辑一致性。不同数据库表的导出状态可以完全不同。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --lock-tables
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--log-error
+</code></pre></blockquote>
+<blockquote>
+<pre><code>附加警告和错误信息到给定文件
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases  --log-
+</code></pre><p>error=/tmp/mysqldump_error_log.err</p>
+</blockquote>
+<blockquote>
+<pre><code>--max_allowed_packet
+</code></pre></blockquote>
+<blockquote>
+<pre><code>服务器发送和接受的最大包长度。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre><p>–max_allowed_packet=10240</p>
+</blockquote>
+<blockquote>
+<pre><code>--net_buffer_length
+</code></pre></blockquote>
+<blockquote>
+<pre><code>TCP/IP和socket连接的缓存大小。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre><p>–net_buffer_length=1024</p>
+</blockquote>
+<blockquote>
+<pre><code>--no-autocommit
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用autocommit/commit 语句包裹表。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --no-autocommit
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--no-create-db,  -n
+</code></pre></blockquote>
+<blockquote>
+<pre><code>只导出数据，而不添加CREATE DATABASE 语句。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --no-create-db
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--no-create-info,  -t
+</code></pre></blockquote>
+<blockquote>
+<pre><code>只导出数据，而不添加CREATE TABLE 语句。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --no-create-info
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--no-data, -d
+</code></pre></blockquote>
+<blockquote>
+<pre><code>不导出任何数据，只导出数据库表结构。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --no-data
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--no-set-names,  -N
+</code></pre></blockquote>
+<blockquote>
+<pre><code>等同于--skip-set-charset
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --no-set-names
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--opt
+</code></pre></blockquote>
+<blockquote>
+<pre><code>等同于--add-drop-table,  --add-locks, --create-options, --quick,
+</code></pre><p>–extended-insert, –lock-tables,  –set-charset, –disable-keys 该选项默认开启,  可以用<br>–skip-opt禁用.</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --opt
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--order-by-primary
+</code></pre></blockquote>
+<blockquote>
+<pre><code>如果存在主键，或者第一个唯一键，对每个表的记录进行排序。在导出MyISAM表到InnoDB表时有效，但会使得导出工作花费很长时间。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --order-by-primary
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--password, -p
+</code></pre></blockquote>
+<blockquote>
+<pre><code>连接数据库密码
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--pipe(windows系统可用)
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用命名管道连接mysql
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --pipe
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--port, -P
+</code></pre></blockquote>
+<blockquote>
+<pre><code>连接数据库端口号
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--protocol
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用的连接协议，包括：tcp, socket, pipe, memory.
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --protocol=tcp
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--quick, -q
+</code></pre></blockquote>
+<blockquote>
+<pre><code>不缓冲查询，直接导出到标准输出。默认为打开状态，使用--skip-quick取消该选项。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --skip-quick
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--quote-names,-Q
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用（`）引起表和列名。默认为打开状态，使用--skip-quote-names取消该选项。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --skip-quote-names
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--replace
+</code></pre></blockquote>
+<blockquote>
+<pre><code>使用REPLACE INTO 取代INSERT INTO.
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --replace
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--result-file,  -r
+</code></pre></blockquote>
+<blockquote>
+<pre><code>直接输出到指定文件中。该选项应该用在使用回车换行对（\\r\\n）换行的系统上（例如：DOS，Windows）。该选项确保只有一行被使用。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --result-
+</code></pre><p>file=/tmp/mysqldump_result_file.txt</p>
+</blockquote>
+<blockquote>
+<pre><code>--routines, -R
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出存储过程以及自定义函数。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --routines
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--set-charset
+</code></pre></blockquote>
+<blockquote>
+<pre><code>添加&apos;SET NAMES  default_character_set&apos;到输出文件。默认为打开状态，使用--skip-set-
+</code></pre><p>charset关闭选项。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --skip-set-charset
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--single-transaction
+</code></pre></blockquote>
+<blockquote>
+<pre><code>该选项在导出数据之前提交一个BEGIN SQL语句，BEGIN
+</code></pre><p>不会阻塞任何应用程序且能保证导出时数据库的一致性状态。它只适用于多版本存储引擎，仅InnoDB。本选项和–lock-tables<br>选项是互斥的，因为LOCK  TABLES 会使任何挂起的事务隐含提交。要想导出大表的话，应结合使用–quick 选项。</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --single-
+</code></pre><p>transaction</p>
+</blockquote>
+<blockquote>
+<pre><code>--dump-date
+</code></pre></blockquote>
+<blockquote>
+<pre><code>将导出时间添加到输出文件中。默认为打开状态，使用--skip-dump-date关闭选项。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --skip-dump-date
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--skip-opt
+</code></pre></blockquote>
+<blockquote>
+<pre><code>禁用-opt选项.
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --skip-opt
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--socket,-S
+</code></pre></blockquote>
+<blockquote>
+<pre><code>指定连接mysql的socket文件位置，默认路径/tmp/mysql.sock
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre><p>–socket=/tmp/mysqld.sock</p>
+</blockquote>
+<blockquote>
+<pre><code>--tab,-T
+</code></pre></blockquote>
+<blockquote>
+<pre><code>为每个表在给定路径创建tab分割的文本文件。注意：仅仅用于mysqldump和mysqld服务器运行在相同机器上。注意使用--tab不能指定--
+</code></pre><p>databases参数</p>
+</blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost test test --tab=&quot;/home/mysql&quot;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--tables
+</code></pre></blockquote>
+<blockquote>
+<pre><code>覆盖--databases (-B)参数，指定需要导出的表名，在后面的版本会使用table取代tables。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --databases test --tables test
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--triggers
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出触发器。该选项默认启用，用--skip-triggers禁用它。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --triggers
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--tz-utc
+</code></pre></blockquote>
+<blockquote>
+<pre><code>在导出顶部设置时区TIME_ZONE=&apos;+00:00&apos; ，以保证在不同时区导出的TIMESTAMP 数据或者数据被移动其他时区时的正确性。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --tz-utc
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--user, -u
+</code></pre></blockquote>
+<blockquote>
+<pre><code>指定连接的用户名。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--verbose, --v
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出多种平台信息。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--version, -V
+</code></pre></blockquote>
+<blockquote>
+<pre><code>输出mysqldump版本信息并退出
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--where, -w
+</code></pre></blockquote>
+<blockquote>
+<pre><code>只转储给定的WHERE条件选择的记录。请注意如果条件包含命令解释符专用空格或字符，一定要将条件引用起来。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --where=&quot;
+</code></pre><p>user=’root’”</p>
+</blockquote>
+<blockquote>
+<pre><code>--xml, -X
+</code></pre></blockquote>
+<blockquote>
+<pre><code>导出XML格式.
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --xml
+</code></pre></blockquote>
+<blockquote>
+<pre><code>--plugin_dir
+</code></pre></blockquote>
+<blockquote>
+<pre><code>客户端插件的目录，用于兼容不同的插件版本。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases
+</code></pre><p>–plugin_dir=”/usr/local/lib/plugin”</p>
+</blockquote>
+<blockquote>
+<pre><code>--default_auth
+</code></pre></blockquote>
+<blockquote>
+<pre><code>客户端插件默认使用权限。
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysqldump  -uroot -p --host=localhost --all-databases --default-
+</code></pre><p>auth=”/usr/local/lib/plugin/<plugin>“</plugin></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>参数说明</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><strong>2.恢复逻辑备份</strong></p>
+</blockquote>
+<blockquote>
+<pre><code>#在mysql命令下，用source命令导入备份文件：
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt;  USE 数据库名;
+</code></pre></blockquote>
+<blockquote>
+<pre><code>mysql&gt;  source 备份文件.sql;
+</code></pre></blockquote>
+<blockquote>
+</blockquote>
+<p>注意：只能在cmd界面下执行source命令，不能在mysql工具里面执行source命令，会报错，因为cmd是直接调用mysql.exe来执行命令的。　　</p>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>可避免脏读情况发生</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/02/28/cnblog_8485204/" rel="next" title="MySQL 之 数据操作"><i class="fas fa-angle-left"></i><span class="nav-title">MySQL 之 数据操作</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/02/28/cnblog_8485214/" rel="prev" title="MySQL 之 索引原理与慢查询优化"><span class="nav-title">MySQL 之 索引原理与慢查询优化</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://bolg.weii.ink/2018/02/28/cnblog_8485209/";
+    this.page.identifier = "2018/02/28/cnblog_8485209/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">68</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉MySQL-之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要"><span class="toc-text">这是👉MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#浏览目录"><span class="toc-text">浏览目录:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-视图"><span class="toc-text">1.视图</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-触发器-trigger"><span class="toc-text">2.触发器-trigger</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-存储过程"><span class="toc-text">3.存储过程</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-函数"><span class="toc-text">4.函数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-事物处理"><span class="toc-text">5.事物处理</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#四、事务控制语句："><span class="toc-text">四、事务控制语句：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#6-数据锁"><span class="toc-text">6.数据锁</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#7-数据库备份"><span class="toc-text">7.数据库备份</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  </body>
+</html>

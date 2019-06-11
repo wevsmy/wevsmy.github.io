@@ -5,9 +5,9 @@
   <subtitle>Life is short, you need Python</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://wevsmy.github.io/"/>
-  <updated>2019-06-09T17:54:06.566Z</updated>
-  <id>https://wevsmy.github.io/</id>
+  <link href="https://bolg.weii.ink/"/>
+  <updated>2019-06-10T09:52:44.407Z</updated>
+  <id>https://bolg.weii.ink/</id>
   
   <author>
     <name>wilson</name>
@@ -17,42 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客园不在更新</title>
-    <link href="https://wevsmy.github.io/2019/03/22/cnblog_10576224/"/>
-    <id>https://wevsmy.github.io/2019/03/22/cnblog_10576224/</id>
-    <published>2019-03-21T17:24:00.000Z</published>
-    <updated>2019-06-09T17:54:06.566Z</updated>
+    <title>博客园文章迁移到Hexo</title>
+    <link href="https://bolg.weii.ink/2019/06/10/cnblog_to_hexo/"/>
+    <id>https://bolg.weii.ink/2019/06/10/cnblog_to_hexo/</id>
+    <published>2019-06-10T08:16:09.000Z</published>
+    <updated>2019-06-10T09:52:44.407Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;不更新了&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;新的地址👉&lt;a
-        
-      
+      &lt;p&gt;最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.&lt;/p&gt;
+&lt;p&gt;毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）&lt;/p&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="hexo" scheme="https://bolg.weii.ink/tags/hexo/"/>
+    
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   
   <entry>
     <title>docker安装宝塔管理面板</title>
-    <link href="https://wevsmy.github.io/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
-    <id>https://wevsmy.github.io/2019/03/12/docker安装宝塔管理面板/</id>
+    <link href="https://bolg.weii.ink/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
+    <id>https://bolg.weii.ink/2019/03/12/docker安装宝塔管理面板/</id>
     <published>2019-03-12T03:41:08.000Z</published>
     <updated>2019-03-12T03:49:04.000Z</updated>
     
@@ -62,23 +60,23 @@
     
     </summary>
     
-      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>基于docker-compose构建数据库</title>
-    <link href="https://wevsmy.github.io/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>https://wevsmy.github.io/2019/02/19/基于docker-compose构建数据库/</id>
+    <link href="https://bolg.weii.ink/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://bolg.weii.ink/2019/02/19/基于docker-compose构建数据库/</id>
     <published>2019-02-19T03:38:46.000Z</published>
     <updated>2019-02-19T04:33:51.000Z</updated>
     
@@ -88,23 +86,23 @@
     
     </summary>
     
-      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>使用Flask-Migrate进行管理数据库升级</title>
-    <link href="https://wevsmy.github.io/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
-    <id>https://wevsmy.github.io/2019/01/17/使用Flask-Migrate进行管理数据库升级/</id>
+    <link href="https://bolg.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8Flask-Migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/"/>
+    <id>https://bolg.weii.ink/2019/01/17/使用Flask-Migrate进行管理数据库升级/</id>
     <published>2019-01-17T02:54:35.000Z</published>
     <updated>2019-01-17T02:57:02.000Z</updated>
     
@@ -114,21 +112,21 @@
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="笔记" scheme="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Flask" scheme="https://wevsmy.github.io/tags/Flask/"/>
+      <category term="Flask" scheme="https://bolg.weii.ink/tags/Flask/"/>
     
-      <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>换电脑hexo源码迁移</title>
-    <link href="https://wevsmy.github.io/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
-    <id>https://wevsmy.github.io/2019/01/15/换电脑hexo源码迁移/</id>
+    <link href="https://bolg.weii.ink/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/"/>
+    <id>https://bolg.weii.ink/2019/01/15/换电脑hexo源码迁移/</id>
     <published>2019-01-15T02:08:43.000Z</published>
     <updated>2019-05-31T02:21:18.673Z</updated>
     
@@ -138,19 +136,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="教程" scheme="https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="https://wevsmy.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://bolg.weii.ink/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Docker镜像部署Flask</title>
-    <link href="https://wevsmy.github.io/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/"/>
-    <id>https://wevsmy.github.io/2018/06/05/Docker镜像部署Flask/</id>
+    <link href="https://bolg.weii.ink/2018/06/05/Docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2Flask/"/>
+    <id>https://bolg.weii.ink/2018/06/05/Docker镜像部署Flask/</id>
     <published>2018-06-05T11:24:43.000Z</published>
     <updated>2019-01-16T06:06:07.000Z</updated>
     
@@ -160,21 +158,21 @@
     
     </summary>
     
-      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Flask" scheme="https://wevsmy.github.io/tags/Flask/"/>
+      <category term="Flask" scheme="https://bolg.weii.ink/tags/Flask/"/>
     
   </entry>
   
   <entry>
     <title>一键创建blog文</title>
-    <link href="https://wevsmy.github.io/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/"/>
-    <id>https://wevsmy.github.io/2018/06/04/一键创建blog文/</id>
+    <link href="https://bolg.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/"/>
+    <id>https://bolg.weii.ink/2018/06/04/一键创建blog文/</id>
     <published>2018-06-04T08:57:52.000Z</published>
     <updated>2019-01-15T07:19:41.000Z</updated>
     
@@ -184,21 +182,21 @@
     
     </summary>
     
-      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Win10" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Win10/"/>
+      <category term="Win10" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Win10/"/>
     
     
-      <category term="教程" scheme="https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="hexo" scheme="https://wevsmy.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://bolg.weii.ink/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>使用阿里云OSS图床</title>
-    <link href="https://wevsmy.github.io/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
-    <id>https://wevsmy.github.io/2018/06/02/使用阿里云OSS图床/</id>
+    <link href="https://bolg.weii.ink/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://bolg.weii.ink/2018/06/02/使用阿里云OSS图床/</id>
     <published>2018-06-02T15:41:57.000Z</published>
     <updated>2019-01-17T03:00:46.000Z</updated>
     
@@ -208,19 +206,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="教程" scheme="https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="阿里云" scheme="https://wevsmy.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+      <category term="阿里云" scheme="https://bolg.weii.ink/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>关于本Blog的评论系统</title>
-    <link href="https://wevsmy.github.io/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://wevsmy.github.io/2018/06/02/关于本Blog的评论系统/</id>
+    <link href="https://bolg.weii.ink/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACBlog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://bolg.weii.ink/2018/06/02/关于本Blog的评论系统/</id>
     <published>2018-06-02T14:06:37.000Z</published>
     <updated>2018-06-02T14:19:42.000Z</updated>
     
@@ -231,14 +229,14 @@
     </summary>
     
     
-      <category term="Disqus" scheme="https://wevsmy.github.io/tags/Disqus/"/>
+      <category term="Disqus" scheme="https://bolg.weii.ink/tags/Disqus/"/>
     
   </entry>
   
   <entry>
     <title>test</title>
-    <link href="https://wevsmy.github.io/2018/06/02/test/"/>
-    <id>https://wevsmy.github.io/2018/06/02/test/</id>
+    <link href="https://bolg.weii.ink/2018/06/02/test/"/>
+    <id>https://bolg.weii.ink/2018/06/02/test/</id>
     <published>2018-06-02T12:16:09.000Z</published>
     <updated>2019-05-31T15:46:25.909Z</updated>
     
@@ -248,216 +246,278 @@
     
     </summary>
     
-      <category term="计算机" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="Linux" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Python" scheme="https://wevsmy.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
-      <category term="Docker" scheme="https://wevsmy.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
-      <category term="HTML" scheme="https://wevsmy.github.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://bolg.weii.ink/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>Django基础01</title>
-    <link href="https://wevsmy.github.io/2018/03/22/cnblog_8621513/"/>
-    <id>https://wevsmy.github.io/2018/03/22/cnblog_8621513/</id>
+    <link href="https://bolg.weii.ink/2018/03/22/cnblog_8621513/"/>
+    <id>https://bolg.weii.ink/2018/03/22/cnblog_8621513/</id>
     <published>2018-03-21T17:17:00.000Z</published>
-    <updated>2019-06-09T17:54:06.629Z</updated>
+    <updated>2019-06-10T11:42:36.655Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Web框架本质&quot;&gt;&lt;a href=&quot;#Web框架本质&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;这是👉Django基础01👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉Django基础01👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉Django基础01👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/22/cnblog_8621513/&quot;&gt;这是👉Django基础01👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   
   <entry>
     <title>Python连接MySQL数据库之pymysql模块使用</title>
-    <link href="https://wevsmy.github.io/2018/03/21/cnblog_8616189/"/>
-    <id>https://wevsmy.github.io/2018/03/21/cnblog_8616189/</id>
+    <link href="https://bolg.weii.ink/2018/03/21/cnblog_8616189/"/>
+    <id>https://bolg.weii.ink/2018/03/21/cnblog_8616189/</id>
     <published>2018-03-20T19:58:00.000Z</published>
-    <updated>2019-06-09T17:57:16.485Z</updated>
+    <updated>2019-06-10T11:54:56.685Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Python3连接MySQL&quot;&gt;&lt;a href=&quot;#Python3连接MySQL&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/21/cnblog_8616189/&quot;&gt;这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   
   <entry>
-    <title>Markdown 语法说明 (简体中文版)</title>
-    <link href="https://wevsmy.github.io/2018/03/14/cnblog_8565323/"/>
-    <id>https://wevsmy.github.io/2018/03/14/cnblog_8565323/</id>
+    <title>Markdown 语法</title>
+    <link href="https://bolg.weii.ink/2018/03/14/cnblog_8565323/"/>
+    <id>https://bolg.weii.ink/2018/03/14/cnblog_8565323/</id>
     <published>2018-03-13T17:58:00.000Z</published>
-    <updated>2019-06-09T17:54:06.712Z</updated>
+    <updated>2019-06-10T11:55:05.067Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Markdown-语法说明-简体中文版&quot;&gt;&lt;a href=&quot;#Markdown-语法说明-简体中文版&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法说明 (简体中文版)&quot;&gt;&lt;/a&gt;Markdown 语法说明
-        
-      
+      &lt;h1 id=&quot;这是👉Markdown-语法👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉Markdown-语法👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉Markdown 语法👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/14/cnblog_8565323/&quot;&gt;这是👉Markdown 语法👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   
   <entry>
     <title>jQuery</title>
-    <link href="https://wevsmy.github.io/2018/03/14/cnblog_8565153/"/>
-    <id>https://wevsmy.github.io/2018/03/14/cnblog_8565153/</id>
+    <link href="https://bolg.weii.ink/2018/03/14/cnblog_8565153/"/>
+    <id>https://bolg.weii.ink/2018/03/14/cnblog_8565153/</id>
     <published>2018-03-13T17:40:00.000Z</published>
-    <updated>2019-06-09T17:54:07.035Z</updated>
+    <updated>2019-06-10T11:55:18.711Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;jQuery&quot;&gt;&lt;a href=&quot;#jQuery&quot; class=&quot;headerlink&quot; title=&quot;jQuery&quot;&gt;&lt;/a&gt;jQuery&lt;/h1&gt;&lt;h2 id=&quot;jQuery介绍&quot;&gt;&lt;a href=&quot;#jQuery介绍&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;这是👉jQuery👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉jQuery👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉jQuery👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/14/cnblog_8565153/&quot;&gt;这是👉jQuery👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   
   <entry>
     <title>linux screen 常用命令</title>
-    <link href="https://wevsmy.github.io/2018/03/13/cnblog_8554604/"/>
-    <id>https://wevsmy.github.io/2018/03/13/cnblog_8554604/</id>
+    <link href="https://bolg.weii.ink/2018/03/13/cnblog_8554604/"/>
+    <id>https://bolg.weii.ink/2018/03/13/cnblog_8554604/</id>
     <published>2018-03-12T18:38:00.000Z</published>
-    <updated>2019-06-09T17:54:07.057Z</updated>
+    <updated>2019-06-10T11:55:27.461Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;screen  -s  yourname   # 创建一个名字为yourname的screen
-
-screen  -ls   # 查看所有screen
-
-screen -r  yourname   # 回到yourname这个screen
-
-screen
-        
-      
+      &lt;h1 id=&quot;这是👉linux-screen-常用命令👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉linux-screen-常用命令👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉linux screen 常用命令👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/13/cnblog_8554604/&quot;&gt;这是👉linux screen 常用命令👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   
   <entry>
     <title>前端基础之BOM和DOM</title>
-    <link href="https://wevsmy.github.io/2018/03/12/cnblog_8550048/"/>
-    <id>https://wevsmy.github.io/2018/03/12/cnblog_8550048/</id>
+    <link href="https://bolg.weii.ink/2018/03/12/cnblog_8550048/"/>
+    <id>https://bolg.weii.ink/2018/03/12/cnblog_8550048/</id>
     <published>2018-03-12T00:34:00.000Z</published>
-    <updated>2019-06-09T17:54:07.081Z</updated>
+    <updated>2019-06-10T11:55:37.650Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;前戏&quot;&gt;&lt;a href=&quot;#前戏&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;这是👉前端基础之BOM和DOM👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端基础之BOM和DOM👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端基础之BOM和DOM👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/12/cnblog_8550048/&quot;&gt;这是👉前端基础之BOM和DOM👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     
-      <category term="笔记" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="博客园" scheme="https://wevsmy.github.io/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
     
-      <category term="博客园" scheme="https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
     
-      <category term="搬家" scheme="https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/"/>
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
     
-      <category term="cnblogs" scheme="https://wevsmy.github.io/tags/cnblogs/"/>
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端基础之JavaScript</title>
+    <link href="https://bolg.weii.ink/2018/03/08/cnblog_8527506/"/>
+    <id>https://bolg.weii.ink/2018/03/08/cnblog_8527506/</id>
+    <published>2018-03-07T19:44:00.000Z</published>
+    <updated>2019-06-10T11:55:44.961Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;这是👉前端基础之JavaScript👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端基础之JavaScript👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端基础之JavaScript👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/08/cnblog_8527506/&quot;&gt;这是👉前端基础之JavaScript👈的摘要&lt;/a&gt;&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端基础之CSS</title>
+    <link href="https://bolg.weii.ink/2018/03/08/cnblog_8527496/"/>
+    <id>https://bolg.weii.ink/2018/03/08/cnblog_8527496/</id>
+    <published>2018-03-07T19:43:00.000Z</published>
+    <updated>2019-06-10T11:55:54.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;这是👉前端基础之CSS👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端基础之CSS👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端基础之CSS👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/08/cnblog_8527496/&quot;&gt;这是👉前端基础之CSS👈的摘要&lt;/a&gt;&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端知识之HTML内容</title>
+    <link href="https://bolg.weii.ink/2018/03/05/cnblog_8508917/"/>
+    <id>https://bolg.weii.ink/2018/03/05/cnblog_8508917/</id>
+    <published>2018-03-04T22:46:00.000Z</published>
+    <updated>2019-06-10T11:56:02.282Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;这是👉前端知识之HTML内容👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端知识之HTML内容👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端知识之HTML内容👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/05/cnblog_8508917/&quot;&gt;这是👉前端知识之HTML内容👈的摘要&lt;/a&gt;&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 之 索引原理与慢查询优化</title>
+    <link href="https://bolg.weii.ink/2018/02/28/cnblog_8485214/"/>
+    <id>https://bolg.weii.ink/2018/02/28/cnblog_8485214/</id>
+    <published>2018-02-28T02:47:00.000Z</published>
+    <updated>2019-06-10T11:54:42.245Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;这是👉MySQL-之-索引原理与慢查询优化👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉MySQL-之-索引原理与慢查询优化👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉MySQL 之 索引原理与慢查询优化👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/02/28/cnblog_8485214/&quot;&gt;这是👉MySQL 之 索引原理与慢查询优化👈的摘要&lt;/a&gt;&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+    
+      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
+    
+      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
+    
+      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
     
   </entry>
   

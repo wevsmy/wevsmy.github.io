@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
+    
+    
+    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <title>前端基础之JavaScript | wilson's blog - Life is short, you need Python</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #333333;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">wilson's blog</a></h1>
+        <h2 class="subtitle">Life is short, you need Python</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/03/08/cnblog_8527506/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="wilson">
+       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="wilson's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">前端基础之JavaScript</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-08T03:44:00+08:00">2018-03-08 03:44:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+        </span>
+        
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i><span><a href="/2018/03/08/cnblog_8527506/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/03/08/cnblog_8527506/" itemprop="commentCount"></span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="这是👉前端基础之JavaScript👈的摘要"><a href="#这是👉前端基础之JavaScript👈的摘要" class="headerlink" title="这是👉前端基础之JavaScript👈的摘要"></a><a href="/2018/03/08/cnblog_8527506/">这是👉前端基础之JavaScript👈的摘要</a></h1><a id="more"></a>
+<h1 id="JavaScript概述"><a href="#JavaScript概述" class="headerlink" title="JavaScript概述"></a>JavaScript概述</h1><h2 id="JavaScript的历史"><a href="#JavaScript的历史" class="headerlink" title="JavaScript的历史"></a>JavaScript的历史</h2><ul>
+<li>1992年Nombas开发出C-minus-minus(C–)的嵌入式脚本语言(最初绑定在CEnvi软件中)，后将其改名ScriptEase(客户端执行的语言)。</li>
+<li>Netscape(网景)接收Nombas的理念,(Brendan Eich)在其Netscape Navigator 2.0产品中开发出一套livescript的脚本语言。Sun和Netscape共同完成，后改名叫JavaScript。</li>
+<li>微软随后模仿在其IE3.0的产品中搭载了一个JavaScript的克隆版叫Jscript。</li>
+<li>为了统一三家,ECMA(欧洲计算机制造协会)定义了ECMA-262规范.国际标准化组织及国际电工委员会（ISO/IEC）也采纳 ECMAScript 作为标准（ISO/IEC-16262）。从此，Web 浏览器就开始努力（虽然有着不同的程度的成功和失败）将 ECMAScript 作为 JavaScript 实现的基础。</li>
+<li>ECMA-262 是 JavaScript 标准的官方名称。</li>
+</ul>
+<h2 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h2><table>
+<thead>
+<tr>
+<th>年份</th>
+<th>名称</th>
+<th>描述  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1997</td>
+<td>ECMAScript 1</td>
+<td>第一个版本  </td>
+</tr>
+<tr>
+<td>1998</td>
+<td>ECMAScript 2</td>
+<td>版本变更  </td>
+</tr>
+<tr>
+<td>1999</td>
+<td>ECMAScript 3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>添加正则表达式</p>
+<p>添加tru/catch  </p>
+<p>  | ECMAScript 4 | 没有发布<br>2009 | ECMAScript 5 |</p>
+<p>添加”strict mode”严格模式</p>
+<p>添加JSON支持  </p>
+<p>2011 | ECMAScript 5.1 | 版本变更<br>2015 | ECMAScript 6 | 添加类和模块<br>2016 | ECMAScript 7 |</p>
+<p>增加指数运算符（**）</p>
+<p>增加Array.prototype.includes  </p>
+<p><em>注：ES6就是指ECMAScript 6。</em></p>
+<p>尽管 ECMAScript 是一个重要的标准，但它并不是 JavaScript 唯一的部分，当然，也不是唯一被标准化的部分。实际上，一个完整的<br>JavaScript 实现是由以下 3 个不同部分组成的：</p>
+<ul>
+<li>核心（ECMAScript） </li>
+<li>文档对象模型（DOM） Document object model (整合js，css，html)</li>
+<li>浏览器对象模型（BOM） Broswer object model（整合js和浏览器）</li>
+<li>Javascript在开发中绝大多数情况是基于对象的.也是面向对象的.</li>
+</ul>
+<p>简单地说，ECMAScript 描述了以下内容：</p>
+<ul>
+<li>语法 </li>
+<li>类型 </li>
+<li>语句 </li>
+<li>关键字 </li>
+<li>保留字 </li>
+<li>运算符 </li>
+<li>对象 (封装 继承 多态) 基于对象的语言.使用对象.</li>
+</ul>
+<h2 id="JavaScript引入方式"><a href="#JavaScript引入方式" class="headerlink" title="JavaScript引入方式"></a>JavaScript引入方式</h2><h3 id="Script标签内写代码"><a href="#Script标签内写代码" class="headerlink" title="Script标签内写代码"></a>Script标签内写代码</h3><pre><code>&lt;script&gt;
+  // 在这里写你的JS代码
+&lt;/script&gt;
+</code></pre><h3 id="引入额外的JS文件"><a href="#引入额外的JS文件" class="headerlink" title="引入额外的JS文件"></a>引入额外的JS文件</h3><pre><code>&lt;script src=&quot;myscript.js&quot;&gt;&lt;/script&gt;
+</code></pre><h2 id="JavaScript语言规范"><a href="#JavaScript语言规范" class="headerlink" title="JavaScript语言规范"></a>JavaScript语言规范</h2><h3 id="注释（注释是代码之母）"><a href="#注释（注释是代码之母）" class="headerlink" title="注释（注释是代码之母）"></a>注释（注释是代码之母）</h3><pre><code>// 这是单行注释
+
+/*
+这是  
+多行注释
+*/
+</code></pre><h3 id="结束符"><a href="#结束符" class="headerlink" title="结束符"></a>结束符</h3><p>JavaScript中的语句要以分号（;）为结束符。</p>
+<h2 id="JavaScript语言基础"><a href="#JavaScript语言基础" class="headerlink" title="JavaScript语言基础"></a>JavaScript语言基础</h2><h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><ol>
+<li>JavaScript的变量名可以使用_，数字，字母，$组成，不能以数字开头。</li>
+<li>声明变量使用 var 变量名; 的格式来进行声明</li>
+</ol>
+<pre><code>var name = &quot;Alex&quot;;
+var age = 18;
+</code></pre><p>注意：</p>
+<p>变量名是区分大小写的。</p>
+<p>推荐使用驼峰式命名规则。</p>
+<h2 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h2><p><strong>JavaScript拥有动态类型</strong></p>
+<pre><code> var x;  // 此时x是undefined
+var x = 1;  // 此时x是数字
+var x = &quot;Alex&quot;  // 此时x是字符串 
+</code></pre><p><strong>数字类型</strong></p>
+<p>JavaScript不区分整型和浮点型，就只有一种数字类型。</p>
+<pre><code>var a = 12.34;
+var b = 20;
+var c = 123e5;  // 12300000
+var d = 123e-5;  // 0.00123
+</code></pre><p>还有一种NaN，表示不是一个数字（Not a Number）。</p>
+<p>常用方法：</p>
+<pre><code>parseInt(&quot;123&quot;)  // 返回123
+parseInt(&quot;ABC&quot;)  // 返回NaN,NaN属性是代表非数字值的特殊值。该属性用于指示某个值不是数字。
+parseFloat(&quot;123.456&quot;)  // 返回123.456
+</code></pre><p><strong>字符串</strong></p>
+<pre><code> var a = &quot;Hello&quot;
+var b = &quot;world;
+var c = a + b; 
+console.log(c);  // 得到Helloworld
+</code></pre><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj.length</td>
+<td>返回长度  </td>
+</tr>
+<tr>
+<td>obj.trim()</td>
+<td>移除空白  </td>
+</tr>
+<tr>
+<td>obj.trimLeft()</td>
+<td>移除左边的空白  </td>
+</tr>
+<tr>
+<td>obj.trimRight()</td>
+<td>移除右边的空白  </td>
+</tr>
+<tr>
+<td>obj.charAt(n)</td>
+<td>返回第n个字符  </td>
+</tr>
+<tr>
+<td>obj.concat(value, …)</td>
+<td>拼接  </td>
+</tr>
+<tr>
+<td>obj.indexOf(substring, start)</td>
+<td>子序列位置  </td>
+</tr>
+<tr>
+<td>obj.substring(from, to)</td>
+<td>根据索引获取子序列  </td>
+</tr>
+<tr>
+<td>obj.slice(start, end)</td>
+<td>切片  </td>
+</tr>
+<tr>
+<td>obj.toLowerCase()</td>
+<td>小写  </td>
+</tr>
+<tr>
+<td>obj.toUpperCase()</td>
+<td>大写  </td>
+</tr>
+<tr>
+<td>obj.split(delimiter, limit)</td>
+<td>分割  </td>
+</tr>
+</tbody>
+</table>
+<p>拼接字符串一般使用”+”</p>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>区别于Python，true和false都是小写。</p>
+<pre><code>var a = true;
+var b = false;
+</code></pre><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>类似于Python中的列表。</p>
+<pre><code>var a = [123, &quot;ABC&quot;];
+console.log(a[1]);  // 输出&quot;ABC&quot;
+</code></pre><p> 常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj.length</td>
+<td>数组的大小  </td>
+</tr>
+<tr>
+<td>obj.push(ele)</td>
+<td>尾部追加元素  </td>
+</tr>
+<tr>
+<td>obj.pop()</td>
+<td>获取尾部的元素  </td>
+</tr>
+<tr>
+<td>obj.unshift(ele)</td>
+<td>头部插入元素  </td>
+</tr>
+<tr>
+<td>obj.shift()</td>
+<td>头部移除元素  </td>
+</tr>
+<tr>
+<td>obj.slice()</td>
+<td>切片  </td>
+</tr>
+<tr>
+<td>obj.reverse()</td>
+<td>反转  </td>
+</tr>
+<tr>
+<td>obj.join(seq)</td>
+<td>将数组元素连接成字符串  </td>
+</tr>
+<tr>
+<td>obj.concat(val, …)</td>
+<td>连接数组  </td>
+</tr>
+<tr>
+<td>obj.sort()</td>
+<td>排序  </td>
+</tr>
+</tbody>
+</table>
+<p>遍历数组中的元素：</p>
+<pre><code>var a = [10, 20, 30, 40];
+for (var i=0;i&lt;a.length;i++) {
+  console.log(i);
+}
+</code></pre><h3 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h3><ul>
+<li>null表示值是空，一般在需要指定或清空一个变量时才会使用，如 name=null;</li>
+<li>undefined表示当声明一个变量但未初始化时，该变量的默认值是undefined。还有就是函数无明确的返回值时，返回的也是undefined。</li>
+</ul>
+<p>null表示变量的值是空，undefined则表示只声明了变量，但还没有赋值。</p>
+<p>还不明白，上图吧！</p>
+<p><img src="https://images2018.cnblogs.com/blog/867021/201802/867021-20180226115608671-110898150.jpg" alt=""><img src="https://images2018.cnblogs.com/blog/867021/201802/867021-20180226114954211-338562205.jpg" alt=""></p>
+<h3 id="类型查询"><a href="#类型查询" class="headerlink" title="类型查询"></a>类型查询</h3><pre><code>typeof &quot;abc&quot;  // &quot;string&quot;
+typeof null  // &quot;object&quot;
+typeof true  // &quot;boolean&quot;
+typeof 123 // &quot;number&quot;
+</code></pre><p>typeof是一个一元运算符（就像++，–，！，- 等一元运算符），不是一个函数，也不是一个语句。</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><pre><code>+ - * / % ++ --
+</code></pre><h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a><strong>比较运算符</strong></h3><pre><code>&gt; &gt;= &lt; &lt;= != == === !==
+</code></pre><p>注意：</p>
+<pre><code>1 == &quot;1&quot;  // true
+1 === &quot;1&quot;  // false
+</code></pre><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a><strong>逻辑运算符</strong></h3><pre><code>&amp;&amp; || !
+</code></pre><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a><strong>赋值运算符</strong></h3><pre><code>= += -= *= /=
+</code></pre><h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a><strong>流程控制</strong></h2><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><pre><code> var a = 10;
+if (a &gt; 5){
+  console.log(&quot;yes&quot;);
+}else {
+  console.log(&quot;no&quot;);
+}
+</code></pre><h3 id="if-else-if-else"><a href="#if-else-if-else" class="headerlink" title="if-else if-else"></a>if-else if-else</h3><pre><code>var a = 10;
+if (a &gt; 5){
+  console.log(&quot;a &gt; 5&quot;);
+}else if (a &lt; 5) {
+  console.log(&quot;a &lt; 5&quot;);
+}else {
+  console.log(&quot;a = 5&quot;);
+}
+</code></pre><h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><pre><code>var day = new Date().getDay();
+switch (day) {
+  case 0:
+  console.log(&quot;Sunday&quot;);
+  break;
+  case 1:
+  console.log(&quot;Monday&quot;);
+  break;
+default:
+  console.log(&quot;...&quot;)
+}
+</code></pre><h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><pre><code>for (var i=0;i&lt;10;i++) {
+  console.log(i);
+}
+</code></pre><h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><pre><code>var i = 0;
+while (i &lt; 10) {
+  console.log(i);
+  i++;
+}
+</code></pre><h3 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h3><pre><code>var a = 1;
+var b = 2;
+var c = a &gt; b ? a : b
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h3><p>JavaScript中的函数和Python中的非常类似，只是定义方式有点区别。</p>
+<pre><code>// 普通函数定义
+function f1() {
+  console.log(&quot;Hello world!&quot;);
+}
+
+// 带参数的函数
+function f2(a, b) {
+  console.log(arguments);  // 内置的arguments对象
+  console.log(arguments.length);
+  console.log(a, b);
+}
+
+// 带返回值的函数
+function sum(a, b){
+  return a + b;
+}
+sum(1, 2);  // 调用函数
+
+// 匿名函数方式
+var sum = function(a, b){
+  return a + b;
+}
+sum(1, 2);
+
+// 立即执行函数
+(function(a, b){
+  return a + b;
+})(1, 2);
+</code></pre><h3 id="函数的全局变量和局部变量"><a href="#函数的全局变量和局部变量" class="headerlink" title="函数的全局变量和局部变量"></a>函数的全局变量和局部变量</h3><p><strong>局部变量</strong> ：</p>
+<p>在JavaScript函数内部声明的变量（使用<br>var）是局部变量，所以只能在函数内部访问它（该变量的作用域是函数内部）。只要函数运行完毕，本地变量就会被删除。</p>
+<p><strong>全局变量：</strong></p>
+<p>在函数外声明的变量是 _全局_ 变量，网页上的所有脚本和函数都能访问它。</p>
+<p><strong>变量生存周期：</strong></p>
+<p>JavaScript变量的生命期从它们被声明的时间开始。</p>
+<p>局部变量会在函数运行以后被删除。</p>
+<p>全局变量会在页面关闭后被删除。</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>首先在函数内部查找变量，找不到则到外层函数查找，逐步找到最外层。</p>
+<p><strong>几个例子：</strong></p>
+<p>1.</p>
+<pre><code>var city = &quot;BeiJing&quot;;
+function f() {
+  var city = &quot;ShangHai&quot;;
+  function inner(){
+    var city = &quot;ShenZhen&quot;;
+    console.log(city);
+  }
+  inner();
+}
+
+f();  //输出结果是？
+</code></pre><p>2.</p>
+<pre><code>var city = &quot;BeiJing&quot;;
+function Bar() {
+  console.log(city);
+}
+function f() {
+  var city = &quot;ShangHai&quot;;
+  return Bar;
+}
+var ret = f();
+ret();  // 打印结果是？
+</code></pre><p>3.闭包</p>
+<pre><code>var city = &quot;BeiJing&quot;;
+function f(){
+    var city = &quot;ShangHai&quot;;
+    function inner(){
+        console.log(city);
+    }
+    return inner;
+}
+var ret = f();
+ret();
+</code></pre><h2 id="内置对象和方法"><a href="#内置对象和方法" class="headerlink" title="内置对象和方法"></a>内置对象和方法</h2><p>JavaScript中的所有事物都是对象：字符串、数字、数组、日期，等等。在JavaScript中，对象是拥有属性和方法的数据。</p>
+<p>我们在学习基本数据类型的时候已经带大家了解了，JavaScript中的Number对象、String对象、Array对象等。</p>
+<h3 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h3><p>类似于（某方面类似）Python中的字典数据类型</p>
+<pre><code>var a = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
+console.log(a.name);
+console.log(a[&quot;age&quot;]);
+</code></pre><p>遍历对象中的内容：</p>
+<pre><code>var a = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
+for (var i in a){
+  console.log(i, a[i]);
+}
+</code></pre><p><a href="https://stackoverflow.com/questions/684672/how-do-i-loop-
+through-or-enumerate-a-javascript-object" target="_blank" rel="noopener">事情并没有那么简单…</a></p>
+<p><strong>创建对象：</strong></p>
+<pre><code> var person=new Object();  // 创建一个person对象
+person.name=&quot;Alex&quot;;  // person对象的name属性
+person.age=18;  // person对象的age属性
+</code></pre><p><strong>  扩展：</strong></p>
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>// 父类构造函数
+var Car = function (loc) {
+  this.loc = loc;
+};
+
+// 父类方法
+Car.prototype.move = function () {
+  this.loc ++;
+};
+
+// 子类构造函数
+var Van = function (loc) {
+  Car.call(this, loc);
+};
+
+// 继承父类的方法
+Van.prototype = Object.create(Car.prototype);
+// 修复 constructor
+Van.prototype.constructor = Van;
+// 扩展方法
+Van.prototype.grab = function () {
+  /* ... */
+};
+</code></pre><p>JavaScript面向对象之继承</p>
+<h3 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h3><p><strong>创建Date对象</strong></p>
+<pre><code> //方法1：不指定参数
+var d1 = new Date();
+console.log(d1.toLocaleString());
+//方法2：参数为日期字符串
+var d2 = new Date(&quot;2004/3/20 11:12&quot;);
+console.log(d2.toLocaleString());
+var d3 = new Date(&quot;04/03/20 11:12&quot;);
+console.log(d3.toLocaleString());
+//方法3：参数为毫秒数
+var d3 = new Date(5000);
+console.log(d3.toLocaleString());
+console.log(d3.toUTCString());
+
+//方法4：参数为年月日小时分钟秒毫秒
+var d4 = new Date(2004,2,20,11,12,0,300);
+console.log(d4.toLocaleString());  //毫秒并不直接显示
+</code></pre><p><strong>Date对象的方法：</strong></p>
+<pre><code> var d = new Date(); 
+//getDate()                 获取日
+//getDay ()                 获取星期
+//getMonth ()               获取月（0-11）
+//getFullYear ()            获取完整年份
+//getYear ()                获取年
+//getHours ()               获取小时
+//getMinutes ()             获取分钟
+//getSeconds ()             获取秒
+//getMilliseconds ()        获取毫秒
+//getTime ()                返回累计毫秒数(从1970/1/1午夜)
+</code></pre><p><strong>练习：</strong></p>
+<p>编写代码，将当前日期按”2017-12-27 11:11 星期三”格式输出。</p>
+<p>详细Date对象方法：<a href="http://www.w3school.com.cn/jsref/jsref_obj_date.asp" target="_blank" rel="noopener">点我</a></p>
+<h3 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h3><pre><code>var str1 = &apos;{&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18}&apos;;
+var obj1 = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
+// JSON字符串转换成对象
+var obj = JSON.parse(str1); 
+// 对象转换成JSON字符串
+var str = JSON.stringify(obj1);
+</code></pre><h3 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h3><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>//RegExp对象
+
+//创建正则对象方式1
+// 参数1 正则表达式(不能有空格)
+// 参数2 匹配模式：常用g(全局匹配;找到所有匹配，而不是在第一个匹配后停止)和i(忽略大小写)
+
+// 用户名只能是英文字母、数字和_，并且首字母必须是英文字母。长度最短不能少于6位 最长不能超过12位。
+
+// 创建RegExp对象方式（逗号后面不要加空格）
+var reg1 = new RegExp(&quot;^[a-zA-Z][a-zA-Z0-9_]{5,11}$&quot;);
+
+// 匹配响应的字符串
+var s1 = &quot;bc123&quot;;
+
+//RegExp对象的test方法，测试一个字符串是否符合对应的正则规则，返回值是true或false。
+reg1.test(s1);  // true
+
+// 创建方式2
+// /填写正则表达式/匹配模式（逗号后面不要加空格）
+var reg2 = /^[a-zA-Z][a-zA-Z0-9_]{5,11}$/;
+
+reg2.test(s1);  // true
+
+
+// String对象与正则结合的4个方法
+var s2 = &quot;hello world&quot;;
+
+s2.match(/o/g);         // [&quot;o&quot;, &quot;o&quot;]             查找字符串中 符合正则 的内容
+s2.search(/h/g);        // 0                      查找字符串中符合正则表达式的内容位置
+s2.split(/o/g);         // [&quot;hell&quot;, &quot; w&quot;, &quot;rld&quot;]  按照正则表达式对字符串进行切割
+s2.replace(/o/g, &quot;s&quot;);  // &quot;hells wsrld&quot;          对字符串按照正则进行替换
+
+// 关于匹配模式：g和i的简单示例
+var s1 = &quot;name:Alex age:18&quot;;
+
+s1.replace(/a/, &quot;哈哈哈&quot;);      // &quot;n哈哈哈me:Alex age:18&quot;
+s1.replace(/a/g, &quot;哈哈哈&quot;);     // &quot;n哈哈哈me:Alex 哈哈哈ge:18&quot;      全局匹配
+s1.replace(/a/gi, &quot;哈哈哈&quot;);    // &quot;n哈哈哈me:哈哈哈lex 哈哈哈ge:18&quot;  不区分大小写
+
+
+// 注意事项1：
+// 如果regExpObject带有全局标志g，test()函数不是从字符串的开头开始查找，而是从属性regExpObject.lastIndex所指定的索引处开始查找。
+// 该属性值默认为0，所以第一次仍然是从字符串的开头查找。
+// 当找到一个匹配时，test()函数会将regExpObject.lastIndex的值改为字符串中本次匹配内容的最后一个字符的下一个索引位置。
+// 当再次执行test()函数时，将会从该索引位置处开始查找，从而找到下一个匹配。
+// 因此，当我们使用test()函数执行了一次匹配之后，如果想要重新使用test()函数从头开始查找，则需要手动将regExpObject.lastIndex的值重置为 0。
+// 如果test()函数再也找不到可以匹配的文本时，该函数会自动把regExpObject.lastIndex属性重置为 0。
+
+var reg3 = /foo/g;
+// 此时 regex.lastIndex=0
+reg3.test(&apos;foo&apos;); // 返回true
+// 此时 regex.lastIndex=3
+reg3.test(&apos;foo&apos;); // 返回false
+// 所以我们在使用test()方法校验一个字符串是否完全匹配时，不推荐添加全局匹配模式g。
+
+// 注意事项2(说出来你可能不信系列)：
+// 当我们不加参数调用RegExpObj.test()方法时, 相当于执行RegExpObj.test(&quot;undefined&quot;), 并且/undefined/.test()默认返回true。
+var reg4 = /^undefined$/;
+reg4.test(); // 返回true
+reg4.test(undefined); // 返回true
+reg4.test(&quot;undefined&quot;); // 返回true
+</code></pre><p>RegExp</p>
+<p><a href="https://developer.mozilla.org/zh-
+CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" target="_blank" rel="noopener">扩展阅读</a></p>
+<h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+<pre><code>abs(x)      返回数的绝对值。
+exp(x)      返回 e 的指数。
+floor(x)    对数进行下舍入。
+log(x)      返回数的自然对数（底为e）。
+max(x,y)    返回 x 和 y 中的最高值。
+min(x,y)    返回 x 和 y 中的最低值。
+pow(x,y)    返回 x 的 y 次幂。
+random()    返回 0 ~ 1 之间的随机数。
+round(x)    把数四舍五入为最接近的整数。
+sin(x)      返回数的正弦。
+sqrt(x)     返回数的平方根。
+tan(x)      返回角的正切。
+</code></pre><p>Math</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        
+        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        
+        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/03/08/cnblog_8527496/" rel="next" title="前端基础之CSS"><i class="fas fa-angle-left"></i><span class="nav-title">前端基础之CSS</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/03/12/cnblog_8550048/" rel="prev" title="前端基础之BOM和DOM"><span class="nav-title">前端基础之BOM和DOM</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <script defer id="dsq-count-scr" src="//wevsmy.disqus.com/count.js"></script>
+  
+  <div id="disqus_thread" class="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = "https://bolg.weii.ink/2018/03/08/cnblog_8527506/";
+    this.page.identifier = "2018/03/08/cnblog_8527506/";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://wevsmy.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+  
+  <h1 class="author-name">wilson</h1>
+  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">68</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">12</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉前端基础之JavaScript👈的摘要"><span class="toc-text">这是👉前端基础之JavaScript👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript概述"><span class="toc-text">JavaScript概述</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript的历史"><span class="toc-text">JavaScript的历史</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#ECMAScript"><span class="toc-text">ECMAScript</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript引入方式"><span class="toc-text">JavaScript引入方式</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Script标签内写代码"><span class="toc-text">Script标签内写代码</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#引入额外的JS文件"><span class="toc-text">引入额外的JS文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript语言规范"><span class="toc-text">JavaScript语言规范</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#注释（注释是代码之母）"><span class="toc-text">注释（注释是代码之母）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#结束符"><span class="toc-text">结束符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript语言基础"><span class="toc-text">JavaScript语言基础</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#变量声明"><span class="toc-text">变量声明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript数据类型"><span class="toc-text">JavaScript数据类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#布尔类型"><span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#null和undefined"><span class="toc-text">null和undefined</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#类型查询"><span class="toc-text">类型查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#运算符"><span class="toc-text">运算符</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#算数运算符"><span class="toc-text">算数运算符</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#比较运算符"><span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#逻辑运算符"><span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#赋值运算符"><span class="toc-text">赋值运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#流程控制"><span class="toc-text">流程控制</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#if-else"><span class="toc-text">if-else</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#if-else-if-else"><span class="toc-text">if-else if-else</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#switch"><span class="toc-text">switch</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#for"><span class="toc-text">for</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#while"><span class="toc-text">while</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#三元运算"><span class="toc-text">三元运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#函数"><span class="toc-text">函数</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#函数定义"><span class="toc-text">函数定义</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#函数的全局变量和局部变量"><span class="toc-text">函数的全局变量和局部变量</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#作用域"><span class="toc-text">作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#内置对象和方法"><span class="toc-text">内置对象和方法</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#自定义对象"><span class="toc-text">自定义对象</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Date对象"><span class="toc-text">Date对象</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#JSON对象"><span class="toc-text">JSON对象</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#RegExp对象"><span class="toc-text">RegExp对象</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Math对象"><span class="toc-text">Math对象</span></a></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #333333;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
+          
+        </div>
+        <div class="powered-by">
+           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+  </body>
+</html>

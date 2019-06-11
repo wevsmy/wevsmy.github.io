@@ -14,10 +14,6 @@
   -o-transition: 1s ease-in-out;
   -ms-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
-/* 头像翻转特效 */
-/* &:hover {
-      transform: rotateY(720deg);
-    } */
 }
 .info .author-name {
   color: #26272b;

@@ -132,21 +132,9 @@
 .page .page-nav .page-nav-item a:active {
   top: 0.1em;
 }
-.page .page-nav .page-nav-next {
-  width: 45%;
-  text-align: left;
-}
-.page .page-nav .page-nav-next a {
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  -o-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-}
 .page .page-nav .page-nav-prev {
   width: 45%;
-  text-align: right;
+  text-align: left;
 }
 .page .page-nav .page-nav-prev a {
   -webkit-box-pack: end;
@@ -155,4 +143,16 @@
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
+}
+.page .page-nav .page-nav-next {
+  width: 45%;
+  text-align: right;
+}
+.page .page-nav .page-nav-next a {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
 }

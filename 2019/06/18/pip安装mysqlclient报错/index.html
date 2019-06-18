@@ -136,7 +136,7 @@
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
     <script type="text/javascript" src="/js/love.js"></script>
-    <title>Python struct模块 | wilson's blog - Life is short, you need Python</title>
+    <title>pip安装mysqlclient报错 | wilson's blog - Life is short, you need Python</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -182,7 +182,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/01/29/cnblog_8377304/">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/06/18/pip安装mysqlclient报错/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="wilson">
        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
@@ -193,11 +193,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Python struct模块</h1>
+      <h1 class="post-title" itemprop="name headline">pip安装mysqlclient报错</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-29T06:54:00+08:00">2018-01-29 06:54:00</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-18T18:29:30+08:00">2019-06-18 18:29:30</time></span>
         </span>
         
         
@@ -206,7 +206,7 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Django/" itemprop="url" rel="index"><span itemprop="name">Django</span></a></span>
         </span>
         
         
@@ -215,226 +215,30 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/01/29/cnblog_8377304/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/01/29/cnblog_8377304/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2019/06/18/pip安装mysqlclient报错/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/06/18/pip安装mysqlclient报错/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="这是👉Python-struct模块👈的摘要"><a href="#这是👉Python-struct模块👈的摘要" class="headerlink" title="这是👉Python struct模块👈的摘要"></a><a href="/2018/01/29/cnblog_8377304/">这是👉Python struct模块👈的摘要</a></h1><a id="more"></a>
-<h1 id="转载-http-blog-csdn-net-lis-12-article-details-52777983"><a href="#转载-http-blog-csdn-net-lis-12-article-details-52777983" class="headerlink" title="转载(http://blog.csdn.net/lis_12/article/details/52777983)."></a>转载(<a href="http://blog.csdn.net/lis_12/article/details/52777983" target="_blank" rel="noopener">http://blog.csdn.net/lis_12/article/details/52777983</a>).</h1><h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><ol>
-<li>按照指定格式将Python数据转换为字符串,该字符串为字节流,如网络传输时,不能传输int,此时先将int转化为字节流,然后再发送;</li>
-<li>按照指定格式将字节流转换为Python指定的数据类型;</li>
-<li>处理二进制数据,如果用struct来处理文件的话,需要用’wb’,’rb’以二进制(字节流)写,读的方式来处理文件;</li>
-<li>处理c语言中的结构体;</li>
-</ol>
-<h2 id="struct模块中的函数"><a href="#struct模块中的函数" class="headerlink" title="struct模块中的函数"></a>struct模块中的函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>return</th>
-<th>explain  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack(fmt,v1,v2…)</td>
-<td>string</td>
-<td>按照给定的格式(fmt),把数据转换成字符串(字节流),并将该字符串返回.  </td>
-</tr>
-<tr>
-<td>pack_into(fmt,buffer,offset,v1,v2…)</td>
-<td>None</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>按照给定的格式(fmt),将数据转换成字符串(字节流),并将字节流写入以offset开始的buffer中.(buffer为可写的缓冲区,可用array模块)<br>unpack(fmt,v1,v2…..) | tuple | 按照给定的格式(fmt)解析字节流,并返回解析结果<br>pack_from(fmt,buffer,offset) | tuple | 按照给定的格式(fmt)解析以offset开始的缓冲区,并返回解析结果<br>calcsize(fmt) | size of fmt | 计算给定的格式(fmt)占用多少字节的内存，注意对齐方式  </p>
-<h2 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h2><p>当打包或者解包的时,需要按照特定的方式来打包或者解包.该方式就是格式化字符串,它指定了数据类型,除此之外,还有用于控制字节顺序、大小和对齐方式的特殊字符.</p>
-<h3 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h3><p>为了同c中的结构体交换数据，还要考虑c或c++编译器使用了字节对齐，通常是以4个字节为单位的32位系统，故而struct根据本地机器字节顺序转换.可以用格式中的第一个字符来改变对齐方式.定义如下</p>
-<table>
-<thead>
-<tr>
-<th>Character</th>
-<th>Byte order</th>
-<th>Size</th>
-<th>Alignment  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>@(默认)</td>
-<td>本机</td>
-<td>本机</td>
-<td>本机,凑够4字节  </td>
-</tr>
-<tr>
-<td>=</td>
-<td>本机</td>
-<td>标准</td>
-<td>none,按原字节数  </td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小端</td>
-<td>标准</td>
-<td>none,按原字节数  </td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大端</td>
-<td>标准</td>
-<td>none,按原字节数  </td>
-</tr>
-<tr>
-<td>!</td>
-<td>network(大端)</td>
-<td>标准</td>
-<td>none,按原字节数  </td>
-</tr>
-</tbody>
-</table>
-<p>如果不懂大小端,见<a href="http://blog.csdn.net/lis_12/article/details/52698634" target="_blank" rel="noopener">大小端参考网址</a>.</p>
-<h3 id="格式符"><a href="#格式符" class="headerlink" title="格式符"></a>格式符</h3><table>
-<thead>
-<tr>
-<th>格式符</th>
-<th>C语言类型</th>
-<th>Python类型</th>
-<th>Standard size  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>x</td>
-<td>pad byte(填充字节)</td>
-<td>no value</td>
-<td></td>
-</tr>
-<tr>
-<td>c</td>
-<td>char</td>
-<td>string of length 1</td>
-<td>1  </td>
-</tr>
-<tr>
-<td>b</td>
-<td>signed char</td>
-<td>integer</td>
-<td>1  </td>
-</tr>
-<tr>
-<td>B</td>
-<td>unsigned char</td>
-<td>integer</td>
-<td>1  </td>
-</tr>
-<tr>
-<td>?</td>
-<td>_Bool</td>
-<td>bool</td>
-<td>1  </td>
-</tr>
-<tr>
-<td>h</td>
-<td>short</td>
-<td>integer</td>
-<td>2  </td>
-</tr>
-<tr>
-<td>H</td>
-<td>unsigned short</td>
-<td>integer</td>
-<td>2  </td>
-</tr>
-<tr>
-<td>i</td>
-<td>int</td>
-<td>integer</td>
-<td>4  </td>
-</tr>
-<tr>
-<td>I(大写的i)</td>
-<td>unsigned int</td>
-<td>integer</td>
-<td>4  </td>
-</tr>
-<tr>
-<td>l(小写的L)</td>
-<td>long</td>
-<td>integer</td>
-<td>4  </td>
-</tr>
-<tr>
-<td>L</td>
-<td>unsigned long</td>
-<td>long</td>
-<td>4  </td>
-</tr>
-<tr>
-<td>q</td>
-<td>long long</td>
-<td>long</td>
-<td>8  </td>
-</tr>
-<tr>
-<td>Q</td>
-<td>unsigned long long</td>
-<td>long</td>
-<td>8  </td>
-</tr>
-<tr>
-<td>f</td>
-<td>float</td>
-<td>float</td>
-<td>4  </td>
-</tr>
-<tr>
-<td>d</td>
-<td>double</td>
-<td>float</td>
-<td>8  </td>
-</tr>
-<tr>
-<td>s</td>
-<td>char[]</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>p</td>
-<td>char[]</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>P</td>
-<td>void *</td>
-<td>long</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>注- -!</p>
-<ol>
-<li>_Bool在C99中定义,如果没有这个类型,则将这个类型视为char,一个字节;</li>
-<li>q和Q只适用于64位机器;</li>
-<li>每个格式前可以有一个数字,表示这个类型的个数,如s格式表示一定长度的字符串,4s表示长度为4的字符串;4i表示四个int;</li>
-<li>P用来转换一个指针,其长度和计算机相关;</li>
-<li>f和d的长度和计算机相关;</li>
-</ol>
+      <p>使用<code>Django==2.0.4</code>报错缺少<code>mysqlclient</code>模块的解决方案</p>
+<a id="more"></a>
+<p>写Django项目的时，启动Django==2.0.4启动直接报错，也是醉了。<br><figure class="hljs highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">django</span><span class="hljs-selector-class">.core</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.ImproperlyConfigured</span>: <span class="hljs-selector-tag">Error</span> <span class="hljs-selector-tag">loading</span> <span class="hljs-selector-tag">MySQLdb</span> <span class="hljs-selector-tag">module</span>. <br><span class="hljs-selector-tag">Did</span> <span class="hljs-selector-tag">you</span> <span class="hljs-selector-tag">install</span> <span class="hljs-selector-tag">mysqlclient</span>?<br></code></pre></td></tr></table></figure></p>
+<p>说缺少<code>mysqlclient</code>模块。<br>简单<code>pip install mysqlclient</code><br>😭也报错了。。。👇<br><figure class="hljs highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs undefined">(venv) wilson@goertek-pc:~/Project/electric$ pip <span class="hljs-keyword">install</span> mysqlclient<br>Collecting mysqlclient<br>  <span class="hljs-keyword">Using</span> cached https://files.pythonhosted.org/packages/f4/f1/<span class="hljs-number">3</span>bb6f64ca7a429729413e6556b7ba5976df06019a5245a43d36032f1061e/mysqlclient<span class="hljs-number">-1.4</span><span class="hljs-number">.2</span>.post1.tar.gz<br>    <span class="hljs-keyword">ERROR</span>: <span class="hljs-keyword">Complete</span> <span class="hljs-keyword">output</span> <span class="hljs-keyword">from</span> command python setup.py egg_info:<br>    <span class="hljs-keyword">ERROR</span>: /<span class="hljs-keyword">bin</span>/sh: <span class="hljs-number">1</span>: mysql_config: <span class="hljs-keyword">not</span> <span class="hljs-keyword">found</span><br>    Traceback (most recent <span class="hljs-keyword">call</span> <span class="hljs-keyword">last</span>):<br>      <span class="hljs-keyword">File</span> <span class="hljs-string">"&lt;string&gt;"</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;<span class="hljs-keyword">module</span>&gt;<br>      <span class="hljs-keyword">File</span> <span class="hljs-string">"/tmp/pip-install-rfq3y_2k/mysqlclient/setup.py"</span>, line <span class="hljs-number">16</span>, <span class="hljs-keyword">in</span> &lt;<span class="hljs-keyword">module</span>&gt;<br>        metadata, options = get_config()<br>      <span class="hljs-keyword">File</span> <span class="hljs-string">"/tmp/pip-install-rfq3y_2k/mysqlclient/setup_posix.py"</span>, line <span class="hljs-number">51</span>, <span class="hljs-keyword">in</span> get_config<br>        libs = mysql_config(<span class="hljs-string">"libs"</span>)<br>      <span class="hljs-keyword">File</span> <span class="hljs-string">"/tmp/pip-install-rfq3y_2k/mysqlclient/setup_posix.py"</span>, line <span class="hljs-number">29</span>, <span class="hljs-keyword">in</span> mysql_config<br>        <span class="hljs-keyword">raise</span> EnvironmentError(<span class="hljs-string">"%s not found"</span> % (_mysql_config_path,))<br>    OSError: mysql_config <span class="hljs-keyword">not</span> <span class="hljs-keyword">found</span><br>    <span class="hljs-comment">----------------------------------------</span><br><span class="hljs-keyword">ERROR</span>: Command <span class="hljs-string">"python setup.py egg_info"</span> <span class="hljs-keyword">failed</span> <span class="hljs-keyword">with</span> <span class="hljs-keyword">error</span> code <span class="hljs-number">1</span> <span class="hljs-keyword">in</span> /tmp/pip-<span class="hljs-keyword">install</span>-rfq3y_2k/mysqlclient/<br></code></pre></td></tr></table></figure></p>
+<p>不会百度啊！一查原来是缺少依赖<code>libmysqld-dev</code><br>安装一哈<br><figure class="hljs highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">sudo apt-<span class="hljs-built_in">get</span> install libmysqld-<span class="hljs-built_in">dev</span><br></code></pre></td></tr></table></figure></p>
+<p>ok 没毛病，解决了，记录一下。</p>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
         
-        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
+        <a class="post-tag button" href="/tags/Django/" rel="tag"><i class="fas fa-tags"></i>Django</a>
         
-        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
         
       </div>
       
@@ -468,12 +272,10 @@
   <nav class="page-nav">
 	<div class="page-nav-prev page-nav-item">
 	  
-	  <a href="/2018/01/30/cnblog_8386598/" rel="prev" title="python3 下载必应每日壁纸（一）"><i class="fas fa-angle-left"></i><span class="nav-title">python3 下载必应每日壁纸（一）</span></a>
-	  
 	</div>
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/01/24/cnblog_8343470/" rel="next" title="python Tkinter基础 Button bg 设置按钮的背景颜色"><span class="nav-title">python Tkinter基础 Button bg 设置按钮的背景颜色</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2019/06/18/zulip安装记录/" rel="next" title="zulip安装记录"><span class="nav-title">zulip安装记录</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -488,8 +290,8 @@
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "https://bolg.weii.ink/2018/01/29/cnblog_8377304/";
-    this.page.identifier = "2018/01/29/cnblog_8377304/";
+    this.page.url = "https://bolg.weii.ink/2019/06/18/pip安装mysqlclient报错/";
+    this.page.identifier = "2019/06/18/pip安装mysqlclient报错/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -568,12 +370,6 @@
     
     
     
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉Python-struct模块👈的摘要"><span class="toc-text">这是👉Python struct模块👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#转载-http-blog-csdn-net-lis-12-article-details-52777983"><span class="toc-text">转载(http://blog.csdn.net/lis_12/article/details/52777983).</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#用处"><span class="toc-text">用处</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#struct模块中的函数"><span class="toc-text">struct模块中的函数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#格式化字符串"><span class="toc-text">格式化字符串</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#对齐方式"><span class="toc-text">对齐方式</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#格式符"><span class="toc-text">格式符</span></a></li></ol></li></ol></li></ol></div>
-    </div>
     
     
     

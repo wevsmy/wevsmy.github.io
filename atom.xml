@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bolg.weii.ink/"/>
-  <updated>2019-06-18T09:35:00.256Z</updated>
+  <updated>2019-06-18T10:39:44.277Z</updated>
   <id>https://bolg.weii.ink/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pip安装mysqlclient报错</title>
+    <link href="https://bolg.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/"/>
+    <id>https://bolg.weii.ink/2019/06/18/pip安装mysqlclient报错/</id>
+    <published>2019-06-18T10:29:30.000Z</published>
+    <updated>2019-06-18T10:39:44.277Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用&lt;code&gt;Django==2.0.4&lt;/code&gt;报错缺少&lt;code&gt;mysqlclient&lt;/code&gt;模块的解决方案&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Django" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Django/"/>
+    
+    
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
+    
+      <category term="Django" scheme="https://bolg.weii.ink/tags/Django/"/>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>zulip安装记录</title>
@@ -38,11 +66,11 @@
     
       <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
       <category term="Zulip" scheme="https://bolg.weii.ink/tags/Zulip/"/>
-    
-      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -97,9 +125,9 @@
       <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
-    
       <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
   </entry>
   
@@ -123,9 +151,9 @@
       <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
-    
       <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
   </entry>
   
@@ -483,32 +511,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;这是👉前端基础之CSS👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端基础之CSS👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端基础之CSS👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/08/cnblog_8527496/&quot;&gt;这是👉前端基础之CSS👈的摘要&lt;/a&gt;&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
-    
-      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端知识之HTML内容</title>
-    <link href="https://bolg.weii.ink/2018/03/05/cnblog_8508917/"/>
-    <id>https://bolg.weii.ink/2018/03/05/cnblog_8508917/</id>
-    <published>2018-03-04T22:46:00.000Z</published>
-    <updated>2019-06-10T11:56:02.282Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;这是👉前端知识之HTML内容👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端知识之HTML内容👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端知识之HTML内容👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/05/cnblog_8508917/&quot;&gt;这是👉前端知识之HTML内容👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     

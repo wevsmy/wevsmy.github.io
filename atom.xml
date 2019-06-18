@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bolg.weii.ink/"/>
-  <updated>2019-06-10T09:52:44.407Z</updated>
+  <updated>2019-06-18T09:35:00.256Z</updated>
   <id>https://bolg.weii.ink/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zulip安装记录</title>
+    <link href="https://bolg.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+    <id>https://bolg.weii.ink/2019/06/18/zulip安装记录/</id>
+    <published>2019-06-18T09:14:36.000Z</published>
+    <updated>2019-06-18T09:35:00.256Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单记录一下采用Docker安装Zulip的过程&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+    
+    
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
+    
+      <category term="Zulip" scheme="https://bolg.weii.ink/tags/Zulip/"/>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>博客园文章迁移到Hexo</title>
@@ -41,9 +71,9 @@
     
       <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
-      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo" scheme="https://bolg.weii.ink/tags/hexo/"/>
+    
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -117,9 +147,9 @@
     
       <category term="Flask" scheme="https://bolg.weii.ink/tags/Flask/"/>
     
-      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -139,9 +169,9 @@
       <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo" scheme="https://bolg.weii.ink/tags/hexo/"/>
+    
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -187,9 +217,9 @@
       <category term="Win10" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Win10/"/>
     
     
-      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo" scheme="https://bolg.weii.ink/tags/hexo/"/>
+    
+      <category term="教程" scheme="https://bolg.weii.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -238,7 +268,7 @@
     <link href="https://bolg.weii.ink/2018/06/02/test/"/>
     <id>https://bolg.weii.ink/2018/06/02/test/</id>
     <published>2018-06-02T12:16:09.000Z</published>
-    <updated>2019-05-31T15:46:25.909Z</updated>
+    <updated>2019-06-18T09:12:56.273Z</updated>
     
     <summary type="html">
     
@@ -253,9 +283,9 @@
       <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
-    
       <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
       <category term="HTML" scheme="https://bolg.weii.ink/tags/HTML/"/>
     
@@ -479,32 +509,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;这是👉前端知识之HTML内容👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端知识之HTML内容👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端知识之HTML内容👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/05/cnblog_8508917/&quot;&gt;这是👉前端知识之HTML内容👈的摘要&lt;/a&gt;&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
-    
-      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL 之 索引原理与慢查询优化</title>
-    <link href="https://bolg.weii.ink/2018/02/28/cnblog_8485214/"/>
-    <id>https://bolg.weii.ink/2018/02/28/cnblog_8485214/</id>
-    <published>2018-02-28T02:47:00.000Z</published>
-    <updated>2019-06-10T11:54:42.245Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;这是👉MySQL-之-索引原理与慢查询优化👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉MySQL-之-索引原理与慢查询优化👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉MySQL 之 索引原理与慢查询优化👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/02/28/cnblog_8485214/&quot;&gt;这是👉MySQL 之 索引原理与慢查询优化👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     

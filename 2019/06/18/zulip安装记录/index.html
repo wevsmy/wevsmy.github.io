@@ -236,9 +236,9 @@
         
         <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
         
-        <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
-        
         <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
+        
+        <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
         
         <a class="post-tag button" href="/tags/Zulip/" rel="tag"><i class="fas fa-tags"></i>Zulip</a>
         
@@ -249,8 +249,16 @@
   
   
 <div class="reward" id="reward">
-  <p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
-  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div class="liker">
+	<div class="liker-canvas">
+		<canvas class="hearts-canvas"></canvas>
+	</div>
+	<p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+  	<button id="reward-button" class="btn" disable="enable">
+  	    <i class="fas fa-heart"></i>
+  	</button>
+  	<span>打赏</span>
+  </div>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
     <div id="wechat">
@@ -445,5 +453,6 @@
 
 
     <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+    <script type="text/javascript" src="/js/heartsFlow.js"></script>
   </body>
 </html>

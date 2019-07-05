@@ -18,13 +18,71 @@
 .reward .qr div span {
   display: block;
 }
-.reward .button {
-  cursor: pointer;
+.reward .liker {
+  position: relative;
+  margin: 0 auto;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.reward .liker .liker-canvas {
+  position: absolute;
+  width: 90%;
+  margin: 0 5%;
+  top: -23em;
+}
+.reward .liker span {
+  font-family: monospace;
+  color: #f92a82;
+  margin: 0 auto;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.reward .liker .btn {
+  width: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 50%;
   border: none;
-  outline: 0;
-  padding: 0em 0.5em;
-  margin: 0.5em 0;
-  background: #ff2a2a;
-  border: 0.1em solid #f5c6cb;
-  line-height: 2em;
+  margin: 0 50%;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -10%);
+  -moz-transform: translate(-50%, -10%);
+  -o-transform: translate(-50%, -10%);
+  -ms-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  background-color: #ff4d80;
+  color: #fff;
+  outline: none;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-box-shadow: 0 3px 10px #f92a82;
+  box-shadow: 0 3px 10px #f92a82;
 }

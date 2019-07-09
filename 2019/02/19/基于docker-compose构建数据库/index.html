@@ -13,7 +13,7 @@
     <meta name="google-site-verification" content="JY57uzMQ97HQSfizDkZhmgQDp8vOqGe8SZi7X9MLqOs">
     
     
-    <meta name="keywords" content="Life, Weii, Hexo, Wevsmy, Wilson">
+    <meta name="keywords" content="Weii, Wevsmy, Wilson, Python, Golang, PyQt5, Hexo">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -200,6 +200,19 @@
           <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-19T11:38:46+08:00">2019-02-19 11:38:46</time></span>
         </span>
         
+
+        
+        <span class="post-updated">
+           <span class="post-meta-divider divider">|</span>
+           <i class="far fa-calendar-edit"></i>
+           <span>
+              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-07-09T19:30:39+08:00">
+                2019-07-09 19:30:39
+              </time>
+           </span>
+        </span>
+        
+
         
         
         <span class="post-meta-divider divider">|</span>
@@ -222,9 +235,18 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>使用docker构建mysql、mongo、redis数据库，可以直接使用，免去安装的繁琐。</p>
+      <p>在开发的过程中免不了要使用数据库。使用docker构建一些常用的数据库免去安装的繁琐。</p>
 <a id="more"></a>
-<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><br><span class="hljs-attr">  mysql:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-attr">mysql:5.7</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mysql</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"3306:3306"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_DATABASE:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_USER:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_PASSWORD:</span> <span class="hljs-string">willson</span><br><br><span class="hljs-attr">  mongo:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-number">27017</span><span class="hljs-string">:27017</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_USERNAME:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_ROOT_PASSWORD:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      MONGO_INITDB_DATABASE_NAME:</span> <span class="hljs-string">test</span><br><span class="hljs-attr">    command:</span> <span class="hljs-string">["mongod","--bind_ip","0.0.0.0"]</span><br><br><span class="hljs-attr">  redis:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">"redis:alpine"</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">redis</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"6379:6379"</span><br>	<span class="hljs-attr">command:</span> <span class="hljs-string">["redis-server","--bind","0.0.0.0"]</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"/mnt/data2/test:/data"</span><br></code></pre></td></tr></table></figure>
+<h1 id="序🤫"><a href="#序🤫" class="headerlink" title="序🤫"></a>序🤫</h1><p>使用docker构建mysql、mongo、redis、postgresql、sqlserver数据库，可以直接使用，免去安装的繁琐。</p>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">  mysql:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-attr">mysql:5.7</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mysql</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"3306:3306"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_DATABASE:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_USER:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">      MYSQL_PASSWORD:</span> <span class="hljs-string">willson</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"/mnt/data2/database/mysql:/var/lib/mysql"</span><br></code></pre></td></tr></table></figure>
+<h2 id="mongo"><a href="#mongo" class="headerlink" title="mongo"></a>mongo</h2><p>mongo默认只能本机访问，开启外网访问必须添加<code>command: [&quot;mongod&quot;,&quot;--bind_ip&quot;,&quot;0.0.0.0&quot;]</code></p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">  mongo:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-attr">mongo:4.0.4</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">mongo</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-number">27017</span><span class="hljs-string">:27017</span><br>    <span class="hljs-comment">#    environment:</span><br>    <span class="hljs-comment">#      MONGO_INITDB_ROOT_USERNAME: root</span><br>    <span class="hljs-comment">#      MONGO_INITDB_ROOT_PASSWORD: root</span><br>    <span class="hljs-comment">#      MONGO_INITDB_DATABASE_NAME: test</span><br><span class="hljs-attr">    command:</span> <span class="hljs-string">["mongod","--bind_ip","0.0.0.0"]</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"/mnt/data2/database/mongodb:/data/db"</span><br></code></pre></td></tr></table></figure>
+<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><p>参数<code>--bind 0.0.0.0</code>开启外部访问<br>参数<code>--appendonly yes</code> 开启持久化</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">  image:</span> <span class="hljs-attr">redis:alpine</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">redis</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"6379:6379"</span><br><span class="hljs-attr">    command:</span> <span class="hljs-string">["redis-server","--bind","0.0.0.0","--appendonly","yes"]</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"/mnt/data2/database/redis:/data"</span><br></code></pre></td></tr></table></figure>
+<h2 id="postgresql"><a href="#postgresql" class="headerlink" title="postgresql"></a>postgresql</h2><p>使用ubuntu系统，其启动<code>postgresql</code>有个小坑。<br>在<code>postgresql</code>的<code>volumes</code>只能映射在本机系统文件夹下，不能映射到系统外置挂载的磁盘中。不然容器跑不起来。😥</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">  image:</span> <span class="hljs-string">postgres</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">postgresql</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"5432:5432"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      POSTGRES_USER:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      POSTGRES_PASSWORD:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">      POSTGRES_DB:</span> <span class="hljs-string">test</span><br><span class="hljs-attr">    volumes:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">'/opt/docker/database/postgresql/data:/var/lib/postgresql/data:rw'</span><br></code></pre></td></tr></table></figure>
+<h2 id="sqlServer"><a href="#sqlServer" class="headerlink" title="sqlServer"></a>sqlServer</h2><p>其中参数<code>MSSQL_SA_PASSWORD</code>的密码必须为8位不同的、高强度的，不然容器跑不起来。🤦‍</p>
+<figure class="hljs highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span><br><span class="hljs-attr">services:</span><br><span class="hljs-attr">  sqlServer:</span><br><span class="hljs-attr">    image:</span> <span class="hljs-string">mcr.microsoft.com/mssql/server:2017-latest</span><br><span class="hljs-attr">    container_name:</span> <span class="hljs-string">sqlServer</span><br><span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span><br><span class="hljs-attr">    ports:</span><br><span class="hljs-bullet">      -</span> <span class="hljs-string">"1433:1433"</span><br><span class="hljs-attr">    environment:</span><br><span class="hljs-attr">      ACCEPT_EULA:</span> <span class="hljs-string">Y</span><br><span class="hljs-attr">      MSSQL_SA_PASSWORD:</span> <span class="hljs-number">123</span><span class="hljs-string">qwe!@#</span><br><span class="hljs-comment">#      MSSQL_PID: Express</span><br></code></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
       
@@ -340,14 +362,14 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">70</a></div>
+      <div><a href="/archives/">71</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">7</a></div>
+      <div><a href="/categories/">8</a></div>
     </div>
     
     
@@ -375,6 +397,12 @@
     
     
     
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#序🤫"><span class="toc-text">序🤫</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#mysql"><span class="toc-text">mysql</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#mongo"><span class="toc-text">mongo</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#redis"><span class="toc-text">redis</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#postgresql"><span class="toc-text">postgresql</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#sqlServer"><span class="toc-text">sqlServer</span></a></li></ol></li></ol></div>
+    </div>
+    
     
     
     <hr>
@@ -397,7 +425,9 @@
       <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
         
-        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">charles的博客</a></li>
+        <li><i class="fas fa-link"></i><a href="https://codeloop.org" target="_blank">Code Loop</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">Charles的博客</a></li>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
         

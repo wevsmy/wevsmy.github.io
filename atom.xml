@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bolg.weii.ink/"/>
-  <updated>2019-07-09T11:27:15.988Z</updated>
+  <updated>2019-07-15T10:24:09.794Z</updated>
   <id>https://bolg.weii.ink/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gitlab服务器迁移</title>
+    <link href="https://bolg.weii.ink/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/"/>
+    <id>https://bolg.weii.ink/2019/07/15/gitlab迁移/</id>
+    <published>2019-07-15T09:37:26.000Z</published>
+    <updated>2019-07-15T10:24:09.794Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司有需求安装在172.31.66.63的gitlab服务需要迁移到10.10.192.18上，记录一下迁移过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编写Dockerfile分阶段构建Vue项目</title>
+    <link href="https://bolg.weii.ink/2019/07/15/docker-build-vue/"/>
+    <id>https://bolg.weii.ink/2019/07/15/docker-build-vue/</id>
+    <published>2019-07-15T01:37:26.000Z</published>
+    <updated>2019-07-15T10:26:23.368Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;docker构建部署vue项目，减少构建后的docker镜像的大小，采用分阶段构建，只保留build&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Linux" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/"/>
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
+    
+      <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo添加文章更新时间</title>
@@ -58,9 +110,9 @@
       <category term="Django" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Django/"/>
     
     
-      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
-    
       <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
       <category term="Django" scheme="https://bolg.weii.ink/tags/Django/"/>
     
@@ -86,11 +138,11 @@
       <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
-    
       <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
     
       <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
       <category term="Zulip" scheme="https://bolg.weii.ink/tags/Zulip/"/>
     
@@ -197,9 +249,9 @@
     
       <category term="Flask" scheme="https://bolg.weii.ink/tags/Flask/"/>
     
-      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
-    
       <category term="笔记" scheme="https://bolg.weii.ink/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
   </entry>
   
@@ -333,9 +385,9 @@
       <category term="Docker" scheme="https://bolg.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/Docker/"/>
     
     
-      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
-    
       <category term="Docker" scheme="https://bolg.weii.ink/tags/Docker/"/>
+    
+      <category term="Python" scheme="https://bolg.weii.ink/tags/Python/"/>
     
       <category term="HTML" scheme="https://bolg.weii.ink/tags/HTML/"/>
     
@@ -455,58 +507,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;这是👉linux-screen-常用命令👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉linux-screen-常用命令👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉linux screen 常用命令👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/13/cnblog_8554604/&quot;&gt;这是👉linux screen 常用命令👈的摘要&lt;/a&gt;&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
-    
-      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端基础之BOM和DOM</title>
-    <link href="https://bolg.weii.ink/2018/03/12/cnblog_8550048/"/>
-    <id>https://bolg.weii.ink/2018/03/12/cnblog_8550048/</id>
-    <published>2018-03-12T00:34:00.000Z</published>
-    <updated>2019-06-10T11:55:37.650Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;这是👉前端基础之BOM和DOM👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端基础之BOM和DOM👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端基础之BOM和DOM👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/12/cnblog_8550048/&quot;&gt;这是👉前端基础之BOM和DOM👈的摘要&lt;/a&gt;&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-    
-      <category term="博客园" scheme="https://bolg.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/"/>
-    
-      <category term="搬家" scheme="https://bolg.weii.ink/tags/%E6%90%AC%E5%AE%B6/"/>
-    
-      <category term="cnblogs" scheme="https://bolg.weii.ink/tags/cnblogs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端基础之JavaScript</title>
-    <link href="https://bolg.weii.ink/2018/03/08/cnblog_8527506/"/>
-    <id>https://bolg.weii.ink/2018/03/08/cnblog_8527506/</id>
-    <published>2018-03-07T19:44:00.000Z</published>
-    <updated>2019-06-10T11:55:44.961Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;这是👉前端基础之JavaScript👈的摘要&quot;&gt;&lt;a href=&quot;#这是👉前端基础之JavaScript👈的摘要&quot; class=&quot;headerlink&quot; title=&quot;这是👉前端基础之JavaScript👈的摘要&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/2018/03/08/cnblog_8527506/&quot;&gt;这是👉前端基础之JavaScript👈的摘要&lt;/a&gt;&lt;/h1&gt;
     
     </summary>
     

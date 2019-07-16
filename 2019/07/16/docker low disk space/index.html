@@ -139,7 +139,7 @@
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
     <script type="text/javascript" src="/js/love.js"></script>
-    <title>python 迭代器 | wilson's blog - Life is short, you need Python</title>
+    <title>Docker目录磁盘空间满了 | wilson's blog - Life is short, you need Python</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -185,7 +185,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/01/03/cnblog_8183568/">
+      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/07/16/docker low disk space/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="wilson">
        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
@@ -196,11 +196,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">python 迭代器</h1>
+      <h1 class="post-title" itemprop="name headline">Docker目录磁盘空间满了</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-03T06:21:00+08:00">2018-01-03 06:21:00</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-07-16T16:05:21+08:00">2019-07-16 16:05:21</time></span>
         </span>
         
 
@@ -209,8 +209,8 @@
            <span class="post-meta-divider divider">|</span>
            <i class="far fa-calendar-edit"></i>
            <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-06-10T19:45:33+08:00">
-                2019-06-10 19:45:33
+              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-07-16T16:24:06+08:00">
+                2019-07-16 16:24:06
               </time>
            </span>
         </span>
@@ -222,7 +222,7 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
         </span>
         
         
@@ -231,78 +231,70 @@
         <span class="post-meta-divider divider">|</span>
         
         <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="/2018/01/03/cnblog_8183568/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/01/03/cnblog_8183568/" itemprop="commentCount"></span></a></span>
+          <i class="far fa-comments"></i><span><a href="/2019/07/16/docker low disk space/#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/07/16/docker low disk space/" itemprop="commentCount"></span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="这是👉python-迭代器👈的摘要"><a href="#这是👉python-迭代器👈的摘要" class="headerlink" title="这是👉python 迭代器👈的摘要"></a><a href="/2018/01/03/cnblog_8183568/">这是👉python 迭代器👈的摘要</a></h1><a id="more"></a>
-<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>迭代是访问集合元素的一种方式。迭代器是一个可以记住遍历的位置的对象。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。</p>
-<h2 id="1-可迭代对象"><a href="#1-可迭代对象" class="headerlink" title="1. 可迭代对象"></a>1. 可迭代对象</h2><p>以直接作用于 for 循环的数据类型有以下几种：</p>
-<p>一类是集合数据类型，如 list 、 tuple 、 dict 、 set 、 str 等；</p>
-<p>一类是 generator ，包括生成器和带 yield 的generator function。</p>
-<p>这些可以直接作用于 for 循环的对象统称为可迭代对象： Iterable 。</p>
-<h2 id="2-判断是否可以迭代"><a href="#2-判断是否可以迭代" class="headerlink" title="2. 判断是否可以迭代"></a>2. 判断是否可以迭代</h2><p>可以使用 isinstance() 判断一个对象是否是 Iterable 对象：</p>
-<pre><code>In [50]: from collections import Iterable
-
-In [51]: isinstance([], Iterable)
-Out[51]: True
-
-In [52]: isinstance({}, Iterable)
-Out[52]: True
-
-In [53]: isinstance(&apos;abc&apos;, Iterable)
-Out[53]: True
-
-In [54]: isinstance((x for x in range(10)), Iterable)
-Out[54]: True
-
-In [55]: isinstance(100, Iterable)
-Out[55]: False
-</code></pre><p>而生成器不但可以作用于 for 循环，还可以被 next() 函数不断调用并返回下一个值，直到最后抛出 StopIteration<br>错误表示无法继续返回下一个值了。</p>
-<h2 id="3-迭代器"><a href="#3-迭代器" class="headerlink" title="3.迭代器"></a>3.迭代器</h2><p>可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。</p>
-<p>可以使用 isinstance() 判断一个对象是否是 Iterator 对象：</p>
-<pre><code>In [56]: from collections import Iterator
-
-In [57]: isinstance((x for x in range(10)), Iterator)
-Out[57]: True
-
-In [58]: isinstance([], Iterator)
-Out[58]: False
-
-In [59]: isinstance({}, Iterator)
-Out[59]: False
-
-In [60]: isinstance(&apos;abc&apos;, Iterator)
-Out[60]: False
-
-In [61]: isinstance(100, Iterator)
-Out[61]: False
-</code></pre><h2 id="4-iter-函数"><a href="#4-iter-函数" class="headerlink" title="4.iter()函数"></a>4.iter()函数</h2><p>生成器都是 Iterator 对象，但 list 、 dict 、 str 虽然是 Iterable ，却不是 Iterator 。</p>
-<p>把 list 、 dict 、 str 等 Iterable 变成 Iterator 可以使用 iter() 函数：</p>
-<pre><code>In [62]: isinstance(iter([]), Iterator)
-Out[62]: True
-
-In [63]: isinstance(iter(&apos;abc&apos;), Iterator)
-Out[63]: True
-</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>凡是可作用于 for 循环的对象都是 Iterable 类型；</li>
-<li>凡是可作用于 next() 函数的对象都是 Iterator 类型</li>
-<li>集合数据类型如 list 、 dict 、 str 等是 Iterable 但不是 Iterator ，不过可以通过 iter() 函数获得一个 Iterator 对象。</li>
+      <p>😂昨天刚建的GitLab服务今天就报500了，哭死<br>排查发现是<code>/var/lib/docker</code>目录满了，咱也不知道原来里面放的啥，咱也不敢动，咱走还不行嘛！</p>
+<a id="more"></a>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[gitlab@cep-server-bj ~]$ df -h /var/lib/docker<br>文件系统             容量  已用  可用 已用% 挂载点<br>/dev/mapper/cl-root   50G   50G  180M  100% /<br></code></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
+<li><p>先看看哪里还有地方让俺去</p>
+  <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">[gitlab@cep-server-bj ~]$ df -h<br>文件系统             容量  已用  可用 已用% 挂载点<br>/dev/mapper/cl-root   50G   50G  180M  100% /<br>devtmpfs              63G     0   63G    0% /dev<br>tmpfs                 63G   96K   63G    1% /dev/shm<br>tmpfs                 63G  4.2G   59G    7% /run<br>tmpfs                 63G     0   63G    0% /sys/fs/cgroup<br>/dev/sda2           1014M  165M  850M   17% /boot<br>/dev/sda1            200M  9.5M  191M    5% /boot/efi<br>/dev/mapper/cl-home  5.7T  1.6T  4.2T   28% /home<br>tmpfs                 13G   20K   13G    1% /run/user/1000<br>tmpfs                 13G     0   13G    0% /run/user/987<br>tmpfs                 13G     0   13G    0% /run/user/1001<br></code></pre></td></tr></table></figure>
+</li>
 </ul>
+<pre><code>嘿，`/dev/mapper/cl-home`这个地方挺大的，就搬到这里吧🙂
+</code></pre><ul>
+<li><p>停了docker服务</p>
+  <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl stop docker<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>给docker建个窝</p>
+  <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mkdir -p /home/dev/var/lib/docker<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>搬家</p>
+  <figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo rsync -avz /var/lib/docker/ /home/dev/var/lib/docker<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>改配置，指向新家</p>
+<p>查看<code>/etc/systemd/system/docker.service.d</code>目录及<code>devicemapper.conf</code>是否存在。如果不存在，就新建</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mkdir -p /etc/systemd/system/docker.service.d/<br>sudo vim /etc/systemd/system/docker.service.d/devicemapper.conf<br></code></pre></td></tr></table></figure>
+<p><code>devicemapper.conf</code>添加如下内容：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs txt">[Service]<br>ExecStart=/usr/bin/dockerd  --graph=/home/dev/var/lib/docker<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>启动docker</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl daemon-reload<br>systemctl restart docker<br>systemctl enable docker<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>确认一哈<br>确认<code>Docker Root Dir</code>修改是否已经生效</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs shell">[gitlab@cep-server-bj lib]$ docker info<br>Containers: 0<br> Running: 0<br> Paused: 0<br> Stopped: 0<br>Images: 2<br>Server Version: 18.09.7<br>Storage Driver: overlay2<br> Backing Filesystem: xfs<br> Supports d_type: true<br> Native Overlay Diff: false<br>Logging Driver: json-file<br>Cgroup Driver: cgroupfs<br>Plugins:<br> Volume: local<br> Network: bridge host macvlan null overlay<br> Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog<br>Swarm: inactive<br>Runtimes: runc<br>Default Runtime: runc<br>Init Binary: docker-init<br>containerd version: 894b81a4b802e4eb2a91d1ce216b8817763c29fb<br>runc version: 425e105d5a03fabd737a126ad93d62a9eeede87f<br>init version: fec3683<br>Security Options:<br> seccomp<br>  Profile: default<br>Kernel Version: 3.10.0-514.el7.x86_64<br>Operating System: CentOS Linux 7 (Core)<br>OSType: linux<br>Architecture: x86_64<br>CPUs: 24<br>Total Memory: 125.1GiB<br>Name: cep-server-bj<br>ID: HL4V:SNMX:2JYC:WISH:K6HM:J4YR:4GQG:SAFL:7YS4:MHNE:WK3I:XRTW<br>Docker Root Dir: /home/dev/var/lib/docker<br>Debug Mode (client): false<br>Debug Mode (server): false<br>Registry: https://index.docker.io/v1/<br>Labels:<br>Experimental: false<br>Insecure Registries:<br> 127.0.0.0/8<br>Live Restore Enabled: false<br>Product License: Community Engine<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  看到<code>Docker Root Dir: /home/dev/var/lib/docker</code>我就知道这次搬家稳了😁</p>
+<p>  话说上面这配置，玩吃鸡卡不卡🙃</p>
+<ul>
+<li><p>看看原来的镜像还在嘛</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[gitlab@cep-server-bj lib]$ docker images<br>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE<br>sameersbn/gitlab    12.0.0              6f35c078d0de        2 days ago          2.48GB<br>sameersbn/redis     4.0.9-2             8f89b2ebe8be        6 months ago        90.3MB<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>确认没问题删除<code>/var/lib/docker/</code>中文件</p>
+</li>
+</ul>
+<h2 id="深入思考"><a href="#深入思考" class="headerlink" title="深入思考"></a>深入思考</h2><p>深层次的问题点找到了。。。</p>
+<p>我是猪🐷</p>
+<p>系统盘总共才有50G的磁盘空间，我却把gitlab的数据全放到了系统根目录下了😂</p>
+<p>gitlab的数据占了40多个G的空间</p>
+<p>下次注意：启动<code>docker</code>其使用的<code>volumes</code>要放个大点的地方😁</p>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
+        <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
-        <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
-        
-        <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
+        <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
         
       </div>
       
@@ -344,12 +336,10 @@ Out[63]: True
   <nav class="page-nav">
 	<div class="page-nav-prev page-nav-item">
 	  
-	  <a href="/2018/01/03/cnblog_8183674/" rel="prev" title="python 生成器"><i class="fas fa-angle-left"></i><span class="nav-title">python 生成器</span></a>
-	  
 	</div>
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2017/12/28/cnblog_8134274/" rel="next" title="python 装饰器"><span class="nav-title">python 装饰器</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2019/07/15/gitlab迁移/" rel="next" title="Gitlab服务器迁移"><span class="nav-title">Gitlab服务器迁移</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -364,8 +354,8 @@ Out[63]: True
   <div id="disqus_thread" class="disqus_thread"></div>
   <script type="text/javascript">
   var disqus_config = function () {
-    this.page.url = "https://bolg.weii.ink/2018/01/03/cnblog_8183568/";
-    this.page.identifier = "2018/01/03/cnblog_8183568/";
+    this.page.url = "https://bolg.weii.ink/2019/07/16/docker low disk space/";
+    this.page.identifier = "2019/07/16/docker low disk space/";
   };
   (function() {
     var d = document, s = d.createElement("script");
@@ -448,7 +438,7 @@ Out[63]: True
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉python-迭代器👈的摘要"><span class="toc-text">这是👉python 迭代器👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#迭代器"><span class="toc-text">迭代器</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-可迭代对象"><span class="toc-text">1. 可迭代对象</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-判断是否可以迭代"><span class="toc-text">2. 判断是否可以迭代</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-迭代器"><span class="toc-text">3.迭代器</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-iter-函数"><span class="toc-text">4.iter()函数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#原因"><span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#深入思考"><span class="toc-text">深入思考</span></a></li></ol></div>
     </div>
     
     

@@ -209,8 +209,8 @@
            <span class="post-meta-divider divider">|</span>
            <i class="far fa-calendar-edit"></i>
            <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-07-19T12:49:45+08:00">
-                2019-07-19 12:49:45
+              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-07-19T14:52:13+08:00">
+                2019-07-19 14:52:13
               </time>
            </span>
         </span>
@@ -244,6 +244,8 @@
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p><strong>只需修改一个地方，然后docker-compose up创建新网桥的时候就会使用我们设置的那个网段和子网；像修改docker0的网段一样，修改/etc/docker/daemon.json配置文件，docker0的网段就会变为在daemon.json里设置的这个；有没有类似于只要修改一个配置文件，docker-compose每次创建新的网桥的时候都会按照配置文件里的来</strong></p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在<code>/etc/docker/daemon.json</code>添加</p>
 <figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br><span class="hljs-attr">"debug"</span> : <span class="hljs-literal">true</span>,<br><span class="hljs-attr">"default-address-pools"</span> : [<br>    &#123;<br>      <span class="hljs-attr">"base"</span> : <span class="hljs-string">"12.11.0.0/16"</span>,<br>      <span class="hljs-attr">"size"</span> : <span class="hljs-number">24</span><br>    &#125;<br>  ] <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后重启<code>docker</code>服务</p>
+<figure class="hljs highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">service docker restart<br></code></pre></td></tr></table></figure>
 <p><strong>亲测可以使用</strong></p>
 
     </main>
@@ -363,7 +365,7 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">76</a></div>
+      <div><a href="/archives/">77</a></div>
     </div>
     
     
@@ -377,7 +379,7 @@
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">16</a></div>
+      <div><a href="/tags/">19</a></div>
     </div>
     
     

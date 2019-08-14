@@ -225,8 +225,24 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
         </span>
         
+
         
-        
+
+          
+            <span class="post-meta-divider divider">|</span>
+            <span class="post-comment-count">
+              <i class="far fa-comments"></i>
+              <span>
+                <a href="/2017/12/19/cnblog_8064765/#comment-thread" itemprop="discussionUrl">
+                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2017/12/19/cnblog_8064765/" itemprop="commentCount">
+                    <span id="python 列表的常见操作">0</span> Comments
+                  </span>
+                </a>
+              </span>
+            </span>
+
+          
+
         
       </div>
     </header>
@@ -293,11 +309,14 @@
 	<div class="liker-canvas">
 		<canvas class="hearts-canvas"></canvas>
 	</div>
-	<p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
   	<button id="reward-button" class="btn" disable="enable">
   	    <i class="fas fa-heart"></i>
   	</button>
-  	<span>打赏</span>
+  	<span>赞赏</span>
+  	
+  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
+  	
   </div>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
@@ -337,45 +356,59 @@
 
 <div class="comments" id="comments">
   
-  
-  <div class="commentjs" id="comment-thread"></div>
-  <link rel="stylesheet" href="/css/commentjs.css">
-  <script defer type="text/javascript" src="/js/marked.min.js"></script>
-  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-  <script defer type="text/javascript" src="/js/commentjs.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function () {
-    getComments({
-      "type": "github",
-      "user": "wevsmy",
-      "repo": "wevsmy.github.io",
-      "client_id": "ded8625909c20b7ae2f7",
-      "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      "no_comment": "这个页面还没有评论，现在就去评论吧！",
-      "go_to_comment": "去评论",
-      "issue_title": "python 列表的常见操作",
-      "btn_class": "button",
-      "comments_target": "#comment-thread"
-    });
-    marked.setOptions({
-      "highlight": function (code, lang) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-    function mark() {
-      var markdowns = document.getElementsByClassName("markdown");
-      for (var i = 0; i < markdowns.length; ++i){
-        if (markdowns[i].innerHTML) {
-          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+    <script type="text/javascript">
+      $.ajax({
+      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+      dataType: 'json',
+      cache: false,
+      crossDomain: true,
+      success: function success(page_comments) {
+        for (var i = 0; i < page_comments.length; ++i) {
+          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
         }
       }
-    }
-    window.addEventListener("DOMContentLoaded", mark, false);
-    window.addEventListener("load", mark, false);
-  });
-  </script>
-  
+    });
+    </script>
+
+    
+      <div class="commentjs" id="comment-thread"></div>
+      <link rel="stylesheet" href="/css/commentjs.css">
+      <script defer type="text/javascript" src="/js/marked.min.js"></script>
+      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+      <script defer type="text/javascript" src="/js/commentjs.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function () {
+        getComments({
+          "type": "github",
+          "user": "wevsmy",
+          "repo": "wevsmy.github.io",
+          "client_id": "ded8625909c20b7ae2f7",
+          "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+          "no_comment": "这个页面还没有评论，现在就去评论吧！",
+          "go_to_comment": "去评论",
+          "issue_title": "python 列表的常见操作",
+          "btn_class": "button",
+          "comments_target": "#comment-thread"
+        });
+        marked.setOptions({
+          "highlight": function (code, lang) {
+            return hljs.highlightAuto(code).value;
+          }
+        });
+        function mark() {
+          var markdowns = document.getElementsByClassName("markdown");
+          for (var i = 0; i < markdowns.length; ++i){
+            if (markdowns[i].innerHTML) {
+              markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+            }
+          }
+        };
+        window.addEventListener("DOMContentLoaded", mark, false);
+        window.addEventListener("load", mark, false);
+      });
+      </script>
+    
   
 </div>
 
@@ -523,7 +556,6 @@
 </footer>
 
 
-    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-    <script type="text/javascript" src="/js/heartsFlow.js"></script>
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
   </body>
 </html>

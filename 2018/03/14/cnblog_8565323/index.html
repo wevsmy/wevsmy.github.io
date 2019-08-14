@@ -225,8 +225,24 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
         </span>
         
+
         
-        
+
+          
+            <span class="post-meta-divider divider">|</span>
+            <span class="post-comment-count">
+              <i class="far fa-comments"></i>
+              <span>
+                <a href="/2018/03/14/cnblog_8565323/#comment-thread" itemprop="discussionUrl">
+                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/03/14/cnblog_8565323/" itemprop="commentCount">
+                    <span id="Markdown 语法">0</span> Comments
+                  </span>
+                </a>
+              </span>
+            </span>
+
+          
+
         
       </div>
     </header>
@@ -439,7 +455,7 @@
 <p>Markdown 会转为：</p>
 <p>​    <a href="http://example.com/" target="_blank" rel="noopener">http://example.com/</a></p>
 <p>邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</p>
-<p>​    <a href="mailto:&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#x73;&#x40;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;" target="_blank" rel="noopener">&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#x73;&#x40;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;</a></p>
+<p>​    <a href="mailto:&#97;&#x64;&#100;&#x72;&#x65;&#115;&#x73;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#109;" target="_blank" rel="noopener">&#97;&#x64;&#100;&#x72;&#x65;&#115;&#x73;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#109;</a></p>
 <p>Markdown 会转成：</p>
 <p>​    <a href="&#x6D;&#x61;i&#x6C;&#x74;&#x6F;:&#x61;&#x64;&#x64;&#x72;&#x65;
 ​    &#115;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;
@@ -475,11 +491,14 @@ href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</co
 	<div class="liker-canvas">
 		<canvas class="hearts-canvas"></canvas>
 	</div>
-	<p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
   	<button id="reward-button" class="btn" disable="enable">
   	    <i class="fas fa-heart"></i>
   	</button>
-  	<span>打赏</span>
+  	<span>赞赏</span>
+  	
+  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
+  	
   </div>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
@@ -519,45 +538,59 @@ href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</co
 
 <div class="comments" id="comments">
   
-  
-  <div class="commentjs" id="comment-thread"></div>
-  <link rel="stylesheet" href="/css/commentjs.css">
-  <script defer type="text/javascript" src="/js/marked.min.js"></script>
-  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-  <script defer type="text/javascript" src="/js/commentjs.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function () {
-    getComments({
-      "type": "github",
-      "user": "wevsmy",
-      "repo": "wevsmy.github.io",
-      "client_id": "ded8625909c20b7ae2f7",
-      "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      "no_comment": "这个页面还没有评论，现在就去评论吧！",
-      "go_to_comment": "去评论",
-      "issue_title": "Markdown 语法",
-      "btn_class": "button",
-      "comments_target": "#comment-thread"
-    });
-    marked.setOptions({
-      "highlight": function (code, lang) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-    function mark() {
-      var markdowns = document.getElementsByClassName("markdown");
-      for (var i = 0; i < markdowns.length; ++i){
-        if (markdowns[i].innerHTML) {
-          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+    <script type="text/javascript">
+      $.ajax({
+      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+      dataType: 'json',
+      cache: false,
+      crossDomain: true,
+      success: function success(page_comments) {
+        for (var i = 0; i < page_comments.length; ++i) {
+          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
         }
       }
-    }
-    window.addEventListener("DOMContentLoaded", mark, false);
-    window.addEventListener("load", mark, false);
-  });
-  </script>
-  
+    });
+    </script>
+
+    
+      <div class="commentjs" id="comment-thread"></div>
+      <link rel="stylesheet" href="/css/commentjs.css">
+      <script defer type="text/javascript" src="/js/marked.min.js"></script>
+      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+      <script defer type="text/javascript" src="/js/commentjs.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function () {
+        getComments({
+          "type": "github",
+          "user": "wevsmy",
+          "repo": "wevsmy.github.io",
+          "client_id": "ded8625909c20b7ae2f7",
+          "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+          "no_comment": "这个页面还没有评论，现在就去评论吧！",
+          "go_to_comment": "去评论",
+          "issue_title": "Markdown 语法",
+          "btn_class": "button",
+          "comments_target": "#comment-thread"
+        });
+        marked.setOptions({
+          "highlight": function (code, lang) {
+            return hljs.highlightAuto(code).value;
+          }
+        });
+        function mark() {
+          var markdowns = document.getElementsByClassName("markdown");
+          for (var i = 0; i < markdowns.length; ++i){
+            if (markdowns[i].innerHTML) {
+              markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+            }
+          }
+        };
+        window.addEventListener("DOMContentLoaded", mark, false);
+        window.addEventListener("load", mark, false);
+      });
+      </script>
+    
   
 </div>
 
@@ -705,7 +738,6 @@ href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</co
 </footer>
 
 
-    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-    <script type="text/javascript" src="/js/heartsFlow.js"></script>
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
   </body>
 </html>

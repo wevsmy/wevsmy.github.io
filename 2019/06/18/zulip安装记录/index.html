@@ -209,8 +209,8 @@
            <span class="post-meta-divider divider">|</span>
            <i class="far fa-calendar-edit"></i>
            <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-06-18T17:35:00+08:00">
-                2019-06-18 17:35:00
+              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-08-14T10:27:59+08:00">
+                2019-08-14 10:27:59
               </time>
            </span>
         </span>
@@ -225,13 +225,29 @@
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
         </span>
         
+
         
-        
+
+          
+            <span class="post-meta-divider divider">|</span>
+            <span class="post-comment-count">
+              <i class="far fa-comments"></i>
+              <span>
+                <a href="/2019/06/18/zulip安装记录/#comment-thread" itemprop="discussionUrl">
+                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/06/18/zulip安装记录/" itemprop="commentCount">
+                    <span id="zulip安装记录">0</span> Comments
+                  </span>
+                </a>
+              </span>
+            </span>
+
+          
+
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>简单记录一下采用Docker安装Zulip的过程</p>
+      <p>在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程</p>
 <a id="more"></a>
 <p>Zulip的docker镜像在国外比较慢，我才用的是自己阿里云的镜像加速。</p>
 <p>修改docker-compose.yml文件，其中由个别需要记录的。</p>
@@ -243,11 +259,11 @@
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
-        
         <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
         
         <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
+        
+        <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
         
         <a class="post-tag button" href="/tags/Zulip/" rel="tag"><i class="fas fa-tags"></i>Zulip</a>
         
@@ -262,11 +278,14 @@
 	<div class="liker-canvas">
 		<canvas class="hearts-canvas"></canvas>
 	</div>
-	<p>打赏码还是要放的，万一真有人打赏嘞！🤣</p>
+	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
   	<button id="reward-button" class="btn" disable="enable">
   	    <i class="fas fa-heart"></i>
   	</button>
-  	<span>打赏</span>
+  	<span>赞赏</span>
+  	
+  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
+  	
   </div>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
@@ -306,45 +325,59 @@
 
 <div class="comments" id="comments">
   
-  
-  <div class="commentjs" id="comment-thread"></div>
-  <link rel="stylesheet" href="/css/commentjs.css">
-  <script defer type="text/javascript" src="/js/marked.min.js"></script>
-  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-  <script defer type="text/javascript" src="/js/commentjs.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function () {
-    getComments({
-      "type": "github",
-      "user": "wevsmy",
-      "repo": "wevsmy.github.io",
-      "client_id": "ded8625909c20b7ae2f7",
-      "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      "no_comment": "这个页面还没有评论，现在就去评论吧！",
-      "go_to_comment": "去评论",
-      "issue_title": "zulip安装记录",
-      "btn_class": "button",
-      "comments_target": "#comment-thread"
-    });
-    marked.setOptions({
-      "highlight": function (code, lang) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-    function mark() {
-      var markdowns = document.getElementsByClassName("markdown");
-      for (var i = 0; i < markdowns.length; ++i){
-        if (markdowns[i].innerHTML) {
-          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+    <script type="text/javascript">
+      $.ajax({
+      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+      dataType: 'json',
+      cache: false,
+      crossDomain: true,
+      success: function success(page_comments) {
+        for (var i = 0; i < page_comments.length; ++i) {
+          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
         }
       }
-    }
-    window.addEventListener("DOMContentLoaded", mark, false);
-    window.addEventListener("load", mark, false);
-  });
-  </script>
-  
+    });
+    </script>
+
+    
+      <div class="commentjs" id="comment-thread"></div>
+      <link rel="stylesheet" href="/css/commentjs.css">
+      <script defer type="text/javascript" src="/js/marked.min.js"></script>
+      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+      <script defer type="text/javascript" src="/js/commentjs.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function () {
+        getComments({
+          "type": "github",
+          "user": "wevsmy",
+          "repo": "wevsmy.github.io",
+          "client_id": "ded8625909c20b7ae2f7",
+          "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+          "no_comment": "这个页面还没有评论，现在就去评论吧！",
+          "go_to_comment": "去评论",
+          "issue_title": "zulip安装记录",
+          "btn_class": "button",
+          "comments_target": "#comment-thread"
+        });
+        marked.setOptions({
+          "highlight": function (code, lang) {
+            return hljs.highlightAuto(code).value;
+          }
+        });
+        function mark() {
+          var markdowns = document.getElementsByClassName("markdown");
+          for (var i = 0; i < markdowns.length; ++i){
+            if (markdowns[i].innerHTML) {
+              markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+            }
+          }
+        };
+        window.addEventListener("DOMContentLoaded", mark, false);
+        window.addEventListener("load", mark, false);
+      });
+      </script>
+    
   
 </div>
 
@@ -486,7 +519,6 @@
 </footer>
 
 
-    <script type="text/javascript" margin-top="10%" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-    <script type="text/javascript" src="/js/heartsFlow.js"></script>
+    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
   </body>
 </html>

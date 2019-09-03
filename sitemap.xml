@@ -17,14 +17,14 @@
   </url>
   
   <url>
-    <loc>https://wevsmy.github.io/tags/docker/</loc>
+    <loc>https://wevsmy.github.io/categories/docker/</loc>
     <lastmod>2019-08-31T10:31:11+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://wevsmy.github.io/categories/docker/</loc>
+    <loc>https://wevsmy.github.io/tags/docker/</loc>
     <lastmod>2019-08-31T10:31:11+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -164,14 +164,14 @@
   </url>
   
   <url>
-    <loc>https://wevsmy.github.io/tags/hexo/</loc>
+    <loc>https://wevsmy.github.io/categories/hexo/</loc>
     <lastmod>2019-07-09T19:09:57+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://wevsmy.github.io/categories/hexo/</loc>
+    <loc>https://wevsmy.github.io/tags/hexo/</loc>
     <lastmod>2019-07-09T19:09:57+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -192,14 +192,14 @@
   </url>
   
   <url>
-    <loc>https://wevsmy.github.io/categories/django/</loc>
+    <loc>https://wevsmy.github.io/tags/django/</loc>
     <lastmod>2019-06-18T18:29:30+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://wevsmy.github.io/tags/django/</loc>
+    <loc>https://wevsmy.github.io/categories/django/</loc>
     <lastmod>2019-06-18T18:29:30+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

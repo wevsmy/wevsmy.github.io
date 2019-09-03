@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hexo on </title>
-    <link>https://blog.weii.ink/categories/hexo/</link>
+    <link>https://wevsmy.github.io/categories/hexo/</link>
     <description>Recent content in hexo on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 09 Jul 2019 19:09:57 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.weii.ink/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wevsmy.github.io/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hexo添加文章更新时间</title>
-      <link>https://blog.weii.ink/2019/07/09/hexo-add-updated/</link>
+      <link>https://wevsmy.github.io/2019/07/09/hexo-add-updated/</link>
       <pubDate>Tue, 09 Jul 2019 19:09:57 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/07/09/hexo-add-updated/</guid>
+      <guid>https://wevsmy.github.io/2019/07/09/hexo-add-updated/</guid>
       <description>&lt;p&gt;现在使用的主题只有文章创建时间，并没有文章更新时间，就自己捣鼓捣鼓添加了一个文章更新时间，记录一下。&lt;/p&gt;</description>
     </item>
     

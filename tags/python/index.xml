@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on </title>
-    <link>https://blog.weii.ink/tags/python/</link>
+    <link>https://wevsmy.github.io/tags/python/</link>
     <description>Recent content in Python on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 18 Jun 2019 18:29:30 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.weii.ink/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wevsmy.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>pip安装mysqlclient报错</title>
-      <link>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
+      <link>https://wevsmy.github.io/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
       <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://wevsmy.github.io/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;p&gt;使用&lt;code&gt;Django==2.0.4&lt;/code&gt;报错缺少&lt;code&gt;mysqlclient&lt;/code&gt;模块的解决方案&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>zulip安装记录</title>
-      <link>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <link>https://wevsmy.github.io/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 18 Jun 2019 17:14:36 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://wevsmy.github.io/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
       <description>&lt;p&gt;在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>博客园文章迁移到Hexo</title>
-      <link>https://blog.weii.ink/2019/06/10/cnblog_to_hexo/</link>
+      <link>https://wevsmy.github.io/2019/06/10/cnblog_to_hexo/</link>
       <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/06/10/cnblog_to_hexo/</guid>
+      <guid>https://wevsmy.github.io/2019/06/10/cnblog_to_hexo/</guid>
       <description>&lt;p&gt;最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.&lt;/p&gt;
 
 &lt;p&gt;毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）&lt;/p&gt;</description>
@@ -42,20 +42,20 @@
     
     <item>
       <title>使用Flask-Migrate进行管理数据库升级</title>
-      <link>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</link>
+      <link>https://wevsmy.github.io/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</link>
       <pubDate>Thu, 17 Jan 2019 10:54:35 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</guid>
+      <guid>https://wevsmy.github.io/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</guid>
       <description>&lt;p&gt;我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。
 现在我们可以使用&lt;a href=&#34;https://flask-migrate.readthedocs.org/en/latest/&#34;&gt;Flask-Migrate&lt;/a&gt;插件来解决之，Flask-Migrate插件是基于&lt;a href=&#34;http://alembic.readthedocs.org/en/latest/&#34;&gt;Alembic&lt;/a&gt;，Alembic是由大名鼎鼎的&lt;a href=&#34;http://www.sqlalchemy.org/&#34;&gt;SQLAlchemy&lt;/a&gt;作者开发数据迁移工具。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>test</title>
-      <link>https://blog.weii.ink/2018/06/02/test/</link>
+      <link>https://wevsmy.github.io/2018/06/02/test/</link>
       <pubDate>Sat, 02 Jun 2018 20:16:09 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2018/06/02/test/</guid>
+      <guid>https://wevsmy.github.io/2018/06/02/test/</guid>
       <description>&lt;p&gt;这是一篇测试文章，用于测试Hexo搭建的github静态网站&lt;/p&gt;</description>
     </item>
     

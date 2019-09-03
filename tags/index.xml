@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>https://blog.weii.ink/tags/</link>
+    <link>https://wevsmy.github.io/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 31 Aug 2019 10:31:11 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.weii.ink/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wevsmy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker</title>
-      <link>https://blog.weii.ink/tags/docker/</link>
+      <link>https://wevsmy.github.io/tags/docker/</link>
       <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/docker/</guid>
+      <guid>https://wevsmy.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SMTP</title>
-      <link>https://blog.weii.ink/tags/smtp/</link>
+      <link>https://wevsmy.github.io/tags/smtp/</link>
       <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/smtp/</guid>
+      <guid>https://wevsmy.github.io/tags/smtp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>订阅</title>
-      <link>https://blog.weii.ink/tags/%E8%AE%A2%E9%98%85/</link>
+      <link>https://wevsmy.github.io/tags/%E8%AE%A2%E9%98%85/</link>
       <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E8%AE%A2%E9%98%85/</guid>
+      <guid>https://wevsmy.github.io/tags/%E8%AE%A2%E9%98%85/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://blog.weii.ink/tags/linux/</link>
+      <link>https://wevsmy.github.io/tags/linux/</link>
       <pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/linux/</guid>
+      <guid>https://wevsmy.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>N2N</title>
-      <link>https://blog.weii.ink/tags/n2n/</link>
+      <link>https://wevsmy.github.io/tags/n2n/</link>
       <pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/n2n/</guid>
+      <guid>https://wevsmy.github.io/tags/n2n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>笔记</title>
-      <link>https://blog.weii.ink/tags/%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>代理</title>
-      <link>https://blog.weii.ink/tags/%E4%BB%A3%E7%90%86/</link>
+      <link>https://wevsmy.github.io/tags/%E4%BB%A3%E7%90%86/</link>
       <pubDate>Wed, 17 Jul 2019 14:08:21 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E4%BB%A3%E7%90%86/</guid>
+      <guid>https://wevsmy.github.io/tags/%E4%BB%A3%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Network</title>
-      <link>https://blog.weii.ink/tags/network/</link>
+      <link>https://wevsmy.github.io/tags/network/</link>
       <pubDate>Wed, 17 Jul 2019 12:37:11 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/network/</guid>
+      <guid>https://wevsmy.github.io/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hexo</title>
-      <link>https://blog.weii.ink/tags/hexo/</link>
+      <link>https://wevsmy.github.io/tags/hexo/</link>
       <pubDate>Tue, 09 Jul 2019 19:09:57 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/hexo/</guid>
+      <guid>https://wevsmy.github.io/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Django</title>
-      <link>https://blog.weii.ink/tags/django/</link>
+      <link>https://wevsmy.github.io/tags/django/</link>
       <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/django/</guid>
+      <guid>https://wevsmy.github.io/tags/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://blog.weii.ink/tags/python/</link>
+      <link>https://wevsmy.github.io/tags/python/</link>
       <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/python/</guid>
+      <guid>https://wevsmy.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zulip</title>
-      <link>https://blog.weii.ink/tags/zulip/</link>
+      <link>https://wevsmy.github.io/tags/zulip/</link>
       <pubDate>Tue, 18 Jun 2019 17:14:36 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/zulip/</guid>
+      <guid>https://wevsmy.github.io/tags/zulip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cnblogs</title>
-      <link>https://blog.weii.ink/tags/cnblogs/</link>
+      <link>https://wevsmy.github.io/tags/cnblogs/</link>
       <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/cnblogs/</guid>
+      <guid>https://wevsmy.github.io/tags/cnblogs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>搬家</title>
-      <link>https://blog.weii.ink/tags/%E6%90%AC%E5%AE%B6/</link>
+      <link>https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/</link>
       <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E6%90%AC%E5%AE%B6/</guid>
+      <guid>https://wevsmy.github.io/tags/%E6%90%AC%E5%AE%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>教程</title>
-      <link>https://blog.weii.ink/tags/%E6%95%99%E7%A8%8B/</link>
+      <link>https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://wevsmy.github.io/tags/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flask</title>
-      <link>https://blog.weii.ink/tags/flask/</link>
+      <link>https://wevsmy.github.io/tags/flask/</link>
       <pubDate>Thu, 17 Jan 2019 10:54:35 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/flask/</guid>
+      <guid>https://wevsmy.github.io/tags/flask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>阿里云</title>
-      <link>https://blog.weii.ink/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
+      <link>https://wevsmy.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
       <pubDate>Sat, 02 Jun 2018 23:41:57 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
+      <guid>https://wevsmy.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Disqus</title>
-      <link>https://blog.weii.ink/tags/disqus/</link>
+      <link>https://wevsmy.github.io/tags/disqus/</link>
       <pubDate>Sat, 02 Jun 2018 22:06:37 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/disqus/</guid>
+      <guid>https://wevsmy.github.io/tags/disqus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML</title>
-      <link>https://blog.weii.ink/tags/html/</link>
+      <link>https://wevsmy.github.io/tags/html/</link>
       <pubDate>Sat, 02 Jun 2018 20:16:09 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/html/</guid>
+      <guid>https://wevsmy.github.io/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>博客园</title>
-      <link>https://blog.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/</link>
+      <link>https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/</link>
       <pubDate>Thu, 22 Mar 2018 01:17:00 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/</guid>
+      <guid>https://wevsmy.github.io/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/</guid>
       <description></description>
     </item>
     

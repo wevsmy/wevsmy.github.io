@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-cn" >
+<head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
     
     <meta name="theme-color" content="#333333">
     <meta name="msapplication-TileColor" content="#333333">
@@ -13,16 +35,20 @@
     <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
     
     
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA" />
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
     
     
-    <meta name="keywords" content="Weii, Wevsmy, Wilson, Python, Golang, PyQt5, Hexo">
+    
+    <meta name="keywords"
+          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
     
     
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -31,7 +57,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
     
     
     <link rel="manifest" href="/favicons/site.webmanifest">
@@ -40,215 +67,167 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     
     
-    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
-    
-    
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    <title>
+        前端知识之HTML内容 &middot; wilson&#39;s blog
+    </title>
+
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var cb = null;
-      var els = $(".post figure.highlight");
-      if (els.length) {
-        // Enabled Hexo highlight line number.
-        $(els).each(function (i, e) {
-          $(e).before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout with line number.
-              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-          }
-        });
-      } else {
-        // Disabled Hexo highlight line number.
-        els = $(".post pre code");
-        $(els).each(function (i, e) {
-          // Add button before pre, not code.
-          $(e).parent().before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout without line number.
-              return trigger.nextElementSibling.firstChild;
-          }
-        });
-      }
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "已复制";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "复制";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
-    </script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script type="text/javascript" src="/js/love.js"></script>
-    <title>前端知识之HTML内容 | wilson's blog - Life is short, you need Python</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #333333;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">wilson's blog</a></h1>
-        <h2 class="subtitle">Life is short, you need Python</h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
-        
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
-        
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
-        
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
-        
-        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
-        
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
-        
-      </ul>
-    </nav>
-  </div>
 </header>
 
-
-    <main id="main" class="main">
-      <div class="container">
+<main id="main" class="main">
+    <div class="container">
         <div class="main-container">
-          <div class="content">
-            
-<div id="post" class="page">
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/03/05/cnblog_8508917/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="wilson">
-       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-       <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="wilson's blog">
-      </span>
+            <div id="content" class="content">
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2018/03/05/cnblog_8508917/'>前端知识之HTML内容</a></h2></div>
+        <div class="post-meta"><span>2018.03.05</span></div>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">前端知识之HTML内容</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-05T06:46:00+08:00">2018-03-05 06:46:00</time></span>
-        </span>
-        
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <h1 id="这是-前端知识之html内容-的摘要-2018-03-05-cnblog-8508917"><a href="/2018/03/05/cnblog_8508917/">这是👉前端知识之HTML内容👈的摘要</a></h1>
 
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-06-10T19:56:02+08:00">
-                2019-06-10 19:56:02
-              </time>
-           </span>
-        </span>
-        
+<h1 id="html介绍">HTML介绍</h1>
 
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
-        </span>
-        
+<h2 id="web服务本质">Web服务本质</h2>
 
-        
-
-          
-            <span class="post-meta-divider divider">|</span>
-            <span class="post-comment-count">
-              <i class="far fa-comments"></i>
-              <span>
-                <a href="/2018/03/05/cnblog_8508917/#comment-thread" itemprop="discussionUrl">
-                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/03/05/cnblog_8508917/" itemprop="commentCount">
-                    <span id="前端知识之HTML内容">0</span> Comments
-                  </span>
-                </a>
-              </span>
-            </span>
-
-          
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <h1 id="这是👉前端知识之HTML内容👈的摘要"><a href="#这是👉前端知识之HTML内容👈的摘要" class="headerlink" title="这是👉前端知识之HTML内容👈的摘要"></a><a href="/2018/03/05/cnblog_8508917/">这是👉前端知识之HTML内容👈的摘要</a></h1><a id="more"></a>
-<h1 id="HTML介绍"><a href="#HTML介绍" class="headerlink" title="HTML介绍"></a>HTML介绍</h1><h2 id="Web服务本质"><a href="#Web服务本质" class="headerlink" title="Web服务本质"></a>Web服务本质</h2><pre><code>import socket
+<pre><code>import socket
 
 
 sk = socket.socket()
@@ -263,16 +242,30 @@ while True:
     conn.send(b&quot;HTTP/1.1 200 OK\r\n\r\n&quot;)
     conn.secd(b&quot;&lt;h1&gt;Hello world!&lt;/h1&gt;&quot;)
     conn.close()
-</code></pre><p>浏览器发请求 –&gt; HTTP协议 –&gt; 服务端接收请求 –&gt; 服务端返回响应 –&gt; 服务端把HTML文件内容发给浏览器 –&gt; 浏览器渲染页面</p>
-<h2 id="HTML是什么？"><a href="#HTML是什么？" class="headerlink" title="HTML是什么？"></a>HTML是什么？</h2><ul>
+</code></pre>
+
+<p>浏览器发请求 &ndash;&gt; HTTP协议 &ndash;&gt; 服务端接收请求 &ndash;&gt; 服务端返回响应 &ndash;&gt; 服务端把HTML文件内容发给浏览器 &ndash;&gt; 浏览器渲染页面</p>
+
+<h2 id="html是什么">HTML是什么？</h2>
+
+<ul>
 <li>超文本标记语言（Hypertext Markup Language, HTML）是一种用于创建网页的标记语言。</li>
 <li>本质上是浏览器可识别的规则，我们按照规则写网页，浏览器根据规则渲染我们的网页。对于不同的浏览器，对同一个标签可能会有不同的解释。（兼容性问题）</li>
 <li>网页文件的扩展名：.html或.htm</li>
 </ul>
-<h2 id="HTML不是什么？"><a href="#HTML不是什么？" class="headerlink" title="HTML不是什么？"></a>HTML不是什么？</h2><p>HTML是一种标记语言（markup language），它不是一种编程语言。</p>
+
+<h2 id="html不是什么">HTML不是什么？</h2>
+
+<p>HTML是一种标记语言（markup language），它不是一种编程语言。</p>
+
 <p>HTML使用标签来描述网页。</p>
-<p><img src="https://images2017.cnblogs.com/blog/867021/201712/867021-20171206155335159-1559665689.png" alt=""></p>
-<h2 id="HTML文档结构"><a href="#HTML文档结构" class="headerlink" title="HTML文档结构"></a>HTML文档结构</h2><p>最基本的HTML文档：</p>
+
+<p><img src="https://images2017.cnblogs.com/blog/867021/201712/867021-20171206155335159-1559665689.png" alt="" /></p>
+
+<h2 id="html文档结构">HTML文档结构</h2>
+
+<p>最基本的HTML文档：</p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -283,83 +276,131 @@ while True:
 
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><ol>
+</code></pre>
+
+<ol>
 <li>&lt;!DOCTYPE html&gt;声明为HTML5文档。</li>
 <li><html>、</html>是文档的开始标记和结束的标记。是HTML页面的根元素，在它们之间是文档的头部（head）和主体（body）。</li>
 <li><head>、</head>定义了HTML文档的开头部分。它们之间的内容不会在浏览器的文档窗口显示。包含了文档的元（meta）数据。</li>
 <li><title>、</title>定义了网页标题，在浏览器标题栏显示。</li>
 <li><body>、</body>之间的文本是可见的网页主体内容。</li>
 </ol>
-<p><em><strong>注意：</strong> 对于中文网页需要使用  <strong>&lt; meta charset=”utf-8”&gt;</strong> 声明编码，否则会出现乱码。有些浏览器会设置 GBK<br>为默认编码，则你需要设置为  <strong>&lt; meta charset=”gbk”&gt;。</strong></em></p>
-<h2 id="HTML标签格式"><a href="#HTML标签格式" class="headerlink" title="HTML标签格式"></a>HTML标签格式</h2><ul>
-<li>HTML标签是由尖括号包围的关键字，如<html>, <div>等</div></html></li>
+
+<p><em><strong>注意：</strong> 对于中文网页需要使用  <strong>&lt; meta charset=&ldquo;utf-8&rdquo;&gt;</strong> 声明编码，否则会出现乱码。有些浏览器会设置 GBK
+为默认编码，则你需要设置为  <strong>&lt; meta charset=&ldquo;gbk&rdquo;&gt;。</strong></em></p>
+
+<h2 id="html标签格式">HTML标签格式</h2>
+
+<ul>
+<li>HTML标签是由尖括号包围的关键字，如<html>, <div>等</li>
 <li>HTML标签通常是成对出现的，比如：<div>和</div>，第一个标签是开始，第二个标签是结束。结束标签会有斜线。</li>
-<li>也有一部分标签是单独呈现的，比如：<br>、<hr>、<img src="/2018/03/05/cnblog_8508917/1.jpg">等。</li>
+<li>也有一部分标签是单独呈现的，比如：<br/>、<hr/>、<img src="1.jpg" />等。</li>
 <li>标签里面可以有若干属性，也可以不带属性。</li>
 </ul>
+
 <p><strong>标签的语法：</strong></p>
+
 <ul>
-<li>&lt;标签名 属性1=”属性值1” 属性2=”属性值2”……&gt;内容部分&lt;/标签名&gt;</li>
-<li>&lt;标签名 属性1=”属性值1” 属性2=”属性值2”…… /&gt;</li>
+<li>&lt;标签名 属性1=&ldquo;属性值1&rdquo; 属性2=&ldquo;属性值2&rdquo;……&gt;内容部分&lt;/标签名&gt;</li>
+<li>&lt;标签名 属性1=&ldquo;属性值1&rdquo; 属性2=&ldquo;属性值2&rdquo;…… /&gt;</li>
 </ul>
+
 <p><strong>几个很重要的属性：</strong></p>
+
 <ul>
 <li>id：定义标签的唯一ID，HTML文档树中唯一</li>
 <li>class：为html元素定义一个或多个类名（classname）(CSS样式类名)</li>
 <li>style：规定元素的行内样式（CSS样式）</li>
 </ul>
-<h2 id="HTML注释"><a href="#HTML注释" class="headerlink" title="HTML注释"></a>HTML注释</h2><pre><code>&lt;!--注释内容--&gt;
-</code></pre><p>注释是代码之母.</p>
-<h2 id="lt-DOCTYPE-gt-标签"><a href="#lt-DOCTYPE-gt-标签" class="headerlink" title="&lt;!DOCTYPE&gt; 标签"></a>&lt;!DOCTYPE&gt; 标签</h2><p>&lt;!DOCTYPE&gt; 声明必须是 HTML 文档的第一行，位于 <html> 标签之前。</html></p>
+
+<h2 id="html注释">HTML注释</h2>
+
+<pre><code>&lt;!--注释内容--&gt;
+</code></pre>
+
+<p>注释是代码之母.</p>
+
+<h2 id="doctype-标签">&lt;!DOCTYPE&gt; 标签</h2>
+
+<p>&lt;!DOCTYPE&gt; 声明必须是 HTML 文档的第一行，位于 <html> 标签之前。</p>
+
 <p>&lt;!DOCTYPE&gt; 声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。</p>
-<h1 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h1><h2 id="head内常用标签"><a href="#head内常用标签" class="headerlink" title="head内常用标签"></a>head内常用标签</h2><table>
+
+<h1 id="html常用标签">HTML常用标签</h1>
+
+<h2 id="head内常用标签">head内常用标签</h2>
+
+<table>
 <thead>
 <tr>
 <th>标签</th>
-<th>意义  </th>
+<th>意义</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td><title></title></td>
-<td>定义网页标题  </td>
+<td>定义网页标题</td>
 </tr>
+
 <tr>
 <td><style></style></td>
-<td>定义内部样式表  </td>
+<td>定义内部样式表</td>
 </tr>
+
 <tr>
 <td><script></script></td>
-<td>定义JS代码或引入外部JS文件  </td>
+<td>定义JS代码或引入外部JS文件</td>
 </tr>
+
 <tr>
-<td><link></td>
-<td>引入外部样式表文件  </td>
+<td><link/></td>
+<td>引入外部样式表文件</td>
 </tr>
+
 <tr>
-<td><meta></td>
-<td>定义网页原信息  </td>
+<td><meta/></td>
+<td>定义网页原信息</td>
 </tr>
 </tbody>
 </table>
-<h3 id="Meta标签"><a href="#Meta标签" class="headerlink" title="Meta标签"></a>Meta标签</h3><p>Meta标签介绍：</p>
+
+<h3 id="meta标签">Meta标签</h3>
+
+<p>Meta标签介绍：</p>
+
 <ul>
 <li><meta>元素可提供有关页面的原信息（mata-information）,针对搜索引擎和更新频度的描述和关键词。</li>
 <li><meta>标签位于文档的头部，不包含任何内容。</li>
 <li><meta>提供的信息是用户不可见的。</li>
 </ul>
-<p>meta标签的组成：meta标签共有两个属性，它们分别是http-equiv属性和name<br>属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
-<p>1.http-<br>equiv属性：相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。</p>
+
+<p>meta标签的组成：meta标签共有两个属性，它们分别是http-equiv属性和name
+属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
+
+<p>1.http-
+equiv属性：相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。</p>
+
 <pre><code>&lt;!--2秒后跳转到对应的网址，注意引号--&gt;
 &lt;meta http-equiv=&quot;refresh&quot; content=&quot;2;URL=https://www.oldboyedu.com&quot;&gt;
 &lt;!--指定文档的编码类型--&gt;
 &lt;meta http-equiv=&quot;content-Type&quot; charset=UTF8&quot;&gt;
 &lt;!--告诉IE以最高级模式渲染文档--&gt;
 &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
-</code></pre><p>2.name属性: 主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。</p>
+</code></pre>
+
+<p>2.name属性: 主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。</p>
+
 <pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;meta总结,html meta,meta属性,meta跳转&quot;&gt;
 &lt;meta name=&quot;description&quot; content=&quot;老男孩教育Python学院&quot;&gt;
-</code></pre><h2 id="body内常用标签"><a href="#body内常用标签" class="headerlink" title="body内常用标签"></a>body内常用标签</h2><h3 id="基本标签（块级标签和内联标签）"><a href="#基本标签（块级标签和内联标签）" class="headerlink" title="基本标签（块级标签和内联标签）"></a>基本标签（块级标签和内联标签）</h3><pre><code>&lt;b&gt;加粗&lt;/b&gt;  
+</code></pre>
+
+<h2 id="body内常用标签">body内常用标签</h2>
+
+<h3 id="基本标签-块级标签和内联标签">基本标签（块级标签和内联标签）</h3>
+
+<pre><code>&lt;b&gt;加粗&lt;/b&gt;  
 &lt;i&gt;斜体&lt;/i&gt;  
 &lt;u&gt;下划线&lt;/u&gt;  
 &lt;s&gt;删除&lt;/s&gt;  
@@ -377,53 +418,84 @@ while True:
 &lt;br&gt;  
 
 &lt;!--水平线--&gt;&lt;hr&gt;
-</code></pre><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><table>
+</code></pre>
+
+<h3 id="特殊字符">特殊字符</h3>
+
+<table>
 <thead>
 <tr>
 <th>内容</th>
-<th>对应代码  </th>
+<th>对应代码</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>空格</td>
-<td>&nbsp;  </td>
+<td>&nbsp;</td>
 </tr>
+
 <tr>
 <td>&gt;</td>
-<td>&gt;  </td>
+<td>&gt;</td>
 </tr>
+
 <tr>
 <td>&lt;</td>
-<td>&lt;  </td>
+<td>&lt;</td>
 </tr>
+
 <tr>
 <td>&amp;</td>
-<td>&amp;  </td>
+<td>&amp;</td>
 </tr>
+
 <tr>
 <td>¥</td>
-<td>&yen;  </td>
+<td>&yen;</td>
 </tr>
+
 <tr>
 <td>版权</td>
-<td>&copy;  </td>
+<td>&copy;</td>
 </tr>
+
 <tr>
 <td>注册</td>
-<td>&reg;  </td>
+<td>&reg;</td>
 </tr>
 </tbody>
 </table>
-<h3 id="div标签和span标签"><a href="#div标签和span标签" class="headerlink" title="div标签和span标签"></a>div标签和span标签</h3><p>div标签用来定义一个块级元素，并无实际的意义。主要通过CSS样式为其赋予不同的表现。<br>span标签用来定义内联(行内)元素，并无实际的意义。主要通过CSS样式为其赋予不同的表现。</p>
-<p>块级元素与行内元素的区别：<br>所谓块元素，是以另起一行开始渲染的元素，行内元素则不需另起一行。如果单独在网页中插入这两个元素，不会对页面产生任何的影响。<br>这两个元素是专门为定义CSS样式而生的。</p>
+
+<h3 id="div标签和span标签">div标签和span标签</h3>
+
+<p>div标签用来定义一个块级元素，并无实际的意义。主要通过CSS样式为其赋予不同的表现。<br />
+span标签用来定义内联(行内)元素，并无实际的意义。主要通过CSS样式为其赋予不同的表现。</p>
+
+<p>块级元素与行内元素的区别：<br />
+所谓块元素，是以另起一行开始渲染的元素，行内元素则不需另起一行。如果单独在网页中插入这两个元素，不会对页面产生任何的影响。<br />
+这两个元素是专门为定义CSS样式而生的。</p>
+
 <p><strong>注意：</strong></p>
+
 <p>关于标签嵌套：通常块级元素可以包含内联元素或某些块级元素，但内联元素不能包含块级元素，它只能包含其它内联元素。</p>
+
 <p>p标签不能包含块级标签。</p>
-<h3 id="img标签"><a href="#img标签" class="headerlink" title="img标签"></a>img标签</h3><pre><code>&lt;img src=&quot;图片的路径&quot; alt=&quot;图片未加载成功时的提示&quot; title=&quot;鼠标悬浮时提示信息&quot; width=&quot;宽&quot; height=&quot;高(宽高两个属性只用一个会自动等比缩放)&quot;&gt;
-</code></pre><h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>超链接标签</p>
+
+<h3 id="img标签">img标签</h3>
+
+<pre><code>&lt;img src=&quot;图片的路径&quot; alt=&quot;图片未加载成功时的提示&quot; title=&quot;鼠标悬浮时提示信息&quot; width=&quot;宽&quot; height=&quot;高(宽高两个属性只用一个会自动等比缩放)&quot;&gt;
+</code></pre>
+
+<h3 id="a标签">a标签</h3>
+
+<p>超链接标签</p>
+
 <p>所谓的超链接是指从一个网页指向一个目标的连接关系，这个目标可以是另一个网页，也可以是相同网页上的不同位置，还可以是一个图片，一个电子邮件地址，一个文件，甚至是一个应用程序。</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>什么是URL？
 URL是统一资源定位器(Uniform Resource Locator)的缩写，也被称为网页地址，是因特网上标准的资源的地址。
 URL举例
@@ -436,37 +508,57 @@ URL地址由4部分组成
 第3部分：为页面在站点中的目录：stu
 第4部分：为页面名称，例如 index.html
 各部分之间用&quot;/&quot;符号隔开。
-</code></pre><p>URL</p>
+</code></pre>
+
+<p>URL</p>
+
 <pre><code>&lt;a href=&quot;http://www.oldboyedu.com&quot; target=&quot;_blank&quot; &gt;点我&lt;/a&gt;
-</code></pre><p>href属性指定目标网页地址。该地址可以有几种类型：</p>
+</code></pre>
+
+<p>href属性指定目标网页地址。该地址可以有几种类型：</p>
+
 <ul>
-<li>绝对URL - 指向另一个站点（比如 href=”<a href="http://www.jd.com）" target="_blank" rel="noopener">http://www.jd.com）</a></li>
-<li>相对URL - 指当前站点中确切的路径（href=”index.htm”）</li>
-<li>锚URL - 指向页面中的锚（href=”#top”）</li>
+<li>绝对URL - 指向另一个站点（比如 href=&ldquo;<a href="http://www.jd.com）">http://www.jd.com）</a></li>
+<li>相对URL - 指当前站点中确切的路径（href=&ldquo;index.htm&rdquo;）</li>
+<li>锚URL - 指向页面中的锚（href=&ldquo;#top&rdquo;）</li>
 </ul>
+
 <p>target：</p>
+
 <ul>
 <li>_blank表示在新标签页中打开目标网页</li>
 <li>_self表示在当前标签页中打开目标网页</li>
 </ul>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>1.无序列表</p>
+
+<h3 id="列表">列表</h3>
+
+<p>1.无序列表</p>
+
 <pre><code>&lt;ul type=&quot;disc&quot;&gt;
   &lt;li&gt;第一项&lt;/li&gt;
   &lt;li&gt;第二项&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre><p>type属性：</p>
+</code></pre>
+
+<p>type属性：</p>
+
 <ul>
 <li>disc（实心圆点，默认值）</li>
 <li>circle（空心圆圈）</li>
 <li>square（实心方块）</li>
 <li>none（无样式）</li>
 </ul>
+
 <p>2.有序列表</p>
+
 <pre><code>&lt;ol type=&quot;1&quot; start=&quot;2&quot;&gt;
   &lt;li&gt;第一项&lt;/li&gt;
   &lt;li&gt;第二项&lt;/li&gt;
 &lt;/ol&gt;
-</code></pre><p>type属性：</p>
+</code></pre>
+
+<p>type属性：</p>
+
 <ul>
 <li>1 数字列表，默认值</li>
 <li>A 大写字母</li>
@@ -474,7 +566,9 @@ URL地址由4部分组成
 <li>Ⅰ大写罗马</li>
 <li>ⅰ小写罗马</li>
 </ul>
+
 <p>3.标题列表</p>
+
 <pre><code>&lt;dl&gt;
   &lt;dt&gt;标题1&lt;/dt&gt;
   &lt;dd&gt;内容1&lt;/dd&gt;
@@ -482,7 +576,14 @@ URL地址由4部分组成
   &lt;dd&gt;内容1&lt;/dd&gt;
   &lt;dd&gt;内容2&lt;/dd&gt;
 &lt;/dl&gt;
-</code></pre><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表格是一个二维数据空间，一个表格由若干行组成，一个行又有若干单元格组成，单元格里可以包含文字、列表、图案、表单、数字符号、预置文本和其它的表格等内容。<br>表格最重要的目的是显示表格类数据。表格类数据是指最适合组织为表格格式（即按行和列组织）的数据。<br>表格的基本结构：</p>
+</code></pre>
+
+<h3 id="表格">表格</h3>
+
+<p>表格是一个二维数据空间，一个表格由若干行组成，一个行又有若干单元格组成，单元格里可以包含文字、列表、图案、表单、数字符号、预置文本和其它的表格等内容。<br />
+表格最重要的目的是显示表格类数据。表格类数据是指最适合组织为表格格式（即按行和列组织）的数据。<br />
+表格的基本结构：</p>
+
 <pre><code>&lt;table&gt;
   &lt;thead&gt;
   &lt;tr&gt;
@@ -504,7 +605,10 @@ URL地址由4部分组成
   &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-</code></pre><p>属性:</p>
+</code></pre>
+
+<p>属性:</p>
+
 <ul>
 <li>border: 表格边框.</li>
 <li>cellpadding: 内边距</li>
@@ -513,30 +617,41 @@ URL地址由4部分组成
 <li>rowspan: 单元格竖跨多少行</li>
 <li>colspan: 单元格横跨多少列（即合并单元格）</li>
 </ul>
-<h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><p><strong>功能：</strong></p>
+
+<h3 id="form">form</h3>
+
+<p><strong>功能：</strong></p>
+
 <p>表单用于向服务器传输数据，从而实现用户与Web服务器的交互</p>
+
 <p>表单能够包含input系列标签，比如文本字段、复选框、单选框、提交按钮等等。</p>
+
 <p>表单还可以包含textarea、select、fieldset和 label标签。</p>
+
 <p><strong>表单属性</strong></p>
+
 <table>
 <thead>
 <tr>
 <th>属性</th>
 <th>值</th>
-<th>含义  </th>
+<th>含义</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>action</td>
 <td>URL</td>
-<td>指定一个表单处理目标URL，表单数据将被提交到该URL地址的处理程序。如果该属性值为空，则提交到文档自身。  </td>
+<td>指定一个表单处理目标URL，表单数据将被提交到该URL地址的处理程序。如果该属性值为空，则提交到文档自身。</td>
 </tr>
+
 <tr>
 <td>method</td>
 <td>get或post</td>
-<td>将表单数据提交到http服务器的方法，默认为get  </td>
+<td>将表单数据提交到http服务器的方法，默认为get</td>
 </tr>
+
 <tr>
 <td>enctype</td>
 <td>application/x-www-form-urlencoded</td>
@@ -544,66 +659,90 @@ URL地址由4部分组成
 </tr>
 </tbody>
 </table>
-<p>指定表单数据的编码类型，此属性只有在method属性设置为post时才有效。默认值为application/x-www-form-<br>urlencode对所有字符进行编码。如果表单包含用于文件上传的控件（input<br>type=”file”）,那么这个属性值必须设置为multipart/form-data，不对字符进行编码。  </p>
+
+<p>指定表单数据的编码类型，此属性只有在method属性设置为post时才有效。默认值为application/x-www-form-
+urlencode对所有字符进行编码。如果表单包含用于文件上传的控件（input
+type=&ldquo;file&rdquo;）,那么这个属性值必须设置为multipart/form-data，不对字符进行编码。</p>
+
 <p><strong>表单元素</strong></p>
-<p>基本概念：<br>HTML表单是HTML元素中较为复杂的部分，表单往往和脚本、动态页面、数据处理等功能相结合，因此它是制作动态网站很重要的内容。<br>表单一般用来收集用户的输入信息<br>表单工作原理：<br>访问者在浏览有表单的网页时，可填写必需的信息，然后按某个按钮提交。这些信息通过Internet传送到服务器上。<br>服务器上专门的程序对这些数据进行处理，如果有错误会返回错误信息，并要求纠正错误。当数据完整无误后，服务器反馈一个输入完成的信息</p>
-<h3 id="input系列"><a href="#input系列" class="headerlink" title="input系列"></a>input系列</h3><table>
+
+<p>基本概念：<br />
+HTML表单是HTML元素中较为复杂的部分，表单往往和脚本、动态页面、数据处理等功能相结合，因此它是制作动态网站很重要的内容。<br />
+表单一般用来收集用户的输入信息<br />
+表单工作原理：<br />
+访问者在浏览有表单的网页时，可填写必需的信息，然后按某个按钮提交。这些信息通过Internet传送到服务器上。<br />
+服务器上专门的程序对这些数据进行处理，如果有错误会返回错误信息，并要求纠正错误。当数据完整无误后，服务器反馈一个输入完成的信息</p>
+
+<h3 id="input系列">input系列</h3>
+
+<table>
 <thead>
 <tr>
 <th>type属性值</th>
 <th>表现形式</th>
-<th>对应代码  </th>
+<th>对应代码</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>text</td>
 <td>单行输入文本</td>
-<td>&lt;input type=text” /&gt;  </td>
+<td><input type=text" /></td>
 </tr>
+
 <tr>
 <td>password</td>
 <td>密码输入框</td>
-<td><input type="password">  </td>
+<td><input type="password"  /></td>
 </tr>
+
 <tr>
 <td>checkbox</td>
 <td>复选框</td>
-<td><input type="checkbox" checked="checked">  </td>
+<td><input type="checkbox" checked="checked"  /></td>
 </tr>
+
 <tr>
 <td>radio</td>
 <td>单选框</td>
-<td><input type="radio">  </td>
+<td><input type="radio"  /></td>
 </tr>
+
 <tr>
 <td>submit</td>
 <td>提交按钮</td>
-<td><input type="submit" value="提交">  </td>
+<td><input type="submit" value="提交" /></td>
 </tr>
+
 <tr>
 <td>reset</td>
 <td>重置按钮</td>
-<td><input type="reset" value="重置">  </td>
+<td><input type="reset" value="重置"  /></td>
 </tr>
+
 <tr>
 <td>button</td>
 <td>普通按钮</td>
-<td><input type="button" value="普通按钮">  </td>
+<td><input type="button" value="普通按钮"  /></td>
 </tr>
+
 <tr>
 <td>hidden</td>
 <td>隐藏按钮</td>
-<td><input type="hidden" value="隐藏按钮">  </td>
+<td><input type="hidden" value="隐藏按钮"  /></td>
 </tr>
+
 <tr>
 <td>file</td>
 <td>文本选择框</td>
-<td><input type="file">  </td>
+<td><input type="file"  /></td>
 </tr>
 </tbody>
 </table>
+
 <p>类型（type）说明：</p>
+
 <ul>
 <li>text：文本输入框</li>
 <li>password：密码输入框</li>
@@ -612,22 +751,28 @@ URL地址由4部分组成
 <li>submit：提交按钮</li>
 <li>button：可点击的按钮，没有任何行为，一般配合JS使用</li>
 <li>hidden：对用户不可见，通常用于修改某条数据时，记录数据的id值</li>
-<li>file：提交文件  form表单需要加上enctype=”multipart/form-data”，method=”post”</li>
+<li>file：提交文件  form表单需要加上enctype=&ldquo;multipart/form-data&rdquo;，method=&ldquo;post&rdquo;</li>
 </ul>
+
 <p>属性说明:</p>
+
 <ul>
-<li>name：表单提交时的”键”，注意和id的区别</li>
-<li>value：表单提交时对应项的值 <ul>
-<li>type=”button”, “reset”, “submit”时，为按钮上显示的文本年内容</li>
-<li>type=”text”,”password”,”hidden”时，为输入框的初始值</li>
-<li>type=”checkbox”, “radio”, “file”，为输入相关联的值</li>
-</ul>
-</li>
+<li>name：表单提交时的&rdquo;键&rdquo;，注意和id的区别</li>
+<li>value：表单提交时对应项的值
+
+<ul>
+<li>type=&ldquo;button&rdquo;, &ldquo;reset&rdquo;, &ldquo;submit&rdquo;时，为按钮上显示的文本年内容</li>
+<li>type=&ldquo;text&rdquo;,&ldquo;password&rdquo;,&ldquo;hidden&rdquo;时，为输入框的初始值</li>
+<li>type=&ldquo;checkbox&rdquo;, &ldquo;radio&rdquo;, &ldquo;file&rdquo;，为输入相关联的值</li>
+</ul></li>
 <li>checked：radio和checkbox默认被选中的项</li>
 <li>readonly：text和password设置只读</li>
 <li>disabled：所有input均适用</li>
 </ul>
-<h3 id="select标签"><a href="#select标签" class="headerlink" title="select标签"></a>select标签</h3><pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+
+<h3 id="select标签">select标签</h3>
+
+<pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
   &lt;select name=&quot;city&quot; id=&quot;city&quot;&gt;
     &lt;option value=&quot;1&quot;&gt;北京&lt;/option&gt;
     &lt;option selected=&quot;selected&quot; value=&quot;2&quot;&gt;上海&lt;/option&gt;
@@ -635,125 +780,147 @@ URL地址由4部分组成
     &lt;option value=&quot;4&quot;&gt;深圳&lt;/option&gt;
   &lt;/select&gt;
 &lt;/form&gt;
-</code></pre><p>属性说明：</p>
+</code></pre>
+
+<p>属性说明：</p>
+
 <ul>
 <li>multiple：布尔属性，设置后为多选，否则默认单选</li>
 <li>disabled：禁用</li>
 <li>selected：默认选中该项</li>
 <li>value：定义提交时的选项值</li>
 </ul>
-<h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3><p>定义：<label> 标签为 input 元素定义标注（标记）。<br>说明：</label></p>
+
+<h3 id="label标签">label标签</h3>
+
+<p>定义：<label> 标签为 input 元素定义标注（标记）。<br />
+说明：</p>
+
 <ol>
 <li>label 元素不会向用户呈现任何特殊效果。</li>
-<li><label> 标签的 for 属性值应当与相关元素的 id 属性值相同。</label></li>
+
+<li><p><label> 标签的 for 属性值应当与相关元素的 id 属性值相同。</p>
+
+<form action="">
+  <label for="username">用户名</label>
+  <input type="text" id="username" name="username">
+</form></li>
 </ol>
-<pre><code>&lt;form action=&quot;&quot;&gt;
-  &lt;label for=&quot;username&quot;&gt;用户名&lt;/label&gt;
-  &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot;&gt;
-&lt;/form&gt;
-</code></pre><h3 id="textarea多行文本"><a href="#textarea多行文本" class="headerlink" title="textarea多行文本"></a>textarea多行文本</h3><pre><code>&lt;textarea name=&quot;memo&quot; id=&quot;memo&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;
+
+<h3 id="textarea多行文本">textarea多行文本</h3>
+
+<pre><code>&lt;textarea name=&quot;memo&quot; id=&quot;memo&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;
   默认内容
 &lt;/textarea&gt;
-</code></pre><p>属性说明：</p>
+</code></pre>
+
+<p>属性说明：</p>
+
 <ul>
 <li>name：名称</li>
 <li>rows：行数</li>
 <li>cols：列数</li>
 <li>disabled：禁用</li>
 </ul>
+        </div>
 
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-          <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
-        
-          <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
-        
-          <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-<div class="reward" id="reward">
-  <div class="liker">
-	<div class="liker-canvas">
-		<canvas class="hearts-canvas liker-canvas-hearts"></canvas>
-	</div>
-	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
-  	<button id="reward-button" class="btn" disable="enable">
-  	    <i class="fas fa-heart"></i>
-  	</button>
-  	<span>赞赏</span>
-  	
-  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
-  	
-  </div>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechat">
-      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
-      <span>微信支付</span>
     </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
+
 </div>
 
 
-  
-  
-  <nav class="page-nav">
-	<div class="page-nav-prev page-nav-item">
-	  
-	  <a href="/2018/03/08/cnblog_8527496/" rel="prev" title="前端基础之CSS"><i class="fas fa-angle-left"></i><span class="nav-title">前端基础之CSS</span></a>
-	  
-	</div>
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2018/02/28/cnblog_8485214/" rel="next" title="MySQL 之 索引原理与慢查询优化"><span class="nav-title">MySQL 之 索引原理与慢查询优化</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
-  
-  
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous"><a href="/2018/02/28/cnblog_8485214/">
+            <span aria-hidden="true">&larr;</span>MySQL 之 索引原理与慢查询优化</a></li>
+        
 
-<div class="comments" id="comments">
-  
-    <script type="text/javascript">
-      $.ajax({
-      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      dataType: 'json',
-      cache: false,
-      crossDomain: true,
-      success: function success(page_comments) {
-        for (var i = 0; i < page_comments.length; ++i) {
-          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
-        }
-      }
-    });
-    </script>
+        
+        <li class="next"><a href="/2018/03/08/cnblog_8527496/">
+            前端基础之CSS<span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+
 
     
-      <div class="commentjs" id="comment-thread"></div>
-      <link rel="stylesheet" href="/css/commentjs.css">
-      <script defer type="text/javascript" src="/js/marked.min.js"></script>
-      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-      <script defer type="text/javascript" src="/js/commentjs.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function () {
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <div class="commentjs" id="comment-thread"></div>
+    
+    <link rel="stylesheet" href="/css/commentjs.min.css">
+    
+    <script defer type="text/javascript" src="/js/marked.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/commentjs.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
         getComments({
           "type": "github",
           "user": "wevsmy",
@@ -781,156 +948,292 @@ URL地址由4部分组成
         };
         window.addEventListener("DOMContentLoaded", mark, false);
         window.addEventListener("load", mark, false);
-      });
-      </script>
+    });
+    </script>
+
     
-  
 </div>
 
 
 
-  
-</div>
 
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-  
-  <h1 class="author-name">wilson</h1>
-  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
-  <div class="site-count">
-    
-    
-    
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">78</a></div>
-    </div>
-    
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
-    </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">20</a></div>
-    </div>
-    
-    
-    
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
-</div>
+                
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
 
+    <div class="info sidebar-item" id="info">
 
-  <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉前端知识之HTML内容👈的摘要"><span class="toc-text">这是👉前端知识之HTML内容👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#HTML介绍"><span class="toc-text">HTML介绍</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Web服务本质"><span class="toc-text">Web服务本质</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#HTML是什么？"><span class="toc-text">HTML是什么？</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#HTML不是什么？"><span class="toc-text">HTML不是什么？</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#HTML文档结构"><span class="toc-text">HTML文档结构</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#HTML标签格式"><span class="toc-text">HTML标签格式</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#HTML注释"><span class="toc-text">HTML注释</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#lt-DOCTYPE-gt-标签"><span class="toc-text">&lt;!DOCTYPE&gt; 标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#HTML常用标签"><span class="toc-text">HTML常用标签</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#head内常用标签"><span class="toc-text">head内常用标签</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Meta标签"><span class="toc-text">Meta标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#body内常用标签"><span class="toc-text">body内常用标签</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#基本标签（块级标签和内联标签）"><span class="toc-text">基本标签（块级标签和内联标签）</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#特殊字符"><span class="toc-text">特殊字符</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#div标签和span标签"><span class="toc-text">div标签和span标签</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#img标签"><span class="toc-text">img标签</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#a标签"><span class="toc-text">a标签</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#列表"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#表格"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#form"><span class="toc-text">form</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#input系列"><span class="toc-text">input系列</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#select标签"><span class="toc-text">select标签</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#label标签"><span class="toc-text">label标签</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#textarea多行文本"><span class="toc-text">textarea多行文本</span></a></li></ol></li></ol></li></ol></div>
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h1 class="author-name">wilson</h1>
+        <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">79</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    20
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
     </div>
-    
-    
-    
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
-      <ul>
+
+    <div class="sidebar-sticky">
+
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#这是-前端知识之html内容-的摘要-2018-03-05-cnblog-8508917"><a href="/2018/03/05/cnblog_8508917/">这是👉前端知识之HTML内容👈的摘要</a></a></li>
+<li><a href="#html介绍">HTML介绍</a>
+<ul>
+<li><a href="#web服务本质">Web服务本质</a></li>
+<li><a href="#html是什么">HTML是什么？</a></li>
+<li><a href="#html不是什么">HTML不是什么？</a></li>
+<li><a href="#html文档结构">HTML文档结构</a></li>
+<li><a href="#html标签格式">HTML标签格式</a></li>
+<li><a href="#html注释">HTML注释</a></li>
+<li><a href="#doctype-标签">&lt;!DOCTYPE&gt; 标签</a></li>
+</ul></li>
+<li><a href="#html常用标签">HTML常用标签</a>
+<ul>
+<li><a href="#head内常用标签">head内常用标签</a>
+<ul>
+<li><a href="#meta标签">Meta标签</a></li>
+</ul></li>
+<li><a href="#body内常用标签">body内常用标签</a>
+<ul>
+<li><a href="#基本标签-块级标签和内联标签">基本标签（块级标签和内联标签）</a></li>
+<li><a href="#特殊字符">特殊字符</a></li>
+<li><a href="#div标签和span标签">div标签和span标签</a></li>
+<li><a href="#img标签">img标签</a></li>
+<li><a href="#a标签">a标签</a></li>
+<li><a href="#列表">列表</a></li>
+<li><a href="#表格">表格</a></li>
+<li><a href="#form">form</a></li>
+<li><a href="#input系列">input系列</a></li>
+<li><a href="#select标签">select标签</a></li>
+<li><a href="#label标签">label标签</a></li>
+<li><a href="#textarea多行文本">textarea多行文本</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
         
-        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
         
-      </ul>
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
     </div>
-    
-    
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
-      <ul>
-        
-        <li><i class="fas fa-link"></i><a href="https://codeloop.org" target="_blank">Code Loop</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">Charles的博客</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
-        
-      </ul>
-    </div>
-    
-  </div>
+
 </aside>
 
+        </div>
+    </div>
+</main>
 
-          
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
         </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #333333;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-        </div>
-        
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
-          
-        </div>
-        <div class="powered-by">
-           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
-        </div>
-      </div>
-    </div>
-  </div>
 </footer>
 
 
-    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-  </body>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
 </html>

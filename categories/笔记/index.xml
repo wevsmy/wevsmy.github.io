@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 on </title>
+    <link>https://blog.weii.ink/categories/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 09 Jul 2019 19:09:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hexo添加文章更新时间</title>
+      <link>https://blog.weii.ink/2019/07/09/hexo-add-updated/</link>
+      <pubDate>Tue, 09 Jul 2019 19:09:57 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/09/hexo-add-updated/</guid>
+      <description>&lt;p&gt;现在使用的主题只有文章创建时间，并没有文章更新时间，就自己捣鼓捣鼓添加了一个文章更新时间，记录一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>博客园文章迁移到Hexo</title>
+      <link>https://blog.weii.ink/2019/06/10/cnblog_to_hexo/</link>
+      <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/06/10/cnblog_to_hexo/</guid>
+      <description>&lt;p&gt;最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.&lt;/p&gt;
+
+&lt;p&gt;毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Flask-Migrate进行管理数据库升级</title>
+      <link>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Thu, 17 Jan 2019 10:54:35 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</guid>
+      <description>&lt;p&gt;我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。
+现在我们可以使用&lt;a href=&#34;https://flask-migrate.readthedocs.org/en/latest/&#34;&gt;Flask-Migrate&lt;/a&gt;插件来解决之，Flask-Migrate插件是基于&lt;a href=&#34;http://alembic.readthedocs.org/en/latest/&#34;&gt;Alembic&lt;/a&gt;，Alembic是由大名鼎鼎的&lt;a href=&#34;http://www.sqlalchemy.org/&#34;&gt;SQLAlchemy&lt;/a&gt;作者开发数据迁移工具。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>换电脑hexo源码迁移</title>
+      <link>https://blog.weii.ink/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Tue, 15 Jan 2019 10:08:43 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</guid>
+      <description>&lt;p&gt;更换电脑后迁移hexo源代码😂&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用阿里云OSS图床</title>
+      <link>https://blog.weii.ink/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/</link>
+      <pubDate>Sat, 02 Jun 2018 23:41:57 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/</guid>
+      <description>&lt;p&gt;本Blog中所有文章图片都采用阿里云OSS对象存储作为图床
+下面简单说一下如何使用oss作为图床&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Django基础01</title>
+      <link>https://blog.weii.ink/2018/03/22/cnblog_8621513/</link>
+      <pubDate>Thu, 22 Mar 2018 01:17:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/22/cnblog_8621513/</guid>
+      <description>&lt;h1 id=&#34;这是-django基础01-的摘要-2018-03-22-cnblog-8621513&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/22/cnblog_8621513/&#34;&gt;这是👉Django基础01👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python连接MySQL数据库之pymysql模块使用</title>
+      <link>https://blog.weii.ink/2018/03/21/cnblog_8616189/</link>
+      <pubDate>Wed, 21 Mar 2018 03:58:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/21/cnblog_8616189/</guid>
+      <description>&lt;h1 id=&#34;这是-python连接mysql数据库之pymysql模块使用-的摘要-2018-03-21-cnblog-8616189&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/21/cnblog_8616189/&#34;&gt;这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 语法</title>
+      <link>https://blog.weii.ink/2018/03/14/cnblog_8565323/</link>
+      <pubDate>Wed, 14 Mar 2018 01:58:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/14/cnblog_8565323/</guid>
+      <description>&lt;h1 id=&#34;这是-markdown-语法-的摘要-2018-03-14-cnblog-8565323&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/14/cnblog_8565323/&#34;&gt;这是👉Markdown 语法👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>https://blog.weii.ink/2018/03/14/cnblog_8565153/</link>
+      <pubDate>Wed, 14 Mar 2018 01:40:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/14/cnblog_8565153/</guid>
+      <description>&lt;h1 id=&#34;这是-jquery-的摘要-2018-03-14-cnblog-8565153&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/14/cnblog_8565153/&#34;&gt;这是👉jQuery👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>linux screen 常用命令</title>
+      <link>https://blog.weii.ink/2018/03/13/cnblog_8554604/</link>
+      <pubDate>Tue, 13 Mar 2018 02:38:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/13/cnblog_8554604/</guid>
+      <description>&lt;h1 id=&#34;这是-linux-screen-常用命令-的摘要-2018-03-13-cnblog-8554604&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/13/cnblog_8554604/&#34;&gt;这是👉linux screen 常用命令👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端基础之BOM和DOM</title>
+      <link>https://blog.weii.ink/2018/03/12/cnblog_8550048/</link>
+      <pubDate>Mon, 12 Mar 2018 08:34:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/12/cnblog_8550048/</guid>
+      <description>&lt;h1 id=&#34;这是-前端基础之bom和dom-的摘要-2018-03-12-cnblog-8550048&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/12/cnblog_8550048/&#34;&gt;这是👉前端基础之BOM和DOM👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端基础之JavaScript</title>
+      <link>https://blog.weii.ink/2018/03/08/cnblog_8527506/</link>
+      <pubDate>Thu, 08 Mar 2018 03:44:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/08/cnblog_8527506/</guid>
+      <description>&lt;h1 id=&#34;这是-前端基础之javascript-的摘要-2018-03-08-cnblog-8527506&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/08/cnblog_8527506/&#34;&gt;这是👉前端基础之JavaScript👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端基础之CSS</title>
+      <link>https://blog.weii.ink/2018/03/08/cnblog_8527496/</link>
+      <pubDate>Thu, 08 Mar 2018 03:43:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/08/cnblog_8527496/</guid>
+      <description>&lt;h1 id=&#34;这是-前端基础之css-的摘要-2018-03-08-cnblog-8527496&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/08/cnblog_8527496/&#34;&gt;这是👉前端基础之CSS👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端知识之HTML内容</title>
+      <link>https://blog.weii.ink/2018/03/05/cnblog_8508917/</link>
+      <pubDate>Mon, 05 Mar 2018 06:46:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/03/05/cnblog_8508917/</guid>
+      <description>&lt;h1 id=&#34;这是-前端知识之html内容-的摘要-2018-03-05-cnblog-8508917&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/03/05/cnblog_8508917/&#34;&gt;这是👉前端知识之HTML内容👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 之 索引原理与慢查询优化</title>
+      <link>https://blog.weii.ink/2018/02/28/cnblog_8485214/</link>
+      <pubDate>Wed, 28 Feb 2018 10:47:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/28/cnblog_8485214/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-之-索引原理与慢查询优化-的摘要-2018-02-28-cnblog-8485214&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/28/cnblog_8485214/&#34;&gt;这是👉MySQL 之 索引原理与慢查询优化👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】</title>
+      <link>https://blog.weii.ink/2018/02/28/cnblog_8485209/</link>
+      <pubDate>Wed, 28 Feb 2018 10:46:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/28/cnblog_8485209/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-之-视图-触发器-存储过程-函数-事物-数据库锁-数据库备份-的摘要-2018-02-28-cnblog-8485209&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/28/cnblog_8485209/&#34;&gt;这是👉MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 之 数据操作</title>
+      <link>https://blog.weii.ink/2018/02/28/cnblog_8485204/</link>
+      <pubDate>Wed, 28 Feb 2018 10:45:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/28/cnblog_8485204/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-之-数据操作-的摘要-2018-02-28-cnblog-8485204&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/28/cnblog_8485204/&#34;&gt;这是👉MySQL 之 数据操作👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 之 表操作</title>
+      <link>https://blog.weii.ink/2018/02/28/cnblog_8485190/</link>
+      <pubDate>Wed, 28 Feb 2018 10:43:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/28/cnblog_8485190/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-之-表操作-的摘要-2018-02-28-cnblog-8485190&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/28/cnblog_8485190/&#34;&gt;这是👉MySQL 之 表操作👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 之 库操作</title>
+      <link>https://blog.weii.ink/2018/02/28/cnblog_8485174/</link>
+      <pubDate>Wed, 28 Feb 2018 10:39:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/28/cnblog_8485174/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-之-库操作-的摘要-2018-02-28-cnblog-8485174&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/28/cnblog_8485174/&#34;&gt;这是👉MySQL 之 库操作👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 之 基本概念</title>
+      <link>https://blog.weii.ink/2018/02/28/cnblog_8485161/</link>
+      <pubDate>Wed, 28 Feb 2018 10:36:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/28/cnblog_8485161/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-之-基本概念-的摘要-2018-02-28-cnblog-8485161&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/28/cnblog_8485161/&#34;&gt;这是👉MySQL 之 基本概念👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 练习2</title>
+      <link>https://blog.weii.ink/2018/02/27/cnblog_8480101/</link>
+      <pubDate>Tue, 27 Feb 2018 09:40:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/27/cnblog_8480101/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-练习2-的摘要-2018-02-27-cnblog-8480101&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/27/cnblog_8480101/&#34;&gt;这是👉MySQL 练习2👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 练习</title>
+      <link>https://blog.weii.ink/2018/02/27/cnblog_8479171/</link>
+      <pubDate>Tue, 27 Feb 2018 07:35:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/27/cnblog_8479171/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-练习-的摘要-2018-02-27-cnblog-8479171&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/27/cnblog_8479171/&#34;&gt;这是👉MySQL 练习👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 环境搭建之解压方式安装</title>
+      <link>https://blog.weii.ink/2018/02/26/cnblog_8474477/</link>
+      <pubDate>Mon, 26 Feb 2018 09:59:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/26/cnblog_8474477/</guid>
+      <description>&lt;h1 id=&#34;这是-mysql-环境搭建之解压方式安装-的摘要-2018-02-26-cnblog-8474477&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/26/cnblog_8474477/&#34;&gt;这是👉MySQL 环境搭建之解压方式安装👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python3 下载必应每日壁纸（三）</title>
+      <link>https://blog.weii.ink/2018/02/26/cnblog_8474376/</link>
+      <pubDate>Mon, 26 Feb 2018 09:38:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/26/cnblog_8474376/</guid>
+      <description>&lt;h1 id=&#34;这是-python3-下载必应每日壁纸-三-的摘要-2018-02-26-cnblog-8474376&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/26/cnblog_8474376/&#34;&gt;这是👉python3 下载必应每日壁纸（三）👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 生产者与消费者模式</title>
+      <link>https://blog.weii.ink/2018/02/05/cnblog_8418906/</link>
+      <pubDate>Mon, 05 Feb 2018 10:32:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/02/05/cnblog_8418906/</guid>
+      <description>&lt;h1 id=&#34;这是-python-生产者与消费者模式-的摘要-2018-02-05-cnblog-8418906&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/02/05/cnblog_8418906/&#34;&gt;这是👉python 生产者与消费者模式👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python3 下载必应每日壁纸（二）</title>
+      <link>https://blog.weii.ink/2018/01/30/cnblog_8386624/</link>
+      <pubDate>Tue, 30 Jan 2018 11:01:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/30/cnblog_8386624/</guid>
+      <description>&lt;h1 id=&#34;这是-python3-下载必应每日壁纸-二-的摘要-2018-01-30-cnblog-8386624&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/30/cnblog_8386624/&#34;&gt;这是👉python3 下载必应每日壁纸（二）👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python3 下载必应每日壁纸（一）</title>
+      <link>https://blog.weii.ink/2018/01/30/cnblog_8386598/</link>
+      <pubDate>Tue, 30 Jan 2018 10:53:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/30/cnblog_8386598/</guid>
+      <description>&lt;h1 id=&#34;这是-python3-下载必应每日壁纸-一-的摘要-2018-01-30-cnblog-8386598&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/30/cnblog_8386598/&#34;&gt;这是👉python3 下载必应每日壁纸（一）👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python struct模块</title>
+      <link>https://blog.weii.ink/2018/01/29/cnblog_8377304/</link>
+      <pubDate>Mon, 29 Jan 2018 06:54:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/29/cnblog_8377304/</guid>
+      <description>&lt;h1 id=&#34;这是-python-struct模块-的摘要-2018-01-29-cnblog-8377304&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/29/cnblog_8377304/&#34;&gt;这是👉Python struct模块👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python Tkinter基础 Button bg 设置按钮的背景颜色</title>
+      <link>https://blog.weii.ink/2018/01/24/cnblog_8343470/</link>
+      <pubDate>Wed, 24 Jan 2018 12:41:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/24/cnblog_8343470/</guid>
+      <description>&lt;h1 id=&#34;这是-python-tkinter基础-button-bg-设置按钮的背景颜色-的摘要-2018-01-24-cnblog-8343470&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/24/cnblog_8343470/&#34;&gt;这是👉python Tkinter基础 Button bg 设置按钮的背景颜色👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python Tkinter基础 Button command在窗体中添加一个按钮，单击按钮 在IDLE中打印一行字</title>
+      <link>https://blog.weii.ink/2018/01/24/cnblog_8343298/</link>
+      <pubDate>Wed, 24 Jan 2018 11:57:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/24/cnblog_8343298/</guid>
+      <description>&lt;h1 id=&#34;这是-python-tkinter基础-button-command在窗体中添加一个按钮-单击按钮-在idle中打印一行字-的摘要-2018-01-24-cnblog-8343298&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/24/cnblog_8343298/&#34;&gt;这是👉python Tkinter基础 Button command在窗体中添加一个按钮，单击按钮 在IDLE中打印一行字👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python Tkinter 基础添加一个按钮，在按钮上显示文字，并设置文字颜色</title>
+      <link>https://blog.weii.ink/2018/01/24/cnblog_8343266/</link>
+      <pubDate>Wed, 24 Jan 2018 11:50:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/24/cnblog_8343266/</guid>
+      <description>&lt;h1 id=&#34;这是-python-tkinter-基础添加一个按钮-在按钮上显示文字-并设置文字颜色-的摘要-2018-01-24-cnblog-8343266&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/24/cnblog_8343266/&#34;&gt;这是👉python Tkinter 基础添加一个按钮，在按钮上显示文字，并设置文字颜色👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python Tkinter 基础 创建一行文字的窗体并设置窗体的标题 Label,title</title>
+      <link>https://blog.weii.ink/2018/01/24/cnblog_8343168/</link>
+      <pubDate>Wed, 24 Jan 2018 11:20:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/24/cnblog_8343168/</guid>
+      <description>&lt;h1 id=&#34;这是-python-tkinter-基础-创建一行文字的窗体并设置窗体的标题-label-title-的摘要-2018-01-24-cnblog-8343168&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/24/cnblog_8343168/&#34;&gt;这是👉python Tkinter 基础 创建一行文字的窗体并设置窗体的标题 Label,title👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python logging模块</title>
+      <link>https://blog.weii.ink/2018/01/24/cnblog_8342302/</link>
+      <pubDate>Wed, 24 Jan 2018 08:29:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/24/cnblog_8342302/</guid>
+      <description>&lt;h1 id=&#34;这是-python-logging模块-的摘要-2018-01-24-cnblog-8342302&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/24/cnblog_8342302/&#34;&gt;这是👉python logging模块👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 面向对象进阶之对象内置方法</title>
+      <link>https://blog.weii.ink/2018/01/22/cnblog_8329568/</link>
+      <pubDate>Mon, 22 Jan 2018 08:17:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/22/cnblog_8329568/</guid>
+      <description>&lt;h1 id=&#34;这是-python-面向对象进阶之对象内置方法-的摘要-2018-01-22-cnblog-8329568&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/22/cnblog_8329568/&#34;&gt;这是👉python 面向对象进阶之对象内置方法👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>XMind 8 pro安装破解</title>
+      <link>https://blog.weii.ink/2018/01/20/cnblog_8321674/</link>
+      <pubDate>Sat, 20 Jan 2018 11:14:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/20/cnblog_8321674/</guid>
+      <description>&lt;h1 id=&#34;这是-xmind-8-pro安装破解-的摘要-2018-01-20-cnblog-8321674&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/20/cnblog_8321674/&#34;&gt;这是👉XMind 8 pro安装破解👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 面向对象之继承</title>
+      <link>https://blog.weii.ink/2018/01/18/cnblog_8310762/</link>
+      <pubDate>Thu, 18 Jan 2018 08:14:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/18/cnblog_8310762/</guid>
+      <description>&lt;h1 id=&#34;这是-python-面向对象之继承-的摘要-2018-01-18-cnblog-8310762&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/18/cnblog_8310762/&#34;&gt;这是👉python 面向对象之继承👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 面向对象之老王开枪</title>
+      <link>https://blog.weii.ink/2018/01/18/cnblog_8310708/</link>
+      <pubDate>Thu, 18 Jan 2018 08:04:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/18/cnblog_8310708/</guid>
+      <description>&lt;h1 id=&#34;这是-python-面向对象之老王开枪-的摘要-2018-01-18-cnblog-8310708&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/18/cnblog_8310708/&#34;&gt;这是👉python 面向对象之老王开枪👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 面向对象</title>
+      <link>https://blog.weii.ink/2018/01/15/cnblog_8286595/</link>
+      <pubDate>Mon, 15 Jan 2018 00:52:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/15/cnblog_8286595/</guid>
+      <description>&lt;h1 id=&#34;这是-python-面向对象-的摘要-2018-01-15-cnblog-8286595&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/15/cnblog_8286595/&#34;&gt;这是👉python 面向对象👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python os模块</title>
+      <link>https://blog.weii.ink/2018/01/12/cnblog_8277029/</link>
+      <pubDate>Fri, 12 Jan 2018 09:46:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/12/cnblog_8277029/</guid>
+      <description>&lt;h1 id=&#34;这是-python-os模块-的摘要-2018-01-12-cnblog-8277029&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/12/cnblog_8277029/&#34;&gt;这是👉python os模块👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 时间模块time</title>
+      <link>https://blog.weii.ink/2018/01/10/cnblog_8258730/</link>
+      <pubDate>Wed, 10 Jan 2018 07:16:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/10/cnblog_8258730/</guid>
+      <description>&lt;h1 id=&#34;这是-python-时间模块time-的摘要-2018-01-10-cnblog-8258730&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/10/cnblog_8258730/&#34;&gt;这是👉python 时间模块time👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python re模块</title>
+      <link>https://blog.weii.ink/2018/01/09/cnblog_8249990/</link>
+      <pubDate>Tue, 09 Jan 2018 02:03:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/09/cnblog_8249990/</guid>
+      <description>&lt;h1 id=&#34;这是-python-re模块-的摘要-2018-01-09-cnblog-8249990&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/09/cnblog_8249990/&#34;&gt;这是👉python re模块👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python urllib https抓取网页的问题</title>
+      <link>https://blog.weii.ink/2018/01/08/cnblog_8244143/</link>
+      <pubDate>Mon, 08 Jan 2018 10:27:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/08/cnblog_8244143/</guid>
+      <description>&lt;h1 id=&#34;这是-python-urllib-https抓取网页的问题-的摘要-2018-01-08-cnblog-8244143&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/08/cnblog_8244143/&#34;&gt;这是👉python urllib https抓取网页的问题👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 匿名函数</title>
+      <link>https://blog.weii.ink/2018/01/08/cnblog_8241193/</link>
+      <pubDate>Mon, 08 Jan 2018 06:59:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/08/cnblog_8241193/</guid>
+      <description>&lt;h1 id=&#34;这是-python-匿名函数-的摘要-2018-01-08-cnblog-8241193&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/08/cnblog_8241193/&#34;&gt;这是👉python 匿名函数👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 递归函数</title>
+      <link>https://blog.weii.ink/2018/01/08/cnblog_8241349/</link>
+      <pubDate>Mon, 08 Jan 2018 02:14:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/08/cnblog_8241349/</guid>
+      <description>&lt;h1 id=&#34;这是-python-递归函数-的摘要-2018-01-08-cnblog-8241349&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/08/cnblog_8241349/&#34;&gt;这是👉python 递归函数👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 内置函数</title>
+      <link>https://blog.weii.ink/2018/01/04/cnblog_8191328/</link>
+      <pubDate>Thu, 04 Jan 2018 01:47:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/04/cnblog_8191328/</guid>
+      <description>&lt;h1 id=&#34;这是-python-内置函数-的摘要-2018-01-04-cnblog-8191328&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/04/cnblog_8191328/&#34;&gt;这是👉python 内置函数👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用pyInstaller打包py文件为exe文件</title>
+      <link>https://blog.weii.ink/2018/01/03/cnblog_8185308/</link>
+      <pubDate>Wed, 03 Jan 2018 11:27:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/03/cnblog_8185308/</guid>
+      <description>&lt;h1 id=&#34;这是-使用pyinstaller打包py文件为exe文件-的摘要-2018-01-03-cnblog-8185308&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/03/cnblog_8185308/&#34;&gt;这是👉使用pyInstaller打包py文件为exe文件👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 生成器</title>
+      <link>https://blog.weii.ink/2018/01/03/cnblog_8183674/</link>
+      <pubDate>Wed, 03 Jan 2018 06:38:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/03/cnblog_8183674/</guid>
+      <description>&lt;h1 id=&#34;这是-python-生成器-的摘要-2018-01-03-cnblog-8183674&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/03/cnblog_8183674/&#34;&gt;这是👉python 生成器👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 迭代器</title>
+      <link>https://blog.weii.ink/2018/01/03/cnblog_8183568/</link>
+      <pubDate>Wed, 03 Jan 2018 06:21:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/01/03/cnblog_8183568/</guid>
+      <description>&lt;h1 id=&#34;这是-python-迭代器-的摘要-2018-01-03-cnblog-8183568&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2018/01/03/cnblog_8183568/&#34;&gt;这是👉python 迭代器👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 装饰器</title>
+      <link>https://blog.weii.ink/2017/12/28/cnblog_8134274/</link>
+      <pubDate>Thu, 28 Dec 2017 02:23:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/28/cnblog_8134274/</guid>
+      <description>&lt;h1 id=&#34;这是-python-装饰器-的摘要-2017-12-28-cnblog-8134274&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/28/cnblog_8134274/&#34;&gt;这是👉python 装饰器👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 三元运算符</title>
+      <link>https://blog.weii.ink/2017/12/28/cnblog_8134268/</link>
+      <pubDate>Thu, 28 Dec 2017 02:22:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/28/cnblog_8134268/</guid>
+      <description>&lt;h1 id=&#34;这是-python-三元运算符-的摘要-2017-12-28-cnblog-8134268&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/28/cnblog_8134268/&#34;&gt;这是👉python 三元运算符👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 函数进阶</title>
+      <link>https://blog.weii.ink/2017/12/27/cnblog_8125951/</link>
+      <pubDate>Wed, 27 Dec 2017 07:24:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/27/cnblog_8125951/</guid>
+      <description>&lt;h1 id=&#34;这是-python-函数进阶-的摘要-2017-12-27-cnblog-8125951&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/27/cnblog_8125951/&#34;&gt;这是👉python 函数进阶👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 函数</title>
+      <link>https://blog.weii.ink/2017/12/27/cnblog_8124173/</link>
+      <pubDate>Wed, 27 Dec 2017 01:22:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/27/cnblog_8124173/</guid>
+      <description>&lt;h1 id=&#34;这是-python-函数-的摘要-2017-12-27-cnblog-8124173&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/27/cnblog_8124173/&#34;&gt;这是👉python 函数👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>Win10(PowerShell)下Python命令行tab自动补全</title>
+      <link>https://blog.weii.ink/2017/12/26/cnblog_8116853/</link>
+      <pubDate>Tue, 26 Dec 2017 02:46:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/26/cnblog_8116853/</guid>
+      <description>&lt;h1 id=&#34;这是-win10-powershell-下python命令行tab自动补全-的摘要-2017-12-26-cnblog-8116853&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/26/cnblog_8116853/&#34;&gt;这是👉Win10(PowerShell)下Python命令行tab自动补全👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python文件操作</title>
+      <link>https://blog.weii.ink/2017/12/25/cnblog_8110891/</link>
+      <pubDate>Mon, 25 Dec 2017 11:45:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/25/cnblog_8110891/</guid>
+      <description>&lt;h1 id=&#34;这是-python文件操作-的摘要-2017-12-25-cnblog-8110891&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/25/cnblog_8110891/&#34;&gt;这是👉python文件操作👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 集合 深浅拷贝</title>
+      <link>https://blog.weii.ink/2017/12/22/cnblog_8085041/</link>
+      <pubDate>Fri, 22 Dec 2017 03:07:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/22/cnblog_8085041/</guid>
+      <description>&lt;h1 id=&#34;这是-python-集合-深浅拷贝-的摘要-2017-12-22-cnblog-8085041&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/22/cnblog_8085041/&#34;&gt;这是👉python 集合 深浅拷贝👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python小整数与str数据池，编码关系</title>
+      <link>https://blog.weii.ink/2017/12/22/cnblog_8084380/</link>
+      <pubDate>Fri, 22 Dec 2017 00:44:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/22/cnblog_8084380/</guid>
+      <description>&lt;h1 id=&#34;这是-python小整数与str数据池-编码关系-的摘要-2017-12-22-cnblog-8084380&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/22/cnblog_8084380/&#34;&gt;这是👉python小整数与str数据池，编码关系👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 字典的操作</title>
+      <link>https://blog.weii.ink/2017/12/20/cnblog_8073028/</link>
+      <pubDate>Wed, 20 Dec 2017 03:54:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/20/cnblog_8073028/</guid>
+      <description>&lt;h1 id=&#34;这是-python-字典的操作-的摘要-2017-12-20-cnblog-8073028&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/20/cnblog_8073028/&#34;&gt;这是👉python 字典的操作👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 列表的常见操作</title>
+      <link>https://blog.weii.ink/2017/12/19/cnblog_8064765/</link>
+      <pubDate>Tue, 19 Dec 2017 03:47:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/19/cnblog_8064765/</guid>
+      <description>&lt;h1 id=&#34;这是-python-列表的常见操作-的摘要-2017-12-19-cnblog-8064765&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/19/cnblog_8064765/&#34;&gt;这是👉python 列表的常见操作👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python字符串Str方法</title>
+      <link>https://blog.weii.ink/2017/12/19/cnblog_8063941/</link>
+      <pubDate>Tue, 19 Dec 2017 01:38:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/19/cnblog_8063941/</guid>
+      <description>&lt;h1 id=&#34;这是-python字符串str方法-的摘要-2017-12-19-cnblog-8063941&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/19/cnblog_8063941/&#34;&gt;这是👉python字符串Str方法👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python 的基础数据类型</title>
+      <link>https://blog.weii.ink/2017/12/19/cnblog_8063770/</link>
+      <pubDate>Tue, 19 Dec 2017 00:47:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/19/cnblog_8063770/</guid>
+      <description>&lt;h1 id=&#34;这是-python-的基础数据类型-的摘要-2017-12-19-cnblog-8063770&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/19/cnblog_8063770/&#34;&gt;这是👉python 的基础数据类型👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>win10 下的python虚拟环境安装使用（使用powershell）</title>
+      <link>https://blog.weii.ink/2017/12/18/cnblog_8056860/</link>
+      <pubDate>Mon, 18 Dec 2017 03:59:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/18/cnblog_8056860/</guid>
+      <description>&lt;h1 id=&#34;这是-win10-下的python虚拟环境安装使用-使用powershell-的摘要-2017-12-18-cnblog-8056860&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/18/cnblog_8056860/&#34;&gt;这是👉win10 下的python虚拟环境安装使用（使用powershell）👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>python运算符优先级</title>
+      <link>https://blog.weii.ink/2017/12/18/cnblog_8056277/</link>
+      <pubDate>Mon, 18 Dec 2017 02:05:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/18/cnblog_8056277/</guid>
+      <description>&lt;h1 id=&#34;这是-python运算符优先级-的摘要-2017-12-18-cnblog-8056277&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/18/cnblog_8056277/&#34;&gt;这是👉python运算符优先级👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>gbk,utf-8,unicode编码，单位换算</title>
+      <link>https://blog.weii.ink/2017/12/18/cnblog_8056251/</link>
+      <pubDate>Mon, 18 Dec 2017 02:00:00 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2017/12/18/cnblog_8056251/</guid>
+      <description>&lt;h1 id=&#34;这是-gbk-utf-8-unicode编码-单位换算-的摘要-2017-12-18-cnblog-8056251&#34;&gt;&lt;a href=&#34;https://blog.weii.ink/2017/12/18/cnblog_8056251/&#34;&gt;这是👉gbk,utf-8,unicode编码，单位换算👈的摘要&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

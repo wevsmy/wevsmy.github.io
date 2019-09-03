@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-cn" >
+<head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
     
     <meta name="theme-color" content="#333333">
     <meta name="msapplication-TileColor" content="#333333">
@@ -13,16 +35,20 @@
     <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
     
     
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA" />
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
     
     
-    <meta name="keywords" content="Weii, Wevsmy, Wilson, Python, Golang, PyQt5, Hexo">
+    
+    <meta name="keywords"
+          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
     
     
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -31,7 +57,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
     
     
     <link rel="manifest" href="/favicons/site.webmanifest">
@@ -40,246 +67,234 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     
     
-    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
-    
-    
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    <title>
+        换电脑hexo源码迁移 &middot; wilson&#39;s blog
+    </title>
+
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var cb = null;
-      var els = $(".post figure.highlight");
-      if (els.length) {
-        // Enabled Hexo highlight line number.
-        $(els).each(function (i, e) {
-          $(e).before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout with line number.
-              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-          }
-        });
-      } else {
-        // Disabled Hexo highlight line number.
-        els = $(".post pre code");
-        $(els).each(function (i, e) {
-          // Add button before pre, not code.
-          $(e).parent().before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout without line number.
-              return trigger.nextElementSibling.firstChild;
-          }
-        });
-      }
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "已复制";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "复制";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
-    </script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script type="text/javascript" src="/js/love.js"></script>
-    <title>换电脑hexo源码迁移 | wilson's blog - Life is short, you need Python</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #333333;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">wilson's blog</a></h1>
-        <h2 class="subtitle">Life is short, you need Python</h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
-        
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
-        
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
-        
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
-        
-        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
-        
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
-        
-      </ul>
-    </nav>
-  </div>
 </header>
 
-
-    <main id="main" class="main">
-      <div class="container">
+<main id="main" class="main">
+    <div class="container">
         <div class="main-container">
-          <div class="content">
-            
-<div id="post" class="page">
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/01/15/换电脑hexo源码迁移/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="wilson">
-       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-       <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="wilson's blog">
-      </span>
+            <div id="content" class="content">
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/'>换电脑hexo源码迁移</a></h2></div>
+        <div class="post-meta"><span>2019.01.15</span></div>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">换电脑hexo源码迁移</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-15T10:08:43+08:00">2019-01-15 10:08:43</time></span>
-        </span>
-        
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <p>更换电脑后迁移hexo源代码😂</p>
 
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-05-31T10:21:18+08:00">
-                2019-05-31 10:21:18
-              </time>
-           </span>
-        </span>
-        
+<h1 id="备份必要文件">备份必要文件</h1>
 
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
+<p>进入原来电脑的 hexo 博客目录，只拷如下几个目录：</p>
 
-        
+<pre><code class="language-text">scaffolds            文章模版                          必须备份
+source               博客文章                          必须备份
+themes               主题                             必须备份
+.gitignore           限定在push时那些文件可以忽略         必须备份
+_config.yml          站点配置文件                       必须备份
+package.json         安装包的名称                       必须备份
 
-          
-            <span class="post-meta-divider divider">|</span>
-            <span class="post-comment-count">
-              <i class="far fa-comments"></i>
-              <span>
-                <a href="/2019/01/15/换电脑hexo源码迁移/#comment-thread" itemprop="discussionUrl">
-                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/01/15/换电脑hexo源码迁移/" itemprop="commentCount">
-                    <span id="换电脑hexo源码迁移">0</span> Comments
-                  </span>
-                </a>
-              </span>
-            </span>
+.ssh                 密钥文件                          必须备份
+</code></pre>
 
-          
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <p>更换电脑后迁移hexo源代码😂<br><a id="more"></a></p>
-<h1 id="备份必要文件"><a href="#备份必要文件" class="headerlink" title="备份必要文件"></a>备份必要文件</h1><p>进入原来电脑的 hexo 博客目录，只拷如下几个目录：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">scaffolds            文章模版                          必须备份<br>source               博客文章                          必须备份<br>themes               主题                             必须备份<br>.gitignore           限定在push时那些文件可以忽略         必须备份<br>_config.yml          站点配置文件                       必须备份<br>package.json         安装包的名称                       必须备份<br><br>.ssh                 密钥文件                          必须备份<br></code></pre></td></tr></table></figure></p>
 <p><code>ps:上面的文件可以存U盘或者打包上传到xx网盘。</code></p>
-<h1 id="安装配置-Hexo"><a href="#安装配置-Hexo" class="headerlink" title="安装配置 Hexo"></a>安装配置 Hexo</h1><p>用之前的套路安装 Node.js 环境  Git 环境</p>
+
+<h1 id="安装配置-hexo">安装配置 Hexo</h1>
+
+<p>用之前的套路安装 Node.js 环境  Git 环境
+- 打开 开始菜单 运行 cmd
+- 新建 blog 文件夹
+<code>md d:\blog</code>
+- 进入 blog 文件夹
+<code>cd blog</code>
+- 安装 Hexo
+<code>npm install -g hexo</code>
+- 初始化 Hexo
+<code>hexo init</code>
+- 安装依赖包
+<code>npm install</code></p>
+
+<p>上面的命令执行完了，你的博客目录会生成新的 hexo 博客文件，我们把刚才拷贝过来的文件，替换掉新生成的 博客文件，然后在复制 密钥文件 到新的密钥文件夹
+在blog文件夹中打开 <code>Git Bash Here</code>
+- 初始化git本地仓库
+<code>git init</code>
+- 安装上传插件
+<code>npm install hexo-deployer-git --save</code>
+- RSS插件
+<code>npm install hexo-generator-feed</code>
+- 字数统计 阅读时长 插件
+<code>npm i --save hexo-wordcount</code>
+- 搜索插件
+<code>npm install hexo-generator-searchdb --save</code>
+如果你使用了更多的插件，在这里安装就可以了。
+配置Git 输入你自己的邮箱地址</p>
+
+<pre><code class="language-text">git config --global user.name
+git config --global user.email
+</code></pre>
+
 <ul>
-<li>打开 开始菜单 运行 cmd</li>
-<li>新建 blog 文件夹<br><code>md d:\blog</code></li>
-<li>进入 blog 文件夹<br><code>cd blog</code></li>
-<li>安装 Hexo<br><code>npm install -g hexo</code></li>
-<li>初始化 Hexo<br><code>hexo init</code></li>
-<li>安装依赖包<br><code>npm install</code></li>
+<li>生成新的 public 文件夹
+<code>hexo g</code></li>
+<li>开始上传 hexo博客
+<code>hexo d</code></li>
 </ul>
-<p>上面的命令执行完了，你的博客目录会生成新的 hexo 博客文件，我们把刚才拷贝过来的文件，替换掉新生成的 博客文件，然后在复制 密钥文件 到新的密钥文件夹<br>在blog文件夹中打开 <code>Git Bash Here</code></p>
-<ul>
-<li>初始化git本地仓库<br><code>git init</code></li>
-<li>安装上传插件<br><code>npm install hexo-deployer-git --save</code></li>
-<li>RSS插件<br><code>npm install hexo-generator-feed</code></li>
-<li>字数统计 阅读时长 插件<br><code>npm i --save hexo-wordcount</code></li>
-<li><p>搜索插件<br><code>npm install hexo-generator-searchdb --save</code><br>如果你使用了更多的插件，在这里安装就可以了。<br>配置Git 输入你自己的邮箱地址</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">git config --global user.name<br>git config --global user.email<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>生成新的 public 文件夹<br><code>hexo g</code></p>
-</li>
-<li>开始上传 hexo博客<br><code>hexo d</code></li>
-</ul>
-<hr>
+
+<hr />
+
 <p>date: 2019-05-31 09:41:53</p>
+
 <p>采用Onedrive备份hexo博客源码</p>
+
 <ul>
-<li><p>备份文件</p>
+<li>备份文件</li>
+</ul>
+
 <p>简单方便，只要把blog文件目录放到Onedrive中，其会自动备份的。新电脑登录Onedrive拉取blog文件。</p>
-</li>
+
+<ul>
 <li><p>安装环境</p>
+
 <ul>
 <li>安装node.js</li>
 <li>安装hexo <code>npm install -g hexo</code></li>
@@ -287,100 +302,107 @@
 <li>生成blog <code>hexo g</code></li>
 <li>上传blog <code>hexo d</code></li>
 <li>搞定收工😁</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+        </div>
 
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-          <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
-        
-          <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-<div class="reward" id="reward">
-  <div class="liker">
-	<div class="liker-canvas">
-		<canvas class="hearts-canvas liker-canvas-hearts"></canvas>
-	</div>
-	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
-  	<button id="reward-button" class="btn" disable="enable">
-  	    <i class="fas fa-heart"></i>
-  	</button>
-  	<span>赞赏</span>
-  	
-  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
-  	
-  </div>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechat">
-      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
-      <span>微信支付</span>
     </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
+
 </div>
 
 
-  
-  
-  <nav class="page-nav">
-	<div class="page-nav-prev page-nav-item">
-	  
-	  <a href="/2019/01/17/使用Flask-Migrate进行管理数据库升级/" rel="prev" title="使用Flask-Migrate进行管理数据库升级"><i class="fas fa-angle-left"></i><span class="nav-title">使用Flask-Migrate进行管理数据库升级</span></a>
-	  
-	</div>
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2018/06/05/Docker镜像部署Flask/" rel="next" title="Docker镜像部署Flask"><span class="nav-title">Docker镜像部署Flask</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
-  
-  
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous"><a href="/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/">
+            <span aria-hidden="true">&larr;</span>Docker镜像部署Flask</a></li>
+        
 
-<div class="comments" id="comments">
-  
-    <script type="text/javascript">
-      $.ajax({
-      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      dataType: 'json',
-      cache: false,
-      crossDomain: true,
-      success: function success(page_comments) {
-        for (var i = 0; i < page_comments.length; ++i) {
-          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
-        }
-      }
-    });
-    </script>
+        
+        <li class="next"><a href="/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/">
+            使用Flask-Migrate进行管理数据库升级<span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+
 
     
-      <div class="commentjs" id="comment-thread"></div>
-      <link rel="stylesheet" href="/css/commentjs.css">
-      <script defer type="text/javascript" src="/js/marked.min.js"></script>
-      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-      <script defer type="text/javascript" src="/js/commentjs.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function () {
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <div class="commentjs" id="comment-thread"></div>
+    
+    <link rel="stylesheet" href="/css/commentjs.min.css">
+    
+    <script defer type="text/javascript" src="/js/marked.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/commentjs.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
         getComments({
           "type": "github",
           "user": "wevsmy",
@@ -408,156 +430,261 @@
         };
         window.addEventListener("DOMContentLoaded", mark, false);
         window.addEventListener("load", mark, false);
-      });
-      </script>
+    });
+    </script>
+
     
-  
 </div>
 
 
 
-  
-</div>
 
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-  
-  <h1 class="author-name">wilson</h1>
-  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
-  <div class="site-count">
-    
-    
-    
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">78</a></div>
-    </div>
-    
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
-    </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">20</a></div>
-    </div>
-    
-    
-    
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
-</div>
+                
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
 
+    <div class="info sidebar-item" id="info">
 
-  <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#备份必要文件"><span class="toc-text">备份必要文件</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#安装配置-Hexo"><span class="toc-text">安装配置 Hexo</span></a></li></ol></div>
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h1 class="author-name">wilson</h1>
+        <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">79</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    20
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
     </div>
-    
-    
-    
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
-      <ul>
+
+    <div class="sidebar-sticky">
+
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#备份必要文件">备份必要文件</a></li>
+<li><a href="#安装配置-hexo">安装配置 Hexo</a></li>
+</ul>
+</nav>
+        </div>
         
-        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
         
-      </ul>
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
     </div>
-    
-    
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
-      <ul>
-        
-        <li><i class="fas fa-link"></i><a href="https://codeloop.org" target="_blank">Code Loop</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">Charles的博客</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
-        
-      </ul>
-    </div>
-    
-  </div>
+
 </aside>
 
+        </div>
+    </div>
+</main>
 
-          
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
         </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #333333;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-        </div>
-        
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
-          
-        </div>
-        <div class="powered-by">
-           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
-        </div>
-      </div>
-    </div>
-  </div>
 </footer>
 
 
-    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-  </body>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
 </html>

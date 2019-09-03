@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-cn" >
+<head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
     
     <meta name="theme-color" content="#333333">
     <meta name="msapplication-TileColor" content="#333333">
@@ -13,16 +35,20 @@
     <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
     
     
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA" />
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
     
     
-    <meta name="keywords" content="Weii, Wevsmy, Wilson, Python, Golang, PyQt5, Hexo">
+    
+    <meta name="keywords"
+          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
     
     
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -31,7 +57,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
     
     
     <link rel="manifest" href="/favicons/site.webmanifest">
@@ -40,413 +67,763 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     
     
-    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
-    
-    
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    <title>
+        Django基础01 &middot; wilson&#39;s blog
+    </title>
+
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var cb = null;
-      var els = $(".post figure.highlight");
-      if (els.length) {
-        // Enabled Hexo highlight line number.
-        $(els).each(function (i, e) {
-          $(e).before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout with line number.
-              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-          }
-        });
-      } else {
-        // Disabled Hexo highlight line number.
-        els = $(".post pre code");
-        $(els).each(function (i, e) {
-          // Add button before pre, not code.
-          $(e).parent().before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout without line number.
-              return trigger.nextElementSibling.firstChild;
-          }
-        });
-      }
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "已复制";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "复制";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
-    </script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script type="text/javascript" src="/js/love.js"></script>
-    <title>Django基础01 | wilson's blog - Life is short, you need Python</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #333333;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">wilson's blog</a></h1>
-        <h2 class="subtitle">Life is short, you need Python</h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
-        
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
-        
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
-        
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
-        
-        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
-        
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
-        
-      </ul>
-    </nav>
-  </div>
 </header>
 
-
-    <main id="main" class="main">
-      <div class="container">
+<main id="main" class="main">
+    <div class="container">
         <div class="main-container">
-          <div class="content">
-            
-<div id="post" class="page">
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/03/22/cnblog_8621513/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="wilson">
-       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-       <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="wilson's blog">
-      </span>
+            <div id="content" class="content">
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2018/03/22/cnblog_8621513/'>Django基础01</a></h2></div>
+        <div class="post-meta"><span>2018.03.22</span></div>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Django基础01</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-22T01:17:00+08:00">2018-03-22 01:17:00</time></span>
-        </span>
-        
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <h1 id="这是-django基础01-的摘要-2018-03-22-cnblog-8621513"><a href="/2018/03/22/cnblog_8621513/">这是👉Django基础01👈的摘要</a></h1>
 
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-06-10T19:42:36+08:00">
-                2019-06-10 19:42:36
-              </time>
-           </span>
-        </span>
-        
+<h1 id="web框架本质">Web框架本质</h1>
 
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
-        </span>
-        
+<p>我们可以这样理解：所有的Web应用本质上就是一个socket服务端，而用户的浏览器就是一个socket客户端。 这样我们就可以自己实现Web框架了。</p>
 
-        
+<pre><code class="language-python">	import socket
 
-          
-            <span class="post-meta-divider divider">|</span>
-            <span class="post-comment-count">
-              <i class="far fa-comments"></i>
-              <span>
-                <a href="/2018/03/22/cnblog_8621513/#comment-thread" itemprop="discussionUrl">
-                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/03/22/cnblog_8621513/" itemprop="commentCount">
-                    <span id="Django基础01">0</span> Comments
-                  </span>
-                </a>
-              </span>
-            </span>
+    sk = socket.socket()
+    sk.bind((&quot;127.0.0.1&quot;, 80))
+    sk.listen(5)
 
-          
+	while True:
+		conn, addr = sk.accept()
+		data = conn.recv(8096)
+		conn.send(b&quot;OK&quot;)
+		conn.close()
+</code></pre>
 
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <h1 id="这是👉Django基础01👈的摘要"><a href="#这是👉Django基础01👈的摘要" class="headerlink" title="这是👉Django基础01👈的摘要"></a><a href="/2018/03/22/cnblog_8621513/">这是👉Django基础01👈的摘要</a></h1><a id="more"></a>
-<h1 id="Web框架本质"><a href="#Web框架本质" class="headerlink" title="Web框架本质"></a>Web框架本质</h1><p>我们可以这样理解：所有的Web应用本质上就是一个socket服务端，而用户的浏览器就是一个socket客户端。 这样我们就可以自己实现Web框架了。</p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br><br>   sk = socket.socket()<br>   sk.bind((<span class="hljs-string">"127.0.0.1"</span>, <span class="hljs-number">80</span>))<br>   sk.listen(<span class="hljs-number">5</span>)<br><br><span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:<br>	conn, addr = sk.accept()<br>	data = conn.recv(<span class="hljs-number">8096</span>)<br>	conn.send(<span class="hljs-string">b"OK"</span>)<br>	conn.close()<br></code></pre></td></tr></table></figure>
 <p>可以说Web服务本质上都是在这十几行代码基础上扩展出来的。这段代码就是它们的祖宗。</p>
-<p>用户的浏览器一输入网址，会给服务端发送数据，那浏览器会发送什么数据？怎么发？这个谁来定？ 你这个网站是这个规定，他那个网站按照他那个规定，这互联网还能玩么？</p>
-<p>所以，必须有一个统一的规则，让大家发送消息、接收消息的时候有个格式依据，不能随便写。</p>
-<p>这个规则就是HTTP协议，以后浏览器发送请求信息也好，服务器回复响应信息也罢，都要按照这个规则来。</p>
-<p>HTTP协议主要规定了客户端和服务器之间的通信格式，那HTTP协议是怎么规定消息格式的呢？</p>
-<p>让我们首先看下我们在服务端接收到的消息是什么。</p>
-<p>然后再看下我们浏览器收到的响应信息是什么。</p>
-<p>响应头在浏览器的network窗口可以看到，我们看到的HTML页面内容就是响应体。本质上还是字符串，因为浏览器认识HTML，所以才会渲染出页面。</p>
-<p><a href="http://www.cnblogs.com/liwenzhou/articles/8620663.html" target="_blank" rel="noopener">HTTP协议介绍</a></p>
-<p>每个HTTP请求和响应都遵循相同的格式，一个HTTP包含Header和Body两部分，其中Body是可选的。 HTTP响应的Header中有一个<br><code>Content-Type</code>表明响应的内容格式。如 <code>text/html</code>表示HTML网页。</p>
-<p>HTTP GET请求的格式：</p>
-<p>​<br>​    GET /path HTTP/1.1<br>​    header1:v1\r\n<br>​    header2:v2\r\n</p>
-<p>使用 <code>\r\n</code>分隔多个header</p>
-<p>HTTP POST请求格式：</p>
-<p>​<br>​    POST /path HTTP/1.1<br>​    header1:v1\r\n<br>​    header2:v2\r\n<br>​    \r\n\r\n<br>​    请求体…</p>
-<p>当遇到连续两个 <code>\r\n\r\n</code>时，表示Header部分结束了，后面的数据是Body。</p>
-<p>HTTP响应的格式：</p>
-<p>​<br>​    200 OK<br>​    Header1:v1\r\n<br>​    Header2:v2\r\n<br>​    \r\n\r\n<br>​    响应体…</p>
-<p>让我们的Web框架在给客户端回复响应的时候按照HTTP协议的规则加上响应头，这样我们就实现了一个正经的Web框架了。</p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br><br>sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>sock.bind((<span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-number">8000</span>))<br>sock.listen(<span class="hljs-number">5</span>)<br><br><span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:<br>	conn, addr = sock.accept()<br>	data = conn.recv(<span class="hljs-number">8096</span>)<br>	conn.send(<span class="hljs-string">b"HTTP/1.1 200 OK\r\n\r\n"</span>)<br>	conn.send(<span class="hljs-string">b"OK"</span>)<br>	conn.close()<br></code></pre></td></tr></table></figure>
-<p>上述通过socket来实现了其本质。</p>
-<p>对于真实开发中的python web程序来说，一般会分为两部分：服务器程序和应用程序。</p>
-<p>服务器程序负责对socket服务器进行封装，并在请求到来时，对请求的各种数据进行整理。</p>
-<p>应用程序则负责具体的逻辑处理。为了方便应用程序的开发，就出现了众多的Web框架，例如：Django、Flask、web.py<br>等。不同的框架有不同的开发方式，但是无论如何，开发出的应用程序都要和服务器程序配合，才能为用户提供服务。</p>
-<p>这样，服务器程序就需要为不同的框架提供不同的支持。这样混乱的局面无论对于服务器还是框架，都是不好的。对服务器来说，需要支持各种不同框架，对框架来说，只有支持它的服务器才能被开发出的应用使用。</p>
-<p>这时候，标准化就变得尤为重要。我们可以设立一个标准，只要服务器程序支持这个标准，框架也支持这个标准，那么他们就可以配合使用。一旦标准确定，双方各自实现。这样，服务器可以支持更多支持标准的框架，框架也可以使用更多支持标准的服务器。</p>
-<p>WSGI（Web Server Gateway<br>Interface）就是一种规范，它定义了使用Python编写的web应用程序与web服务器程序之间的接口格式，实现web应用程序与web服务器程序间的解耦。</p>
-<p>常用的WSGI服务器有uwsgi、Gunicorn。而Python标准库提供的独立WSGI服务器叫wsgiref，Django开发环境用的就是这个模块来做服务器。</p>
-<p>​<br>​    from wsgiref.simple_server import make_server</p>
-<p>​<br>​    def run_server(environ, start_response):<br>​        start_response(‘200 OK’, [(‘Content-Type’, ‘text/html;charset=utf8’)])  # 设置HTTP响应的状态码和头信息<br>​        return [bytes(“</p><h1>Hello world!</h1>“, encoding=”utf8”),]<p></p>
-<p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        httpd = make_server(‘’, 8000, run_server)<br>​        print(“Serving HTTP on port 8000…”)<br>​        httpd.serve_forever()</p>
-<p>这样就结束了吗？ 如何让我们的Web服务根据用户请求的URL不同而返回不同的内容呢？</p>
-<p>小事一桩，我们可以从请求相关数据里面拿到请求的URL，然后做一个判断。</p>
-<p>​<br>​    from wsgiref.simple_server import make_server</p>
-<p>​<br>​    def run_server(environ, start_response):<br>​        start_response(‘200 OK’, [(‘Content-Type’, ‘text/html;charset=utf8’), ])  # 设置HTTP响应的状态码和头信息<br>​        url = environ[‘PATH_INFO’]  # 取到用户输入的url<br>​        if url == “/index/“:<br>​            return [bytes(“</p><h1>这是index页面</h1>“, encoding=”utf8”), ]<br>​        elif url == “/home/“:<br>​            return [bytes(“<h1>这是home页面</h1>“, encoding=”utf8”), ]<br>​        else:<br>​            return [bytes(“404没有该页面”, encoding=”utf8”), ]<p></p>
-<p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        httpd = make_server(‘’, 8000, run_server)<br>​        print(“Serving HTTP on port 8000…”)<br>​        httpd.serve_forever()</p>
-<p>解决了不同URL返回不同内容的需求。 但是问题又来了，如果有很多很多页面怎么办？难道要挨个判断？ 当然不用，我们有更聪明的办法。</p>
-<p>​<br>​    from wsgiref.simple_server import make_server</p>
-<p>​<br>​    def index():<br>​        return [bytes(“</p><h1>这是index页面</h1>“, encoding=”utf8”), ]<p></p>
-<p>​<br>​    def home():<br>​        return [bytes(“</p><h1>这是home页面</h1>“, encoding=”utf8”), ]<p></p>
-<p>​<br>​    # 定义一个url和函数的对应关系<br>​    URL_LIST = [<br>​        (“/index/“, index),<br>​        (“/home/“, home),<br>​    ]</p>
-<p>​<br>​    def run_server(environ, start_response):<br>​        start_response(‘200 OK’, [(‘Content-Type’, ‘text/html;charset=utf8’), ])  # 设置HTTP响应的状态码和头信息<br>​        url = environ[‘PATH_INFO’]  # 取到用户输入的url<br>​        func = None  # 将要执行的函数<br>​        for i in URL_LIST:<br>​            if i[0] == url:<br>​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数<br>​                break<br>​        if func:  # 如果能找到要执行的函数<br>​            return func()  # 返回函数的执行结果<br>​        else:<br>​            return [bytes(“404没有该页面”, encoding=”utf8”), ]</p>
-<p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        httpd = make_server(‘’, 8000, run_server)<br>​        print(“Serving HTTP on port 8000…”)<br>​        httpd.serve_forever()</p>
-<p>完美解决了不同URL返回不同内容的问题。 但是我不想仅仅返回几个字符串，我想给浏览器返回完整的HTML内容，这又该怎么办呢？</p>
-<p>没问题，不管是什么内容，最后都是转换成字节数据发送出去的。 我可以打开HTML文件，读取出它内部的二进制数据，然后发送给浏览器。</p>
-<p>​<br>​    from wsgiref.simple_server import make_server</p>
-<p>​<br>​    def index():<br>​        with open(“index.html”, “rb”) as f:<br>​            data = f.read()<br>​        return [data, ]</p>
-<p>​<br>​    def home():<br>​        with open(“home.html”, “rb”) as f:<br>​            data = f.read()<br>​        return [data, ]</p>
-<p>​<br>​    # 定义一个url和函数的对应关系<br>​    URL_LIST = [<br>​        (“/index/“, index),<br>​        (“/home/“, home),<br>​    ]</p>
-<p>​<br>​    def run_server(environ, start_response):<br>​        start_response(‘200 OK’, [(‘Content-Type’, ‘text/html;charset=utf8’), ])  # 设置HTTP响应的状态码和头信息<br>​        url = environ[‘PATH_INFO’]  # 取到用户输入的url<br>​        func = None  # 将要执行的函数<br>​        for i in URL_LIST:<br>​            if i[0] == url:<br>​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数<br>​                break<br>​        if func:  # 如果能找到要执行的函数<br>​            return func()  # 返回函数的执行结果<br>​        else:<br>​            return [bytes(“404没有该页面”, encoding=”utf8”), ]</p>
-<p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        httpd = make_server(‘’, 8000, run_server)<br>​        print(“Serving HTTP on port 8000…”)<br>​        httpd.serve_forever()</p>
-<p>这网页能够显示出来了，但是都是静态的啊。页面的内容都不会变化的，我想要的是动态网站。</p>
-<p>没问题，我也有办法解决。我选择使用字符串替换来实现这个需求。</p>
-<p>​<br>​    from wsgiref.simple_server import make_server</p>
-<p>​<br>​    def index():<br>​        with open(“index.html”, “rb”) as f:<br>​            data = f.read()<br>​        import time<br>​        time_str = str(time.time())<br>​        data_str = str(data, encoding=”utf8”)<br>​        data_str = data_str.replace(“@@a@@”, time_str)<br>​        return [bytes(data_str, encoding=”utf8”), ]</p>
-<p>​<br>​    def home():<br>​        with open(“home.html”, “rb”) as f:<br>​            data = f.read()<br>​        return [data, ]</p>
-<p>​<br>​    # 定义一个url和函数的对应关系<br>​    URL_LIST = [<br>​        (“/index/“, index),<br>​        (“/home/“, home),<br>​    ]</p>
-<p>​<br>​    def run_server(environ, start_response):<br>​        start_response(‘200 OK’, [(‘Content-Type’, ‘text/html;charset=utf8’), ])  # 设置HTTP响应的状态码和头信息<br>​        url = environ[‘PATH_INFO’]  # 取到用户输入的url<br>​        func = None  # 将要执行的函数<br>​        for i in URL_LIST:<br>​            if i[0] == url:<br>​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数<br>​                break<br>​        if func:  # 如果能找到要执行的函数<br>​            return func()  # 返回函数的执行结果<br>​        else:<br>​            return [bytes(“404没有该页面”, encoding=”utf8”), ]</p>
-<p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        httpd = make_server(‘’, 8000, run_server)<br>​        print(“Serving HTTP on port 8000…”)<br>​        httpd.serve_forever()</p>
-<p>这是一个简单的动态，我完全可以从数据库中查询数据，然后去替换我html中的对应内容，然后再发送给浏览器完成渲染。 这个过程就相当于HTML模板渲染数据。<br>本质上就是HTML内容中利用一些特殊的符号来替换要展示的数据。 我这里用的特殊符号是我定义的，其实模板渲染有个现成的工具： <code>jinja2</code></p>
-<p>下载jinja2:</p>
-<p>​<br>​    pip install jinja2</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
-<p>​<br>​    &lt;!DOCTYPE html&gt;<br>​    <html lang="zh-CN"><br>​    <head><br>​      <meta charset="UTF-8"><br>​      <meta http-equiv="x-ua-compatible" content="IE=edge"><br>​      <meta name="viewport" content="width=device-width, initial-scale=1"><br>​      <title>Title</title><br>​    </head><br>​    <body><br>​        <h1>姓名：</h1><br>​        <h1>爱好：</h1><br>​        <ul><br>​            <br>​        </ul><br>​    </body><br>​    </html></p>
-<p>index2.html文件</p>
-<p>使用jinja2渲染index2.html文件：</p>
-<p>​<br>​    from wsgiref.simple_server import make_server<br>​    from jinja2 import Template</p>
-<p>​<br>​    def index():<br>​        with open(“index2.html”, “r”) as f:<br>​            data = f.read()<br>​        template = Template(data)  # 生成模板文件<br>​        ret = template.render({“name”: “Alex”, “hobby_list”: [“烫头”, “泡吧”]})  # 把数据填充到模板里面<br>​        return [bytes(ret, encoding=”utf8”), ]</p>
-<p>​<br>​    def home():<br>​        with open(“home.html”, “rb”) as f:<br>​            data = f.read()<br>​        return [data, ]</p>
-<p>​<br>​    # 定义一个url和函数的对应关系<br>​    URL_LIST = [<br>​        (“/index/“, index),<br>​        (“/home/“, home),<br>​    ]</p>
-<p>​<br>​    def run_server(environ, start_response):<br>​        start_response(‘200 OK’, [(‘Content-Type’, ‘text/html;charset=utf8’), ])  # 设置HTTP响应的状态码和头信息<br>​        url = environ[‘PATH_INFO’]  # 取到用户输入的url<br>​        func = None  # 将要执行的函数<br>​        for i in URL_LIST:<br>​            if i[0] == url:<br>​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数<br>​                break<br>​        if func:  # 如果能找到要执行的函数<br>​            return func()  # 返回函数的执行结果<br>​        else:<br>​            return [bytes(“404没有该页面”, encoding=”utf8”), ]</p>
-<p>​<br>​    if <strong>name</strong> == ‘<strong>main</strong>‘:<br>​        httpd = make_server(‘’, 8000, run_server)<br>​        print(“Serving HTTP on port 8000…”)<br>​        httpd.serve_forever()</p>
-<p>现在的数据是我们自己手写的，那可不可以从数据库中查询数据，来填充页面呢？</p>
-<p>使用pymysql连接数据库：</p>
-<p>​<br>​    conn = pymysql.connect(host=”127.0.0.1”, port=3306, user=”root”, passwd=”xxx”, db=”xxx”, charset=”utf8”)<br>​    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)<br>​    cursor.execute(“select name, age, department_id from userinfo”)<br>​    user_list = cursor.fetchall()<br>​    cursor.close()<br>​    conn.close()</p>
-<p>创建一个测试的user表：</p>
-<p>​<br>​    CREATE TABLE user(<br>​      id int auto_increment PRIMARY KEY,<br>​      name CHAR(10) NOT NULL,<br>​      hobby CHAR(20) NOT NULL<br>​    )engine=innodb DEFAULT charset=UTF8;</p>
-<p>模板的原理就是字符串替换，我们只要在HTML页面中遵循jinja2的语法规则写上，其内部就会按照指定的语法进行相应的替换，从而达到动态的返回内容。</p>
-<h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><p><a href="https://www.djangoproject.com/download/" target="_blank" rel="noopener">Django官网下载页面</a></p>
-<h3 id="安装（安装最新LTS版）："><a href="#安装（安装最新LTS版）：" class="headerlink" title="安装（安装最新LTS版）："></a>安装（安装最新LTS版）：</h3><p>​<br>​    pip3 install django==1.11.9</p>
-<h3 id="创建一个django项目："><a href="#创建一个django项目：" class="headerlink" title="创建一个django项目："></a>创建一个django项目：</h3><p>下面的命令创建了一个名为”mysite”的Django 项目：</p>
-<p>​<br>​    django-admin startproject mysite</p>
-<h3 id="目录介绍："><a href="#目录介绍：" class="headerlink" title="目录介绍："></a>目录介绍：</h3><p>​<br>​    mysite/<br>​    ├── manage.py  # 管理文件<br>​    └── mysite  # 项目目录<br>​        ├── <strong>init</strong>.py<br>​        ├── settings.py  # 配置<br>​        ├── urls.py  # 路由 –&gt; URL和函数的对应关系<br>​        └── wsgi.py  # runserver命令就使用wsgiref模块做简单的web server</p>
-<h3 id="运行Django项目："><a href="#运行Django项目：" class="headerlink" title="运行Django项目："></a>运行Django项目：</h3><p>​<br>​    python manage.py runserver 127.0.0.1:8000</p>
-<h3 id="模板文件配置："><a href="#模板文件配置：" class="headerlink" title="模板文件配置："></a>模板文件配置：</h3><p>​<br>​    TEMPLATES = [<br>​        {<br>​            ‘BACKEND’: ‘django.template.backends.django.DjangoTemplates’,<br>​            ‘DIRS’: [os.path.join(BASE_DIR, “template”)],  # template文件夹位置<br>​            ‘APP_DIRS’: True,<br>​            ‘OPTIONS’: {<br>​                ‘context_processors’: [<br>​                    ‘django.template.context_processors.debug’,<br>​                    ‘django.template.context_processors.request’,<br>​                    ‘django.contrib.auth.context_processors.auth’,<br>​                    ‘django.contrib.messages.context_processors.messages’,<br>​                ],<br>​            },<br>​        },<br>​    ]</p>
-<h3 id="静态文件配置："><a href="#静态文件配置：" class="headerlink" title="静态文件配置："></a>静态文件配置：</h3><p>​<br>​    STATIC_URL = ‘/static/‘  # HTML中使用的静态文件夹前缀<br>​    STATICFILES_DIRS = [<br>​        os.path.join(BASE_DIR, “static”),  # 静态文件存放位置<br>​    ]</p>
-<p><strong>看不明白？有图有真相：</strong></p>
-<p><strong><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180110190001816-1349372864.png" alt=""></strong></p>
-<p><strong>刚开始学习时可在配置文件中暂时禁用csrf中间件，方便表单提交测试。</strong></p>
-<p>​<br>​    MIDDLEWARE = [<br>​         ‘django.middleware.security.SecurityMiddleware’,<br>​        ‘django.contrib.sessions.middleware.SessionMiddleware’,<br>​        ‘django.middleware.common.CommonMiddleware’,<br>​        # ‘django.middleware.csrf.CsrfViewMiddleware’,<br>​        ‘django.contrib.auth.middleware.AuthenticationMiddleware’,<br>​        ‘django.contrib.messages.middleware.MessageMiddleware’,<br>​        ‘django.middleware.clickjacking.XFrameOptionsMiddleware’,<br>​    ]</p>
-<h2 id="Django基础必备三件套："><a href="#Django基础必备三件套：" class="headerlink" title="Django基础必备三件套："></a>Django基础必备三件套：</h2><p>​<br>​    from django.shortcuts import HttpResponse, render, redirect</p>
-<h3 id="HttpResponse"><a href="#HttpResponse" class="headerlink" title="HttpResponse"></a>HttpResponse</h3><p>内部传入一个字符串参数，返回给浏览器。</p>
-<p>例如：</p>
-<p>​<br>​    def index(request):<br>​        # 业务逻辑代码<br>​        return HttpResponse(“OK”)</p>
-<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><p>除request参数外还接受一个待渲染的模板文件和一个保存具体数据的字典参数。</p>
-<p>将数据填充进模板文件，最后把结果返回给浏览器。（类似于我们上面用到的jinja2）</p>
-<p>例如：</p>
-<p>​<br>​    def index(request):<br>​        # 业务逻辑代码<br>​        return render(request, “index.html”, {“name”: “alex”, “hobby”: [“烫头”, “泡吧”]})</p>
-<h3 id="redirect"><a href="#redirect" class="headerlink" title="redirect"></a>redirect</h3><p>接受一个URL参数，表示跳转到指定的URL。</p>
-<p>例如：</p>
-<p>​<br>​    def index(request):<br>​        # 业务逻辑代码<br>​        return redirect(“/home/“)</p>
-<h2 id="课后练习："><a href="#课后练习：" class="headerlink" title="课后练习："></a>课后练习：</h2><p>Django版登录</p>
-<h2 id="启动Django报错："><a href="#启动Django报错：" class="headerlink" title="启动Django报错："></a>启动Django报错：</h2><p>Django 启动时报错 UnicodeEncodeError …</p>
-<p>报这个错误通常是因为计算机名为中文，改成英文的计算机名重启下电脑就可以了。</p>
 
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-          <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
-        
-          <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
-        
-          <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-<div class="reward" id="reward">
-  <div class="liker">
-	<div class="liker-canvas">
-		<canvas class="hearts-canvas liker-canvas-hearts"></canvas>
-	</div>
-	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
-  	<button id="reward-button" class="btn" disable="enable">
-  	    <i class="fas fa-heart"></i>
-  	</button>
-  	<span>赞赏</span>
-  	
-  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
-  	
-  </div>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechat">
-      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
-      <span>微信支付</span>
+<p>用户的浏览器一输入网址，会给服务端发送数据，那浏览器会发送什么数据？怎么发？这个谁来定？ 你这个网站是这个规定，他那个网站按照他那个规定，这互联网还能玩么？</p>
+
+<p>所以，必须有一个统一的规则，让大家发送消息、接收消息的时候有个格式依据，不能随便写。</p>
+
+<p>这个规则就是HTTP协议，以后浏览器发送请求信息也好，服务器回复响应信息也罢，都要按照这个规则来。</p>
+
+<p>HTTP协议主要规定了客户端和服务器之间的通信格式，那HTTP协议是怎么规定消息格式的呢？</p>
+
+<p>让我们首先看下我们在服务端接收到的消息是什么。</p>
+
+<p>然后再看下我们浏览器收到的响应信息是什么。</p>
+
+<p>响应头在浏览器的network窗口可以看到，我们看到的HTML页面内容就是响应体。本质上还是字符串，因为浏览器认识HTML，所以才会渲染出页面。</p>
+
+<p><a href="http://www.cnblogs.com/liwenzhou/articles/8620663.html">HTTP协议介绍</a></p>
+
+<p>每个HTTP请求和响应都遵循相同的格式，一个HTTP包含Header和Body两部分，其中Body是可选的。 HTTP响应的Header中有一个
+<code>Content-Type</code>表明响应的内容格式。如 <code>text/html</code>表示HTML网页。</p>
+
+<p>HTTP GET请求的格式：</p>
+
+<p>​<br />
+​    GET /path HTTP/1.1
+​    header1:v1\r\n
+​    header2:v2\r\n</p>
+
+<p>使用 <code>\r\n</code>分隔多个header</p>
+
+<p>HTTP POST请求格式：</p>
+
+<p>​<br />
+​    POST /path HTTP/1.1
+​    header1:v1\r\n
+​    header2:v2\r\n
+​    \r\n\r\n
+​    请求体&hellip;</p>
+
+<p>当遇到连续两个 <code>\r\n\r\n</code>时，表示Header部分结束了，后面的数据是Body。</p>
+
+<p>HTTP响应的格式：</p>
+
+<p>​<br />
+​    200 OK
+​    Header1:v1\r\n
+​    Header2:v2\r\n
+​    \r\n\r\n
+​    响应体&hellip;</p>
+
+<p>让我们的Web框架在给客户端回复响应的时候按照HTTP协议的规则加上响应头，这样我们就实现了一个正经的Web框架了。</p>
+
+<pre><code class="language-python">	import socket
+
+	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	sock.bind(('127.0.0.1', 8000))
+	sock.listen(5)
+	
+	while True:
+		conn, addr = sock.accept()
+		data = conn.recv(8096)
+		conn.send(b&quot;HTTP/1.1 200 OK\r\n\r\n&quot;)
+		conn.send(b&quot;OK&quot;)
+		conn.close()
+</code></pre>
+
+<p>上述通过socket来实现了其本质。</p>
+
+<p>对于真实开发中的python web程序来说，一般会分为两部分：服务器程序和应用程序。</p>
+
+<p>服务器程序负责对socket服务器进行封装，并在请求到来时，对请求的各种数据进行整理。</p>
+
+<p>应用程序则负责具体的逻辑处理。为了方便应用程序的开发，就出现了众多的Web框架，例如：Django、Flask、web.py
+等。不同的框架有不同的开发方式，但是无论如何，开发出的应用程序都要和服务器程序配合，才能为用户提供服务。</p>
+
+<p>这样，服务器程序就需要为不同的框架提供不同的支持。这样混乱的局面无论对于服务器还是框架，都是不好的。对服务器来说，需要支持各种不同框架，对框架来说，只有支持它的服务器才能被开发出的应用使用。</p>
+
+<p>这时候，标准化就变得尤为重要。我们可以设立一个标准，只要服务器程序支持这个标准，框架也支持这个标准，那么他们就可以配合使用。一旦标准确定，双方各自实现。这样，服务器可以支持更多支持标准的框架，框架也可以使用更多支持标准的服务器。</p>
+
+<p>WSGI（Web Server Gateway
+Interface）就是一种规范，它定义了使用Python编写的web应用程序与web服务器程序之间的接口格式，实现web应用程序与web服务器程序间的解耦。</p>
+
+<p>常用的WSGI服务器有uwsgi、Gunicorn。而Python标准库提供的独立WSGI服务器叫wsgiref，Django开发环境用的就是这个模块来做服务器。</p>
+
+<p>​<br />
+​    from wsgiref.simple_server import make_server</p>
+
+<p>​<br />
+​    def run_server(environ, start_response):
+​        start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &lsquo;text/html;charset=utf8&rsquo;)])  # 设置HTTP响应的状态码和头信息
+​        return [bytes(&rdquo;<h1>Hello world!</h1>&rdquo;, encoding=&ldquo;utf8&rdquo;),]</p>
+
+<p>​<br />
+​    if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+​        httpd = make_server(&ldquo;, 8000, run_server)
+​        print(&ldquo;Serving HTTP on port 8000&hellip;&rdquo;)
+​        httpd.serve_forever()</p>
+
+<p>这样就结束了吗？ 如何让我们的Web服务根据用户请求的URL不同而返回不同的内容呢？</p>
+
+<p>小事一桩，我们可以从请求相关数据里面拿到请求的URL，然后做一个判断。</p>
+
+<p>​<br />
+​    from wsgiref.simple_server import make_server</p>
+
+<p>​<br />
+​    def run_server(environ, start_response):
+​        start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &lsquo;text/html;charset=utf8&rsquo;), ])  # 设置HTTP响应的状态码和头信息
+​        url = environ[&lsquo;PATH_INFO&rsquo;]  # 取到用户输入的url
+​        if url == &ldquo;/index/&rdquo;:
+​            return [bytes(&rdquo;<h1>这是index页面</h1>&rdquo;, encoding=&ldquo;utf8&rdquo;), ]
+​        elif url == &ldquo;/home/&rdquo;:
+​            return [bytes(&rdquo;<h1>这是home页面</h1>&rdquo;, encoding=&ldquo;utf8&rdquo;), ]
+​        else:
+​            return [bytes(&ldquo;404没有该页面&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+​        httpd = make_server(&ldquo;, 8000, run_server)
+​        print(&ldquo;Serving HTTP on port 8000&hellip;&rdquo;)
+​        httpd.serve_forever()</p>
+
+<p>解决了不同URL返回不同内容的需求。 但是问题又来了，如果有很多很多页面怎么办？难道要挨个判断？ 当然不用，我们有更聪明的办法。</p>
+
+<p>​<br />
+​    from wsgiref.simple_server import make_server</p>
+
+<p>​<br />
+​    def index():
+​        return [bytes(&rdquo;<h1>这是index页面</h1>&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    def home():
+​        return [bytes(&rdquo;<h1>这是home页面</h1>&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    # 定义一个url和函数的对应关系
+​    URL_LIST = [
+​        (&ldquo;/index/&rdquo;, index),
+​        (&ldquo;/home/&rdquo;, home),
+​    ]</p>
+
+<p>​<br />
+​    def run_server(environ, start_response):
+​        start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &lsquo;text/html;charset=utf8&rsquo;), ])  # 设置HTTP响应的状态码和头信息
+​        url = environ[&lsquo;PATH_INFO&rsquo;]  # 取到用户输入的url
+​        func = None  # 将要执行的函数
+​        for i in URL_LIST:
+​            if i[0] == url:
+​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
+​                break
+​        if func:  # 如果能找到要执行的函数
+​            return func()  # 返回函数的执行结果
+​        else:
+​            return [bytes(&ldquo;404没有该页面&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+​        httpd = make_server(&ldquo;, 8000, run_server)
+​        print(&ldquo;Serving HTTP on port 8000&hellip;&rdquo;)
+​        httpd.serve_forever()</p>
+
+<p>完美解决了不同URL返回不同内容的问题。 但是我不想仅仅返回几个字符串，我想给浏览器返回完整的HTML内容，这又该怎么办呢？</p>
+
+<p>没问题，不管是什么内容，最后都是转换成字节数据发送出去的。 我可以打开HTML文件，读取出它内部的二进制数据，然后发送给浏览器。</p>
+
+<p>​<br />
+​    from wsgiref.simple_server import make_server</p>
+
+<p>​<br />
+​    def index():
+​        with open(&ldquo;index.html&rdquo;, &ldquo;rb&rdquo;) as f:
+​            data = f.read()
+​        return [data, ]</p>
+
+<p>​<br />
+​    def home():
+​        with open(&ldquo;home.html&rdquo;, &ldquo;rb&rdquo;) as f:
+​            data = f.read()
+​        return [data, ]</p>
+
+<p>​<br />
+​    # 定义一个url和函数的对应关系
+​    URL_LIST = [
+​        (&ldquo;/index/&rdquo;, index),
+​        (&ldquo;/home/&rdquo;, home),
+​    ]</p>
+
+<p>​<br />
+​    def run_server(environ, start_response):
+​        start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &lsquo;text/html;charset=utf8&rsquo;), ])  # 设置HTTP响应的状态码和头信息
+​        url = environ[&lsquo;PATH_INFO&rsquo;]  # 取到用户输入的url
+​        func = None  # 将要执行的函数
+​        for i in URL_LIST:
+​            if i[0] == url:
+​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
+​                break
+​        if func:  # 如果能找到要执行的函数
+​            return func()  # 返回函数的执行结果
+​        else:
+​            return [bytes(&ldquo;404没有该页面&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+​        httpd = make_server(&ldquo;, 8000, run_server)
+​        print(&ldquo;Serving HTTP on port 8000&hellip;&rdquo;)
+​        httpd.serve_forever()</p>
+
+<p>这网页能够显示出来了，但是都是静态的啊。页面的内容都不会变化的，我想要的是动态网站。</p>
+
+<p>没问题，我也有办法解决。我选择使用字符串替换来实现这个需求。</p>
+
+<p>​<br />
+​    from wsgiref.simple_server import make_server</p>
+
+<p>​<br />
+​    def index():
+​        with open(&ldquo;index.html&rdquo;, &ldquo;rb&rdquo;) as f:
+​            data = f.read()
+​        import time
+​        time_str = str(time.time())
+​        data_str = str(data, encoding=&ldquo;utf8&rdquo;)
+​        data_str = data_str.replace(&ldquo;@@a@@&rdquo;, time_str)
+​        return [bytes(data_str, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    def home():
+​        with open(&ldquo;home.html&rdquo;, &ldquo;rb&rdquo;) as f:
+​            data = f.read()
+​        return [data, ]</p>
+
+<p>​<br />
+​    # 定义一个url和函数的对应关系
+​    URL_LIST = [
+​        (&ldquo;/index/&rdquo;, index),
+​        (&ldquo;/home/&rdquo;, home),
+​    ]</p>
+
+<p>​<br />
+​    def run_server(environ, start_response):
+​        start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &lsquo;text/html;charset=utf8&rsquo;), ])  # 设置HTTP响应的状态码和头信息
+​        url = environ[&lsquo;PATH_INFO&rsquo;]  # 取到用户输入的url
+​        func = None  # 将要执行的函数
+​        for i in URL_LIST:
+​            if i[0] == url:
+​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
+​                break
+​        if func:  # 如果能找到要执行的函数
+​            return func()  # 返回函数的执行结果
+​        else:
+​            return [bytes(&ldquo;404没有该页面&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+​        httpd = make_server(&ldquo;, 8000, run_server)
+​        print(&ldquo;Serving HTTP on port 8000&hellip;&rdquo;)
+​        httpd.serve_forever()</p>
+
+<p>这是一个简单的动态，我完全可以从数据库中查询数据，然后去替换我html中的对应内容，然后再发送给浏览器完成渲染。 这个过程就相当于HTML模板渲染数据。
+本质上就是HTML内容中利用一些特殊的符号来替换要展示的数据。 我这里用的特殊符号是我定义的，其实模板渲染有个现成的工具： <code>jinja2</code></p>
+
+<p>下载jinja2:</p>
+
+<p>​<br />
+​    pip install jinja2</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
+<p>​<br />
+​    &lt;!DOCTYPE html&gt;
+​    <html lang="zh-CN">
+​    <head>
+​      <meta charset="UTF-8">
+​      <meta http-equiv="x-ua-compatible" content="IE=edge">
+​      <meta name="viewport" content="width=device-width, initial-scale=1">
+​      <title>Title</title>
+​    </head>
+​    <body>
+​        <h1>姓名：{{name}}</h1>
+​        <h1>爱好：</h1>
+​        <ul>
+​            {% for hobby in hobby_list %}
+​            <li>{{hobby}}</li>
+​            {% endfor %}
+​        </ul>
+​    </body>
+​    </html></p>
+
+<p>index2.html文件</p>
+
+<p>使用jinja2渲染index2.html文件：</p>
+
+<p>​<br />
+​    from wsgiref.simple_server import make_server
+​    from jinja2 import Template</p>
+
+<p>​<br />
+​    def index():
+​        with open(&ldquo;index2.html&rdquo;, &ldquo;r&rdquo;) as f:
+​            data = f.read()
+​        template = Template(data)  # 生成模板文件
+​        ret = template.render({&ldquo;name&rdquo;: &ldquo;Alex&rdquo;, &ldquo;hobby_list&rdquo;: [&ldquo;烫头&rdquo;, &ldquo;泡吧&rdquo;]})  # 把数据填充到模板里面
+​        return [bytes(ret, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    def home():
+​        with open(&ldquo;home.html&rdquo;, &ldquo;rb&rdquo;) as f:
+​            data = f.read()
+​        return [data, ]</p>
+
+<p>​<br />
+​    # 定义一个url和函数的对应关系
+​    URL_LIST = [
+​        (&ldquo;/index/&rdquo;, index),
+​        (&ldquo;/home/&rdquo;, home),
+​    ]</p>
+
+<p>​<br />
+​    def run_server(environ, start_response):
+​        start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &lsquo;text/html;charset=utf8&rsquo;), ])  # 设置HTTP响应的状态码和头信息
+​        url = environ[&lsquo;PATH_INFO&rsquo;]  # 取到用户输入的url
+​        func = None  # 将要执行的函数
+​        for i in URL_LIST:
+​            if i[0] == url:
+​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
+​                break
+​        if func:  # 如果能找到要执行的函数
+​            return func()  # 返回函数的执行结果
+​        else:
+​            return [bytes(&ldquo;404没有该页面&rdquo;, encoding=&ldquo;utf8&rdquo;), ]</p>
+
+<p>​<br />
+​    if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+​        httpd = make_server(&ldquo;, 8000, run_server)
+​        print(&ldquo;Serving HTTP on port 8000&hellip;&rdquo;)
+​        httpd.serve_forever()</p>
+
+<p>现在的数据是我们自己手写的，那可不可以从数据库中查询数据，来填充页面呢？</p>
+
+<p>使用pymysql连接数据库：</p>
+
+<p>​<br />
+​    conn = pymysql.connect(host=&ldquo;127.0.0.1&rdquo;, port=3306, user=&ldquo;root&rdquo;, passwd=&ldquo;xxx&rdquo;, db=&ldquo;xxx&rdquo;, charset=&ldquo;utf8&rdquo;)
+​    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+​    cursor.execute(&ldquo;select name, age, department_id from userinfo&rdquo;)
+​    user_list = cursor.fetchall()
+​    cursor.close()
+​    conn.close()</p>
+
+<p>创建一个测试的user表：</p>
+
+<p>​<br />
+​    CREATE TABLE user(
+​      id int auto_increment PRIMARY KEY,
+​      name CHAR(10) NOT NULL,
+​      hobby CHAR(20) NOT NULL
+​    )engine=innodb DEFAULT charset=UTF8;</p>
+
+<p>模板的原理就是字符串替换，我们只要在HTML页面中遵循jinja2的语法规则写上，其内部就会按照指定的语法进行相应的替换，从而达到动态的返回内容。</p>
+
+<h2 id="django">Django</h2>
+
+<p><a href="https://www.djangoproject.com/download/">Django官网下载页面</a></p>
+
+<h3 id="安装-安装最新lts版">安装（安装最新LTS版）：</h3>
+
+<p>​<br />
+​    pip3 install django==1.11.9</p>
+
+<h3 id="创建一个django项目">创建一个django项目：</h3>
+
+<p>下面的命令创建了一个名为&rdquo;mysite&rdquo;的Django 项目：</p>
+
+<p>​<br />
+​    django-admin startproject mysite</p>
+
+<h3 id="目录介绍">目录介绍：</h3>
+
+<p>​<br />
+​    mysite/
+​    ├── manage.py  # 管理文件
+​    └── mysite  # 项目目录
+​        ├── <strong>init</strong>.py
+​        ├── settings.py  # 配置
+​        ├── urls.py  # 路由 &ndash;&gt; URL和函数的对应关系
+​        └── wsgi.py  # runserver命令就使用wsgiref模块做简单的web server</p>
+
+<h3 id="运行django项目">运行Django项目：</h3>
+
+<p>​<br />
+​    python manage.py runserver 127.0.0.1:8000</p>
+
+<h3 id="模板文件配置">模板文件配置：</h3>
+
+<p>​<br />
+​    TEMPLATES = [
+​        {
+​            &lsquo;BACKEND&rsquo;: &lsquo;django.template.backends.django.DjangoTemplates&rsquo;,
+​            &lsquo;DIRS&rsquo;: [os.path.join(BASE_DIR, &ldquo;template&rdquo;)],  # template文件夹位置
+​            &lsquo;APP_DIRS&rsquo;: True,
+​            &lsquo;OPTIONS&rsquo;: {
+​                &lsquo;context_processors&rsquo;: [
+​                    &lsquo;django.template.context_processors.debug&rsquo;,
+​                    &lsquo;django.template.context_processors.request&rsquo;,
+​                    &lsquo;django.contrib.auth.context_processors.auth&rsquo;,
+​                    &lsquo;django.contrib.messages.context_processors.messages&rsquo;,
+​                ],
+​            },
+​        },
+​    ]</p>
+
+<h3 id="静态文件配置">静态文件配置：</h3>
+
+<p>​<br />
+​    STATIC_URL = &lsquo;/static/&rsquo;  # HTML中使用的静态文件夹前缀
+​    STATICFILES_DIRS = [
+​        os.path.join(BASE_DIR, &ldquo;static&rdquo;),  # 静态文件存放位置
+​    ]</p>
+
+<p><strong>看不明白？有图有真相：</strong></p>
+
+<p><strong><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180110190001816-1349372864.png" alt="" /></strong></p>
+
+<p><strong>刚开始学习时可在配置文件中暂时禁用csrf中间件，方便表单提交测试。</strong></p>
+
+<p>​<br />
+​    MIDDLEWARE = [
+​         &lsquo;django.middleware.security.SecurityMiddleware&rsquo;,
+​        &lsquo;django.contrib.sessions.middleware.SessionMiddleware&rsquo;,
+​        &lsquo;django.middleware.common.CommonMiddleware&rsquo;,
+​        # &lsquo;django.middleware.csrf.CsrfViewMiddleware&rsquo;,
+​        &lsquo;django.contrib.auth.middleware.AuthenticationMiddleware&rsquo;,
+​        &lsquo;django.contrib.messages.middleware.MessageMiddleware&rsquo;,
+​        &lsquo;django.middleware.clickjacking.XFrameOptionsMiddleware&rsquo;,
+​    ]</p>
+
+<h2 id="django基础必备三件套">Django基础必备三件套：</h2>
+
+<p>​<br />
+​    from django.shortcuts import HttpResponse, render, redirect</p>
+
+<h3 id="httpresponse">HttpResponse</h3>
+
+<p>内部传入一个字符串参数，返回给浏览器。</p>
+
+<p>例如：</p>
+
+<p>​<br />
+​    def index(request):
+​        # 业务逻辑代码
+​        return HttpResponse(&ldquo;OK&rdquo;)</p>
+
+<h3 id="render">render</h3>
+
+<p>除request参数外还接受一个待渲染的模板文件和一个保存具体数据的字典参数。</p>
+
+<p>将数据填充进模板文件，最后把结果返回给浏览器。（类似于我们上面用到的jinja2）</p>
+
+<p>例如：</p>
+
+<p>​<br />
+​    def index(request):
+​        # 业务逻辑代码
+​        return render(request, &ldquo;index.html&rdquo;, {&ldquo;name&rdquo;: &ldquo;alex&rdquo;, &ldquo;hobby&rdquo;: [&ldquo;烫头&rdquo;, &ldquo;泡吧&rdquo;]})</p>
+
+<h3 id="redirect">redirect</h3>
+
+<p>接受一个URL参数，表示跳转到指定的URL。</p>
+
+<p>例如：</p>
+
+<p>​<br />
+​    def index(request):
+​        # 业务逻辑代码
+​        return redirect(&ldquo;/home/&rdquo;)</p>
+
+<h2 id="课后练习">课后练习：</h2>
+
+<p>Django版登录</p>
+
+<h2 id="启动django报错">启动Django报错：</h2>
+
+<p>Django 启动时报错 UnicodeEncodeError &hellip;</p>
+
+<p>报这个错误通常是因为计算机名为中文，改成英文的计算机名重启下电脑就可以了。</p>
+        </div>
+
     </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
+
 </div>
 
 
-  
-  
-  <nav class="page-nav">
-	<div class="page-nav-prev page-nav-item">
-	  
-	  <a href="/2018/06/02/test/" rel="prev" title="test"><i class="fas fa-angle-left"></i><span class="nav-title">test</span></a>
-	  
-	</div>
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2018/03/21/cnblog_8616189/" rel="next" title="Python连接MySQL数据库之pymysql模块使用"><span class="nav-title">Python连接MySQL数据库之pymysql模块使用</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
-  
-  
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous"><a href="/2018/03/21/cnblog_8616189/">
+            <span aria-hidden="true">&larr;</span>Python连接MySQL数据库之pymysql模块使用</a></li>
+        
 
-<div class="comments" id="comments">
-  
-    <script type="text/javascript">
-      $.ajax({
-      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      dataType: 'json',
-      cache: false,
-      crossDomain: true,
-      success: function success(page_comments) {
-        for (var i = 0; i < page_comments.length; ++i) {
-          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
-        }
-      }
-    });
-    </script>
+        
+        <li class="next"><a href="/about/">
+            关于<span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+
 
     
-      <div class="commentjs" id="comment-thread"></div>
-      <link rel="stylesheet" href="/css/commentjs.css">
-      <script defer type="text/javascript" src="/js/marked.min.js"></script>
-      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-      <script defer type="text/javascript" src="/js/commentjs.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function () {
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <div class="commentjs" id="comment-thread"></div>
+    
+    <link rel="stylesheet" href="/css/commentjs.min.css">
+    
+    <script defer type="text/javascript" src="/js/marked.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/commentjs.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
         getComments({
           "type": "github",
           "user": "wevsmy",
@@ -474,156 +851,280 @@
         };
         window.addEventListener("DOMContentLoaded", mark, false);
         window.addEventListener("load", mark, false);
-      });
-      </script>
+    });
+    </script>
+
     
-  
 </div>
 
 
 
-  
-</div>
 
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-  
-  <h1 class="author-name">wilson</h1>
-  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
-  <div class="site-count">
-    
-    
-    
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">78</a></div>
-    </div>
-    
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
-    </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">20</a></div>
-    </div>
-    
-    
-    
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
-</div>
+                
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
 
+    <div class="info sidebar-item" id="info">
 
-  <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉Django基础01👈的摘要"><span class="toc-text">这是👉Django基础01👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Web框架本质"><span class="toc-text">Web框架本质</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">Hello world!</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">这是index页面</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">这是home页面</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">这是index页面</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">这是home页面</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">姓名：</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">爱好：</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Django"><span class="toc-text">Django</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#安装（安装最新LTS版）："><span class="toc-text">安装（安装最新LTS版）：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#创建一个django项目："><span class="toc-text">创建一个django项目：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#目录介绍："><span class="toc-text">目录介绍：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#运行Django项目："><span class="toc-text">运行Django项目：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#模板文件配置："><span class="toc-text">模板文件配置：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#静态文件配置："><span class="toc-text">静态文件配置：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Django基础必备三件套："><span class="toc-text">Django基础必备三件套：</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#HttpResponse"><span class="toc-text">HttpResponse</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#render"><span class="toc-text">render</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#redirect"><span class="toc-text">redirect</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#课后练习："><span class="toc-text">课后练习：</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#启动Django报错："><span class="toc-text">启动Django报错：</span></a></li></ol></li></ol></div>
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h1 class="author-name">wilson</h1>
+        <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">79</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    20
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
     </div>
-    
-    
-    
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
-      <ul>
+
+    <div class="sidebar-sticky">
+
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#这是-django基础01-的摘要-2018-03-22-cnblog-8621513"><a href="/2018/03/22/cnblog_8621513/">这是👉Django基础01👈的摘要</a></a></li>
+<li><a href="#web框架本质">Web框架本质</a>
+<ul>
+<li><a href="#django">Django</a>
+<ul>
+<li><a href="#安装-安装最新lts版">安装（安装最新LTS版）：</a></li>
+<li><a href="#创建一个django项目">创建一个django项目：</a></li>
+<li><a href="#目录介绍">目录介绍：</a></li>
+<li><a href="#运行django项目">运行Django项目：</a></li>
+<li><a href="#模板文件配置">模板文件配置：</a></li>
+<li><a href="#静态文件配置">静态文件配置：</a></li>
+</ul></li>
+<li><a href="#django基础必备三件套">Django基础必备三件套：</a>
+<ul>
+<li><a href="#httpresponse">HttpResponse</a></li>
+<li><a href="#render">render</a></li>
+<li><a href="#redirect">redirect</a></li>
+</ul></li>
+<li><a href="#课后练习">课后练习：</a></li>
+<li><a href="#启动django报错">启动Django报错：</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
         
-        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
         
-      </ul>
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
     </div>
-    
-    
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
-      <ul>
-        
-        <li><i class="fas fa-link"></i><a href="https://codeloop.org" target="_blank">Code Loop</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">Charles的博客</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
-        
-      </ul>
-    </div>
-    
-  </div>
+
 </aside>
 
+        </div>
+    </div>
+</main>
 
-          
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
         </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #333333;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-        </div>
-        
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
-          
-        </div>
-        <div class="powered-by">
-           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
-        </div>
-      </div>
-    </div>
-  </div>
 </footer>
 
 
-    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-  </body>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
 </html>

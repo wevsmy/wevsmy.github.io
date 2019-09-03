@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机 on </title>
+    <link>https://blog.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+    <description>Recent content in 计算机 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 31 Aug 2019 10:31:11 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用docker搭建smtp服务</title>
+      <link>https://blog.weii.ink/2019/08/31/docker-install-smtp-server/</link>
+      <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/08/31/docker-install-smtp-server/</guid>
+      <description>&lt;p&gt;前段时间搭建gitlab服务harbor仓库，需要用到SMTP服务用于发送邮件，用的自己办公邮箱做的测试，给别人自动发的邮件显示的是自己的邮箱。。。不正规😋申请公司的公共邮箱流程太繁琐了😥 还是自己搭建一个SMTP服务吧，自己动手丰衣足食。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用N2N实现异地组网</title>
+      <link>https://blog.weii.ink/2019/08/25/n2n_install/</link>
+      <pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/08/25/n2n_install/</guid>
+      <description>&lt;p&gt;N2N  安装记录，至于N2N是用来做什么的，我也不知道，猪头保命🐷&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker使用squid搭建代理服务</title>
+      <link>https://blog.weii.ink/2019/07/17/docker%E4%BD%BF%E7%94%A8squid%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Wed, 17 Jul 2019 14:08:21 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/17/docker%E4%BD%BF%E7%94%A8squid%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;p&gt;记录一下配置代理的过程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker修改默认网段</title>
+      <link>https://blog.weii.ink/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
+      <pubDate>Wed, 17 Jul 2019 12:37:11 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</guid>
+      <description>&lt;p&gt;docker-compose 启动的网桥使用的网段与公司172.31.xx.xx网段冲突&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker目录磁盘空间满了</title>
+      <link>https://blog.weii.ink/2019/07/16/docker-low-disk-space/</link>
+      <pubDate>Tue, 16 Jul 2019 16:05:21 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/16/docker-low-disk-space/</guid>
+      <description>&lt;p&gt;😂昨天刚建的GitLab服务今天就报500了，哭死😭排查发现是&lt;code&gt;/var/lib/docker&lt;/code&gt;目录满了，咱也不知道原来里面放的啥，咱也不敢动，咱走还不行嘛！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitlab服务器迁移</title>
+      <link>https://blog.weii.ink/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Mon, 15 Jul 2019 17:37:26 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/</guid>
+      <description>&lt;p&gt;公司有需求安装在172.31.66.63的gitlab服务需要迁移到10.10.192.18上，记录一下迁移过程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>编写Dockerfile分阶段构建Vue项目</title>
+      <link>https://blog.weii.ink/2019/07/15/docker-build-vue/</link>
+      <pubDate>Mon, 15 Jul 2019 09:37:26 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/15/docker-build-vue/</guid>
+      <description>&lt;p&gt;docker构建部署vue项目，减少构建后的docker镜像的大小，采用分阶段构建，只保留build&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pip安装mysqlclient报错</title>
+      <link>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
+      <description>&lt;p&gt;使用&lt;code&gt;Django==2.0.4&lt;/code&gt;报错缺少&lt;code&gt;mysqlclient&lt;/code&gt;模块的解决方案&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>zulip安装记录</title>
+      <link>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 18 Jun 2019 17:14:36 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker安装宝塔管理面板</title>
+      <link>https://blog.weii.ink/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</link>
+      <pubDate>Tue, 12 Mar 2019 11:41:08 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</guid>
+      <description>&lt;p&gt;拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>基于docker-compose构建数据库</title>
+      <link>https://blog.weii.ink/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Tue, 19 Feb 2019 11:38:46 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>&lt;p&gt;在开发的过程中免不了要使用数据库。使用docker构建一些常用的数据库免去安装的繁琐。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker镜像部署Flask</title>
+      <link>https://blog.weii.ink/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/</link>
+      <pubDate>Tue, 05 Jun 2018 19:24:43 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/</guid>
+      <description>&lt;p&gt;入坑了，入了Docker的坑，了解了一下docker安装，
+照着教程学着部署了一下Flask，
+Docker使用uwsgi+nginx+python3.6镜像部署Flask&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一键创建blog文</title>
+      <link>https://blog.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</link>
+      <pubDate>Mon, 04 Jun 2018 16:57:52 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;使用hexo搭建静态博客确实方便,页面托管到github pages上
+写博客只需编写md文件即可,markdown语法简单,使用方便
+原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://blog.weii.ink/2018/06/02/test/</link>
+      <pubDate>Sat, 02 Jun 2018 20:16:09 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/02/test/</guid>
+      <description>&lt;p&gt;这是一篇测试文章，用于测试Hexo搭建的github静态网站&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

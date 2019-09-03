@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
+    
+    
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
+    
+    
+    
+    <meta name="keywords"
+          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+
+    <title>
+        Posts &middot; wilson&#39;s blog
+    </title>
+
+    
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="main">
+    <div class="container">
+        <div class="main-container">
+            <div id="content" class="content">
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/posts/'>Posts 归档</a></h2></div>
+        <div class="post-meta"><span>你已经写了 79 篇文章！</span></div>
+    </div>
+</div>
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-meta"><span>2019</span></div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2019/06/10/cnblog_to_hexo/" data-toggle="tooltip" data-placement="top"
+                       title="最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.
+
+毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）">博客园文章迁移到Hexo</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>06-10</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/" data-toggle="tooltip" data-placement="top"
+                       title="拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板">docker安装宝塔管理面板</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>03-12</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/" data-toggle="tooltip" data-placement="top"
+                       title="在开发的过程中免不了要使用数据库。使用docker构建一些常用的数据库免去安装的繁琐。">基于docker-compose构建数据库</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>02-19</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/" data-toggle="tooltip" data-placement="top"
+                       title="我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。
+现在我们可以使用Flask-Migrate插件来解决之，Flask-Migrate插件是基于Alembic，Alembic是由大名鼎鼎的SQLAlchemy作者开发数据迁移工具。">使用Flask-Migrate进行管理数据库升级</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>01-17</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/" data-toggle="tooltip" data-placement="top"
+                       title="更换电脑后迁移hexo源代码😂">换电脑hexo源码迁移</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>01-15</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-meta"><span>2018</span></div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/" data-toggle="tooltip" data-placement="top"
+                       title="入坑了，入了Docker的坑，了解了一下docker安装，
+照着教程学着部署了一下Flask，
+Docker使用uwsgi&#43;nginx&#43;python3.6镜像部署Flask">Docker镜像部署Flask</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>06-05</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/" data-toggle="tooltip" data-placement="top"
+                       title="前言
+
+使用hexo搭建静态博客确实方便,页面托管到github pages上
+写博客只需编写md文件即可,markdown语法简单,使用方便
+原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便">一键创建blog文</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>06-04</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/" data-toggle="tooltip" data-placement="top"
+                       title="本Blog中所有文章图片都采用阿里云OSS对象存储作为图床
+下面简单说一下如何使用oss作为图床">使用阿里云OSS图床</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>06-02</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACblog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" data-toggle="tooltip" data-placement="top"
+                       title="本博客采用的是Disqus评论系统，国内加载不出来">关于本Blog的评论系统</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>06-02</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default post-panel">
+    <div class="panel-body post-body">
+        <div class="post-posts">
+            <div class="post-title">
+                <h3><a href="/2018/06/02/test/" data-toggle="tooltip" data-placement="top"
+                       title="这是一篇测试文章，用于测试Hexo搭建的github静态网站">test</a></h3>
+            </div>
+            <div class="post-meta">
+                <span>06-02</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<nav class="post-pagination">
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/posts/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/posts/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+</nav>
+
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+
+    <div class="info sidebar-item" id="info">
+
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h1 class="author-name">wilson</h1>
+        <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">79</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    20
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="sidebar-sticky">
+
+        
+        
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+</aside>
+
+        </div>
+    </div>
+</main>
+
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
+</html>

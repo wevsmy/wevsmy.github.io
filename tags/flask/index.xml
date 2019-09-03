@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flask on </title>
+    <link>https://blog.weii.ink/tags/flask/</link>
+    <description>Recent content in Flask on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 17 Jan 2019 10:54:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Flask-Migrate进行管理数据库升级</title>
+      <link>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Thu, 17 Jan 2019 10:54:35 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</guid>
+      <description>&lt;p&gt;我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。
+现在我们可以使用&lt;a href=&#34;https://flask-migrate.readthedocs.org/en/latest/&#34;&gt;Flask-Migrate&lt;/a&gt;插件来解决之，Flask-Migrate插件是基于&lt;a href=&#34;http://alembic.readthedocs.org/en/latest/&#34;&gt;Alembic&lt;/a&gt;，Alembic是由大名鼎鼎的&lt;a href=&#34;http://www.sqlalchemy.org/&#34;&gt;SQLAlchemy&lt;/a&gt;作者开发数据迁移工具。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker镜像部署Flask</title>
+      <link>https://blog.weii.ink/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/</link>
+      <pubDate>Tue, 05 Jun 2018 19:24:43 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/</guid>
+      <description>&lt;p&gt;入坑了，入了Docker的坑，了解了一下docker安装，
+照着教程学着部署了一下Flask，
+Docker使用uwsgi+nginx+python3.6镜像部署Flask&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

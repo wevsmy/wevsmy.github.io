@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hexo on </title>
+    <link>https://blog.weii.ink/tags/hexo/</link>
+    <description>Recent content in hexo on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 09 Jul 2019 19:09:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hexo添加文章更新时间</title>
+      <link>https://blog.weii.ink/2019/07/09/hexo-add-updated/</link>
+      <pubDate>Tue, 09 Jul 2019 19:09:57 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/07/09/hexo-add-updated/</guid>
+      <description>&lt;p&gt;现在使用的主题只有文章创建时间，并没有文章更新时间，就自己捣鼓捣鼓添加了一个文章更新时间，记录一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>博客园文章迁移到Hexo</title>
+      <link>https://blog.weii.ink/2019/06/10/cnblog_to_hexo/</link>
+      <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/06/10/cnblog_to_hexo/</guid>
+      <description>&lt;p&gt;最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.&lt;/p&gt;
+
+&lt;p&gt;毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>换电脑hexo源码迁移</title>
+      <link>https://blog.weii.ink/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Tue, 15 Jan 2019 10:08:43 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/</guid>
+      <description>&lt;p&gt;更换电脑后迁移hexo源代码😂&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一键创建blog文</title>
+      <link>https://blog.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</link>
+      <pubDate>Mon, 04 Jun 2018 16:57:52 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;使用hexo搭建静态博客确实方便,页面托管到github pages上
+写博客只需编写md文件即可,markdown语法简单,使用方便
+原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

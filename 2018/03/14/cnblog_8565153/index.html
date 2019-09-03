@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-cn" >
+<head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
     
     <meta name="theme-color" content="#333333">
     <meta name="msapplication-TileColor" content="#333333">
@@ -13,16 +35,20 @@
     <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
     
     
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA" />
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
     
     
-    <meta name="keywords" content="Weii, Wevsmy, Wilson, Python, Golang, PyQt5, Hexo">
+    
+    <meta name="keywords"
+          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
     
     
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -31,7 +57,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
     
     
     <link rel="manifest" href="/favicons/site.webmanifest">
@@ -40,219 +67,174 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     
     
-    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
-    
-    
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    <title>
+        jQuery &middot; wilson&#39;s blog
+    </title>
+
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var cb = null;
-      var els = $(".post figure.highlight");
-      if (els.length) {
-        // Enabled Hexo highlight line number.
-        $(els).each(function (i, e) {
-          $(e).before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout with line number.
-              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-          }
-        });
-      } else {
-        // Disabled Hexo highlight line number.
-        els = $(".post pre code");
-        $(els).each(function (i, e) {
-          // Add button before pre, not code.
-          $(e).parent().before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout without line number.
-              return trigger.nextElementSibling.firstChild;
-          }
-        });
-      }
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "已复制";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "复制";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
-    </script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script type="text/javascript" src="/js/love.js"></script>
-    <title>jQuery | wilson's blog - Life is short, you need Python</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #333333;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">wilson's blog</a></h1>
-        <h2 class="subtitle">Life is short, you need Python</h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
-        
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
-        
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
-        
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
-        
-        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
-        
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
-        
-      </ul>
-    </nav>
-  </div>
 </header>
 
-
-    <main id="main" class="main">
-      <div class="container">
+<main id="main" class="main">
+    <div class="container">
         <div class="main-container">
-          <div class="content">
-            
-<div id="post" class="page">
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/03/14/cnblog_8565153/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="wilson">
-       <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-       <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="wilson's blog">
-      </span>
+            <div id="content" class="content">
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2018/03/14/cnblog_8565153/'>jQuery</a></h2></div>
+        <div class="post-meta"><span>2018.03.14</span></div>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">jQuery</h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-14T01:40:00+08:00">2018-03-14 01:40:00</time></span>
-        </span>
-        
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <h1 id="这是-jquery-的摘要-2018-03-14-cnblog-8565153"><a href="/2018/03/14/cnblog_8565153/">这是👉jQuery👈的摘要</a></h1>
 
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-06-10T19:55:18+08:00">
-                2019-06-10 19:55:18
-              </time>
-           </span>
-        </span>
-        
+<h1 id="jquery">jQuery</h1>
 
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
-        </span>
-        
+<h2 id="jquery介绍">jQuery介绍</h2>
 
-        
-
-          
-            <span class="post-meta-divider divider">|</span>
-            <span class="post-comment-count">
-              <i class="far fa-comments"></i>
-              <span>
-                <a href="/2018/03/14/cnblog_8565153/#comment-thread" itemprop="discussionUrl">
-                  <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/03/14/cnblog_8565153/" itemprop="commentCount">
-                    <span id="jQuery">0</span> Comments
-                  </span>
-                </a>
-              </span>
-            </span>
-
-          
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      <h1 id="这是👉jQuery👈的摘要"><a href="#这是👉jQuery👈的摘要" class="headerlink" title="这是👉jQuery👈的摘要"></a><a href="/2018/03/14/cnblog_8565153/">这是👉jQuery👈的摘要</a></h1><a id="more"></a>
-<h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="jQuery介绍"><a href="#jQuery介绍" class="headerlink" title="jQuery介绍"></a>jQuery介绍</h2><ol>
+<ol>
 <li>jQuery是一个轻量级的、兼容多浏览器的JavaScript库。</li>
-<li>jQuery使用户能够更方便地处理HTML Document、Events、实现动画效果、方便地进行Ajax交互，能够极大地简化JavaScript编程。它的宗旨就是：”Write less, do more.”</li>
+<li>jQuery使用户能够更方便地处理HTML Document、Events、实现动画效果、方便地进行Ajax交互，能够极大地简化JavaScript编程。它的宗旨就是：&rdquo;Write less, do more.&rdquo;</li>
 </ol>
-<h2 id="jQuery的优势"><a href="#jQuery的优势" class="headerlink" title="jQuery的优势"></a>jQuery的优势</h2><ol>
+
+<h2 id="jquery的优势">jQuery的优势</h2>
+
+<ol>
 <li>一款轻量级的JS框架。jQuery核心js文件才几十kb，不会影响页面加载速度。</li>
 <li>丰富的DOM选择器,jQuery的选择器用起来很方便，比如要找到某个DOM对象的相邻元素，JS可能要写好几行代码，而jQuery一行代码就搞定了，再比如要将一个表格的隔行变色，jQuery也是一行代码搞定。</li>
 <li>链式表达式。jQuery的链式操作可以把多个操作写在一行代码里，更加简洁。</li>
@@ -261,7 +243,10 @@
 <li>跨浏览器兼容。jQuery基本兼容了现在主流的浏览器，不用再为浏览器的兼容问题而伤透脑筋。</li>
 <li>插件扩展开发。jQuery有着丰富的第三方的插件，例如：树形菜单、日期控件、图片切换插件、弹出窗口等等基本前端页面上的组件都有对应插件，并且用jQuery插件做出来的效果很炫，并且可以根据自己需要去改写和封装插件，简单实用。</li>
 </ol>
-<h2 id="jQuery内容："><a href="#jQuery内容：" class="headerlink" title="jQuery内容："></a>jQuery内容：</h2><ol>
+
+<h2 id="jquery内容">jQuery内容：</h2>
+
+<ol>
 <li>选择器</li>
 <li>筛选器</li>
 <li>样式操作</li>
@@ -273,44 +258,94 @@
 <li>插件</li>
 <li>each、data、Ajax</li>
 </ol>
-<p>下载链接：<a href="https://jquery.com/" target="_blank" rel="noopener">jQuery官网</a></p>
-<h2 id="jQuery版本"><a href="#jQuery版本" class="headerlink" title="jQuery版本"></a>jQuery版本</h2><ul>
+
+<p>下载链接：<a href="https://jquery.com/">jQuery官网</a></p>
+
+<h2 id="jquery版本">jQuery版本</h2>
+
+<ul>
 <li>1.x：兼容IE678,使用最为广泛的，官方只做BUG维护，功能不再新增。因此一般项目来说，使用1.x版本就可以了，最终版本：1.12.4 (2016年5月20日)</li>
 <li>2.x：不兼容IE678，很少有人使用，官方只做BUG维护，功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，最终版本：2.2.4 (2016年5月20日)</li>
 <li>3.x：不兼容IE678，只支持最新的浏览器。需要注意的是很多老的jQuery插件不支持3.x版。目前该版本是官方主要更新维护的版本。</li>
 </ul>
+
 <p><em>维护IE678是一件让人头疼的事情，一般我们都会额外加载一个CSS和JS单独处理。值得庆幸的是使用这些浏览器的人也逐步减少，PC端用户已经逐步被移动端用户所取代，如果没有特殊要求的话，一般都会选择放弃对678的支持。</em></p>
-<h2 id="jQuery对象"><a href="#jQuery对象" class="headerlink" title="jQuery对象"></a>jQuery对象</h2><p><strong>jQuery对象</strong> 就是通过jQuery包装DOM对象后产生的对象。 <strong>jQuery对象</strong> 是 jQuery独有的。如果一个对象是<br><strong>jQuery对象</strong> ，那么它就可以使用 <strong>jQuery</strong> 里的方法：例如$(“#i1”).html()。</p>
+
+<h2 id="jquery对象">jQuery对象</h2>
+
+<p><strong>jQuery对象</strong> 就是通过jQuery包装DOM对象后产生的对象。 <strong>jQuery对象</strong> 是 jQuery独有的。如果一个对象是
+<strong>jQuery对象</strong> ，那么它就可以使用 <strong>jQuery</strong> 里的方法：例如$(&ldquo;#i1&rdquo;).html()。</p>
+
 <p><code>$(&quot;#i1&quot;).html()</code>的意思是：获取id值为 <code>i1</code>的元素的html代码。其中 <code>html()</code>是jQuery里的方法。</p>
+
 <p>相当于： <code>document.getElementById(&quot;i1&quot;).innerHTML;</code></p>
-<p>虽然 <code>jQuery对象</code>是包装 <code>DOM对象</code>后产生的，但是 <code>jQuery对象</code>无法使用 <code>DOM对象</code>的任何方法，同理 <code>DOM对象</code>也没不能使用<br><code>jQuery</code>里的方法。</p>
+
+<p>虽然 <code>jQuery对象</code>是包装 <code>DOM对象</code>后产生的，但是 <code>jQuery对象</code>无法使用 <code>DOM对象</code>的任何方法，同理 <code>DOM对象</code>也没不能使用
+<code>jQuery</code>里的方法。</p>
+
 <p>一个约定，我们在声明一个jQuery对象变量的时候在变量名前面加上$：</p>
+
 <pre><code>var $variable = jQuery对像
 var variable = DOM对象
 $variable[0]//jQuery对象转成DOM对象
-</code></pre><p>拿上面那个例子举例，jQuery对象和DOM对象的使用：</p>
+</code></pre>
+
+<p>拿上面那个例子举例，jQuery对象和DOM对象的使用：</p>
+
 <pre><code>$(&quot;#i1&quot;).html();//jQuery对象可以使用jQuery的方法
 $(&quot;#i1&quot;)[0].innerHTML;// DOM对象使用DOM的方法
-</code></pre><h2 id="jQuery基础语法"><a href="#jQuery基础语法" class="headerlink" title="jQuery基础语法"></a>jQuery基础语法</h2><p><code>$(selector).action()</code></p>
-<h2 id="查找标签"><a href="#查找标签" class="headerlink" title="查找标签"></a>查找标签</h2><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p><strong>id选择器：</strong></p>
+</code></pre>
+
+<h2 id="jquery基础语法">jQuery基础语法</h2>
+
+<p><code>$(selector).action()</code></p>
+
+<h2 id="查找标签">查找标签</h2>
+
+<h3 id="选择器">选择器</h3>
+
+<p><strong>id选择器：</strong></p>
+
 <pre><code>$(&quot;#id&quot;)
-</code></pre><p><strong>标签选择器：</strong></p>
+</code></pre>
+
+<p><strong>标签选择器：</strong></p>
+
 <pre><code>$(&quot;tagName&quot;)
-</code></pre><p><strong>class选择器：</strong></p>
+</code></pre>
+
+<p><strong>class选择器：</strong></p>
+
 <pre><code>$(&quot;.className&quot;)
-</code></pre><p><strong>配合使用：</strong></p>
+</code></pre>
+
+<p><strong>配合使用：</strong></p>
+
 <pre><code>$(&quot;div.c1&quot;)   // 找到有c1 class类的div标签
-</code></pre><p><strong>所有元素选择器：</strong></p>
+</code></pre>
+
+<p><strong>所有元素选择器：</strong></p>
+
 <pre><code>$(&quot;*&quot;)
-</code></pre><p><strong>组合选择器：</strong></p>
+</code></pre>
+
+<p><strong>组合选择器：</strong></p>
+
 <pre><code>$(&quot;#id, .className, tagName&quot;)
-</code></pre><p><strong>层级选择器：</strong></p>
+</code></pre>
+
+<p><strong>层级选择器：</strong></p>
+
 <p><em>x和y可以为任意选择器</em></p>
+
 <pre><code>$(&quot;x y&quot;); // x的所有后代y（子子孙孙）
 $(&quot;x &gt; y&quot;);// x的所有儿子y（儿子）
 $(&quot;x + y&quot;)// 找到所有紧挨在x后面的y
 $(&quot;x ~ y&quot;)// x之后所有的兄弟y
-</code></pre><p><strong>基本筛选器：</strong></p>
+</code></pre>
+
+<p><strong>基本筛选器：</strong></p>
+
 <pre><code>:first  // 第一个
 :last // 最后一个
 :eq(index)// 索引等于index的那个元素
@@ -320,14 +355,22 @@ $(&quot;x ~ y&quot;)// x之后所有的兄弟y
 :lt(index)// 匹配所有小于给定索引值的元素
 :not(元素选择器)// 移除所有满足not条件的标签
 :has(元素选择器)// 选取所有包含一个或多个标签在其内的标签(指的是从后代元素找)
-</code></pre><p><strong>例子：</strong></p>
+</code></pre>
+
+<p><strong>例子：</strong></p>
+
 <pre><code>$(&quot;div:has(h1)&quot;) // 找到所有后代中有h1标签的div标签
 $(&quot;div:has(.c1)&quot;)// 找到所有后代中有c1样式类的div标签
 $(&quot;li:not(.c1)&quot;)// 找到所有不包含c1样式类的li标签
 $(&quot;li:not(:has(a))&quot;)// 找到所有后代中不含a标签的li标签
-</code></pre><p>练习：</p>
+</code></pre>
+
+<p>练习：</p>
+
 <p>自定义模态框，使用jQuery实现弹出和隐藏功能。</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -394,19 +437,29 @@ $(&quot;li:not(:has(a))&quot;)// 找到所有后代中不含a标签的li标签
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>jQuery版自定义模态框</p>
+</code></pre>
+
+<p>jQuery版自定义模态框</p>
+
 <p><strong>属性选择器：</strong></p>
+
 <pre><code> [attribute]
 [attribute=value]// 属性等于
 [attribute!=value]// 属性不等于  
-</code></pre><p><strong>例子：</strong></p>
+</code></pre>
+
+<p><strong>例子：</strong></p>
+
 <pre><code> // 示例
 &lt;input type=&quot;text&quot;&gt;
 &lt;input type=&quot;password&quot;&gt;
 &lt;input type=&quot;checkbox&quot;&gt;
-$(&quot;input[type=&apos;checkbox&apos;]&quot;);// 取到checkbox类型的input标签
-$(&quot;input[type!=&apos;text&apos;]&quot;);// 取到类型不是text的input标签
-</code></pre><p><strong>表单常用筛选</strong> ：</p>
+$(&quot;input[type='checkbox']&quot;);// 取到checkbox类型的input标签
+$(&quot;input[type!='text']&quot;);// 取到类型不是text的input标签
+</code></pre>
+
+<p><strong>表单常用筛选</strong> ：</p>
+
 <pre><code>:text
 :password  
 :file
@@ -418,14 +471,23 @@ $(&quot;input[type!=&apos;text&apos;]&quot;);// 取到类型不是text的input�
 :submit
 :reset
 :button  
-</code></pre><p><strong>例子：</strong></p>
+</code></pre>
+
+<p><strong>例子：</strong></p>
+
 <pre><code>$(&quot;:checkbox&quot;)   // 找到所有的checkbox
-</code></pre><p>表单对象属性:</p>
+</code></pre>
+
+<p>表单对象属性:</p>
+
 <pre><code>:enabled
 :disabled
 :checked
 :selected
-</code></pre><p><strong>例子：</strong></p>
+</code></pre>
+
+<p><strong>例子：</strong></p>
+
 <pre><code>&lt;form&gt;
   &lt;input name=&quot;email&quot; disabled=&quot;disabled&quot; /&gt;
   &lt;input name=&quot;id&quot; /&gt;
@@ -445,30 +507,54 @@ $( &quot;input:enabled&quot;)  // 找到可用的input标签
 &lt;/select&gt;
 
 $(&quot;:selected&quot;)  // 找到所有被选中的option
-</code></pre><h3 id="筛选器"><a href="#筛选器" class="headerlink" title="筛选器"></a>筛选器</h3><p>下一个元素：</p>
+</code></pre>
+
+<h3 id="筛选器">筛选器</h3>
+
+<p>下一个元素：</p>
+
 <pre><code>$(&quot;#id&quot;).next()
 $(&quot;#id&quot;).nextAll()
 $(&quot;#id&quot;).nextUntil(&quot;#i2&quot;)
-</code></pre><p>上一个元素：</p>
+</code></pre>
+
+<p>上一个元素：</p>
+
 <pre><code>$(&quot;#id&quot;).prev()
 $(&quot;#id&quot;).prevAll()
 $(&quot;#id&quot;).prevUntil(&quot;#i2&quot;)
-</code></pre><p>父亲元素：</p>
+</code></pre>
+
+<p>父亲元素：</p>
+
 <pre><code>$(&quot;#id&quot;).parent()
 $(&quot;#id&quot;).parents()  // 查找当前元素的所有的父辈元素  
 $(&quot;#id&quot;).parentsUntil() // 查找当前元素的所有的父辈元素，直到遇到匹配的那个元素为止。
-</code></pre><p>儿子和兄弟元素：</p>
+</code></pre>
+
+<p>儿子和兄弟元素：</p>
+
 <pre><code>$(&quot;#id&quot;).children();// 儿子们
 $(&quot;#id&quot;).siblings();// 兄弟们
-</code></pre><p>查找元素：</p>
+</code></pre>
+
+<p>查找元素：</p>
+
 <pre><code>$(&quot;#id&quot;).find()// 搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。
-</code></pre><p>补充：</p>
+</code></pre>
+
+<p>补充：</p>
+
 <pre><code>.first()// 获取匹配的第一个元素
 .last()// 获取匹配的最后一个元素
 .not()// 从匹配元素的集合中删除与指定表达式匹配的元素
 .has()// 保留包含特定后代的元素，去掉那些不含有指定后代的元素。
-</code></pre><p>示例：左侧菜单</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>示例：左侧菜单</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -549,26 +635,50 @@ $(&quot;#id&quot;).siblings();// 兄弟们
     $(this).next().removeClass(&quot;hide&quot;);
   });
 &lt;/script&gt;
-</code></pre><p>左侧菜单示例</p>
-<h2 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h2><h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h3><p>样式类</p>
+</code></pre>
+
+<p>左侧菜单示例</p>
+
+<h2 id="操作标签">操作标签</h2>
+
+<h3 id="样式操作">样式操作</h3>
+
+<p>样式类</p>
+
 <pre><code>addClass();// 添加指定的CSS类名。
 removeClass();// 移除指定的CSS类名。
 hasClass();// 判断样式存不存在
 toggleClass();// 切换CSS类名，如果有就移除，如果没有就添加。
-</code></pre><p>示例：开关灯和模态框</p>
+</code></pre>
+
+<p>示例：开关灯和模态框</p>
+
 <p>CSS</p>
+
 <pre><code>css(&quot;color&quot;,&quot;red&quot;)//DOM操作：tag.style.color=&quot;red&quot;
-</code></pre><p>示例：</p>
+</code></pre>
+
+<p>示例：</p>
+
 <pre><code>$(&quot;p&quot;).css(&quot;color&quot;, &quot;red&quot;); //将所有p标签的字体设置为红色
-</code></pre><p>位置：</p>
+</code></pre>
+
+<p>位置：</p>
+
 <pre><code>offset()// 获取匹配元素在当前窗口的相对偏移或设置元素位置
 position()// 获取匹配元素相对父元素的偏移
 scrollTop()// 获取匹配元素相对滚动条顶部的偏移
 scrollLeft()// 获取匹配元素相对滚动条左侧的偏移
-</code></pre><p><code>.offset()</code>方法允许我们检索一个元素相对于文档（document）的当前位置。</p>
+</code></pre>
+
+<p><code>.offset()</code>方法允许我们检索一个元素相对于文档（document）的当前位置。</p>
+
 <p>和 <code>.position()</code>的差别在于： <code>.position()</code>是相对于相对于父级元素的位移。</p>
+
 <p>示例：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -725,33 +835,58 @@ scrollLeft()// 获取匹配元素相对滚动条左侧的偏移
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>返回顶部示例</p>
+</code></pre>
+
+<p>返回顶部示例</p>
+
 <p>尺寸：</p>
+
 <pre><code>height()
 width()
 innerHeight()
 innerWidth()
 outerHeight()
 outerWidth()
-</code></pre><h3 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h3><p>HTML代码：</p>
+</code></pre>
+
+<h3 id="文本操作">文本操作</h3>
+
+<p>HTML代码：</p>
+
 <pre><code>html()// 取得第一个匹配元素的html内容
 html(val)// 设置所有匹配元素的html内容
-</code></pre><p>文本值：</p>
+</code></pre>
+
+<p>文本值：</p>
+
 <pre><code>text()// 取得所有匹配元素的内容
 text(val)// 设置所有匹配元素的内容
-</code></pre><p>值：</p>
+</code></pre>
+
+<p>值：</p>
+
 <pre><code>val()// 取得第一个匹配元素的当前值
 val(val)// 设置所有匹配元素的值
 val([val1, val2])// 设置checkbox、select的值
-</code></pre><p>示例：</p>
+</code></pre>
+
+<p>示例：</p>
+
 <p>获取被选中的checkbox或radio的值：</p>
+
 <pre><code>&lt;label for=&quot;c1&quot;&gt;女&lt;/label&gt;
 &lt;input name=&quot;gender&quot; id=&quot;c1&quot; type=&quot;radio&quot; value=&quot;0&quot;&gt;
 &lt;label for=&quot;c2&quot;&gt;男&lt;/label&gt;
 &lt;input name=&quot;gender&quot; id=&quot;c2&quot; type=&quot;radio&quot; value=&quot;1&quot;&gt;
-</code></pre><p>可以使用：</p>
-<pre><code>$(&quot;input[name=&apos;gender&apos;]:checked&quot;).val()
-</code></pre><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>可以使用：</p>
+
+<pre><code>$(&quot;input[name='gender']:checked&quot;).val()
+</code></pre>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -787,8 +922,12 @@ val([val1, val2])// 设置checkbox、select的值
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>jQuery val赋值示例</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>jQuery val赋值示例</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -835,49 +974,94 @@ val([val1, val2])// 设置checkbox、select的值
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>自定义登录校验示例</p>
-<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><p>用于ID等或自定义属性：</p>
+</code></pre>
+
+<p>自定义登录校验示例</p>
+
+<h3 id="属性操作">属性操作</h3>
+
+<p>用于ID等或自定义属性：</p>
+
 <pre><code>attr(attrName)// 返回第一个匹配元素的属性值
 attr(attrName, attrValue)// 为所有匹配元素设置一个属性值
 attr({k1: v1, k2:v2})// 为所有匹配元素设置多个属性值
 removeAttr()// 从每一个匹配的元素中删除一个属性
-</code></pre><p>用于checkbox和radio</p>
+</code></pre>
+
+<p>用于checkbox和radio</p>
+
 <pre><code>prop() // 获取属性
 removeProp() // 移除属性
-</code></pre><p><strong>注意：</strong></p>
-<p>在1.x及2.x版本的jQuery中使用attr对checkbox进行复制操作时会出bug，在3.x版本的jQuery中则没有这个问题。为了兼容性，我们在处理checkbox和radio的时候尽量使用特定的prop()，不要使用attr(“checked”,<br>“checked”)。</p>
+</code></pre>
+
+<p><strong>注意：</strong></p>
+
+<p>在1.x及2.x版本的jQuery中使用attr对checkbox进行复制操作时会出bug，在3.x版本的jQuery中则没有这个问题。为了兼容性，我们在处理checkbox和radio的时候尽量使用特定的prop()，不要使用attr(&ldquo;checked&rdquo;,
+&ldquo;checked&rdquo;)。</p>
+
 <pre><code>&lt;input type=&quot;checkbox&quot; value=&quot;1&quot;&gt;
 &lt;input type=&quot;radio&quot; value=&quot;2&quot;&gt;
 &lt;script&gt;
-  $(&quot;:checkbox[value=&apos;1&apos;]&quot;).prop(&quot;checked&quot;, true);
-  $(&quot;:radio[value=&apos;2&apos;]&quot;).prop(&quot;checked&quot;, true);
+  $(&quot;:checkbox[value='1']&quot;).prop(&quot;checked&quot;, true);
+  $(&quot;:radio[value='2']&quot;).prop(&quot;checked&quot;, true);
 &lt;/script&gt;
-</code></pre><p>示例：全选、反选、取消</p>
-<h3 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h3><p>添加到指定元素 <strong>内部</strong> 的后面</p>
+</code></pre>
+
+<p>示例：全选、反选、取消</p>
+
+<h3 id="文档处理">文档处理</h3>
+
+<p>添加到指定元素 <strong>内部</strong> 的后面</p>
+
 <pre><code>$(A).append(B)// 把B追加到A
 $(A).appendTo(B)// 把A追加到B
-</code></pre><p>添加到指定元素 <strong>内部</strong> 的前面</p>
+</code></pre>
+
+<p>添加到指定元素 <strong>内部</strong> 的前面</p>
+
 <pre><code>$(A).prepend(B)// 把B前置到A
 $(A).prependTo(B)// 把A前置到B
-</code></pre><p>添加到指定元素 <strong>外部</strong> 的后面</p>
+</code></pre>
+
+<p>添加到指定元素 <strong>外部</strong> 的后面</p>
+
 <pre><code>$(A).after(B)// 把B放到A的后面
 $(A).insertAfter(B)// 把A放到B的后面
-</code></pre><p>添加到指定元素 <strong>外部</strong> 的前面</p>
+</code></pre>
+
+<p>添加到指定元素 <strong>外部</strong> 的前面</p>
+
 <pre><code>$(A).before(B)// 把B放到A的前面
 $(A).insertBefore(B)// 把A放到B的前面
-</code></pre><p>移除和清空元素</p>
+</code></pre>
+
+<p>移除和清空元素</p>
+
 <pre><code>remove()// 从DOM中删除所有匹配的元素。
 empty()// 删除匹配的元素集合中所有的子节点。
-</code></pre><p>例子：</p>
+</code></pre>
+
+<p>例子：</p>
+
 <p>点击按钮在表格添加一行数据。</p>
+
 <p>点击每一行的删除按钮删除当前行数据。</p>
+
 <p>替换</p>
+
 <pre><code>replaceWith()
 replaceAll()
-</code></pre><p>克隆</p>
+</code></pre>
+
+<p>克隆</p>
+
 <pre><code>clone()// 参数
-</code></pre><p>克隆示例：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>克隆示例：</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -919,15 +1103,26 @@ replaceAll()
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>点击复制按钮</p>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><pre><code>click(function(){...})
+</code></pre>
+
+<p>点击复制按钮</p>
+
+<h2 id="事件">事件</h2>
+
+<h3 id="常用事件">常用事件</h3>
+
+<pre><code>click(function(){...})
 hover(function(){...})
 blur(function(){...})
 focus(function(){...})
 change(function(){...})
 keyup(function(){...})
-</code></pre><p>keydown和keyup事件组合示例：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>keydown和keyup事件组合示例：</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -1054,9 +1249,14 @@ keyup(function(){...})
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>按住shift键批量操作</p>
+</code></pre>
+
+<p>按住shift键批量操作</p>
+
 <p>实时监听input输入值变化示例：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -1083,47 +1283,78 @@ keyup(function(){...})
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>input值变化事件</p>
-<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><ol>
+</code></pre>
+
+<p>input值变化事件</p>
+
+<h3 id="事件绑定">事件绑定</h3>
+
+<ol>
 <li><code>.on( events [, selector ],function(){})</code></li>
 </ol>
+
 <ul>
 <li>events： 事件</li>
 <li>selector: 选择器（可选的）</li>
 <li>function: 事件处理函数</li>
 </ul>
-<h3 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h3><ol>
+
+<h3 id="移除事件">移除事件</h3>
+
+<ol>
 <li><code>.off( events [, selector ][,function(){}])</code></li>
 </ol>
+
 <p><code>off()</code> 方法移除用 <code>.on()</code>绑定的事件处理程序。</p>
+
 <ul>
 <li>events： 事件</li>
 <li>selector: 选择器（可选的）</li>
 <li>function: 事件处理函数</li>
 </ul>
-<h3 id="阻止后续事件执行"><a href="#阻止后续事件执行" class="headerlink" title="阻止后续事件执行"></a>阻止后续事件执行</h3><ol>
+
+<h3 id="阻止后续事件执行">阻止后续事件执行</h3>
+
+<ol>
 <li><code>return false; // 常见阻止表单提交等</code></li>
 </ol>
+
 <p>注意：</p>
+
 <p>像click、keydown等DOM中定义的事件，我们都可以使用<code>.on()</code>方法来绑定事件，但是<code>hover</code>这种jQuery中定义的事件就不能用<code>.on()</code>方法来绑定了。</p>
+
 <p>想使用事件委托的方式绑定hover事件处理函数，可以参照如下代码分两步绑定事件：</p>
-<pre><code>$(&apos;ul&apos;).on(&apos;mouseenter&apos;, &apos;li&apos;, function() {//绑定鼠标进入事件
-    $(this).addClass(&apos;hover&apos;);
+
+<pre><code>$('ul').on('mouseenter', 'li', function() {//绑定鼠标进入事件
+    $(this).addClass('hover');
 });
-$(&apos;ul&apos;).on(&apos;mouseleave&apos;, &apos;li&apos;, function() {//绑定鼠标划出事件
-    $(this).removeClass(&apos;hover&apos;);
+$('ul').on('mouseleave', 'li', function() {//绑定鼠标划出事件
+    $(this).removeClass('hover');
 });
-</code></pre><h3 id="页面载入"><a href="#页面载入" class="headerlink" title="页面载入"></a>页面载入</h3><p>当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。这是事件模块中最重要的一个函数，因为它可以极大地提高web应用程序的响应速度。</p>
+</code></pre>
+
+<h3 id="页面载入">页面载入</h3>
+
+<p>当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。这是事件模块中最重要的一个函数，因为它可以极大地提高web应用程序的响应速度。</p>
+
 <p>两种写法：</p>
+
 <pre><code>$(document).ready(function(){
 // 在这里写你的JS代码...
 })
-</code></pre><p>简写：</p>
+</code></pre>
+
+<p>简写：</p>
+
 <pre><code>$(function(){
 // 你在这里写你的代码
 })
-</code></pre><p>文档加载完绑定事件，并且阻止默认事件发生：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>文档加载完绑定事件，并且阻止默认事件发生：</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -1170,7 +1401,7 @@ $(&apos;ul&apos;).on(&apos;mouseleave&apos;, &apos;li&apos;, function() {//绑�
       return flag;
     });
     // input输入框获取焦点后移除之前的错误提示信息
-    $myForm.find(&quot;input[type!=&apos;submit&apos;]&quot;).on(&quot;focus&quot;, function () {
+    $myForm.find(&quot;input[type!='submit']&quot;).on(&quot;focus&quot;, function () {
       $(this).next(&quot;.error&quot;).text(&quot;&quot;);
     })
   }
@@ -1181,14 +1412,26 @@ $(&apos;ul&apos;).on(&apos;mouseleave&apos;, &apos;li&apos;, function() {//绑�
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>登录校验示例</p>
-<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托是通过事件冒泡的原理，利用父标签去捕获子标签的事件。</p>
+</code></pre>
+
+<p>登录校验示例</p>
+
+<h3 id="事件委托">事件委托</h3>
+
+<p>事件委托是通过事件冒泡的原理，利用父标签去捕获子标签的事件。</p>
+
 <p>示例：</p>
+
 <p>表格中每一行的编辑和删除按钮都能触发相应的事件。</p>
+
 <pre><code>$(&quot;table&quot;).on(&quot;click&quot;, &quot;.delete&quot;, function () {
   // 删除按钮绑定的事件
 })
-</code></pre><h2 id="动画效果"><a href="#动画效果" class="headerlink" title="动画效果"></a>动画效果</h2><pre><code>// 基本
+</code></pre>
+
+<h2 id="动画效果">动画效果</h2>
+
+<pre><code>// 基本
 show([s,[e],[fn]])
 hide([s,[e],[fn]])
 toggle([s],[e],[fn])
@@ -1203,8 +1446,12 @@ fadeTo([[s],o,[e],[fn]])
 fadeToggle([s,[e],[fn]])
 // 自定义（了解即可）
 animate(p,[s],[e],[fn])
-</code></pre><p>自定义动画示例：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>自定义动画示例：</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh-CN&quot;&gt;
 &lt;head&gt;
@@ -1243,48 +1490,103 @@ animate(p,[s],[e],[fn])
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>点赞特效简单示例</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="each"><a href="#each" class="headerlink" title="each"></a>each</h3><p><strong>jQuery.each(collection, callback(indexInArray, valueOfElement))：</strong></p>
-<p>描述：一个通用的迭代函数，它可以用来无缝迭代对象和数组。数组和类似数组的对象通过一个长度属性（如一个函数的参数对象）来迭代数字索引，从0到length -<br>1。其他对象通过其属性名进行迭代。</p>
+</code></pre>
+
+<p>点赞特效简单示例</p>
+
+<h2 id="补充">补充</h2>
+
+<h3 id="each">each</h3>
+
+<p><strong>jQuery.each(collection, callback(indexInArray, valueOfElement))：</strong></p>
+
+<p>描述：一个通用的迭代函数，它可以用来无缝迭代对象和数组。数组和类似数组的对象通过一个长度属性（如一个函数的参数对象）来迭代数字索引，从0到length -
+1。其他对象通过其属性名进行迭代。</p>
+
 <pre><code>li =[10,20,30,40]
 $.each(li,function(i, v){
   console.log(i, v);//index是索引，ele是每次循环的具体元素。
 })
-</code></pre><p>输出：</p>
+</code></pre>
+
+<p>输出：</p>
+
 <pre><code>010
 120
 230
 340
-</code></pre><p><strong>.each(function(index, Element))：</strong></p>
+</code></pre>
+
+<p><strong>.each(function(index, Element))：</strong></p>
+
 <p>描述：遍历一个jQuery对象，为每个匹配元素执行一个函数。</p>
-<p><code>.each()</code><br>方法用来迭代jQuery对象中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)。由于回调函数是在当前DOM元素为上下文的语境中触发的，所以关键字<br><code>this</code> 总是指向这个元素。</p>
+
+<p><code>.each()</code>
+方法用来迭代jQuery对象中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)。由于回调函数是在当前DOM元素为上下文的语境中触发的，所以关键字
+<code>this</code> 总是指向这个元素。</p>
+
 <pre><code>// 为每一个li标签添加foo
 $(&quot;li&quot;).each(function(){
   $(this).addClass(&quot;c1&quot;);
 });
-</code></pre><p>注意: jQuery的方法返回一个jQuery对象，遍历jQuery集合中的元素 - 被称为隐式 _迭代_<br>的过程。当这种情况发生时，它通常不需要显式地循环的 <code>.each()</code>方法：</p>
+</code></pre>
+
+<p>注意: jQuery的方法返回一个jQuery对象，遍历jQuery集合中的元素 - 被称为隐式 <em>迭代</em>
+的过程。当这种情况发生时，它通常不需要显式地循环的 <code>.each()</code>方法：</p>
+
 <p>也就是说，上面的例子没有必要使用each()方法，直接像下面这样写就可以了：</p>
+
 <pre><code>$(&quot;li&quot;).addClass(&quot;c1&quot;);  // 对所有标签做统一操作
-</code></pre><p><strong>注意：</strong></p>
+</code></pre>
+
+<p><strong>注意：</strong></p>
+
 <p>在遍历过程中可以使用 <code>return false</code>提前结束each循环。</p>
+
 <p><strong>终止each循环</strong></p>
-<pre><code>return false；
-</code></pre><p>伏笔…</p>
-<h3 id="data"><a href="#data" class="headerlink" title=".data()"></a>.data()</h3><p>在匹配的元素集合中的所有元素上存储任意相关数据或返回匹配的元素集合中的第一个元素的给定名称的数据存储的值。</p>
+
+<pre><code> return false；
+</code></pre>
+
+<p>伏笔&hellip;</p>
+
+<h3 id="data">.data()</h3>
+
+<p>在匹配的元素集合中的所有元素上存储任意相关数据或返回匹配的元素集合中的第一个元素的给定名称的数据存储的值。</p>
+
 <p><strong>.data(key, value):</strong></p>
+
 <p>描述：在匹配的元素上存储任意相关数据。</p>
+
 <pre><code>$(&quot;div&quot;).data(&quot;k&quot;,100);//给所有div标签都保存一个名为k，值为100
-</code></pre><p><strong>.data(key):</strong></p>
-<p>描述: 返回匹配的元素集合中的第一个元素的给定名称的数据存储的值–通过 <code>.data(name, value)</code>或 <code>HTML5 data-*</code>属性设置。</p>
+</code></pre>
+
+<p><strong>.data(key):</strong></p>
+
+<p>描述: 返回匹配的元素集合中的第一个元素的给定名称的数据存储的值&ndash;通过 <code>.data(name, value)</code>或 <code>HTML5 data-*</code>属性设置。</p>
+
 <pre><code>$(&quot;div&quot;).data(&quot;k&quot;);//返回第一个div标签中保存的&quot;k&quot;的值
-</code></pre><p>.removeData(key):</p>
+</code></pre>
+
+<p>.removeData(key):</p>
+
 <p>描述：移除存放在元素上的数据，不加key参数表示移除所有保存的数据。</p>
+
 <pre><code>$(&quot;div&quot;).removeData(&quot;k&quot;);  //移除元素上存放k对应的数据
-</code></pre><p>示例：</p>
-<p>模态框编辑的数据回填表格</p>
-<h3 id="插件-了解即可"><a href="#插件-了解即可" class="headerlink" title="插件(了解即可)"></a>插件(了解即可)</h3><p>jQuery.extend(object)</p>
-<p>jQuery的命名空间下添加新的功能。多用于插件开发者向 jQuery 中添加新函数时使用。</p>
+</code></pre>
+
 <p>示例：</p>
+
+<p>模态框编辑的数据回填表格</p>
+
+<h3 id="插件-了解即可">插件(了解即可)</h3>
+
+<p>jQuery.extend(object)</p>
+
+<p>jQuery的命名空间下添加新的功能。多用于插件开发者向 jQuery 中添加新函数时使用。</p>
+
+<p>示例：</p>
+
 <pre><code>&lt;script&gt;
 jQuery.extend({
   min:function(a, b){return a &lt; b ? a : b;},
@@ -1293,8 +1595,12 @@ jQuery.extend({
 jQuery.min(2,3);// =&gt; 2
 jQuery.max(4,5);// =&gt; 5
 &lt;/script&gt;
-</code></pre><p>jQuery.fn.extend(object)</p>
+</code></pre>
+
+<p>jQuery.fn.extend(object)</p>
+
 <p>一个对象的内容合并到jQuery的原型，以提供新的jQuery实例方法。</p>
+
 <pre><code>&lt;script&gt;
   jQuery.fn.extend({
     check:function(){
@@ -1305,9 +1611,12 @@ jQuery.max(4,5);// =&gt; 5
     }
   });
 // jQuery对象可以使用新添加的check()方法了。
-$(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
+$(&quot;input[type='checkbox']&quot;).check();
 &lt;/script&gt;
-</code></pre><p>单独写在文件中的扩展：</p>
+</code></pre>
+
+<p>单独写在文件中的扩展：</p>
+
 <pre><code>(function(jq){
   jq.extend({
     funcName:function(){
@@ -1315,9 +1624,14 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
     },
   });
 })(jQuery);
-</code></pre><p>例子：</p>
+</code></pre>
+
+<p>例子：</p>
+
 <p>自定义的jQuery登录验证插件</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -1378,8 +1692,12 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>HTML文件</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>HTML文件</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&quot;use strict&quot;;
 (function ($) {
   function check() {
@@ -1387,7 +1705,7 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
     var flag = true;
     var errMsg;
     // 校验规则
-    $(&quot;form input[type!=&apos;:submit&apos;]&quot;).each(function () {
+    $(&quot;form input[type!=':submit']&quot;).each(function () {
       var labelName = $(this).prev().text();
       var inputName = $(this).attr(&quot;name&quot;);
       var inputValue = $(this).val();
@@ -1436,15 +1754,20 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
       $(&quot;form :submit&quot;).on(&quot;click&quot;, function () {
       return check();
     });
-    $(&quot;form :input[type!=&apos;submit&apos;]&quot;).on(&quot;focus&quot;, function () {
+    $(&quot;form :input[type!='submit']&quot;).on(&quot;focus&quot;, function () {
       clearError(this);
     });
     }
   });
 })(jQuery);
-</code></pre><p>JS文件</p>
-<p> 传参版插件：</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>JS文件</p>
+
+<p>传参版插件：</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -1505,8 +1828,12 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>HTML文件</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
+</code></pre>
+
+<p>HTML文件</p>
+
+<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
+
 <pre><code>&quot;use strict&quot;;
 (function ($) {
   function check(arg) {
@@ -1514,7 +1841,7 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
     var flag = true;
     var errMsg;
     // 校验规则
-    $(&quot;form input[type!=&apos;:submit&apos;]&quot;).each(function () {
+    $(&quot;form input[type!=':submit']&quot;).each(function () {
       var labelName = $(this).prev().text();
       var inputName = $(this).attr(&quot;name&quot;);
       var inputValue = $(this).val();
@@ -1563,112 +1890,122 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
       $(&quot;form :submit&quot;).on(&quot;click&quot;, function () {
       return check(arg);
     });
-    $(&quot;form :input[type!=&apos;submit&apos;]&quot;).on(&quot;focus&quot;, function () {
+    $(&quot;form :input[type!='submit']&quot;).on(&quot;focus&quot;, function () {
       clearError(this);
     });
     }
   });
 })(jQuery);
-</code></pre><p>JS文件</p>
+</code></pre>
+
+<p>JS文件</p>
+
 <p>课后习题：</p>
+
 <ol>
 <li>登录+验证</li>
 <li>左侧菜单</li>
 <li>表格-增、删、改、查</li>
 </ol>
+        </div>
 
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-          <a class="post-tag button" href="/tags/博客园/" rel="tag"><i class="fas fa-tags"></i>博客园</a>
-        
-          <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
-        
-          <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  
-<div class="reward" id="reward">
-  <div class="liker">
-	<div class="liker-canvas">
-		<canvas class="hearts-canvas liker-canvas-hearts"></canvas>
-	</div>
-	<p>🐎还是要放的，万一真有人支持嘞！🤣</p>
-  	<button id="reward-button" class="btn" disable="enable">
-  	    <i class="fas fa-heart"></i>
-  	</button>
-  	<span>赞赏</span>
-  	
-  	    <script type="text/javascript" src="/js/heartsFlow.js"></script>
-  	
-  </div>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechat">
-      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付"/>
-      <span>微信支付</span>
     </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay_qr" src="/images/AliPay.png" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
+
 </div>
 
 
-  
-  
-  <nav class="page-nav">
-	<div class="page-nav-prev page-nav-item">
-	  
-	  <a href="/2018/03/14/cnblog_8565323/" rel="prev" title="Markdown 语法"><i class="fas fa-angle-left"></i><span class="nav-title">Markdown 语法</span></a>
-	  
-	</div>
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2018/03/13/cnblog_8554604/" rel="next" title="linux screen 常用命令"><span class="nav-title">linux screen 常用命令</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
-  </nav>
-  
-  
-  
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous"><a href="/2018/03/13/cnblog_8554604/">
+            <span aria-hidden="true">&larr;</span>linux screen 常用命令</a></li>
+        
 
-<div class="comments" id="comments">
-  
-    <script type="text/javascript">
-      $.ajax({
-      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      dataType: 'json',
-      cache: false,
-      crossDomain: true,
-      success: function success(page_comments) {
-        for (var i = 0; i < page_comments.length; ++i) {
-          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
-        }
-      }
-    });
-    </script>
+        
+        <li class="next"><a href="/2018/03/14/cnblog_8565323/">
+            Markdown 语法<span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+
 
     
-      <div class="commentjs" id="comment-thread"></div>
-      <link rel="stylesheet" href="/css/commentjs.css">
-      <script defer type="text/javascript" src="/js/marked.min.js"></script>
-      <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-      <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-      <script defer type="text/javascript" src="/js/commentjs.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function () {
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <div class="commentjs" id="comment-thread"></div>
+    
+    <link rel="stylesheet" href="/css/commentjs.min.css">
+    
+    <script defer type="text/javascript" src="/js/marked.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/commentjs.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
         getComments({
           "type": "github",
           "user": "wevsmy",
@@ -1696,156 +2033,297 @@ $(&quot;input[type=&apos;checkbox&apos;]&quot;).check();
         };
         window.addEventListener("DOMContentLoaded", mark, false);
         window.addEventListener("load", mark, false);
-      });
-      </script>
+    });
+    </script>
+
     
-  
 </div>
 
 
 
-  
-</div>
 
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-  
-  <h1 class="author-name">wilson</h1>
-  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
-  <div class="site-count">
-    
-    
-    
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">78</a></div>
-    </div>
-    
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
-    </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">20</a></div>
-    </div>
-    
-    
-    
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
-</div>
+                
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
 
+    <div class="info sidebar-item" id="info">
 
-  <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#这是👉jQuery👈的摘要"><span class="toc-text">这是👉jQuery👈的摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#jQuery"><span class="toc-text">jQuery</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jQuery介绍"><span class="toc-text">jQuery介绍</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jQuery的优势"><span class="toc-text">jQuery的优势</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jQuery内容："><span class="toc-text">jQuery内容：</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jQuery版本"><span class="toc-text">jQuery版本</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jQuery对象"><span class="toc-text">jQuery对象</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jQuery基础语法"><span class="toc-text">jQuery基础语法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#查找标签"><span class="toc-text">查找标签</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#选择器"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#筛选器"><span class="toc-text">筛选器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#操作标签"><span class="toc-text">操作标签</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#样式操作"><span class="toc-text">样式操作</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#文本操作"><span class="toc-text">文本操作</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#属性操作"><span class="toc-text">属性操作</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#文档处理"><span class="toc-text">文档处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#事件"><span class="toc-text">事件</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#常用事件"><span class="toc-text">常用事件</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#事件绑定"><span class="toc-text">事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#移除事件"><span class="toc-text">移除事件</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#阻止后续事件执行"><span class="toc-text">阻止后续事件执行</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#页面载入"><span class="toc-text">页面载入</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#事件委托"><span class="toc-text">事件委托</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#动画效果"><span class="toc-text">动画效果</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#补充"><span class="toc-text">补充</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#each"><span class="toc-text">each</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#data"><span class="toc-text">.data()</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#插件-了解即可"><span class="toc-text">插件(了解即可)</span></a></li></ol></li></ol></li></ol></div>
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h1 class="author-name">wilson</h1>
+        <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">79</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    20
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
     </div>
-    
-    
-    
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
-      <ul>
+
+    <div class="sidebar-sticky">
+
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#这是-jquery-的摘要-2018-03-14-cnblog-8565153"><a href="/2018/03/14/cnblog_8565153/">这是👉jQuery👈的摘要</a></a></li>
+<li><a href="#jquery">jQuery</a>
+<ul>
+<li><a href="#jquery介绍">jQuery介绍</a></li>
+<li><a href="#jquery的优势">jQuery的优势</a></li>
+<li><a href="#jquery内容">jQuery内容：</a></li>
+<li><a href="#jquery版本">jQuery版本</a></li>
+<li><a href="#jquery对象">jQuery对象</a></li>
+<li><a href="#jquery基础语法">jQuery基础语法</a></li>
+<li><a href="#查找标签">查找标签</a>
+<ul>
+<li><a href="#选择器">选择器</a></li>
+<li><a href="#筛选器">筛选器</a></li>
+</ul></li>
+<li><a href="#操作标签">操作标签</a>
+<ul>
+<li><a href="#样式操作">样式操作</a></li>
+<li><a href="#文本操作">文本操作</a></li>
+<li><a href="#属性操作">属性操作</a></li>
+<li><a href="#文档处理">文档处理</a></li>
+</ul></li>
+<li><a href="#事件">事件</a>
+<ul>
+<li><a href="#常用事件">常用事件</a></li>
+<li><a href="#事件绑定">事件绑定</a></li>
+<li><a href="#移除事件">移除事件</a></li>
+<li><a href="#阻止后续事件执行">阻止后续事件执行</a></li>
+<li><a href="#页面载入">页面载入</a></li>
+<li><a href="#事件委托">事件委托</a></li>
+</ul></li>
+<li><a href="#动画效果">动画效果</a></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#each">each</a></li>
+<li><a href="#data">.data()</a></li>
+<li><a href="#插件-了解即可">插件(了解即可)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
         
-        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
         
-      </ul>
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
     </div>
-    
-    
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
-      <ul>
-        
-        <li><i class="fas fa-link"></i><a href="https://codeloop.org" target="_blank">Code Loop</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">Charles的博客</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
-        
-      </ul>
-    </div>
-    
-  </div>
+
 </aside>
 
+        </div>
+    </div>
+</main>
 
-          
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
         </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #333333;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-        </div>
-        
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
-          
-        </div>
-        <div class="powered-by">
-           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
-        </div>
-      </div>
-    </div>
-  </div>
 </footer>
 
 
-    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-  </body>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
 </html>

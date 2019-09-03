@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on </title>
+    <link>https://blog.weii.ink/categories/django/</link>
+    <description>Recent content in Django on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 18 Jun 2019 18:29:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pip安装mysqlclient报错</title>
+      <link>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
+      <description>&lt;p&gt;使用&lt;code&gt;Django==2.0.4&lt;/code&gt;报错缺少&lt;code&gt;mysqlclient&lt;/code&gt;模块的解决方案&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

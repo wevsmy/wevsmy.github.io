@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-cn" >
+<head>
+	<meta name="generator" content="Hugo 0.57.0" />
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
     
     <meta name="theme-color" content="#333333">
     <meta name="msapplication-TileColor" content="#333333">
@@ -13,16 +36,20 @@
     <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
     
     
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA" />
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
     
     
-    <meta name="keywords" content="Weii, Wevsmy, Wilson, Python, Golang, PyQt5, Hexo">
+    
+    <meta name="keywords"
+          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
     
     
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -31,7 +58,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
     
     
     <link rel="manifest" href="/favicons/site.webmanifest">
@@ -40,1100 +68,1551 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     
     
-    <link rel="alternate" href="/atom.xml" title="wilson's blog" type="application/atom+xml" />
-    
-    
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
-    
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
-    
-    
-<link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
-    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
-    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
-    
-    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    <title>
+        wilson&#39;s blog
+    </title>
+
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "search.xml";
-      if (searchPath.length === 0) {
-        searchPath = "search.xml";
-      }
-      var path = "/" + searchPath;
-      searchFunc(path, "search-input", "search-result");
-    });
-    </script>
-    
-    
-    <script defer type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var cb = null;
-      var els = $(".post figure.highlight");
-      if (els.length) {
-        // Enabled Hexo highlight line number.
-        $(els).each(function (i, e) {
-          $(e).before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout with line number.
-              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-          }
-        });
-      } else {
-        // Disabled Hexo highlight line number.
-        els = $(".post pre code");
-        $(els).each(function (i, e) {
-          // Add button before pre, not code.
-          $(e).parent().before("<button class=\"copy button\">复制</button>");
-        });
-        cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
-              // Get target element by DOM API.
-              // nextElementSibling is figure,highlight.
-              // And following is the sequence of Hexo's internal
-              // highlight layout without line number.
-              return trigger.nextElementSibling.firstChild;
-          }
-        });
-      }
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "已复制";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "复制";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
-    </script>
-    
-    <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script type="text/javascript" src="/js/love.js"></script>
-    <title>wilson's blog - Life is short, you need Python</title>
-  </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
-    
-<header id="header" class="header" style="background: #333333;">
-  <div class="container">
-    <div class="header-container">
-      <div class="header-title">
-        <h1 class="title"><a href="/">wilson's blog</a></h1>
-        <h2 class="subtitle">Life is short, you need Python</h2>
-      </div>
-      
-      <div class="logo">
-        <img src="/images/logo.png" alt="logo">
-      </div>
-      
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
     </div>
-    <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
-      <ul id="menu" role="menubar" aria-hidden="false">
-        
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
-        
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
-        
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
-        
-        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
-        
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
-        
-      </ul>
-    </nav>
-  </div>
 </header>
 
-
-    <main id="main" class="main">
-      <div class="container">
+<main id="main" class="main">
+    <div class="container">
         <div class="main-container">
-          <div class="content">
+            <div id="content" class="content">
+                
+                
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/06/10/cnblog_to_hexo/">
+                <h2>博客园文章迁移到Hexo</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2019.06.10 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>300 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>2 minute</span>
+                </span>
+
+            
             
 
-<div id="index" class="index page">
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/06/10/cnblog_to_hexo/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2019/06/10/cnblog_to_hexo/#comments">
+                <span class="post-comment-count">
+                <span id="博客园文章迁移到Hexo">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/06/10/cnblog_to_hexo/" itemprop="url">博客园文章迁移到Hexo</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-06-10T16:16:09+08:00">2019-06-10 16:16:09</time></span>
-        </span>
-        
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.</p>
 
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/博客园/" itemprop="url" rel="index"><span itemprop="name">博客园</span></a></span>
-        </span>
-        
-
-        
-
+<p>毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）</p>......</p>
             
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2019/06/10/cnblog_to_hexo/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/06/10/cnblog_to_hexo/" itemprop="commentCount">
-                                 <span id="博客园文章迁移到Hexo">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
+            <div class="post-read-more">
+                <a href="/2019/06/10/cnblog_to_hexo/">阅读更多</a>
+            </div>
             
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.</p>
-<p>毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）</p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/搬家/" rel="tag"><i class="fas fa-tags"></i>搬家</a>
-            
-                <a class="post-tag button" href="/tags/cnblogs/" rel="tag"><i class="fas fa-tags"></i>cnblogs</a>
-            
-                <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
-            
-                <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
-            
-                <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/03/12/docker安装宝塔管理面板/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
+        </div>
     </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/03/12/docker安装宝塔管理面板/" itemprop="url">docker安装宝塔管理面板</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-12T11:41:08+08:00">2019-03-12 11:41:08</time></span>
-        </span>
-        
-
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2019/03/12/docker安装宝塔管理面板/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/03/12/docker安装宝塔管理面板/" itemprop="commentCount">
-                                 <span id="docker安装宝塔管理面板">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板<br></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
-            
-                <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/02/19/基于docker-compose构建数据库/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/02/19/基于docker-compose构建数据库/" itemprop="url">基于docker-compose构建数据库</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-19T11:38:46+08:00">2019-02-19 11:38:46</time></span>
-        </span>
-        
-
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-07-09T19:30:39+08:00">
-                2019-07-09
-              </time>
-           </span>
-        </span>
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2019/02/19/基于docker-compose构建数据库/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/02/19/基于docker-compose构建数据库/" itemprop="commentCount">
-                                 <span id="基于docker-compose构建数据库">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>在开发的过程中免不了要使用数据库。使用docker构建一些常用的数据库免去安装的繁琐。</p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
-            
-                <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/01/17/使用Flask-Migrate进行管理数据库升级/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/01/17/使用Flask-Migrate进行管理数据库升级/" itemprop="url">使用Flask-Migrate进行管理数据库升级</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-17T10:54:35+08:00">2019-01-17 10:54:35</time></span>
-        </span>
-        
-
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2019/01/17/使用Flask-Migrate进行管理数据库升级/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/01/17/使用Flask-Migrate进行管理数据库升级/" itemprop="commentCount">
-                                 <span id="使用Flask-Migrate进行管理数据库升级">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。<br>现在我们可以使用<a href="https://flask-migrate.readthedocs.org/en/latest/" target="_blank" rel="noopener">Flask-Migrate</a>插件来解决之，Flask-Migrate插件是基于<a href="http://alembic.readthedocs.org/en/latest/" target="_blank" rel="noopener">Alembic</a>，Alembic是由大名鼎鼎的<a href="http://www.sqlalchemy.org/" target="_blank" rel="noopener">SQLAlchemy</a>作者开发数据迁移工具。</p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/Flask/" rel="tag"><i class="fas fa-tags"></i>Flask</a>
-            
-                <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
-            
-                <a class="post-tag button" href="/tags/笔记/" rel="tag"><i class="fas fa-tags"></i>笔记</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2019/01/15/换电脑hexo源码迁移/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/01/15/换电脑hexo源码迁移/" itemprop="url">换电脑hexo源码迁移</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-01-15T10:08:43+08:00">2019-01-15 10:08:43</time></span>
-        </span>
-        
-
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-05-31T10:21:18+08:00">
-                2019-05-31
-              </time>
-           </span>
-        </span>
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2019/01/15/换电脑hexo源码迁移/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2019/01/15/换电脑hexo源码迁移/" itemprop="commentCount">
-                                 <span id="换电脑hexo源码迁移">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>更换电脑后迁移hexo源代码😂<br></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
-            
-                <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/06/05/Docker镜像部署Flask/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/05/Docker镜像部署Flask/" itemprop="url">Docker镜像部署Flask</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-05T19:24:43+08:00">2018-06-05 19:24:43</time></span>
-        </span>
-        
-
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-01-16T14:06:07+08:00">
-                2019-01-16
-              </time>
-           </span>
-        </span>
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2018/06/05/Docker镜像部署Flask/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/06/05/Docker镜像部署Flask/" itemprop="commentCount">
-                                 <span id="Docker镜像部署Flask">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>入坑了，入了Docker的坑，了解了一下docker安装，<br>照着教程学着部署了一下Flask，<br>Docker使用uwsgi+nginx+python3.6镜像部署Flask<br></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/Flask/" rel="tag"><i class="fas fa-tags"></i>Flask</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/06/04/一键创建blog文/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/04/一键创建blog文/" itemprop="url">一键创建blog文</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-04T16:57:52+08:00">2018-06-04 16:57:52</time></span>
-        </span>
-        
-
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-01-15T15:19:41+08:00">
-                2019-01-15
-              </time>
-           </span>
-        </span>
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Win10/" itemprop="url" rel="index"><span itemprop="name">Win10</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2018/06/04/一键创建blog文/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/06/04/一键创建blog文/" itemprop="commentCount">
-                                 <span id="一键创建blog文">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用hexo搭建静态博客确实方便,页面托管到github pages上<br>写博客只需编写md文件即可,markdown语法简单,使用方便<br>原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便<br></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
-            
-                <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/06/02/使用阿里云OSS图床/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/02/使用阿里云OSS图床/" itemprop="url">使用阿里云OSS图床</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-02T23:41:57+08:00">2018-06-02 23:41:57</time></span>
-        </span>
-        
-
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-01-17T11:00:46+08:00">
-                2019-01-17
-              </time>
-           </span>
-        </span>
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2018/06/02/使用阿里云OSS图床/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/06/02/使用阿里云OSS图床/" itemprop="commentCount">
-                                 <span id="使用阿里云OSS图床">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>本Blog中所有文章图片都采用阿里云OSS对象存储作为图床<br>下面简单说一下如何使用oss作为图床</p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/教程/" rel="tag"><i class="fas fa-tags"></i>教程</a>
-            
-                <a class="post-tag button" href="/tags/阿里云/" rel="tag"><i class="fas fa-tags"></i>阿里云</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/06/02/关于本Blog的评论系统/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/02/关于本Blog的评论系统/" itemprop="url">关于本Blog的评论系统</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-02T22:06:37+08:00">2018-06-02 22:06:37</time></span>
-        </span>
-        
-
-        
-
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2018/06/02/关于本Blog的评论系统/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/06/02/关于本Blog的评论系统/" itemprop="commentCount">
-                                 <span id="关于本Blog的评论系统">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>本博客采用的是Disqus评论系统，国内加载不出来<br></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/Disqus/" rel="tag"><i class="fas fa-tags"></i>Disqus</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://bolg.weii.ink/2018/06/02/test/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="wilson">
-        <meta itemprop="description" content="٩(๑❛ᴗ❛๑)۶">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="wilson's blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/02/test/" itemprop="url">test</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-02T20:16:09+08:00">2018-06-02 20:16:09</time></span>
-        </span>
-        
-
-        
-        <span class="post-updated">
-           <span class="post-meta-divider divider">|</span>
-           <i class="far fa-calendar-edit"></i>
-           <span>
-              <time title="post-updated" itemprop="dateUpdated datePublished" datetime="2019-06-18T17:12:56+08:00">
-                2019-06-18
-              </time>
-           </span>
-        </span>
-        
-
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机/Linux/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
-        </span>
-        
-
-        
-
-            
-                 <span class="post-meta-divider divider">|</span>
-                 <span class="post-comment-count">
-                     <i class="far fa-comments"></i>
-                     <span>
-                         <a href="/2018/06/02/test/#comment-thread" itemprop="discussionUrl">
-                            <span class="post-comment-count disqus-comment-count" data-disqus-identifier="2018/06/02/test/" itemprop="commentCount">
-                                 <span id="test">0</span> Comments
-                            </span>
-                         </a>
-                     </span>
-                 </span>
-
-            
-
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>这是一篇测试文章，用于测试Hexo搭建的github静态网站<br></p>
-      
-    </main>
-    <footer class="post-footer">
-      
-          <div class="post-tags">
-            
-                <a class="post-tag button" href="/tags/Python/" rel="tag"><i class="fas fa-tags"></i>Python</a>
-            
-                <a class="post-tag button" href="/tags/Docker/" rel="tag"><i class="fas fa-tags"></i>Docker</a>
-            
-                <a class="post-tag button" href="/tags/HTML/" rel="tag"><i class="fas fa-tags"></i>HTML</a>
-            
-          </div>
-      
-    </footer>
-  </article>
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-  
-  
-  
-
-<div class="comments" id="comments">
-  
-    <script type="text/javascript">
-      $.ajax({
-      url: 'https://api.github.com/repos/'+"wevsmy/wevsmy.github.io/"+'issues?client_id='+"ded8625909c20b7ae2f7"+'&client_secret='+ "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-      dataType: 'json',
-      cache: false,
-      crossDomain: true,
-      success: function success(page_comments) {
-        for (var i = 0; i < page_comments.length; ++i) {
-          $("#"+page_comments[i].title).text(page_comments[i].comments + 1)
-        }
-      }
-    });
-    </script>
 
     
-  
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/python/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>Python
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/cnblogs/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>cnblogs
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/hexo/">
+                <span class="label label-default post-label" style="background: #4a0035">
+                    <i class="iconfont icontags"></i>hexo
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <span class="label label-default post-label" style="background: #ae985e">
+                    <i class="iconfont icontags"></i>教程
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/%E6%90%AC%E5%AE%B6/">
+                <span class="label label-default post-label" style="background: #47aaff">
+                    <i class="iconfont icontags"></i>搬家
+                </span>
+        </a>
+        
+    </div>
+    
+
 </div>
 
 
 
-  
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/">
+                <h2>docker安装宝塔管理面板</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2019.03.12 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/#comments">
+                <span class="post-comment-count">
+                <span id="docker安装宝塔管理面板">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/docker/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>Docker
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>笔记
+                </span>
+        </a>
+        
+    </div>
+    
+
 </div>
 
-          </div>
-          
-          
-          
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-  
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                <h2>基于docker-compose构建数据库</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2019.02.19 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>200 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/#comments">
+                <span class="post-comment-count">
+                <span id="基于docker-compose构建数据库">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
     </div>
-  </div>
-  <div class="search-result-box" id="search-result"></div>
-  
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-  
-  <h1 class="author-name">wilson</h1>
-  <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
-  <div class="site-count">
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>在开发的过程中免不了要使用数据库。使用docker构建一些常用的数据库免去安装的繁琐。</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
     
     
     
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">78</a></div>
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/docker/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>Docker
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>笔记
+                </span>
+        </a>
+        
     </div>
     
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">9</a></div>
-    </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">20</a></div>
-    </div>
-    
-    
-    
-    
-  </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
+
 </div>
 
 
-  <div class="sidebar-sticky">
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/">
+                <h2>使用Flask-Migrate进行管理数据库升级</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2019.01.17 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/#comments">
+                <span class="post-comment-count">
+                <span id="使用Flask-Migrate进行管理数据库升级">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。
+现在我们可以使用<a href="https://flask-migrate.readthedocs.org/en/latest/">Flask-Migrate</a>插件来解决之，Flask-Migrate插件是基于<a href="http://alembic.readthedocs.org/en/latest/">Alembic</a>，Alembic是由大名鼎鼎的<a href="http://www.sqlalchemy.org/">SQLAlchemy</a>作者开发数据迁移工具。</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
     
     
-    <hr>
-    <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
-      <ul>
+    
+    <div class="panel-footer post-footer">
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:wevsmy@gmail.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/wevsmy" target="_blank">GitHub</a></li>
         
-        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/wevsmy" target="_blank">Weibo</a></li>
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>笔记
+                </span>
+        </a>
         
-      </ul>
+        
+        
+        <a href="/tags/flask/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>Flask
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/python/">
+                <span class="label label-default post-label" style="background: #4a0035">
+                    <i class="iconfont icontags"></i>Python
+                </span>
+        </a>
+        
     </div>
     
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/">
+                <h2>换电脑hexo源码迁移</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2019.01.15 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>200 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/#comments">
+                <span class="post-comment-count">
+                <span id="换电脑hexo源码迁移">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>更换电脑后迁移hexo源代码😂</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/01/15/%E6%8D%A2%E7%94%B5%E8%84%91hexo%E6%BA%90%E7%A0%81%E8%BF%81%E7%A7%BB/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
     
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>友情链接</div>
-      <ul>
+    
+    
+    <div class="panel-footer post-footer">
         
-        <li><i class="fas fa-link"></i><a href="https://codeloop.org" target="_blank">Code Loop</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://pythoncharles.github.io" target="_blank">Charles的博客</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://github.com/wevsmy" target="_blank">友链招租🤪</a></li>
+        <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>教程
+                </span>
+        </a>
         
-      </ul>
+        
+        
+        <a href="/tags/hexo/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>hexo
+                </span>
+        </a>
+        
     </div>
     
-  </div>
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/">
+                <h2>Docker镜像部署Flask</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2018.06.05 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/#comments">
+                <span class="post-comment-count">
+                <span id="Docker镜像部署Flask">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>入坑了，入了Docker的坑，了解了一下docker安装，
+照着教程学着部署了一下Flask，
+Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/05/docker%E9%95%9C%E5%83%8F%E9%83%A8%E7%BD%B2flask/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/flask/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>Flask
+                </span>
+        </a>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/">
+                <h2>一键创建blog文</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2018.06.04 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/#comments">
+                <span class="post-comment-count">
+                <span id="一键创建blog文">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><h1 id="前言">前言</h1>
+
+<p>使用hexo搭建静态博客确实方便,页面托管到github pages上
+写博客只需编写md文件即可,markdown语法简单,使用方便
+原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>教程
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/hexo/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>hexo
+                </span>
+        </a>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/">
+                <h2>使用阿里云OSS图床</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2018.06.02 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/#comments">
+                <span class="post-comment-count">
+                <span id="使用阿里云OSS图床">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>本Blog中所有文章图片都采用阿里云OSS对象存储作为图床
+下面简单说一下如何使用oss作为图床</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>教程
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>阿里云
+                </span>
+        </a>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACblog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">
+                <h2>关于本Blog的评论系统</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2018.06.02 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACblog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/#comments">
+                <span class="post-comment-count">
+                <span id="关于本Blog的评论系统">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>本博客采用的是Disqus评论系统，国内加载不出来</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACblog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/disqus/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>Disqus
+                </span>
+        </a>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/02/test/">
+                <h2>test</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2018.06.02 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>100 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>1 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2018/06/02/test/#comments">
+                <span class="post-comment-count">
+                <span id="test">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>这是一篇测试文章，用于测试Hexo搭建的github静态网站</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/02/test/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    <div class="panel-footer post-footer">
+        
+        
+        
+        <a href="/tags/python/">
+                <span class="label label-default post-label" style="background: #13af72">
+                    <i class="iconfont icontags"></i>Python
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/docker/">
+                <span class="label label-default post-label" style="background: #0f233e">
+                    <i class="iconfont icontags"></i>Docker
+                </span>
+        </a>
+        
+        
+        
+        <a href="/tags/html/">
+                <span class="label label-default post-label" style="background: #4a0035">
+                    <i class="iconfont icontags"></i>HTML
+                </span>
+        </a>
+        
+    </div>
+    
+
+</div>
+
+
+
+
+<nav class="post-pagination">
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+</nav>
+
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+
+    <div class="info sidebar-item" id="info">
+
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h1 class="author-name">wilson</h1>
+        <h2 class="author-description">٩(๑❛ᴗ❛๑)۶</h2>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">79</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    20
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="sidebar-sticky">
+
+        
+        
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
 </aside>
 
+        </div>
+    </div>
+</main>
 
-          
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
         </div>
-      </div>
-    </main>
-    
-<footer id="footer" class="footer" style="background: #333333;">
-  <div class="container">
-    <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="copyright">
-          <span class="author">wilson</span><span class="year"><i class="far fa-copyright"></i>2014 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
-        </div>
-        
-        <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
-        </div>
-        
-      </div>
-      <div class="footer-right">
-        <div class="custom-info">
-          
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <iframe style="margin-left:2px;margin-bottom:-5px;"frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=wevsmy.github.io&type=star&count=true"></iframe>
-          
-        </div>
-        <div class="powered-by">
-           由 <a href="https://hexo.io/" target="_blank">Hexo</a> 驱动 | 基于 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a> 主题 | 由 <a href="https://github.com/wevsmy/hexo-theme-aria/" target="_blank">Wilson</a> 微改
-        </div>
-      </div>
-    </div>
-  </div>
 </footer>
 
 
-    <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-  </body>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
 </html>

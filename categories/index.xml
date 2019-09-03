@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on </title>
+    <link>https://blog.weii.ink/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 31 Aug 2019 10:31:11 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker</title>
+      <link>https://blog.weii.ink/categories/docker/</link>
+      <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://blog.weii.ink/categories/linux/</link>
+      <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机</title>
+      <link>https://blog.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+      <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>N2N</title>
+      <link>https://blog.weii.ink/categories/n2n/</link>
+      <pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/n2n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo</title>
+      <link>https://blog.weii.ink/categories/hexo/</link>
+      <pubDate>Tue, 09 Jul 2019 19:09:57 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>笔记</title>
+      <link>https://blog.weii.ink/categories/%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 09 Jul 2019 19:09:57 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>https://blog.weii.ink/categories/django/</link>
+      <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>博客园</title>
+      <link>https://blog.weii.ink/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD/</link>
+      <pubDate>Mon, 10 Jun 2019 16:16:09 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Win10</title>
+      <link>https://blog.weii.ink/categories/win10/</link>
+      <pubDate>Mon, 04 Jun 2018 16:57:52 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/categories/win10/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

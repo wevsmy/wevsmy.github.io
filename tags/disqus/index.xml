@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disqus on </title>
+    <link>https://blog.weii.ink/tags/disqus/</link>
+    <description>Recent content in Disqus on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 02 Jun 2018 22:06:37 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/tags/disqus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于本Blog的评论系统</title>
+      <link>https://blog.weii.ink/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACblog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sat, 02 Jun 2018 22:06:37 +0000</pubDate>
+      
+      <guid>https://blog.weii.ink/2018/06/02/%E5%85%B3%E4%BA%8E%E6%9C%ACblog%E7%9A%84%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;p&gt;本博客采用的是Disqus评论系统，国内加载不出来&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,111 +2,111 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>笔记 on </title>
-    <link>https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
+    <link>https://blog.weii.ink/tags/%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 笔记 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 25 Aug 2019 12:03:06 +0000</lastBuildDate>
     
-	<atom:link href="https://wevsmy.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.weii.ink/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用N2N实现异地组网</title>
-      <link>https://wevsmy.github.io/2019/08/25/n2n_install/</link>
+      <link>https://blog.weii.ink/2019/08/25/n2n_install/</link>
       <pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/08/25/n2n_install/</guid>
+      <guid>https://blog.weii.ink/2019/08/25/n2n_install/</guid>
       <description>&lt;p&gt;N2N  安装记录，至于N2N是用来做什么的，我也不知道，猪头保命🐷&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>docker使用squid搭建代理服务</title>
-      <link>https://wevsmy.github.io/2019/07/17/docker%E4%BD%BF%E7%94%A8squid%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://blog.weii.ink/2019/07/17/docker%E4%BD%BF%E7%94%A8squid%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 17 Jul 2019 14:08:21 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/07/17/docker%E4%BD%BF%E7%94%A8squid%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://blog.weii.ink/2019/07/17/docker%E4%BD%BF%E7%94%A8squid%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1/</guid>
       <description>&lt;p&gt;记录一下配置代理的过程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>docker修改默认网段</title>
-      <link>https://wevsmy.github.io/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
+      <link>https://blog.weii.ink/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
       <pubDate>Wed, 17 Jul 2019 12:37:11 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</guid>
+      <guid>https://blog.weii.ink/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</guid>
       <description>&lt;p&gt;docker-compose 启动的网桥使用的网段与公司172.31.xx.xx网段冲突&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Docker目录磁盘空间满了</title>
-      <link>https://wevsmy.github.io/2019/07/16/docker-low-disk-space/</link>
+      <link>https://blog.weii.ink/2019/07/16/docker-low-disk-space/</link>
       <pubDate>Tue, 16 Jul 2019 16:05:21 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/07/16/docker-low-disk-space/</guid>
+      <guid>https://blog.weii.ink/2019/07/16/docker-low-disk-space/</guid>
       <description>&lt;p&gt;😂昨天刚建的GitLab服务今天就报500了，哭死😭排查发现是&lt;code&gt;/var/lib/docker&lt;/code&gt;目录满了，咱也不知道原来里面放的啥，咱也不敢动，咱走还不行嘛！&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Gitlab服务器迁移</title>
-      <link>https://wevsmy.github.io/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/</link>
+      <link>https://blog.weii.ink/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/</link>
       <pubDate>Mon, 15 Jul 2019 17:37:26 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/</guid>
+      <guid>https://blog.weii.ink/2019/07/15/gitlab%E8%BF%81%E7%A7%BB/</guid>
       <description>&lt;p&gt;公司有需求安装在172.31.66.63的gitlab服务需要迁移到10.10.192.18上，记录一下迁移过程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>编写Dockerfile分阶段构建Vue项目</title>
-      <link>https://wevsmy.github.io/2019/07/15/docker-build-vue/</link>
+      <link>https://blog.weii.ink/2019/07/15/docker-build-vue/</link>
       <pubDate>Mon, 15 Jul 2019 09:37:26 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/07/15/docker-build-vue/</guid>
+      <guid>https://blog.weii.ink/2019/07/15/docker-build-vue/</guid>
       <description>&lt;p&gt;docker构建部署vue项目，减少构建后的docker镜像的大小，采用分阶段构建，只保留build&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>pip安装mysqlclient报错</title>
-      <link>https://wevsmy.github.io/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
+      <link>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
       <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;p&gt;使用&lt;code&gt;Django==2.0.4&lt;/code&gt;报错缺少&lt;code&gt;mysqlclient&lt;/code&gt;模块的解决方案&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>zulip安装记录</title>
-      <link>https://wevsmy.github.io/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 18 Jun 2019 17:14:36 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
       <description>&lt;p&gt;在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>docker安装宝塔管理面板</title>
-      <link>https://wevsmy.github.io/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</link>
+      <link>https://blog.weii.ink/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</link>
       <pubDate>Tue, 12 Mar 2019 11:41:08 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</guid>
+      <guid>https://blog.weii.ink/2019/03/12/docker%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</guid>
       <description>&lt;p&gt;拉取centos基础镜像，用容器启动该基础镜像，直接在容器中部署宝塔管理面板&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>基于docker-compose构建数据库</title>
-      <link>https://wevsmy.github.io/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://blog.weii.ink/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Tue, 19 Feb 2019 11:38:46 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://blog.weii.ink/2019/02/19/%E5%9F%BA%E4%BA%8Edocker-compose%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>&lt;p&gt;在开发的过程中免不了要使用数据库。使用docker构建一些常用的数据库免去安装的繁琐。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用Flask-Migrate进行管理数据库升级</title>
-      <link>https://wevsmy.github.io/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</link>
+      <link>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</link>
       <pubDate>Thu, 17 Jan 2019 10:54:35 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</guid>
+      <guid>https://blog.weii.ink/2019/01/17/%E4%BD%BF%E7%94%A8flask-migrate%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8D%87%E7%BA%A7/</guid>
       <description>&lt;p&gt;我们在升级系统的时候，经常碰到需要更新服务器端数据结构等操作，之前的方式是通过手工编写alter sql脚本处理，经常会发现遗漏，导致程序发布到服务器上后无法正常使用。
 现在我们可以使用&lt;a href=&#34;https://flask-migrate.readthedocs.org/en/latest/&#34;&gt;Flask-Migrate&lt;/a&gt;插件来解决之，Flask-Migrate插件是基于&lt;a href=&#34;http://alembic.readthedocs.org/en/latest/&#34;&gt;Alembic&lt;/a&gt;，Alembic是由大名鼎鼎的&lt;a href=&#34;http://www.sqlalchemy.org/&#34;&gt;SQLAlchemy&lt;/a&gt;作者开发数据迁移工具。&lt;/p&gt;</description>
     </item>

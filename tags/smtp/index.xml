@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SMTP on </title>
-    <link>https://wevsmy.github.io/tags/smtp/</link>
+    <link>https://blog.weii.ink/tags/smtp/</link>
     <description>Recent content in SMTP on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 31 Aug 2019 10:31:11 +0000</lastBuildDate>
     
-	<atom:link href="https://wevsmy.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.weii.ink/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用docker搭建smtp服务</title>
-      <link>https://wevsmy.github.io/2019/08/31/docker-install-smtp-server/</link>
+      <link>https://blog.weii.ink/2019/08/31/docker-install-smtp-server/</link>
       <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/08/31/docker-install-smtp-server/</guid>
+      <guid>https://blog.weii.ink/2019/08/31/docker-install-smtp-server/</guid>
       <description>&lt;p&gt;前段时间搭建gitlab服务harbor仓库，需要用到SMTP服务用于发送邮件，用的自己办公邮箱做的测试，给别人自动发的邮件显示的是自己的邮箱。。。不正规😋申请公司的公共邮箱流程太繁琐了😥 还是自己搭建一个SMTP服务吧，自己动手丰衣足食。&lt;/p&gt;</description>
     </item>
     

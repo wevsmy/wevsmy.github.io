@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Win10 on </title>
-    <link>https://wevsmy.github.io/categories/win10/</link>
+    <link>https://blog.weii.ink/categories/win10/</link>
     <description>Recent content in Win10 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 04 Jun 2018 16:57:52 +0000</lastBuildDate>
     
-	<atom:link href="https://wevsmy.github.io/categories/win10/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.weii.ink/categories/win10/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>一键创建blog文</title>
-      <link>https://wevsmy.github.io/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</link>
+      <link>https://blog.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</link>
       <pubDate>Mon, 04 Jun 2018 16:57:52 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</guid>
+      <guid>https://blog.weii.ink/2018/06/04/%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAblog%E6%96%87/</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;使用hexo搭建静态博客确实方便,页面托管到github pages上

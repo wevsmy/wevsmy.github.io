@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on </title>
-    <link>https://wevsmy.github.io/tags/network/</link>
+    <link>https://blog.weii.ink/tags/network/</link>
     <description>Recent content in Network on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 17 Jul 2019 12:37:11 +0000</lastBuildDate>
     
-	<atom:link href="https://wevsmy.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.weii.ink/tags/network/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>docker修改默认网段</title>
-      <link>https://wevsmy.github.io/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
+      <link>https://blog.weii.ink/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
       <pubDate>Wed, 17 Jul 2019 12:37:11 +0000</pubDate>
       
-      <guid>https://wevsmy.github.io/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</guid>
+      <guid>https://blog.weii.ink/2019/07/17/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</guid>
       <description>&lt;p&gt;docker-compose 启动的网桥使用的网段与公司172.31.xx.xx网段冲突&lt;/p&gt;</description>
     </item>
     

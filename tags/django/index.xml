@@ -13,10 +13,10 @@
     
     <item>
       <title>pip安装mysqlclient报错</title>
-      <link>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</link>
+      <link>https://blog.weii.ink/2019/06/18/pip_install_mysqlclient_reported_error/</link>
       <pubDate>Tue, 18 Jun 2019 18:29:30 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/06/18/pip%E5%AE%89%E8%A3%85mysqlclient%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://blog.weii.ink/2019/06/18/pip_install_mysqlclient_reported_error/</guid>
       <description>&lt;p&gt;使用&lt;code&gt;Django==2.0.4&lt;/code&gt;报错缺少&lt;code&gt;mysqlclient&lt;/code&gt;模块的解决方案&lt;/p&gt;</description>
     </item>
     

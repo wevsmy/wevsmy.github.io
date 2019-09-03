@@ -13,10 +13,10 @@
     
     <item>
       <title>zulip安装记录</title>
-      <link>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.weii.ink/2019/06/18/zulip_installation_record/</link>
       <pubDate>Tue, 18 Jun 2019 17:14:36 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2019/06/18/zulip%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.weii.ink/2019/06/18/zulip_installation_record/</guid>
       <description>&lt;p&gt;在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程&lt;/p&gt;</description>
     </item>
     

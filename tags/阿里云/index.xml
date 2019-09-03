@@ -13,10 +13,10 @@
     
     <item>
       <title>使用阿里云OSS图床</title>
-      <link>https://blog.weii.ink/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/</link>
+      <link>https://blog.weii.ink/2018/06/02/use_alibaba_cloud_oss_map_bed/</link>
       <pubDate>Sat, 02 Jun 2018 23:41:57 +0000</pubDate>
       
-      <guid>https://blog.weii.ink/2018/06/02/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E5%9B%BE%E5%BA%8A/</guid>
+      <guid>https://blog.weii.ink/2018/06/02/use_alibaba_cloud_oss_map_bed/</guid>
       <description>&lt;p&gt;本Blog中所有文章图片都采用阿里云OSS对象存储作为图床
 下面简单说一下如何使用oss作为图床&lt;/p&gt;</description>
     </item>

@@ -284,12 +284,18 @@
 
           a {
             text-decoration: none;
+            color: white;
+
+            i {
+              font-size: 75%;
+            }
           }
 
           .post-label {
             margin-left: 1em;
             margin-right: 1em;
-            margin-bottom: 3em;
+            padding-top: 0.45em;
+            line-height: 3;
           }
         }
       }
@@ -298,8 +304,6 @@
         text-align: center;
         margin-top: 0;
       }
-
-      size: 1ch;
 
       .reward {
         text-align: center;

@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146915278-1');
+    </script>
+    
+    
+    <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
+    
+    
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
+    
+    
+    
+    
+    <meta name="keywords"
+          content="aa, ss, dd"/>
+    
+    
+    
+    <meta name="description" content="asdasdasd | HDP(2.6.5)集群安装记录">
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+
+    <title>
+        HDP(2.6.5)集群安装记录 &middot; wilson&#39;s blog
+    </title>
+
+    
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, you need Python
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse header-nav">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="main">
+    <div class="container">
+        <div class="main-container">
+            <div id="content" class="content">
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2019/09/06/hdp_cluster_install/'>HDP(2.6.5)集群安装记录</a></h2></div>
+        <div class="post-meta"><span>2019.09.06</span></div>
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <p>HDP(2.6.5)集群安装记录</p>
+
+<h1 id="hdp-2-6-5-集群安装记录">HDP(2.6.5)集群安装记录</h1>
+
+<h2 id="网络配置-所有节点执行">网络配置(所有节点执行)</h2>
+
+<pre><code class="language-txt">| hostname |      IP       |  说明  |
+| :------: | :-----------: | :----: |
+|  hdp01   | 172.31.66.32  | master |
+|  hdp02   | 172.31.66.34  | node1  |
+|  hdp03   | 172.31.66.170 | node2  |
+</code></pre>
+
+<p><strong>检查ip</strong></p>
+
+<pre><code class="language-shell">ifconfig
+</code></pre>
+
+<p><strong>更改hostname</strong></p>
+
+<pre><code class="language-shell">vim /etc/hostname
+</code></pre>
+
+<p>将localhost更改成表格中的hostname(根据业务自行定义)</p>
+
+<p><strong>更改SELINUX</strong></p>
+
+<pre><code class="language-shell">vim /etc/sysconfig/selinux
+#修改以下内容
+SELINUX=disabled
+</code></pre>
+
+<p><strong>重启服务器</strong></p>
+
+<pre><code class="language-shell">reboot
+</code></pre>
+
+<p><strong>修改hosts文件</strong></p>
+
+<pre><code class="language-shell">vim /etc/hosts
+</code></pre>
+
+<p>对应上表hostname,为hosts文件添加路由</p>
+
+<p><strong>SSH免密登录</strong></p>
+
+<pre><code class="language-shell">ssh-keygen
+#enter
+</code></pre>
+
+<p>复制生成的公钥到每个节点(主节点执行)</p>
+
+<pre><code class="language-shell">scp /root/.ssh/id_rsa.put hdop02:/tmp/
+#除master外都需要指向执行
+</code></pre>
+
+<p><strong>其他节点执行</strong></p>
+
+<pre><code class="language-shell">cat /tmp/id_rsa.pub &gt;&gt;/root/.ssh/authorized_keys
+</code></pre>
+
+<p>检查一哈</p>
+
+<p><strong>关闭防火墙</strong></p>
+
+<pre><code class="language-shell">systemctl stop firewalld.service
+systemctl disable firewalld.service
+</code></pre>
+
+<p><strong>开启ntp服务</strong></p>
+
+<pre><code class="language-shell">yum install -y ntp
+systemctl enble ntpd
+systemctl start ntpd
+</code></pre>
+
+<h2 id="安装jdk">安装JDK</h2>
+
+<p><strong>下载jdk</strong></p>
+
+<p><a href="https://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html">jdk8 下载</a></p>
+
+<p>在当前目录打开shell</p>
+
+<pre><code class="language-shell">tar -zxvf jdk-8u181-linux-x64.tar.gz -C /opt/java/
+vi /etc/profile
+
+export JAVA_HOME=/opt/java/jdk1.8.0_181
+export JRE_HOE=$JAVA_HOME/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+export PATH=$PATH:$JAVA_HOME/bin
+</code></pre>
+
+<p>远程分发到其他服务器</p>
+
+<pre><code class="language-shell">scp -r /opt/java/jdk1.8.0_181/ root@hdp02:/opt/java/
+scp -r /opt/java/jdk1.8.0_181/ root@hdp03:/opt/java/
+
+scp /etc/profile root@hdp02:/etc/
+scp /etc/profile root@hdp03:/etc/
+
+source /etc/profile
+</code></pre>
+
+<h2 id="ambari安装">Ambari安装</h2>
+
+<p><strong>下载资源安装包</strong></p>
+
+<pre><code class="language-shell">wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari-2.6.2.0-centos7.tar.gz
+wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/HDP-2.6.5.0-centos7-rpm.tar.gz
+wget http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7/HDP-UTILS-1.1.0.22-centos7.tar.gz
+wget http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/HDP-GPL-2.6.5.0-centos7-gpl.tar.gz
+</code></pre>
+
+<p><strong>安装Apache HTTP 服务器</strong></p>
+
+<pre><code class="language-shell">yum install httpd -y
+#开启服务并设置开机自启动
+systemctl start httpd.service
+systemctl enable httpd.service
+</code></pre>
+
+<p><strong>安装制作yum源</strong></p>
+
+<pre><code class="language-shell">yum install yum-utils createrepo
+</code></pre>
+
+<p><strong>创建http服务器</strong></p>
+
+<p>http根目录默认是即/var/www/html/</p>
+
+<pre><code class="language-shell">mkdir -p /var/www/html/ambari
+#cd /var/www/html/ambari
+#将下载好的安装包上传并解压
+tar xvf HDP-2.6.5.0-centos7-rpm.tar.gz -C /var/www/html/ambari
+tar xvf ambari-2.6.2.0-centos7.tar.gz -C /var/www/html/ambari
+tar xvf HDP-UTILS-1.1.0.22-centos7.tar.gz -C /var/www/html/ambari
+tar xvf HDP-GPL-2.6.5.0-centos7-gpl.tar.gz -C /var/www/html/ambari
+
+# 删除压缩包
+rm -rf ambari-2.6.2.0-centos7.tar.gz
+rm -rf HDP-2.6.5.0-centos7-rpm.tar.gz
+rm -rf HDP-UTILS-1.1.0.22-centos7.tar.gz
+rm -rf HDP-GPL-2.6.5.0-centos7-gpl.tar.gz
+</code></pre>
+
+<p>验证一哈</p>
+
+<p><img src="/static/posts/hdp_cluster_install/1.png" alt="验证一哈" /></p>
+
+<p><strong>配置ambari、HDP、HDP-UTILS的本地源</strong></p>
+
+<pre><code class="language-shell">cd /etc/yum.repos.d/
+wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari.repo
+wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/hdp.repo
+wget http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/hdp.gpl.repo
+</code></pre>
+
+<p>编辑ambari.repo，修改baseurl和gpgkey</p>
+
+<pre><code class="language-shell">[root@hdc-data1 yum.repos.d]# vi ambari.repo 
+
+#IP均为主节点IP,以下命令需变更IP
+#VERSION_NUMBER=2.6.2.0-155
+[ambari-2.6.2.0]
+name=ambari Version - ambari-2.6.2.0
+#baseurl=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0
+baseurl=http://master/ambari/ambari/centos7/2.6.2.0-155
+gpgcheck=1
+#gpgkey=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+gpgkey=http://master/ambari/ambari/centos7/2.6.2.0-155/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+</code></pre>
+
+<p>编辑hdp.repo，修改baseurl和gpgkey</p>
+
+<p><strong>IP均为主节点IP</strong></p>
+
+<pre><code class="language-shell">[root@hdc-data1 yum.repos.d]# vi hdp.repo 
+
+#VERSION_NUMBER=2.6.5.0-292
+[HDP-2.6.5.0]
+name=HDP Version - HDP-2.6.5.0
+#baseurl=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0
+baseurl=http://master/ambari/HDP/centos7/2.6.5.0-292
+gpgcheck=1
+#gpgkey=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+gpgkey=http://master/ambari/HDP/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+
+
+[HDP-UTILS-1.1.0.22]
+name=HDP-UTILS Version - HDP-UTILS-1.1.0.22
+#baseurl=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7
+baseurl=http://master/ambari/HDP-UTILS/centos7/1.1.0.22
+gpgcheck=1
+#gpgkey=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+gpgkey=http://master/ambari/HDP-UTILS/centos7/1.1.0.22/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+</code></pre>
+
+<p>编辑hdp.gpl.repo，修改baseurl和gpgkey</p>
+
+<pre><code class="language-shell">[root@hdc-data1 yum.repos.d]# vi hdp.gpl.repo 
+
+#VERSION_NUMBER=2.6.5.0-292
+[HDP-GPL-2.6.5.0]
+name=HDP-GPL Version - HDP-GPL-2.6.5.0
+#baseurl=http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0
+baseurl=http://master/ambari/HDP-GPL/centos7/2.6.5.0-292
+gpgcheck=1
+#gpgkey=http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+gpgkey=http://master/ambari/HDP-GPL/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+</code></pre>
+
+<p>分发到其他机器</p>
+
+<pre><code class="language-shell">scp /etc/yum.repos.d/ambari.repo root@hdp02:/etc/yum.repos.d/
+scp /etc/yum.repos.d/ambari.repo root@hdp03:/etc/yum.repos.d/
+scp /etc/yum.repos.d/hdp.repo root@hdp02:/etc/yum.repos.d/
+scp /etc/yum.repos.d/hdp.repo root@hdp03:/etc/yum.repos.d/
+scp /etc/yum.repos.d/hdp.gpl.repo root@hdp02:/etc/yum.repos.d/
+scp /etc/yum.repos.d/hdp.gpl.repo root@hdp03:/etc/yum.repos.d/
+</code></pre>
+
+<p>每台机器yum配置</p>
+
+<pre><code class="language-shell">yum clean all
+yum makecache
+yum list
+</code></pre>
+
+<h2 id="安装mysql">安装Mysql</h2>
+
+<p><strong>安装及初始化设置</strong></p>
+
+<pre><code class="language-shell">[root@hdc-data1 ~]# yum install mariadb-server
+[root@hdc-data1 ~]# systemctl start mariadb
+[root@hdc-data1 ~]# systemctl enable mariadb
+[root@hdc-data1 ~]# mysql_secure_installation
+
+#首先是设置密码，会提示先输入密码
+Enter current password for root (enter for none):&lt;–初次运行直接回车
+#设置密码
+Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车
+New password: &lt;– 设置root用户的密码
+Re-enter new password: &lt;– 再输入一次你设置的密码
+#其他配置
+Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户，回车
+Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,回车,
+Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库，回车
+Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，回车
+</code></pre>
+
+<p><strong>安装完成后创建ambari数据库及用户</strong></p>
+
+<pre><code class="language-shell">#进入mysql shell
+mysql -uroot -p
+</code></pre>
+
+<pre><code class="language-mysql">create database ambari character set utf8 ;  
+CREATE USER 'ambari'@'%'IDENTIFIED BY 'ambari123';
+GRANT ALL PRIVILEGES ON *.* TO 'ambari'@'%';
+FLUSH PRIVILEGES;
+</code></pre>
+
+<p>如果要安装Hive，创建Hive数据库和用户</p>
+
+<pre><code class="language-mysql">create database hive character set utf8 ;  
+CREATE USER 'hive'@'%'IDENTIFIED BY 'hive123';
+GRANT ALL PRIVILEGES ON *.* TO 'hive'@'%';
+FLUSH PRIVILEGES;
+</code></pre>
+
+<p>如果要安装Oozie，创建Oozie数据库和用户</p>
+
+<pre><code class="language-mysql">create database oozie character set utf8 ;  
+CREATE USER 'oozie'@'%'IDENTIFIED BY 'oozie123';
+GRANT ALL PRIVILEGES ON *.* TO 'oozie'@'%';
+FLUSH PRIVILEGES;
+</code></pre>
+
+<p><strong>安装ambari</strong></p>
+
+<pre><code class="language-shell">yum install ambari-server
+</code></pre>
+
+<p><strong>下载mysql驱动</strong>
+<a href="http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/">mysql-connector-java 下载</a>
+将mysql-connector-Java.jar复制到/usr/share/java目录下</p>
+
+<pre><code class="language-shell">mkdir /usr/share/java
+cp mysql-connector-java-5.1.40.jar /usr/share/java/mysql-connector-java.jar
+</code></pre>
+
+<p>将mysql-connector-java.jar复制到/var/lib/ambari-server/resources目录下</p>
+
+<pre><code class="language-shell">cp mysql-connector-java-5.1.40.jar /var/lib/ambari-server/resources/mysql-jdbc-driver.jar
+</code></pre>
+
+<p><strong>编辑/etc/ambari-server/conf/ambari.properties，添加如下内容</strong></p>
+
+<pre><code class="language-shell">server.jdbc.driver.path=/usr/share/java/mysql-connector-java.jar
+#【可选】修改默认8080端口
+#client.api.port=18080
+</code></pre>
+
+<p><strong>ambaria初始化</strong></p>
+
+<pre><code class="language-shell">#设置mysql驱动
+ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar 
+ambari-server setup
+</code></pre>
+
+<p>完整初始化如下：</p>
+
+<pre><code class="language-shell">[root@hdc-data1 ~]# ambari-server setup
+Using python  /usr/bin/python
+Setup ambari-server
+Checking SELinux...
+SELinux status is 'disabled'
+Customize user account for ambari-server daemon [y/n] (n)? y
+Enter user account for ambari-server daemon (root):
+Adjusting ambari-server permissions and ownership...
+Checking firewall status...
+Checking JDK...
+[1] Oracle JDK 1.8 + Java Cryptography Extension (JCE) Policy Files 8
+[2] Oracle JDK 1.7 + Java Cryptography Extension (JCE) Policy Files 7
+[3] Custom JDK
+==============================================================================
+Enter choice (1): 3
+WARNING: JDK must be installed on all hosts and JAVA_HOME must be valid on all hosts.
+WARNING: JCE Policy files are required for configuring Kerberos security. If you plan to use Kerberos,please make sure JCE Unlimited Strength Jurisdiction Policy Files are valid on all hosts.
+Path to JAVA_HOME: /opt/java/jdk1.8.0_181
+Validating JDK on Ambari Server...done.
+Checking GPL software agreement...
+GPL License for LZO: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+Enable Ambari Server to download and install GPL Licensed LZO packages [y/n] (n)? y
+Completing setup...
+Configuring database...
+Enter advanced database configuration [y/n] (n)? y
+Configuring database...
+==============================================================================
+Choose one of the following options:
+[1] - PostgreSQL (Embedded)
+[2] - Oracle
+[3] - MySQL / MariaDB
+[4] - PostgreSQL
+[5] - Microsoft SQL Server (Tech Preview)
+[6] - SQL Anywhere
+[7] - BDB
+==============================================================================
+Enter choice (1): 3
+Hostname (localhost): 
+Port (3306): 
+Database name (ambari): 
+Username (ambari): 
+Enter Database Password (bigdata): 
+Re-enter password: 
+Configuring ambari database...
+Configuring remote database connection properties...
+WARNING: Before starting Ambari Server, you must run the following DDL against the database to create the schema: /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
+Proceed with configuring remote database connection properties [y/n] (y)? y
+Extracting system views...
+.....ambari-admin-2.6.2.0.155.jar
+......
+Adjusting ambari-server permissions and ownership...
+Ambari Server 'setup' completed successfully.
+</code></pre>
+
+<p><strong>将Ambari数据库脚本导入到数据库</strong></p>
+
+<pre><code class="language-shell">#用Ambari用户（上面设置的用户）登录mysql
+mysql -u ambari -p
+use ambari;
+source /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
+</code></pre>
+
+<p><strong>启动Ambari</strong></p>
+
+<pre><code class="language-shell">ambari-server start
+</code></pre>
+
+<h2 id="webui配置">WebUI配置</h2>
+
+<p>图截得有点糊&hellip;</p>
+
+<p><img src="/static/posts/hdp_cluster_install/2.png" alt="WebUI" /></p>
+
+<p>创建集群名称</p>
+
+<p><img src="/static/posts/hdp_cluster_install/3.png" alt="WebUI" /></p>
+
+<p>选择HDP版本和选择本地仓库</p>
+
+<p><img src="/static/posts/hdp_cluster_install/4.png" alt="WebUI" /></p>
+
+<p>配置HDP的Repository</p>
+
+<p><img src="/static/posts/hdp_cluster_install/5.png" alt="WebUI" /></p>
+
+<p>输入集群节点host(FQDN)和Ambari节点SSH的私钥</p>
+
+<p><img src="/static/posts/hdp_cluster_install/6.png" alt="WebUI" /></p>
+
+<p>等待ambari-agents注册</p>
+
+<p><img src="/static/posts/hdp_cluster_install/7.png" alt="WebUI" /></p>
+
+<p>若报错</p>
+
+<p><img src="/static/posts/hdp_cluster_install/8.png" alt="WebUI" /></p>
+
+<p><img src="/static/posts/hdp_cluster_install/9.png" alt="WebUI" /></p>
+
+<p>【遇到问题 Confirm Hosts】
+ 注册ambari-agents时failed
+ NetUtil.py:96 - EOF occurred in violation of protocol (_ssl.c:579)
+ SSLError: Failed to connect. Please check openssl library versions.
+ 解决：如下第三个方案，/etc/ambari-agent/conf/ambari-agent.ini文件只有执行该步骤进行注册才生成。修改后点击“Retry Failed”按钮，等待注册成功进入下一步。</p>
+
+<p>注:无报错时无此文件,需报错后再行处理</p>
+
+<pre><code class="language-shell"># 1、yum upgrade openssl 已是最新本版，未解决
+# 2、vi /etc/python/cert-verification.cfg 修改 verify=disable，未解决
+[https]
+#verify=platform_default
+verify=disable
+# 3、最后解决方案 在ambari-agent的配置文件/etc/ambari-agent/conf/ambari-agent.ini
+ 在 ［security］标签下面增加一项
+[security]
+force_https_protocol=PROTOCOL_TLSv1_2
+</code></pre>
+
+<p><img src="/static/posts/hdp_cluster_install/10.png" alt="WebUI" /></p>
+
+<p>选择安装组件，（最小化安装HDFS+YARN+MAPREDUCE2+Ambari Metrics+SmartSense+ZooKeeper+Hbase）</p>
+
+<p>不必要的组件可以暂时不安装节省安装时间，后续可以再添加安装组件</p>
+
+<p><img src="/static/posts/hdp_cluster_install/11.png" alt="WebUI" /></p>
+
+<p><img src="/static/posts/hdp_cluster_install/12.png" alt="WebUI" /></p>
+
+<p>实际部署时需按规划设计进行分配（注意：Hbase HA 的话在Hbase Master 点击后面的小绿色+号，添加standby master）：</p>
+
+<p><img src="/static/posts/hdp_cluster_install/13.png" alt="WebUI" /></p>
+
+<p>工作节点角色分配(生产环境全勾了)</p>
+
+<p><img src="/static/posts/hdp_cluster_install/14.png" alt="WebUI" /></p>
+
+<p>组件配置信息修改
+通常数据目录修改到/data/目录下，有红色信息提示的组件表示要输入相应的账号密码。以下示例，可根据自己的实际情况配置。</p>
+
+<p>HDFS</p>
+
+<p><img src="/static/posts/hdp_cluster_install/15.png" alt="WebUI" /></p>
+
+<p><img src="/static/posts/hdp_cluster_install/16.png" alt="WebUI" /></p>
+
+<p>HIVE,若数据库端口修改按实际填写</p>
+
+<p><img src="/static/posts/hdp_cluster_install/17.png" alt="WebUI" /></p>
+
+<p>Oozie</p>
+
+<p><img src="/static/posts/hdp_cluster_install/18.png" alt="WebUI" /></p>
+
+<p>Zookeeper</p>
+
+<p><img src="/static/posts/hdp_cluster_install/19.png" alt="WebUI" /></p>
+
+<p><img src="/static/posts/hdp_cluster_install/20.png" alt="WebUI" /></p>
+
+<p><img src="/static/posts/hdp_cluster_install/21.png" alt="WebUI" /></p>
+
+<p><img src="/static/posts/hdp_cluster_install/22.png" alt="WebUI" /></p>
+
+<p>暂时修改了以下属性，具体配置信息可根据实际情况后续相应修改</p>
+
+<pre><code class="language-text">| 端口属性                                  | 修改值                                |
+| :---------------------------------------- | :------------------------------------ |
+| dfs.namenode.http-address                 | octserver1.hadoop:50770 （def:50070） |
+| yarn.resourcemanager.webapp.address       | octserver2.hadoop:18088 （def:8088）  |
+| yarn.resourcemanager.webapp.https.address | octserver2.hadoop:18090(def:8090)     |
+| mapreduce.jobhistory.webapp.address       | octserver2.hadoop:19898 (def:19888)   |
+</code></pre>
+
+<p>等待安装完成</p>
+
+<p><img src="/static/posts/hdp_cluster_install/23.png" alt="WebUI" /></p>
+
+<p>直到所有节点成功安装完成才能进行下一步操作</p>
+
+<p><img src="/static/posts/hdp_cluster_install/24.png" alt="WebUI" /></p>
+
+<p>最终结果界面类似如下：</p>
+
+<p><img src="/static/posts/hdp_cluster_install/25.png" alt="WebUI" /></p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous"><a href="/2019/08/31/docker_install_smtp_server/">
+            <span aria-hidden="true">&larr;</span>使用docker搭建smtp服务</a></li>
+        
+
+        
+        <li class="next disabled"><a href="#">没有下一页<span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <div class="commentjs" id="comment-thread"></div>
+    
+    <link rel="stylesheet" href="/css/commentjs.min.css">
+    
+    <script defer type="text/javascript" src="/js/marked.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+    
+    <script defer type="text/javascript" src="/js/commentjs.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        getComments({
+          "type": "github",
+          "user": "wevsmy",
+          "repo": "wevsmy.github.io",
+          "client_id": "ded8625909c20b7ae2f7",
+          "client_secret": "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+          "no_comment": "这个页面还没有评论，现在就去评论吧！",
+          "go_to_comment": "去评论",
+          "issue_title": "HDP(2.6.5)集群安装记录",
+          "btn_class": "button",
+          "comments_target": "#comment-thread"
+        });
+        marked.setOptions({
+          "highlight": function (code, lang) {
+            return hljs.highlightAuto(code).value;
+          }
+        });
+        function mark() {
+          var markdowns = document.getElementsByClassName("markdown");
+          for (var i = 0; i < markdowns.length; ++i){
+            if (markdowns[i].innerHTML) {
+              markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+            }
+          }
+        };
+        window.addEventListener("DOMContentLoaded", mark, false);
+        window.addEventListener("load", mark, false);
+    });
+    </script>
+
+    
+</div>
+
+
+
+
+                
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+
+    <div class="info sidebar-item" id="info">
+
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h2 class="author-name">wilson</h2>
+        <h3 class="author-description">٩(๑❛ᴗ❛๑)۶</h3>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">80</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    22
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="sidebar-sticky">
+
+        
+        
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#hdp-2-6-5-集群安装记录">HDP(2.6.5)集群安装记录</a>
+<ul>
+<li><a href="#网络配置-所有节点执行">网络配置(所有节点执行)</a></li>
+<li><a href="#安装jdk">安装JDK</a></li>
+<li><a href="#ambari安装">Ambari安装</a></li>
+<li><a href="#安装mysql">安装Mysql</a></li>
+<li><a href="#webui配置">WebUI配置</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+</aside>
+
+        </div>
+    </div>
+</main>
+
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
+</html>

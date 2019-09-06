@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录"/>
+          content="HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错"/>
     
     
     
@@ -249,6 +249,104 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/06/hdp_cluster_install/">
+                <h2>HDP(2.6.5)集群安装记录</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+                <span class="post-date">
+                     <i class="iconfont iconcalendar-check"></i>
+                    <span>2019.09.06 update</span>
+                </span>
+
+
+            <span class="post-wordCount">
+                    <span class="post-meta-divider divider">|</span>
+                    <i class="iconfont iconfile-word"></i>
+                    <span>900 words</span>
+                </span>
+
+            <span class="post-readingTime">
+                    <span class="post-meta-divider divider">|</span>
+                     <i class="iconfont iconField-time"></i>
+                    <span>5 minute</span>
+                </span>
+
+            
+            
+
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                <a href="/2019/09/06/hdp_cluster_install/#comments">
+                <span class="post-comment-count">
+                <span id="HDP(2.6.5)集群安装记录">0</span> comments
+                </span>
+                </a>
+                </span>
+                </span>
+
+            <script type="text/javascript">
+                $.ajax({
+                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: function success(page_comments) {
+                        for (var i = 0; i < page_comments.length; ++i) {
+                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
+                        }
+                    }
+                });
+            </script>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>HDP(2.6.5)集群安装记录</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/06/hdp_cluster_install/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/hdp/">
+                <i class="iconfont icontags"></i> HDP
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/ap/">
+                <i class="iconfont icontags"></i> AP
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1161,118 +1259,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/06/18/zulip_installation_record/">
-                <h2>zulip安装记录</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>200 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/06/18/zulip_installation_record/#comments">
-                <span class="post-comment-count">
-                <span id="zulip安装记录">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/06/18/zulip_installation_record/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/python/">
-                <i class="iconfont icontags"></i> Python
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/zulip/">
-                <i class="iconfont icontags"></i> Zulip
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1456,7 +1442,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">79</a></div>
+                <div><a href="/posts/">80</a></div>
             </div>
             
             
@@ -1479,7 +1465,7 @@
                     
                     
                     
-                    20
+                    22
                 </a></div>
             </div>
             

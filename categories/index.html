@@ -172,7 +172,7 @@
         </div>
 
         
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse header-nav">
             <div class="container-fluid">
                 
                 <div class="navbar-header">
@@ -247,235 +247,245 @@
                 
                 
 <div class="panel panel-default post-panel">
-        <div class="panel-heading post-head">
-            <div class="post-title"><h2><a href='/categories/'>Categories 分类</a></h2></div>
-            <div class="post-meta"><span>你已经创建了 2 个分类！</span></div>
-        </div>
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/categories/'>Categories 分类</a></h2></div>
+        <div class="post-meta"><span>你已经创建了 2 个分类！</span></div>
     </div>
+</div>
     ​
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingcategories">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                       href="#collapsecategories" aria-expanded="false"
-                       aria-controls="collapsecategories">
-                        categories
-                        
-                        <a href="/categories">
-                        <span class="badge" style="float: right;">9</span>
-                    </a>
-                    
-                    </a>
+    
+    <div class="panel panel-default post-panel">
+        <div class="panel-heading" role="tab" id="headingcategories"
+             data-toggle="collapse" data-parent="#accordion"
+             href="#collapsecategories" aria-expanded="false"
+             aria-controls="collapsecategories">
+                <h4 class="panel-title list-group-item">
+                categories
+                
+                <span class="badge">9</span>
+                
                 </h4>
-            </div>
-            <div id="collapsecategories" class="panel-collapse collapse" role="tabpanel"
-                 aria-labelledby="headingcategories">
-                <div class="panel-body">
-                    
-                    <a href="/categories/django"
-                    class="list-group-item">
-                    django
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/categories/docker"
-                    class="list-group-item">
-                    docker
-                    <span class="badge">11</span>
-                    </a>
-                    
-                    <a href="/categories/hexo"
-                    class="list-group-item">
-                    hexo
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/categories/linux"
-                    class="list-group-item">
-                    linux
-                    <span class="badge">13</span>
-                    </a>
-                    
-                    <a href="/categories/n2n"
-                    class="list-group-item">
-                    n2n
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/categories/win10"
-                    class="list-group-item">
-                    win10
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD"
-                    class="list-group-item">
-                    博客园
-                    <span class="badge">59</span>
-                    </a>
-                    
-                    <a href="/categories/%E7%AC%94%E8%AE%B0"
-                    class="list-group-item">
-                    笔记
-                    <span class="badge">63</span>
-                    </a>
-                    
-                    <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA"
-                    class="list-group-item">
-                    计算机
-                    <span class="badge">14</span>
-                    </a>
-                    
-                </div>
+        </div>
+        <div id="collapsecategories" class="panel-collapse collapse" role="tabpanel"
+             aria-labelledby="headingcategories">
+            <div class="panel-body">
+                <a href="/categories"
+                data-toggle="tooltip" data-placement="top" title="๑乛◡乛๑ 点一下，玩一年！"
+                class="list-group-item" style="background-color: #fafafa">
+                categories
+                
+                <span class="badge">9</span>
+                
+                </a>
+                
+                <a href="/categories/django"
+                class="list-group-item">
+                django
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/categories/docker"
+                class="list-group-item">
+                docker
+                <span class="badge">11</span>
+                </a>
+                
+                <a href="/categories/hexo"
+                class="list-group-item">
+                hexo
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/categories/linux"
+                class="list-group-item">
+                linux
+                <span class="badge">13</span>
+                </a>
+                
+                <a href="/categories/n2n"
+                class="list-group-item">
+                n2n
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/categories/win10"
+                class="list-group-item">
+                win10
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD"
+                class="list-group-item">
+                博客园
+                <span class="badge">59</span>
+                </a>
+                
+                <a href="/categories/%E7%AC%94%E8%AE%B0"
+                class="list-group-item">
+                笔记
+                <span class="badge">63</span>
+                </a>
+                
+                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA"
+                class="list-group-item">
+                计算机
+                <span class="badge">14</span>
+                </a>
+                
             </div>
         </div>
-        
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingtags">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                       href="#collapsetags" aria-expanded="false"
-                       aria-controls="collapsetags">
-                        tags
-                        
-                        <a href="/tags">
-                        <span class="badge" style="float: right;">20</span>
-                    </a>
-                    
-                    </a>
-                </h4>
-            </div>
-            <div id="collapsetags" class="panel-collapse collapse" role="tabpanel"
-                 aria-labelledby="headingtags">
-                <div class="panel-body">
-                    
-                    <a href="/tags/cnblogs"
-                    class="list-group-item">
-                    cnblogs
-                    <span class="badge">59</span>
-                    </a>
-                    
-                    <a href="/tags/disqus"
-                    class="list-group-item">
-                    disqus
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/django"
-                    class="list-group-item">
-                    django
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/docker"
-                    class="list-group-item">
-                    docker
-                    <span class="badge">10</span>
-                    </a>
-                    
-                    <a href="/tags/flask"
-                    class="list-group-item">
-                    flask
-                    <span class="badge">2</span>
-                    </a>
-                    
-                    <a href="/tags/hexo"
-                    class="list-group-item">
-                    hexo
-                    <span class="badge">4</span>
-                    </a>
-                    
-                    <a href="/tags/html"
-                    class="list-group-item">
-                    html
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/linux"
-                    class="list-group-item">
-                    linux
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/n2n"
-                    class="list-group-item">
-                    n2n
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/network"
-                    class="list-group-item">
-                    network
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/python"
-                    class="list-group-item">
-                    python
-                    <span class="badge">5</span>
-                    </a>
-                    
-                    <a href="/tags/smtp"
-                    class="list-group-item">
-                    smtp
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/zulip"
-                    class="list-group-item">
-                    zulip
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BB%A3%E7%90%86"
-                    class="list-group-item">
-                    代理
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD"
-                    class="list-group-item">
-                    博客园
-                    <span class="badge">58</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%90%AC%E5%AE%B6"
-                    class="list-group-item">
-                    搬家
-                    <span class="badge">59</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%99%E7%A8%8B"
-                    class="list-group-item">
-                    教程
-                    <span class="badge">4</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0"
-                    class="list-group-item">
-                    笔记
-                    <span class="badge">11</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%A2%E9%98%85"
-                    class="list-group-item">
-                    订阅
-                    <span class="badge">1</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91"
-                    class="list-group-item">
-                    阿里云
-                    <span class="badge">1</span>
-                    </a>
-                    
-                </div>
-            </div>
-        </div>
-        
     </div>
+    
+    <div class="panel panel-default post-panel">
+        <div class="panel-heading" role="tab" id="headingtags"
+             data-toggle="collapse" data-parent="#accordion"
+             href="#collapsetags" aria-expanded="false"
+             aria-controls="collapsetags">
+                <h4 class="panel-title list-group-item">
+                tags
+                
+                <span class="badge">20</span>
+                
+                </h4>
+        </div>
+        <div id="collapsetags" class="panel-collapse collapse" role="tabpanel"
+             aria-labelledby="headingtags">
+            <div class="panel-body">
+                <a href="/tags"
+                data-toggle="tooltip" data-placement="top" title="๑乛◡乛๑ 点一下，玩一年！"
+                class="list-group-item" style="background-color: #fafafa">
+                tags
+                
+                <span class="badge">20</span>
+                
+                </a>
+                
+                <a href="/tags/cnblogs"
+                class="list-group-item">
+                cnblogs
+                <span class="badge">59</span>
+                </a>
+                
+                <a href="/tags/disqus"
+                class="list-group-item">
+                disqus
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/django"
+                class="list-group-item">
+                django
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/docker"
+                class="list-group-item">
+                docker
+                <span class="badge">10</span>
+                </a>
+                
+                <a href="/tags/flask"
+                class="list-group-item">
+                flask
+                <span class="badge">2</span>
+                </a>
+                
+                <a href="/tags/hexo"
+                class="list-group-item">
+                hexo
+                <span class="badge">4</span>
+                </a>
+                
+                <a href="/tags/html"
+                class="list-group-item">
+                html
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/linux"
+                class="list-group-item">
+                linux
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/n2n"
+                class="list-group-item">
+                n2n
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/network"
+                class="list-group-item">
+                network
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/python"
+                class="list-group-item">
+                python
+                <span class="badge">5</span>
+                </a>
+                
+                <a href="/tags/smtp"
+                class="list-group-item">
+                smtp
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/zulip"
+                class="list-group-item">
+                zulip
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/%E4%BB%A3%E7%90%86"
+                class="list-group-item">
+                代理
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD"
+                class="list-group-item">
+                博客园
+                <span class="badge">58</span>
+                </a>
+                
+                <a href="/tags/%E6%90%AC%E5%AE%B6"
+                class="list-group-item">
+                搬家
+                <span class="badge">59</span>
+                </a>
+                
+                <a href="/tags/%E6%95%99%E7%A8%8B"
+                class="list-group-item">
+                教程
+                <span class="badge">4</span>
+                </a>
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0"
+                class="list-group-item">
+                笔记
+                <span class="badge">11</span>
+                </a>
+                
+                <a href="/tags/%E8%AE%A2%E9%98%85"
+                class="list-group-item">
+                订阅
+                <span class="badge">1</span>
+                </a>
+                
+                <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91"
+                class="list-group-item">
+                阿里云
+                <span class="badge">1</span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
 
             </div>
             

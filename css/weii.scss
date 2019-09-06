@@ -58,6 +58,9 @@
     }
   }
 
+  .header-nav {
+    width: auto;
+  }
 
   @media (max-width: 40em) {
     .header-container {
@@ -98,6 +101,15 @@
       width: 75%;
 
       .post-panel {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &:hover {
+          -moz-box-shadow: 0px 2px 11px #333333;
+          -webkit-box-shadow: 0px 2px 11px #333333;
+          box-shadow: 0px 2px 11px #333333;
+        }
 
         .post-head {
 
@@ -296,6 +308,12 @@
             margin-right: 1em;
             padding-top: 0.45em;
             line-height: 3;
+
+            &:hover {
+              -moz-box-shadow: 0px 2px 11px #333333;
+              -webkit-box-shadow: 0px 2px 11px #333333;
+              box-shadow: 0px 2px 11px #333333;
+            }
           }
         }
       }
@@ -423,7 +441,9 @@
         }
 
         &:hover {
-
+          -moz-box-shadow: 0px 2px 11px #333333;
+          -webkit-box-shadow: 0px 2px 11px #333333;
+          box-shadow: 0px 2px 11px #333333;
         }
       }
     }

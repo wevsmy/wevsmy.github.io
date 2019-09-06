@@ -1423,8 +1423,8 @@
     $(document).ready(function () {
         var tags_span = $(".post-footer").find("span");
         tags_span.each(function () {
-            var tags_color_rand = parseInt(Math.random()* 5 );
-            var tags_color_array=new Array( 5 );
+            var tags_color_rand = parseInt(Math.random()* 7 );
+            var tags_color_array=new Array( 7 );
             
             tags_color_array[ 0 ]="#13af72";
             
@@ -1436,8 +1436,33 @@
             
             tags_color_array[ 4 ]="#47aaff";
             
+            tags_color_array[ 5 ]="#B433FF";
+            
+            tags_color_array[ 6 ]="#eea236";
+            
             $(this).css("background-color",tags_color_array[tags_color_rand]);
 
+            
+            var tags_color_hover_rand = parseInt(Math.random()* 6 );
+            var tags_color_hover_array=new Array( 6 );
+            
+            tags_color_hover_array[ 0 ]="#843534";
+            
+            tags_color_hover_array[ 1 ]="#113728";
+            
+            tags_color_hover_array[ 2 ]="#316328";
+            
+            tags_color_hover_array[ 3 ]="#00ABA9";
+            
+            tags_color_hover_array[ 4 ]="#B41147";
+            
+            tags_color_hover_array[ 5 ]="#8e0000";
+            
+            $(this).hover(function(){
+                $(this).css("background-color",tags_color_hover_array[tags_color_hover_rand]);
+            },function(){
+                $(this).css("background-color",tags_color_array[tags_color_rand]);
+            });
             
         });
     });

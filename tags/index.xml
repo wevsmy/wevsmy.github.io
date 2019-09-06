@@ -12,20 +12,38 @@
     
     
     <item>
-      <title>AP</title>
-      <link>https://blog.weii.ink/tags/ap/</link>
-      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
-      
-      <guid>https://blog.weii.ink/tags/ap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>HDP</title>
       <link>https://blog.weii.ink/tags/hdp/</link>
       <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
       
       <guid>https://blog.weii.ink/tags/hdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>大数据平台</title>
+      <link>https://blog.weii.ink/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>记录</title>
+      <link>https://blog.weii.ink/tags/%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>集群</title>
+      <link>https://blog.weii.ink/tags/%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/%E9%9B%86%E7%BE%A4/</guid>
       <description></description>
     </item>
     

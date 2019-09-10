@@ -1311,15 +1311,14 @@
 
 
 <script type="text/javascript">
-    function getIssuesComments(s,a) {
-        console.log("s:",s,a)
+    function getIssuesComments(Title,UniqueID) {
         $.ajax({
-        url: 'https://api.github.com/search/issues?q='+s+'type:issue in:title repo:wevsmy/wevsmy.github.io&sort=created&order=asc&client_id=ded8625909c20b7ae2f7&client_secret=c9ba27c5047486b4e2e0f8c3001aae33bc15374a',
+        url: 'https://api.github.com/search/issues?q='+Title+'type:issue in:title repo:wevsmy/wevsmy.github.io&sort=created&order=asc&client_id=ded8625909c20b7ae2f7&client_secret=c9ba27c5047486b4e2e0f8c3001aae33bc15374a',
         dataType: 'json',
         cache: false,
         crossDomain: true,
         success: function success(page_comments) {
-            $("#" + a).text(page_comments.total_count)
+            $("#" + UniqueID).text(page_comments.total_count)
         }
     });
     };getIssuesComments("前端知识之HTML内容","dac51fc47595efcc5cd14e09b63cd553");getIssuesComments("MySQL 之 索引原理与慢查询优化","eb9c9e0c2dfc817623622afc19acefec");getIssuesComments("MySQL 之【视图】【触发器】【存储过程】【函数】【事物】【数据库锁】【数据库备份】","ce9faa63c9bc8f6b06f6e51993b9846a");getIssuesComments("MySQL 之 数据操作","2c05154bebd0ca4cb5d8d4ef4c7690be");getIssuesComments("MySQL 之 表操作","9e4d427e60ed125e214693fee3f18317");getIssuesComments("MySQL 之 库操作","f560268d834d6e6b06e93df9c573b8be");getIssuesComments("MySQL 之 基本概念","35c65ef06133fcf8c2f138e0c040162f");getIssuesComments("MySQL 练习2","a8da810c36bf3026f42960139bea19ab");getIssuesComments("MySQL 练习","e3abde2758d4f5a8bbb6a8d5f3a3d991");getIssuesComments("MySQL 环境搭建之解压方式安装","e5d5cef406882b12399aa703620d0545");</script>

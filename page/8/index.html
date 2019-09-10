@@ -1309,15 +1309,14 @@
 
 
 <script type="text/javascript">
-    function getIssuesComments(s,a) {
-        console.log("s:",s,a)
+    function getIssuesComments(Title,UniqueID) {
         $.ajax({
-        url: 'https://api.github.com/search/issues?q='+s+'type:issue in:title repo:wevsmy/wevsmy.github.io&sort=created&order=asc&client_id=ded8625909c20b7ae2f7&client_secret=c9ba27c5047486b4e2e0f8c3001aae33bc15374a',
+        url: 'https://api.github.com/search/issues?q='+Title+'type:issue in:title repo:wevsmy/wevsmy.github.io&sort=created&order=asc&client_id=ded8625909c20b7ae2f7&client_secret=c9ba27c5047486b4e2e0f8c3001aae33bc15374a',
         dataType: 'json',
         cache: false,
         crossDomain: true,
         success: function success(page_comments) {
-            $("#" + a).text(page_comments.total_count)
+            $("#" + UniqueID).text(page_comments.total_count)
         }
     });
     };getIssuesComments("python文件操作","41bcb64ee5d81e62a576fce3c44d4d58");getIssuesComments("python 集合 深浅拷贝","e6060443862fcbf0f6a2c07295777dc4");getIssuesComments("python小整数与str数据池，编码关系","46882bd28ed05848bc1b0ecc7bd8fdf1");getIssuesComments("python 字典的操作","a84c7ede42b9aee5c49d391e808c3dd7");getIssuesComments("python 列表的常见操作","97b66cb315beed7a4d17529d925572e0");getIssuesComments("python字符串Str方法","c7b6efb698ee38cc49730f9eacbc5be0");getIssuesComments("python 的基础数据类型","f8afcdc4a5b82d16c6c1a4dac78aaf78");getIssuesComments("win10 下的python虚拟环境安装使用（使用powershell）","93536bf5f97ee275ed7f64538d743269");getIssuesComments("python运算符优先级","3bcf9b2dbda3fe8e85597879a1c30201");getIssuesComments("gbk,utf-8,unicode编码，单位换算","69ebb348b7a2c2e39544d6be82a0ac52");</script>

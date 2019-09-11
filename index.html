@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间"/>
+          content="portainer使用nginx-proxy配置代理添加证书, Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目"/>
     
     
     
@@ -247,6 +247,103 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/11/nginx_proxy-portainer/">
+                <h2>portainer使用nginx-proxy配置代理添加证书</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.11 update</span>
+            </span>
+
+            <span class="post-wordCount">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>600 words</span>
+            </span>
+
+            <span class="post-readingTime">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>3 minute</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/11/nginx_proxy-portainer/#comments">
+                        <span class="post-comment-count">
+                            <span id="120f21e801f98c8b55dc25d32a43c712">0</span> comments
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>nginx-proxy设置一个运行nginx和docker-gen的容器。docker-gen为nginx生成反向代理配置，并在启动和停止容器时重新加载nginx。
+使用nginx-proxy来反向代理portainer，并且使用<code>https</code>域名加密访问。</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/11/nginx_proxy-portainer/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/portainer/">
+                <i class="iconfont icontags"></i> portainer
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/nginx/">
+                <i class="iconfont icontags"></i> nginx
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/proxy/">
+                <i class="iconfont icontags"></i> proxy
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1038,81 +1135,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/09/hexo_add_updated/">
-                <h2>hexo添加文章更新时间</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03 update</span>
-            </span>
-
-            <span class="post-wordCount">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>100 words</span>
-            </span>
-
-            <span class="post-readingTime">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>1 minute</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2019/07/09/hexo_add_updated/#comments">
-                        <span class="post-comment-count">
-                            <span id="9dfd474e6e6c0b0628d6ea033e40cf6a">0</span> comments
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>现在使用的主题只有文章创建时间，并没有文章更新时间，就自己捣鼓捣鼓添加了一个文章更新时间，记录一下。</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/09/hexo_add_updated/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/hexo/">
-                <i class="iconfont icontags"></i> hexo
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1300,7 +1322,7 @@
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");</script>
+    };getIssuesComments("portainer使用nginx-proxy配置代理添加证书","120f21e801f98c8b55dc25d32a43c712");getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");</script>
 
 
             </div>
@@ -1325,7 +1347,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">81</a></div>
+                <div><a href="/posts/">82</a></div>
             </div>
             
             
@@ -1348,7 +1370,7 @@
                     
                     
                     
-                    26
+                    29
                 </a></div>
             </div>
             

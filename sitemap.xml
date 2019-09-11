@@ -4,49 +4,77 @@
   
   <url>
     <loc>https://blog.weii.ink/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.weii.ink/tags/ca/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.weii.ink/tags/docker/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/2019/09/11/docker_ca/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <loc>https://blog.weii.ink/tags/nginx/</loc>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/portainer/</loc>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/2019/09/11/nginx_proxy-portainer/</loc>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.weii.ink/posts/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/ssl/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <loc>https://blog.weii.ink/tags/proxy/</loc>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.weii.ink/tags/</loc>
-    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <lastmod>2019-09-11T13:31:41+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/ca/</loc>
+    <lastmod>2019-09-11T08:59:36+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/2019/09/11/docker_ca/</loc>
+    <lastmod>2019-09-11T08:59:36+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/ssl/</loc>
+    <lastmod>2019-09-11T08:59:36+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -220,14 +248,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/hexo/</loc>
+    <loc>https://blog.weii.ink/categories/hexo/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/hexo/</loc>
+    <loc>https://blog.weii.ink/tags/hexo/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -248,14 +276,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/django/</loc>
+    <loc>https://blog.weii.ink/tags/django/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/django/</loc>
+    <loc>https://blog.weii.ink/categories/django/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

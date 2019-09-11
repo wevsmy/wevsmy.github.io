@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错"/>
+          content="Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间"/>
     
     
     
@@ -247,6 +247,97 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/11/docker_ca/">
+                <h2>Docker开启2376端口使用CA认证</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.11 update</span>
+            </span>
+
+            <span class="post-wordCount">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>400 words</span>
+            </span>
+
+            <span class="post-readingTime">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2 minute</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/11/docker_ca/#comments">
+                        <span class="post-comment-count">
+                            <span id="e638e2d6896bafd2da82d23b6964495b">0</span> comments
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>默认情况下，Docker通过非联网的UNIX套接字运行。它还可以选择使用HTTP套接字进行通信。
+如果您需要以安全的方式通过网络访问Docker，则可以通过指定tlsverify标志并将Docker的tlscacert标志指向 可信CA证书来启用TLS 。
+在守护程序模式下，它仅允许来自由该CA签名的证书进行身份验证的客户端的连接。在客户端模式下，它仅连接到具有由该CA签名的证书的服务器。</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/11/docker_ca/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> Docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/ca/">
+                <i class="iconfont icontags"></i> CA
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/ssl/">
+                <i class="iconfont icontags"></i> SSL
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1022,95 +1113,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/06/18/pip_install_mysqlclient_reported_error/">
-                <h2>pip安装mysqlclient报错</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03 update</span>
-            </span>
-
-            <span class="post-wordCount">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>200 words</span>
-            </span>
-
-            <span class="post-readingTime">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>1 minute</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2019/06/18/pip_install_mysqlclient_reported_error/#comments">
-                        <span class="post-comment-count">
-                            <span id="de7a7f751bfa4c2a1ada4b314b712c8d">0</span> comments
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>使用<code>Django==2.0.4</code>报错缺少<code>mysqlclient</code>模块的解决方案</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/06/18/pip_install_mysqlclient_reported_error/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/python/">
-                <i class="iconfont icontags"></i> Python
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/django/">
-                <i class="iconfont icontags"></i> Django
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1206,7 +1208,16 @@
         
     
     
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
     
     
     <li class="page-item">
@@ -1214,7 +1225,7 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
@@ -1289,7 +1300,7 @@
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");</script>
+    };getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");</script>
 
 
             </div>
@@ -1314,7 +1325,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">80</a></div>
+                <div><a href="/posts/">81</a></div>
             </div>
             
             
@@ -1337,7 +1348,7 @@
                     
                     
                     
-                    24
+                    26
                 </a></div>
             </div>
             

@@ -4,7 +4,49 @@
   
   <url>
     <loc>https://blog.weii.ink/</loc>
-    <lastmod>2019-09-06T20:33:02+08:00</lastmod>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/ca/</loc>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/docker/</loc>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/2019/09/11/docker_ca/</loc>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/posts/</loc>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/ssl/</loc>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/</loc>
+    <lastmod>2019-09-11T08:51:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -18,20 +60,6 @@
   
   <url>
     <loc>https://blog.weii.ink/2019/09/06/hdp_cluster_install/</loc>
-    <lastmod>2019-09-06T20:33:02+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.weii.ink/posts/</loc>
-    <lastmod>2019-09-06T20:33:02+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.weii.ink/tags/</loc>
     <lastmod>2019-09-06T20:33:02+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -60,13 +88,6 @@
   
   <url>
     <loc>https://blog.weii.ink/categories/</loc>
-    <lastmod>2019-09-03T19:43:23+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.weii.ink/tags/docker/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -122,14 +143,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/n2n/</loc>
+    <loc>https://blog.weii.ink/tags/n2n/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/n2n/</loc>
+    <loc>https://blog.weii.ink/categories/n2n/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

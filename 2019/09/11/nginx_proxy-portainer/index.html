@@ -259,7 +259,7 @@
 
 <h1 id="portainer使用nginx-proxy配置代理添加证书">portainer使用nginx-proxy配置代理添加证书</h1>
 
-<h2 id="创建一个-bridge-网络">创建一个<code>bridge</code>网络</h2>
+<h2 id="创建一个bridge网络">创建一个bridge网络</h2>
 
 <pre><code class="language-bash">docker network create nginx_networks
 </code></pre>
@@ -274,17 +274,17 @@ c0dbfc8d59a8        nginx_networks      bridge              local
 6e07cf9aa154        none                null                local
 </code></pre>
 
-<h2 id="nginx-proxy-配置"><code>nginx-proxy</code>配置</h2>
+<h2 id="nginx-proxy配置">nginx-proxy配置</h2>
 
 <p>采用<code>docker-compose</code>项目进行服务编排</p>
 
-<h3 id="创建-nginx-proxy-文件夹放项目">创建<code>nginx-proxy</code>文件夹放项目</h3>
+<h3 id="创建项目文件夹">创建项目文件夹</h3>
 
 <pre><code class="language-bash">mkdir nginx-proxy
 cd nginx-proxy 
 </code></pre>
 
-<h3 id="创建-docker-compose-yml-文件">创建<code>docker-compose.yml</code>文件</h3>
+<h3 id="创建项目文件">创建项目文件</h3>
 
 <pre><code class="language-yml">version: '3'
 services:
@@ -322,7 +322,7 @@ networks:
     - <code>certs</code>配置SSL证书
     - *<code>docker.sock</code>*主要用于监听<code>docker</code>容器为<code>nginx</code>生成反向代理配置，并在启动和停止容器时重新加载<code>nginx</code>。</p>
 
-<h3 id="启动-nginx-proxy">启动<code>nginx-proxy</code></h3>
+<h3 id="启动项目容器">启动项目容器</h3>
 
 <pre><code class="language-bash">docker-compose up -d
 </code></pre>
@@ -335,18 +335,18 @@ I'm eb5b18a676c8
 
 <p>会输出<code>jwilder/whoami</code>的容器<code>ID</code></p>
 
-<h2 id="portainer-配置"><code>portainer</code>配置</h2>
+<h2 id="portainer配置">portainer配置</h2>
 
 <p>同样是采用<code>docker-compose</code>项目进行服务编排</p>
 
-<h3 id="创建-portainer-文件夹放项目">创建<code>portainer</code>文件夹放项目</h3>
+<h3 id="创建项目文件夹-1">创建项目文件夹</h3>
 
 <pre><code class="language-bash">cd ..
 mkdir portainer
 cd portainer
 </code></pre>
 
-<h3 id="创建-docker-compose-yml-文件-1">创建<code>docker-compose.yml</code>文件</h3>
+<h3 id="创建项目文件-1">创建项目文件</h3>
 
 <pre><code class="language-yml">version: '3'
 services:
@@ -675,18 +675,18 @@ ubuntu@VM-0-6-ubuntu:~/project/nginx-proxy$
 <ul>
 <li><a href="#portainer使用nginx-proxy配置代理添加证书">portainer使用nginx-proxy配置代理添加证书</a>
 <ul>
-<li><a href="#创建一个-bridge-网络">创建一个<code>bridge</code>网络</a></li>
-<li><a href="#nginx-proxy-配置"><code>nginx-proxy</code>配置</a>
+<li><a href="#创建一个bridge网络">创建一个bridge网络</a></li>
+<li><a href="#nginx-proxy配置">nginx-proxy配置</a>
 <ul>
-<li><a href="#创建-nginx-proxy-文件夹放项目">创建<code>nginx-proxy</code>文件夹放项目</a></li>
-<li><a href="#创建-docker-compose-yml-文件">创建<code>docker-compose.yml</code>文件</a></li>
-<li><a href="#启动-nginx-proxy">启动<code>nginx-proxy</code></a></li>
+<li><a href="#创建项目文件夹">创建项目文件夹</a></li>
+<li><a href="#创建项目文件">创建项目文件</a></li>
+<li><a href="#启动项目容器">启动项目容器</a></li>
 <li><a href="#验证">验证</a></li>
 </ul></li>
-<li><a href="#portainer-配置"><code>portainer</code>配置</a>
+<li><a href="#portainer配置">portainer配置</a>
 <ul>
-<li><a href="#创建-portainer-文件夹放项目">创建<code>portainer</code>文件夹放项目</a></li>
-<li><a href="#创建-docker-compose-yml-文件-1">创建<code>docker-compose.yml</code>文件</a></li>
+<li><a href="#创建项目文件夹-1">创建项目文件夹</a></li>
+<li><a href="#创建项目文件-1">创建项目文件</a></li>
 <li><a href="#启动">启动</a></li>
 </ul></li>
 <li><a href="#启用证书加密">启用证书加密</a>

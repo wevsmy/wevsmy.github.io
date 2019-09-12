@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="portainer使用nginx-proxy配置代理添加证书, Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目"/>
+          content="配置nginx反向代理使Docker采用域名远程访问API, portainer使用nginx-proxy配置代理添加证书, Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移"/>
     
     
     
@@ -247,6 +247,103 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/12/docker_use_domain_name/">
+                <h2>配置nginx反向代理使Docker采用域名远程访问API</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.12 update</span>
+            </span>
+
+            <span class="post-wordCount">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>300 words</span>
+            </span>
+
+            <span class="post-readingTime">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2 minute</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/12/docker_use_domain_name/#comments">
+                        <span class="post-comment-count">
+                            <span id="58762af66403f7c1583d18c573ee5f12">0</span> comments
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>配置过docker开启2376采用远程访问，挺方便的，但是需要在服务器防火请放开2376端口（这是废话）
+配置个nginx反向代理，直接采用域名443代理访问</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/12/docker_use_domain_name/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/nginx/">
+                <i class="iconfont icontags"></i> nginx
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/proxy/">
+                <i class="iconfont icontags"></i> proxy
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/domain/">
+                <i class="iconfont icontags"></i> domain
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1053,88 +1150,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/15/docker_build_vue/">
-                <h2>编写Dockerfile分阶段构建Vue项目</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03 update</span>
-            </span>
-
-            <span class="post-wordCount">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>200 words</span>
-            </span>
-
-            <span class="post-readingTime">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>1 minute</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2019/07/15/docker_build_vue/#comments">
-                        <span class="post-comment-count">
-                            <span id="4c502a112e68b778ff9f43c276b678d6">0</span> comments
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>docker构建部署vue项目，减少构建后的docker镜像的大小，采用分阶段构建，只保留build</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/15/docker_build_vue/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1322,7 +1337,7 @@
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("portainer使用nginx-proxy配置代理添加证书","120f21e801f98c8b55dc25d32a43c712");getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");</script>
+    };getIssuesComments("配置nginx反向代理使Docker采用域名远程访问API","58762af66403f7c1583d18c573ee5f12");getIssuesComments("portainer使用nginx-proxy配置代理添加证书","120f21e801f98c8b55dc25d32a43c712");getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");</script>
 
 
             </div>
@@ -1347,7 +1362,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">82</a></div>
+                <div><a href="/posts/">83</a></div>
             </div>
             
             
@@ -1370,7 +1385,7 @@
                     
                     
                     
-                    29
+                    30
                 </a></div>
             </div>
             

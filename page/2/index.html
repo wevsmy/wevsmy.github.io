@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录, 博客园文章迁移到Hexo, docker安装宝塔管理面板, 基于docker-compose构建数据库, 使用Flask-Migrate进行管理数据库升级, 换电脑hexo源码迁移, Docker镜像部署Flask, 一键创建blog文"/>
+          content="编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录, 博客园文章迁移到Hexo, docker安装宝塔管理面板, 基于docker-compose构建数据库, 使用Flask-Migrate进行管理数据库升级, 换电脑hexo源码迁移, Docker镜像部署Flask"/>
     
     
     
@@ -247,6 +247,88 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/07/15/docker_build_vue/">
+                <h2>编写Dockerfile分阶段构建Vue项目</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.03 update</span>
+            </span>
+
+            <span class="post-wordCount">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>200 words</span>
+            </span>
+
+            <span class="post-readingTime">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1 minute</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/07/15/docker_build_vue/#comments">
+                        <span class="post-comment-count">
+                            <span id="4c502a112e68b778ff9f43c276b678d6">0</span> comments
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>docker构建部署vue项目，减少构建后的docker镜像的大小，采用分阶段构建，只保留build</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/07/15/docker_build_vue/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> Docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                <i class="iconfont icontags"></i> 笔记
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1027,92 +1109,6 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/06/04/touch_blog_post/">
-                <h2>一键创建blog文</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03 update</span>
-            </span>
-
-            <span class="post-wordCount">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>100 words</span>
-            </span>
-
-            <span class="post-readingTime">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>1 minute</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2018/06/04/touch_blog_post/#comments">
-                        <span class="post-comment-count">
-                            <span id="0ff3acf89d65c25aae73cca29a3681ca">0</span> comments
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="前言">前言</h1>
-
-<p>使用hexo搭建静态博客确实方便,页面托管到github pages上
-写博客只需编写md文件即可,markdown语法简单,使用方便
-原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/06/04/touch_blog_post/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                <i class="iconfont icontags"></i> 教程
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/hexo/">
-                <i class="iconfont icontags"></i> hexo
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1300,7 +1296,7 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");getIssuesComments("zulip安装记录","bae5de0121d1264cab3decb4df455c59");getIssuesComments("博客园文章迁移到Hexo","a38b2f84eab2214e92abf1ae62539866");getIssuesComments("docker安装宝塔管理面板","d2b742cb398d8685f8fb4cfdc658df38");getIssuesComments("基于docker-compose构建数据库","33a16bf816a3b3c894fc4e7f1dfcdfca");getIssuesComments("使用Flask-Migrate进行管理数据库升级","9943c1c8e285080d622ec7d070d0a65c");getIssuesComments("换电脑hexo源码迁移","9751e415ba73942f97c119420a0bc38b");getIssuesComments("Docker镜像部署Flask","d6f9f833a96256a5406b1c0a1649882f");getIssuesComments("一键创建blog文","0ff3acf89d65c25aae73cca29a3681ca");</script>
+    };getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");getIssuesComments("zulip安装记录","bae5de0121d1264cab3decb4df455c59");getIssuesComments("博客园文章迁移到Hexo","a38b2f84eab2214e92abf1ae62539866");getIssuesComments("docker安装宝塔管理面板","d2b742cb398d8685f8fb4cfdc658df38");getIssuesComments("基于docker-compose构建数据库","33a16bf816a3b3c894fc4e7f1dfcdfca");getIssuesComments("使用Flask-Migrate进行管理数据库升级","9943c1c8e285080d622ec7d070d0a65c");getIssuesComments("换电脑hexo源码迁移","9751e415ba73942f97c119420a0bc38b");getIssuesComments("Docker镜像部署Flask","d6f9f833a96256a5406b1c0a1649882f");</script>
 
 
             </div>
@@ -1325,7 +1321,7 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">82</a></div>
+                <div><a href="/posts/">83</a></div>
             </div>
             
             
@@ -1348,7 +1344,7 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
                     
                     
                     
-                    29
+                    30
                 </a></div>
             </div>
             

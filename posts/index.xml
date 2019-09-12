@@ -6,10 +6,20 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Sep 2019 13:31:41 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 10:00:57 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.weii.ink/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>配置nginx反向代理使Docker采用域名远程访问API</title>
+      <link>https://blog.weii.ink/2019/09/12/docker_use_domain_name/</link>
+      <pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/12/docker_use_domain_name/</guid>
+      <description>&lt;p&gt;配置过docker开启2376采用远程访问，挺方便的，但是需要在服务器防火请放开2376端口（这是废话）
+配置个nginx反向代理，直接采用域名443代理访问&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>portainer使用nginx-proxy配置代理添加证书</title>

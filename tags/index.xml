@@ -6,15 +6,33 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Sep 2019 10:00:57 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2019 09:28:25 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.weii.ink/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>DNS</title>
+      <link>https://blog.weii.ink/tags/dns/</link>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNSMASQ</title>
+      <link>https://blog.weii.ink/tags/dnsmasq/</link>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/dnsmasq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://blog.weii.ink/tags/docker/</link>
-      <pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
       
       <guid>https://blog.weii.ink/tags/docker/</guid>
       <description></description>

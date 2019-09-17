@@ -6,10 +6,20 @@
     <description>Recent content in Docker on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Sep 2019 10:00:57 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2019 09:28:25 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.weii.ink/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker搭建DNS服务器</title>
+      <link>https://blog.weii.ink/2019/09/17/docker_install_dnsmasq/</link>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/17/docker_install_dnsmasq/</guid>
+      <description>&lt;p&gt;DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
+用docker搭建一下用用。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>配置nginx反向代理使Docker采用域名远程访问API</title>

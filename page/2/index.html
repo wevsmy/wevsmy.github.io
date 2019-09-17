@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录, 博客园文章迁移到Hexo, docker安装宝塔管理面板, 基于docker-compose构建数据库, 使用Flask-Migrate进行管理数据库升级, 换电脑hexo源码迁移, Docker镜像部署Flask"/>
+          content="Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录, 博客园文章迁移到Hexo, docker安装宝塔管理面板, 基于docker-compose构建数据库, 使用Flask-Migrate进行管理数据库升级, 换电脑hexo源码迁移"/>
     
     
     
@@ -247,6 +247,88 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/07/15/gitlab_server_migration/">
+                <h2>Gitlab服务器迁移</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.03 update</span>
+            </span>
+
+            <span class="post-wordCount">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>400 words</span>
+            </span>
+
+            <span class="post-readingTime">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2 minute</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/07/15/gitlab_server_migration/#comments">
+                        <span class="post-comment-count">
+                            <span id="4f9c521e87b0c48e057ae22b6f871817">0</span> comments
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>公司有需求安装在172.31.66.63的gitlab服务需要迁移到10.10.192.18上，记录一下迁移过程。</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/07/15/gitlab_server_migration/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> Docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                <i class="iconfont icontags"></i> 笔记
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1032,83 +1114,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/06/05/docker_images_deploy_flask/">
-                <h2>Docker镜像部署Flask</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03 update</span>
-            </span>
-
-            <span class="post-wordCount">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>100 words</span>
-            </span>
-
-            <span class="post-readingTime">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>1 minute</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2018/06/05/docker_images_deploy_flask/#comments">
-                        <span class="post-comment-count">
-                            <span id="d6f9f833a96256a5406b1c0a1649882f">0</span> comments
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>入坑了，入了Docker的坑，了解了一下docker安装，
-照着教程学着部署了一下Flask，
-Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/06/05/docker_images_deploy_flask/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/flask/">
-                <i class="iconfont icontags"></i> Flask
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1296,7 +1301,7 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");getIssuesComments("zulip安装记录","bae5de0121d1264cab3decb4df455c59");getIssuesComments("博客园文章迁移到Hexo","a38b2f84eab2214e92abf1ae62539866");getIssuesComments("docker安装宝塔管理面板","d2b742cb398d8685f8fb4cfdc658df38");getIssuesComments("基于docker-compose构建数据库","33a16bf816a3b3c894fc4e7f1dfcdfca");getIssuesComments("使用Flask-Migrate进行管理数据库升级","9943c1c8e285080d622ec7d070d0a65c");getIssuesComments("换电脑hexo源码迁移","9751e415ba73942f97c119420a0bc38b");getIssuesComments("Docker镜像部署Flask","d6f9f833a96256a5406b1c0a1649882f");</script>
+    };getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");getIssuesComments("zulip安装记录","bae5de0121d1264cab3decb4df455c59");getIssuesComments("博客园文章迁移到Hexo","a38b2f84eab2214e92abf1ae62539866");getIssuesComments("docker安装宝塔管理面板","d2b742cb398d8685f8fb4cfdc658df38");getIssuesComments("基于docker-compose构建数据库","33a16bf816a3b3c894fc4e7f1dfcdfca");getIssuesComments("使用Flask-Migrate进行管理数据库升级","9943c1c8e285080d622ec7d070d0a65c");getIssuesComments("换电脑hexo源码迁移","9751e415ba73942f97c119420a0bc38b");</script>
 
 
             </div>
@@ -1321,7 +1326,7 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">83</a></div>
+                <div><a href="/posts/">84</a></div>
             </div>
             
             
@@ -1344,7 +1349,7 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask</p>......</p>
                     
                     
                     
-                    30
+                    32
                 </a></div>
             </div>
             

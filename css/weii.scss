@@ -306,8 +306,11 @@
           .post-label {
             margin-left: 1em;
             margin-right: 1em;
-            padding-top: 0.45em;
+            padding-top: 0.18em;
             line-height: 3;
+            @media (max-width: 40em) {
+              padding-top: 0.3em;
+            }
 
             &:hover {
               -moz-box-shadow: 0px 2px 11px #333333;

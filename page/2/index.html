@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录, 博客园文章迁移到Hexo, docker安装宝塔管理面板, 基于docker-compose构建数据库, 使用Flask-Migrate进行管理数据库升级, 换电脑hexo源码迁移"/>
+          content="Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录, 博客园文章迁移到Hexo, docker安装宝塔管理面板, 基于docker-compose构建数据库, 使用Flask-Migrate进行管理数据库升级"/>
     
     
     
@@ -247,6 +247,88 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/07/16/docker_low_disk_space/">
+                <h2>Docker目录磁盘空间满了</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.09.03 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.03</span>
+            </span>
+
+            <span class="post-wordCount" title="400 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>400</span>
+            </span>
+
+            <span class="post-readingTime" title="2 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/07/16/docker_low_disk_space/#comments">
+                        <span class="post-comment-count">
+                            <span id="bbfc03551e5e719d3551123706e2838b">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>😂昨天刚建的GitLab服务今天就报500了，哭死😭排查发现是<code>/var/lib/docker</code>目录满了，咱也不知道原来里面放的啥，咱也不敢动，咱走还不行嘛！</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/07/16/docker_low_disk_space/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> Docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                <i class="iconfont icontags"></i> 笔记
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1032,88 +1114,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/01/15/change_the_computer_hexo_source_migration/">
-                <h2>换电脑hexo源码迁移</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date" title="2019.09.03 update" data-toggle="tooltip" data-placement="top">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03</span>
-            </span>
-
-            <span class="post-wordCount" title="200 words" data-toggle="tooltip" data-placement="top">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>200</span>
-            </span>
-
-            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>1</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2019/01/15/change_the_computer_hexo_source_migration/#comments">
-                        <span class="post-comment-count">
-                            <span id="9751e415ba73942f97c119420a0bc38b">0</span>
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>更换电脑后迁移hexo源代码😂</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/01/15/change_the_computer_hexo_source_migration/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                <i class="iconfont icontags"></i> 教程
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/hexo/">
-                <i class="iconfont icontags"></i> hexo
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1301,7 +1301,7 @@
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");getIssuesComments("zulip安装记录","bae5de0121d1264cab3decb4df455c59");getIssuesComments("博客园文章迁移到Hexo","a38b2f84eab2214e92abf1ae62539866");getIssuesComments("docker安装宝塔管理面板","d2b742cb398d8685f8fb4cfdc658df38");getIssuesComments("基于docker-compose构建数据库","33a16bf816a3b3c894fc4e7f1dfcdfca");getIssuesComments("使用Flask-Migrate进行管理数据库升级","9943c1c8e285080d622ec7d070d0a65c");getIssuesComments("换电脑hexo源码迁移","9751e415ba73942f97c119420a0bc38b");</script>
+    };getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");getIssuesComments("Gitlab服务器迁移","4f9c521e87b0c48e057ae22b6f871817");getIssuesComments("编写Dockerfile分阶段构建Vue项目","4c502a112e68b778ff9f43c276b678d6");getIssuesComments("hexo添加文章更新时间","9dfd474e6e6c0b0628d6ea033e40cf6a");getIssuesComments("pip安装mysqlclient报错","de7a7f751bfa4c2a1ada4b314b712c8d");getIssuesComments("zulip安装记录","bae5de0121d1264cab3decb4df455c59");getIssuesComments("博客园文章迁移到Hexo","a38b2f84eab2214e92abf1ae62539866");getIssuesComments("docker安装宝塔管理面板","d2b742cb398d8685f8fb4cfdc658df38");getIssuesComments("基于docker-compose构建数据库","33a16bf816a3b3c894fc4e7f1dfcdfca");getIssuesComments("使用Flask-Migrate进行管理数据库升级","9943c1c8e285080d622ec7d070d0a65c");</script>
 
 
             </div>
@@ -1326,7 +1326,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">84</a></div>
+                <div><a href="/posts/">85</a></div>
             </div>
             
             

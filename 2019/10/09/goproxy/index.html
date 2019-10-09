@@ -70,11 +70,11 @@
     
     
     <meta name="keywords"
-          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
+          content="go, proxy, golang, goproxy"/>
     
     
     
-    <meta name="description" content="404 Page not found">
+    <meta name="description" content="go代理设置 | 由于国内墙的存在go get经常失败，记录安装依赖时go代理设置">
     
     
     
@@ -104,7 +104,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
 
-    <title>404 Page not found&middot;wilson&#39;s blog</title>
+    <title>go代理设置</title>
 
     
     
@@ -238,50 +238,162 @@
     </div>
 </header>
 
-
 <main id="main" class="main">
     <div class="container">
         <div class="main-container">
             <div id="content" class="content">
-                <div class="panel panel-default post-panel">
-                    <div class="panel-heading post-head">
-                        <div class="post-title">
-                            <h2>
-                                <a href='/' data-toggle="tooltip" data-placement="top" title="(๑•́ ₃•̀๑)">
-                                    404 Page not found
-                                </a>
-                            </h2>
-                        </div>
-                    </div>
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2019/10/09/goproxy/'>go代理设置</a></h2></div>
+        <div class="post-meta"><span>2019.10.09</span></div>
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <p>由于国内墙的存在go get经常失败，记录安装依赖时go代理设置</p>
 
-                    <div class="panel-body post-body">
-                        <div class="content-404" id="content-404">
-                            <div class="content-span">
-                                <span>
-                                将在
-                                <i id="jumpTo">5</i>秒后,自动转入
-                                <a href="/">首页</a>
-                                </span>
+<h1 id="go代理设置">go代理设置</h1>
+
+<p>在<code>Go 1.13</code>中，我们可以通过<code>GOPROXY</code>来控制代理，以及通过<code>GOPRIVATE</code>控制私有库不走代理</p>
+
+<h2 id="goproxy">GOPROXY</h2>
+
+<p>国内常用代理</p>
+
+<pre><code class="language-txt">https://goproxy.cn
+https://goproxy.io
+https://mirrors.aliyun.com/goproxy/
+</code></pre>
+
+<p>设置GOPROXY代理</p>
+
+<pre><code class="language-bash">go env -w GOPROXY=https://goproxy.cn,direct
+</code></pre>
+
+<h2 id="goprivate">GOPRIVATE</h2>
+
+<p>设置<code>GOPRIVATE</code>来跳过私有库，比如常用的<code>Gitlab</code>或<code>Gitee</code>，中间使用逗号分隔：</p>
+
+<pre><code class="language-bash">go env -w GOPRIVATE=*.gitlab.com,*.gitee.com
+</code></pre>
+
+<h2 id="gosumdb">GOSUMDB</h2>
+
+<p>如果在运行<code>go mod vendor</code>时，提示:
+<code>Get https://sum.golang.org/lookup/xxxxxx: dial tcp 216.58.200.49:443: i/o timeout</code>
+则是因为<code>Go 1.13</code>设置了默认的<code>GOSUMDB=sum.golang.org</code>，这个网站是被墙了的，用于验证包的有效性，可以通过如下命令关闭：</p>
+
+<pre><code class="language-bash">go env -w GOSUMDB=off
+</code></pre>
+
+<p>可以设置<code>GOSUMDB=&quot;sum.golang.google.cn&quot;</code>， 这个是专门为国内提供的<code>sum</code>验证服务。</p>
+
+<pre><code class="language-bash">go env -w GOSUMDB=&quot;sum.golang.google.cn&quot;
+</code></pre>
+        </div>
+
+    </div>
+
+</div>
+
+
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2019/09/17/docker_install_dnsmasq/" title="Docker搭建DNS服务器" data-toggle="tooltip" data-placement="top">
+            <span aria-hidden="true">&larr;</span>
+                上一页
+            </a>
+        </li>
+        
+
+        
+        <li class="next disabled"><a href="#next">没有下一页<span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
+
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <script type="text/javascript">
-                    window.onload = function () {
-                        countDown(10, '/')
-                    };
+</div>
 
-                    function countDown(secs, url) {
-                        var jumpTo = document.getElementById('jumpTo');
-                        jumpTo.innerHTML = secs;
-                        if (--secs > 0) {
-                            setTimeout("countDown(" + secs + ",'" + url + "')", 1000);
-                        } else {
-                            location.href = url;
-                        }
-                    }
-                </script>
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <script src="https://utteranc.es/client.js"
+        repo="wevsmy/wevsmy.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    
+</div>
+
+
+
+
+                
             </div>
             
             <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
@@ -347,6 +459,22 @@
 
     <div class="sidebar-sticky">
 
+        
+        
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#go代理设置">go代理设置</a>
+<ul>
+<li><a href="#goproxy">GOPROXY</a></li>
+<li><a href="#goprivate">GOPRIVATE</a></li>
+<li><a href="#gosumdb">GOSUMDB</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
         
         
         <hr>
@@ -467,7 +595,7 @@
             </div>
             <div class="footer-right">
                 <div class="custom-info">
-                    <a href="/" target="_blank">SiteMap</a>
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
                     <i class="iconfont icongithub-fill"></i>
                     <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
                     <iframe style="margin-left:2px;margin-bottom:-5px;"

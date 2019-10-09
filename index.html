@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="Docker搭建DNS服务器, 配置nginx反向代理使Docker采用域名远程访问API, portainer使用nginx-proxy配置代理添加证书, Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了"/>
+          content="go代理设置, Docker搭建DNS服务器, 配置nginx反向代理使Docker采用域名远程访问API, portainer使用nginx-proxy配置代理添加证书, Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段"/>
     
     
     
@@ -247,6 +247,95 @@
             <div id="content" class="content">
                 
                 
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/10/09/goproxy/">
+                <h2>go代理设置</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.10.09 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.10.09</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/10/09/goproxy/#comments">
+                        <span class="post-comment-count">
+                            <span id="37b885a8a45badb2858c1b1ea7c02491">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>由于国内墙的存在go get经常失败，记录安装依赖时go代理设置</p>......</p>
+            
+            <div class="post-read-more">
+                <a href="/2019/10/09/goproxy/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/go/">
+                <i class="iconfont icontags"></i> go
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/proxy/">
+                <i class="iconfont icontags"></i> proxy
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/golang/">
+                <i class="iconfont icontags"></i> golang
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
 
 
 <div class="panel panel-default post-panel">
@@ -1076,88 +1165,6 @@
 
 
 
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/16/docker_low_disk_space/">
-                <h2>Docker目录磁盘空间满了</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-            <span class="post-date" title="2019.09.03 update" data-toggle="tooltip" data-placement="top">
-                <i class="iconfont iconcalendar-check"></i>
-                <span>2019.09.03</span>
-            </span>
-
-            <span class="post-wordCount" title="400 words" data-toggle="tooltip" data-placement="top">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconfile-word"></i>
-                <span>400</span>
-            </span>
-
-            <span class="post-readingTime" title="2 minute" data-toggle="tooltip" data-placement="top">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconField-time"></i>
-                <span>2</span>
-            </span>
-
-            
-            
-
-            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                    <a href="/2019/07/16/docker_low_disk_space/#comments">
-                        <span class="post-comment-count">
-                            <span id="bbfc03551e5e719d3551123706e2838b">0</span>
-                        </span>
-                    </a>
-                </span>
-            </span>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>😂昨天刚建的GitLab服务今天就报500了，哭死😭排查发现是<code>/var/lib/docker</code>目录满了，咱也不知道原来里面放的啥，咱也不敢动，咱走还不行嘛！</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/16/docker_low_disk_space/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
 
 <nav class="post-pagination">
     
@@ -1345,7 +1352,7 @@
             $("#" + UniqueID).text(page_comments.total_count)
         }
     });
-    };getIssuesComments("Docker搭建DNS服务器","474c9c7c68ad458d48d464b2a2331788");getIssuesComments("配置nginx反向代理使Docker采用域名远程访问API","58762af66403f7c1583d18c573ee5f12");getIssuesComments("portainer使用nginx-proxy配置代理添加证书","120f21e801f98c8b55dc25d32a43c712");getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");getIssuesComments("Docker目录磁盘空间满了","bbfc03551e5e719d3551123706e2838b");</script>
+    };getIssuesComments("go代理设置","37b885a8a45badb2858c1b1ea7c02491");getIssuesComments("Docker搭建DNS服务器","474c9c7c68ad458d48d464b2a2331788");getIssuesComments("配置nginx反向代理使Docker采用域名远程访问API","58762af66403f7c1583d18c573ee5f12");getIssuesComments("portainer使用nginx-proxy配置代理添加证书","120f21e801f98c8b55dc25d32a43c712");getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");</script>
 
 
             </div>
@@ -1370,7 +1377,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">84</a></div>
+                <div><a href="/posts/">85</a></div>
             </div>
             
             

@@ -3,6 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.weii.ink/tags/go/</loc>
+    <lastmod>2019-10-09T10:47:49+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/golang/</loc>
+    <lastmod>2019-10-09T10:47:49+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/proxy/</loc>
+    <lastmod>2019-10-09T10:47:49+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.weii.ink/tags/</loc>
+    <lastmod>2019-10-09T10:47:49+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.weii.ink/tags/docker/</loc>
     <lastmod>2019-09-17T17:47:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -25,13 +53,6 @@
   
   <url>
     <loc>https://blog.weii.ink/tags/openshift/</loc>
-    <lastmod>2019-09-17T17:47:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.weii.ink/tags/</loc>
     <lastmod>2019-09-17T17:47:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -81,13 +102,6 @@
   
   <url>
     <loc>https://blog.weii.ink/tags/nginx/</loc>
-    <lastmod>2019-09-12T11:23:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.weii.ink/tags/proxy/</loc>
     <lastmod>2019-09-12T11:23:08+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -227,14 +241,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/n2n/</loc>
+    <loc>https://blog.weii.ink/tags/n2n/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/n2n/</loc>
+    <loc>https://blog.weii.ink/categories/n2n/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -332,14 +346,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/django/</loc>
+    <loc>https://blog.weii.ink/categories/django/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/django/</loc>
+    <loc>https://blog.weii.ink/tags/django/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

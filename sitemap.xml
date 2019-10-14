@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://blog.weii.ink/</loc>
-    <lastmod>2019-10-09T13:10:36+08:00</lastmod>
+    <lastmod>2019-10-10T16:45:38+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -248,14 +248,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/n2n/</loc>
+    <loc>https://blog.weii.ink/tags/n2n/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/n2n/</loc>
+    <loc>https://blog.weii.ink/categories/n2n/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -353,14 +353,14 @@
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/categories/django/</loc>
+    <loc>https://blog.weii.ink/tags/django/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.weii.ink/tags/django/</loc>
+    <loc>https://blog.weii.ink/categories/django/</loc>
     <lastmod>2019-09-03T19:43:23+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -529,7 +529,7 @@
   
   <url>
     <loc>https://blog.weii.ink/about/</loc>
-    <lastmod>2019-09-03T19:43:23+08:00</lastmod>
+    <lastmod>2019-10-10T16:45:38+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>大数据平台 on </title>
+    <link>https://blog.weii.ink/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/</link>
+    <description>Recent content in 大数据平台 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 06 Sep 2019 18:59:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HDP(2.6.5)集群安装记录</title>
+      <link>https://blog.weii.ink/2019/09/06/hdp_cluster_install/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/06/hdp_cluster_install/</guid>
+      <description>&lt;p&gt;HDP(2.6.5)集群安装记录&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

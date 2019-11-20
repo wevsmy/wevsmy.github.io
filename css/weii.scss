@@ -81,7 +81,18 @@
 
 
 .main {
-  font: 16px Roboto, "Noto Sans", "Noto Sans CJK", Helvetica, Arial, sans-serif;
+
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 16px;
+  line-height: normal;
+  font-family: Roboto, "Noto Sans", "Noto Sans CJK", Helvetica, Arial, sans-serif;
+
   margin-top: 0 - 2.6em;
 
   .main-container {
@@ -119,7 +130,14 @@
             h1 {
               margin-top: 0;
               margin-bottom: 0.66em;
+            }
 
+            h2 {
+              font-size: 1.5em;
+              font-weight: bold;
+              @media (max-width: 40em) {
+                font-size: 1.3em;
+              }
             }
           }
 
@@ -150,12 +168,20 @@
           .post-index {
             text-align: center;
 
+            p {
+              font-size: 1em;
+
+            }
+
             .post-read-more {
 
             }
           }
 
           .post-post {
+            h1 {
+              font-size: 2em;
+            }
 
             img {
               width: 100%;
@@ -306,8 +332,11 @@
           .post-label {
             margin-left: 1em;
             margin-right: 1em;
-            padding-top: 0.45em;
+            padding-top: 0.18em;
             line-height: 3;
+            @media (max-width: 40em) {
+              padding-top: 0.3em;
+            }
 
             &:hover {
               -moz-box-shadow: 0px 2px 11px #333333;

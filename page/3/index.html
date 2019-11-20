@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="关于, Django基础01, Python连接MySQL数据库之pymysql模块使用, Markdown 语法, jQuery, linux screen 常用命令, 前端基础之BOM和DOM, 前端基础之JavaScript, 前端基础之CSS, 前端知识之HTML内容"/>
+          content="换电脑hexo源码迁移, Docker镜像部署Flask, 一键创建blog文, 使用阿里云OSS图床, 关于本Blog的评论系统, test, 关于, Django基础01, Python连接MySQL数据库之pymysql模块使用, Markdown 语法"/>
     
     
     
@@ -107,9 +107,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
 
-    <title>
-        wilson&#39;s blog
-    </title>
+    <title>wilson&#39;s blog</title>
 
     
     
@@ -142,7 +140,7 @@
                     </a>
                 </h1>
                 <h2 class="subtitle">
-                    Life is short, you need Python
+                    Life is short, You need Python and Golang 😏
                 </h2>
             </div>
             
@@ -254,59 +252,43 @@
 <div class="panel panel-default post-panel">
     <div class="panel-heading post-head">
         <div class="post-title">
-            <a href="/about/">
-                <h2>关于</h2>
+            <a href="/2019/01/15/change_the_computer_hexo_source_migration/">
+                <h2>换电脑hexo源码迁移</h2>
             </a>
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="200 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>200</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/about/#comments">
-                <span class="post-comment-count">
-                <span id="关于">0</span> comments
+                    <a href="/2019/01/15/change_the_computer_hexo_source_migration/#comments">
+                        <span class="post-comment-count">
+                            <span id="9751e415ba73942f97c119420a0bc38b">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -316,7 +298,501 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p>wilson  Email:wevsmy@gmail.com Homepage:Wilson&rsquo;s Blog GitHub:@wilson Weibo:@wilson  个人简介 长方体混凝土瞬间移动攻城狮 专职Python后端开发 略懂前端，略懂脚本，略懂机器学习......</p>
+            <p><p>更换电脑后迁移hexo源代码😂</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/01/15/change_the_computer_hexo_source_migration/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <i class="iconfont icontags"></i> 教程
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/hexo/">
+                <i class="iconfont icontags"></i> hexo
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/05/docker_images_deploy_flask/">
+                <h2>Docker镜像部署Flask</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2018/06/05/docker_images_deploy_flask/#comments">
+                        <span class="post-comment-count">
+                            <span id="d6f9f833a96256a5406b1c0a1649882f">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>入坑了，入了Docker的坑，了解了一下docker安装，
+照着教程学着部署了一下Flask，
+Docker使用uwsgi+nginx+python3.6镜像部署Flask</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/05/docker_images_deploy_flask/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/flask/">
+                <i class="iconfont icontags"></i> Flask
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/04/touch_blog_post/">
+                <h2>一键创建blog文</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2018/06/04/touch_blog_post/#comments">
+                        <span class="post-comment-count">
+                            <span id="0ff3acf89d65c25aae73cca29a3681ca">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><h1 id="前言">前言</h1>
+
+<p>使用hexo搭建静态博客确实方便,页面托管到github pages上
+写博客只需编写md文件即可,markdown语法简单,使用方便
+原来也用过wordpress建博客,也挺好的,相比较下hexo比wordpress要轻便</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/04/touch_blog_post/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <i class="iconfont icontags"></i> 教程
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/hexo/">
+                <i class="iconfont icontags"></i> hexo
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/02/use_alibaba_cloud_oss_map_bed/">
+                <h2>使用阿里云OSS图床</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2018/06/02/use_alibaba_cloud_oss_map_bed/#comments">
+                        <span class="post-comment-count">
+                            <span id="a891e4295913ebe5f6f1dcc9e18ae447">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>本Blog中所有文章图片都采用阿里云OSS对象存储作为图床
+下面简单说一下如何使用oss作为图床</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/02/use_alibaba_cloud_oss_map_bed/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                <i class="iconfont icontags"></i> 教程
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                <i class="iconfont icontags"></i> 阿里云
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/02/about_this_blog_review_system/">
+                <h2>关于本Blog的评论系统</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2018/06/02/about_this_blog_review_system/#comments">
+                        <span class="post-comment-count">
+                            <span id="b0bc6848aa2818215108fbeb1d83a068">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>本博客采用的是Disqus评论系统，国内加载不出来</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/02/about_this_blog_review_system/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/disqus/">
+                <i class="iconfont icontags"></i> Disqus
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2018/06/02/test/">
+                <h2>test</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2018/06/02/test/#comments">
+                        <span class="post-comment-count">
+                            <span id="10efd1f6f5fff3c1b84fdf4d2326cb20">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>这是一篇测试文章，用于测试Hexo搭建的github静态网站</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2018/06/02/test/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/python/">
+                <i class="iconfont icontags"></i> Python
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> Docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/html/">
+                <i class="iconfont icontags"></i> HTML
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/about/">
+                <h2>关于</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/about/#comments">
+                        <span class="post-comment-count">
+                            <span id="8576ec274c98b3831668a172fa632d80">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p>wilson  Email:wevsmy@gmail.com Homepage:Wilson&rsquo;s Blog GitHub:@wilson Weibo:@wilson  about 👉长方体混凝土瞬间移动攻城狮🤣
+👉Python and Golang后端开发🥳
+👉略懂前端，略懂脚本，略懂机器学习，别问会啥，问就是略懂🥰</p>
             
         </div>
     </div>
@@ -336,53 +812,37 @@
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="1200 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>1200</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>1200 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>6 minute</span>
-                </span>
+            <span class="post-readingTime" title="6 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>6</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2018/03/22/cnblog_8621513/#comments">
-                <span class="post-comment-count">
-                <span id="Django基础01">0</span> comments
+                    <a href="/2018/03/22/cnblog_8621513/#comments">
+                        <span class="post-comment-count">
+                            <span id="94fd14c815f3dfb10131b4f01784df42">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -392,7 +852,7 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><h1 id="这是-django基础01-的摘要-2018-03-22-cnblog-8621513"><a href="/2018/03/22/cnblog_8621513/">这是👉Django基础01👈的摘要</a></h1>......</p>
+            <p><h1 id="这是-django基础01-的摘要-2018-03-22-cnblog-8621513"><a href="/2018/03/22/cnblog_8621513/">这是👉Django基础01👈的摘要</a></h1></p>
             
             <div class="post-read-more">
                 <a href="/2018/03/22/cnblog_8621513/">阅读更多</a>
@@ -441,53 +901,37 @@
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="600 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>600</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>600 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>3 minute</span>
-                </span>
+            <span class="post-readingTime" title="3 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>3</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2018/03/21/cnblog_8616189/#comments">
-                <span class="post-comment-count">
-                <span id="Python连接MySQL数据库之pymysql模块使用">0</span> comments
+                    <a href="/2018/03/21/cnblog_8616189/#comments">
+                        <span class="post-comment-count">
+                            <span id="03f1e1f9df1507b017c8f5da6768a333">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -497,7 +941,7 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><h1 id="这是-python连接mysql数据库之pymysql模块使用-的摘要-2018-03-21-cnblog-8616189"><a href="/2018/03/21/cnblog_8616189/">这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要</a></h1>......</p>
+            <p><h1 id="这是-python连接mysql数据库之pymysql模块使用-的摘要-2018-03-21-cnblog-8616189"><a href="/2018/03/21/cnblog_8616189/">这是👉Python连接MySQL数据库之pymysql模块使用👈的摘要</a></h1></p>
             
             <div class="post-read-more">
                 <a href="/2018/03/21/cnblog_8616189/">阅读更多</a>
@@ -546,53 +990,37 @@
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="1600 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>1600</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>1600 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>8 minute</span>
-                </span>
+            <span class="post-readingTime" title="8 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>8</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2018/03/14/cnblog_8565323/#comments">
-                <span class="post-comment-count">
-                <span id="Markdown 语法">0</span> comments
+                    <a href="/2018/03/14/cnblog_8565323/#comments">
+                        <span class="post-comment-count">
+                            <span id="90b16f04ff41a1199a5810e89c528cc1">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -602,640 +1030,10 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><h1 id="这是-markdown-语法-的摘要-2018-03-14-cnblog-8565323"><a href="/2018/03/14/cnblog_8565323/">这是👉Markdown 语法👈的摘要</a></h1>......</p>
+            <p><h1 id="这是-markdown-语法-的摘要-2018-03-14-cnblog-8565323"><a href="/2018/03/14/cnblog_8565323/">这是👉Markdown 语法👈的摘要</a></h1></p>
             
             <div class="post-read-more">
                 <a href="/2018/03/14/cnblog_8565323/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-                <i class="iconfont icontags"></i> 博客园
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%90%AC%E5%AE%B6/">
-                <i class="iconfont icontags"></i> 搬家
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/cnblogs/">
-                <i class="iconfont icontags"></i> cnblogs
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/03/14/cnblog_8565153/">
-                <h2>jQuery</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>2500 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>12 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2018/03/14/cnblog_8565153/#comments">
-                <span class="post-comment-count">
-                <span id="jQuery">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="这是-jquery-的摘要-2018-03-14-cnblog-8565153"><a href="/2018/03/14/cnblog_8565153/">这是👉jQuery👈的摘要</a></h1>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/03/14/cnblog_8565153/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-                <i class="iconfont icontags"></i> 博客园
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%90%AC%E5%AE%B6/">
-                <i class="iconfont icontags"></i> 搬家
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/cnblogs/">
-                <i class="iconfont icontags"></i> cnblogs
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/03/13/cnblog_8554604/">
-                <h2>linux screen 常用命令</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2018/03/13/cnblog_8554604/#comments">
-                <span class="post-comment-count">
-                <span id="linux screen 常用命令">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="这是-linux-screen-常用命令-的摘要-2018-03-13-cnblog-8554604"><a href="/2018/03/13/cnblog_8554604/">这是👉linux screen 常用命令👈的摘要</a></h1>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/03/13/cnblog_8554604/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-                <i class="iconfont icontags"></i> 博客园
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%90%AC%E5%AE%B6/">
-                <i class="iconfont icontags"></i> 搬家
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/cnblogs/">
-                <i class="iconfont icontags"></i> cnblogs
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/03/12/cnblog_8550048/">
-                <h2>前端基础之BOM和DOM</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>400 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>2 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2018/03/12/cnblog_8550048/#comments">
-                <span class="post-comment-count">
-                <span id="前端基础之BOM和DOM">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="这是-前端基础之bom和dom-的摘要-2018-03-12-cnblog-8550048"><a href="/2018/03/12/cnblog_8550048/">这是👉前端基础之BOM和DOM👈的摘要</a></h1>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/03/12/cnblog_8550048/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-                <i class="iconfont icontags"></i> 博客园
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%90%AC%E5%AE%B6/">
-                <i class="iconfont icontags"></i> 搬家
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/cnblogs/">
-                <i class="iconfont icontags"></i> cnblogs
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/03/08/cnblog_8527506/">
-                <h2>前端基础之JavaScript</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>1100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>5 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2018/03/08/cnblog_8527506/#comments">
-                <span class="post-comment-count">
-                <span id="前端基础之JavaScript">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="这是-前端基础之javascript-的摘要-2018-03-08-cnblog-8527506"><a href="/2018/03/08/cnblog_8527506/">这是👉前端基础之JavaScript👈的摘要</a></h1>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/03/08/cnblog_8527506/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-                <i class="iconfont icontags"></i> 博客园
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%90%AC%E5%AE%B6/">
-                <i class="iconfont icontags"></i> 搬家
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/cnblogs/">
-                <i class="iconfont icontags"></i> cnblogs
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/03/08/cnblog_8527496/">
-                <h2>前端基础之CSS</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>1100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>5 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2018/03/08/cnblog_8527496/#comments">
-                <span class="post-comment-count">
-                <span id="前端基础之CSS">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="这是-前端基础之css-的摘要-2018-03-08-cnblog-8527496"><a href="/2018/03/08/cnblog_8527496/">这是👉前端基础之CSS👈的摘要</a></h1>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/03/08/cnblog_8527496/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/">
-                <i class="iconfont icontags"></i> 博客园
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E6%90%AC%E5%AE%B6/">
-                <i class="iconfont icontags"></i> 搬家
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/cnblogs/">
-                <i class="iconfont icontags"></i> cnblogs
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2018/03/05/cnblog_8508917/">
-                <h2>前端知识之HTML内容</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>500 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>3 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2018/03/05/cnblog_8508917/#comments">
-                <span class="post-comment-count">
-                <span id="前端知识之HTML内容">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><h1 id="这是-前端知识之html内容-的摘要-2018-03-05-cnblog-8508917"><a href="/2018/03/05/cnblog_8508917/">这是👉前端知识之HTML内容👈的摘要</a></h1>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2018/03/05/cnblog_8508917/">阅读更多</a>
             </div>
             
         </div>
@@ -1369,7 +1167,16 @@
         
     
     
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
     
     
     <li class="page-item">
@@ -1377,13 +1184,14 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
 
 
 </nav>
+
 
 
 <script type="text/javascript">
@@ -1435,6 +1243,25 @@
     });
 </script>
 
+
+
+
+
+
+<script type="text/javascript">
+    function getIssuesComments(Title,UniqueID) {
+        $.ajax({
+        url: 'https://api.github.com/search/issues?q='+Title+'type:issue in:title repo:wevsmy/wevsmy.github.io&sort=created&order=asc&client_id=ded8625909c20b7ae2f7&client_secret=c9ba27c5047486b4e2e0f8c3001aae33bc15374a',
+        dataType: 'json',
+        cache: false,
+        crossDomain: true,
+        success: function success(page_comments) {
+            $("#" + UniqueID).text(page_comments.total_count)
+        }
+    });
+    };getIssuesComments("换电脑hexo源码迁移","9751e415ba73942f97c119420a0bc38b");getIssuesComments("Docker镜像部署Flask","d6f9f833a96256a5406b1c0a1649882f");getIssuesComments("一键创建blog文","0ff3acf89d65c25aae73cca29a3681ca");getIssuesComments("使用阿里云OSS图床","a891e4295913ebe5f6f1dcc9e18ae447");getIssuesComments("关于本Blog的评论系统","b0bc6848aa2818215108fbeb1d83a068");getIssuesComments("test","10efd1f6f5fff3c1b84fdf4d2326cb20");getIssuesComments("关于","8576ec274c98b3831668a172fa632d80");getIssuesComments("Django基础01","94fd14c815f3dfb10131b4f01784df42");getIssuesComments("Python连接MySQL数据库之pymysql模块使用","03f1e1f9df1507b017c8f5da6768a333");getIssuesComments("Markdown 语法","90b16f04ff41a1199a5810e89c528cc1");</script>
+
+
             </div>
             
             <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
@@ -1457,7 +1284,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">79</a></div>
+                <div><a href="/posts/">85</a></div>
             </div>
             
             
@@ -1480,7 +1307,7 @@
                     
                     
                     
-                    20
+                    37
                 </a></div>
             </div>
             
@@ -1539,6 +1366,13 @@
                     <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
                        title="╮(╯▽╰)╭">
                         <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://simplerfroze.com" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconcode"></i> Symoon
                     </a>
                 </li>
                 

@@ -6,17 +6,170 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 31 Aug 2019 10:31:11 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 10:47:49 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.weii.ink/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>go</title>
+      <link>https://blog.weii.ink/tags/go/</link>
+      <pubDate>Wed, 09 Oct 2019 10:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://blog.weii.ink/tags/golang/</link>
+      <pubDate>Wed, 09 Oct 2019 10:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://blog.weii.ink/tags/proxy/</link>
+      <pubDate>Wed, 09 Oct 2019 10:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://blog.weii.ink/tags/docker/</link>
-      <pubDate>Sat, 31 Aug 2019 10:31:11 +0000</pubDate>
+      <pubDate>Tue, 17 Sep 2019 17:47:49 +0800</pubDate>
       
       <guid>https://blog.weii.ink/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K8S</title>
+      <link>https://blog.weii.ink/tags/k8s/</link>
+      <pubDate>Tue, 17 Sep 2019 17:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OKD</title>
+      <link>https://blog.weii.ink/tags/okd/</link>
+      <pubDate>Tue, 17 Sep 2019 17:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/okd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenShift</title>
+      <link>https://blog.weii.ink/tags/openshift/</link>
+      <pubDate>Tue, 17 Sep 2019 17:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/openshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>https://blog.weii.ink/tags/dns/</link>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNSMASQ</title>
+      <link>https://blog.weii.ink/tags/dnsmasq/</link>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/dnsmasq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>domain</title>
+      <link>https://blog.weii.ink/tags/domain/</link>
+      <pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/domain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://blog.weii.ink/tags/nginx/</link>
+      <pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>portainer</title>
+      <link>https://blog.weii.ink/tags/portainer/</link>
+      <pubDate>Wed, 11 Sep 2019 13:31:41 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/portainer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CA</title>
+      <link>https://blog.weii.ink/tags/ca/</link>
+      <pubDate>Wed, 11 Sep 2019 08:51:45 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/ca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSL</title>
+      <link>https://blog.weii.ink/tags/ssl/</link>
+      <pubDate>Wed, 11 Sep 2019 08:51:45 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HDP</title>
+      <link>https://blog.weii.ink/tags/hdp/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/hdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>大数据平台</title>
+      <link>https://blog.weii.ink/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>记录</title>
+      <link>https://blog.weii.ink/tags/%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>集群</title>
+      <link>https://blog.weii.ink/tags/%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/tags/%E9%9B%86%E7%BE%A4/</guid>
       <description></description>
     </item>
     

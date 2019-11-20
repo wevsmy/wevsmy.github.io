@@ -6,10 +6,69 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 31 Aug 2019 10:31:11 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 10:47:49 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.weii.ink/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go代理设置</title>
+      <link>https://blog.weii.ink/2019/10/09/goproxy/</link>
+      <pubDate>Wed, 09 Oct 2019 10:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/10/09/goproxy/</guid>
+      <description>&lt;p&gt;由于国内墙的存在go get经常失败，记录安装依赖时go代理设置&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker搭建DNS服务器</title>
+      <link>https://blog.weii.ink/2019/09/17/docker_install_dnsmasq/</link>
+      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/17/docker_install_dnsmasq/</guid>
+      <description>&lt;p&gt;DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
+用docker搭建一下用用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置nginx反向代理使Docker采用域名远程访问API</title>
+      <link>https://blog.weii.ink/2019/09/12/docker_use_domain_name/</link>
+      <pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/12/docker_use_domain_name/</guid>
+      <description>&lt;p&gt;配置过docker开启2376采用远程访问，挺方便的，但是需要在服务器防火请放开2376端口（这是废话）
+配置个nginx反向代理，直接采用域名443代理访问&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>portainer使用nginx-proxy配置代理添加证书</title>
+      <link>https://blog.weii.ink/2019/09/11/nginx_proxy-portainer/</link>
+      <pubDate>Wed, 11 Sep 2019 13:31:41 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/11/nginx_proxy-portainer/</guid>
+      <description>&lt;p&gt;nginx-proxy设置一个运行nginx和docker-gen的容器。docker-gen为nginx生成反向代理配置，并在启动和停止容器时重新加载nginx。
+使用nginx-proxy来反向代理portainer，并且使用&lt;code&gt;https&lt;/code&gt;域名加密访问。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker开启2376端口使用CA认证</title>
+      <link>https://blog.weii.ink/2019/09/11/docker_ca/</link>
+      <pubDate>Wed, 11 Sep 2019 08:51:45 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/11/docker_ca/</guid>
+      <description>&lt;p&gt;默认情况下，Docker通过非联网的UNIX套接字运行。它还可以选择使用HTTP套接字进行通信。
+如果您需要以安全的方式通过网络访问Docker，则可以通过指定tlsverify标志并将Docker的tlscacert标志指向 可信CA证书来启用TLS 。
+在守护程序模式下，它仅允许来自由该CA签名的证书进行身份验证的客户端的连接。在客户端模式下，它仅连接到具有由该CA签名的证书的服务器。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HDP(2.6.5)集群安装记录</title>
+      <link>https://blog.weii.ink/2019/09/06/hdp_cluster_install/</link>
+      <pubDate>Fri, 06 Sep 2019 18:59:32 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/09/06/hdp_cluster_install/</guid>
+      <description>&lt;p&gt;HDP(2.6.5)集群安装记录&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用docker搭建smtp服务</title>
@@ -207,7 +266,9 @@ Docker使用uwsgi+nginx+python3.6镜像部署Flask&lt;/p&gt;</description>
       <pubDate>Fri, 01 Jun 2018 21:33:57 +0800</pubDate>
       
       <guid>https://blog.weii.ink/about/</guid>
-      <description>wilson  Email:wevsmy@gmail.com Homepage:Wilson&amp;rsquo;s Blog GitHub:@wilson Weibo:@wilson  个人简介 长方体混凝土瞬间移动攻城狮 专职Python后端开发 略懂前端，略懂脚本，略懂机器学习</description>
+      <description>wilson  Email:wevsmy@gmail.com Homepage:Wilson&amp;rsquo;s Blog GitHub:@wilson Weibo:@wilson  about 👉长方体混凝土瞬间移动攻城狮🤣
+👉Python and Golang后端开发🥳
+👉略懂前端，略懂脚本，略懂机器学习，别问会啥，问就是略懂🥰</description>
     </item>
     
     <item>

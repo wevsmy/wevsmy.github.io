@@ -77,7 +77,7 @@
     
     
     <meta name="description"
-          content="使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段, Docker目录磁盘空间满了, Gitlab服务器迁移, 编写Dockerfile分阶段构建Vue项目, hexo添加文章更新时间, pip安装mysqlclient报错, zulip安装记录"/>
+          content="go代理设置, Docker搭建DNS服务器, 配置nginx反向代理使Docker采用域名远程访问API, portainer使用nginx-proxy配置代理添加证书, Docker开启2376端口使用CA认证, HDP(2.6.5)集群安装记录, 使用docker搭建smtp服务, 使用N2N实现异地组网, docker使用squid搭建代理服务, docker修改默认网段"/>
     
     
     
@@ -107,9 +107,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
 
-    <title>
-        wilson&#39;s blog
-    </title>
+    <title>wilson&#39;s blog</title>
 
     
     
@@ -142,7 +140,7 @@
                     </a>
                 </h1>
                 <h2 class="subtitle">
-                    Life is short, you need Python
+                    Life is short, You need Python and Golang 😏
                 </h2>
             </div>
             
@@ -254,59 +252,43 @@
 <div class="panel panel-default post-panel">
     <div class="panel-heading post-head">
         <div class="post-title">
-            <a href="/2019/08/31/docker_install_smtp_server/">
-                <h2>使用docker搭建smtp服务</h2>
+            <a href="/2019/10/09/goproxy/">
+                <h2>go代理设置</h2>
             </a>
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.10.09 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.10.09</span>
+            </span>
 
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>200 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2019/08/31/docker_install_smtp_server/#comments">
-                <span class="post-comment-count">
-                <span id="使用docker搭建smtp服务">0</span> comments
+                    <a href="/2019/10/09/goproxy/#comments">
+                        <span class="post-comment-count">
+                            <span id="37b885a8a45badb2858c1b1ea7c02491">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -316,7 +298,567 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><p>前段时间搭建gitlab服务harbor仓库，需要用到SMTP服务用于发送邮件，用的自己办公邮箱做的测试，给别人自动发的邮件显示的是自己的邮箱。。。不正规😋申请公司的公共邮箱流程太繁琐了😥 还是自己搭建一个SMTP服务吧，自己动手丰衣足食。</p>......</p>
+            <p><p>由于国内墙的存在go get经常失败，记录安装依赖时go代理设置</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/10/09/goproxy/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/go/">
+                <i class="iconfont icontags"></i> go
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/proxy/">
+                <i class="iconfont icontags"></i> proxy
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/golang/">
+                <i class="iconfont icontags"></i> golang
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/17/docker_install_dnsmasq/">
+                <h2>Docker搭建DNS服务器</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.09.17 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.17</span>
+            </span>
+
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/17/docker_install_dnsmasq/#comments">
+                        <span class="post-comment-count">
+                            <span id="474c9c7c68ad458d48d464b2a2331788">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
+用docker搭建一下用用。</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/17/docker_install_dnsmasq/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/dns/">
+                <i class="iconfont icontags"></i> DNS
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/dnsmasq/">
+                <i class="iconfont icontags"></i> DNSMASQ
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/12/docker_use_domain_name/">
+                <h2>配置nginx反向代理使Docker采用域名远程访问API</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.09.12 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.12</span>
+            </span>
+
+            <span class="post-wordCount" title="300 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>300</span>
+            </span>
+
+            <span class="post-readingTime" title="2 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/12/docker_use_domain_name/#comments">
+                        <span class="post-comment-count">
+                            <span id="58762af66403f7c1583d18c573ee5f12">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>配置过docker开启2376采用远程访问，挺方便的，但是需要在服务器防火请放开2376端口（这是废话）
+配置个nginx反向代理，直接采用域名443代理访问</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/12/docker_use_domain_name/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/nginx/">
+                <i class="iconfont icontags"></i> nginx
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/proxy/">
+                <i class="iconfont icontags"></i> proxy
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/domain/">
+                <i class="iconfont icontags"></i> domain
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/11/nginx_proxy-portainer/">
+                <h2>portainer使用nginx-proxy配置代理添加证书</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.09.12 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.12</span>
+            </span>
+
+            <span class="post-wordCount" title="600 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>600</span>
+            </span>
+
+            <span class="post-readingTime" title="3 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>3</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/11/nginx_proxy-portainer/#comments">
+                        <span class="post-comment-count">
+                            <span id="120f21e801f98c8b55dc25d32a43c712">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>nginx-proxy设置一个运行nginx和docker-gen的容器。docker-gen为nginx生成反向代理配置，并在启动和停止容器时重新加载nginx。
+使用nginx-proxy来反向代理portainer，并且使用<code>https</code>域名加密访问。</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/11/nginx_proxy-portainer/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/portainer/">
+                <i class="iconfont icontags"></i> portainer
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/nginx/">
+                <i class="iconfont icontags"></i> nginx
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/proxy/">
+                <i class="iconfont icontags"></i> proxy
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/11/docker_ca/">
+                <h2>Docker开启2376端口使用CA认证</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="400 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>400</span>
+            </span>
+
+            <span class="post-readingTime" title="2 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/11/docker_ca/#comments">
+                        <span class="post-comment-count">
+                            <span id="e638e2d6896bafd2da82d23b6964495b">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>默认情况下，Docker通过非联网的UNIX套接字运行。它还可以选择使用HTTP套接字进行通信。
+如果您需要以安全的方式通过网络访问Docker，则可以通过指定tlsverify标志并将Docker的tlscacert标志指向 可信CA证书来启用TLS 。
+在守护程序模式下，它仅允许来自由该CA签名的证书进行身份验证的客户端的连接。在客户端模式下，它仅连接到具有由该CA签名的证书的服务器。</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/11/docker_ca/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/docker/">
+                <i class="iconfont icontags"></i> Docker
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/ca/">
+                <i class="iconfont icontags"></i> CA
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/ssl/">
+                <i class="iconfont icontags"></i> SSL
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/09/06/hdp_cluster_install/">
+                <h2>HDP(2.6.5)集群安装记录</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.09.06 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.09.06</span>
+            </span>
+
+            <span class="post-wordCount" title="900 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>900</span>
+            </span>
+
+            <span class="post-readingTime" title="5 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>5</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/09/06/hdp_cluster_install/#comments">
+                        <span class="post-comment-count">
+                            <span id="dc90a7ad0a8fb799ce5698d35cf06280">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>HDP(2.6.5)集群安装记录</p></p>
+            
+            <div class="post-read-more">
+                <a href="/2019/09/06/hdp_cluster_install/">阅读更多</a>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="panel-footer post-footer">
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/hdp/">
+                <i class="iconfont icontags"></i> HDP
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/">
+                <i class="iconfont icontags"></i> 大数据平台
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E9%9B%86%E7%BE%A4/">
+                <i class="iconfont icontags"></i> 集群
+            </a>
+        </span>
+        
+        
+        <span class="label label-default post-label" >
+            <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                <i class="iconfont icontags"></i> 记录
+            </a>
+        </span>
+        
+    </div>
+    
+
+</div>
+
+
+
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title">
+            <a href="/2019/08/31/docker_install_smtp_server/">
+                <h2>使用docker搭建smtp服务</h2>
+            </a>
+        </div>
+        <div class="post-meta">
+
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
+
+            <span class="post-wordCount" title="200 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>200</span>
+            </span>
+
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
+
+            
+            
+
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconcomment"></i>
+                <span>
+                    <a href="/2019/08/31/docker_install_smtp_server/#comments">
+                        <span class="post-comment-count">
+                            <span id="4ff67cde51ad573e7fe7baeaeceee5cd">0</span>
+                        </span>
+                    </a>
+                </span>
+            </span>
+
+            
+            
+
+        </div>
+
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-index">
+            <p><p>前段时间搭建gitlab服务harbor仓库，需要用到SMTP服务用于发送邮件，用的自己办公邮箱做的测试，给别人自动发的邮件显示的是自己的邮箱。。。不正规😋申请公司的公共邮箱流程太繁琐了😥 还是自己搭建一个SMTP服务吧，自己动手丰衣足食。</p></p>
             
             <div class="post-read-more">
                 <a href="/2019/08/31/docker_install_smtp_server/">阅读更多</a>
@@ -365,53 +907,37 @@
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="400 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>400</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>400 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>2 minute</span>
-                </span>
+            <span class="post-readingTime" title="2 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>2</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2019/08/25/n2n_install/#comments">
-                <span class="post-comment-count">
-                <span id="使用N2N实现异地组网">0</span> comments
+                    <a href="/2019/08/25/n2n_install/#comments">
+                        <span class="post-comment-count">
+                            <span id="e4969cba03fa968a49d24e9c4f1600ce">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -421,7 +947,7 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><p>N2N  安装记录，至于N2N是用来做什么的，我也不知道，猪头保命🐷</p>......</p>
+            <p><p>N2N  安装记录，至于N2N是用来做什么的，我也不知道，猪头保命🐷</p></p>
             
             <div class="post-read-more">
                 <a href="/2019/08/25/n2n_install/">阅读更多</a>
@@ -470,53 +996,37 @@
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2019/07/17/docker_uses_squid_to_set_up_proxy_services/#comments">
-                <span class="post-comment-count">
-                <span id="docker使用squid搭建代理服务">0</span> comments
+                    <a href="/2019/07/17/docker_uses_squid_to_set_up_proxy_services/#comments">
+                        <span class="post-comment-count">
+                            <span id="ff16ace12f88370e455f6b66cf25fd97">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -526,7 +1036,7 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><p>记录一下配置代理的过程。</p>......</p>
+            <p><p>记录一下配置代理的过程。</p></p>
             
             <div class="post-read-more">
                 <a href="/2019/07/17/docker_uses_squid_to_set_up_proxy_services/">阅读更多</a>
@@ -575,53 +1085,37 @@
         </div>
         <div class="post-meta">
 
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
+            <span class="post-date" title="2019.11.20 update" data-toggle="tooltip" data-placement="top">
+                <i class="iconfont iconcalendar-check"></i>
+                <span>2019.11.20</span>
+            </span>
 
+            <span class="post-wordCount" title="100 words" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconfile-word"></i>
+                <span>100</span>
+            </span>
 
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
+            <span class="post-readingTime" title="1 minute" data-toggle="tooltip" data-placement="top">
+                <span class="post-meta-divider divider">|</span>
+                <i class="iconfont iconField-time"></i>
+                <span>1</span>
+            </span>
 
             
             
 
-
-            <span class="post-comment-count">
+            <span class="post-comment-count" title="comments" data-toggle="tooltip" data-placement="top">
                 <span class="post-meta-divider divider">|</span>
                 <i class="iconfont iconcomment"></i>
                 <span>
-                <a href="/2019/07/17/docker_modifies_default_segments/#comments">
-                <span class="post-comment-count">
-                <span id="docker修改默认网段">0</span> comments
+                    <a href="/2019/07/17/docker_modifies_default_segments/#comments">
+                        <span class="post-comment-count">
+                            <span id="7e9ea3232ef0313d49a204004763dbc8">0</span>
+                        </span>
+                    </a>
                 </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
+            </span>
 
             
             
@@ -631,7 +1125,7 @@
     </div>
     <div class="panel-body post-body">
         <div class="post-index">
-            <p><p>docker-compose 启动的网桥使用的网段与公司172.31.xx.xx网段冲突</p>......</p>
+            <p><p>docker-compose 启动的网桥使用的网段与公司172.31.xx.xx网段冲突</p></p>
             
             <div class="post-read-more">
                 <a href="/2019/07/17/docker_modifies_default_segments/">阅读更多</a>
@@ -661,608 +1155,6 @@
         <span class="label label-default post-label" >
             <a href="/tags/network/">
                 <i class="iconfont icontags"></i> Network
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/16/docker_low_disk_space/">
-                <h2>Docker目录磁盘空间满了</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>400 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>2 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/07/16/docker_low_disk_space/#comments">
-                <span class="post-comment-count">
-                <span id="Docker目录磁盘空间满了">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>😂昨天刚建的GitLab服务今天就报500了，哭死😭排查发现是<code>/var/lib/docker</code>目录满了，咱也不知道原来里面放的啥，咱也不敢动，咱走还不行嘛！</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/16/docker_low_disk_space/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/15/gitlab_server_migration/">
-                <h2>Gitlab服务器迁移</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>400 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>2 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/07/15/gitlab_server_migration/#comments">
-                <span class="post-comment-count">
-                <span id="Gitlab服务器迁移">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>公司有需求安装在172.31.66.63的gitlab服务需要迁移到10.10.192.18上，记录一下迁移过程。</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/15/gitlab_server_migration/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/15/docker_build_vue/">
-                <h2>编写Dockerfile分阶段构建Vue项目</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>200 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/07/15/docker_build_vue/#comments">
-                <span class="post-comment-count">
-                <span id="编写Dockerfile分阶段构建Vue项目">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>docker构建部署vue项目，减少构建后的docker镜像的大小，采用分阶段构建，只保留build</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/15/docker_build_vue/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/07/09/hexo_add_updated/">
-                <h2>hexo添加文章更新时间</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>100 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/07/09/hexo_add_updated/#comments">
-                <span class="post-comment-count">
-                <span id="hexo添加文章更新时间">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>现在使用的主题只有文章创建时间，并没有文章更新时间，就自己捣鼓捣鼓添加了一个文章更新时间，记录一下。</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/07/09/hexo_add_updated/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/hexo/">
-                <i class="iconfont icontags"></i> hexo
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/06/18/pip_install_mysqlclient_reported_error/">
-                <h2>pip安装mysqlclient报错</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>200 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/06/18/pip_install_mysqlclient_reported_error/#comments">
-                <span class="post-comment-count">
-                <span id="pip安装mysqlclient报错">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>使用<code>Django==2.0.4</code>报错缺少<code>mysqlclient</code>模块的解决方案</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/06/18/pip_install_mysqlclient_reported_error/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/python/">
-                <i class="iconfont icontags"></i> Python
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/django/">
-                <i class="iconfont icontags"></i> Django
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
-            </a>
-        </span>
-        
-    </div>
-    
-
-</div>
-
-
-
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title">
-            <a href="/2019/06/18/zulip_installation_record/">
-                <h2>zulip安装记录</h2>
-            </a>
-        </div>
-        <div class="post-meta">
-
-                <span class="post-date">
-                     <i class="iconfont iconcalendar-check"></i>
-                    <span>2019.09.03 update</span>
-                </span>
-
-
-            <span class="post-wordCount">
-                    <span class="post-meta-divider divider">|</span>
-                    <i class="iconfont iconfile-word"></i>
-                    <span>200 words</span>
-                </span>
-
-            <span class="post-readingTime">
-                    <span class="post-meta-divider divider">|</span>
-                     <i class="iconfont iconField-time"></i>
-                    <span>1 minute</span>
-                </span>
-
-            
-            
-
-
-            <span class="post-comment-count">
-                <span class="post-meta-divider divider">|</span>
-                <i class="iconfont iconcomment"></i>
-                <span>
-                <a href="/2019/06/18/zulip_installation_record/#comments">
-                <span class="post-comment-count">
-                <span id="zulip安装记录">0</span> comments
-                </span>
-                </a>
-                </span>
-                </span>
-
-            <script type="text/javascript">
-                $.ajax({
-                    url: 'https://api.github.com/repos/' + "wevsmy/wevsmy.github.io/" + 'issues?client_id=' + "ded8625909c20b7ae2f7" + '&client_secret=' + "c9ba27c5047486b4e2e0f8c3001aae33bc15374a",
-                    dataType: 'json',
-                    cache: false,
-                    crossDomain: true,
-                    success: function success(page_comments) {
-                        for (var i = 0; i < page_comments.length; ++i) {
-                            $("#" + page_comments[i].title).text(page_comments[i].comments + 1)
-                        }
-                    }
-                });
-            </script>
-
-            
-            
-
-        </div>
-
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-index">
-            <p><p>在公司内网搭建个聊天服务，专门用来唠嗑，吹牛逼。为啥不用公司内网的通讯工具？俺又不傻，万一被公司逮到在上班时间闲聊，其实也没事哈。主要还是想搞点东西练手☺简单记录一下采用Docker安装Zulip的过程</p>......</p>
-            
-            <div class="post-read-more">
-                <a href="/2019/06/18/zulip_installation_record/">阅读更多</a>
-            </div>
-            
-        </div>
-    </div>
-
-    
-    <div class="panel-footer post-footer">
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/python/">
-                <i class="iconfont icontags"></i> Python
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/docker/">
-                <i class="iconfont icontags"></i> Docker
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/zulip/">
-                <i class="iconfont icontags"></i> Zulip
-            </a>
-        </span>
-        
-        
-        <span class="label label-default post-label" >
-            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                <i class="iconfont icontags"></i> 笔记
             </a>
         </span>
         
@@ -1368,7 +1260,16 @@
         
     
     
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
     
     
     <li class="page-item">
@@ -1376,13 +1277,14 @@
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
 
 
 </nav>
+
 
 
 <script type="text/javascript">
@@ -1434,6 +1336,25 @@
     });
 </script>
 
+
+
+
+
+
+<script type="text/javascript">
+    function getIssuesComments(Title,UniqueID) {
+        $.ajax({
+        url: 'https://api.github.com/search/issues?q='+Title+'type:issue in:title repo:wevsmy/wevsmy.github.io&sort=created&order=asc&client_id=ded8625909c20b7ae2f7&client_secret=c9ba27c5047486b4e2e0f8c3001aae33bc15374a',
+        dataType: 'json',
+        cache: false,
+        crossDomain: true,
+        success: function success(page_comments) {
+            $("#" + UniqueID).text(page_comments.total_count)
+        }
+    });
+    };getIssuesComments("go代理设置","37b885a8a45badb2858c1b1ea7c02491");getIssuesComments("Docker搭建DNS服务器","474c9c7c68ad458d48d464b2a2331788");getIssuesComments("配置nginx反向代理使Docker采用域名远程访问API","58762af66403f7c1583d18c573ee5f12");getIssuesComments("portainer使用nginx-proxy配置代理添加证书","120f21e801f98c8b55dc25d32a43c712");getIssuesComments("Docker开启2376端口使用CA认证","e638e2d6896bafd2da82d23b6964495b");getIssuesComments("HDP(2.6.5)集群安装记录","dc90a7ad0a8fb799ce5698d35cf06280");getIssuesComments("使用docker搭建smtp服务","4ff67cde51ad573e7fe7baeaeceee5cd");getIssuesComments("使用N2N实现异地组网","e4969cba03fa968a49d24e9c4f1600ce");getIssuesComments("docker使用squid搭建代理服务","ff16ace12f88370e455f6b66cf25fd97");getIssuesComments("docker修改默认网段","7e9ea3232ef0313d49a204004763dbc8");</script>
+
+
             </div>
             
             <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
@@ -1456,7 +1377,7 @@
             
             <div class="count-block">
                 <div class="site-count-title">归档</div>
-                <div><a href="/posts/">79</a></div>
+                <div><a href="/posts/">85</a></div>
             </div>
             
             
@@ -1479,7 +1400,7 @@
                     
                     
                     
-                    20
+                    37
                 </a></div>
             </div>
             
@@ -1538,6 +1459,13 @@
                     <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
                        title="╮(╯▽╰)╭">
                         <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://simplerfroze.com" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconcode"></i> Symoon
                     </a>
                 </li>
                 

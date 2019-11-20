@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/weii.css">
+
+
+
+
+    
+    <meta name="theme-color" content="#333333">
+    <meta name="msapplication-TileColor" content="#333333">
+    
+    
+    
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146915278-1');
+    </script>
+    
+    
+    <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
+    
+    
+    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
+    
+    
+    
+    
+    <meta name="keywords"
+          content="Docker, CA, SSL, openssl, linux, 2376, HTTPS, 证书加密"/>
+    
+    
+    
+    <meta name="description" content="Docker开启2376端口使用CA认证 | 默认情况下，Docker通过非联网的UNIX套接字运行。它还可以选择使用HTTP套接字进行通信。
+如果您需要以安全的方式通过网络访问Docker，则可以通过指定tlsverify标志并将Docker的tlscacert标志指向 可信CA证书来启用TLS 。
+在守护程序模式下，它仅允许来自由该CA签名的证书进行身份验证的客户端的连接。在客户端模式下，它仅连接到具有由该CA签名的证书的服务器。">
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/favicons/android-chrome-96x96.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
+          color="#333333">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+
+    <title>Docker开启2376端口使用CA认证</title>
+
+    
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+
+
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<header id="header" class="header" 
+        style="background: #333333;" >
+    <div class="container">
+        <div class="header-container">
+            <div class="header-title">
+                <h1 class="title">
+                    <a href="/">
+                        wilson&#39;s blog
+                    </a>
+                </h1>
+                <h2 class="subtitle">
+                    Life is short, You need Python and Golang 😏
+                </h2>
+            </div>
+            
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+            </div>
+            
+        </div>
+
+        
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <nav class="navbar navbar-inverse header-nav">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
+                       title="( ⊙ o ⊙ )啊！">导航</a>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a href="/">
+                            
+                            <i class="iconfont iconhome"></i>
+                            
+                            <span class="menu-text">首页</span>
+                        </a></li>
+                        
+                        <li><a href="/posts/">
+                            
+                            <i class="iconfont iconfolder-open"></i>
+                            
+                            <span class="menu-text">归档</span>
+                        </a></li>
+                        
+                        <li><a href="/categories/">
+                            
+                            <i class="iconfont iconbook"></i>
+                            
+                            <span class="menu-text">分类</span>
+                        </a></li>
+                        
+                        <li><a href="/tags/">
+                            
+                            <i class="iconfont icontags"></i>
+                            
+                            <span class="menu-text">标签</span>
+                        </a></li>
+                        
+                        <li><a href="/about/">
+                            
+                            <i class="iconfont iconsolution"></i>
+                            
+                            <span class="menu-text">关于</span>
+                        </a></li>
+                        
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="search" id="search-input" name="q" results="0"
+                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="search-result-box" id="search-result"></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="main">
+    <div class="container">
+        <div class="main-container">
+            <div id="content" class="content">
+                
+                
+                
+                
+<div class="panel panel-default post-panel">
+    <div class="panel-heading post-head">
+        <div class="post-title"><h2><a href='/2019/09/11/docker_ca/'>Docker开启2376端口使用CA认证</a></h2></div>
+        <div class="post-meta"><span>2019.09.11</span></div>
+    </div>
+    <div class="panel-body post-body">
+        <div class="post-post" id="post-post">
+            <p>默认情况下，Docker通过非联网的UNIX套接字运行。它还可以选择使用HTTP套接字进行通信。
+如果您需要以安全的方式通过网络访问Docker，则可以通过指定tlsverify标志并将Docker的tlscacert标志指向 可信CA证书来启用TLS 。
+在守护程序模式下，它仅允许来自由该CA签名的证书进行身份验证的客户端的连接。在客户端模式下，它仅连接到具有由该CA签名的证书的服务器。</p>
+
+<h1 id="docker开启2376端口ca认证">docker开启2376端口CA认证</h1>
+
+<h2 id="环境">环境</h2>
+
+<pre><code class="language-txt">ubuntu 18.04
+docker community 19.03
+</code></pre>
+
+<h2 id="生成ca私钥和公钥">生成CA私钥和公钥</h2>
+
+<pre><code class="language-bash">openssl genrsa -aes256 -out ca-key.pem 4096
+</code></pre>
+
+<p>按提示输入密码，两次</p>
+
+<pre><code class="language-bash">openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem
+</code></pre>
+
+<p>按照提示依次输入密码、国家、省、市、组织名称等
+如下俺的：</p>
+
+<pre><code class="language-txt">ubuntu@VM-0-6-ubuntu:~/project$ openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem
+Enter pass phrase for ca-key.pem:
+Can't load /home/ubuntu/.rnd into RNG
+139779211444672:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/home/ubuntu/.rnd
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:CN
+State or Province Name (full name) [Some-State]:BeiJing
+Locality Name (eg, city) []:Beijing
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Weii Corp   
+Organizational Unit Name (eg, section) []:Admin
+Common Name (e.g. server FQDN or YOUR name) []:Weii
+Email Address []:admin@weii.ink
+</code></pre>
+
+<h2 id="创建服务器密钥和证书签名请求-csr">创建服务器密钥和证书签名请求（CSR）</h2>
+
+<pre><code class="language-bash">openssl genrsa -out server-key.pem 4096
+</code></pre>
+
+<pre><code class="language-bash">openssl req -subj &quot;/CN=$HOST&quot; -sha256 -new -key server-key.pem -out server.csr
+</code></pre>
+
+<p>注：将<code>$HOST</code>替换为换成你自己服务器外网的IP或者域名。
+确保“Common Name”与用于连接Docker的主机名匹配。
+比如俺的</p>
+
+<pre><code class="language-bash">openssl req -subj &quot;/CN=docker.weii.ink&quot; -sha256 -new -key server-key.pem -out server.csr
+</code></pre>
+
+<h2 id="配置白名单">配置白名单</h2>
+
+<p>0.0.0.0表示所有ip都可以连接(但只有拥有证书的才可以连接成功)</p>
+
+<pre><code class="language-bash">echo subjectAltName = DNS:docker.weii.ink,IP:127.0.0.1,IP:192.168.0.1 &gt;&gt; extfile.cnf
+</code></pre>
+
+<h2 id="将docker守护程序密钥的扩展使用情况属性设置为仅用于服务器身份验证">将Docker守护程序密钥的扩展使用情况属性设置为仅用于服务器身份验证</h2>
+
+<pre><code class="language-bash">echo extendedKeyUsage = serverAuth &gt;&gt; extfile.cnf
+</code></pre>
+
+<h2 id="生成签名证书-输入之前设置的密码">生成签名证书(输入之前设置的密码)</h2>
+
+<pre><code class="language-bash">openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out server-cert.pem -extfile extfile.cnf
+</code></pre>
+
+<h2 id="客户端key">客户端key</h2>
+
+<pre><code class="language-bash">openssl genrsa -out key.pem 4096
+openssl req -subj '/CN=client' -new -key key.pem -out client.csr
+</code></pre>
+
+<h2 id="认证">认证</h2>
+
+<pre><code class="language-bash">echo extendedKeyUsage = clientAuth &gt; extfile-client.cnf
+</code></pre>
+
+<h2 id="生成cert-pem-需要输入前面设置的密码-生成签名证书">生成cert.pem,需要输入前面设置的密码，生成签名证书</h2>
+
+<pre><code class="language-bash">openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out cert.pem -extfile extfile-client.cnf
+</code></pre>
+
+<h2 id="删除不需要的文件-两个证书签名请求">删除不需要的文件，两个证书签名请求</h2>
+
+<pre><code class="language-bash">rm -v client.csr server.csr
+</code></pre>
+
+<h2 id="修改权限">修改权限</h2>
+
+<pre><code class="language-bash">chmod -v 0400 ca-key.pem key.pem server-key.pem
+chmod -v 0444 ca.pem server-cert.pem cert.pem
+</code></pre>
+
+<h2 id="归集服务器证书">归集服务器证书</h2>
+
+<pre><code class="language-bash">cp server-*.pem  /etc/docker/
+cp ca.pem /etc/docker/
+</code></pre>
+
+<h2 id="修改docker配置">修改docker配置</h2>
+
+<pre><code class="language-bash">vim /lib/systemd/system/docker.service
+</code></pre>
+
+<p><code>ExecStart=/usr/bin/dockerd</code> 下面增加</p>
+
+<pre><code class="language-bash">--tlsverify \
+--tlscacert=/etc/docker/ca.pem \
+--tlscert=/etc/docker/server-cert.pem \
+--tlskey=/etc/docker/server-key.pem \
+-H tcp://0.0.0.0:2376 \
+-H unix:///var/run/docker.sock \
+</code></pre>
+
+<h2 id="重新加载daemon并重启docker">重新加载daemon并重启docker</h2>
+
+<pre><code class="language-bash">systemctl daemon-reload 
+systemctl restart docker
+</code></pre>
+
+<h2 id="客户端相关证书">客户端相关证书</h2>
+
+<pre><code class="language-txt">&gt; --cert cert.pem 
+&gt; --key key.pem 
+&gt; --cacert ca.pem
+</code></pre>
+
+<h2 id="验证">验证</h2>
+
+<pre><code class="language-txt">ubuntu@VM-0-6-ubuntu:~/project/CA$ curl https://127.0.0.1:2376/images/json \
+&gt; --cert cert.pem \
+&gt; --key key.pem \
+&gt; --cacert ca.pem
+[{&quot;Containers&quot;:-1,&quot;Created&quot;:1566349217,&quot;Id&quot;:&quot;sha256:ed7d2ff5a6232b43bdc89a2220ed989f532c3794422aa2a86823b8bc62e71447&quot;,&quot;Labels&quot;:null,&quot;ParentId&quot;:&quot;&quot;,&quot;RepoDigests&quot;:[&quot;redis@sha256:50899ea1ceed33fa03232f3ac57578a424faa1742c1ac9c7a7bdb95cdf19b858&quot;],&quot;RepoTags&quot;:[&quot;redis:alpine&quot;],&quot;SharedSize&quot;:-1,&quot;Size&quot;:29331594,&quot;VirtualSize&quot;:29331594},{&quot;Containers&quot;:-1,&quot;Created&quot;:1565904159,&quot;Id&quot;:&quot;sha256:5a3221f0137beb960c34b9cf4455424b6210160fd618c5e79401a07d6e5a2ced&quot;,&quot;Labels&quot;:{&quot;maintainer&quot;:&quot;NGINX Docker Maintainers &lt;docker-maint@nginx.com&gt;&quot;},&quot;ParentId&quot;:&quot;&quot;,&quot;RepoDigests&quot;:[&quot;nginx@sha256:53ddb41e46de3d63376579acf46f9a41a8d7de33645db47a486de9769201fec9&quot;],&quot;RepoTags&quot;:[&quot;nginx:latest&quot;],&quot;SharedSize&quot;:-1,&quot;Size&quot;:125958368,&quot;VirtualSize&quot;:125958368},{&quot;Containers&quot;:-1,&quot;Created&quot;:1565786892,&quot;Id&quot;:&quot;sha256:cfcdf565ff94de927d0a86c60e78f7d27e82da313f805d66310785cba4e8452a&quot;,&quot;Labels&quot;:null,&quot;ParentId&quot;:&quot;&quot;,&quot;RepoDigests&quot;:[&quot;python@sha256:553fd76c04ee1ac1db8ef518161bb6ec325cc3ce3e55bbad73bf40e3abe23960&quot;],&quot;RepoTags&quot;:[&quot;python:3.6&quot;],&quot;SharedSize&quot;:-1,&quot;Size&quot;:913432043,&quot;VirtualSize&quot;:913432043},{&quot;Containers&quot;:-1,&quot;Created&quot;:1564107108,&quot;Id&quot;:&quot;sha256:2b4ddf654e1c413b21c7253125aa0f34a4ff74154558940fa689f8754ec853c5&quot;,&quot;Labels&quot;:null,&quot;ParentId&quot;:&quot;&quot;,&quot;RepoDigests&quot;:[&quot;portainer/portainer@sha256:a16919b3e02323e4bd0a8c5023d6fd569525297b9dc9a028d778cb6e13512be5&quot;],&quot;RepoTags&quot;:[&quot;portainer/portainer:latest&quot;],&quot;SharedSize&quot;:-1,&quot;Size&quot;:77680455,&quot;VirtualSize&quot;:77680455},{&quot;Containers&quot;:-1,&quot;Created&quot;:1562403218,&quot;Id&quot;:&quot;sha256:d279b4072846e89af1dfeb2982addf8c4f2125ad929bb536875e3a32700b86ec&quot;,&quot;Labels&quot;:{&quot;maintainer&quot;:&quot;sameer@damagehead.com&quot;},&quot;ParentId&quot;:&quot;&quot;,&quot;RepoDigests&quot;:[&quot;sameersbn/squid@sha256:e98299069f0c6e3d9b9188903518e2f44ac36b1fa5007e879af518e1c0a234af&quot;],&quot;RepoTags&quot;:[&quot;sameersbn/squid:3.5.27-2&quot;],&quot;SharedSize&quot;:-1,&quot;Size&quot;:162465195,&quot;VirtualSize&quot;:162465195},{&quot;Containers&quot;:-1,&quot;Created&quot;:1558433068,&quot;Id&quot;:&quot;sha256:704607fca3b537a687a24da68993280d1f4030d138a844d9d5dea650f115f0c7&quot;,&quot;Labels&quot;:null,&quot;ParentId&quot;:&quot;&quot;,&quot;RepoDigests&quot;:[&quot;filebrowser/filebrowser@sha256:dda58e42fe876520aa2f4a1087023a90ae894263707c4f701d36fda124a20741&quot;],&quot;RepoTags&quot;:[&quot;filebrowser/filebrowser:latest&quot;],&quot;SharedSize&quot;:-1,&quot;Size&quot;:32732332,&quot;VirtualSize&quot;:32732332}]
+</code></pre>
+
+<p>另一种验证方式</p>
+
+<pre><code class="language-txt">ubuntu@VM-0-6-ubuntu:~/project/CA$ docker --tlsverify --tlscacert=ca.pem --tlscert=cert.pem --tlskey=key.pem -H=docker.weii.ink:443 ps
+</code></pre>
+
+<h2 id="参考链接">参考链接</h2>
+
+<p><a href="https://docs.docker.com/engine/security/https/">Docker文档</a></p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2019/09/06/hdp_cluster_install/" title="HDP(2.6.5)集群安装记录" data-toggle="tooltip" data-placement="top">
+            <span aria-hidden="true">&larr;</span>
+                上一页
+            </a>
+        </li>
+        
+
+        
+        <li class="next">
+            <a href="/2019/09/11/nginx_proxy-portainer/" title="portainer使用nginx-proxy配置代理添加证书" data-toggle="tooltip" data-placement="top">
+                下一页
+            <span aria-hidden="true">&rarr;</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+
+<div class="reward" id="reward">
+
+    <div class="reward-comment">
+         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
+    </div>
+
+    
+    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
+        支持一下
+    </button>
+
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="reward-body" id="reward-body">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>微信</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                
+                                <div class="reward-qr">
+                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
+                                    <span>支付宝</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="comments" id="comments">
+    
+
+    <script src="https://utteranc.es/client.js"
+        repo="wevsmy/wevsmy.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    
+</div>
+
+
+
+
+                
+            </div>
+            
+            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+
+    <div class="info sidebar-item" id="info">
+
+        
+        
+        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
+        
+        
+
+        <h2 class="author-name">wilson</h2>
+        <h3 class="author-description">٩(๑❛ᴗ❛๑)۶</h3>
+        <div class="site-count">
+            
+            
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">归档</div>
+                <div><a href="/posts/">85</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">分类</div>
+                <div><a href="/categories/">2</a></div>
+            </div>
+            
+            
+            
+            <div class="count-block">
+                <div class="site-count-title">标签</div>
+                <div><a href="/tags/">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    37
+                </a></div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+        <div class="rss">
+            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
+               type="application/rss+xml" title="rss">
+                <i class="iconfont iconrss rss-icon"> RSS</i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="sidebar-sticky">
+
+        
+        
+        <hr>
+        <div class="post-toc sidebar-item">
+            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#docker开启2376端口ca认证">docker开启2376端口CA认证</a>
+<ul>
+<li><a href="#环境">环境</a></li>
+<li><a href="#生成ca私钥和公钥">生成CA私钥和公钥</a></li>
+<li><a href="#创建服务器密钥和证书签名请求-csr">创建服务器密钥和证书签名请求（CSR）</a></li>
+<li><a href="#配置白名单">配置白名单</a></li>
+<li><a href="#将docker守护程序密钥的扩展使用情况属性设置为仅用于服务器身份验证">将Docker守护程序密钥的扩展使用情况属性设置为仅用于服务器身份验证</a></li>
+<li><a href="#生成签名证书-输入之前设置的密码">生成签名证书(输入之前设置的密码)</a></li>
+<li><a href="#客户端key">客户端key</a></li>
+<li><a href="#认证">认证</a></li>
+<li><a href="#生成cert-pem-需要输入前面设置的密码-生成签名证书">生成cert.pem,需要输入前面设置的密码，生成签名证书</a></li>
+<li><a href="#删除不需要的文件-两个证书签名请求">删除不需要的文件，两个证书签名请求</a></li>
+<li><a href="#修改权限">修改权限</a></li>
+<li><a href="#归集服务器证书">归集服务器证书</a></li>
+<li><a href="#修改docker配置">修改docker配置</a></li>
+<li><a href="#重新加载daemon并重启docker">重新加载daemon并重启docker</a></li>
+<li><a href="#客户端相关证书">客户端相关证书</a></li>
+<li><a href="#验证">验证</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+        <hr>
+        <div class="social-link sidebar-item">
+            <div><i class="iconfont iconidcard"></i> 社交链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconweibo"></i> Weibo
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconmail"></i> E-Mail
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <hr>
+        <div class="blogroll sidebar-item">
+            <div><i class="iconfont iconlink"></i> 友情链接</div>
+            <ul>
+                
+                <li>
+                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="╮(╯▽╰)╭">
+                        <i class="iconfont iconcode"></i> wilson&#39;s blog
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://simplerfroze.com" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconcode"></i> Symoon
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont icongithub-fill"></i> GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
+                       title="O__O ">
+                        <i class="iconfont iconheart"></i> 友链招租🤪
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+</aside>
+
+        </div>
+    </div>
+</main>
+
+
+<footer id="footer" class="footer" 
+        style="background: #333333;" >
+
+    <div class="container">
+        <div class="back-to-top">
+            <a href="#top">
+                <button id="back-to-top">
+                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
+                </button>
+            </a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="copyright">
+                    <span class="author">
+                        <a href="https://blog.weii.ink" target="_blank">
+                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
+                                wilson
+                            </abbr>
+                        </a>
+                    </span>
+                    <i class="iconfont iconheart" aria-hidden="true"></i>
+                    <span class="year">2014 - 2019</span>
+                    
+                    <span class="creative-commons">
+                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                           target="_blank">BY-NC-SA 4.0</a>
+                    </span>
+                    
+                </div>
+                
+                <div class="busuanzi">
+                    <span id="busuanzi_container_site_pv">
+                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv">
+                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span id="busuanzi_container_page_pv">
+                        <i class="iconfont iconsolution"></i>
+                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
+                    </span>
+                </div>
+                
+
+
+            </div>
+            <div class="footer-right">
+                <div class="custom-info">
+                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
+                    <i class="iconfont icongithub-fill"></i>
+                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+                    <iframe style="margin-left:2px;margin-bottom:-5px;"
+                            frameborder="0" scrolling="0" width="82px"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
+                    </iframe>
+                </div>
+
+                <div class="powered-by">由
+                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
+                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
+                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/weii.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on </title>
+    <link>https://blog.weii.ink/tags/go/</link>
+    <description>Recent content in go on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Oct 2019 10:47:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.weii.ink/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>go代理设置</title>
+      <link>https://blog.weii.ink/2019/10/09/goproxy/</link>
+      <pubDate>Wed, 09 Oct 2019 10:47:49 +0800</pubDate>
+      
+      <guid>https://blog.weii.ink/2019/10/09/goproxy/</guid>
+      <description>&lt;p&gt;由于国内墙的存在go get经常失败，记录安装依赖时go代理设置&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -44,6 +44,8 @@
     </script>
 
     
+    <script data-ad-client="ca-pub-6222665322795328" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
     
     
     
@@ -302,24 +304,24 @@ tmpfs                 13G     0   13G    0% /run/user/1001
 <li><p>改配置，指向新家</p></li>
 </ul>
 
-<p>查看<code>/etc/systemd/system/docker.service.d</code>目录及<code>devicemapper.conf</code>是否存在。如果不存在，就新建</p>
+<p>添加dockerd的项</p>
 
-<pre><code class="language-shell">  sudo mkdir -p /etc/systemd/system/docker.service.d/
-  sudo vim /etc/systemd/system/docker.service.d/devicemapper.conf
+<pre><code class="language-shell">  sudo vim /lib/systemd/system/docker.service
 </code></pre>
 
-<p><code>devicemapper.conf</code>添加如下内容：</p>
+<p>把<code>dockerd</code>的启动参数添加<code>--graph=/home/dev/var/lib/docker</code>
+  修改如下内容：</p>
 
 <pre><code class="language-txt">  [Service]
-  ExecStart=/usr/bin/dockerd  --graph=/home/dev/var/lib/docker
+  ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --graph=/home/dev/var/lib/docker
+
 </code></pre>
 
 <ul>
 <li><p>启动docker</p>
 
 <pre><code class="language-shell">systemctl daemon-reload
-systemctl restart docker
-systemctl enable docker
+systemctl start docker
 </code></pre></li>
 
 <li><p>确认一哈

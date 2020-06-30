@@ -1,662 +1,60 @@
-<!DOCTYPE html>
-<html lang="zh-cn" >
-<head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    
-
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/weii.css">
-
-
-
-
-    
-    <meta name="theme-color" content="#333333">
-    <meta name="msapplication-TileColor" content="#333333">
-    
-    
-    
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
-    
-    <script data-ad-client="ca-pub-6222665322795328" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-146915278-1');
-    </script>
-    
-    
-    <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
-    
-    
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
-    
-    
-    
-    
-    <meta name="keywords"
-          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
-    
-    
-    
-    <meta name="description" content="这是👉前端基础之JavaScript👈的摘要">
-    
-    
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
-    
-    
-    <link rel="icon" type="image/png" sizes="192x192"
-          href="/favicons/android-chrome-96x96.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    
-    
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
-          color="#333333">
-    
-    
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    
-    
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
-    
-
-    <title>前端基础之JavaScript</title>
-
-    
-    
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-
-
-
-
-
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-</head>
-
-<body>
-
-<header id="header" class="header" 
-        style="background: #333333;" >
-    <div class="container">
-        <div class="header-container">
-            <div class="header-title">
-                <h1 class="title">
-                    <a href="/">
-                        wilson&#39;s blog
-                    </a>
-                </h1>
-                <h2 class="subtitle">
-                    Life is short, You need Python and Golang 😏
-                </h2>
-            </div>
-            
-            <div class="logo">
-                <img src="/images/logo.png" alt="logo">
-            </div>
-            
-        </div>
-
-        
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <nav class="navbar navbar-inverse header-nav">
-            <div class="container-fluid">
-                
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
-                       title="( ⊙ o ⊙ )啊！">导航</a>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        
-                        <li><a href="/">
-                            
-                            <i class="iconfont iconhome"></i>
-                            
-                            <span class="menu-text">首页</span>
-                        </a></li>
-                        
-                        <li><a href="/posts/">
-                            
-                            <i class="iconfont iconfolder-open"></i>
-                            
-                            <span class="menu-text">归档</span>
-                        </a></li>
-                        
-                        <li><a href="/categories/">
-                            
-                            <i class="iconfont iconbook"></i>
-                            
-                            <span class="menu-text">分类</span>
-                        </a></li>
-                        
-                        <li><a href="/tags/">
-                            
-                            <i class="iconfont icontags"></i>
-                            
-                            <span class="menu-text">标签</span>
-                        </a></li>
-                        
-                        <li><a href="/about/">
-                            
-                            <i class="iconfont iconsolution"></i>
-                            
-                            <span class="menu-text">关于</span>
-                        </a></li>
-                        
-                    </ul>
-                    <div class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="search" id="search-input" name="q" results="0"
-                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="search-result-box" id="search-result"></div>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-
-<main id="main" class="main">
-    <div class="container">
-        <div class="main-container">
-            <div id="content" class="content">
-                
-                
-                
-                
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title"><h2><a href='/2018/03/08/cnblog_8527506/'>前端基础之JavaScript</a></h2></div>
-        <div class="post-meta"><span>2018.03.08</span></div>
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-post" id="post-post">
-            <h1 id="这是-前端基础之javascript-的摘要-2018-03-08-cnblog-8527506"><a href="/2018/03/08/cnblog_8527506/">这是👉前端基础之JavaScript👈的摘要</a></h1>
-
-<h1 id="javascript概述">JavaScript概述</h1>
-
-<h2 id="javascript的历史">JavaScript的历史</h2>
-
-<ul>
-<li>1992年Nombas开发出C-minus-minus(C&ndash;)的嵌入式脚本语言(最初绑定在CEnvi软件中)，后将其改名ScriptEase(客户端执行的语言)。</li>
-<li>Netscape(网景)接收Nombas的理念,(Brendan Eich)在其Netscape Navigator 2.0产品中开发出一套livescript的脚本语言。Sun和Netscape共同完成，后改名叫JavaScript。</li>
-<li>微软随后模仿在其IE3.0的产品中搭载了一个JavaScript的克隆版叫Jscript。</li>
-<li>为了统一三家,ECMA(欧洲计算机制造协会)定义了ECMA-262规范.国际标准化组织及国际电工委员会（ISO/IEC）也采纳 ECMAScript 作为标准（ISO/IEC-16262）。从此，Web 浏览器就开始努力（虽然有着不同的程度的成功和失败）将 ECMAScript 作为 JavaScript 实现的基础。</li>
-<li>ECMA-262 是 JavaScript 标准的官方名称。</li>
-</ul>
-
-<h2 id="ecmascript">ECMAScript</h2>
-
-<table>
-<thead>
-<tr>
-<th>年份</th>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>1997</td>
-<td>ECMAScript 1</td>
-<td>第一个版本</td>
-</tr>
-
-<tr>
-<td>1998</td>
-<td>ECMAScript 2</td>
-<td>版本变更</td>
-</tr>
-
-<tr>
-<td>1999</td>
-<td>ECMAScript 3</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<p>添加正则表达式</p>
-
-<p>添加tru/catch</p>
-
-<p>| ECMAScript 4 | 没有发布<br />
-2009 | ECMAScript 5 |</p>
-
-<p>添加&rdquo;strict mode&rdquo;严格模式</p>
-
-<p>添加JSON支持</p>
-
-<p>2011 | ECMAScript 5.1 | 版本变更<br />
-2015 | ECMAScript 6 | 添加类和模块<br />
-2016 | ECMAScript 7 |</p>
-
-<p>增加指数运算符（**）</p>
-
-<p>增加Array.prototype.includes</p>
-
-<p><em>注：ES6就是指ECMAScript 6。</em></p>
-
-<p>尽管 ECMAScript 是一个重要的标准，但它并不是 JavaScript 唯一的部分，当然，也不是唯一被标准化的部分。实际上，一个完整的
-JavaScript 实现是由以下 3 个不同部分组成的：</p>
-
-<ul>
-<li>核心（ECMAScript）</li>
-<li>文档对象模型（DOM） Document object model (整合js，css，html)</li>
-<li>浏览器对象模型（BOM） Broswer object model（整合js和浏览器）</li>
-<li>Javascript在开发中绝大多数情况是基于对象的.也是面向对象的.</li>
-</ul>
-
-<p>简单地说，ECMAScript 描述了以下内容：</p>
-
-<ul>
-<li>语法</li>
-<li>类型</li>
-<li>语句</li>
-<li>关键字</li>
-<li>保留字</li>
-<li>运算符</li>
-<li>对象 (封装 继承 多态) 基于对象的语言.使用对象.</li>
-</ul>
-
-<h2 id="javascript引入方式">JavaScript引入方式</h2>
-
-<h3 id="script标签内写代码">Script标签内写代码</h3>
-
-<pre><code>&lt;script&gt;
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href=https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css rel=stylesheet><link rel=stylesheet type=text/css href=https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css><link rel=stylesheet type=text/css href=/css/weii.css><meta name=theme-color content="#333333"><meta name=msapplication-TileColor content="#333333"><script data-ad-client=ca-pub-6222665322795328 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-146915278-1');</script><meta name=google-site-verification content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg"><meta name=msvalidate.01 content="1A54BC0D6A4D102B72F2A0E9870611FA"><meta name=keywords content="weii,wevsmy,wilson,Python,Golang,PyQt5,hugo,gohugo"><meta name=description content="这是👉前端基础之JavaScript👈的摘要"><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=192x192 href=/favicons/android-chrome-96x96.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=mask-icon href=/favicons/safari-pinned-tab.svg color=#333333><link rel=manifest href=/favicons/site.webmanifest><meta name=msapplication-config content="/favicons/browserconfig.xml"><link rel="shortcut icon" type=image/x-icon href=/favicons/favicon.ico><title>前端基础之JavaScript</title><script src=https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js></script><script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></head><body><header id=header class=header style=background:#333><div class=container><div class=header-container><div class=header-title><h1 class=title><a href=/>wilson's blog</a></h1><h2 class=subtitle>Life is short, You need Python and Golang 😏</h2></div><div class=logo><img src=/images/logo.png alt=logo></div></div><div class="modal fade bs-example-modal-lg" tabindex=-1 role=dialog aria-labelledby=myLargeModalLabel><div class="modal-dialog modal-lg" role=document><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&#215;</span></button><h4 class=modal-title>Modal title</h4></div><div class=modal-body><p>One fine body&mldr;</p></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>Close</button>
+<button type=button class="btn btn-primary">Save changes</button></div></div></div></div><nav class="navbar navbar-inverse header-nav"><div class=container-fluid><div class=navbar-header><button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#bs-example-navbar-collapse-1 aria-expanded=false>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+<a class=navbar-brand href=# data-toggle=tooltip data-placement=top title="( ⊙ o ⊙ )啊！">导航</a></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav"><li><a href=/><i class="iconfont iconhome"></i><span class=menu-text>首页</span></a></li><li><a href=/posts/><i class="iconfont iconfolder-open"></i><span class=menu-text>归档</span></a></li><li><a href=/categories/><i class="iconfont iconbook"></i><span class=menu-text>分类</span></a></li><li><a href=/tags/><i class="iconfont icontags"></i><span class=menu-text>标签</span></a></li><li><a href=/about/><i class="iconfont iconsolution"></i><span class=menu-text>关于</span></a></li></ul><div class="navbar-form navbar-right"><div class=form-group><input type=search id=search-input name=q results=0 placeholder="(ฅ´ω`ฅ)" class=form-control></div></div><div class=search-result-box id=search-result></div></div></div></nav></div></header><main id=main class=main><div class=container><div class=main-container><div id=content class=content><div class="panel panel-default post-panel"><div class="panel-heading post-head"><div class=post-title><h2><a href=/2018/03/08/cnblog_8527506/>前端基础之JavaScript</a></h2></div><div class=post-meta><span>2018.03.08</span></div></div><div class="panel-body post-body"><div class=post-post id=post-post><h1 id=这是前端基础之javascript的摘要20180308cnblog_8527506><a href=/2018/03/08/cnblog_8527506/>这是👉前端基础之JavaScript👈的摘要</a></h1><h1 id=javascript概述>JavaScript概述</h1><h2 id=javascript的历史>JavaScript的历史</h2><ul><li>1992年Nombas开发出C-minus-minus(C&ndash;)的嵌入式脚本语言(最初绑定在CEnvi软件中)，后将其改名ScriptEase(客户端执行的语言)。</li><li>Netscape(网景)接收Nombas的理念,(Brendan Eich)在其Netscape Navigator 2.0产品中开发出一套livescript的脚本语言。Sun和Netscape共同完成，后改名叫JavaScript。</li><li>微软随后模仿在其IE3.0的产品中搭载了一个JavaScript的克隆版叫Jscript。</li><li>为了统一三家,ECMA(欧洲计算机制造协会)定义了ECMA-262规范.国际标准化组织及国际电工委员会（ISO/IEC）也采纳 ECMAScript 作为标准（ISO/IEC-16262）。从此，Web 浏览器就开始努力（虽然有着不同的程度的成功和失败）将 ECMAScript 作为 JavaScript 实现的基础。</li><li>ECMA-262 是 JavaScript 标准的官方名称。</li></ul><h2 id=ecmascript>ECMAScript</h2><table><thead><tr><th>年份</th><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>1997</td><td>ECMAScript 1</td><td>第一个版本</td></tr><tr><td>1998</td><td>ECMAScript 2</td><td>版本变更</td></tr><tr><td>1999</td><td>ECMAScript 3</td><td></td></tr></tbody></table><p>添加正则表达式</p><p>添加tru/catch</p><p>| ECMAScript 4 | 没有发布<br>2009 | ECMAScript 5 |</p><p>添加"strict mode"严格模式</p><p>添加JSON支持</p><p>2011 | ECMAScript 5.1 | 版本变更<br>2015 | ECMAScript 6 | 添加类和模块<br>2016 | ECMAScript 7 |</p><p>增加指数运算符（**）</p><p>增加Array.prototype.includes</p><p><em>注：ES6就是指ECMAScript 6。</em></p><p>尽管 ECMAScript 是一个重要的标准，但它并不是 JavaScript 唯一的部分，当然，也不是唯一被标准化的部分。实际上，一个完整的
+JavaScript 实现是由以下 3 个不同部分组成的：</p><ul><li>核心（ECMAScript）</li><li>文档对象模型（DOM） Document object model (整合js，css，html)</li><li>浏览器对象模型（BOM） Broswer object model（整合js和浏览器）</li><li>Javascript在开发中绝大多数情况是基于对象的.也是面向对象的.</li></ul><p>简单地说，ECMAScript 描述了以下内容：</p><ul><li>语法</li><li>类型</li><li>语句</li><li>关键字</li><li>保留字</li><li>运算符</li><li>对象 (封装 继承 多态) 基于对象的语言.使用对象.</li></ul><h2 id=javascript引入方式>JavaScript引入方式</h2><h3 id=script标签内写代码>Script标签内写代码</h3><pre><code>&lt;script&gt;
   // 在这里写你的JS代码
 &lt;/script&gt;
-</code></pre>
-
-<h3 id="引入额外的js文件">引入额外的JS文件</h3>
-
-<pre><code>&lt;script src=&quot;myscript.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<h2 id="javascript语言规范">JavaScript语言规范</h2>
-
-<h3 id="注释-注释是代码之母">注释（注释是代码之母）</h3>
-
-<pre><code>// 这是单行注释
+</code></pre><h3 id=引入额外的js文件>引入额外的JS文件</h3><pre><code>&lt;script src=&quot;myscript.js&quot;&gt;&lt;/script&gt;
+</code></pre><h2 id=javascript语言规范>JavaScript语言规范</h2><h3 id=注释注释是代码之母>注释（注释是代码之母）</h3><pre><code>// 这是单行注释
 
 /*
 这是  
 多行注释
 */
-</code></pre>
-
-<h3 id="结束符">结束符</h3>
-
-<p>JavaScript中的语句要以分号（;）为结束符。</p>
-
-<h2 id="javascript语言基础">JavaScript语言基础</h2>
-
-<h3 id="变量声明">变量声明</h3>
-
-<ol>
-<li>JavaScript的变量名可以使用_，数字，字母，$组成，不能以数字开头。</li>
-
-<li><p>声明变量使用 var 变量名; 的格式来进行声明</p>
-
-<p>var name = &ldquo;Alex&rdquo;;
-var age = 18;</p></li>
-</ol>
-
-<p>注意：</p>
-
-<p>变量名是区分大小写的。</p>
-
-<p>推荐使用驼峰式命名规则。</p>
-
-<h2 id="javascript数据类型">JavaScript数据类型</h2>
-
-<p><strong>JavaScript拥有动态类型</strong></p>
-
-<pre><code> var x;  // 此时x是undefined
+</code></pre><h3 id=结束符>结束符</h3><p>JavaScript中的语句要以分号（;）为结束符。</p><h2 id=javascript语言基础>JavaScript语言基础</h2><h3 id=变量声明>变量声明</h3><ol><li>JavaScript的变量名可以使用_，数字，字母，$组成，不能以数字开头。</li><li>声明变量使用 var 变量名; 的格式来进行声明</li></ol><pre><code>var name = &quot;Alex&quot;;
+var age = 18;
+</code></pre><p>注意：</p><p>变量名是区分大小写的。</p><p>推荐使用驼峰式命名规则。</p><h2 id=javascript数据类型>JavaScript数据类型</h2><p><strong>JavaScript拥有动态类型</strong></p><pre><code> var x;  // 此时x是undefined
 var x = 1;  // 此时x是数字
 var x = &quot;Alex&quot;  // 此时x是字符串 
-</code></pre>
-
-<p><strong>数字类型</strong></p>
-
-<p>JavaScript不区分整型和浮点型，就只有一种数字类型。</p>
-
-<pre><code>var a = 12.34;
+</code></pre><p><strong>数字类型</strong></p><p>JavaScript不区分整型和浮点型，就只有一种数字类型。</p><pre><code>var a = 12.34;
 var b = 20;
 var c = 123e5;  // 12300000
 var d = 123e-5;  // 0.00123
-</code></pre>
-
-<p>还有一种NaN，表示不是一个数字（Not a Number）。</p>
-
-<p>常用方法：</p>
-
-<pre><code>parseInt(&quot;123&quot;)  // 返回123
+</code></pre><p>还有一种NaN，表示不是一个数字（Not a Number）。</p><p>常用方法：</p><pre><code>parseInt(&quot;123&quot;)  // 返回123
 parseInt(&quot;ABC&quot;)  // 返回NaN,NaN属性是代表非数字值的特殊值。该属性用于指示某个值不是数字。
 parseFloat(&quot;123.456&quot;)  // 返回123.456
-</code></pre>
-
-<p><strong>字符串</strong></p>
-
-<pre><code> var a = &quot;Hello&quot;
+</code></pre><p><strong>字符串</strong></p><pre><code> var a = &quot;Hello&quot;
 var b = &quot;world;
 var c = a + b; 
 console.log(c);  // 得到Helloworld
-</code></pre>
-
-<p>常用方法：</p>
-
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>obj.length</td>
-<td>返回长度</td>
-</tr>
-
-<tr>
-<td>obj.trim()</td>
-<td>移除空白</td>
-</tr>
-
-<tr>
-<td>obj.trimLeft()</td>
-<td>移除左边的空白</td>
-</tr>
-
-<tr>
-<td>obj.trimRight()</td>
-<td>移除右边的空白</td>
-</tr>
-
-<tr>
-<td>obj.charAt(n)</td>
-<td>返回第n个字符</td>
-</tr>
-
-<tr>
-<td>obj.concat(value, &hellip;)</td>
-<td>拼接</td>
-</tr>
-
-<tr>
-<td>obj.indexOf(substring, start)</td>
-<td>子序列位置</td>
-</tr>
-
-<tr>
-<td>obj.substring(from, to)</td>
-<td>根据索引获取子序列</td>
-</tr>
-
-<tr>
-<td>obj.slice(start, end)</td>
-<td>切片</td>
-</tr>
-
-<tr>
-<td>obj.toLowerCase()</td>
-<td>小写</td>
-</tr>
-
-<tr>
-<td>obj.toUpperCase()</td>
-<td>大写</td>
-</tr>
-
-<tr>
-<td>obj.split(delimiter, limit)</td>
-<td>分割</td>
-</tr>
-</tbody>
-</table>
-
-<p>拼接字符串一般使用&rdquo;+&rdquo;</p>
-
-<h3 id="布尔类型">布尔类型</h3>
-
-<p>区别于Python，true和false都是小写。</p>
-
-<pre><code>var a = true;
+</code></pre><p>常用方法：</p><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>obj.length</td><td>返回长度</td></tr><tr><td>obj.trim()</td><td>移除空白</td></tr><tr><td>obj.trimLeft()</td><td>移除左边的空白</td></tr><tr><td>obj.trimRight()</td><td>移除右边的空白</td></tr><tr><td>obj.charAt(n)</td><td>返回第n个字符</td></tr><tr><td>obj.concat(value, &mldr;)</td><td>拼接</td></tr><tr><td>obj.indexOf(substring, start)</td><td>子序列位置</td></tr><tr><td>obj.substring(from, to)</td><td>根据索引获取子序列</td></tr><tr><td>obj.slice(start, end)</td><td>切片</td></tr><tr><td>obj.toLowerCase()</td><td>小写</td></tr><tr><td>obj.toUpperCase()</td><td>大写</td></tr><tr><td>obj.split(delimiter, limit)</td><td>分割</td></tr></tbody></table><p>拼接字符串一般使用"+&rdquo;</p><h3 id=布尔类型>布尔类型</h3><p>区别于Python，true和false都是小写。</p><pre><code>var a = true;
 var b = false;
-</code></pre>
-
-<h3 id="数组">数组</h3>
-
-<p>类似于Python中的列表。</p>
-
-<pre><code>var a = [123, &quot;ABC&quot;];
+</code></pre><h3 id=数组>数组</h3><p>类似于Python中的列表。</p><pre><code>var a = [123, &quot;ABC&quot;];
 console.log(a[1]);  // 输出&quot;ABC&quot;
-</code></pre>
-
-<p>常用方法：</p>
-
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>obj.length</td>
-<td>数组的大小</td>
-</tr>
-
-<tr>
-<td>obj.push(ele)</td>
-<td>尾部追加元素</td>
-</tr>
-
-<tr>
-<td>obj.pop()</td>
-<td>获取尾部的元素</td>
-</tr>
-
-<tr>
-<td>obj.unshift(ele)</td>
-<td>头部插入元素</td>
-</tr>
-
-<tr>
-<td>obj.shift()</td>
-<td>头部移除元素</td>
-</tr>
-
-<tr>
-<td>obj.slice()</td>
-<td>切片</td>
-</tr>
-
-<tr>
-<td>obj.reverse()</td>
-<td>反转</td>
-</tr>
-
-<tr>
-<td>obj.join(seq)</td>
-<td>将数组元素连接成字符串</td>
-</tr>
-
-<tr>
-<td>obj.concat(val, &hellip;)</td>
-<td>连接数组</td>
-</tr>
-
-<tr>
-<td>obj.sort()</td>
-<td>排序</td>
-</tr>
-</tbody>
-</table>
-
-<p>遍历数组中的元素：</p>
-
-<pre><code>var a = [10, 20, 30, 40];
+</code></pre><p>常用方法：</p><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>obj.length</td><td>数组的大小</td></tr><tr><td>obj.push(ele)</td><td>尾部追加元素</td></tr><tr><td>obj.pop()</td><td>获取尾部的元素</td></tr><tr><td>obj.unshift(ele)</td><td>头部插入元素</td></tr><tr><td>obj.shift()</td><td>头部移除元素</td></tr><tr><td>obj.slice()</td><td>切片</td></tr><tr><td>obj.reverse()</td><td>反转</td></tr><tr><td>obj.join(seq)</td><td>将数组元素连接成字符串</td></tr><tr><td>obj.concat(val, &mldr;)</td><td>连接数组</td></tr><tr><td>obj.sort()</td><td>排序</td></tr></tbody></table><p>遍历数组中的元素：</p><pre><code>var a = [10, 20, 30, 40];
 for (var i=0;i&lt;a.length;i++) {
   console.log(i);
 }
-</code></pre>
-
-<h3 id="null和undefined">null和undefined</h3>
-
-<ul>
-<li>null表示值是空，一般在需要指定或清空一个变量时才会使用，如 name=null;</li>
-<li>undefined表示当声明一个变量但未初始化时，该变量的默认值是undefined。还有就是函数无明确的返回值时，返回的也是undefined。</li>
-</ul>
-
-<p>null表示变量的值是空，undefined则表示只声明了变量，但还没有赋值。</p>
-
-<p>还不明白，上图吧！</p>
-
-<p><img src="https://images2018.cnblogs.com/blog/867021/201802/867021-20180226115608671-110898150.jpg" alt="" /><img src="https://images2018.cnblogs.com/blog/867021/201802/867021-20180226114954211-338562205.jpg" alt="" /></p>
-
-<h3 id="类型查询">类型查询</h3>
-
-<pre><code>typeof &quot;abc&quot;  // &quot;string&quot;
+</code></pre><h3 id=null和undefined>null和undefined</h3><ul><li>null表示值是空，一般在需要指定或清空一个变量时才会使用，如 name=null;</li><li>undefined表示当声明一个变量但未初始化时，该变量的默认值是undefined。还有就是函数无明确的返回值时，返回的也是undefined。</li></ul><p>null表示变量的值是空，undefined则表示只声明了变量，但还没有赋值。</p><p>还不明白，上图吧！</p><p><img src=https://images2018.cnblogs.com/blog/867021/201802/867021-20180226115608671-110898150.jpg alt><img src=https://images2018.cnblogs.com/blog/867021/201802/867021-20180226114954211-338562205.jpg alt></p><h3 id=类型查询>类型查询</h3><pre><code>typeof &quot;abc&quot;  // &quot;string&quot;
 typeof null  // &quot;object&quot;
 typeof true  // &quot;boolean&quot;
 typeof 123 // &quot;number&quot;
-</code></pre>
-
-<p>typeof是一个一元运算符（就像++，&ndash;，！，- 等一元运算符），不是一个函数，也不是一个语句。</p>
-
-<h2 id="运算符">运算符</h2>
-
-<h3 id="算数运算符">算数运算符</h3>
-
-<pre><code>+ - * / % ++ --
-</code></pre>
-
-<h3 id="比较运算符"><strong>比较运算符</strong></h3>
-
-<pre><code>&gt; &gt;= &lt; &lt;= != == === !==
-</code></pre>
-
-<p>注意：</p>
-
-<pre><code>1 == &quot;1&quot;  // true
+</code></pre><p>typeof是一个一元运算符（就像++，&ndash;，！，- 等一元运算符），不是一个函数，也不是一个语句。</p><h2 id=运算符>运算符</h2><h3 id=算数运算符>算数运算符</h3><pre><code>+ - * / % ++ --
+</code></pre><h3 id=比较运算符><strong>比较运算符</strong></h3><pre><code>&gt; &gt;= &lt; &lt;= != == === !==
+</code></pre><p>注意：</p><pre><code>1 == &quot;1&quot;  // true
 1 === &quot;1&quot;  // false
-</code></pre>
-
-<h3 id="逻辑运算符"><strong>逻辑运算符</strong></h3>
-
-<pre><code>&amp;&amp; || !
-</code></pre>
-
-<h3 id="赋值运算符"><strong>赋值运算符</strong></h3>
-
-<pre><code>= += -= *= /=
-</code></pre>
-
-<h2 id="流程控制"><strong>流程控制</strong></h2>
-
-<h3 id="if-else">if-else</h3>
-
-<pre><code> var a = 10;
+</code></pre><h3 id=逻辑运算符><strong>逻辑运算符</strong></h3><pre><code>&amp;&amp; || !
+</code></pre><h3 id=赋值运算符><strong>赋值运算符</strong></h3><pre><code>= += -= *= /=
+</code></pre><h2 id=流程控制><strong>流程控制</strong></h2><h3 id=if-else>if-else</h3><pre><code> var a = 10;
 if (a &gt; 5){
   console.log(&quot;yes&quot;);
 }else {
   console.log(&quot;no&quot;);
 }
-</code></pre>
-
-<h3 id="if-else-if-else">if-else if-else</h3>
-
-<pre><code>var a = 10;
+</code></pre><h3 id=if-else-if-else>if-else if-else</h3><pre><code>var a = 10;
 if (a &gt; 5){
   console.log(&quot;a &gt; 5&quot;);
 }else if (a &lt; 5) {
@@ -664,11 +62,7 @@ if (a &gt; 5){
 }else {
   console.log(&quot;a = 5&quot;);
 }
-</code></pre>
-
-<h3 id="switch">switch</h3>
-
-<pre><code>var day = new Date().getDay();
+</code></pre><h3 id=switch>switch</h3><pre><code>var day = new Date().getDay();
 switch (day) {
   case 0:
   console.log(&quot;Sunday&quot;);
@@ -679,38 +73,18 @@ switch (day) {
 default:
   console.log(&quot;...&quot;)
 }
-</code></pre>
-
-<h3 id="for">for</h3>
-
-<pre><code>for (var i=0;i&lt;10;i++) {
+</code></pre><h3 id=for>for</h3><pre><code>for (var i=0;i&lt;10;i++) {
   console.log(i);
 }
-</code></pre>
-
-<h3 id="while">while</h3>
-
-<pre><code>var i = 0;
+</code></pre><h3 id=while>while</h3><pre><code>var i = 0;
 while (i &lt; 10) {
   console.log(i);
   i++;
 }
-</code></pre>
-
-<h3 id="三元运算">三元运算</h3>
-
-<pre><code>var a = 1;
+</code></pre><h3 id=三元运算>三元运算</h3><pre><code>var a = 1;
 var b = 2;
 var c = a &gt; b ? a : b
-</code></pre>
-
-<h2 id="函数">函数</h2>
-
-<h3 id="函数定义">函数定义</h3>
-
-<p>JavaScript中的函数和Python中的非常类似，只是定义方式有点区别。</p>
-
-<pre><code>// 普通函数定义
+</code></pre><h2 id=函数>函数</h2><h3 id=函数定义>函数定义</h3><p>JavaScript中的函数和Python中的非常类似，只是定义方式有点区别。</p><pre><code>// 普通函数定义
 function f1() {
   console.log(&quot;Hello world!&quot;);
 }
@@ -738,36 +112,8 @@ sum(1, 2);
 (function(a, b){
   return a + b;
 })(1, 2);
-</code></pre>
-
-<h3 id="函数的全局变量和局部变量">函数的全局变量和局部变量</h3>
-
-<p><strong>局部变量</strong> ：</p>
-
-<p>在JavaScript函数内部声明的变量（使用
-var）是局部变量，所以只能在函数内部访问它（该变量的作用域是函数内部）。只要函数运行完毕，本地变量就会被删除。</p>
-
-<p><strong>全局变量：</strong></p>
-
-<p>在函数外声明的变量是 <em>全局</em> 变量，网页上的所有脚本和函数都能访问它。</p>
-
-<p><strong>变量生存周期：</strong></p>
-
-<p>JavaScript变量的生命期从它们被声明的时间开始。</p>
-
-<p>局部变量会在函数运行以后被删除。</p>
-
-<p>全局变量会在页面关闭后被删除。</p>
-
-<h3 id="作用域">作用域</h3>
-
-<p>首先在函数内部查找变量，找不到则到外层函数查找，逐步找到最外层。</p>
-
-<p><strong>几个例子：</strong></p>
-
-<p>1.</p>
-
-<pre><code>var city = &quot;BeiJing&quot;;
+</code></pre><h3 id=函数的全局变量和局部变量>函数的全局变量和局部变量</h3><p><strong>局部变量</strong> ：</p><p>在JavaScript函数内部声明的变量（使用
+var）是局部变量，所以只能在函数内部访问它（该变量的作用域是函数内部）。只要函数运行完毕，本地变量就会被删除。</p><p><strong>全局变量：</strong></p><p>在函数外声明的变量是 <em>全局</em> 变量，网页上的所有脚本和函数都能访问它。</p><p><strong>变量生存周期：</strong></p><p>JavaScript变量的生命期从它们被声明的时间开始。</p><p>局部变量会在函数运行以后被删除。</p><p>全局变量会在页面关闭后被删除。</p><h3 id=作用域>作用域</h3><p>首先在函数内部查找变量，找不到则到外层函数查找，逐步找到最外层。</p><p><strong>几个例子：</strong></p><p>1.</p><pre><code>var city = &quot;BeiJing&quot;;
 function f() {
   var city = &quot;ShangHai&quot;;
   function inner(){
@@ -778,11 +124,7 @@ function f() {
 }
 
 f();  //输出结果是？
-</code></pre>
-
-<p>2.</p>
-
-<pre><code>var city = &quot;BeiJing&quot;;
+</code></pre><p>2.</p><pre><code>var city = &quot;BeiJing&quot;;
 function Bar() {
   console.log(city);
 }
@@ -792,11 +134,7 @@ function f() {
 }
 var ret = f();
 ret();  // 打印结果是？
-</code></pre>
-
-<p>3.闭包</p>
-
-<pre><code>var city = &quot;BeiJing&quot;;
+</code></pre><p>3.闭包</p><pre><code>var city = &quot;BeiJing&quot;;
 function f(){
     var city = &quot;ShangHai&quot;;
     function inner(){
@@ -806,46 +144,18 @@ function f(){
 }
 var ret = f();
 ret();
-</code></pre>
-
-<h2 id="内置对象和方法">内置对象和方法</h2>
-
-<p>JavaScript中的所有事物都是对象：字符串、数字、数组、日期，等等。在JavaScript中，对象是拥有属性和方法的数据。</p>
-
-<p>我们在学习基本数据类型的时候已经带大家了解了，JavaScript中的Number对象、String对象、Array对象等。</p>
-
-<h3 id="自定义对象">自定义对象</h3>
-
-<p>类似于（某方面类似）Python中的字典数据类型</p>
-
-<pre><code>var a = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
+</code></pre><h2 id=内置对象和方法>内置对象和方法</h2><p>JavaScript中的所有事物都是对象：字符串、数字、数组、日期，等等。在JavaScript中，对象是拥有属性和方法的数据。</p><p>我们在学习基本数据类型的时候已经带大家了解了，JavaScript中的Number对象、String对象、Array对象等。</p><h3 id=自定义对象>自定义对象</h3><p>类似于（某方面类似）Python中的字典数据类型</p><pre><code>var a = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
 console.log(a.name);
 console.log(a[&quot;age&quot;]);
-</code></pre>
-
-<p>遍历对象中的内容：</p>
-
-<pre><code>var a = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
+</code></pre><p>遍历对象中的内容：</p><pre><code>var a = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
 for (var i in a){
   console.log(i, a[i]);
 }
-</code></pre>
-
-<p><a href="https://stackoverflow.com/questions/684672/how-do-i-loop-
-through-or-enumerate-a-javascript-object">事情并没有那么简单&hellip;</a></p>
-
-<p><strong>创建对象：</strong></p>
-
-<pre><code> var person=new Object();  // 创建一个person对象
+</code></pre><p>[事情并没有那么简单&mldr;](<a href=https://stackoverflow.com/questions/684672/how-do-i-loop->https://stackoverflow.com/questions/684672/how-do-i-loop-</a>
+through-or-enumerate-a-javascript-object)</p><p><strong>创建对象：</strong></p><pre><code> var person=new Object();  // 创建一个person对象
 person.name=&quot;Alex&quot;;  // person对象的name属性
 person.age=18;  // person对象的age属性
-</code></pre>
-
-<p>**  扩展：**</p>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>// 父类构造函数
+</code></pre><p>** 扩展：**</p><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>// 父类构造函数
 var Car = function (loc) {
   this.loc = loc;
 };
@@ -868,15 +178,7 @@ Van.prototype.constructor = Van;
 Van.prototype.grab = function () {
   /* ... */
 };
-</code></pre>
-
-<p>JavaScript面向对象之继承</p>
-
-<h3 id="date对象">Date对象</h3>
-
-<p><strong>创建Date对象</strong></p>
-
-<pre><code> //方法1：不指定参数
+</code></pre><p>JavaScript面向对象之继承</p><h3 id=date对象>Date对象</h3><p><strong>创建Date对象</strong></p><pre><code> //方法1：不指定参数
 var d1 = new Date();
 console.log(d1.toLocaleString());
 //方法2：参数为日期字符串
@@ -892,11 +194,7 @@ console.log(d3.toUTCString());
 //方法4：参数为年月日小时分钟秒毫秒
 var d4 = new Date(2004,2,20,11,12,0,300);
 console.log(d4.toLocaleString());  //毫秒并不直接显示
-</code></pre>
-
-<p><strong>Date对象的方法：</strong></p>
-
-<pre><code> var d = new Date(); 
+</code></pre><p><strong>Date对象的方法：</strong></p><pre><code> var d = new Date(); 
 //getDate()                 获取日
 //getDay ()                 获取星期
 //getMonth ()               获取月（0-11）
@@ -907,29 +205,13 @@ console.log(d4.toLocaleString());  //毫秒并不直接显示
 //getSeconds ()             获取秒
 //getMilliseconds ()        获取毫秒
 //getTime ()                返回累计毫秒数(从1970/1/1午夜)
-</code></pre>
-
-<p><strong>练习：</strong></p>
-
-<p>编写代码，将当前日期按&rdquo;2017-12-27 11:11 星期三&rdquo;格式输出。</p>
-
-<p>详细Date对象方法：<a href="http://www.w3school.com.cn/jsref/jsref_obj_date.asp">点我</a></p>
-
-<h3 id="json对象">JSON对象</h3>
-
-<pre><code>var str1 = '{&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18}';
+</code></pre><p><strong>练习：</strong></p><p>编写代码，将当前日期按"2017-12-27 11:11 星期三"格式输出。</p><p>详细Date对象方法：<a href=http://www.w3school.com.cn/jsref/jsref_obj_date.asp>点我</a></p><h3 id=json对象>JSON对象</h3><pre><code>var str1 = '{&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18}';
 var obj1 = {&quot;name&quot;: &quot;Alex&quot;, &quot;age&quot;: 18};
 // JSON字符串转换成对象
 var obj = JSON.parse(str1); 
 // 对象转换成JSON字符串
 var str = JSON.stringify(obj1);
-</code></pre>
-
-<h3 id="regexp对象">RegExp对象</h3>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>//RegExp对象
+</code></pre><h3 id=regexp对象>RegExp对象</h3><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>//RegExp对象
 
 //创建正则对象方式1
 // 参数1 正则表达式(不能有空格)
@@ -990,18 +272,8 @@ var reg4 = /^undefined$/;
 reg4.test(); // 返回true
 reg4.test(undefined); // 返回true
 reg4.test(&quot;undefined&quot;); // 返回true
-</code></pre>
-
-<p>RegExp</p>
-
-<p><a href="https://developer.mozilla.org/zh-
-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">扩展阅读</a></p>
-
-<h3 id="math对象">Math对象</h3>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>abs(x)      返回数的绝对值。
+</code></pre><p>RegExp</p><p>[扩展阅读](<a href=https://developer.mozilla.org/zh->https://developer.mozilla.org/zh-</a>
+CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)</p><h3 id=math对象>Math对象</h3><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>abs(x)      返回数的绝对值。
 exp(x)      返回 e 的指数。
 floor(x)    对数进行下舍入。
 log(x)      返回数的自然对数（底为e）。
@@ -1013,422 +285,17 @@ round(x)    把数四舍五入为最接近的整数。
 sin(x)      返回数的正弦。
 sqrt(x)     返回数的平方根。
 tan(x)      返回角的正切。
-</code></pre>
-
-<p>Math</p>
-        </div>
-
-    </div>
-
-</div>
-
-
-<nav aria-label="Page navigation">
-    <ul class="pager">
-        
-        <li class="previous">
-            <a href="/2018/03/08/cnblog_8527496/" title="前端基础之CSS" data-toggle="tooltip" data-placement="top">
-            <span aria-hidden="true">&larr;</span>
-                上一页
-            </a>
-        </li>
-        
-
-        
-        <li class="next">
-            <a href="/2018/03/12/cnblog_8550048/" title="前端基础之BOM和DOM" data-toggle="tooltip" data-placement="top">
-                下一页
-            <span aria-hidden="true">&rarr;</span>
-            </a>
-        </li>
-        
-    </ul>
-</nav>
-
-
-
-<div class="reward" id="reward">
-
-    <div class="reward-comment">
-         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
-    </div>
-
-    
-    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
-        支持一下
-    </button>
-
-    
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="reward-body" id="reward-body">
-
-                        <div class="row">
-                            <div class="col-xs-6">
-                                
-                                <div class="reward-qr">
-                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
-                                    <span>微信</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                
-                                <div class="reward-qr">
-                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
-                                    <span>支付宝</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-
-
-
-<div class="comments" id="comments">
-    
-
-    <script src="https://utteranc.es/client.js"
-        repo="wevsmy/wevsmy.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-
-    
-</div>
-
-
-
-
-                
-            </div>
-            
-            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-
-    <div class="info sidebar-item" id="info">
-
-        
-        
-        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-        
-        
-
-        <h2 class="author-name">wilson</h2>
-        <h3 class="author-description">٩(๑❛ᴗ❛๑)۶</h3>
-        <div class="site-count">
-            
-            
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">归档</div>
-                <div><a href="/posts/">85</a></div>
-            </div>
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">分类</div>
-                <div><a href="/categories/">2</a></div>
-            </div>
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">标签</div>
-                <div><a href="/tags/">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    37
-                </a></div>
-            </div>
-            
-            
-            
-            
-        </div>
-
-        <div class="rss">
-            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
-               type="application/rss+xml" title="rss">
-                <i class="iconfont iconrss rss-icon"> RSS</i>
-            </a>
-        </div>
-
-    </div>
-
-    <div class="sidebar-sticky">
-
-        
-        
-        <hr>
-        <div class="post-toc sidebar-item">
-            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
-            <nav id="TableOfContents">
-<ul>
-<li><a href="#这是-前端基础之javascript-的摘要-2018-03-08-cnblog-8527506"><a href="/2018/03/08/cnblog_8527506/">这是👉前端基础之JavaScript👈的摘要</a></a></li>
-<li><a href="#javascript概述">JavaScript概述</a>
-<ul>
-<li><a href="#javascript的历史">JavaScript的历史</a></li>
-<li><a href="#ecmascript">ECMAScript</a></li>
-<li><a href="#javascript引入方式">JavaScript引入方式</a>
-<ul>
-<li><a href="#script标签内写代码">Script标签内写代码</a></li>
-<li><a href="#引入额外的js文件">引入额外的JS文件</a></li>
-</ul></li>
-<li><a href="#javascript语言规范">JavaScript语言规范</a>
-<ul>
-<li><a href="#注释-注释是代码之母">注释（注释是代码之母）</a></li>
-<li><a href="#结束符">结束符</a></li>
-</ul></li>
-<li><a href="#javascript语言基础">JavaScript语言基础</a>
-<ul>
-<li><a href="#变量声明">变量声明</a></li>
-</ul></li>
-<li><a href="#javascript数据类型">JavaScript数据类型</a>
-<ul>
-<li><a href="#布尔类型">布尔类型</a></li>
-<li><a href="#数组">数组</a></li>
-<li><a href="#null和undefined">null和undefined</a></li>
-<li><a href="#类型查询">类型查询</a></li>
-</ul></li>
-<li><a href="#运算符">运算符</a>
-<ul>
-<li><a href="#算数运算符">算数运算符</a></li>
-<li><a href="#比较运算符"><strong>比较运算符</strong></a></li>
-<li><a href="#逻辑运算符"><strong>逻辑运算符</strong></a></li>
-<li><a href="#赋值运算符"><strong>赋值运算符</strong></a></li>
-</ul></li>
-<li><a href="#流程控制"><strong>流程控制</strong></a>
-<ul>
-<li><a href="#if-else">if-else</a></li>
-<li><a href="#if-else-if-else">if-else if-else</a></li>
-<li><a href="#switch">switch</a></li>
-<li><a href="#for">for</a></li>
-<li><a href="#while">while</a></li>
-<li><a href="#三元运算">三元运算</a></li>
-</ul></li>
-<li><a href="#函数">函数</a>
-<ul>
-<li><a href="#函数定义">函数定义</a></li>
-<li><a href="#函数的全局变量和局部变量">函数的全局变量和局部变量</a></li>
-<li><a href="#作用域">作用域</a></li>
-</ul></li>
-<li><a href="#内置对象和方法">内置对象和方法</a>
-<ul>
-<li><a href="#自定义对象">自定义对象</a></li>
-<li><a href="#date对象">Date对象</a></li>
-<li><a href="#json对象">JSON对象</a></li>
-<li><a href="#regexp对象">RegExp对象</a></li>
-<li><a href="#math对象">Math对象</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-        </div>
-        
-        
-        <hr>
-        <div class="social-link sidebar-item">
-            <div><i class="iconfont iconidcard"></i> 社交链接</div>
-            <ul>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont icongithub-fill"></i> GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconweibo"></i> Weibo
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconmail"></i> E-Mail
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-        <hr>
-        <div class="blogroll sidebar-item">
-            <div><i class="iconfont iconlink"></i> 友情链接</div>
-            <ul>
-                
-                <li>
-                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="╮(╯▽╰)╭">
-                        <i class="iconfont iconcode"></i> wilson&#39;s blog
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://simplerfroze.com" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconcode"></i> Symoon
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont icongithub-fill"></i> GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconheart"></i> 友链招租🤪
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-
-</aside>
-
-        </div>
-    </div>
-</main>
-
-
-<footer id="footer" class="footer" 
-        style="background: #333333;" >
-
-    <div class="container">
-        <div class="back-to-top">
-            <a href="#top">
-                <button id="back-to-top">
-                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
-                </button>
-            </a>
-        </div>
-
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="copyright">
-                    <span class="author">
-                        <a href="https://blog.weii.ink" target="_blank">
-                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
-                                wilson
-                            </abbr>
-                        </a>
-                    </span>
-                    <i class="iconfont iconheart" aria-hidden="true"></i>
-                    <span class="year">2014 - 2019</span>
-                    
-                    <span class="creative-commons">
-                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
-                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-                           target="_blank">BY-NC-SA 4.0</a>
-                    </span>
-                    
-                </div>
-                
-                <div class="busuanzi">
-                    <span id="busuanzi_container_site_pv">
-                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
-                        <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                    <span id="busuanzi_container_site_uv">
-                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
-                        <span id="busuanzi_value_site_uv"></span>
-                    </span>
-                    <span id="busuanzi_container_page_pv">
-                        <i class="iconfont iconsolution"></i>
-                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
-                    </span>
-                </div>
-                
-
-
-            </div>
-            <div class="footer-right">
-                <div class="custom-info">
-                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
-                    <i class="iconfont icongithub-fill"></i>
-                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
-                    <iframe style="margin-left:2px;margin-bottom:-5px;"
-                            frameborder="0" scrolling="0" width="82px"
-                            height="20px"
-                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
-                    </iframe>
-                </div>
-
-                <div class="powered-by">由
-                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
-                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
-                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-
-
-
-
-
-<script type="text/javascript" src="/js/love.js"></script>
-
-
-
-
-<script type="text/javascript" src="/js/weii.js"></script>
-</body>
-</html>
+</code></pre><p>Math</p></div></div></div><nav aria-label="Page navigation"><ul class=pager><li class=previous><a href=/2018/03/08/cnblog_8527496/ title=前端基础之CSS data-toggle=tooltip data-placement=top><span aria-hidden=true>&larr;</span>
+上一页</a></li><li class=next><a href=/2018/03/12/cnblog_8550048/ title=前端基础之BOM和DOM data-toggle=tooltip data-placement=top>下一页
+<span aria-hidden=true>&rarr;</span></a></li></ul></nav><div class=reward id=reward><div class=reward-comment><span>🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span></div><button type=button class="btn btn-primary btn-lg reward-button" data-toggle=modal data-target=#myModal>
+支持一下</button><div class="modal fade" id=myModal tabindex=-1 role=dialog aria-labelledby=myModalLabel><div class=modal-dialog role=document><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&#215;</span></button><h4 class=modal-title id=myModalLabel>来杯咖啡</h4></div><div class=modal-body><div class=reward-body id=reward-body><div class=row><div class=col-xs-6><div class=reward-qr><img src=/images/WeChatPay.png alt=wechatpay_qrcode class="img-responsive img-thumbnail">
+<span>微信</span></div></div><div class=col-xs-6><div class=reward-qr><img src=/images/AliPay.png alt=wechatpay_qrcode class="img-responsive img-thumbnail">
+<span>支付宝</span></div></div></div></div></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>Close</button></div></div></div></div></div><div class=comments id=comments><script src=https://utteranc.es/client.js repo=wevsmy/wevsmy.github.io issue-term=title theme=github-light crossorigin=anonymous async></script></div></div><aside class=sidebar id=sidebar style=background:url(/images/background.png)><div class="info sidebar-item" id=info><img class=author-avatar src=/images/avatar.png alt=wilson><h2 class=author-name>wilson</h2><h3 class=author-description>٩(๑❛ᴗ❛๑)۶</h3><div class=site-count><div class=count-block><div class=site-count-title>归档</div><div><a href=/posts/>85</a></div></div><div class=count-block><div class=site-count-title>分类</div><div><a href=/categories/>2</a></div></div><div class=count-block><div class=site-count-title>标签</div><div><a href=/tags/>34</a></div></div></div><div class=rss><a class="btn rss-link" href=https://www.weii.xyz/index.xml type=application/rss+xml title=rss><i class="iconfont iconrss rss-icon">RSS</i></a></div></div><div class=sidebar-sticky><hr><div class="post-toc sidebar-item"><div><i class="iconfont iconorderedlist"></i>文章目录</div><nav id=TableOfContents><ul><li><a href=#javascript的历史>JavaScript的历史</a></li><li><a href=#ecmascript>ECMAScript</a></li><li><a href=#javascript引入方式>JavaScript引入方式</a><ul><li><a href=#script标签内写代码>Script标签内写代码</a></li><li><a href=#引入额外的js文件>引入额外的JS文件</a></li></ul></li><li><a href=#javascript语言规范>JavaScript语言规范</a><ul><li><a href=#注释注释是代码之母>注释（注释是代码之母）</a></li><li><a href=#结束符>结束符</a></li></ul></li><li><a href=#javascript语言基础>JavaScript语言基础</a><ul><li><a href=#变量声明>变量声明</a></li></ul></li><li><a href=#javascript数据类型>JavaScript数据类型</a><ul><li><a href=#布尔类型>布尔类型</a></li><li><a href=#数组>数组</a></li><li><a href=#null和undefined>null和undefined</a></li><li><a href=#类型查询>类型查询</a></li></ul></li><li><a href=#运算符>运算符</a><ul><li><a href=#算数运算符>算数运算符</a></li><li><a href=#比较运算符><strong>比较运算符</strong></a></li><li><a href=#逻辑运算符><strong>逻辑运算符</strong></a></li><li><a href=#赋值运算符><strong>赋值运算符</strong></a></li></ul></li><li><a href=#流程控制><strong>流程控制</strong></a><ul><li><a href=#if-else>if-else</a></li><li><a href=#if-else-if-else>if-else if-else</a></li><li><a href=#switch>switch</a></li><li><a href=#for>for</a></li><li><a href=#while>while</a></li><li><a href=#三元运算>三元运算</a></li></ul></li><li><a href=#函数>函数</a><ul><li><a href=#函数定义>函数定义</a></li><li><a href=#函数的全局变量和局部变量>函数的全局变量和局部变量</a></li><li><a href=#作用域>作用域</a></li></ul></li><li><a href=#内置对象和方法>内置对象和方法</a><ul><li><a href=#自定义对象>自定义对象</a></li><li><a href=#date对象>Date对象</a></li><li><a href=#json对象>JSON对象</a></li><li><a href=#regexp对象>RegExp对象</a></li><li><a href=#math对象>Math对象</a></li></ul></li></ul></nav></div><hr><div class="social-link sidebar-item"><div><i class="iconfont iconidcard"></i>社交链接</div><ul><li><a href=https://github.com/wevsmy data-toggle=tooltip data-placement=top title=O__O><i class="iconfont icongithub-fill"></i>GitHub</a></li><li><a href=https://weibo.com/wevsmy data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconweibo"></i>Weibo</a></li><li><a href=mailto:wevsmy@gmail.com data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconmail"></i>E-Mail</a></li></ul></div><hr><div class="blogroll sidebar-item"><div><i class="iconfont iconlink"></i>友情链接</div><ul><li><a href=https://blog.weii.ink target=_blank data-toggle=tooltip data-placement=top title=╮(╯▽╰)╭><i class="iconfont iconcode"></i>wilson's blog</a></li><li><a href=https://simplerfroze.com target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconcode"></i>Symoon</a></li><li><a href=https://github.com/wevsmy target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont icongithub-fill"></i>GitHub</a></li><li><a href=https://github.com/wevsmy target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconheart"></i>友链招租🤪</a></li></ul></div></div></aside></div></div></main><footer id=footer class=footer style=background:#333><div class=container><div class=back-to-top><a href=#top><button id=back-to-top>
+<i class="iconfont iconrocket back-to-top-i" aria-label=true></i></button></a></div><div class=footer-container><div class=footer-left><div class=copyright><span class=author><a href=https://blog.weii.ink target=_blank><abbr title=(≧O≦) data-toggle=tooltip data-placement=top>wilson</abbr></a></span>
+<i class="iconfont iconheart" aria-hidden=true></i><span class=year>2014 - 2020</span>
+<span class=creative-commons><i class="iconfont iconcopyright" aria-hidden=true></i><a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>BY-NC-SA 4.0</a></span></div><div class=busuanzi><span id=busuanzi_container_site_pv><i class="iconfont iconeye" aria-label=站点点击量 aria-hidden=false></i><span id=busuanzi_value_site_pv></span></span><span id=busuanzi_container_site_uv><i class="iconfont iconuser" aria-label=站点用户数 aria-hidden=false></i><span id=busuanzi_value_site_uv></span></span><span id=busuanzi_container_page_pv><i class="iconfont iconsolution"></i><span id=busuanzi_value_page_pv aria-label=页面点击量 aria-hidden=false></span></span></div></div><div class=footer-right><div class=custom-info><a href=/sitemap.xml target=_blank>SiteMap</a>
+<i class="iconfont icongithub-fill"></i><a href=https://pages.github.com/ target=_blank>GitHub Pages</a>
+<iframe style=margin-left:2px;margin-bottom:-5px frameborder=0 scrolling=0 width=82px height=20px src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true"></iframe></div><div class=powered-by>由
+<a href=https://gohugo.io target=_blank>Hugo</a> 强力驱动 | 移植
+<a href=https://github.com/wevsmy/hugo-theme-weii target=_blank>WEII</a> | 鸣谢
+<a href=https://github.com/AlynxZhou/hexo-theme-aria target=_blank>ARIA</a></div></div></div></div></footer><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js></script><script type=text/javascript color=0,0,255 opacity=0.7 zindex=-2 count=99 src=/js/canvas-nest.js></script><script type=text/javascript src=/js/love.js></script><script type=text/javascript src=/js/weii.js></script></body></html>

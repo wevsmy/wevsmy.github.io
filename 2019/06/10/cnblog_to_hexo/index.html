@@ -1,743 +1,116 @@
-<!DOCTYPE html>
-<html lang="zh-cn" >
-<head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    
-
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/weii.css">
-
-
-
-
-    
-    <meta name="theme-color" content="#333333">
-    <meta name="msapplication-TileColor" content="#333333">
-    
-    
-    
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
-    
-    <script data-ad-client="ca-pub-6222665322795328" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-146915278-1');
-    </script>
-    
-    
-    <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
-    
-    
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
-    
-    
-    
-    
-    <meta name="keywords"
-          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
-    
-    
-    
-    <meta name="description" content="最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.
-
-毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）">
-    
-    
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
-    
-    
-    <link rel="icon" type="image/png" sizes="192x192"
-          href="/favicons/android-chrome-96x96.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    
-    
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
-          color="#333333">
-    
-    
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    
-    
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
-    
-
-    <title>博客园文章迁移到Hexo</title>
-
-    
-    
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-
-
-
-
-
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-</head>
-
-<body>
-
-<header id="header" class="header" 
-        style="background: #333333;" >
-    <div class="container">
-        <div class="header-container">
-            <div class="header-title">
-                <h1 class="title">
-                    <a href="/">
-                        wilson&#39;s blog
-                    </a>
-                </h1>
-                <h2 class="subtitle">
-                    Life is short, You need Python and Golang 😏
-                </h2>
-            </div>
-            
-            <div class="logo">
-                <img src="/images/logo.png" alt="logo">
-            </div>
-            
-        </div>
-
-        
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <nav class="navbar navbar-inverse header-nav">
-            <div class="container-fluid">
-                
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
-                       title="( ⊙ o ⊙ )啊！">导航</a>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        
-                        <li><a href="/">
-                            
-                            <i class="iconfont iconhome"></i>
-                            
-                            <span class="menu-text">首页</span>
-                        </a></li>
-                        
-                        <li><a href="/posts/">
-                            
-                            <i class="iconfont iconfolder-open"></i>
-                            
-                            <span class="menu-text">归档</span>
-                        </a></li>
-                        
-                        <li><a href="/categories/">
-                            
-                            <i class="iconfont iconbook"></i>
-                            
-                            <span class="menu-text">分类</span>
-                        </a></li>
-                        
-                        <li><a href="/tags/">
-                            
-                            <i class="iconfont icontags"></i>
-                            
-                            <span class="menu-text">标签</span>
-                        </a></li>
-                        
-                        <li><a href="/about/">
-                            
-                            <i class="iconfont iconsolution"></i>
-                            
-                            <span class="menu-text">关于</span>
-                        </a></li>
-                        
-                    </ul>
-                    <div class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="search" id="search-input" name="q" results="0"
-                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="search-result-box" id="search-result"></div>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-
-<main id="main" class="main">
-    <div class="container">
-        <div class="main-container">
-            <div id="content" class="content">
-                
-                
-                
-                
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title"><h2><a href='/2019/06/10/cnblog_to_hexo/'>博客园文章迁移到Hexo</a></h2></div>
-        <div class="post-meta"><span>2019.06.10</span></div>
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-post" id="post-post">
-            <p>最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.</p>
-
-<p>毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）</p>
-
-<h1 id="迁移准备">迁移准备</h1>
-
-<ul>
-<li>下载博客园备份文件</li>
-<li>使用python写个脚本</li>
-</ul>
-
-<h1 id="脚本原理">脚本原理</h1>
-
-<p>使用sax解析xml数据，然后使用html2text转换成markdown文档，然后分成单个文件存储。
-就这么简单，没啥难度。</p>
-
-<h1 id="运行脚本">运行脚本</h1>
-
-<p>运行python脚本，迁移就算完成了，简不简单，意不意外，惊不惊喜！</p>
-
-<p>迁移脚本：</p>
-
-<pre><code class="language-python">import xml.sax
-from datetime import datetime
-
-import html2text
-
-
-class CNBlogsHandler(xml.sax.ContentHandler):
-
-    def __init__(self):
-        self.CurrentData = &quot;&quot;
-        self.title = &quot;&quot;
-        self.author = &quot;&quot;
-        self.pubDate = &quot;&quot;
-        self.guid = &quot;&quot;
-        self.description = &quot;&quot;
-
-        self.fileName = &quot;&quot;
-        self.date = &quot;&quot;
-        self.url = &quot;&quot;
-
-    # 元素开始调用
-    def startElement(self, tag, attributes):
-        self.CurrentData = tag
-        if tag == &quot;item&quot;:
-            print(&quot;*****item*****&quot;)
-
-    # 元素结束调用
-    def endElement(self, tag):
-        if self.CurrentData == &quot;title&quot;:
-            print(&quot;title:&quot;, self.title)
-        elif self.CurrentData == &quot;author&quot;:
-            print(&quot;author:&quot;, self.author)
-        elif self.CurrentData == &quot;pubDate&quot;:
-            print(&quot;pubDate:&quot;, self.pubDate)
-        elif self.CurrentData == &quot;guid&quot;:
-            print(&quot;guid:&quot;, self.guid)
-        elif self.CurrentData == &quot;description&quot;:
-            # print(&quot;description:&quot;, self.description)
-            self.saveFile()
-        self.CurrentData = &quot;&quot;
-
-    # 读取字符时调用
-    def characters(self, content):
-        if self.CurrentData == &quot;title&quot;:
-            self.title = content
-        elif self.CurrentData == &quot;author&quot;:
-            self.author = content
-        elif self.CurrentData == &quot;pubDate&quot;:
-            self.pubDate = content
-            GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
-            self.date = datetime.strptime(self.pubDate, GMT_FORMAT)
-        elif self.CurrentData == &quot;guid&quot;:
-            self.guid = content
-            name = &quot;cnblog_&quot; + self.guid.split(&quot;/&quot;)[-1].replace(&quot;.html&quot;, &quot;&quot;).replace(&quot;_&quot;, &quot;-&quot;)
-            self.fileName = name + &quot;.md&quot;
-            self.url = &quot;../../../../{}/{:0&gt;2}/{:0&gt;2}/{}/&quot;.format(self.date.year, self.date.month, self.date.day, name)
-        elif self.CurrentData == &quot;description&quot;:
-            self.description += content
-
-    # 保存Md文件
-    def saveFile(self):
-        if self.fileName != &quot;&quot;:
-            md = html2text.html2text(self.description)
-            with open(self.fileName, mode=&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
-                s = &quot;&quot;&quot;---
-title: {0}
-date: {1}
-categories:
-- 笔记
-- 博客园
-tags:
-- 博客园
-- 搬家
-- cnblogs
----
-# [这是👉{0}👈的摘要]({3})
-&lt;!--more--&gt;
-{2}
-&quot;&quot;&quot;.format(self.title, self.date, md, self.url)
-                f.write(s)
-                self.description = &quot;&quot;
-
-
-if (__name__ == &quot;__main__&quot;):
-    # 创建一个 XMLReader
-    parser = xml.sax.make_parser()
-    # 关闭命名空间
-    parser.setFeature(xml.sax.handler.feature_namespaces, 0)
-
-    # 重写 ContextHandler
-    Handler = CNBlogsHandler()
-    parser.setContentHandler(Handler)
-
-    parser.parse(&quot;CNBlogs_BlogBackup_131_201712_201906.xml&quot;)
-
-</code></pre>
-
-<p><a href="/static/posts/cnblog_to_hexo/CNBlogs_BlogBackup_131_201712_201906.xml">博客园备份xml文件</a></p>
-
-<p><a href="/static/posts/cnblog_to_hexo/cnblogToHexo.py">迁移脚本py文件</a></p>
-        </div>
-
-    </div>
-
-</div>
-
-
-<nav aria-label="Page navigation">
-    <ul class="pager">
-        
-        <li class="previous">
-            <a href="/2019/03/12/docker_install_bt_panel/" title="docker安装宝塔管理面板" data-toggle="tooltip" data-placement="top">
-            <span aria-hidden="true">&larr;</span>
-                上一页
-            </a>
-        </li>
-        
-
-        
-        <li class="next">
-            <a href="/2019/06/18/zulip_installation_record/" title="zulip安装记录" data-toggle="tooltip" data-placement="top">
-                下一页
-            <span aria-hidden="true">&rarr;</span>
-            </a>
-        </li>
-        
-    </ul>
-</nav>
-
-
-
-<div class="reward" id="reward">
-
-    <div class="reward-comment">
-         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
-    </div>
-
-    
-    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
-        支持一下
-    </button>
-
-    
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="reward-body" id="reward-body">
-
-                        <div class="row">
-                            <div class="col-xs-6">
-                                
-                                <div class="reward-qr">
-                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
-                                    <span>微信</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                
-                                <div class="reward-qr">
-                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
-                                    <span>支付宝</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-
-
-
-<div class="comments" id="comments">
-    
-
-    <script src="https://utteranc.es/client.js"
-        repo="wevsmy/wevsmy.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-
-    
-</div>
-
-
-
-
-                
-            </div>
-            
-            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-
-    <div class="info sidebar-item" id="info">
-
-        
-        
-        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-        
-        
-
-        <h2 class="author-name">wilson</h2>
-        <h3 class="author-description">٩(๑❛ᴗ❛๑)۶</h3>
-        <div class="site-count">
-            
-            
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">归档</div>
-                <div><a href="/posts/">85</a></div>
-            </div>
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">分类</div>
-                <div><a href="/categories/">2</a></div>
-            </div>
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">标签</div>
-                <div><a href="/tags/">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    37
-                </a></div>
-            </div>
-            
-            
-            
-            
-        </div>
-
-        <div class="rss">
-            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
-               type="application/rss+xml" title="rss">
-                <i class="iconfont iconrss rss-icon"> RSS</i>
-            </a>
-        </div>
-
-    </div>
-
-    <div class="sidebar-sticky">
-
-        
-        
-        <hr>
-        <div class="post-toc sidebar-item">
-            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
-            <nav id="TableOfContents">
-<ul>
-<li><a href="#迁移准备">迁移准备</a></li>
-<li><a href="#脚本原理">脚本原理</a></li>
-<li><a href="#运行脚本">运行脚本</a></li>
-</ul>
-</nav>
-        </div>
-        
-        
-        <hr>
-        <div class="social-link sidebar-item">
-            <div><i class="iconfont iconidcard"></i> 社交链接</div>
-            <ul>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont icongithub-fill"></i> GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconweibo"></i> Weibo
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconmail"></i> E-Mail
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-        <hr>
-        <div class="blogroll sidebar-item">
-            <div><i class="iconfont iconlink"></i> 友情链接</div>
-            <ul>
-                
-                <li>
-                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="╮(╯▽╰)╭">
-                        <i class="iconfont iconcode"></i> wilson&#39;s blog
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://simplerfroze.com" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconcode"></i> Symoon
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont icongithub-fill"></i> GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconheart"></i> 友链招租🤪
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-
-</aside>
-
-        </div>
-    </div>
-</main>
-
-
-<footer id="footer" class="footer" 
-        style="background: #333333;" >
-
-    <div class="container">
-        <div class="back-to-top">
-            <a href="#top">
-                <button id="back-to-top">
-                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
-                </button>
-            </a>
-        </div>
-
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="copyright">
-                    <span class="author">
-                        <a href="https://blog.weii.ink" target="_blank">
-                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
-                                wilson
-                            </abbr>
-                        </a>
-                    </span>
-                    <i class="iconfont iconheart" aria-hidden="true"></i>
-                    <span class="year">2014 - 2019</span>
-                    
-                    <span class="creative-commons">
-                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
-                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-                           target="_blank">BY-NC-SA 4.0</a>
-                    </span>
-                    
-                </div>
-                
-                <div class="busuanzi">
-                    <span id="busuanzi_container_site_pv">
-                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
-                        <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                    <span id="busuanzi_container_site_uv">
-                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
-                        <span id="busuanzi_value_site_uv"></span>
-                    </span>
-                    <span id="busuanzi_container_page_pv">
-                        <i class="iconfont iconsolution"></i>
-                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
-                    </span>
-                </div>
-                
-
-
-            </div>
-            <div class="footer-right">
-                <div class="custom-info">
-                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
-                    <i class="iconfont icongithub-fill"></i>
-                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
-                    <iframe style="margin-left:2px;margin-bottom:-5px;"
-                            frameborder="0" scrolling="0" width="82px"
-                            height="20px"
-                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
-                    </iframe>
-                </div>
-
-                <div class="powered-by">由
-                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
-                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
-                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-
-
-
-
-
-<script type="text/javascript" src="/js/love.js"></script>
-
-
-
-
-<script type="text/javascript" src="/js/weii.js"></script>
-</body>
-</html>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href=https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css rel=stylesheet><link rel=stylesheet type=text/css href=https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css><link rel=stylesheet type=text/css href=/css/weii.css><meta name=theme-color content="#333333"><meta name=msapplication-TileColor content="#333333"><script data-ad-client=ca-pub-6222665322795328 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-146915278-1');</script><meta name=google-site-verification content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg"><meta name=msvalidate.01 content="1A54BC0D6A4D102B72F2A0E9870611FA"><meta name=keywords content="weii,wevsmy,wilson,Python,Golang,PyQt5,hugo,gohugo"><meta name=description content="最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.
+毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）"><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=192x192 href=/favicons/android-chrome-96x96.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=mask-icon href=/favicons/safari-pinned-tab.svg color=#333333><link rel=manifest href=/favicons/site.webmanifest><meta name=msapplication-config content="/favicons/browserconfig.xml"><link rel="shortcut icon" type=image/x-icon href=/favicons/favicon.ico><title>博客园文章迁移到Hexo</title><script src=https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js></script><script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></head><body><header id=header class=header style=background:#333><div class=container><div class=header-container><div class=header-title><h1 class=title><a href=/>wilson's blog</a></h1><h2 class=subtitle>Life is short, You need Python and Golang 😏</h2></div><div class=logo><img src=/images/logo.png alt=logo></div></div><div class="modal fade bs-example-modal-lg" tabindex=-1 role=dialog aria-labelledby=myLargeModalLabel><div class="modal-dialog modal-lg" role=document><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&#215;</span></button><h4 class=modal-title>Modal title</h4></div><div class=modal-body><p>One fine body&mldr;</p></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>Close</button>
+<button type=button class="btn btn-primary">Save changes</button></div></div></div></div><nav class="navbar navbar-inverse header-nav"><div class=container-fluid><div class=navbar-header><button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#bs-example-navbar-collapse-1 aria-expanded=false>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+<a class=navbar-brand href=# data-toggle=tooltip data-placement=top title="( ⊙ o ⊙ )啊！">导航</a></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav"><li><a href=/><i class="iconfont iconhome"></i><span class=menu-text>首页</span></a></li><li><a href=/posts/><i class="iconfont iconfolder-open"></i><span class=menu-text>归档</span></a></li><li><a href=/categories/><i class="iconfont iconbook"></i><span class=menu-text>分类</span></a></li><li><a href=/tags/><i class="iconfont icontags"></i><span class=menu-text>标签</span></a></li><li><a href=/about/><i class="iconfont iconsolution"></i><span class=menu-text>关于</span></a></li></ul><div class="navbar-form navbar-right"><div class=form-group><input type=search id=search-input name=q results=0 placeholder="(ฅ´ω`ฅ)" class=form-control></div></div><div class=search-result-box id=search-result></div></div></div></nav></div></header><main id=main class=main><div class=container><div class=main-container><div id=content class=content><div class="panel panel-default post-panel"><div class="panel-heading post-head"><div class=post-title><h2><a href=/2019/06/10/cnblog_to_hexo/>博客园文章迁移到Hexo</a></h2></div><div class=post-meta><span>2019.06.10</span></div></div><div class="panel-body post-body"><div class=post-post id=post-post><p>最近有些空闲时间想着把原来自学python的时候在博客园写的乱七八糟的东西给迁移到Hexo托管到github pages.</p><p>毕竟那也算是我写的，虽然有的地方抄的别人的，但是我会了，那就是我的！（牛逼坏了，叉腰！）</p><h1 id=迁移准备>迁移准备</h1><ul><li>下载博客园备份文件</li><li>使用python写个脚本</li></ul><h1 id=脚本原理>脚本原理</h1><p>使用sax解析xml数据，然后使用html2text转换成markdown文档，然后分成单个文件存储。
+就这么简单，没啥难度。</p><h1 id=运行脚本>运行脚本</h1><p>运行python脚本，迁移就算完成了，简不简单，意不意外，惊不惊喜！</p><p>迁移脚本：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> xml.sax
+<span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
+
+<span style=color:#f92672>import</span> html2text
+
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CNBlogsHandler</span>(xml<span style=color:#f92672>.</span>sax<span style=color:#f92672>.</span>ContentHandler):
+
+    <span style=color:#66d9ef>def</span> __init__(self):
+        self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>author <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>pubDate <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>guid <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+
+        self<span style=color:#f92672>.</span>fileName <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>date <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+
+    <span style=color:#75715e># 元素开始调用</span>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>startElement</span>(self, tag, attributes):
+        self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>=</span> tag
+        <span style=color:#66d9ef>if</span> tag <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;item&#34;</span>:
+            <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;*****item*****&#34;</span>)
+
+    <span style=color:#75715e># 元素结束调用</span>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>endElement</span>(self, tag):
+        <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;title&#34;</span>:
+            <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;title:&#34;</span>, self<span style=color:#f92672>.</span>title)
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;author&#34;</span>:
+            <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;author:&#34;</span>, self<span style=color:#f92672>.</span>author)
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;pubDate&#34;</span>:
+            <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;pubDate:&#34;</span>, self<span style=color:#f92672>.</span>pubDate)
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;guid&#34;</span>:
+            <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;guid:&#34;</span>, self<span style=color:#f92672>.</span>guid)
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;description&#34;</span>:
+            <span style=color:#75715e># print(&#34;description:&#34;, self.description)</span>
+            self<span style=color:#f92672>.</span>saveFile()
+        self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+
+    <span style=color:#75715e># 读取字符时调用</span>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>characters</span>(self, content):
+        <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;title&#34;</span>:
+            self<span style=color:#f92672>.</span>title <span style=color:#f92672>=</span> content
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;author&#34;</span>:
+            self<span style=color:#f92672>.</span>author <span style=color:#f92672>=</span> content
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;pubDate&#34;</span>:
+            self<span style=color:#f92672>.</span>pubDate <span style=color:#f92672>=</span> content
+            GMT_FORMAT <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;%a, </span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %b %Y %H:%M:%S GMT&#39;</span>
+            self<span style=color:#f92672>.</span>date <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>strptime(self<span style=color:#f92672>.</span>pubDate, GMT_FORMAT)
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;guid&#34;</span>:
+            self<span style=color:#f92672>.</span>guid <span style=color:#f92672>=</span> content
+            name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;cnblog_&#34;</span> <span style=color:#f92672>+</span> self<span style=color:#f92672>.</span>guid<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;/&#34;</span>)[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;.html&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;_&#34;</span>, <span style=color:#e6db74>&#34;-&#34;</span>)
+            self<span style=color:#f92672>.</span>fileName <span style=color:#f92672>=</span> name <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.md&#34;</span>
+            self<span style=color:#f92672>.</span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;../../../../{}/{:0&gt;2}/{:0&gt;2}/{}/&#34;</span><span style=color:#f92672>.</span>format(self<span style=color:#f92672>.</span>date<span style=color:#f92672>.</span>year, self<span style=color:#f92672>.</span>date<span style=color:#f92672>.</span>month, self<span style=color:#f92672>.</span>date<span style=color:#f92672>.</span>day, name)
+        <span style=color:#66d9ef>elif</span> self<span style=color:#f92672>.</span>CurrentData <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;description&#34;</span>:
+            self<span style=color:#f92672>.</span>description <span style=color:#f92672>+=</span> content
+
+    <span style=color:#75715e># 保存Md文件</span>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>saveFile</span>(self):
+        <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>fileName <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#34;&#34;</span>:
+            md <span style=color:#f92672>=</span> html2text<span style=color:#f92672>.</span>html2text(self<span style=color:#f92672>.</span>description)
+            <span style=color:#66d9ef>with</span> open(self<span style=color:#f92672>.</span>fileName, mode<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;w&#34;</span>, encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>) <span style=color:#66d9ef>as</span> f:
+                s <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;---
+</span><span style=color:#e6db74>title: {0}
+</span><span style=color:#e6db74>date: {1}
+</span><span style=color:#e6db74>categories:
+</span><span style=color:#e6db74>- 笔记
+</span><span style=color:#e6db74>- 博客园
+</span><span style=color:#e6db74>tags:
+</span><span style=color:#e6db74>- 博客园
+</span><span style=color:#e6db74>- 搬家
+</span><span style=color:#e6db74>- cnblogs
+</span><span style=color:#e6db74>---
+</span><span style=color:#e6db74># [这是👉{0}👈的摘要]({3})
+</span><span style=color:#e6db74>&lt;!--more--&gt;
+</span><span style=color:#e6db74>{2}
+</span><span style=color:#e6db74>&#34;&#34;&#34;</span><span style=color:#f92672>.</span>format(self<span style=color:#f92672>.</span>title, self<span style=color:#f92672>.</span>date, md, self<span style=color:#f92672>.</span>url)
+                f<span style=color:#f92672>.</span>write(s)
+                self<span style=color:#f92672>.</span>description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+
+
+<span style=color:#66d9ef>if</span> (__name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>):
+    <span style=color:#75715e># 创建一个 XMLReader</span>
+    parser <span style=color:#f92672>=</span> xml<span style=color:#f92672>.</span>sax<span style=color:#f92672>.</span>make_parser()
+    <span style=color:#75715e># 关闭命名空间</span>
+    parser<span style=color:#f92672>.</span>setFeature(xml<span style=color:#f92672>.</span>sax<span style=color:#f92672>.</span>handler<span style=color:#f92672>.</span>feature_namespaces, <span style=color:#ae81ff>0</span>)
+
+    <span style=color:#75715e># 重写 ContextHandler</span>
+    Handler <span style=color:#f92672>=</span> CNBlogsHandler()
+    parser<span style=color:#f92672>.</span>setContentHandler(Handler)
+
+    parser<span style=color:#f92672>.</span>parse(<span style=color:#e6db74>&#34;CNBlogs_BlogBackup_131_201712_201906.xml&#34;</span>)
+
+</code></pre></div><p><a href=/static/posts/cnblog_to_hexo/CNBlogs_BlogBackup_131_201712_201906.xml>博客园备份xml文件</a></p><p><a href=/static/posts/cnblog_to_hexo/cnblogToHexo.py>迁移脚本py文件</a></p></div></div></div><nav aria-label="Page navigation"><ul class=pager><li class=previous><a href=/2019/03/12/docker_install_bt_panel/ title=docker安装宝塔管理面板 data-toggle=tooltip data-placement=top><span aria-hidden=true>&larr;</span>
+上一页</a></li><li class=next><a href=/2019/06/18/zulip_installation_record/ title=zulip安装记录 data-toggle=tooltip data-placement=top>下一页
+<span aria-hidden=true>&rarr;</span></a></li></ul></nav><div class=reward id=reward><div class=reward-comment><span>🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span></div><button type=button class="btn btn-primary btn-lg reward-button" data-toggle=modal data-target=#myModal>
+支持一下</button><div class="modal fade" id=myModal tabindex=-1 role=dialog aria-labelledby=myModalLabel><div class=modal-dialog role=document><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&#215;</span></button><h4 class=modal-title id=myModalLabel>来杯咖啡</h4></div><div class=modal-body><div class=reward-body id=reward-body><div class=row><div class=col-xs-6><div class=reward-qr><img src=/images/WeChatPay.png alt=wechatpay_qrcode class="img-responsive img-thumbnail">
+<span>微信</span></div></div><div class=col-xs-6><div class=reward-qr><img src=/images/AliPay.png alt=wechatpay_qrcode class="img-responsive img-thumbnail">
+<span>支付宝</span></div></div></div></div></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>Close</button></div></div></div></div></div><div class=comments id=comments><script src=https://utteranc.es/client.js repo=wevsmy/wevsmy.github.io issue-term=title theme=github-light crossorigin=anonymous async></script></div></div><aside class=sidebar id=sidebar style=background:url(/images/background.png)><div class="info sidebar-item" id=info><img class=author-avatar src=/images/avatar.png alt=wilson><h2 class=author-name>wilson</h2><h3 class=author-description>٩(๑❛ᴗ❛๑)۶</h3><div class=site-count><div class=count-block><div class=site-count-title>归档</div><div><a href=/posts/>85</a></div></div><div class=count-block><div class=site-count-title>分类</div><div><a href=/categories/>2</a></div></div><div class=count-block><div class=site-count-title>标签</div><div><a href=/tags/>34</a></div></div></div><div class=rss><a class="btn rss-link" href=https://www.weii.xyz/index.xml type=application/rss+xml title=rss><i class="iconfont iconrss rss-icon">RSS</i></a></div></div><div class=sidebar-sticky><hr><div class="post-toc sidebar-item"><div><i class="iconfont iconorderedlist"></i>文章目录</div><nav id=TableOfContents></nav></div><hr><div class="social-link sidebar-item"><div><i class="iconfont iconidcard"></i>社交链接</div><ul><li><a href=https://github.com/wevsmy data-toggle=tooltip data-placement=top title=O__O><i class="iconfont icongithub-fill"></i>GitHub</a></li><li><a href=https://weibo.com/wevsmy data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconweibo"></i>Weibo</a></li><li><a href=mailto:wevsmy@gmail.com data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconmail"></i>E-Mail</a></li></ul></div><hr><div class="blogroll sidebar-item"><div><i class="iconfont iconlink"></i>友情链接</div><ul><li><a href=https://blog.weii.ink target=_blank data-toggle=tooltip data-placement=top title=╮(╯▽╰)╭><i class="iconfont iconcode"></i>wilson's blog</a></li><li><a href=https://simplerfroze.com target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconcode"></i>Symoon</a></li><li><a href=https://github.com/wevsmy target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont icongithub-fill"></i>GitHub</a></li><li><a href=https://github.com/wevsmy target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconheart"></i>友链招租🤪</a></li></ul></div></div></aside></div></div></main><footer id=footer class=footer style=background:#333><div class=container><div class=back-to-top><a href=#top><button id=back-to-top>
+<i class="iconfont iconrocket back-to-top-i" aria-label=true></i></button></a></div><div class=footer-container><div class=footer-left><div class=copyright><span class=author><a href=https://blog.weii.ink target=_blank><abbr title=(≧O≦) data-toggle=tooltip data-placement=top>wilson</abbr></a></span>
+<i class="iconfont iconheart" aria-hidden=true></i><span class=year>2014 - 2020</span>
+<span class=creative-commons><i class="iconfont iconcopyright" aria-hidden=true></i><a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>BY-NC-SA 4.0</a></span></div><div class=busuanzi><span id=busuanzi_container_site_pv><i class="iconfont iconeye" aria-label=站点点击量 aria-hidden=false></i><span id=busuanzi_value_site_pv></span></span><span id=busuanzi_container_site_uv><i class="iconfont iconuser" aria-label=站点用户数 aria-hidden=false></i><span id=busuanzi_value_site_uv></span></span><span id=busuanzi_container_page_pv><i class="iconfont iconsolution"></i><span id=busuanzi_value_page_pv aria-label=页面点击量 aria-hidden=false></span></span></div></div><div class=footer-right><div class=custom-info><a href=/sitemap.xml target=_blank>SiteMap</a>
+<i class="iconfont icongithub-fill"></i><a href=https://pages.github.com/ target=_blank>GitHub Pages</a>
+<iframe style=margin-left:2px;margin-bottom:-5px frameborder=0 scrolling=0 width=82px height=20px src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true"></iframe></div><div class=powered-by>由
+<a href=https://gohugo.io target=_blank>Hugo</a> 强力驱动 | 移植
+<a href=https://github.com/wevsmy/hugo-theme-weii target=_blank>WEII</a> | 鸣谢
+<a href=https://github.com/AlynxZhou/hexo-theme-aria target=_blank>ARIA</a></div></div></div></div></footer><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js></script><script type=text/javascript color=0,0,255 opacity=0.7 zindex=-2 count=99 src=/js/canvas-nest.js></script><script type=text/javascript src=/js/love.js></script><script type=text/javascript src=/js/weii.js></script></body></html>

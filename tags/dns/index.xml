@@ -1,25 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>DNS on </title>
-    <link>https://blog.weii.ink/tags/dns/</link>
-    <description>Recent content in DNS on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Sep 2019 09:28:25 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.weii.ink/tags/dns/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Docker搭建DNS服务器</title>
-      <link>https://blog.weii.ink/2019/09/17/docker_install_dnsmasq/</link>
-      <pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate>
-      
-      <guid>https://blog.weii.ink/2019/09/17/docker_install_dnsmasq/</guid>
-      <description>&lt;p&gt;DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
-用docker搭建一下用用。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DNS on</title><link>https://www.weii.xyz/tags/dns/</link><description>Recent content in DNS on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 17 Sep 2019 09:28:25 +0800</lastBuildDate><atom:link href="https://www.weii.xyz/tags/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker搭建DNS服务器</title><link>https://www.weii.xyz/2019/09/17/docker_install_dnsmasq/</link><pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate><guid>https://www.weii.xyz/2019/09/17/docker_install_dnsmasq/</guid><description>&lt;p>DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
+用docker搭建一下用用。&lt;/p></description></item></channel></rss>

@@ -1,302 +1,13 @@
-<!DOCTYPE html>
-<html lang="zh-cn" >
-<head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    
-
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css">
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/weii.css">
-
-
-
-
-    
-    <meta name="theme-color" content="#333333">
-    <meta name="msapplication-TileColor" content="#333333">
-    
-    
-    
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
-    
-    <script data-ad-client="ca-pub-6222665322795328" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-146915278-1');
-    </script>
-    
-    
-    <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg">
-    
-    
-    <meta name="msvalidate.01" content="1A54BC0D6A4D102B72F2A0E9870611FA"/>
-    
-    
-    
-    
-    <meta name="keywords"
-          content="weii, wevsmy, wilson, Python, Golang, PyQt5, hugo, gohugo"/>
-    
-    
-    
-    <meta name="description" content="这是👉MySQL 之 库操作👈的摘要">
-    
-    
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
-    
-    
-    <link rel="icon" type="image/png" sizes="192x192"
-          href="/favicons/android-chrome-96x96.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    
-    
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg"
-          color="#333333">
-    
-    
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    
-    
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
-    
-
-    <title>MySQL 之 库操作</title>
-
-    
-    
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-
-
-
-
-
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-</head>
-
-<body>
-
-<header id="header" class="header" 
-        style="background: #333333;" >
-    <div class="container">
-        <div class="header-container">
-            <div class="header-title">
-                <h1 class="title">
-                    <a href="/">
-                        wilson&#39;s blog
-                    </a>
-                </h1>
-                <h2 class="subtitle">
-                    Life is short, You need Python and Golang 😏
-                </h2>
-            </div>
-            
-            <div class="logo">
-                <img src="/images/logo.png" alt="logo">
-            </div>
-            
-        </div>
-
-        
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <nav class="navbar navbar-inverse header-nav">
-            <div class="container-fluid">
-                
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top"
-                       title="( ⊙ o ⊙ )啊！">导航</a>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        
-                        <li><a href="/">
-                            
-                            <i class="iconfont iconhome"></i>
-                            
-                            <span class="menu-text">首页</span>
-                        </a></li>
-                        
-                        <li><a href="/posts/">
-                            
-                            <i class="iconfont iconfolder-open"></i>
-                            
-                            <span class="menu-text">归档</span>
-                        </a></li>
-                        
-                        <li><a href="/categories/">
-                            
-                            <i class="iconfont iconbook"></i>
-                            
-                            <span class="menu-text">分类</span>
-                        </a></li>
-                        
-                        <li><a href="/tags/">
-                            
-                            <i class="iconfont icontags"></i>
-                            
-                            <span class="menu-text">标签</span>
-                        </a></li>
-                        
-                        <li><a href="/about/">
-                            
-                            <i class="iconfont iconsolution"></i>
-                            
-                            <span class="menu-text">关于</span>
-                        </a></li>
-                        
-                    </ul>
-                    <div class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="search" id="search-input" name="q" results="0"
-                                   placeholder="(ฅ´ω`ฅ)" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="search-result-box" id="search-result"></div>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-
-<main id="main" class="main">
-    <div class="container">
-        <div class="main-container">
-            <div id="content" class="content">
-                
-                
-                
-                
-<div class="panel panel-default post-panel">
-    <div class="panel-heading post-head">
-        <div class="post-title"><h2><a href='/2018/02/28/cnblog_8485174/'>MySQL 之 库操作</a></h2></div>
-        <div class="post-meta"><span>2018.02.28</span></div>
-    </div>
-    <div class="panel-body post-body">
-        <div class="post-post" id="post-post">
-            <h1 id="这是-mysql-之-库操作-的摘要-2018-02-28-cnblog-8485174"><a href="/2018/02/28/cnblog_8485174/">这是👉MySQL 之 库操作👈的摘要</a></h1>
-
-<h1 id="阅读目录"><strong>阅读目录:</strong></h1>
-
-<ul>
-<li><strong>一 系统数据库</strong></li>
-<li><strong>二 数据库操作</strong></li>
-<li><strong>三 命名规范</strong></li>
-<li><strong>四 用户权限</strong></li>
-<li><strong>五.修改密码</strong></li>
-<li><strong>六  忘记密码</strong></li>
-<li><strong>七  中文乱码问题</strong></li>
-</ul>
-
-<h2 id="一-系统数据库">一.系统数据库</h2>
-
-<ul>
-<li>information_schema ：虚拟库，不占用磁盘空间，存储的是数据库启动后的一些参数，如用户表信息、列信息、权限信息、字符信息等</li>
-<li>mysql：核心数据库，里面包含用户、权限、关键字等信息。不可以删除</li>
-<li>performance_schema：mysql 5.5版本后添加的新库，主要收集系统性能参数，记录处理查询请求时发生的各种事件、锁等现象</li>
-<li>sys : mysql5.7版本新增加的库,通过这个库可以快速的了解系统的元数据信息,可以方便DBA发现数据库的很多信息，解决性能瓶颈都提供了巨大帮助</li>
-</ul>
-
-<h2 id="二-数据库操作">二.数据库操作</h2>
-
-<p>1.创建数据库</p>
-
-<pre><code>#语法: CREATE DATABASE db_name charset utf8;
-</code></pre>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>#创建一个名字为 db_name 的数据库,并指定当前库的编码集为utf8
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href=https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css rel=stylesheet><link rel=stylesheet type=text/css href=https://at.alicdn.com/t/font_1354893_48p2lem7d2u.css><link rel=stylesheet type=text/css href=/css/weii.css><meta name=theme-color content="#333333"><meta name=msapplication-TileColor content="#333333"><script data-ad-client=ca-pub-6222665322795328 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?cd78dad41ad2de68dddcbff91c704ce4";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-146915278-1');</script><meta name=google-site-verification content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg"><meta name=msvalidate.01 content="1A54BC0D6A4D102B72F2A0E9870611FA"><meta name=keywords content="weii,wevsmy,wilson,Python,Golang,PyQt5,hugo,gohugo"><meta name=description content="这是👉MySQL 之 库操作👈的摘要"><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=192x192 href=/favicons/android-chrome-96x96.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=mask-icon href=/favicons/safari-pinned-tab.svg color=#333333><link rel=manifest href=/favicons/site.webmanifest><meta name=msapplication-config content="/favicons/browserconfig.xml"><link rel="shortcut icon" type=image/x-icon href=/favicons/favicon.ico><title>MySQL 之 库操作</title><script src=https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js></script><script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></head><body><header id=header class=header style=background:#333><div class=container><div class=header-container><div class=header-title><h1 class=title><a href=/>wilson's blog</a></h1><h2 class=subtitle>Life is short, You need Python and Golang 😏</h2></div><div class=logo><img src=/images/logo.png alt=logo></div></div><div class="modal fade bs-example-modal-lg" tabindex=-1 role=dialog aria-labelledby=myLargeModalLabel><div class="modal-dialog modal-lg" role=document><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&#215;</span></button><h4 class=modal-title>Modal title</h4></div><div class=modal-body><p>One fine body&mldr;</p></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>Close</button>
+<button type=button class="btn btn-primary">Save changes</button></div></div></div></div><nav class="navbar navbar-inverse header-nav"><div class=container-fluid><div class=navbar-header><button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#bs-example-navbar-collapse-1 aria-expanded=false>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+<a class=navbar-brand href=# data-toggle=tooltip data-placement=top title="( ⊙ o ⊙ )啊！">导航</a></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav"><li><a href=/><i class="iconfont iconhome"></i><span class=menu-text>首页</span></a></li><li><a href=/posts/><i class="iconfont iconfolder-open"></i><span class=menu-text>归档</span></a></li><li><a href=/categories/><i class="iconfont iconbook"></i><span class=menu-text>分类</span></a></li><li><a href=/tags/><i class="iconfont icontags"></i><span class=menu-text>标签</span></a></li><li><a href=/about/><i class="iconfont iconsolution"></i><span class=menu-text>关于</span></a></li></ul><div class="navbar-form navbar-right"><div class=form-group><input type=search id=search-input name=q results=0 placeholder="(ฅ´ω`ฅ)" class=form-control></div></div><div class=search-result-box id=search-result></div></div></div></nav></div></header><main id=main class=main><div class=container><div class=main-container><div id=content class=content><div class="panel panel-default post-panel"><div class="panel-heading post-head"><div class=post-title><h2><a href=/2018/02/28/cnblog_8485174/>MySQL 之 库操作</a></h2></div><div class=post-meta><span>2018.02.28</span></div></div><div class="panel-body post-body"><div class=post-post id=post-post><h1 id=这是mysql-之-库操作的摘要20180228cnblog_8485174><a href=/2018/02/28/cnblog_8485174/>这是👉MySQL 之 库操作👈的摘要</a></h1><h1 id=阅读目录><strong>阅读目录:</strong></h1><ul><li><strong>一 系统数据库</strong></li><li><strong>二 数据库操作</strong></li><li><strong>三 命名规范</strong></li><li><strong>四 用户权限</strong></li><li><strong>五.修改密码</strong></li><li><strong>六 忘记密码</strong></li><li><strong>七 中文乱码问题</strong></li></ul><h2 id=一系统数据库>一.系统数据库</h2><ul><li>information_schema ：虚拟库，不占用磁盘空间，存储的是数据库启动后的一些参数，如用户表信息、列信息、权限信息、字符信息等</li><li>mysql：核心数据库，里面包含用户、权限、关键字等信息。不可以删除</li><li>performance_schema：mysql 5.5版本后添加的新库，主要收集系统性能参数，记录处理查询请求时发生的各种事件、锁等现象</li><li>sys : mysql5.7版本新增加的库,通过这个库可以快速的了解系统的元数据信息,可以方便DBA发现数据库的很多信息，解决性能瓶颈都提供了巨大帮助</li></ul><h2 id=二数据库操作>二.数据库操作</h2><p>1.创建数据库</p><pre><code>#语法: CREATE DATABASE db_name charset utf8;
+</code></pre><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>#创建一个名字为 db_name 的数据库,并指定当前库的编码集为utf8
 
 CREATE DATABASE db_name charset utf8;
-</code></pre>
-
-<p>示例</p>
-
-<p>2.查看数据库</p>
-
-<pre><code>#查询当前用户下所有数据库
+</code></pre><p>示例</p><p>2.查看数据库</p><pre><code>#查询当前用户下所有数据库
 show databases;
 
 #查看创建数据库的信息
@@ -304,50 +15,24 @@ show create database db_name;
 
 #查询当前操作所在的数据库名称
 select database();
-</code></pre>
-
-<p>3.选择数据库</p>
-
-<pre><code>USE db_name;
-</code></pre>
-
-<p>4.删除数据库</p>
-
-<pre><code>DROP DATABASE db_name;
-</code></pre>
-
-<h2 id="三-命名规范">三.命名规范</h2>
-
-<pre><code>可以由字母、数字、下划线、＠、＃、＄
+</code></pre><p>3.选择数据库</p><pre><code>USE db_name;
+</code></pre><p>4.删除数据库</p><pre><code>DROP DATABASE db_name;
+</code></pre><h2 id=三命名规范>三.命名规范</h2><pre><code>可以由字母、数字、下划线、＠、＃、＄
 区分大小写
 唯一性
 不能使用关键字如: CREATE SELECT
 不能单独使用数字
 最长128位
-</code></pre>
-
-<h2 id="四-用户权限">四.用户权限</h2>
-
-<p>1.用户管理</p>
-
-<pre><code>创建用户
+</code></pre><h2 id=四用户权限>四.用户权限</h2><p>1.用户管理</p><pre><code>创建用户
     create user '用户名'@'IP地址' identified by '密码';
 删除用户
     drop user '用户名'@'IP地址';
 修改用户
     rename user '用户名'@'IP地址'; to '新用户名'@'IP地址';
-</code></pre>
-
-<p>2.授权管理</p>
-
-<pre><code>show grants for '用户'@'IP地址'                  -- 查看权限
+</code></pre><p>2.授权管理</p><pre><code>show grants for '用户'@'IP地址'                  -- 查看权限
 grant  权限 on 数据库.表 to   '用户'@'IP地址'      -- 授权
 revoke 权限 on 数据库.表 from '用户'@'IP地址'      -- 取消权限
-</code></pre>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>#创建新用户
+</code></pre><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>#创建新用户
 create user 'alex'@'localhost' identified '123456';
 
 #授权方式一:为alex授权 db1数据库下的所有表的 查询.更新.修改权限
@@ -358,13 +43,7 @@ grant all privileges on *.*  to 'alex'@'localhost';
 
 #刷新用户权限
 flush privileges;
-</code></pre>
-
-<p>创建用户及授权例子</p>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>            all privileges  除grant外的所有权限
+</code></pre><p>创建用户及授权例子</p><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>            all privileges  除grant外的所有权限
             select          仅查权限
             select,insert   查和插入权限
             ...
@@ -394,38 +73,18 @@ flush privileges;
             super                   使用change master、kill、logs、purge、master和set global。还允许mysqladmin调试登陆
             replication client      服务器位置的访问
             replication slave       由复制从属使用
-</code></pre>
-
-<p>权限列表</p>
-
-<h2 id="五-修改密码">五.修改密码</h2>
-
-<p><strong>方式一:</strong> mysqladmin 命令</p>
-
-<pre><code>mysqladmin -u用户名 -p密码 password 新密码
-</code></pre>
-
-<p><strong>方式二</strong> : 直接设置用户密码</p>
-
-<pre><code>set password for '用户名'@'IP' = password('新密码');
-
+</code></pre><p>权限列表</p><h2 id=五修改密码>五.修改密码</h2><p><strong>方式一:</strong> mysqladmin 命令</p><pre><code>mysqladmin -u用户名 -p密码 password 新密码
+</code></pre><p><strong>方式二</strong> : 直接设置用户密码</p><pre><code>set password for '用户名'@'IP' = password('新密码');
+			
 flush privileges;
-</code></pre>
-
-<p><strong>方式三:</strong> 修改mysql库下的user表</p>
-
-<pre><code>5.7版本修改密码方式:
-update mysql.user set authentication_string=password('新密码') where user= '用户名'           
+</code></pre><p><strong>方式三:</strong> 修改mysql库下的user表</p><pre><code>5.7版本修改密码方式:
+update mysql.user set authentication_string=password('新密码') where user= '用户名' 			
 flush privileges; -- 刷新权限
-
+			
 5.6 版本
 update mysql.user set password = password('新密码') where user= '用户名' 
 flush privileges; -- 刷新权限
-</code></pre>
-
-<h2 id="六-忘记密码">六.忘记密码</h2>
-
-<pre><code>在忘记root密码的时候，可以这样:
+</code></pre><h2 id=六忘记密码>六.忘记密码</h2><pre><code>在忘记root密码的时候，可以这样:
 
 #1.首先打开cmd 窗口,关闭mysql服务
     net stop mysql 
@@ -441,20 +100,8 @@ update mysql.user set authentication_string=password('123456') where user='root'
 
 #5. 刷新权限
 flush privileges;
-</code></pre>
-
-<h2 id="七-中文乱码问题">七.中文乱码问题</h2>
-
-<p>1.查询字符编码</p>
-
-<pre><code>SHOW VARIABLES LIKE 'char%';
-</code></pre>
-
-<p>2.制服乱码</p>
-
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" /></p>
-
-<pre><code>#修改方法:
+</code></pre><h2 id=七中文乱码问题>七.中文乱码问题</h2><p>1.查询字符编码</p><pre><code>SHOW VARIABLES LIKE 'char%';
+</code></pre><p>2.制服乱码</p><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><pre><code>#修改方法:
 #1. 创建my.ini文件,放在mysql根路径下
 #2. 在该文件中添加以下内容即可:
 #3.添加此文件后需要重新启动服务,以保证此文件生效
@@ -490,380 +137,17 @@ default-storage-engine=INNODB
 #解决mysql在执行sql语句后出现1055错误,sql_mode = only_full_group_by不相容
 
 sql_mode='NO_ENGINE_SUBSTITUTION'
-</code></pre>
-
-<p>乱码已死</p>
-
-<p>注意:如果使用的是mysql5.7版本,则需要创建my.ini文件,5.7版本以前数据库自带my,ini文件,直接改动编码即可.</p>
-
-<p>目前最稳定与常用的数据库版本为(5.6版本与5.5版本)</p>
-        </div>
-
-    </div>
-
-</div>
-
-
-<nav aria-label="Page navigation">
-    <ul class="pager">
-        
-        <li class="previous">
-            <a href="/2018/02/28/cnblog_8485161/" title="MySQL 之 基本概念" data-toggle="tooltip" data-placement="top">
-            <span aria-hidden="true">&larr;</span>
-                上一页
-            </a>
-        </li>
-        
-
-        
-        <li class="next">
-            <a href="/2018/02/28/cnblog_8485190/" title="MySQL 之 表操作" data-toggle="tooltip" data-placement="top">
-                下一页
-            <span aria-hidden="true">&rarr;</span>
-            </a>
-        </li>
-        
-    </ul>
-</nav>
-
-
-
-<div class="reward" id="reward">
-
-    <div class="reward-comment">
-         <span> 🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span>
-    </div>
-
-    
-    <button type="button" class="btn btn-primary btn-lg reward-button" data-toggle="modal" data-target="#myModal">
-        支持一下
-    </button>
-
-    
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">来杯咖啡</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="reward-body" id="reward-body">
-
-                        <div class="row">
-                            <div class="col-xs-6">
-                                
-                                <div class="reward-qr">
-                                    <img src="/images/WeChatPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
-                                    <span>微信</span>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                
-                                <div class="reward-qr">
-                                    <img src="/images/AliPay.png" alt="wechatpay_qrcode" class="img-responsive img-thumbnail">
-                                    <span>支付宝</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-
-
-
-<div class="comments" id="comments">
-    
-
-    <script src="https://utteranc.es/client.js"
-        repo="wevsmy/wevsmy.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-
-    
-</div>
-
-
-
-
-                
-            </div>
-            
-            <aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
-
-    <div class="info sidebar-item" id="info">
-
-        
-        
-        <img class="author-avatar" src="/images/avatar.png" alt="wilson">
-        
-        
-
-        <h2 class="author-name">wilson</h2>
-        <h3 class="author-description">٩(๑❛ᴗ❛๑)۶</h3>
-        <div class="site-count">
-            
-            
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">归档</div>
-                <div><a href="/posts/">85</a></div>
-            </div>
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">分类</div>
-                <div><a href="/categories/">2</a></div>
-            </div>
-            
-            
-            
-            <div class="count-block">
-                <div class="site-count-title">标签</div>
-                <div><a href="/tags/">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    37
-                </a></div>
-            </div>
-            
-            
-            
-            
-        </div>
-
-        <div class="rss">
-            <a class="btn rss-link" href="https://blog.weii.ink/index.xml"
-               type="application/rss+xml" title="rss">
-                <i class="iconfont iconrss rss-icon"> RSS</i>
-            </a>
-        </div>
-
-    </div>
-
-    <div class="sidebar-sticky">
-
-        
-        
-        <hr>
-        <div class="post-toc sidebar-item">
-            <div><i class="iconfont iconorderedlist"></i> 文章目录</div>
-            <nav id="TableOfContents">
-<ul>
-<li><a href="#这是-mysql-之-库操作-的摘要-2018-02-28-cnblog-8485174"><a href="/2018/02/28/cnblog_8485174/">这是👉MySQL 之 库操作👈的摘要</a></a></li>
-<li><a href="#阅读目录"><strong>阅读目录:</strong></a>
-<ul>
-<li><a href="#一-系统数据库">一.系统数据库</a></li>
-<li><a href="#二-数据库操作">二.数据库操作</a></li>
-<li><a href="#三-命名规范">三.命名规范</a></li>
-<li><a href="#四-用户权限">四.用户权限</a></li>
-<li><a href="#五-修改密码">五.修改密码</a></li>
-<li><a href="#六-忘记密码">六.忘记密码</a></li>
-<li><a href="#七-中文乱码问题">七.中文乱码问题</a></li>
-</ul></li>
-</ul>
-</nav>
-        </div>
-        
-        
-        <hr>
-        <div class="social-link sidebar-item">
-            <div><i class="iconfont iconidcard"></i> 社交链接</div>
-            <ul>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont icongithub-fill"></i> GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://weibo.com/wevsmy" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconweibo"></i> Weibo
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="mailto:wevsmy@gmail.com" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconmail"></i> E-Mail
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-        <hr>
-        <div class="blogroll sidebar-item">
-            <div><i class="iconfont iconlink"></i> 友情链接</div>
-            <ul>
-                
-                <li>
-                    <a href="https://blog.weii.ink" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="╮(╯▽╰)╭">
-                        <i class="iconfont iconcode"></i> wilson&#39;s blog
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://simplerfroze.com" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconcode"></i> Symoon
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont icongithub-fill"></i> GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/wevsmy" target="_blank" data-toggle="tooltip" data-placement="top"
-                       title="O__O ">
-                        <i class="iconfont iconheart"></i> 友链招租🤪
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-
-</aside>
-
-        </div>
-    </div>
-</main>
-
-
-<footer id="footer" class="footer" 
-        style="background: #333333;" >
-
-    <div class="container">
-        <div class="back-to-top">
-            <a href="#top">
-                <button id="back-to-top">
-                    <i class="iconfont iconrocket back-to-top-i" aria-label="true"></i>
-                </button>
-            </a>
-        </div>
-
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="copyright">
-                    <span class="author">
-                        <a href="https://blog.weii.ink" target="_blank">
-                            <abbr title="(≧O≦)" data-toggle="tooltip" data-placement="top">
-                                wilson
-                            </abbr>
-                        </a>
-                    </span>
-                    <i class="iconfont iconheart" aria-hidden="true"></i>
-                    <span class="year">2014 - 2019</span>
-                    
-                    <span class="creative-commons">
-                        <i class="iconfont iconcopyright" aria-hidden="true"></i>
-                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-                           target="_blank">BY-NC-SA 4.0</a>
-                    </span>
-                    
-                </div>
-                
-                <div class="busuanzi">
-                    <span id="busuanzi_container_site_pv">
-                        <i class="iconfont iconeye" aria-label="站点点击量" aria-hidden="false"></i>
-                        <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                    <span id="busuanzi_container_site_uv">
-                        <i class="iconfont iconuser" aria-label="站点用户数" aria-hidden="false"></i>
-                        <span id="busuanzi_value_site_uv"></span>
-                    </span>
-                    <span id="busuanzi_container_page_pv">
-                        <i class="iconfont iconsolution"></i>
-                        <span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span>
-                    </span>
-                </div>
-                
-
-
-            </div>
-            <div class="footer-right">
-                <div class="custom-info">
-                    <a href="/sitemap.xml" target="_blank">SiteMap</a>
-                    <i class="iconfont icongithub-fill"></i>
-                    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
-                    <iframe style="margin-left:2px;margin-bottom:-5px;"
-                            frameborder="0" scrolling="0" width="82px"
-                            height="20px"
-                            src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true">
-                    </iframe>
-                </div>
-
-                <div class="powered-by">由
-                    <a href="https://gohugo.io" target="_blank">Hugo</a> 强力驱动 | 移植
-                    <a href="https://github.com/wevsmy/hugo-theme-weii" target="_blank">WEII</a> | 鸣谢
-                    <a href="https://github.com/AlynxZhou/hexo-theme-aria" target="_blank">ARIA</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas-nest.js"></script>
-
-
-
-
-
-<script type="text/javascript" src="/js/love.js"></script>
-
-
-
-
-<script type="text/javascript" src="/js/weii.js"></script>
-</body>
-</html>
+</code></pre><p>乱码已死</p><p>注意:如果使用的是mysql5.7版本,则需要创建my.ini文件,5.7版本以前数据库自带my,ini文件,直接改动编码即可.</p><p>目前最稳定与常用的数据库版本为(5.6版本与5.5版本)</p></div></div></div><nav aria-label="Page navigation"><ul class=pager><li class=previous><a href=/2018/02/28/cnblog_8485161/ title="MySQL 之 基本概念" data-toggle=tooltip data-placement=top><span aria-hidden=true>&larr;</span>
+上一页</a></li><li class=next><a href=/2018/02/28/cnblog_8485190/ title="MySQL 之 表操作" data-toggle=tooltip data-placement=top>下一页
+<span aria-hidden=true>&rarr;</span></a></li></ul></nav><div class=reward id=reward><div class=reward-comment><span>🐎🐎还是要放的，万一真有人支持嘞！🤣🤣🤣</span></div><button type=button class="btn btn-primary btn-lg reward-button" data-toggle=modal data-target=#myModal>
+支持一下</button><div class="modal fade" id=myModal tabindex=-1 role=dialog aria-labelledby=myModalLabel><div class=modal-dialog role=document><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&#215;</span></button><h4 class=modal-title id=myModalLabel>来杯咖啡</h4></div><div class=modal-body><div class=reward-body id=reward-body><div class=row><div class=col-xs-6><div class=reward-qr><img src=/images/WeChatPay.png alt=wechatpay_qrcode class="img-responsive img-thumbnail">
+<span>微信</span></div></div><div class=col-xs-6><div class=reward-qr><img src=/images/AliPay.png alt=wechatpay_qrcode class="img-responsive img-thumbnail">
+<span>支付宝</span></div></div></div></div></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>Close</button></div></div></div></div></div><div class=comments id=comments><script src=https://utteranc.es/client.js repo=wevsmy/wevsmy.github.io issue-term=title theme=github-light crossorigin=anonymous async></script></div></div><aside class=sidebar id=sidebar style=background:url(/images/background.png)><div class="info sidebar-item" id=info><img class=author-avatar src=/images/avatar.png alt=wilson><h2 class=author-name>wilson</h2><h3 class=author-description>٩(๑❛ᴗ❛๑)۶</h3><div class=site-count><div class=count-block><div class=site-count-title>归档</div><div><a href=/posts/>85</a></div></div><div class=count-block><div class=site-count-title>分类</div><div><a href=/categories/>2</a></div></div><div class=count-block><div class=site-count-title>标签</div><div><a href=/tags/>34</a></div></div></div><div class=rss><a class="btn rss-link" href=https://www.weii.xyz/index.xml type=application/rss+xml title=rss><i class="iconfont iconrss rss-icon">RSS</i></a></div></div><div class=sidebar-sticky><hr><div class="post-toc sidebar-item"><div><i class="iconfont iconorderedlist"></i>文章目录</div><nav id=TableOfContents><ul><li><a href=#一系统数据库>一.系统数据库</a></li><li><a href=#二数据库操作>二.数据库操作</a></li><li><a href=#三命名规范>三.命名规范</a></li><li><a href=#四用户权限>四.用户权限</a></li><li><a href=#五修改密码>五.修改密码</a></li><li><a href=#六忘记密码>六.忘记密码</a></li><li><a href=#七中文乱码问题>七.中文乱码问题</a></li></ul></nav></div><hr><div class="social-link sidebar-item"><div><i class="iconfont iconidcard"></i>社交链接</div><ul><li><a href=https://github.com/wevsmy data-toggle=tooltip data-placement=top title=O__O><i class="iconfont icongithub-fill"></i>GitHub</a></li><li><a href=https://weibo.com/wevsmy data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconweibo"></i>Weibo</a></li><li><a href=mailto:wevsmy@gmail.com data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconmail"></i>E-Mail</a></li></ul></div><hr><div class="blogroll sidebar-item"><div><i class="iconfont iconlink"></i>友情链接</div><ul><li><a href=https://blog.weii.ink target=_blank data-toggle=tooltip data-placement=top title=╮(╯▽╰)╭><i class="iconfont iconcode"></i>wilson's blog</a></li><li><a href=https://simplerfroze.com target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconcode"></i>Symoon</a></li><li><a href=https://github.com/wevsmy target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont icongithub-fill"></i>GitHub</a></li><li><a href=https://github.com/wevsmy target=_blank data-toggle=tooltip data-placement=top title=O__O><i class="iconfont iconheart"></i>友链招租🤪</a></li></ul></div></div></aside></div></div></main><footer id=footer class=footer style=background:#333><div class=container><div class=back-to-top><a href=#top><button id=back-to-top>
+<i class="iconfont iconrocket back-to-top-i" aria-label=true></i></button></a></div><div class=footer-container><div class=footer-left><div class=copyright><span class=author><a href=https://blog.weii.ink target=_blank><abbr title=(≧O≦) data-toggle=tooltip data-placement=top>wilson</abbr></a></span>
+<i class="iconfont iconheart" aria-hidden=true></i><span class=year>2014 - 2020</span>
+<span class=creative-commons><i class="iconfont iconcopyright" aria-hidden=true></i><a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>BY-NC-SA 4.0</a></span></div><div class=busuanzi><span id=busuanzi_container_site_pv><i class="iconfont iconeye" aria-label=站点点击量 aria-hidden=false></i><span id=busuanzi_value_site_pv></span></span><span id=busuanzi_container_site_uv><i class="iconfont iconuser" aria-label=站点用户数 aria-hidden=false></i><span id=busuanzi_value_site_uv></span></span><span id=busuanzi_container_page_pv><i class="iconfont iconsolution"></i><span id=busuanzi_value_page_pv aria-label=页面点击量 aria-hidden=false></span></span></div></div><div class=footer-right><div class=custom-info><a href=/sitemap.xml target=_blank>SiteMap</a>
+<i class="iconfont icongithub-fill"></i><a href=https://pages.github.com/ target=_blank>GitHub Pages</a>
+<iframe style=margin-left:2px;margin-bottom:-5px frameborder=0 scrolling=0 width=82px height=20px src="https://ghbtns.com/github-btn.html?user=wevsmy&repo=hugo-theme-weii&type=star&count=true"></iframe></div><div class=powered-by>由
+<a href=https://gohugo.io target=_blank>Hugo</a> 强力驱动 | 移植
+<a href=https://github.com/wevsmy/hugo-theme-weii target=_blank>WEII</a> | 鸣谢
+<a href=https://github.com/AlynxZhou/hexo-theme-aria target=_blank>ARIA</a></div></div></div></div></footer><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js></script><script type=text/javascript color=0,0,255 opacity=0.7 zindex=-2 count=99 src=/js/canvas-nest.js></script><script type=text/javascript src=/js/love.js></script><script type=text/javascript src=/js/weii.js></script></body></html>

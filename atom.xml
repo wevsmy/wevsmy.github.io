@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Weii&#39;s Blog</title>
     <subtitle type="html">个人博客网站。</subtitle>
-    <updated>2021-08-19T16:24:47&#43;08:00</updated>
+    <updated>2021-08-23T15:47:43&#43;08:00</updated>
     <id>https://www.weii.xyz/</id>
     <link rel="alternate" type="text/html" href="https://www.weii.xyz/" />
     <link rel="self" type="application/atom&#43;xml" href="https://www.weii.xyz/atom.xml" />
@@ -16,6 +16,481 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">容器底层原理之namespace和cgroups</title>
+            <link rel="alternate" type="text/html" href="https://www.weii.xyz/2021/08/23/namespace_cgroups/" />
+            <id>https://www.weii.xyz/2021/08/23/namespace_cgroups/</id>
+            <updated>2021-08-23T15:23:53&#43;08:00</updated>
+            <published>2021-08-23T10:44:22&#43;08:00</published>
+            <author>
+                    <name>weii</name>
+                    <uri>https://weii.xyz/</uri>
+                    <email>wevsmy@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">容器底层原理之namespace和cgroups</summary>
+            
+                <content type="html">&lt;p&gt;Linux内核中的namespace和cgroups技术实现了各种资源的隔离与控制。&lt;/p&gt;
+&lt;h1 id=&#34;namespace&#34;&gt;Namespace&lt;/h1&gt;
+&lt;p&gt;Namespace 是将内核的全局资源做封装，使得每个namespace 都有一份独立的资源，因此不同的进程在各自的namespace内对同一种资源的使用互不干扰。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Namespace技术实现了各种资源的隔离。
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Namespace 名称&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;th&gt;内核版本&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Mount(mnt)&lt;/td&gt;
+&lt;td&gt;隔离挂载点&lt;/td&gt;
+&lt;td&gt;2.4.19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Process ID(pid)&lt;/td&gt;
+&lt;td&gt;隔离进程ID&lt;/td&gt;
+&lt;td&gt;2.6.24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Network(net)&lt;/td&gt;
+&lt;td&gt;隔离网络设备、端口号等&lt;/td&gt;
+&lt;td&gt;2.6.29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Interprocess Communication (ipc)&lt;/td&gt;
+&lt;td&gt;隔离进程间通信 System V IPC 和 POSIX message queues&lt;/td&gt;
+&lt;td&gt;2.6.19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UTS Namespace(uts)&lt;/td&gt;
+&lt;td&gt;隔离主机名和域名&lt;/td&gt;
+&lt;td&gt;2.6.19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;User Namespace(user)&lt;/td&gt;
+&lt;td&gt;隔离用户和用户组&lt;/td&gt;
+&lt;td&gt;3.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Control group(cgroups)Namespace&lt;/td&gt;
+&lt;td&gt;隔离cgroups根目录&lt;/td&gt;
+&lt;td&gt;4.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Time Namespace&lt;/td&gt;
+&lt;td&gt;隔离系统时间&lt;/td&gt;
+&lt;td&gt;5.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;3.8 的内核开始，/proc/[pid]/ns 目录下会包含进程所属的 namespace 信息.
+使用下面的命令可以查看当前进程所属的 namespace 信息：&lt;code&gt;ll /proc/$$/ns&lt;/code&gt;
+ex:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;vagrant@ubuntu20-04:~$ ll /proc/$$/ns
+total 0
+dr-x--x--x 2 vagrant vagrant 0 Aug 23 03:38 ./
+dr-xr-xr-x 9 vagrant vagrant 0 Aug 23 03:38 ../
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 cgroup -&amp;gt; &#39;cgroup:[4026531835]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 ipc -&amp;gt; &#39;ipc:[4026531839]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 mnt -&amp;gt; &#39;mnt:[4026531840]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 net -&amp;gt; &#39;net:[4026531992]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 pid -&amp;gt; &#39;pid:[4026531836]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 pid_for_children -&amp;gt; &#39;pid:[4026531836]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 user -&amp;gt; &#39;user:[4026531837]&#39;
+lrwxrwxrwx 1 vagrant vagrant 0 Aug 23 03:38 uts -&amp;gt; &#39;uts:[4026531838]&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;隔离挂载点mount&#34;&gt;隔离挂载点（mount）&lt;/h2&gt;
+&lt;p&gt;Mount Namespace 实现了不同进程可以看到不同的挂载信息。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;换句话说说，容器内的挂载操作不会影响到主机。
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;ex:
+使用&lt;code&gt;unshare&lt;/code&gt;命令新建一个&lt;code&gt;mount namespace&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo unshare --mount --fork /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建一个临时挂载目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir /tmp/tmpfs
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;tmpfs&lt;/code&gt;挂载一个目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mount -t tmpfs -o &lt;span class=&#34;nv&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1024k tmpfs /tmp/tmpfs
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;当前窗口查看挂载信息&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;root@ubuntu20-04:~# mkdir /tmp/tmpfs
+root@ubuntu20-04:~# mount -t tmpfs -o size=1024k tmpfs /tmp/tmpfs
+root@ubuntu20-04:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        39G  1.3G   38G   4% /
+udev            977M     0  977M   0% /dev
+tmpfs           994M     0  994M   0% /dev/shm
+tmpfs           199M  924K  198M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           199M     0  199M   0% /run/user/1000
+tmpfs           994M     0  994M   0% /sys/fs/cgroup
+/dev/loop1       56M   56M     0 100% /snap/core18/2128
+/dev/loop0       71M   71M     0 100% /snap/lxd/21029
+/dev/loop2       33M   33M     0 100% /snap/snapd/12704
+tmpfs           1.0M     0  1.0M   0% /tmp/tmpfs
+vagrant@ubuntu20-04:~$ 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新开一个窗口查看挂载信息,看到没有&lt;code&gt;/tmp/tmpfs&lt;/code&gt;挂载信息&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;Last login: Mon Aug 23 03:38:34 2021 from 10.0.2.2
+vagrant@ubuntu20-04:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            977M     0  977M   0% /dev
+tmpfs           199M  932K  198M   1% /run
+/dev/sda1        39G  1.3G   38G   4% /
+tmpfs           994M     0  994M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           994M     0  994M   0% /sys/fs/cgroup
+/dev/loop1       56M   56M     0 100% /snap/core18/2128
+/dev/loop0       71M   71M     0 100% /snap/lxd/21029
+/dev/loop2       33M   33M     0 100% /snap/snapd/12704
+tmpfs           199M     0  199M   0% /run/user/1000
+vagrant@ubuntu20-04:~$ 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;隔离进程idpid&#34;&gt;隔离进程ID(pid)&lt;/h2&gt;
+&lt;p&gt;用于实现不同&lt;code&gt;PID Namespace&lt;/code&gt;内的进程拥有相同的&lt;code&gt;ID&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;创建一个&lt;code&gt;pid namespace&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo unshare --pid --fork --mount-proc /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看进程信息，1号进程为&lt;code&gt;bash&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;root@ubuntu20-04:~#
+root@ubuntu20-04:~# sudo unshare --pid --fork --mount-proc /bin/bash 
+root@ubuntu20-04:~# ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1   8960  3892 pts/0    S    03:52   0:00 /bin/bash
+root           8  0.0  0.1  10616  3440 pts/0    R+   03:52   0:00 ps aux
+root@ubuntu20-04:~#
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;隔离网络设备端口号net&#34;&gt;隔离网络设备、端口号(net)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;net namespace&lt;/code&gt;实现网络设备的隔离。&lt;/p&gt;
+&lt;p&gt;查看主机网络信息&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;root@ubuntu20-04:~# 
+root@ubuntu20-04:~# ip a
+1: lo: &amp;lt;LOOPBACK,UP,LOWER_UP&amp;gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s3: &amp;lt;BROADCAST,MULTICAST,UP,LOWER_UP&amp;gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 02:14:28:cf:54:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic enp0s3
+       valid_lft 85336sec preferred_lft 85336sec
+    inet6 fe80::14:28ff:fecf:5443/64 scope link 
+       valid_lft forever preferred_lft forever
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建一个&lt;code&gt;net namespace&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo unshare --net --fork /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看此&lt;code&gt;net namespace&lt;/code&gt;下网络信息&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;root@ubuntu20-04:~# 
+root@ubuntu20-04:~# sudo unshare --net --fork /bin/bash
+root@ubuntu20-04:~# ip a
+1: lo: &amp;lt;LOOPBACK&amp;gt; mtu 65536 qdisc noop state DOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;隔离主机名uts&#34;&gt;隔离主机名（uts）&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;UTS Namespace&lt;/code&gt;主要是用来隔离主机名的，它允许每个&lt;code&gt;UTS Namespace&lt;/code&gt;拥有一个独立的主机名。&lt;/p&gt;
+&lt;p&gt;创建一个 &lt;code&gt;UTS Namespace&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo unshare --uts --fork /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建完&lt;code&gt;namespace&lt;/code&gt;后当前终端已经处于一个独立的&lt;code&gt;UTS Namespace&lt;/code&gt;中了。
+先看下主机名、然后在修改主机名、最后查看主机。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;root@ubuntu20-04:~# sudo unshare --uts --fork /bin/bash
+root@ubuntu20-04:~# hostname
+ubuntu20-04
+root@ubuntu20-04:~# hostname -b changehostname
+root@ubuntu20-04:~# hostname
+changehostname
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面输出已经看到成功修改了主机名。
+打开新的&lt;code&gt;bash&lt;/code&gt;终端查看主机名&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;Last login: Mon Aug 23 03:43:22 2021 from 10.0.2.2
+vagrant@ubuntu20-04:~$ sudo -i
+root@ubuntu20-04:~# hostname
+ubuntu20-04
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;主机名并未被修改，验证&lt;code&gt;UTS Namespace&lt;/code&gt;隔离主机名。&lt;/p&gt;
+&lt;h2 id=&#34;隔离进程间通信ipc&#34;&gt;隔离进程间通信（ipc）&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;IPC Namespace&lt;/code&gt;主要是用来隔离进程间通信的。
+ex:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PID Namespace 和 IPC Namespace 一起使用可以实现同一 IPC Namespace 内的进程彼此可以通信，不同 IPC Namespace 的进程却不能通信。
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;unshare&lt;/code&gt;命令来创建一个&lt;code&gt;IPC Namespace&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo unshare --ipc --fork /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ipcs -q&lt;/code&gt; 命令用于查看系统间通信队列列表。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ipcmk -Q&lt;/code&gt; 命令用于创建系统间通信队列。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;root@ubuntu20-04:~# 
+root@ubuntu20-04:~# sudo unshare --ipc --fork /bin/bash
+root@ubuntu20-04:~# ipcs -q
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+root@ubuntu20-04:~# ipcmk -Q
+Message queue id: 0
+root@ubuntu20-04:~# ipcs -q
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+0xf350f2cb 0          root       644        0            0           
+
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开新新窗口终端，查看系统通信队列。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;Last login: Mon Aug 23 04:07:29 2021 from 10.0.2.2
+vagrant@ubuntu20-04:~$ sudo -i
+root@ubuntu20-04:~# ipcs -q
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果可以看到，在单独的&lt;code&gt;IPC Namespace&lt;/code&gt;内创建的系统通信队列在主机上无法查看，即&lt;code&gt;IPC Namespace&lt;/code&gt;实现了系统间通信对列的隔离。&lt;/p&gt;
+&lt;h2 id=&#34;隔离用户和用户组user&#34;&gt;隔离用户和用户组（user）&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;User Namespace&lt;/code&gt; 主要是用来隔离用户和用户组的。&lt;/p&gt;
+&lt;p&gt;一个比较典型的应用场景就是在主机上以非&lt;code&gt;root&lt;/code&gt;用户运行的进程可以在一个单独的&lt;code&gt;User Namespace&lt;/code&gt;中映射成&lt;code&gt;root&lt;/code&gt;用户。
+使用&lt;code&gt;User Namespace&lt;/code&gt;可以实现进程在容器内拥有&lt;code&gt;root&lt;/code&gt;权限，而在主机上却只是普通用户。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;User Namesapce&lt;/code&gt;的创建是可以不使用 root 权限的。
+下面我们以普通用户的身份创建一个&lt;code&gt;User Namespace&lt;/code&gt;，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;unshare --user -r /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;pre&gt;&lt;code class=&#34;language-log&#34; data-lang=&#34;log&#34;&gt;vagrant@ubuntu20-04:~$ 
+vagrant@ubuntu20-04:~$ unshare --user -r /bin/bash
+root@ubuntu20-04:~# id
+uid=0(root) gid=0(root) groups=0(root)
+root@ubuntu20-04:~# reboot
+Failed to connect to bus: Operation not permitted
+Failed to open initctl fifo: Permission denied
+Failed to talk to init daemon.
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以看到，在新创建的&lt;code&gt;User Namespace&lt;/code&gt;内虽然是&lt;code&gt;root&lt;/code&gt;用户，但是并没有权限执行&lt;code&gt;reboot&lt;/code&gt;命令。这说明在隔离的&lt;code&gt;User Namespace&lt;/code&gt;中，并不能获取到主机的&lt;code&gt;root&lt;/code&gt;权限，也就是说&lt;code&gt;User Namespace&lt;/code&gt;实现了用户和用户组的隔离。&lt;/p&gt;
+&lt;h1 id=&#34;cgroups&#34;&gt;Cgroups&lt;/h1&gt;
+&lt;p&gt;Cgroups，其名称源自控制组群（control groups）的简写，也是Linux内核的一个功能，用来限制、控制与统计一个进程组的资源（如CPU、内存、磁盘输入输出等）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Cgroups技术用来限制容器内进程使用CPU、内存的资源的使用量。
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;cgroups的主要作用&#34;&gt;&lt;code&gt;cgroups&lt;/code&gt;的主要作用&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cgroups&lt;/code&gt;的主要目的是为不同用户层面的资源管理提供一个统一化的接口。从单个任务的资源控制到操作系统层面的虚拟化，&lt;code&gt;cgroups&lt;/code&gt;四大功能:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;资源限制：&lt;code&gt;cgroups&lt;/code&gt;可以对任务要求的总资源总额进行限制。诸如，设定任务运行时使用的内存上限，一旦超出内核就发&lt;code&gt;OOM killer(Out-Of-Memory killer)&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;资源统计：&lt;code&gt;cgoups&lt;/code&gt;可以统计系统的资源使用量，比如&lt;code&gt;CPU&lt;/code&gt;使用时长、内存用量等。当前云端产品按使用量计费的方式采用的底层实现方式。&lt;/li&gt;
+&lt;li&gt;任务控制：&lt;code&gt;cgroups&lt;/code&gt;可以对任务执行挂起、恢复等操作。&lt;/li&gt;
+&lt;li&gt;优先级分配：通过分配的&lt;code&gt;CPU&lt;/code&gt;时间片数量和磁盘&lt;code&gt;IO&lt;/code&gt;带宽，实际上就等同于控制了任务运行的优先级。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cgroups的文件系统接口&#34;&gt;&lt;code&gt;cgroups&lt;/code&gt;的文件系统接口&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cgroups&lt;/code&gt;以文件的方式提供应用接口，可以通过&lt;code&gt;mount&lt;/code&gt;命令查看&lt;code&gt;cgroups&lt;/code&gt;默认的挂载点：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@ubuntu20-04:~# mount &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep cgroup
+tmpfs on /sys/fs/cgroup &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; tmpfs &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ro,nosuid,nodev,noexec,mode&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;755&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup2 on /sys/fs/cgroup/unified &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup2 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,nsdelegate&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/systemd &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,xattr,name&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;systemd&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/hugetlb &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,hugetlb&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/net_cls,net_prio &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,net_cls,net_prio&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/freezer &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,freezer&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/pids &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,pids&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/rdma &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,rdma&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/devices &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,devices&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/cpuset &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,cpuset&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/perf_event &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,perf_event&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/cpu,cpuacct &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,cpu,cpuacct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/memory &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,memory&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+cgroup on /sys/fs/cgroup/blkio &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; cgroup &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;rw,nosuid,nodev,noexec,relatime,blkio&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+root@ubuntu20-04:~# 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;subsystem子系统&#34;&gt;Subsystem(子系统)&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;子系统&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;hugetlb&lt;/td&gt;
+&lt;td&gt;限制&lt;code&gt;HugeTLB&lt;/code&gt;(内存页)的使用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;net_cls&lt;/td&gt;
+&lt;td&gt;配合流控限制网络带宽&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;net_prio&lt;/td&gt;
+&lt;td&gt;设置进程的网络流量优先级&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;freezer&lt;/td&gt;
+&lt;td&gt;暂停/恢复&lt;code&gt;cgroup&lt;/code&gt;中的任务/进程&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pids&lt;/td&gt;
+&lt;td&gt;限制任务/进程的数量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rdma&lt;/td&gt;
+&lt;td&gt;限制&lt;code&gt;RDMA/IB&lt;/code&gt;资源&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;devices&lt;/td&gt;
+&lt;td&gt;设备访问权限控制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cpuset&lt;/td&gt;
+&lt;td&gt;分配指定的CPU和内存节点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;perf_event&lt;/td&gt;
+&lt;td&gt;允许&lt;code&gt;Perf&lt;/code&gt;工具基于&lt;code&gt;Cgroup&lt;/code&gt;分组做性能检测&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cpu&lt;/td&gt;
+&lt;td&gt;控制CPU使用率&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cpuacct&lt;/td&gt;
+&lt;td&gt;统计&lt;code&gt;CPU&lt;/code&gt;使用情况&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;memory&lt;/td&gt;
+&lt;td&gt;限制内存的使用上限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;blkio&lt;/td&gt;
+&lt;td&gt;对块设备的&lt;code&gt;IO&lt;/code&gt;进行限制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://www.weii.xyz/tags/namespace/" term="namespace" label="namespace" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://www.weii.xyz/tags/cgroups/" term="cgroups" label="cgroups" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://www.weii.xyz/tags/docker/" term="Docker" label="Docker" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://www.weii.xyz/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">利用wireguard内网穿透并用nginx反代</title>
             <link rel="alternate" type="text/html" href="https://www.weii.xyz/2021/07/17/wireguard_nginx_proxy/" />

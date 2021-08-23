@@ -5,25 +5,34 @@
     <loc>https://www.weii.xyz/bing/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.weii.xyz/tags/cgroups/</loc>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
+  </url><url>
     <loc>https://www.weii.xyz/tags/docker/</loc>
-    <lastmod>2021-08-19T16:20:45+08:00</lastmod>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
   </url><url>
     <loc>https://www.weii.xyz/tags/linux/</loc>
-    <lastmod>2021-08-19T16:20:45+08:00</lastmod>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
+  </url><url>
+    <loc>https://www.weii.xyz/tags/namespace/</loc>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
+  </url><url>
+    <loc>https://www.weii.xyz/posts/</loc>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
+  </url><url>
+    <loc>https://www.weii.xyz/tags/</loc>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
+  </url><url>
+    <loc>https://www.weii.xyz/</loc>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
+  </url><url>
+    <loc>https://www.weii.xyz/2021/08/23/namespace_cgroups/</loc>
+    <lastmod>2021-08-23T15:23:53+08:00</lastmod>
   </url><url>
     <loc>https://www.weii.xyz/tags/network/</loc>
     <lastmod>2021-08-19T16:20:45+08:00</lastmod>
   </url><url>
     <loc>https://www.weii.xyz/tags/nginx/</loc>
-    <lastmod>2021-08-19T16:20:45+08:00</lastmod>
-  </url><url>
-    <loc>https://www.weii.xyz/posts/</loc>
-    <lastmod>2021-08-19T16:20:45+08:00</lastmod>
-  </url><url>
-    <loc>https://www.weii.xyz/tags/</loc>
-    <lastmod>2021-08-19T16:20:45+08:00</lastmod>
-  </url><url>
-    <loc>https://www.weii.xyz/</loc>
     <lastmod>2021-08-19T16:20:45+08:00</lastmod>
   </url><url>
     <loc>https://www.weii.xyz/tags/wireguard/</loc>

@@ -1,1232 +1,482 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-    <meta charset="UTF-8" />
-
-    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
-    
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <title>HDP(2.6.5)集群安装记录 | Weii&#39;s Blog</title>
-
-    <link rel="stylesheet" href="/css/meme.min.6d2748833a87480ce7e0964b805b37d73f763b30dca50162cab859fbcf195ce1.css"/>
-
-    
-    
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
-
-    
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
-        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
-
-    <meta name="author" content="weii" /><meta name="description" content="hadoop集群安装记录,大数据平台" />
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Weii&#39;s Blog" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="Weii&#39;s Blog" />
-    <meta name="msapplication-starturl" content="../../../../" />
-    <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="msapplication-TileImage" content="../../../../icons/mstile-150x150.png" />
-    <link rel="manifest" href="/manifest.json" />
-
-    
-    
-
-    
-    <link rel="canonical" href="https://www.weii.xyz/2019/09/06/hdp_cluster_install/" />
-    
-
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "datePublished": "2019-09-06T18:59:32+08:00",
-        "dateModified": "2019-09-06T20:33:02+08:00",
-        "url": "https://www.weii.xyz/2019/09/06/hdp_cluster_install/",
-        "headline": "HDP(2.6.5)集群安装记录",
-        "description": "hadoop集群安装记录,大数据平台",
-        "inLanguage" : "zh-CN",
-        "articleSection": "posts",
-        "wordCount":  2709 ,
-        "image": ["https://www.weii.xyz/static/posts/hdp_cluster_install/1.png","https://www.weii.xyz/static/posts/hdp_cluster_install/2.png","https://www.weii.xyz/static/posts/hdp_cluster_install/3.png","https://www.weii.xyz/static/posts/hdp_cluster_install/4.png","https://www.weii.xyz/static/posts/hdp_cluster_install/5.png","https://www.weii.xyz/static/posts/hdp_cluster_install/6.png","https://www.weii.xyz/static/posts/hdp_cluster_install/7.png","https://www.weii.xyz/static/posts/hdp_cluster_install/8.png","https://www.weii.xyz/static/posts/hdp_cluster_install/9.png","https://www.weii.xyz/static/posts/hdp_cluster_install/10.png","https://www.weii.xyz/static/posts/hdp_cluster_install/11.png","https://www.weii.xyz/static/posts/hdp_cluster_install/12.png","https://www.weii.xyz/static/posts/hdp_cluster_install/13.png","https://www.weii.xyz/static/posts/hdp_cluster_install/14.png","https://www.weii.xyz/static/posts/hdp_cluster_install/15.png","https://www.weii.xyz/static/posts/hdp_cluster_install/16.png","https://www.weii.xyz/static/posts/hdp_cluster_install/17.png","https://www.weii.xyz/static/posts/hdp_cluster_install/18.png","https://www.weii.xyz/static/posts/hdp_cluster_install/19.png","https://www.weii.xyz/static/posts/hdp_cluster_install/20.png","https://www.weii.xyz/static/posts/hdp_cluster_install/21.png","https://www.weii.xyz/static/posts/hdp_cluster_install/22.png","https://www.weii.xyz/static/posts/hdp_cluster_install/23.png","https://www.weii.xyz/static/posts/hdp_cluster_install/24.png","https://www.weii.xyz/static/posts/hdp_cluster_install/25.png"],
-        "author": {
-            "@type": "Person",
-            "description": "Viva La Vida",
-            "email": "wevsmy@gmail.com",
-            "image": "https://www.weii.xyz/icons/apple-touch-icon.png",
-            "url": "https://weii.xyz/",
-            "name": "weii"
-        },
-        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Weii's Blog",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.weii.xyz/icons/apple-touch-icon.png"
-            },
-            "url": "https://www.weii.xyz/"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebSite",
-            "@id": "https://www.weii.xyz/"
-        }
-    }
-</script>
-
-    
-
-<meta name="twitter:card" content="summary_large_image" />
-
-
-<meta name="twitter:site" content="@wevsmy" />
-<meta name="twitter:creator" content="@wevsmy" />
-
-    
-
-
-
-<meta property="og:title" content="HDP(2.6.5)集群安装记录" />
-<meta property="og:description" content="hadoop集群安装记录,大数据平台" />
-<meta property="og:url" content="https://www.weii.xyz/2019/09/06/hdp_cluster_install/" />
-<meta property="og:site_name" content="Weii&#39;s Blog" />
-<meta property="og:locale" content="zh" /><meta property="og:image" content="https://www.weii.xyz/static/posts/hdp_cluster_install/1.png" />
-<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-09-06T18:59:32&#43;08:00" />
-    <meta property="article:modified_time" content="2019-09-06T20:33:02&#43;08:00" />
-    
-    <meta property="article:section" content="posts" />
-
-
-        <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-
-        
-
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-146915278-1');
-    </script>
-
-
-
-
-    
-    
-
-    
-</head>
-
-    <body>
-        <div class="container">
-            
-    <header class="header">
-        
-            <div class="header-wrapper">
-                <div class="header-inner single">
-                    
-    <div class="site-brand">
-        
-            <a href="/" class="brand">Weii&#39;s Blog</a>
-        
-    </div>
-
-                    <nav class="nav">
-    <ul class="menu" id="menu">
-        
-            
-        
-        
-        
-        
-            
-                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
-                </li>
-            
-        
-            
-                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
-                </li>
-            
-        
-            
-                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
-                </li>
-            
-        
-            
-                
-                    
-                    
-                        <li class="menu-item">
-                            <a id="theme-switcher" href="#"><span class="icon theme-icon-light">🌞</span><span class="icon theme-icon-dark">🌙</span></a>
-                        </li>
-                    
-                
-            
-        
-            
-                
-            
-        
-    </ul>
-</nav>
-
-                    
-                </div>
-            </div>
-            
-    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
-    <label for="nav-toggle" class="nav-toggle"></label>
-    <label for="nav-toggle" class="nav-curtain"></label>
-
-
-        
-    </header>
-
-
-
-
-            
-            
-    <main class="main single" id="main">
-    <div class="main-inner">
-
-        
-
-        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
-
-            <h1 class="post-title p-name">HDP(2.6.5)集群安装记录</h1>
-
-            
-
-            
-                <div class="post-description p-summary">hadoop集群安装记录,大数据平台</div>
-                
-            
-
-            
-                
-
-<div class="post-meta">
-    
-        
-        <time datetime="2019-09-06T18:59:32&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2019.9.6</time>
-    
-    
-        
-        <time datetime="2019-09-06T20:33:02&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2019.9.6</time>
-    
-    
-    
-        
-        
-        
-            
-        
-    
-    
-        
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;2709</span>
-    
-    
-        
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;6&nbsp;分钟</span>
-    
-    
-    
-</div>
-
-            
-
-            <div class="post-body e-content">
-                <p>HDP(2.6.5)集群安装记录</p>
-<h1 id="hdp265集群安装记录"><a href="#hdp265集群安装记录" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>HDP(2.6.5)集群安装记录</h1>
-<h2 id="网络配置所有节点执行"><a href="#网络配置所有节点执行" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>网络配置(所有节点执行)</h2>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">| hostname |      IP       |  说明  |
+<!doctype html><html lang=zh-cn><head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"><meta charset=utf-8><meta name=generator content="Hugo 0.87.0"><meta name=theme-color content="#fff"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no, date=no, address=no, email=no"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><title>HDP(2.6.5)集群安装记录 | Weii's Blog</title><link rel=stylesheet href=/css/meme.min.d68289ac6d6799cb373c1c1d1bb88a8dac5acf6e78d7b85354398b6cb179902d.css><script src=/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" media=print onload="this.media='all'"><noscript><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript><meta name=author content="weii"><meta name=description content="hadoop集群安装记录,大数据平台"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=mask-icon href=/icons/safari-pinned-tab.svg color=#2a6df4><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-title content="Weii's Blog"><meta name=apple-mobile-web-app-status-bar-style content="black"><meta name=mobile-web-app-capable content="yes"><meta name=application-name content="Weii's Blog"><meta name=msapplication-starturl content="../../../../"><meta name=msapplication-TileColor content="#fff"><meta name=msapplication-TileImage content="../../../../icons/mstile-150x150.png"><link rel=manifest href=/manifest.json><link rel=canonical href=https://weii.xyz/2019/09/06/hdp_cluster_install/><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","datePublished":"2019-09-06T18:59:32+08:00","dateModified":"2019-09-18T09:42:01+08:00","url":"https://weii.xyz/2019/09/06/hdp_cluster_install/","headline":"HDP(2.6.5)集群安装记录","description":"hadoop集群安装记录,大数据平台","inLanguage":"zh-CN","articleSection":"posts","wordCount":2709,"image":["https://weii.xyz/static/posts/hdp_cluster_install/1.png","https://weii.xyz/static/posts/hdp_cluster_install/2.png","https://weii.xyz/static/posts/hdp_cluster_install/3.png","https://weii.xyz/static/posts/hdp_cluster_install/4.png","https://weii.xyz/static/posts/hdp_cluster_install/5.png","https://weii.xyz/static/posts/hdp_cluster_install/6.png","https://weii.xyz/static/posts/hdp_cluster_install/7.png","https://weii.xyz/static/posts/hdp_cluster_install/8.png","https://weii.xyz/static/posts/hdp_cluster_install/9.png","https://weii.xyz/static/posts/hdp_cluster_install/10.png","https://weii.xyz/static/posts/hdp_cluster_install/11.png","https://weii.xyz/static/posts/hdp_cluster_install/12.png","https://weii.xyz/static/posts/hdp_cluster_install/13.png","https://weii.xyz/static/posts/hdp_cluster_install/14.png","https://weii.xyz/static/posts/hdp_cluster_install/15.png","https://weii.xyz/static/posts/hdp_cluster_install/16.png","https://weii.xyz/static/posts/hdp_cluster_install/17.png","https://weii.xyz/static/posts/hdp_cluster_install/18.png","https://weii.xyz/static/posts/hdp_cluster_install/19.png","https://weii.xyz/static/posts/hdp_cluster_install/20.png","https://weii.xyz/static/posts/hdp_cluster_install/21.png","https://weii.xyz/static/posts/hdp_cluster_install/22.png","https://weii.xyz/static/posts/hdp_cluster_install/23.png","https://weii.xyz/static/posts/hdp_cluster_install/24.png","https://weii.xyz/static/posts/hdp_cluster_install/25.png"],"author":{"@type":"Person","description":"Viva La Vida","email":"wevsmy@gmail.com","image":"https://weii.xyz/icons/apple-touch-icon.png","url":"https://weii.xyz/","name":"weii"},"license":"[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)","publisher":{"@type":"Organization","name":"Weii's Blog","logo":{"@type":"ImageObject","url":"https://weii.xyz/icons/apple-touch-icon.png"},"url":"https://weii.xyz/"},"mainEntityOfPage":{"@type":"WebSite","@id":"https://weii.xyz/"}}</script><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@wevsmy"><meta name=twitter:creator content="@wevsmy"><meta property="og:title" content="HDP(2.6.5)集群安装记录"><meta property="og:description" content="hadoop集群安装记录,大数据平台"><meta property="og:url" content="https://weii.xyz/2019/09/06/hdp_cluster_install/"><meta property="og:site_name" content="Weii's Blog"><meta property="og:locale" content="zh"><meta property="og:image" content="https://weii.xyz/static/posts/hdp_cluster_install/1.png"><meta property="og:type" content="article"><meta property="article:published_time" content="2019-09-06T18:59:32+08:00"><meta property="article:modified_time" content="2019-09-18T09:42:01+08:00"><meta property="article:section" content="posts"><meta name=google-site-verification content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg"><link rel=preconnect href=https://www.google-analytics.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-146915278-1')</script></head><body><div class=container><header class=header><div class=header-wrapper><div class="header-inner single"><div class=site-brand><a href=/ class=brand>Weii's Blog</a></div><nav class=nav><ul class=menu id=menu><li class=menu-item><a href=/posts/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7.0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6.0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6.0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3.0 64v48c0 8.8 7.2 16 16 16h480c8.8.0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class=menu-item-name>文章</span></a></li><li class=menu-item><a href=/tags/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941 286.059 14.059A48 48 0 00252.118.0H48C21.49.0.0 21.49.0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882.0l204.118-204.118c18.745-18.745 18.745-49.137.0-67.882zM112 160c-26.51.0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882.0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397.0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882z"/></svg><span class=menu-item-name>标签</span></a></li><li class=menu-item><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6.0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7.0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4.0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9s28-2.7 40.9-6.9c2.3-.7 4.7-1.1 7.1-1.1 42.9.0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class=menu-item-name>关于</span></a></li><li class=menu-item><a id=theme-switcher href=#><span class="icon theme-icon-light">🌞</span><span class="icon theme-icon-dark">🌙</span></a></li></ul></nav></div></div><input type=checkbox id=nav-toggle aria-hidden=true>
+<label for=nav-toggle class=nav-toggle></label>
+<label for=nav-toggle class=nav-curtain></label></header><main class="main single" id=main><div class=main-inner><article class="content post h-entry" data-align=justify data-type=posts data-toc-num=true><h1 class="post-title p-name">HDP(2.6.5)集群安装记录</h1><div class="post-description p-summary">hadoop集群安装记录,大数据平台</div><div class=post-meta><time datetime=2019-09-06T18:59:32+08:00 class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6.0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h48c26.5.0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3.0 6-2.7 6-6z"/></svg>&nbsp;2019.9.6</time>
+<time datetime=2019-09-18T09:42:01+08:00 class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M4e2 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627.0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627.0-12 5.373-12 12v52H48C21.49 64 0 85.49.0 112v352c0 26.51 21.49 48 48 48h352c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 4e2H54a6 6 0 01-6-6V160h352v298a6 6 0 01-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2019.9.18</time>
+<span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3.0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9.0l60.1 60.1c18.8 18.7 18.8 49.1.0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3.0-17l-111-111c-4.8-4.7-12.4-4.7-17.1.0zM124.1 339.9c-5.5-5.5-5.5-14.3.0-19.8l154-154c5.5-5.5 14.3-5.5 19.8.0s5.5 14.3.0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8.0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;2709</span>
+<span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5.0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6.0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;6&nbsp;分钟</span></div><div class="post-body e-content"><p>HDP(2.6.5)集群安装记录</p><h1 id=hdp265集群安装记录><a href=#hdp265集群安装记录 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>HDP(2.6.5)集群安装记录</h1><h2 id=网络配置所有节点执行><a href=#网络配置所有节点执行 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>网络配置(所有节点执行)</h2><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt>| hostname |      IP       |  说明  |
 | :------: | :-----------: | :----: |
 |  hdp01   | 172.31.66.32  | master |
 |  hdp02   | 172.31.66.34  | node1  |
 |  hdp03   | 172.31.66.170 | node2  |
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>检查ip</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">ifconfig
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>更改hostname</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">vim /etc/hostname
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将localhost更改成表格中的hostname(根据业务自行定义)</p>
-<p><strong>更改SELINUX</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">vim /etc/sysconfig/selinux
-<span class="c1">#修改以下内容</span>
-<span class="nv">SELINUX</span><span class="o">=</span>disabled
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>重启服务器</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">reboot
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>修改hosts文件</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">vim /etc/hosts
-</code></pre></td></tr></table></div>
-</div>
-</div><p>对应上表hostname,为hosts文件添加路由</p>
-<p><strong>SSH免密登录</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">ssh-keygen
-<span class="c1">#enter</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>复制生成的公钥到每个节点(主节点执行)</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">scp /root/.ssh/id_rsa.put hdop02:/tmp/
-<span class="c1">#除master外都需要指向执行</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>其他节点执行</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cat /tmp/id_rsa.pub &gt;&gt;/root/.ssh/authorized_keys
-</code></pre></td></tr></table></div>
-</div>
-</div><p>检查一哈</p>
-<p><strong>关闭防火墙</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl stop firewalld.service
+</code></pre></td></tr></table></div></div></div><p><strong>检查ip</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ifconfig
+</code></pre></td></tr></table></div></div></div><p><strong>更改hostname</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>vim /etc/hostname
+</code></pre></td></tr></table></div></div></div><p>将localhost更改成表格中的hostname(根据业务自行定义)</p><p><strong>更改SELINUX</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>vim /etc/sysconfig/selinux
+<span class=c1>#修改以下内容</span>
+<span class=nv>SELINUX</span><span class=o>=</span>disabled
+</code></pre></td></tr></table></div></div></div><p><strong>重启服务器</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>reboot
+</code></pre></td></tr></table></div></div></div><p><strong>修改hosts文件</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>vim /etc/hosts
+</code></pre></td></tr></table></div></div></div><p>对应上表hostname,为hosts文件添加路由</p><p><strong>SSH免密登录</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ssh-keygen
+<span class=c1>#enter</span>
+</code></pre></td></tr></table></div></div></div><p>复制生成的公钥到每个节点(主节点执行)</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>scp /root/.ssh/id_rsa.put hdop02:/tmp/
+<span class=c1>#除master外都需要指向执行</span>
+</code></pre></td></tr></table></div></div></div><p><strong>其他节点执行</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>cat /tmp/id_rsa.pub &gt;&gt;/root/.ssh/authorized_keys
+</code></pre></td></tr></table></div></div></div><p>检查一哈</p><p><strong>关闭防火墙</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>systemctl stop firewalld.service
 systemctl disable firewalld.service
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>开启ntp服务</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum install -y ntp
+</code></pre></td></tr></table></div></div></div><p><strong>开启ntp服务</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>yum install -y ntp
 systemctl enble ntpd
 systemctl start ntpd
-</code></pre></td></tr></table></div>
-</div>
-</div><h2 id="安装jdk"><a href="#安装jdk" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>安装JDK</h2>
-<p><strong>下载jdk</strong></p>
-<p><a href="https://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html" target="_blank" rel="noopener">jdk8 下载</a></p>
-<p>在当前目录打开shell</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tar -zxvf jdk-8u181-linux-x64.tar.gz -C /opt/java/
+</code></pre></td></tr></table></div></div></div><h2 id=安装jdk><a href=#安装jdk class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>安装JDK</h2><p><strong>下载jdk</strong></p><p><a href=https://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html target=_blank rel=noopener>jdk8 下载</a></p><p>在当前目录打开shell</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>tar -zxvf jdk-8u181-linux-x64.tar.gz -C /opt/java/
 vi /etc/profile
 
-<span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/opt/java/jdk1.8.0_181
-<span class="nb">export</span> <span class="nv">JRE_HOE</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/jre
-<span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JAVA_HOME</span>/jre/lib
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin
-</code></pre></td></tr></table></div>
-</div>
-</div><p>远程分发到其他服务器</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">scp -r /opt/java/jdk1.8.0_181/ root@hdp02:/opt/java/
+<span class=nb>export</span> <span class=nv>JAVA_HOME</span><span class=o>=</span>/opt/java/jdk1.8.0_181
+<span class=nb>export</span> <span class=nv>JRE_HOE</span><span class=o>=</span><span class=nv>$JAVA_HOME</span>/jre
+<span class=nb>export</span> <span class=nv>CLASSPATH</span><span class=o>=</span>.:<span class=nv>$JAVA_HOME</span>/lib:<span class=nv>$JAVA_HOME</span>/jre/lib
+<span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=nv>$PATH</span>:<span class=nv>$JAVA_HOME</span>/bin
+</code></pre></td></tr></table></div></div></div><p>远程分发到其他服务器</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>scp -r /opt/java/jdk1.8.0_181/ root@hdp02:/opt/java/
 scp -r /opt/java/jdk1.8.0_181/ root@hdp03:/opt/java/
 
 scp /etc/profile root@hdp02:/etc/
 scp /etc/profile root@hdp03:/etc/
 
-<span class="nb">source</span> /etc/profile
-</code></pre></td></tr></table></div>
-</div>
-</div><h2 id="ambari安装"><a href="#ambari安装" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Ambari安装</h2>
-<p><strong>下载资源安装包</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari-2.6.2.0-centos7.tar.gz
+<span class=nb>source</span> /etc/profile
+</code></pre></td></tr></table></div></div></div><h2 id=ambari安装><a href=#ambari安装 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Ambari安装</h2><p><strong>下载资源安装包</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari-2.6.2.0-centos7.tar.gz
 wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/HDP-2.6.5.0-centos7-rpm.tar.gz
 wget http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7/HDP-UTILS-1.1.0.22-centos7.tar.gz
 wget http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/HDP-GPL-2.6.5.0-centos7-gpl.tar.gz
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>安装Apache HTTP 服务器</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum install httpd -y
-<span class="c1">#开启服务并设置开机自启动</span>
+</code></pre></td></tr></table></div></div></div><p><strong>安装Apache HTTP 服务器</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>yum install httpd -y
+<span class=c1>#开启服务并设置开机自启动</span>
 systemctl start httpd.service
-systemctl <span class="nb">enable</span> httpd.service
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>安装制作yum源</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum install yum-utils createrepo
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>创建http服务器</strong></p>
-<p>http根目录默认是即/var/www/html/</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">mkdir -p /var/www/html/ambari
-<span class="c1">#cd /var/www/html/ambari</span>
-<span class="c1">#将下载好的安装包上传并解压</span>
+systemctl <span class=nb>enable</span> httpd.service
+</code></pre></td></tr></table></div></div></div><p><strong>安装制作yum源</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>yum install yum-utils createrepo
+</code></pre></td></tr></table></div></div></div><p><strong>创建http服务器</strong></p><p>http根目录默认是即/var/www/html/</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>mkdir -p /var/www/html/ambari
+<span class=c1>#cd /var/www/html/ambari</span>
+<span class=c1>#将下载好的安装包上传并解压</span>
 tar xvf HDP-2.6.5.0-centos7-rpm.tar.gz -C /var/www/html/ambari
 tar xvf ambari-2.6.2.0-centos7.tar.gz -C /var/www/html/ambari
 tar xvf HDP-UTILS-1.1.0.22-centos7.tar.gz -C /var/www/html/ambari
 tar xvf HDP-GPL-2.6.5.0-centos7-gpl.tar.gz -C /var/www/html/ambari
 
-<span class="c1"># 删除压缩包</span>
+<span class=c1># 删除压缩包</span>
 rm -rf ambari-2.6.2.0-centos7.tar.gz
 rm -rf HDP-2.6.5.0-centos7-rpm.tar.gz
 rm -rf HDP-UTILS-1.1.0.22-centos7.tar.gz
 rm -rf HDP-GPL-2.6.5.0-centos7-gpl.tar.gz
-</code></pre></td></tr></table></div>
-</div>
-</div><p>验证一哈</p>
-<p><img src="/static/posts/hdp_cluster_install/1.png" alt="验证一哈"></p>
-<p><strong>配置ambari、HDP、HDP-UTILS的本地源</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /etc/yum.repos.d/
+</code></pre></td></tr></table></div></div></div><p>验证一哈</p><p><img src=/static/posts/hdp_cluster_install/1.png alt=验证一哈></p><p><strong>配置ambari、HDP、HDP-UTILS的本地源</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>cd</span> /etc/yum.repos.d/
 wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari.repo
 wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/hdp.repo
 wget http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/hdp.gpl.repo
-</code></pre></td></tr></table></div>
-</div>
-</div><p>编辑ambari.repo，修改baseurl和gpgkey</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@hdc-data1 yum.repos.d<span class="o">]</span><span class="c1"># vi ambari.repo </span>
+</code></pre></td></tr></table></div></div></div><p>编辑ambari.repo，修改baseurl和gpgkey</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=o>[</span>root@hdc-data1 yum.repos.d<span class=o>]</span><span class=c1># vi ambari.repo </span>
 
-<span class="c1">#IP均为主节点IP,以下命令需变更IP</span>
-<span class="c1">#VERSION_NUMBER=2.6.2.0-155</span>
-<span class="o">[</span>ambari-2.6.2.0<span class="o">]</span>
-<span class="nv">name</span><span class="o">=</span>ambari Version - ambari-2.6.2.0
-<span class="c1">#baseurl=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0</span>
-<span class="nv">baseurl</span><span class="o">=</span>http://master/ambari/ambari/centos7/2.6.2.0-155
-<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
-<span class="c1">#gpgkey=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
-<span class="nv">gpgkey</span><span class="o">=</span>http://master/ambari/ambari/centos7/2.6.2.0-155/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">priority</span><span class="o">=</span><span class="m">1</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>编辑hdp.repo，修改baseurl和gpgkey</p>
-<p><strong>IP均为主节点IP</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@hdc-data1 yum.repos.d<span class="o">]</span><span class="c1"># vi hdp.repo </span>
+<span class=c1>#IP均为主节点IP,以下命令需变更IP</span>
+<span class=c1>#VERSION_NUMBER=2.6.2.0-155</span>
+<span class=o>[</span>ambari-2.6.2.0<span class=o>]</span>
+<span class=nv>name</span><span class=o>=</span>ambari Version - ambari-2.6.2.0
+<span class=c1>#baseurl=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0</span>
+<span class=nv>baseurl</span><span class=o>=</span>http://master/ambari/ambari/centos7/2.6.2.0-155
+<span class=nv>gpgcheck</span><span class=o>=</span><span class=m>1</span>
+<span class=c1>#gpgkey=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+<span class=nv>gpgkey</span><span class=o>=</span>http://master/ambari/ambari/centos7/2.6.2.0-155/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+<span class=nv>enabled</span><span class=o>=</span><span class=m>1</span>
+<span class=nv>priority</span><span class=o>=</span><span class=m>1</span>
+</code></pre></td></tr></table></div></div></div><p>编辑hdp.repo，修改baseurl和gpgkey</p><p><strong>IP均为主节点IP</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=o>[</span>root@hdc-data1 yum.repos.d<span class=o>]</span><span class=c1># vi hdp.repo </span>
 
-<span class="c1">#VERSION_NUMBER=2.6.5.0-292</span>
-<span class="o">[</span>HDP-2.6.5.0<span class="o">]</span>
-<span class="nv">name</span><span class="o">=</span>HDP Version - HDP-2.6.5.0
-<span class="c1">#baseurl=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0</span>
-<span class="nv">baseurl</span><span class="o">=</span>http://master/ambari/HDP/centos7/2.6.5.0-292
-<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
-<span class="c1">#gpgkey=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
-<span class="nv">gpgkey</span><span class="o">=</span>http://master/ambari/HDP/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">priority</span><span class="o">=</span><span class="m">1</span>
+<span class=c1>#VERSION_NUMBER=2.6.5.0-292</span>
+<span class=o>[</span>HDP-2.6.5.0<span class=o>]</span>
+<span class=nv>name</span><span class=o>=</span>HDP Version - HDP-2.6.5.0
+<span class=c1>#baseurl=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0</span>
+<span class=nv>baseurl</span><span class=o>=</span>http://master/ambari/HDP/centos7/2.6.5.0-292
+<span class=nv>gpgcheck</span><span class=o>=</span><span class=m>1</span>
+<span class=c1>#gpgkey=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+<span class=nv>gpgkey</span><span class=o>=</span>http://master/ambari/HDP/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+<span class=nv>enabled</span><span class=o>=</span><span class=m>1</span>
+<span class=nv>priority</span><span class=o>=</span><span class=m>1</span>
 
 
-<span class="o">[</span>HDP-UTILS-1.1.0.22<span class="o">]</span>
-<span class="nv">name</span><span class="o">=</span>HDP-UTILS Version - HDP-UTILS-1.1.0.22
-<span class="c1">#baseurl=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7</span>
-<span class="nv">baseurl</span><span class="o">=</span>http://master/ambari/HDP-UTILS/centos7/1.1.0.22
-<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
-<span class="c1">#gpgkey=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
-<span class="nv">gpgkey</span><span class="o">=</span>http://master/ambari/HDP-UTILS/centos7/1.1.0.22/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">priority</span><span class="o">=</span><span class="m">1</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>编辑hdp.gpl.repo，修改baseurl和gpgkey</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@hdc-data1 yum.repos.d<span class="o">]</span><span class="c1"># vi hdp.gpl.repo </span>
+<span class=o>[</span>HDP-UTILS-1.1.0.22<span class=o>]</span>
+<span class=nv>name</span><span class=o>=</span>HDP-UTILS Version - HDP-UTILS-1.1.0.22
+<span class=c1>#baseurl=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7</span>
+<span class=nv>baseurl</span><span class=o>=</span>http://master/ambari/HDP-UTILS/centos7/1.1.0.22
+<span class=nv>gpgcheck</span><span class=o>=</span><span class=m>1</span>
+<span class=c1>#gpgkey=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+<span class=nv>gpgkey</span><span class=o>=</span>http://master/ambari/HDP-UTILS/centos7/1.1.0.22/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+<span class=nv>enabled</span><span class=o>=</span><span class=m>1</span>
+<span class=nv>priority</span><span class=o>=</span><span class=m>1</span>
+</code></pre></td></tr></table></div></div></div><p>编辑hdp.gpl.repo，修改baseurl和gpgkey</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=o>[</span>root@hdc-data1 yum.repos.d<span class=o>]</span><span class=c1># vi hdp.gpl.repo </span>
 
-<span class="c1">#VERSION_NUMBER=2.6.5.0-292</span>
-<span class="o">[</span>HDP-GPL-2.6.5.0<span class="o">]</span>
-<span class="nv">name</span><span class="o">=</span>HDP-GPL Version - HDP-GPL-2.6.5.0
-<span class="c1">#baseurl=http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0</span>
-<span class="nv">baseurl</span><span class="o">=</span>http://master/ambari/HDP-GPL/centos7/2.6.5.0-292
-<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
-<span class="c1">#gpgkey=http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
-<span class="nv">gpgkey</span><span class="o">=</span>http://master/ambari/HDP-GPL/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">priority</span><span class="o">=</span><span class="m">1</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>分发到其他机器</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">scp /etc/yum.repos.d/ambari.repo root@hdp02:/etc/yum.repos.d/
+<span class=c1>#VERSION_NUMBER=2.6.5.0-292</span>
+<span class=o>[</span>HDP-GPL-2.6.5.0<span class=o>]</span>
+<span class=nv>name</span><span class=o>=</span>HDP-GPL Version - HDP-GPL-2.6.5.0
+<span class=c1>#baseurl=http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0</span>
+<span class=nv>baseurl</span><span class=o>=</span>http://master/ambari/HDP-GPL/centos7/2.6.5.0-292
+<span class=nv>gpgcheck</span><span class=o>=</span><span class=m>1</span>
+<span class=c1>#gpgkey=http://public-repo-1.hortonworks.com/HDP-GPL/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+<span class=nv>gpgkey</span><span class=o>=</span>http://master/ambari/HDP-GPL/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+<span class=nv>enabled</span><span class=o>=</span><span class=m>1</span>
+<span class=nv>priority</span><span class=o>=</span><span class=m>1</span>
+</code></pre></td></tr></table></div></div></div><p>分发到其他机器</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>scp /etc/yum.repos.d/ambari.repo root@hdp02:/etc/yum.repos.d/
 scp /etc/yum.repos.d/ambari.repo root@hdp03:/etc/yum.repos.d/
 scp /etc/yum.repos.d/hdp.repo root@hdp02:/etc/yum.repos.d/
 scp /etc/yum.repos.d/hdp.repo root@hdp03:/etc/yum.repos.d/
 scp /etc/yum.repos.d/hdp.gpl.repo root@hdp02:/etc/yum.repos.d/
 scp /etc/yum.repos.d/hdp.gpl.repo root@hdp03:/etc/yum.repos.d/
-</code></pre></td></tr></table></div>
-</div>
-</div><p>每台机器yum配置</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum clean all
+</code></pre></td></tr></table></div></div></div><p>每台机器yum配置</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>yum clean all
 yum makecache
 yum list
-</code></pre></td></tr></table></div>
-</div>
-</div><h2 id="安装mysql"><a href="#安装mysql" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>安装Mysql</h2>
-<p><strong>安装及初始化设置</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@hdc-data1 ~<span class="o">]</span><span class="c1"># yum install mariadb-server</span>
-<span class="o">[</span>root@hdc-data1 ~<span class="o">]</span><span class="c1"># systemctl start mariadb</span>
-<span class="o">[</span>root@hdc-data1 ~<span class="o">]</span><span class="c1"># systemctl enable mariadb</span>
-<span class="o">[</span>root@hdc-data1 ~<span class="o">]</span><span class="c1"># mysql_secure_installation</span>
+</code></pre></td></tr></table></div></div></div><h2 id=安装mysql><a href=#安装mysql class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>安装Mysql</h2><p><strong>安装及初始化设置</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=o>[</span>root@hdc-data1 ~<span class=o>]</span><span class=c1># yum install mariadb-server</span>
+<span class=o>[</span>root@hdc-data1 ~<span class=o>]</span><span class=c1># systemctl start mariadb</span>
+<span class=o>[</span>root@hdc-data1 ~<span class=o>]</span><span class=c1># systemctl enable mariadb</span>
+<span class=o>[</span>root@hdc-data1 ~<span class=o>]</span><span class=c1># mysql_secure_installation</span>
 
-<span class="c1">#首先是设置密码，会提示先输入密码</span>
-Enter current password <span class="k">for</span> root <span class="o">(</span>enter <span class="k">for</span> none<span class="o">)</span>:&lt;–初次运行直接回车
-<span class="c1">#设置密码</span>
-Set root password? <span class="o">[</span>Y/n<span class="o">]</span> &lt;– 是否设置root用户密码，输入y并回车或直接回车
+<span class=c1>#首先是设置密码，会提示先输入密码</span>
+Enter current password <span class=k>for</span> root <span class=o>(</span>enter <span class=k>for</span> none<span class=o>)</span>:&lt;–初次运行直接回车
+<span class=c1>#设置密码</span>
+Set root password? <span class=o>[</span>Y/n<span class=o>]</span> &lt;– 是否设置root用户密码，输入y并回车或直接回车
 New password: &lt;– 设置root用户的密码
 Re-enter new password: &lt;– 再输入一次你设置的密码
-<span class="c1">#其他配置</span>
-Remove anonymous users? <span class="o">[</span>Y/n<span class="o">]</span> &lt;– 是否删除匿名用户，回车
-Disallow root login remotely? <span class="o">[</span>Y/n<span class="o">]</span> &lt;–是否禁止root远程登录,回车,
-Remove <span class="nb">test</span> database and access to it? <span class="o">[</span>Y/n<span class="o">]</span> &lt;– 是否删除test数据库，回车
-Reload privilege tables now? <span class="o">[</span>Y/n<span class="o">]</span> &lt;– 是否重新加载权限表，回车
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>安装完成后创建ambari数据库及用户</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#进入mysql shell</span>
+<span class=c1>#其他配置</span>
+Remove anonymous users? <span class=o>[</span>Y/n<span class=o>]</span> &lt;– 是否删除匿名用户，回车
+Disallow root login remotely? <span class=o>[</span>Y/n<span class=o>]</span> &lt;–是否禁止root远程登录,回车,
+Remove <span class=nb>test</span> database and access to it? <span class=o>[</span>Y/n<span class=o>]</span> &lt;– 是否删除test数据库，回车
+Reload privilege tables now? <span class=o>[</span>Y/n<span class=o>]</span> &lt;– 是否重新加载权限表，回车
+</code></pre></td></tr></table></div></div></div><p><strong>安装完成后创建ambari数据库及用户</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1>#进入mysql shell</span>
 mysql -uroot -p
-</code></pre></td></tr></table></div>
-</div>
-</div><div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">ambari</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">utf8</span><span class="w"> </span><span class="p">;</span><span class="w">  
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;ambari&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;ambari123&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;ambari&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table></div>
-</div>
-</div><p>如果要安装Hive，创建Hive数据库和用户</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">hive</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">utf8</span><span class="w"> </span><span class="p">;</span><span class="w">  
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;hive&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;hive123&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;hive&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table></div>
-</div>
-</div><p>如果要安装Oozie，创建Oozie数据库和用户</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">oozie</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">utf8</span><span class="w"> </span><span class="p">;</span><span class="w">  
-</span><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;oozie&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;oozie123&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;oozie&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table></div>
-</div>
-</div><p><strong>安装ambari</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum install ambari-server
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>下载mysql驱动</strong>
-<a href="http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/" target="_blank" rel="noopener">mysql-connector-java 下载</a>
-将mysql-connector-Java.jar复制到/usr/share/java目录下</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">mkdir /usr/share/java
+</code></pre></td></tr></table></div></div></div><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=k>create</span><span class=w> </span><span class=k>database</span><span class=w> </span><span class=n>ambari</span><span class=w> </span><span class=k>character</span><span class=w> </span><span class=kt>set</span><span class=w> </span><span class=n>utf8</span><span class=w> </span><span class=p>;</span><span class=w>  
+</span><span class=w></span><span class=k>CREATE</span><span class=w> </span><span class=k>USER</span><span class=w> </span><span class=s1>&#39;ambari&#39;</span><span class=o>@</span><span class=s1>&#39;%&#39;</span><span class=k>IDENTIFIED</span><span class=w> </span><span class=k>BY</span><span class=w> </span><span class=s1>&#39;ambari123&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>GRANT</span><span class=w> </span><span class=k>ALL</span><span class=w> </span><span class=k>PRIVILEGES</span><span class=w> </span><span class=k>ON</span><span class=w> </span><span class=o>*</span><span class=p>.</span><span class=o>*</span><span class=w> </span><span class=k>TO</span><span class=w> </span><span class=s1>&#39;ambari&#39;</span><span class=o>@</span><span class=s1>&#39;%&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>FLUSH</span><span class=w> </span><span class=k>PRIVILEGES</span><span class=p>;</span><span class=w>
+</span></code></pre></td></tr></table></div></div></div><p>如果要安装Hive，创建Hive数据库和用户</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=k>create</span><span class=w> </span><span class=k>database</span><span class=w> </span><span class=n>hive</span><span class=w> </span><span class=k>character</span><span class=w> </span><span class=kt>set</span><span class=w> </span><span class=n>utf8</span><span class=w> </span><span class=p>;</span><span class=w>  
+</span><span class=w></span><span class=k>CREATE</span><span class=w> </span><span class=k>USER</span><span class=w> </span><span class=s1>&#39;hive&#39;</span><span class=o>@</span><span class=s1>&#39;%&#39;</span><span class=k>IDENTIFIED</span><span class=w> </span><span class=k>BY</span><span class=w> </span><span class=s1>&#39;hive123&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>GRANT</span><span class=w> </span><span class=k>ALL</span><span class=w> </span><span class=k>PRIVILEGES</span><span class=w> </span><span class=k>ON</span><span class=w> </span><span class=o>*</span><span class=p>.</span><span class=o>*</span><span class=w> </span><span class=k>TO</span><span class=w> </span><span class=s1>&#39;hive&#39;</span><span class=o>@</span><span class=s1>&#39;%&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>FLUSH</span><span class=w> </span><span class=k>PRIVILEGES</span><span class=p>;</span><span class=w>
+</span></code></pre></td></tr></table></div></div></div><p>如果要安装Oozie，创建Oozie数据库和用户</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=k>create</span><span class=w> </span><span class=k>database</span><span class=w> </span><span class=n>oozie</span><span class=w> </span><span class=k>character</span><span class=w> </span><span class=kt>set</span><span class=w> </span><span class=n>utf8</span><span class=w> </span><span class=p>;</span><span class=w>  
+</span><span class=w></span><span class=k>CREATE</span><span class=w> </span><span class=k>USER</span><span class=w> </span><span class=s1>&#39;oozie&#39;</span><span class=o>@</span><span class=s1>&#39;%&#39;</span><span class=k>IDENTIFIED</span><span class=w> </span><span class=k>BY</span><span class=w> </span><span class=s1>&#39;oozie123&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>GRANT</span><span class=w> </span><span class=k>ALL</span><span class=w> </span><span class=k>PRIVILEGES</span><span class=w> </span><span class=k>ON</span><span class=w> </span><span class=o>*</span><span class=p>.</span><span class=o>*</span><span class=w> </span><span class=k>TO</span><span class=w> </span><span class=s1>&#39;oozie&#39;</span><span class=o>@</span><span class=s1>&#39;%&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>FLUSH</span><span class=w> </span><span class=k>PRIVILEGES</span><span class=p>;</span><span class=w>
+</span></code></pre></td></tr></table></div></div></div><p><strong>安装ambari</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>yum install ambari-server
+</code></pre></td></tr></table></div></div></div><p><strong>下载mysql驱动</strong>
+<a href=http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/ target=_blank rel=noopener>mysql-connector-java 下载</a>
+将mysql-connector-Java.jar复制到/usr/share/java目录下</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>mkdir /usr/share/java
 cp mysql-connector-java-5.1.40.jar /usr/share/java/mysql-connector-java.jar
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将mysql-connector-java.jar复制到/var/lib/ambari-server/resources目录下</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cp mysql-connector-java-5.1.40.jar /var/lib/ambari-server/resources/mysql-jdbc-driver.jar
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>编辑/etc/ambari-server/conf/ambari.properties，添加如下内容</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">server.jdbc.driver.path<span class="o">=</span>/usr/share/java/mysql-connector-java.jar
-<span class="c1">#【可选】修改默认8080端口</span>
-<span class="c1">#client.api.port=18080</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>ambaria初始化</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#设置mysql驱动</span>
-ambari-server setup --jdbc-db<span class="o">=</span>mysql --jdbc-driver<span class="o">=</span>/usr/share/java/mysql-connector-java.jar 
+</code></pre></td></tr></table></div></div></div><p>将mysql-connector-java.jar复制到/var/lib/ambari-server/resources目录下</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>cp mysql-connector-java-5.1.40.jar /var/lib/ambari-server/resources/mysql-jdbc-driver.jar
+</code></pre></td></tr></table></div></div></div><p><strong>编辑/etc/ambari-server/conf/ambari.properties，添加如下内容</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>server.jdbc.driver.path<span class=o>=</span>/usr/share/java/mysql-connector-java.jar
+<span class=c1>#【可选】修改默认8080端口</span>
+<span class=c1>#client.api.port=18080</span>
+</code></pre></td></tr></table></div></div></div><p><strong>ambaria初始化</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1>#设置mysql驱动</span>
+ambari-server setup --jdbc-db<span class=o>=</span>mysql --jdbc-driver<span class=o>=</span>/usr/share/java/mysql-connector-java.jar 
 ambari-server setup
-</code></pre></td></tr></table></div>
-</div>
-</div><p>完整初始化如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@hdc-data1 ~<span class="o">]</span><span class="c1"># ambari-server setup</span>
+</code></pre></td></tr></table></div></div></div><p>完整初始化如下：</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=o>[</span>root@hdc-data1 ~<span class=o>]</span><span class=c1># ambari-server setup</span>
 Using python  /usr/bin/python
 Setup ambari-server
 Checking SELinux...
-SELinux status is <span class="s1">&#39;disabled&#39;</span>
-Customize user account <span class="k">for</span> ambari-server daemon <span class="o">[</span>y/n<span class="o">]</span> <span class="o">(</span>n<span class="o">)</span>? y
-Enter user account <span class="k">for</span> ambari-server daemon <span class="o">(</span>root<span class="o">)</span>:
+SELinux status is <span class=s1>&#39;disabled&#39;</span>
+Customize user account <span class=k>for</span> ambari-server daemon <span class=o>[</span>y/n<span class=o>]</span> <span class=o>(</span>n<span class=o>)</span>? y
+Enter user account <span class=k>for</span> ambari-server daemon <span class=o>(</span>root<span class=o>)</span>:
 Adjusting ambari-server permissions and ownership...
 Checking firewall status...
 Checking JDK...
-<span class="o">[</span>1<span class="o">]</span> Oracle JDK 1.8 + Java Cryptography Extension <span class="o">(</span>JCE<span class="o">)</span> Policy Files <span class="m">8</span>
-<span class="o">[</span>2<span class="o">]</span> Oracle JDK 1.7 + Java Cryptography Extension <span class="o">(</span>JCE<span class="o">)</span> Policy Files <span class="m">7</span>
-<span class="o">[</span>3<span class="o">]</span> Custom <span class="nv">JDK</span>
-<span class="o">==============================================================================</span>
-Enter choice <span class="o">(</span>1<span class="o">)</span>: <span class="m">3</span>
+<span class=o>[</span>1<span class=o>]</span> Oracle JDK 1.8 + Java Cryptography Extension <span class=o>(</span>JCE<span class=o>)</span> Policy Files <span class=m>8</span>
+<span class=o>[</span>2<span class=o>]</span> Oracle JDK 1.7 + Java Cryptography Extension <span class=o>(</span>JCE<span class=o>)</span> Policy Files <span class=m>7</span>
+<span class=o>[</span>3<span class=o>]</span> Custom <span class=nv>JDK</span>
+<span class=o>==============================================================================</span>
+Enter choice <span class=o>(</span>1<span class=o>)</span>: <span class=m>3</span>
 WARNING: JDK must be installed on all hosts and JAVA_HOME must be valid on all hosts.
-WARNING: JCE Policy files are required <span class="k">for</span> configuring Kerberos security. If you plan to use Kerberos,please make sure JCE Unlimited Strength Jurisdiction Policy Files are valid on all hosts.
+WARNING: JCE Policy files are required <span class=k>for</span> configuring Kerberos security. If you plan to use Kerberos,please make sure JCE Unlimited Strength Jurisdiction Policy Files are valid on all hosts.
 Path to JAVA_HOME: /opt/java/jdk1.8.0_181
 Validating JDK on Ambari Server...done.
 Checking GPL software agreement...
-GPL License <span class="k">for</span> LZO: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
-Enable Ambari Server to download and install GPL Licensed LZO packages <span class="o">[</span>y/n<span class="o">]</span> <span class="o">(</span>n<span class="o">)</span>? y
+GPL License <span class=k>for</span> LZO: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+Enable Ambari Server to download and install GPL Licensed LZO packages <span class=o>[</span>y/n<span class=o>]</span> <span class=o>(</span>n<span class=o>)</span>? y
 Completing setup...
 Configuring database...
-Enter advanced database configuration <span class="o">[</span>y/n<span class="o">]</span> <span class="o">(</span>n<span class="o">)</span>? y
+Enter advanced database configuration <span class=o>[</span>y/n<span class=o>]</span> <span class=o>(</span>n<span class=o>)</span>? y
 Configuring database...
-<span class="o">==============================================================================</span>
+<span class=o>==============================================================================</span>
 Choose one of the following options:
-<span class="o">[</span>1<span class="o">]</span> - PostgreSQL <span class="o">(</span>Embedded<span class="o">)</span>
-<span class="o">[</span>2<span class="o">]</span> - Oracle
-<span class="o">[</span>3<span class="o">]</span> - MySQL / MariaDB
-<span class="o">[</span>4<span class="o">]</span> - PostgreSQL
-<span class="o">[</span>5<span class="o">]</span> - Microsoft SQL Server <span class="o">(</span>Tech Preview<span class="o">)</span>
-<span class="o">[</span>6<span class="o">]</span> - SQL Anywhere
-<span class="o">[</span>7<span class="o">]</span> - <span class="nv">BDB</span>
-<span class="o">==============================================================================</span>
-Enter choice <span class="o">(</span>1<span class="o">)</span>: <span class="m">3</span>
-Hostname <span class="o">(</span>localhost<span class="o">)</span>: 
-Port <span class="o">(</span>3306<span class="o">)</span>: 
-Database name <span class="o">(</span>ambari<span class="o">)</span>: 
-Username <span class="o">(</span>ambari<span class="o">)</span>: 
-Enter Database Password <span class="o">(</span>bigdata<span class="o">)</span>: 
+<span class=o>[</span>1<span class=o>]</span> - PostgreSQL <span class=o>(</span>Embedded<span class=o>)</span>
+<span class=o>[</span>2<span class=o>]</span> - Oracle
+<span class=o>[</span>3<span class=o>]</span> - MySQL / MariaDB
+<span class=o>[</span>4<span class=o>]</span> - PostgreSQL
+<span class=o>[</span>5<span class=o>]</span> - Microsoft SQL Server <span class=o>(</span>Tech Preview<span class=o>)</span>
+<span class=o>[</span>6<span class=o>]</span> - SQL Anywhere
+<span class=o>[</span>7<span class=o>]</span> - <span class=nv>BDB</span>
+<span class=o>==============================================================================</span>
+Enter choice <span class=o>(</span>1<span class=o>)</span>: <span class=m>3</span>
+Hostname <span class=o>(</span>localhost<span class=o>)</span>: 
+Port <span class=o>(</span>3306<span class=o>)</span>: 
+Database name <span class=o>(</span>ambari<span class=o>)</span>: 
+Username <span class=o>(</span>ambari<span class=o>)</span>: 
+Enter Database Password <span class=o>(</span>bigdata<span class=o>)</span>: 
 Re-enter password: 
 Configuring ambari database...
 Configuring remote database connection properties...
 WARNING: Before starting Ambari Server, you must run the following DDL against the database to create the schema: /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
-Proceed with configuring remote database connection properties <span class="o">[</span>y/n<span class="o">]</span> <span class="o">(</span>y<span class="o">)</span>? y
+Proceed with configuring remote database connection properties <span class=o>[</span>y/n<span class=o>]</span> <span class=o>(</span>y<span class=o>)</span>? y
 Extracting system views...
 .....ambari-admin-2.6.2.0.155.jar
 ......
 Adjusting ambari-server permissions and ownership...
-Ambari Server <span class="s1">&#39;setup&#39;</span> completed successfully.
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>将Ambari数据库脚本导入到数据库</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#用Ambari用户（上面设置的用户）登录mysql</span>
+Ambari Server <span class=s1>&#39;setup&#39;</span> completed successfully.
+</code></pre></td></tr></table></div></div></div><p><strong>将Ambari数据库脚本导入到数据库</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1>#用Ambari用户（上面设置的用户）登录mysql</span>
 mysql -u ambari -p
-use ambari<span class="p">;</span>
-<span class="nb">source</span> /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
-</code></pre></td></tr></table></div>
-</div>
-</div><p><strong>启动Ambari</strong></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">ambari-server start
-</code></pre></td></tr></table></div>
-</div>
-</div><h2 id="webui配置"><a href="#webui配置" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>WebUI配置</h2>
-<p>图截得有点糊...</p>
-<p><img src="/static/posts/hdp_cluster_install/2.png" alt="WebUI"></p>
-<p>创建集群名称</p>
-<p><img src="/static/posts/hdp_cluster_install/3.png" alt="WebUI"></p>
-<p>选择HDP版本和选择本地仓库</p>
-<p><img src="/static/posts/hdp_cluster_install/4.png" alt="WebUI"></p>
-<p>配置HDP的Repository</p>
-<p><img src="/static/posts/hdp_cluster_install/5.png" alt="WebUI"></p>
-<p>输入集群节点host(FQDN)和Ambari节点SSH的私钥</p>
-<p><img src="/static/posts/hdp_cluster_install/6.png" alt="WebUI"></p>
-<p>等待ambari-agents注册</p>
-<p><img src="/static/posts/hdp_cluster_install/7.png" alt="WebUI"></p>
-<p>若报错</p>
-<p><img src="/static/posts/hdp_cluster_install/8.png" alt="WebUI"></p>
-<p><img src="/static/posts/hdp_cluster_install/9.png" alt="WebUI"></p>
-<p>【遇到问题 Confirm Hosts】
+use ambari<span class=p>;</span>
+<span class=nb>source</span> /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
+</code></pre></td></tr></table></div></div></div><p><strong>启动Ambari</strong></p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>ambari-server start
+</code></pre></td></tr></table></div></div></div><h2 id=webui配置><a href=#webui配置 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>WebUI配置</h2><p>图截得有点糊...</p><p><img src=/static/posts/hdp_cluster_install/2.png alt=WebUI></p><p>创建集群名称</p><p><img src=/static/posts/hdp_cluster_install/3.png alt=WebUI></p><p>选择HDP版本和选择本地仓库</p><p><img src=/static/posts/hdp_cluster_install/4.png alt=WebUI></p><p>配置HDP的Repository</p><p><img src=/static/posts/hdp_cluster_install/5.png alt=WebUI></p><p>输入集群节点host(FQDN)和Ambari节点SSH的私钥</p><p><img src=/static/posts/hdp_cluster_install/6.png alt=WebUI></p><p>等待ambari-agents注册</p><p><img src=/static/posts/hdp_cluster_install/7.png alt=WebUI></p><p>若报错</p><p><img src=/static/posts/hdp_cluster_install/8.png alt=WebUI></p><p><img src=/static/posts/hdp_cluster_install/9.png alt=WebUI></p><p>【遇到问题 Confirm Hosts】
 注册ambari-agents时failed
 NetUtil.py:96 - EOF occurred in violation of protocol (_ssl.c:579)
 SSLError: Failed to connect. Please check openssl library versions.
-解决：如下第三个方案，/etc/ambari-agent/conf/ambari-agent.ini文件只有执行该步骤进行注册才生成。修改后点击“Retry Failed”按钮，等待注册成功进入下一步。</p>
-<p>注:无报错时无此文件,需报错后再行处理</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 1、yum upgrade openssl 已是最新本版，未解决</span>
-<span class="c1"># 2、vi /etc/python/cert-verification.cfg 修改 verify=disable，未解决</span>
-<span class="o">[</span>https<span class="o">]</span>
-<span class="c1">#verify=platform_default</span>
-<span class="nv">verify</span><span class="o">=</span>disable
-<span class="c1"># 3、最后解决方案 在ambari-agent的配置文件/etc/ambari-agent/conf/ambari-agent.ini</span>
+解决：如下第三个方案，/etc/ambari-agent/conf/ambari-agent.ini文件只有执行该步骤进行注册才生成。修改后点击“Retry Failed”按钮，等待注册成功进入下一步。</p><p>注:无报错时无此文件,需报错后再行处理</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1># 1、yum upgrade openssl 已是最新本版，未解决</span>
+<span class=c1># 2、vi /etc/python/cert-verification.cfg 修改 verify=disable，未解决</span>
+<span class=o>[</span>https<span class=o>]</span>
+<span class=c1>#verify=platform_default</span>
+<span class=nv>verify</span><span class=o>=</span>disable
+<span class=c1># 3、最后解决方案 在ambari-agent的配置文件/etc/ambari-agent/conf/ambari-agent.ini</span>
  在 ［security］标签下面增加一项
-<span class="o">[</span>security<span class="o">]</span>
-<span class="nv">force_https_protocol</span><span class="o">=</span>PROTOCOL_TLSv1_2
-</code></pre></td></tr></table></div>
-</div>
-</div><p><img src="/static/posts/hdp_cluster_install/10.png" alt="WebUI"></p>
-<p>选择安装组件，（最小化安装HDFS+YARN+MAPREDUCE2+Ambari Metrics+SmartSense+ZooKeeper+Hbase）</p>
-<p>不必要的组件可以暂时不安装节省安装时间，后续可以再添加安装组件</p>
-<p><img src="/static/posts/hdp_cluster_install/11.png" alt="WebUI"></p>
-<p><img src="/static/posts/hdp_cluster_install/12.png" alt="WebUI"></p>
-<p>实际部署时需按规划设计进行分配（注意：Hbase HA 的话在Hbase Master 点击后面的小绿色+号，添加standby master）：</p>
-<p><img src="/static/posts/hdp_cluster_install/13.png" alt="WebUI"></p>
-<p>工作节点角色分配(生产环境全勾了)</p>
-<p><img src="/static/posts/hdp_cluster_install/14.png" alt="WebUI"></p>
-<p>组件配置信息修改
-通常数据目录修改到/data/目录下，有红色信息提示的组件表示要输入相应的账号密码。以下示例，可根据自己的实际情况配置。</p>
-<p>HDFS</p>
-<p><img src="/static/posts/hdp_cluster_install/15.png" alt="WebUI"></p>
-<p><img src="/static/posts/hdp_cluster_install/16.png" alt="WebUI"></p>
-<p>HIVE,若数据库端口修改按实际填写</p>
-<p><img src="/static/posts/hdp_cluster_install/17.png" alt="WebUI"></p>
-<p>Oozie</p>
-<p><img src="/static/posts/hdp_cluster_install/18.png" alt="WebUI"></p>
-<p>Zookeeper</p>
-<p><img src="/static/posts/hdp_cluster_install/19.png" alt="WebUI"></p>
-<p><img src="/static/posts/hdp_cluster_install/20.png" alt="WebUI"></p>
-<p><img src="/static/posts/hdp_cluster_install/21.png" alt="WebUI"></p>
-<p><img src="/static/posts/hdp_cluster_install/22.png" alt="WebUI"></p>
-<p>暂时修改了以下属性，具体配置信息可根据实际情况后续相应修改</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">| 端口属性                                  | 修改值                                |
+<span class=o>[</span>security<span class=o>]</span>
+<span class=nv>force_https_protocol</span><span class=o>=</span>PROTOCOL_TLSv1_2
+</code></pre></td></tr></table></div></div></div><p><img src=/static/posts/hdp_cluster_install/10.png alt=WebUI></p><p>选择安装组件，（最小化安装HDFS+YARN+MAPREDUCE2+Ambari Metrics+SmartSense+ZooKeeper+Hbase）</p><p>不必要的组件可以暂时不安装节省安装时间，后续可以再添加安装组件</p><p><img src=/static/posts/hdp_cluster_install/11.png alt=WebUI></p><p><img src=/static/posts/hdp_cluster_install/12.png alt=WebUI></p><p>实际部署时需按规划设计进行分配（注意：Hbase HA 的话在Hbase Master 点击后面的小绿色+号，添加standby master）：</p><p><img src=/static/posts/hdp_cluster_install/13.png alt=WebUI></p><p>工作节点角色分配(生产环境全勾了)</p><p><img src=/static/posts/hdp_cluster_install/14.png alt=WebUI></p><p>组件配置信息修改
+通常数据目录修改到/data/目录下，有红色信息提示的组件表示要输入相应的账号密码。以下示例，可根据自己的实际情况配置。</p><p>HDFS</p><p><img src=/static/posts/hdp_cluster_install/15.png alt=WebUI></p><p><img src=/static/posts/hdp_cluster_install/16.png alt=WebUI></p><p>HIVE,若数据库端口修改按实际填写</p><p><img src=/static/posts/hdp_cluster_install/17.png alt=WebUI></p><p>Oozie</p><p><img src=/static/posts/hdp_cluster_install/18.png alt=WebUI></p><p>Zookeeper</p><p><img src=/static/posts/hdp_cluster_install/19.png alt=WebUI></p><p><img src=/static/posts/hdp_cluster_install/20.png alt=WebUI></p><p><img src=/static/posts/hdp_cluster_install/21.png alt=WebUI></p><p><img src=/static/posts/hdp_cluster_install/22.png alt=WebUI></p><p>暂时修改了以下属性，具体配置信息可根据实际情况后续相应修改</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text>| 端口属性                                  | 修改值                                |
 | :---------------------------------------- | :------------------------------------ |
 | dfs.namenode.http-address                 | octserver1.hadoop:50770 （def:50070） |
 | yarn.resourcemanager.webapp.address       | octserver2.hadoop:18088 （def:8088）  |
 | yarn.resourcemanager.webapp.https.address | octserver2.hadoop:18090(def:8090)     |
 | mapreduce.jobhistory.webapp.address       | octserver2.hadoop:19898 (def:19888)   |
-</code></pre></td></tr></table></div>
-</div>
-</div><p>等待安装完成</p>
-<p><img src="/static/posts/hdp_cluster_install/23.png" alt="WebUI"></p>
-<p>直到所有节点成功安装完成才能进行下一步操作</p>
-<p><img src="/static/posts/hdp_cluster_install/24.png" alt="WebUI"></p>
-<p>最终结果界面类似如下：</p>
-<p><img src="/static/posts/hdp_cluster_install/25.png" alt="WebUI"></p>
-            </div>
-
-            
-    
-    
-        <ul class="post-copyright">
-            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://weii.xyz/" class="p-author h-card" target="_blank" rel="noopener">weii</a></li>
-            
-                
-                
-                
-                
-                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/2019/09/06/hdp_cluster_install/" target="_blank" rel="noopener">https://www.weii.xyz/2019/09/06/hdp_cluster_install/</a></li>
-            
-            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
-            
-        </ul>
-    
-
-
-
-        </article>
-
-        
-
-        
-    <div class="updated-badge-container">
-        <span title="Updated @ 2019-09-06 20:33:02 CST" style="cursor:help">
-
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2019-09-06</text><text x="915" y="140" textLength="650" transform="scale(.1)">2019-09-06</text></g></svg>
-        </span></div>
-
-
-
-        
-    
-
-
-
-        
-
-
-        
-    
-    
-
-
-
-        
-    
-        <div class="post-tags">
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/hdp/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>HDP</a>
-                
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>大数据平台</a>
-                
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/%E9%9B%86%E7%BE%A4/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>集群</a>
-                
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>记录</a>
-                
-            
-        </div>
-    
-
-
-
-        
-
-
-        
-
-
-        
-    
-        
-        
-    
-    
-    
-    
-        <ul class="post-nav">
-            
-                <li class="post-nav-prev">
-                    <a href="/2019/09/11/docker_ca/" rel="prev">&lt; Docker开启2376端口使用CA认证</a>
-                </li>
-            
-            
-                <li class="post-nav-next">
-                    <a href="/2019/08/31/docker_install_smtp_server/" rel="next">使用docker搭建smtp服务 &gt;</a>
-                </li>
-            
-        </ul>
-    
-
-
-
-        
-
-
-    </div>
-</main>
-
-
-            
-    <div id="back-to-top" class="back-to-top">
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
-    </div>
-
-
-            
-    <footer id="footer" class="footer">
-        <div class="footer-inner">
-            <div class="site-info">©&nbsp;2014–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;weii</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div><div class="custom-footer"><div style='font-size:80%' id='jinrishici-sentence'>🤨<div/></div>
-
-            
-
-
-            
-        </div>
-    </footer>
-
-
-        </div>
-        
-
-        
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
-
-<script>
-    mediumZoom(document.querySelectorAll('div.post-body img'), {
-        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
-    })
-</script>
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
-
-
-
-
-
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
-    </body>
-</html>
+</code></pre></td></tr></table></div></div></div><p>等待安装完成</p><p><img src=/static/posts/hdp_cluster_install/23.png alt=WebUI></p><p>直到所有节点成功安装完成才能进行下一步操作</p><p><img src=/static/posts/hdp_cluster_install/24.png alt=WebUI></p><p>最终结果界面类似如下：</p><p><img src=/static/posts/hdp_cluster_install/25.png alt=WebUI></p></div><ul class=post-copyright><li class="copyright-item author"><span class=copyright-item-text>作者</span>：<a href=https://weii.xyz/ class="p-author h-card" target=_blank rel=noopener>weii</a></li><li class="copyright-item link"><span class=copyright-item-text>链接</span>：<a href=/2019/09/06/hdp_cluster_install/ target=_blank rel=noopener>https://weii.xyz/2019/09/06/hdp_cluster_install/</a></li><li class="copyright-item license"><span class=copyright-item-text>许可</span>：<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh target=_blank rel=noopener>CC BY-NC-SA 4.0</a></li></ul></article><div class=updated-badge-container><span title="Updated @ 2019-09-18 09:42:01 CST" style=cursor:help><svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2019-09-18</text><text x="915" y="140" textLength="650" transform="scale(.1)">2019-09-18</text></g></svg></span></div><div class=post-tags><a href=/tags/hdp/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>HDP</a>
+<a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>大数据平台</a>
+<a href=/tags/%E9%9B%86%E7%BE%A4/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>集群</a>
+<a href=/tags/%E8%AE%B0%E5%BD%95/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>记录</a></div><ul class=post-nav><li class=post-nav-prev><a href=/2019/09/11/docker_ca/ rel=prev>&lt; Docker开启2376端口使用CA认证</a></li><li class=post-nav-next><a href=/2019/08/31/docker_install_smtp_server/ rel=next>使用docker搭建smtp服务 ></a></li></ul></div></main><div id=back-to-top class=back-to-top><a href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a></div><footer id=footer class=footer><div class=footer-inner><div class=site-info>©&nbsp;2014–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3.0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;weii</div><div class=powered-by>Powered by <a href=https://github.com/gohugoio/hugo target=_blank rel=noopener>Hugo</a> | Theme is <a href=https://github.com/reuixiy/hugo-theme-meme target=_blank rel=noopener>MemE</a></div><div class=site-copyright><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh target=_blank rel=noopener>CC BY-NC-SA 4.0</a></div><div class=custom-footer><div style=font-size:80% id=jinrishici-sentence>🤨<div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js></script>
+<script>mediumZoom(document.querySelectorAll('div.post-body img'),{background:'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'})</script><script src=https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js type=module defer></script><div class=app-refresh id=app-refresh><div class=app-refresh-wrap onclick=location.reload()><label>已更新最新版本</label>
+<span>点击刷新</span></div></div><script>'serviceWorker'in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener('controllerchange',function(){showNotification()}),window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js')}));function showNotification(){document.querySelector('meta[name=theme-color]').content='#000',document.getElementById('app-refresh').className+=' app-refresh-show'}</script><script src=https://sdk.jinrishici.com/v2/browser/jinrishici.js></script></body></html>

@@ -1,876 +1,237 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-    <meta charset="UTF-8" />
+<!doctype html><html lang=zh-cn><head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"><meta charset=utf-8><meta name=generator content="Hugo 0.87.0"><meta name=theme-color content="#fff"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no, date=no, address=no, email=no"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><title>Django基础01 | Weii's Blog</title><link rel=stylesheet href=/css/meme.min.d68289ac6d6799cb373c1c1d1bb88a8dac5acf6e78d7b85354398b6cb179902d.css><script src=/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" media=print onload="this.media='all'"><noscript><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript><meta name=author content="weii"><meta name=description content="这是👉Django基础01👈的摘要……"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=mask-icon href=/icons/safari-pinned-tab.svg color=#2a6df4><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-title content="Weii's Blog"><meta name=apple-mobile-web-app-status-bar-style content="black"><meta name=mobile-web-app-capable content="yes"><meta name=application-name content="Weii's Blog"><meta name=msapplication-starturl content="../../../../"><meta name=msapplication-TileColor content="#fff"><meta name=msapplication-TileImage content="../../../../icons/mstile-150x150.png"><link rel=manifest href=/manifest.json><link rel=canonical href=https://weii.xyz/2018/03/22/cnblog_8621513/><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","datePublished":"2018-03-22T01:17:00+00:00","dateModified":"2019-06-10T19:42:36+08:00","url":"https://weii.xyz/2018/03/22/cnblog_8621513/","headline":"Django基础01","description":"这是👉Django基础01👈的摘要……","inLanguage":"zh-CN","articleSection":"posts","wordCount":4236,"image":["https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif","https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif","https://images2017.cnblogs.com/blog/867021/201801/867021-20180110190001816-1349372864.png"],"author":{"@type":"Person","description":"Viva La Vida","email":"wevsmy@gmail.com","image":"https://weii.xyz/icons/apple-touch-icon.png","url":"https://weii.xyz/","name":"weii"},"license":"[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)","publisher":{"@type":"Organization","name":"Weii's Blog","logo":{"@type":"ImageObject","url":"https://weii.xyz/icons/apple-touch-icon.png"},"url":"https://weii.xyz/"},"mainEntityOfPage":{"@type":"WebSite","@id":"https://weii.xyz/"}}</script><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@wevsmy"><meta name=twitter:creator content="@wevsmy"><meta property="og:title" content="Django基础01"><meta property="og:description" content="这是👉Django基础01👈的摘要……"><meta property="og:url" content="https://weii.xyz/2018/03/22/cnblog_8621513/"><meta property="og:site_name" content="Weii's Blog"><meta property="og:locale" content="zh"><meta property="og:image" content="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif"><meta property="og:type" content="article"><meta property="article:published_time" content="2018-03-22T01:17:00+00:00"><meta property="article:modified_time" content="2019-06-10T19:42:36+08:00"><meta property="article:section" content="posts"><meta name=google-site-verification content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg"><link rel=preconnect href=https://www.google-analytics.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-146915278-1')</script></head><body><div class=container><header class=header><div class=header-wrapper><div class="header-inner single"><div class=site-brand><a href=/ class=brand>Weii's Blog</a></div><nav class=nav><ul class=menu id=menu><li class=menu-item><a href=/posts/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7.0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6.0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6.0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3.0 64v48c0 8.8 7.2 16 16 16h480c8.8.0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class=menu-item-name>文章</span></a></li><li class=menu-item><a href=/tags/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941 286.059 14.059A48 48 0 00252.118.0H48C21.49.0.0 21.49.0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882.0l204.118-204.118c18.745-18.745 18.745-49.137.0-67.882zM112 160c-26.51.0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882.0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397.0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882z"/></svg><span class=menu-item-name>标签</span></a></li><li class=menu-item><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6.0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7.0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4.0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9s28-2.7 40.9-6.9c2.3-.7 4.7-1.1 7.1-1.1 42.9.0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class=menu-item-name>关于</span></a></li><li class=menu-item><a id=theme-switcher href=#><span class="icon theme-icon-light">🌞</span><span class="icon theme-icon-dark">🌙</span></a></li></ul></nav></div></div><input type=checkbox id=nav-toggle aria-hidden=true>
+<label for=nav-toggle class=nav-toggle></label>
+<label for=nav-toggle class=nav-curtain></label></header><main class="main single" id=main><div class=main-inner><article class="content post h-entry" data-align=justify data-type=posts data-toc-num=true><h1 class="post-title p-name">Django基础01</h1><div class=post-meta><time datetime=2018-03-22T01:17:00+00:00 class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6.0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h48c26.5.0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3.0 6-2.7 6-6z"/></svg>&nbsp;2018.3.22</time>
+<time datetime=2019-06-10T19:42:36+08:00 class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M4e2 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627.0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627.0-12 5.373-12 12v52H48C21.49 64 0 85.49.0 112v352c0 26.51 21.49 48 48 48h352c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 4e2H54a6 6 0 01-6-6V160h352v298a6 6 0 01-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2019.6.10</time>
+<span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href=/categories/%E7%AC%94%E8%AE%B0/ class="category-link p-category">笔记</a>/<a href=/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD/ class="category-link p-category">博客园</a></span>
+<span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3.0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9.0l60.1 60.1c18.8 18.7 18.8 49.1.0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3.0-17l-111-111c-4.8-4.7-12.4-4.7-17.1.0zM124.1 339.9c-5.5-5.5-5.5-14.3.0-19.8l154-154c5.5-5.5 14.3-5.5 19.8.0s5.5 14.3.0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8.0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;4236</span>
+<span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5.0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6.0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;9&nbsp;分钟</span></div><div class="post-body e-content"><h1 id=这是django基础01的摘要20180322cnblog_8621513><a href=#这是django基础01的摘要20180322cnblog_8621513 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href=/2018/03/22/cnblog_8621513/>这是👉Django基础01👈的摘要</a></h1><h1 id=web框架本质><a href=#web框架本质 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Web框架本质</h1><p>我们可以这样理解：所有的Web应用本质上就是一个socket服务端，而用户的浏览器就是一个socket客户端。 这样我们就可以自己实现Web框架了。</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python>	<span class=kn>import</span> <span class=nn>socket</span>
 
-    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
-    
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <span class=n>sk</span> <span class=o>=</span> <span class=n>socket</span><span class=o>.</span><span class=n>socket</span><span class=p>()</span>
+    <span class=n>sk</span><span class=o>.</span><span class=n>bind</span><span class=p>((</span><span class=s2>&#34;127.0.0.1&#34;</span><span class=p>,</span> <span class=mi>80</span><span class=p>))</span>
+    <span class=n>sk</span><span class=o>.</span><span class=n>listen</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
 
-    <title>Django基础01 | Weii&#39;s Blog</title>
+	<span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+		<span class=n>conn</span><span class=p>,</span> <span class=n>addr</span> <span class=o>=</span> <span class=n>sk</span><span class=o>.</span><span class=n>accept</span><span class=p>()</span>
+		<span class=n>data</span> <span class=o>=</span> <span class=n>conn</span><span class=o>.</span><span class=n>recv</span><span class=p>(</span><span class=mi>8096</span><span class=p>)</span>
+		<span class=n>conn</span><span class=o>.</span><span class=n>send</span><span class=p>(</span><span class=sa>b</span><span class=s2>&#34;OK&#34;</span><span class=p>)</span>
+		<span class=n>conn</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</code></pre></td></tr></table></div></div></div><p>可以说Web服务本质上都是在这十几行代码基础上扩展出来的。这段代码就是它们的祖宗。</p><p>用户的浏览器一输入网址，会给服务端发送数据，那浏览器会发送什么数据？怎么发？这个谁来定？ 你这个网站是这个规定，他那个网站按照他那个规定，这互联网还能玩么？</p><p>所以，必须有一个统一的规则，让大家发送消息、接收消息的时候有个格式依据，不能随便写。</p><p>这个规则就是HTTP协议，以后浏览器发送请求信息也好，服务器回复响应信息也罢，都要按照这个规则来。</p><p>HTTP协议主要规定了客户端和服务器之间的通信格式，那HTTP协议是怎么规定消息格式的呢？</p><p>让我们首先看下我们在服务端接收到的消息是什么。</p><p>然后再看下我们浏览器收到的响应信息是什么。</p><p>响应头在浏览器的network窗口可以看到，我们看到的HTML页面内容就是响应体。本质上还是字符串，因为浏览器认识HTML，所以才会渲染出页面。</p><p><a href=http://www.cnblogs.com/liwenzhou/articles/8620663.html target=_blank rel=noopener>HTTP协议介绍</a></p><p>每个HTTP请求和响应都遵循相同的格式，一个HTTP包含Header和Body两部分，其中Body是可选的。 HTTP响应的Header中有一个
+<code>Content-Type</code>表明响应的内容格式。如 <code>text/html</code>表示HTML网页。</p><p>HTTP GET请求的格式：</p><p>​<br>​ GET /path HTTP/1.1
+​ header1:v1\r\n
+​ header2:v2\r\n</p><p>使用 <code>\r\n</code>分隔多个header</p><p>HTTP POST请求格式：</p><p>​<br>​ POST /path HTTP/1.1
+​ header1:v1\r\n
+​ header2:v2\r\n
+​ \r\n\r\n
+​ 请求体...</p><p>当遇到连续两个 <code>\r\n\r\n</code>时，表示Header部分结束了，后面的数据是Body。</p><p>HTTP响应的格式：</p><p>​<br>​ 200 OK
+​ Header1:v1\r\n
+​ Header2:v2\r\n
+​ \r\n\r\n
+​ 响应体...</p><p>让我们的Web框架在给客户端回复响应的时候按照HTTP协议的规则加上响应头，这样我们就实现了一个正经的Web框架了。</p><div class=highlight><div class=chroma><div class=table-container><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python>	<span class=kn>import</span> <span class=nn>socket</span>
 
-    <link rel="stylesheet" href="/css/meme.min.6d2748833a87480ce7e0964b805b37d73f763b30dca50162cab859fbcf195ce1.css"/>
-
-    
-    
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
-
-    
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
-        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
-
-    <meta name="author" content="weii" /><meta name="description" content="这是👉Django基础01👈的摘要……" />
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Weii&#39;s Blog" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="Weii&#39;s Blog" />
-    <meta name="msapplication-starturl" content="../../../../" />
-    <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="msapplication-TileImage" content="../../../../icons/mstile-150x150.png" />
-    <link rel="manifest" href="/manifest.json" />
-
-    
-    
-
-    
-    <link rel="canonical" href="https://www.weii.xyz/2018/03/22/cnblog_8621513/" />
-    
-
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "datePublished": "2018-03-22T01:17:00+00:00",
-        "dateModified": "2019-11-20T14:11:45+08:00",
-        "url": "https://www.weii.xyz/2018/03/22/cnblog_8621513/",
-        "headline": "Django基础01",
-        "description": "这是👉Django基础01👈的摘要……",
-        "inLanguage" : "zh-CN",
-        "articleSection": "posts",
-        "wordCount":  4236 ,
-        "image": ["https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif","https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif","https://images2017.cnblogs.com/blog/867021/201801/867021-20180110190001816-1349372864.png"],
-        "author": {
-            "@type": "Person",
-            "description": "Viva La Vida",
-            "email": "wevsmy@gmail.com",
-            "image": "https://www.weii.xyz/icons/apple-touch-icon.png",
-            "url": "https://weii.xyz/",
-            "name": "weii"
-        },
-        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Weii's Blog",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.weii.xyz/icons/apple-touch-icon.png"
-            },
-            "url": "https://www.weii.xyz/"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebSite",
-            "@id": "https://www.weii.xyz/"
-        }
-    }
-</script>
-
-    
-
-<meta name="twitter:card" content="summary_large_image" />
-
-
-<meta name="twitter:site" content="@wevsmy" />
-<meta name="twitter:creator" content="@wevsmy" />
-
-    
-
-
-
-<meta property="og:title" content="Django基础01" />
-<meta property="og:description" content="这是👉Django基础01👈的摘要……" />
-<meta property="og:url" content="https://www.weii.xyz/2018/03/22/cnblog_8621513/" />
-<meta property="og:site_name" content="Weii&#39;s Blog" />
-<meta property="og:locale" content="zh" /><meta property="og:image" content="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" />
-<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2018-03-22T01:17:00&#43;00:00" />
-    <meta property="article:modified_time" content="2019-11-20T14:11:45&#43;08:00" />
-    
-    <meta property="article:section" content="posts" />
-
-
-        <meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-
-        
-
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-146915278-1');
-    </script>
-
-
-
-
-    
-    
-
-    
-</head>
-
-    <body>
-        <div class="container">
-            
-    <header class="header">
-        
-            <div class="header-wrapper">
-                <div class="header-inner single">
-                    
-    <div class="site-brand">
-        
-            <a href="/" class="brand">Weii&#39;s Blog</a>
-        
-    </div>
-
-                    <nav class="nav">
-    <ul class="menu" id="menu">
-        
-            
-        
-        
-        
-        
-            
-                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
-                </li>
-            
-        
-            
-                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
-                </li>
-            
-        
-            
-                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
-                </li>
-            
-        
-            
-                
-                    
-                    
-                        <li class="menu-item">
-                            <a id="theme-switcher" href="#"><span class="icon theme-icon-light">🌞</span><span class="icon theme-icon-dark">🌙</span></a>
-                        </li>
-                    
-                
-            
-        
-            
-                
-            
-        
-    </ul>
-</nav>
-
-                    
-                </div>
-            </div>
-            
-    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
-    <label for="nav-toggle" class="nav-toggle"></label>
-    <label for="nav-toggle" class="nav-curtain"></label>
-
-
-        
-    </header>
-
-
-
-
-            
-            
-    <main class="main single" id="main">
-    <div class="main-inner">
-
-        
-
-        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
-
-            <h1 class="post-title p-name">Django基础01</h1>
-
-            
-
-            
-                
-            
-
-            
-                
-
-<div class="post-meta">
-    
-        
-        <time datetime="2018-03-22T01:17:00&#43;00:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2018.3.22</time>
-    
-    
-        
-        <time datetime="2019-11-20T14:11:45&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2019.11.20</time>
-    
-    
-    
-        
-        
-        
-            
-                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-link p-category">笔记</a>/<a href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" class="category-link p-category">博客园</a></span>
-            
-        
-    
-    
-        
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;4236</span>
-    
-    
-        
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;9&nbsp;分钟</span>
-    
-    
-    
-</div>
-
-            
-
-            <div class="post-body e-content">
-                <h1 id="这是django基础01的摘要20180322cnblog_8621513"><a href="#这是django基础01的摘要20180322cnblog_8621513" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="/2018/03/22/cnblog_8621513/">这是👉Django基础01👈的摘要</a></h1>
-<h1 id="web框架本质"><a href="#web框架本质" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Web框架本质</h1>
-<p>我们可以这样理解：所有的Web应用本质上就是一个socket服务端，而用户的浏览器就是一个socket客户端。 这样我们就可以自己实现Web框架了。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">	<span class="kn">import</span> <span class="nn">socket</span>
-
-    <span class="n">sk</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
-    <span class="n">sk</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
-    <span class="n">sk</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-		<span class="n">conn</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sk</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
-		<span class="n">data</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">8096</span><span class="p">)</span>
-		<span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;OK&#34;</span><span class="p">)</span>
-		<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>可以说Web服务本质上都是在这十几行代码基础上扩展出来的。这段代码就是它们的祖宗。</p>
-<p>用户的浏览器一输入网址，会给服务端发送数据，那浏览器会发送什么数据？怎么发？这个谁来定？ 你这个网站是这个规定，他那个网站按照他那个规定，这互联网还能玩么？</p>
-<p>所以，必须有一个统一的规则，让大家发送消息、接收消息的时候有个格式依据，不能随便写。</p>
-<p>这个规则就是HTTP协议，以后浏览器发送请求信息也好，服务器回复响应信息也罢，都要按照这个规则来。</p>
-<p>HTTP协议主要规定了客户端和服务器之间的通信格式，那HTTP协议是怎么规定消息格式的呢？</p>
-<p>让我们首先看下我们在服务端接收到的消息是什么。</p>
-<p>然后再看下我们浏览器收到的响应信息是什么。</p>
-<p>响应头在浏览器的network窗口可以看到，我们看到的HTML页面内容就是响应体。本质上还是字符串，因为浏览器认识HTML，所以才会渲染出页面。</p>
-<p><a href="http://www.cnblogs.com/liwenzhou/articles/8620663.html" target="_blank" rel="noopener">HTTP协议介绍</a></p>
-<p>每个HTTP请求和响应都遵循相同的格式，一个HTTP包含Header和Body两部分，其中Body是可选的。 HTTP响应的Header中有一个
-<code>Content-Type</code>表明响应的内容格式。如 <code>text/html</code>表示HTML网页。</p>
-<p>HTTP GET请求的格式：</p>
-<p>​ <br>
-​    GET /path HTTP/1.1
-​    header1:v1\r\n
-​    header2:v2\r\n</p>
-<p>使用 <code>\r\n</code>分隔多个header</p>
-<p>HTTP POST请求格式：</p>
-<p>​ <br>
-​    POST /path HTTP/1.1
-​    header1:v1\r\n
-​    header2:v2\r\n
-​    \r\n\r\n
-​    请求体...</p>
-<p>当遇到连续两个 <code>\r\n\r\n</code>时，表示Header部分结束了，后面的数据是Body。</p>
-<p>HTTP响应的格式：</p>
-<p>​ <br>
-​    200 OK
-​    Header1:v1\r\n
-​    Header2:v2\r\n
-​    \r\n\r\n
-​    响应体...</p>
-<p>让我们的Web框架在给客户端回复响应的时候按照HTTP协议的规则加上响应头，这样我们就实现了一个正经的Web框架了。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">	<span class="kn">import</span> <span class="nn">socket</span>
-
-	<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
-	<span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">))</span>
-	<span class="n">sock</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+	<span class=n>sock</span> <span class=o>=</span> <span class=n>socket</span><span class=o>.</span><span class=n>socket</span><span class=p>(</span><span class=n>socket</span><span class=o>.</span><span class=n>AF_INET</span><span class=p>,</span> <span class=n>socket</span><span class=o>.</span><span class=n>SOCK_STREAM</span><span class=p>)</span>
+	<span class=n>sock</span><span class=o>.</span><span class=n>bind</span><span class=p>((</span><span class=s1>&#39;127.0.0.1&#39;</span><span class=p>,</span> <span class=mi>8000</span><span class=p>))</span>
+	<span class=n>sock</span><span class=o>.</span><span class=n>listen</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
 	
-	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-		<span class="n">conn</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
-		<span class="n">data</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">8096</span><span class="p">)</span>
-		<span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;HTTP/1.1 200 OK</span><span class="se">\r\n\r\n</span><span class="s2">&#34;</span><span class="p">)</span>
-		<span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;OK&#34;</span><span class="p">)</span>
-		<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>上述通过socket来实现了其本质。</p>
-<p>对于真实开发中的python web程序来说，一般会分为两部分：服务器程序和应用程序。</p>
-<p>服务器程序负责对socket服务器进行封装，并在请求到来时，对请求的各种数据进行整理。</p>
-<p>应用程序则负责具体的逻辑处理。为了方便应用程序的开发，就出现了众多的Web框架，例如：Django、Flask、web.py
-等。不同的框架有不同的开发方式，但是无论如何，开发出的应用程序都要和服务器程序配合，才能为用户提供服务。</p>
-<p>这样，服务器程序就需要为不同的框架提供不同的支持。这样混乱的局面无论对于服务器还是框架，都是不好的。对服务器来说，需要支持各种不同框架，对框架来说，只有支持它的服务器才能被开发出的应用使用。</p>
-<p>这时候，标准化就变得尤为重要。我们可以设立一个标准，只要服务器程序支持这个标准，框架也支持这个标准，那么他们就可以配合使用。一旦标准确定，双方各自实现。这样，服务器可以支持更多支持标准的框架，框架也可以使用更多支持标准的服务器。</p>
-<p>WSGI（Web Server Gateway
-Interface）就是一种规范，它定义了使用Python编写的web应用程序与web服务器程序之间的接口格式，实现web应用程序与web服务器程序间的解耦。</p>
-<p>常用的WSGI服务器有uwsgi、Gunicorn。而Python标准库提供的独立WSGI服务器叫wsgiref，Django开发环境用的就是这个模块来做服务器。</p>
-<p>​ <br>
-​    from wsgiref.simple_server import make_server</p>
-<p>​ <br>
-​    def run_server(environ, start_response):
-​        start_response('200 OK', [('Content-Type', 'text/html;charset=utf8')])  # 设置HTTP响应的状态码和头信息
-​        return [bytes(&quot;<h1>Hello world!</h1>&quot;, encoding=&quot;utf8&quot;),]</p>
-<p>​ <br>
-​    if <strong>name</strong> == '<strong>main</strong>':
-​        httpd = make_server('', 8000, run_server)
-​        print(&quot;Serving HTTP on port 8000...&quot;)
-​        httpd.serve_forever()</p>
-<p>这样就结束了吗？ 如何让我们的Web服务根据用户请求的URL不同而返回不同的内容呢？</p>
-<p>小事一桩，我们可以从请求相关数据里面拿到请求的URL，然后做一个判断。</p>
-<p>​ <br>
-​    from wsgiref.simple_server import make_server</p>
-<p>​ <br>
-​    def run_server(environ, start_response):
-​        start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ])  # 设置HTTP响应的状态码和头信息
-​        url = environ['PATH_INFO']  # 取到用户输入的url
-​        if url == &quot;/index/&quot;:
-​            return [bytes(&quot;<h1>这是index页面</h1>&quot;, encoding=&quot;utf8&quot;), ]
-​        elif url == &quot;/home/&quot;:
-​            return [bytes(&quot;<h1>这是home页面</h1>&quot;, encoding=&quot;utf8&quot;), ]
-​        else:
-​            return [bytes(&quot;404没有该页面&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    if <strong>name</strong> == '<strong>main</strong>':
-​        httpd = make_server('', 8000, run_server)
-​        print(&quot;Serving HTTP on port 8000...&quot;)
-​        httpd.serve_forever()</p>
-<p>解决了不同URL返回不同内容的需求。 但是问题又来了，如果有很多很多页面怎么办？难道要挨个判断？ 当然不用，我们有更聪明的办法。</p>
-<p>​ <br>
-​    from wsgiref.simple_server import make_server</p>
-<p>​ <br>
-​    def index():
-​        return [bytes(&quot;<h1>这是index页面</h1>&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    def home():
-​        return [bytes(&quot;<h1>这是home页面</h1>&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    # 定义一个url和函数的对应关系
-​    URL_LIST = [
-​        (&quot;/index/&quot;, index),
-​        (&quot;/home/&quot;, home),
-​    ]</p>
-<p>​ <br>
-​    def run_server(environ, start_response):
-​        start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ])  # 设置HTTP响应的状态码和头信息
-​        url = environ['PATH_INFO']  # 取到用户输入的url
-​        func = None  # 将要执行的函数
-​        for i in URL_LIST:
-​            if i[0] == url:
-​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
-​                break
-​        if func:  # 如果能找到要执行的函数
-​            return func()  # 返回函数的执行结果
-​        else:
-​            return [bytes(&quot;404没有该页面&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    if <strong>name</strong> == '<strong>main</strong>':
-​        httpd = make_server('', 8000, run_server)
-​        print(&quot;Serving HTTP on port 8000...&quot;)
-​        httpd.serve_forever()</p>
-<p>完美解决了不同URL返回不同内容的问题。 但是我不想仅仅返回几个字符串，我想给浏览器返回完整的HTML内容，这又该怎么办呢？</p>
-<p>没问题，不管是什么内容，最后都是转换成字节数据发送出去的。 我可以打开HTML文件，读取出它内部的二进制数据，然后发送给浏览器。</p>
-<p>​ <br>
-​    from wsgiref.simple_server import make_server</p>
-<p>​ <br>
-​    def index():
-​        with open(&quot;index.html&quot;, &quot;rb&quot;) as f:
-​            data = f.read()
-​        return [data, ]</p>
-<p>​ <br>
-​    def home():
-​        with open(&quot;home.html&quot;, &quot;rb&quot;) as f:
-​            data = f.read()
-​        return [data, ]</p>
-<p>​ <br>
-​    # 定义一个url和函数的对应关系
-​    URL_LIST = [
-​        (&quot;/index/&quot;, index),
-​        (&quot;/home/&quot;, home),
-​    ]</p>
-<p>​ <br>
-​    def run_server(environ, start_response):
-​        start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ])  # 设置HTTP响应的状态码和头信息
-​        url = environ['PATH_INFO']  # 取到用户输入的url
-​        func = None  # 将要执行的函数
-​        for i in URL_LIST:
-​            if i[0] == url:
-​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
-​                break
-​        if func:  # 如果能找到要执行的函数
-​            return func()  # 返回函数的执行结果
-​        else:
-​            return [bytes(&quot;404没有该页面&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    if <strong>name</strong> == '<strong>main</strong>':
-​        httpd = make_server('', 8000, run_server)
-​        print(&quot;Serving HTTP on port 8000...&quot;)
-​        httpd.serve_forever()</p>
-<p>这网页能够显示出来了，但是都是静态的啊。页面的内容都不会变化的，我想要的是动态网站。</p>
-<p>没问题，我也有办法解决。我选择使用字符串替换来实现这个需求。</p>
-<p>​ <br>
-​    from wsgiref.simple_server import make_server</p>
-<p>​ <br>
-​    def index():
-​        with open(&quot;index.html&quot;, &quot;rb&quot;) as f:
-​            data = f.read()
-​        import time
-​        time_str = str(time.time())
-​        data_str = str(data, encoding=&quot;utf8&quot;)
-​        data_str = data_str.replace(&quot;@@a@@&quot;, time_str)
-​        return [bytes(data_str, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    def home():
-​        with open(&quot;home.html&quot;, &quot;rb&quot;) as f:
-​            data = f.read()
-​        return [data, ]</p>
-<p>​ <br>
-​    # 定义一个url和函数的对应关系
-​    URL_LIST = [
-​        (&quot;/index/&quot;, index),
-​        (&quot;/home/&quot;, home),
-​    ]</p>
-<p>​ <br>
-​    def run_server(environ, start_response):
-​        start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ])  # 设置HTTP响应的状态码和头信息
-​        url = environ['PATH_INFO']  # 取到用户输入的url
-​        func = None  # 将要执行的函数
-​        for i in URL_LIST:
-​            if i[0] == url:
-​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
-​                break
-​        if func:  # 如果能找到要执行的函数
-​            return func()  # 返回函数的执行结果
-​        else:
-​            return [bytes(&quot;404没有该页面&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    if <strong>name</strong> == '<strong>main</strong>':
-​        httpd = make_server('', 8000, run_server)
-​        print(&quot;Serving HTTP on port 8000...&quot;)
-​        httpd.serve_forever()</p>
-<p>这是一个简单的动态，我完全可以从数据库中查询数据，然后去替换我html中的对应内容，然后再发送给浏览器完成渲染。 这个过程就相当于HTML模板渲染数据。
-本质上就是HTML内容中利用一些特殊的符号来替换要展示的数据。 我这里用的特殊符号是我定义的，其实模板渲染有个现成的工具： <code>jinja2</code></p>
-<p>下载jinja2:</p>
-<p>​ <br>
-​    pip install jinja2</p>
-<p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt=""></p>
-<p>​ <br>
-​    <!DOCTYPE html>
-​    <html lang="zh-CN">
-​    <head>
-​      <meta charset="UTF-8">
-​      <meta http-equiv="x-ua-compatible" content="IE=edge">
-​      <meta name="viewport" content="width=device-width, initial-scale=1">
-​      <title>Title</title>
-​    </head>
-​    <body>
-​        <h1>姓名：{{name}}</h1>
-​        <h1>爱好：</h1>
-​        <ul>
-​            {% for hobby in hobby_list %}
-​            <li>{{hobby}}</li>
-​            {% endfor %}
-​        </ul>
-​    </body>
-​    </html></p>
-<p>index2.html文件</p>
-<p>使用jinja2渲染index2.html文件：</p>
-<p>​ <br>
-​    from wsgiref.simple_server import make_server
-​    from jinja2 import Template</p>
-<p>​ <br>
-​    def index():
-​        with open(&quot;index2.html&quot;, &quot;r&quot;) as f:
-​            data = f.read()
-​        template = Template(data)  # 生成模板文件
-​        ret = template.render({&quot;name&quot;: &quot;Alex&quot;, &quot;hobby_list&quot;: [&quot;烫头&quot;, &quot;泡吧&quot;]})  # 把数据填充到模板里面
-​        return [bytes(ret, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    def home():
-​        with open(&quot;home.html&quot;, &quot;rb&quot;) as f:
-​            data = f.read()
-​        return [data, ]</p>
-<p>​ <br>
-​    # 定义一个url和函数的对应关系
-​    URL_LIST = [
-​        (&quot;/index/&quot;, index),
-​        (&quot;/home/&quot;, home),
-​    ]</p>
-<p>​ <br>
-​    def run_server(environ, start_response):
-​        start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ])  # 设置HTTP响应的状态码和头信息
-​        url = environ['PATH_INFO']  # 取到用户输入的url
-​        func = None  # 将要执行的函数
-​        for i in URL_LIST:
-​            if i[0] == url:
-​                func = i[1]  # 去之前定义好的url列表里找url应该执行的函数
-​                break
-​        if func:  # 如果能找到要执行的函数
-​            return func()  # 返回函数的执行结果
-​        else:
-​            return [bytes(&quot;404没有该页面&quot;, encoding=&quot;utf8&quot;), ]</p>
-<p>​ <br>
-​    if <strong>name</strong> == '<strong>main</strong>':
-​        httpd = make_server('', 8000, run_server)
-​        print(&quot;Serving HTTP on port 8000...&quot;)
-​        httpd.serve_forever()</p>
-<p>现在的数据是我们自己手写的，那可不可以从数据库中查询数据，来填充页面呢？</p>
-<p>使用pymysql连接数据库：</p>
-<p>​ <br>
-​    conn = pymysql.connect(host=&quot;127.0.0.1&quot;, port=3306, user=&quot;root&quot;, passwd=&quot;xxx&quot;, db=&quot;xxx&quot;, charset=&quot;utf8&quot;)
-​    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
-​    cursor.execute(&quot;select name, age, department_id from userinfo&quot;)
-​    user_list = cursor.fetchall()
-​    cursor.close()
-​    conn.close()</p>
-<p>创建一个测试的user表：</p>
-<p>​ <br>
-​    CREATE TABLE user(
-​      id int auto_increment PRIMARY KEY,
-​      name CHAR(10) NOT NULL,
-​      hobby CHAR(20) NOT NULL
-​    )engine=innodb DEFAULT charset=UTF8;</p>
-<p>模板的原理就是字符串替换，我们只要在HTML页面中遵循jinja2的语法规则写上，其内部就会按照指定的语法进行相应的替换，从而达到动态的返回内容。</p>
-<h2 id="django"><a href="#django" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Django</h2>
-<p><a href="https://www.djangoproject.com/download/" target="_blank" rel="noopener">Django官网下载页面</a></p>
-<h3 id="安装安装最新lts版"><a href="#安装安装最新lts版" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>安装（安装最新LTS版）：</h3>
-<p>​ <br>
-​    pip3 install django==1.11.9</p>
-<h3 id="创建一个django项目"><a href="#创建一个django项目" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>创建一个django项目：</h3>
-<p>下面的命令创建了一个名为&quot;mysite&quot;的Django 项目：</p>
-<p>​ <br>
-​    django-admin startproject mysite</p>
-<h3 id="目录介绍"><a href="#目录介绍" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>目录介绍：</h3>
-<p>​ <br>
-​    mysite/
-​    ├── manage.py  # 管理文件
-​    └── mysite  # 项目目录
-​        ├── <strong>init</strong>.py
-​        ├── settings.py  # 配置
-​        ├── urls.py  # 路由 --&gt; URL和函数的对应关系
-​        └── wsgi.py  # runserver命令就使用wsgiref模块做简单的web server</p>
-<h3 id="运行django项目"><a href="#运行django项目" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>运行Django项目：</h3>
-<p>​ <br>
-​    python manage.py runserver 127.0.0.1:8000</p>
-<h3 id="模板文件配置"><a href="#模板文件配置" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>模板文件配置：</h3>
-<p>​ <br>
-​    TEMPLATES = [
-​        {
-​            'BACKEND': 'django.template.backends.django.DjangoTemplates',
-​            'DIRS': [os.path.join(BASE_DIR, &quot;template&quot;)],  # template文件夹位置
-​            'APP_DIRS': True,
-​            'OPTIONS': {
-​                'context_processors': [
-​                    'django.template.context_processors.debug',
-​                    'django.template.context_processors.request',
-​                    'django.contrib.auth.context_processors.auth',
-​                    'django.contrib.messages.context_processors.messages',
-​                ],
-​            },
-​        },
-​    ]</p>
-<h3 id="静态文件配置"><a href="#静态文件配置" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>静态文件配置：</h3>
-<p>​ <br>
-​    STATIC_URL = '/static/'  # HTML中使用的静态文件夹前缀
-​    STATICFILES_DIRS = [
-​        os.path.join(BASE_DIR, &quot;static&quot;),  # 静态文件存放位置
-​    ]</p>
-<p><strong>看不明白？有图有真相：</strong></p>
-<p><strong><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180110190001816-1349372864.png" alt=""></strong></p>
-<p><strong>刚开始学习时可在配置文件中暂时禁用csrf中间件，方便表单提交测试。</strong></p>
-<p>​ <br>
-​    MIDDLEWARE = [
-​         'django.middleware.security.SecurityMiddleware',
-​        'django.contrib.sessions.middleware.SessionMiddleware',
-​        'django.middleware.common.CommonMiddleware',
-​        # 'django.middleware.csrf.CsrfViewMiddleware',
-​        'django.contrib.auth.middleware.AuthenticationMiddleware',
-​        'django.contrib.messages.middleware.MessageMiddleware',
-​        'django.middleware.clickjacking.XFrameOptionsMiddleware',
-​    ]</p>
-<h2 id="django基础必备三件套"><a href="#django基础必备三件套" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Django基础必备三件套：</h2>
-<p>​ <br>
-​    from django.shortcuts import HttpResponse, render, redirect</p>
-<h3 id="httpresponse"><a href="#httpresponse" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>HttpResponse</h3>
-<p>内部传入一个字符串参数，返回给浏览器。</p>
-<p>例如：</p>
-<p>​ <br>
-​    def index(request):
-​        # 业务逻辑代码
-​        return HttpResponse(&quot;OK&quot;)</p>
-<h3 id="render"><a href="#render" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>render</h3>
-<p>除request参数外还接受一个待渲染的模板文件和一个保存具体数据的字典参数。</p>
-<p>将数据填充进模板文件，最后把结果返回给浏览器。（类似于我们上面用到的jinja2）</p>
-<p>例如：</p>
-<p>​ <br>
-​    def index(request):
-​        # 业务逻辑代码
-​        return render(request, &quot;index.html&quot;, {&quot;name&quot;: &quot;alex&quot;, &quot;hobby&quot;: [&quot;烫头&quot;, &quot;泡吧&quot;]})</p>
-<h3 id="redirect"><a href="#redirect" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>redirect</h3>
-<p>接受一个URL参数，表示跳转到指定的URL。</p>
-<p>例如：</p>
-<p>​ <br>
-​    def index(request):
-​        # 业务逻辑代码
-​        return redirect(&quot;/home/&quot;)</p>
-<h2 id="课后练习"><a href="#课后练习" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>课后练习：</h2>
-<p>Django版登录</p>
-<h2 id="启动django报错"><a href="#启动django报错" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>启动Django报错：</h2>
-<p>Django 启动时报错 UnicodeEncodeError ...</p>
-<p>报这个错误通常是因为计算机名为中文，改成英文的计算机名重启下电脑就可以了。</p>
-            </div>
-
-            
-    
-    
-        <ul class="post-copyright">
-            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://weii.xyz/" class="p-author h-card" target="_blank" rel="noopener">weii</a></li>
-            
-                
-                
-                
-                
-                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/2018/03/22/cnblog_8621513/" target="_blank" rel="noopener">https://www.weii.xyz/2018/03/22/cnblog_8621513/</a></li>
-            
-            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
-            
-        </ul>
-    
-
-
-
-        </article>
-
-        
-
-        
-    <div class="updated-badge-container">
-        <span title="Updated @ 2019-11-20 14:11:45 CST" style="cursor:help">
-
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2019-11-20</text><text x="915" y="140" textLength="650" transform="scale(.1)">2019-11-20</text></g></svg>
-        </span></div>
-
-
-
-        
-    
-
-
-
-        
-
-
-        
-    
-    
-        <div class="related-posts">
-            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
-            <ul class="related-list">
-                
-                    <li class="related-item">
-                        <a href="/2018/03/21/cnblog_8616189/" class="related-link">Python连接MySQL数据库之pymysql模块使用</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/2018/03/14/cnblog_8565323/" class="related-link">Markdown 语法</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/2018/03/14/cnblog_8565153/" class="related-link">jQuery</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/2018/03/13/cnblog_8554604/" class="related-link">linux screen 常用命令</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/2018/03/12/cnblog_8550048/" class="related-link">前端基础之BOM和DOM</a>
-                    </li>
-                
-            </ul>
-        </div>
-    
-
-
-
-        
-    
-        <div class="post-tags">
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>博客园</a>
-                
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/%E6%90%AC%E5%AE%B6/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>搬家</a>
-                
-            
-                
-                
-                
-                
-                    
-                    <a href="/tags/cnblogs/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>cnblogs</a>
-                
-            
-        </div>
-    
-
-
-
-        
-
-
-        
-
-
-        
-    
-        
-        
-    
-    
-    
-    
-        <ul class="post-nav">
-            
-                <li class="post-nav-prev">
-                    <a href="/2018/06/02/test/" rel="prev">&lt; test</a>
-                </li>
-            
-            
-                <li class="post-nav-next">
-                    <a href="/2018/03/21/cnblog_8616189/" rel="next">Python连接MySQL数据库之pymysql模块使用 &gt;</a>
-                </li>
-            
-        </ul>
-    
-
-
-
-        
-
-
-    </div>
-</main>
-
-
-            
-    <div id="back-to-top" class="back-to-top">
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
-    </div>
-
-
-            
-    <footer id="footer" class="footer">
-        <div class="footer-inner">
-            <div class="site-info">©&nbsp;2014–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;weii</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div><div class="custom-footer"><div style='font-size:80%' id='jinrishici-sentence'>🤨<div/></div>
-
-            
-
-
-            
-        </div>
-    </footer>
-
-
-        </div>
-        
-
-        
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
-
-<script>
-    mediumZoom(document.querySelectorAll('div.post-body img'), {
-        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
-    })
-</script>
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
-
-
-
-
-
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
-    </body>
-</html>
+	<span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+		<span class=n>conn</span><span class=p>,</span> <span class=n>addr</span> <span class=o>=</span> <span class=n>sock</span><span class=o>.</span><span class=n>accept</span><span class=p>()</span>
+		<span class=n>data</span> <span class=o>=</span> <span class=n>conn</span><span class=o>.</span><span class=n>recv</span><span class=p>(</span><span class=mi>8096</span><span class=p>)</span>
+		<span class=n>conn</span><span class=o>.</span><span class=n>send</span><span class=p>(</span><span class=sa>b</span><span class=s2>&#34;HTTP/1.1 200 OK</span><span class=se>\r\n\r\n</span><span class=s2>&#34;</span><span class=p>)</span>
+		<span class=n>conn</span><span class=o>.</span><span class=n>send</span><span class=p>(</span><span class=sa>b</span><span class=s2>&#34;OK&#34;</span><span class=p>)</span>
+		<span class=n>conn</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</code></pre></td></tr></table></div></div></div><p>上述通过socket来实现了其本质。</p><p>对于真实开发中的python web程序来说，一般会分为两部分：服务器程序和应用程序。</p><p>服务器程序负责对socket服务器进行封装，并在请求到来时，对请求的各种数据进行整理。</p><p>应用程序则负责具体的逻辑处理。为了方便应用程序的开发，就出现了众多的Web框架，例如：Django、Flask、web.py
+等。不同的框架有不同的开发方式，但是无论如何，开发出的应用程序都要和服务器程序配合，才能为用户提供服务。</p><p>这样，服务器程序就需要为不同的框架提供不同的支持。这样混乱的局面无论对于服务器还是框架，都是不好的。对服务器来说，需要支持各种不同框架，对框架来说，只有支持它的服务器才能被开发出的应用使用。</p><p>这时候，标准化就变得尤为重要。我们可以设立一个标准，只要服务器程序支持这个标准，框架也支持这个标准，那么他们就可以配合使用。一旦标准确定，双方各自实现。这样，服务器可以支持更多支持标准的框架，框架也可以使用更多支持标准的服务器。</p><p>WSGI（Web Server Gateway
+Interface）就是一种规范，它定义了使用Python编写的web应用程序与web服务器程序之间的接口格式，实现web应用程序与web服务器程序间的解耦。</p><p>常用的WSGI服务器有uwsgi、Gunicorn。而Python标准库提供的独立WSGI服务器叫wsgiref，Django开发环境用的就是这个模块来做服务器。</p><p>​<br>​ from wsgiref.simple_server import make_server</p><p>​<br>​ def run_server(environ, start_response):
+​ start_response('200 OK', [('Content-Type', 'text/html;charset=utf8')]) # 设置HTTP响应的状态码和头信息
+​ return [bytes("<h1>Hello world!</h1>", encoding="utf8"),]</p><p>​<br>​ if <strong>name</strong> == '<strong>main</strong>':
+​ httpd = make_server('', 8000, run_server)
+​ print("Serving HTTP on port 8000...")
+​ httpd.serve_forever()</p><p>这样就结束了吗？ 如何让我们的Web服务根据用户请求的URL不同而返回不同的内容呢？</p><p>小事一桩，我们可以从请求相关数据里面拿到请求的URL，然后做一个判断。</p><p>​<br>​ from wsgiref.simple_server import make_server</p><p>​<br>​ def run_server(environ, start_response):
+​ start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ]) # 设置HTTP响应的状态码和头信息
+​ url = environ['PATH_INFO'] # 取到用户输入的url
+​ if url == "/index/":
+​ return [bytes("<h1>这是index页面</h1>", encoding="utf8"), ]
+​ elif url == "/home/":
+​ return [bytes("<h1>这是home页面</h1>", encoding="utf8"), ]
+​ else:
+​ return [bytes("404没有该页面", encoding="utf8"), ]</p><p>​<br>​ if <strong>name</strong> == '<strong>main</strong>':
+​ httpd = make_server('', 8000, run_server)
+​ print("Serving HTTP on port 8000...")
+​ httpd.serve_forever()</p><p>解决了不同URL返回不同内容的需求。 但是问题又来了，如果有很多很多页面怎么办？难道要挨个判断？ 当然不用，我们有更聪明的办法。</p><p>​<br>​ from wsgiref.simple_server import make_server</p><p>​<br>​ def index():
+​ return [bytes("<h1>这是index页面</h1>", encoding="utf8"), ]</p><p>​<br>​ def home():
+​ return [bytes("<h1>这是home页面</h1>", encoding="utf8"), ]</p><p>​<br>​ # 定义一个url和函数的对应关系
+​ URL_LIST = [
+​ ("/index/", index),
+​ ("/home/", home),
+​ ]</p><p>​<br>​ def run_server(environ, start_response):
+​ start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ]) # 设置HTTP响应的状态码和头信息
+​ url = environ['PATH_INFO'] # 取到用户输入的url
+​ func = None # 将要执行的函数
+​ for i in URL_LIST:
+​ if i[0] == url:
+​ func = i[1] # 去之前定义好的url列表里找url应该执行的函数
+​ break
+​ if func: # 如果能找到要执行的函数
+​ return func() # 返回函数的执行结果
+​ else:
+​ return [bytes("404没有该页面", encoding="utf8"), ]</p><p>​<br>​ if <strong>name</strong> == '<strong>main</strong>':
+​ httpd = make_server('', 8000, run_server)
+​ print("Serving HTTP on port 8000...")
+​ httpd.serve_forever()</p><p>完美解决了不同URL返回不同内容的问题。 但是我不想仅仅返回几个字符串，我想给浏览器返回完整的HTML内容，这又该怎么办呢？</p><p>没问题，不管是什么内容，最后都是转换成字节数据发送出去的。 我可以打开HTML文件，读取出它内部的二进制数据，然后发送给浏览器。</p><p>​<br>​ from wsgiref.simple_server import make_server</p><p>​<br>​ def index():
+​ with open("index.html", "rb") as f:
+​ data = f.read()
+​ return [data, ]</p><p>​<br>​ def home():
+​ with open("home.html", "rb") as f:
+​ data = f.read()
+​ return [data, ]</p><p>​<br>​ # 定义一个url和函数的对应关系
+​ URL_LIST = [
+​ ("/index/", index),
+​ ("/home/", home),
+​ ]</p><p>​<br>​ def run_server(environ, start_response):
+​ start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ]) # 设置HTTP响应的状态码和头信息
+​ url = environ['PATH_INFO'] # 取到用户输入的url
+​ func = None # 将要执行的函数
+​ for i in URL_LIST:
+​ if i[0] == url:
+​ func = i[1] # 去之前定义好的url列表里找url应该执行的函数
+​ break
+​ if func: # 如果能找到要执行的函数
+​ return func() # 返回函数的执行结果
+​ else:
+​ return [bytes("404没有该页面", encoding="utf8"), ]</p><p>​<br>​ if <strong>name</strong> == '<strong>main</strong>':
+​ httpd = make_server('', 8000, run_server)
+​ print("Serving HTTP on port 8000...")
+​ httpd.serve_forever()</p><p>这网页能够显示出来了，但是都是静态的啊。页面的内容都不会变化的，我想要的是动态网站。</p><p>没问题，我也有办法解决。我选择使用字符串替换来实现这个需求。</p><p>​<br>​ from wsgiref.simple_server import make_server</p><p>​<br>​ def index():
+​ with open("index.html", "rb") as f:
+​ data = f.read()
+​ import time
+​ time_str = str(time.time())
+​ data_str = str(data, encoding="utf8")
+​ data_str = data_str.replace("@@a@@", time_str)
+​ return [bytes(data_str, encoding="utf8"), ]</p><p>​<br>​ def home():
+​ with open("home.html", "rb") as f:
+​ data = f.read()
+​ return [data, ]</p><p>​<br>​ # 定义一个url和函数的对应关系
+​ URL_LIST = [
+​ ("/index/", index),
+​ ("/home/", home),
+​ ]</p><p>​<br>​ def run_server(environ, start_response):
+​ start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ]) # 设置HTTP响应的状态码和头信息
+​ url = environ['PATH_INFO'] # 取到用户输入的url
+​ func = None # 将要执行的函数
+​ for i in URL_LIST:
+​ if i[0] == url:
+​ func = i[1] # 去之前定义好的url列表里找url应该执行的函数
+​ break
+​ if func: # 如果能找到要执行的函数
+​ return func() # 返回函数的执行结果
+​ else:
+​ return [bytes("404没有该页面", encoding="utf8"), ]</p><p>​<br>​ if <strong>name</strong> == '<strong>main</strong>':
+​ httpd = make_server('', 8000, run_server)
+​ print("Serving HTTP on port 8000...")
+​ httpd.serve_forever()</p><p>这是一个简单的动态，我完全可以从数据库中查询数据，然后去替换我html中的对应内容，然后再发送给浏览器完成渲染。 这个过程就相当于HTML模板渲染数据。
+本质上就是HTML内容中利用一些特殊的符号来替换要展示的数据。 我这里用的特殊符号是我定义的，其实模板渲染有个现成的工具： <code>jinja2</code></p><p>下载jinja2:</p><p>​<br>​ pip install jinja2</p><p><img src=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif alt><img src=https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif alt></p><p>​<br>​<!doctype html>
+​<html lang=zh-cn>​<head>​<meta charset=utf-8>​<meta http-equiv=x-ua-compatible content="IE=edge">​<meta name=viewport content="width=device-width,initial-scale=1">​<title>Title</title>​</head>​<body>​<h1>姓名：{{name}}</h1>​<h1>爱好：</h1>​<ul>​ {% for hobby in hobby_list %}
+​<li>{{hobby}}</li>​ {% endfor %}
+​</ul>​</body>​</html></p><p>index2.html文件</p><p>使用jinja2渲染index2.html文件：</p><p>​<br>​ from wsgiref.simple_server import make_server
+​ from jinja2 import Template</p><p>​<br>​ def index():
+​ with open("index2.html", "r") as f:
+​ data = f.read()
+​ template = Template(data) # 生成模板文件
+​ ret = template.render({"name": "Alex", "hobby_list": ["烫头", "泡吧"]}) # 把数据填充到模板里面
+​ return [bytes(ret, encoding="utf8"), ]</p><p>​<br>​ def home():
+​ with open("home.html", "rb") as f:
+​ data = f.read()
+​ return [data, ]</p><p>​<br>​ # 定义一个url和函数的对应关系
+​ URL_LIST = [
+​ ("/index/", index),
+​ ("/home/", home),
+​ ]</p><p>​<br>​ def run_server(environ, start_response):
+​ start_response('200 OK', [('Content-Type', 'text/html;charset=utf8'), ]) # 设置HTTP响应的状态码和头信息
+​ url = environ['PATH_INFO'] # 取到用户输入的url
+​ func = None # 将要执行的函数
+​ for i in URL_LIST:
+​ if i[0] == url:
+​ func = i[1] # 去之前定义好的url列表里找url应该执行的函数
+​ break
+​ if func: # 如果能找到要执行的函数
+​ return func() # 返回函数的执行结果
+​ else:
+​ return [bytes("404没有该页面", encoding="utf8"), ]</p><p>​<br>​ if <strong>name</strong> == '<strong>main</strong>':
+​ httpd = make_server('', 8000, run_server)
+​ print("Serving HTTP on port 8000...")
+​ httpd.serve_forever()</p><p>现在的数据是我们自己手写的，那可不可以从数据库中查询数据，来填充页面呢？</p><p>使用pymysql连接数据库：</p><p>​<br>​ conn = pymysql.connect(host="127.0.0.1", port=3306, user="root", passwd="xxx", db="xxx", charset="utf8")
+​ cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+​ cursor.execute("select name, age, department_id from userinfo")
+​ user_list = cursor.fetchall()
+​ cursor.close()
+​ conn.close()</p><p>创建一个测试的user表：</p><p>​<br>​ CREATE TABLE user(
+​ id int auto_increment PRIMARY KEY,
+​ name CHAR(10) NOT NULL,
+​ hobby CHAR(20) NOT NULL
+​ )engine=innodb DEFAULT charset=UTF8;</p><p>模板的原理就是字符串替换，我们只要在HTML页面中遵循jinja2的语法规则写上，其内部就会按照指定的语法进行相应的替换，从而达到动态的返回内容。</p><h2 id=django><a href=#django class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Django</h2><p><a href=https://www.djangoproject.com/download/ target=_blank rel=noopener>Django官网下载页面</a></p><h3 id=安装安装最新lts版><a href=#安装安装最新lts版 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>安装（安装最新LTS版）：</h3><p>​<br>​ pip3 install django==1.11.9</p><h3 id=创建一个django项目><a href=#创建一个django项目 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>创建一个django项目：</h3><p>下面的命令创建了一个名为"mysite"的Django 项目：</p><p>​<br>​ django-admin startproject mysite</p><h3 id=目录介绍><a href=#目录介绍 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>目录介绍：</h3><p>​<br>​ mysite/
+​ ├── manage.py # 管理文件
+​ └── mysite # 项目目录
+​ ├── <strong>init</strong>.py
+​ ├── settings.py # 配置
+​ ├── urls.py # 路由 --> URL和函数的对应关系
+​ └── wsgi.py # runserver命令就使用wsgiref模块做简单的web server</p><h3 id=运行django项目><a href=#运行django项目 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>运行Django项目：</h3><p>​<br>​ python manage.py runserver 127.0.0.1:8000</p><h3 id=模板文件配置><a href=#模板文件配置 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>模板文件配置：</h3><p>​<br>​ TEMPLATES = [
+​ {
+​ 'BACKEND': 'django.template.backends.django.DjangoTemplates',
+​ 'DIRS': [os.path.join(BASE_DIR, "template")], # template文件夹位置
+​ 'APP_DIRS': True,
+​ 'OPTIONS': {
+​ 'context_processors': [
+​ 'django.template.context_processors.debug',
+​ 'django.template.context_processors.request',
+​ 'django.contrib.auth.context_processors.auth',
+​ 'django.contrib.messages.context_processors.messages',
+​ ],
+​ },
+​ },
+​ ]</p><h3 id=静态文件配置><a href=#静态文件配置 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>静态文件配置：</h3><p>​<br>​ STATIC_URL = '/static/' # HTML中使用的静态文件夹前缀
+​ STATICFILES_DIRS = [
+​ os.path.join(BASE_DIR, "static"), # 静态文件存放位置
+​ ]</p><p><strong>看不明白？有图有真相：</strong></p><p><strong><img src=https://images2017.cnblogs.com/blog/867021/201801/867021-20180110190001816-1349372864.png alt></strong></p><p><strong>刚开始学习时可在配置文件中暂时禁用csrf中间件，方便表单提交测试。</strong></p><p>​<br>​ MIDDLEWARE = [
+​ 'django.middleware.security.SecurityMiddleware',
+​ 'django.contrib.sessions.middleware.SessionMiddleware',
+​ 'django.middleware.common.CommonMiddleware',
+​ # 'django.middleware.csrf.CsrfViewMiddleware',
+​ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+​ 'django.contrib.messages.middleware.MessageMiddleware',
+​ 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+​ ]</p><h2 id=django基础必备三件套><a href=#django基础必备三件套 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Django基础必备三件套：</h2><p>​<br>​ from django.shortcuts import HttpResponse, render, redirect</p><h3 id=httpresponse><a href=#httpresponse class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>HttpResponse</h3><p>内部传入一个字符串参数，返回给浏览器。</p><p>例如：</p><p>​<br>​ def index(request):
+​ # 业务逻辑代码
+​ return HttpResponse("OK")</p><h3 id=render><a href=#render class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>render</h3><p>除request参数外还接受一个待渲染的模板文件和一个保存具体数据的字典参数。</p><p>将数据填充进模板文件，最后把结果返回给浏览器。（类似于我们上面用到的jinja2）</p><p>例如：</p><p>​<br>​ def index(request):
+​ # 业务逻辑代码
+​ return render(request, "index.html", {"name": "alex", "hobby": ["烫头", "泡吧"]})</p><h3 id=redirect><a href=#redirect class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>redirect</h3><p>接受一个URL参数，表示跳转到指定的URL。</p><p>例如：</p><p>​<br>​ def index(request):
+​ # 业务逻辑代码
+​ return redirect("/home/")</p><h2 id=课后练习><a href=#课后练习 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>课后练习：</h2><p>Django版登录</p><h2 id=启动django报错><a href=#启动django报错 class=anchor-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>启动Django报错：</h2><p>Django 启动时报错 UnicodeEncodeError ...</p><p>报这个错误通常是因为计算机名为中文，改成英文的计算机名重启下电脑就可以了。</p></div><ul class=post-copyright><li class="copyright-item author"><span class=copyright-item-text>作者</span>：<a href=https://weii.xyz/ class="p-author h-card" target=_blank rel=noopener>weii</a></li><li class="copyright-item link"><span class=copyright-item-text>链接</span>：<a href=/2018/03/22/cnblog_8621513/ target=_blank rel=noopener>https://weii.xyz/2018/03/22/cnblog_8621513/</a></li><li class="copyright-item license"><span class=copyright-item-text>许可</span>：<a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh target=_blank rel=noopener>CC BY-NC-SA 4.0</a></li></ul></article><div class=updated-badge-container><span title="Updated @ 2019-06-10 19:42:36 CST" style=cursor:help><svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2019-06-10</text><text x="915" y="140" textLength="650" transform="scale(.1)">2019-06-10</text></g></svg></span></div><div class=related-posts><h2 class=related-title>相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6.0-12-5.4-12-12v-92h-92c-6.6.0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6.0 12 5.4 12 12v92h92c6.6.0 12 5.4 12 12v56z"/></svg></h2><ul class=related-list><li class=related-item><a href=/2018/03/21/cnblog_8616189/ class=related-link>Python连接MySQL数据库之pymysql模块使用</a></li><li class=related-item><a href=/2018/03/14/cnblog_8565323/ class=related-link>Markdown 语法</a></li><li class=related-item><a href=/2018/03/14/cnblog_8565153/ class=related-link>jQuery</a></li><li class=related-item><a href=/2018/03/13/cnblog_8554604/ class=related-link>linux screen 常用命令</a></li><li class=related-item><a href=/2018/03/12/cnblog_8550048/ class=related-link>前端基础之BOM和DOM</a></li></ul></div><div class=post-tags><a href=/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>博客园</a>
+<a href=/tags/%E6%90%AC%E5%AE%B6/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>搬家</a>
+<a href=/tags/cnblogs/ rel=tag class=post-tags-link><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49.0 48 0h204.118a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882.0L14.059 286.059A48 48 0 010 252.118zM112 64c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>cnblogs</a></div><ul class=post-nav><li class=post-nav-prev><a href=/2018/06/02/test/ rel=prev>&lt; test</a></li><li class=post-nav-next><a href=/2018/03/21/cnblog_8616189/ rel=next>Python连接MySQL数据库之pymysql模块使用 ></a></li></ul></div></main><div id=back-to-top class=back-to-top><a href=#><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a></div><footer id=footer class=footer><div class=footer-inner><div class=site-info>©&nbsp;2014–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3.0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;weii</div><div class=powered-by>Powered by <a href=https://github.com/gohugoio/hugo target=_blank rel=noopener>Hugo</a> | Theme is <a href=https://github.com/reuixiy/hugo-theme-meme target=_blank rel=noopener>MemE</a></div><div class=site-copyright><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh target=_blank rel=noopener>CC BY-NC-SA 4.0</a></div><div class=custom-footer><div style=font-size:80% id=jinrishici-sentence>🤨<div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js></script>
+<script>mediumZoom(document.querySelectorAll('div.post-body img'),{background:'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'})</script><script src=https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js type=module defer></script><div class=app-refresh id=app-refresh><div class=app-refresh-wrap onclick=location.reload()><label>已更新最新版本</label>
+<span>点击刷新</span></div></div><script>'serviceWorker'in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener('controllerchange',function(){showNotification()}),window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js')}));function showNotification(){document.querySelector('meta[name=theme-color]').content='#000',document.getElementById('app-refresh').className+=' app-refresh-show'}</script><script src=https://sdk.jinrishici.com/v2/browser/jinrishici.js></script></body></html>

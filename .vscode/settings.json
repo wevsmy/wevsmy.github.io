@@ -1,0 +1,6 @@
+{
+    "i18n-ally.localesPaths": [
+        "themes/hugo-notice/i18n",
+        "themes/meme/i18n"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "budparr.language-hugo-vscode",
+    "rusnasonov.vscode-hugo",
+    "tamasfe.even-better-toml",
+    "bradlc.vscode-tailwindcss",
+    "michelemelluso.code-beautifier"
+  ]
+}

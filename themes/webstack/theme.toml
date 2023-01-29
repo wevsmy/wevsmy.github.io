@@ -1,0 +1,28 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "webstack"
+license = "MIT"
+licenselink = "Link to theme's license"
+description = "Theme description"
+homepage = "Website of your theme"
+tags = ["blog", "company"]
+features = ["some", "awesome", "features"]
+min_version = "0.86.0"
+
+# If the theme has multiple authors
+# authors = [
+#   {name = "Name of author", homepage = "Website of author"},
+#   {name = "Name of author", homepage = "Website of author"}
+# ]
+
+# If the theme has a single author
+[author]
+    name = "wilson.wu"
+    homepage = "https://weii.ink/"
+
+# If porting an existing theme
+# [original]
+#     author = "Name of original author"
+#     homepage = "His/Her website"
+#     repo = "Link to source code of original theme"

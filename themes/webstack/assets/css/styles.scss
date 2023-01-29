@@ -1,0 +1,158 @@
+@import "node_modules/tailwindcss/base";
+@import "node_modules/tailwindcss/components";
+@import "node_modules/tailwindcss/utilities";
+
+.main {
+    padding-top: 4em !important;
+
+    .main-inner {}
+
+    .webstack {
+        @apply flex justify-between;
+
+        >.sidebar-menu {
+            @apply w-[9rem];
+            @apply fixed;
+            @apply mr-2;
+
+            @apply border;
+            @apply rounded-xl shadow-md;
+
+            @apply cursor-pointer;
+
+            >.sidebar-menu-inner {
+                @apply text-sm;
+
+                >.webstack-menu {
+                    @apply px-5 py-3;
+
+                    .menu-checkbox {
+                        @apply hidden;
+
+                        &:checked {
+                            ~ul {
+                                @apply hidden;
+                            }
+
+                            ~.exp::after {
+                                content: '⇨';
+                            }
+                        }
+
+                        ~.exp::after {
+                            content: '⇩';
+                        }
+
+                        a {
+                            @apply ml-10;
+                        }
+                    }
+
+                    >li {
+                        .icon {
+                            @apply w-4;
+                            @apply mr-1;
+                        }
+
+                        >ul {
+                            >li {
+                                @apply pl-6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        >.main-content {
+            @apply pl-[10rem];
+        }
+    }
+}
+
+.webstack-card-container {
+    @apply grid grid-cols-1 gap-4;
+
+    @screen sm {
+        @apply grid-cols-1;
+    }
+
+    @screen md {
+        @apply grid-cols-2;
+    }
+
+    @screen lg {
+        @apply grid-cols-2;
+    }
+
+    @screen xl {
+        @apply grid-cols-3;
+    }
+
+    @screen 2xl {
+        @apply grid-cols-3;
+    }
+
+}
+
+.webstack-title {
+    @apply inline-block;
+    @apply my-3 py-3;
+    @apply font-medium text-xl;
+
+    a {
+        @apply my-3 py-3;
+        @apply font-medium text-xl;
+    }
+}
+
+.webstack-card {
+    @apply border;
+    @apply rounded-xl shadow-md;
+    @apply w-full p-6 max-w-sm mx-auto;
+    @apply flex items-center space-x-4;
+    @apply cursor-pointer;
+
+    &:hover {
+        @apply animate-pulse;
+        @apply shadow-xl;
+        @apply -mt-1 mb-1;
+    }
+
+    >.logo {
+        @apply flex-shrink-0;
+
+        >img {
+            @apply h-12 w-12;
+        }
+    }
+
+    >.content {
+        >.title {
+            @apply text-xl font-medium;
+            @apply line-clamp-1;
+        }
+
+        >.description {
+            @apply text-base;
+            @apply line-clamp-1;
+        }
+    }
+}
+
+.webstack-tooltip {
+    visibility: hidden;
+    @apply text-center;
+
+    >.arrow {}
+
+    >.inner {
+        @apply w-full;
+        @apply rounded-sm;
+        @apply line-clamp-1;
+    }
+}
+
+.webstack-card:hover~.webstack-tooltip .inner {
+    visibility: visible;
+}

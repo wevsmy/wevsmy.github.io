@@ -1,0 +1,195 @@
+<!--
+ * @Author: wilson.wu
+ * @Date: 2022-08-31 16:44:32
+ * @LastEditors: wilson.wu
+ * @LastEditTime: 2022-09-05 15:16:17
+ * @FilePath: \weii-blog-source\themes\webstack\layouts\partials\pages\webstack.html
+ * @Description: 
+ * Contact: wevsmy@gamil.com
+ * 
+ * Copyright (c) 2022 by wilson.wu, All Rights Reserved. 
+-->
+
+
+<!-- CSS -->
+{{ $scss := resources.Match "css/**.scss" | resources.Concat "css/compiled.css" | toCSS }}
+{{ $css := resources.Match "css/**.css" | resources.Concat "css/styles.css" }}
+{{ $bundle := slice ($scss) ($css) | resources.Concat "css/webstack.bundle.css" | postCSS (dict "config"
+"./assets/css/postcss.config.js") }}
+
+{{- $style := $bundle | resources.Minify -}}
+{{- if .Site.Params.enableFingerprint -}}
+{{- $style = $style | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{- if .Site.Params.enableSRI }}
+    integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" {{- end -}} />
+{{- else -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{- end -}}
+
+<!-- HTML -->
+<main class="main list" id="main">
+    <div class="main-inner">
+        {{ if .Site.Data.webstack }}
+        <div class="content webstack">
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-inner">
+                    <header></header>
+                    <ul class="webstack-menu">
+                        {{ range .Site.Data.webstack }}
+                        {{ if .list }}
+                        <li>
+                            <input class="menu-checkbox" id="#{{ md5 .taxonomy }}" type="checkbox" name="" value="">
+                            <span class="icon">
+                                {{ .icon | safeHTML }}
+                            </span>
+                            <label for="#{{ md5 .taxonomy }}">
+                                {{ .taxonomy | safeHTML }}
+                            </label>
+                            <label class="exp" for="#{{ md5 .taxonomy }}">
+                            </label>
+                            <ul>
+                                {{ range .list }}
+                                <li>
+                                    <a href="#{{ md5 .term }}" class="smooth">
+                                        {{ .term | safeHTML }}
+                                    </a>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </li>
+                        {{ else }}
+                        <li>
+                            <span class="icon">
+                                {{ .icon | safeHTML }}
+                            </span>
+                            <a href="#{{ md5 .taxonomy }}" class="smooth">
+                                <i class="fa {{ .icon }} fa-fw"></i>
+                                <span class="title">{{ .taxonomy }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <nav class="navbar">
+                </nav>
+                <div class="sites-list">
+                    {{ range .Site.Data.webstack }}
+                    {{ if .list }}
+                    {{ range .list}}
+                    <h4 class="webstack-title">
+                        <a href="#{{ md5 .term }}" class="icon" id="{{ md5 .term }}">
+                            {{- partial "utils/icon.html" (dict "$" $ "name" "tag" "class" "") -}}
+                        </a>
+                        {{ .term }}
+                    </h4>
+                    <div class="webstack-card-container">
+                        {{ range .links }}
+                        <a class="webstack-a" href="{{ .url }}" target="_blank">
+                            <div class="webstack-card">
+                                <div class="logo">
+                                    {{ $favicon := resources.Get "images/favicon.png" }}
+                                    {{ if .Site.IsServer }}
+                                    {{ $favicon = $favicon.RelPermalink }}
+                                    {{ else }}
+                                    {{ $favicon = $favicon.Permalink }}
+                                    {{ end }}
+                                    <img class="lazy" src="{{ $favicon }}" data-src="{{ .logo }}"
+                                        onerror="javascript:this.src='{{ $favicon }}'" alt="{{ .title }}">
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        {{ .title | safeHTML }}
+                                    </div>
+                                    <p class="description">
+                                        {{ .description | safeHTML }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="webstack-tooltip ">
+                                <div class="arrow"></div>
+                                <div class="inner">
+                                    {{ .url | safeHTML }}
+                                </div>
+                            </div>
+                        </a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    {{ else }}
+                    <h4 class="webstack-title">
+                        <a href="#{{ md5 .taxonomy }}" class="icon" id="{{ md5 .taxonomy }}">
+                            {{- partial "utils/icon.html" (dict "$" $ "name" "tag" "class" "") -}}
+                        </a>
+                        {{ .taxonomy | safeHTML }}
+                    </h4>
+                    <div class="webstack-card-container">
+                        {{ range .links }}
+                        <a class="webstack-a" href="{{ .url }}" target="_blank">
+                            <div class="webstack-card">
+                                <div class="logo">
+                                    {{ $favicon := resources.Get "images/favicon.png" }}
+                                    {{ if .Site.IsServer }}
+                                    {{ $favicon = $favicon.RelPermalink }}
+                                    {{ else }}
+                                    {{ $favicon = $favicon.Permalink }}
+                                    {{ end }}
+                                    <img class="lazy" src="{{ $favicon }}" data-src="{{ .logo }}"
+                                        onerror="javascript:this.src='{{ $favicon }}'" alt="{{ .title }}">
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        {{ .title | safeHTML }}
+                                    </div>
+                                    <p class="description">
+                                        {{ .description | safeHTML }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="webstack-tooltip ">
+                                <div class="arrow"></div>
+                                <div class="inner">
+                                    {{ .url | safeHTML }}
+                                </div>
+                            </div>
+                        </a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</main>
+
+<!-- js -->
+{{/*
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script> */}}
+{{- $scripts := slice "js/jquery.min.js" -}}
+{{- $scripts = union $scripts (slice "js/lazyload.min.js") -}}
+
+{{- $processedScripts := slice ("" | resources.FromString "dummy.js") -}}
+{{- range $scripts -}}
+{{- if findRE `^https?:` . -}}
+<script src="{{ . }}" defer></script>
+{{- else -}}
+{{- $path := printf "%s/%s" $.Lang (. | replaceRE `\.js$` "-rendered.js") -}}
+{{- $processedScripts = union $processedScripts (slice (resources.Get . | resources.ExecuteAsTemplate $path $)) -}}
+{{- end -}}
+{{- end -}}
+
+{{- $path := (strings.TrimPrefix "/" (printf `%s/js/webstack.js` .Site.LanguagePrefix)) -}}
+
+{{- $script := $processedScripts | resources.Concat $path | resources.Minify -}}
+{{- if .Site.Params.enableFingerprint -}}
+{{- $script = $script | resources.Fingerprint -}}
+<script src="{{ $script.RelPermalink }}" {{- if .Site.Params.enableSRI }} integrity="{{ $script.Data.Integrity }}"
+    crossorigin="anonymous" {{- end -}}></script>
+{{- else -}}
+<script src="{{ $script.RelPermalink }}"></script>
+{{- end }}

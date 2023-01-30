@@ -1,0 +1,1137 @@
+<!doctype html><html lang="zh-cn"><head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"><meta charset="utf-8"><meta name="generator" content="Hugo 0.110.0"><meta name="theme-color" content="#fff"><meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="format-detection" content="telephone=no, date=no, address=no, email=no"><meta http-equiv="cache-control" content="no-transform"><meta http-equiv="cache-control" content="no-siteapp"><title>jQuery | Weii's Blog</title><link rel="stylesheet" href="/css/meme.min.2fd3d85942510532b21e52d0e3e94a35d4df20c5c990d9dbcf74076e4a7d579b.css"><script src="/js/meme.min.e46abe484398824efc70edec3126437916974df592d7c395b44f8f60e0f57e9d.js"></script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload='this.media="all"'><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript><meta name="author" content="weii"><meta name="description" content="这是👉jQuery👈的摘要……"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4"><link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Weii's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Weii's Blog"><meta name="msapplication-starturl" content="../../../../"><meta name="msapplication-TileColor" content="#fff"><meta name="msapplication-TileImage" content="../../../../icons/mstile-150x150.png"><link rel="manifest" href="/manifest.json"><link rel="canonical" href="https://weii.ink/2018/03/14/cnblog_8565153/"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","datePublished":"2018-03-14T01:40:00+00:00","dateModified":"2023-01-29T15:59:40+08:00","url":"https://weii.ink/2018/03/14/cnblog_8565153/","headline":"jQuery","description":"这是👉jQuery👈的摘要……","inLanguage":"zh-CN","articleSection":"posts","wordCount":10640,"image":["https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif","https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif"],"author":{"@type":"Person","description":"Viva La Vida","email":"wevsmy@gmail.com","image":"https://weii.ink/icons/apple-touch-icon.png","url":"https://weii.ink/","name":"weii"},"license":"[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)","publisher":{"@type":"Organization","name":"Weii's Blog","logo":{"@type":"ImageObject","url":"https://weii.ink/icons/apple-touch-icon.png"},"url":"https://weii.ink/"},"mainEntityOfPage":{"@type":"WebSite","@id":"https://weii.ink/"}}</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@wevsmy"><meta name="twitter:creator" content="@wevsmy"><meta property="og:title" content="jQuery"><meta property="og:description" content="这是👉jQuery👈的摘要……"><meta property="og:url" content="https://weii.ink/2018/03/14/cnblog_8565153/"><meta property="og:site_name" content="Weii's Blog"><meta property="og:locale" content="zh"><meta property="og:image" content="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif"><meta property="og:type" content="article"><meta property="article:published_time" content="2018-03-14T01:40:00+00:00"><meta property="article:modified_time" content="2023-01-29T15:59:40+08:00"><meta property="article:section" content="posts"><meta name="google-site-verification" content="LY-yWUgw7WEmNuBW7lLOj8jSiKZEVgOCmsisfGWtZCg"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=UA-146915278-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-146915278-1")</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-6222665322795328",enable_page_level_ads:!0})</script></head><body><div class="container"><header class="header"><div class="header-wrapper"><div class="header-inner single"><div class="site-brand"><a href="/" class="brand">Weii's Blog</a></div><nav class="nav"><ul class="menu" id="menu"><li class="menu-item"><a href="/"><span class="icon home">🛖</span><span class="menu-item-name">首页</span></a></li><li class="menu-item"><a href="/posts/"><span class="icon archive">📝</span><span class="menu-item-name">文章</span></a></li><li class="menu-item"><a href="/tags/"><span class="icon tags">🔖</span><span class="menu-item-name">标签</span></a></li><li class="menu-item"><a href="/nav/"><span class="icon webstack">🚀</span><span class="menu-item-name">导航</span></a></li><li class="menu-item"><a href="/about/"><span class="icon user-circle">🙈</span><span class="menu-item-name">关于</span></a></li><li class="menu-item"><a id="theme-switcher" href="#"><span class="icon theme-icon-light">🌚</span><span class="icon theme-icon-dark">🌝</span></a></li></ul></nav></div></div><input type="checkbox" id="nav-toggle" aria-hidden="true"><label for="nav-toggle" class="nav-toggle"></label><label for="nav-toggle" class="nav-curtain"></label></header><main class="main single" id="main"><div class="main-inner"><article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true"><h1 class="post-title p-name">jQuery</h1><div class="post-meta"><time datetime="2018-03-14T01:40:00+00:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2018.3.14</time> <time datetime="2023-01-29T15:59:40+08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M4e2 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 4e2H54a6 6 0 1-6-6V160h352v298a6 6 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2023.1.29</time> <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-link p-category">笔记</a>/<a href="/categories/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" class="category-link p-category">博客园</a></span> <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;10640</span> <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;22&nbsp;分钟</span></div><div class="post-body e-content"><h1 id="这是jquery的摘要20180314cnblog_8565153"><a href="#这是jquery的摘要20180314cnblog_8565153" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="/2018/03/14/cnblog_8565153/">这是👉jQuery👈的摘要</a></h1><h1 id="jquery"><a href="#jquery" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery</h1><h2 id="jquery介绍"><a href="#jquery介绍" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery介绍</h2><ol><li>jQuery是一个轻量级的、兼容多浏览器的JavaScript库。</li><li>jQuery使用户能够更方便地处理HTML Document、Events、实现动画效果、方便地进行Ajax交互，能够极大地简化JavaScript编程。它的宗旨就是："Write less, do more."</li></ol><h2 id="jquery的优势"><a href="#jquery的优势" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery的优势</h2><ol><li>一款轻量级的JS框架。jQuery核心js文件才几十kb，不会影响页面加载速度。</li><li>丰富的DOM选择器,jQuery的选择器用起来很方便，比如要找到某个DOM对象的相邻元素，JS可能要写好几行代码，而jQuery一行代码就搞定了，再比如要将一个表格的隔行变色，jQuery也是一行代码搞定。</li><li>链式表达式。jQuery的链式操作可以把多个操作写在一行代码里，更加简洁。</li><li>事件、样式、动画支持。jQuery还简化了js操作css的代码，并且代码的可读性也比js要强。</li><li>Ajax操作支持。jQuery简化了AJAX操作，后端只需返回一个JSON格式的字符串就能完成与前端的通信。</li><li>跨浏览器兼容。jQuery基本兼容了现在主流的浏览器，不用再为浏览器的兼容问题而伤透脑筋。</li><li>插件扩展开发。jQuery有着丰富的第三方的插件，例如：树形菜单、日期控件、图片切换插件、弹出窗口等等基本前端页面上的组件都有对应插件，并且用jQuery插件做出来的效果很炫，并且可以根据自己需要去改写和封装插件，简单实用。</li></ol><h2 id="jquery内容"><a href="#jquery内容" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery内容：</h2><ol><li>选择器</li><li>筛选器</li><li>样式操作</li><li>文本操作</li><li>属性操作</li><li>文档处理</li><li>事件</li><li>动画效果</li><li>插件</li><li>each、data、Ajax</li></ol><p>下载链接：<a href="https://jquery.com/" target="_blank" rel="noopener">jQuery官网</a></p><h2 id="jquery版本"><a href="#jquery版本" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery版本</h2><ul><li>1.x：兼容IE678,使用最为广泛的，官方只做BUG维护，功能不再新增。因此一般项目来说，使用1.x版本就可以了，最终版本：1.12.4 (2016年5月20日)</li><li>2.x：不兼容IE678，很少有人使用，官方只做BUG维护，功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，最终版本：2.2.4 (2016年5月20日)</li><li>3.x：不兼容IE678，只支持最新的浏览器。需要注意的是很多老的jQuery插件不支持3.x版。目前该版本是官方主要更新维护的版本。</li></ul><p><em>维护IE678是一件让人头疼的事情，一般我们都会额外加载一个CSS和JS单独处理。值得庆幸的是使用这些浏览器的人也逐步减少，PC端用户已经逐步被移动端用户所取代，如果没有特殊要求的话，一般都会选择放弃对678的支持。</em></p><h2 id="jquery对象"><a href="#jquery对象" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery对象</h2><p><strong>jQuery对象</strong> 就是通过jQuery包装DOM对象后产生的对象。 <strong>jQuery对象</strong> 是 jQuery独有的。如果一个对象是 <strong>jQuery对象</strong> ，那么它就可以使用 <strong>jQuery</strong> 里的方法：例如$("#i1").html()。</p><p><code>$("#i1").html()</code>的意思是：获取id值为 <code>i1</code>的元素的html代码。其中 <code>html()</code>是jQuery里的方法。</p><p>相当于： <code>document.getElementById("i1").innerHTML;</code></p><p>虽然 <code>jQuery对象</code>是包装 <code>DOM对象</code>后产生的，但是 <code>jQuery对象</code>无法使用 <code>DOM对象</code>的任何方法，同理 <code>DOM对象</code>也没不能使用 <code>jQuery</code>里的方法。</p><p>一个约定，我们在声明一个jQuery对象变量的时候在变量名前面加上$：</p><pre><code>var $variable = jQuery对像
+var variable = DOM对象
+$variable[0]//jQuery对象转成DOM对象
+</code></pre><p>拿上面那个例子举例，jQuery对象和DOM对象的使用：</p><pre><code>$(&quot;#i1&quot;).html();//jQuery对象可以使用jQuery的方法
+$(&quot;#i1&quot;)[0].innerHTML;// DOM对象使用DOM的方法
+</code></pre><h2 id="jquery基础语法"><a href="#jquery基础语法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>jQuery基础语法</h2><p><code>$(selector).action()</code></p><h2 id="查找标签"><a href="#查找标签" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>查找标签</h2><h3 id="选择器"><a href="#选择器" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>选择器</h3><p><strong>id选择器：</strong></p><pre><code>$(&quot;#id&quot;)
+</code></pre><p><strong>标签选择器：</strong></p><pre><code>$(&quot;tagName&quot;)
+</code></pre><p><strong>class选择器：</strong></p><pre><code>$(&quot;.className&quot;)
+</code></pre><p><strong>配合使用：</strong></p><pre><code>$(&quot;div.c1&quot;)   // 找到有c1 class类的div标签
+</code></pre><p><strong>所有元素选择器：</strong></p><pre><code>$(&quot;*&quot;)
+</code></pre><p><strong>组合选择器：</strong></p><pre><code>$(&quot;#id, .className, tagName&quot;)
+</code></pre><p><strong>层级选择器：</strong></p><p><em>x和y可以为任意选择器</em></p><pre><code>$(&quot;x y&quot;); // x的所有后代y（子子孙孙）
+$(&quot;x &gt; y&quot;);// x的所有儿子y（儿子）
+$(&quot;x + y&quot;)// 找到所有紧挨在x后面的y
+$(&quot;x ~ y&quot;)// x之后所有的兄弟y
+</code></pre><p><strong>基本筛选器：</strong></p><pre><code>:first  // 第一个
+:last // 最后一个
+:eq(index)// 索引等于index的那个元素
+:even // 匹配所有索引值为偶数的元素，从 0 开始计数
+:odd // 匹配所有索引值为奇数的元素，从 0 开始计数
+:gt(index)// 匹配所有大于给定索引值的元素
+:lt(index)// 匹配所有小于给定索引值的元素
+:not(元素选择器)// 移除所有满足not条件的标签
+:has(元素选择器)// 选取所有包含一个或多个标签在其内的标签(指的是从后代元素找)
+</code></pre><p><strong>例子：</strong></p><pre><code>$(&quot;div:has(h1)&quot;) // 找到所有后代中有h1标签的div标签
+$(&quot;div:has(.c1)&quot;)// 找到所有后代中有c1样式类的div标签
+$(&quot;li:not(.c1)&quot;)// 找到所有不包含c1样式类的li标签
+$(&quot;li:not(:has(a))&quot;)// 找到所有后代中不含a标签的li标签
+</code></pre><p>练习：</p><p>自定义模态框，使用jQuery实现弹出和隐藏功能。</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;自定义模态框&lt;/title&gt;
+  &lt;style&gt;
+    .cover {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: darkgrey;
+      z-index: 999;
+    }
+    .modal {
+      width: 600px;
+      height: 400px;
+      background-color: white;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      margin-left: -300px;
+      margin-top: -200px;
+      z-index: 1000;
+    }
+    .hide {
+      display: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type=&quot;button&quot; value=&quot;弹&quot; id=&quot;i0&quot;&gt;
+
+&lt;div class=&quot;cover hide&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;modal hide&quot;&gt;
+  &lt;label for=&quot;i1&quot;&gt;姓名&lt;/label&gt;
+  &lt;input id=&quot;i1&quot; type=&quot;text&quot;&gt;
+   &lt;label for=&quot;i2&quot;&gt;爱好&lt;/label&gt;
+  &lt;input id=&quot;i2&quot; type=&quot;text&quot;&gt;
+  &lt;input type=&quot;button&quot; id=&quot;i3&quot; value=&quot;关闭&quot;&gt;
+&lt;/div&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  var tButton = $(&quot;#i0&quot;)[0];
+  tButton.onclick=function () {
+    var coverEle = $(&quot;.cover&quot;)[0];
+    var modalEle = $(&quot;.modal&quot;)[0];
+
+    $(coverEle).removeClass(&quot;hide&quot;);
+    $(modalEle).removeClass(&quot;hide&quot;);
+  };
+
+  var cButton = $(&quot;#i3&quot;)[0];
+  cButton.onclick=function () {
+    var coverEle = $(&quot;.cover&quot;)[0];
+    var modalEle = $(&quot;.modal&quot;)[0];
+
+    $(coverEle).addClass(&quot;hide&quot;);
+    $(modalEle).addClass(&quot;hide&quot;);
+  }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>jQuery版自定义模态框</p><p><strong>属性选择器：</strong></p><pre><code> [attribute]
+[attribute=value]// 属性等于
+[attribute!=value]// 属性不等于  
+</code></pre><p><strong>例子：</strong></p><pre><code> // 示例
+&lt;input type=&quot;text&quot;&gt;
+&lt;input type=&quot;password&quot;&gt;
+&lt;input type=&quot;checkbox&quot;&gt;
+$(&quot;input[type='checkbox']&quot;);// 取到checkbox类型的input标签
+$(&quot;input[type!='text']&quot;);// 取到类型不是text的input标签
+</code></pre><p><strong>表单常用筛选</strong> ：</p><pre><code>:text
+:password  
+:file
+
+
+:radio
+:checkbox  
+
+:submit
+:reset
+:button  
+</code></pre><p><strong>例子：</strong></p><pre><code>$(&quot;:checkbox&quot;)   // 找到所有的checkbox
+</code></pre><p>表单对象属性:</p><pre><code>:enabled
+:disabled
+:checked
+:selected
+</code></pre><p><strong>例子：</strong></p><pre><code>&lt;form&gt;
+  &lt;input name=&quot;email&quot; disabled=&quot;disabled&quot; /&gt;
+  &lt;input name=&quot;id&quot; /&gt;
+&lt;/form&gt;
+
+$( &quot;input:enabled&quot;)  // 找到可用的input标签
+
+
+
+
+
+&lt;select id=&quot;s1&quot;&gt;
+  &lt;option value=&quot;beijing&quot;&gt;北京市&lt;/option&gt;
+  &lt;option value=&quot;shanghai&quot;&gt;上海市&lt;/option&gt;
+  &lt;option selected value=&quot;guangzhou&quot;&gt;广州市&lt;/option&gt;
+  &lt;option value=&quot;shenzhen&quot;&gt;深圳市&lt;/option&gt;
+&lt;/select&gt;
+
+$(&quot;:selected&quot;)  // 找到所有被选中的option
+</code></pre><h3 id="筛选器"><a href="#筛选器" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>筛选器</h3><p>下一个元素：</p><pre><code>$(&quot;#id&quot;).next()
+$(&quot;#id&quot;).nextAll()
+$(&quot;#id&quot;).nextUntil(&quot;#i2&quot;)
+</code></pre><p>上一个元素：</p><pre><code>$(&quot;#id&quot;).prev()
+$(&quot;#id&quot;).prevAll()
+$(&quot;#id&quot;).prevUntil(&quot;#i2&quot;)
+</code></pre><p>父亲元素：</p><pre><code>$(&quot;#id&quot;).parent()
+$(&quot;#id&quot;).parents()  // 查找当前元素的所有的父辈元素  
+$(&quot;#id&quot;).parentsUntil() // 查找当前元素的所有的父辈元素，直到遇到匹配的那个元素为止。
+</code></pre><p>儿子和兄弟元素：</p><pre><code>$(&quot;#id&quot;).children();// 儿子们
+$(&quot;#id&quot;).siblings();// 兄弟们
+</code></pre><p>查找元素：</p><pre><code>$(&quot;#id&quot;).find()// 搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。
+</code></pre><p>补充：</p><pre><code>.first()// 获取匹配的第一个元素
+.last()// 获取匹配的最后一个元素
+.not()// 从匹配元素的集合中删除与指定表达式匹配的元素
+.has()// 保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+</code></pre><p>示例：左侧菜单</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;左侧菜单示例&lt;/title&gt;
+  &lt;style&gt;
+    .left {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 20%;
+      height: 100%;
+      background-color: rgb(47, 53, 61);
+    }
+
+    .right {
+      width: 80%;
+      height: 100%;
+    }
+
+    .menu {
+      color: white;
+    }
+
+    .title {
+      text-align: center;
+      padding: 10px 15px;
+      border-bottom: 1px solid #23282e;
+    }
+
+    .items {
+      background-color: #181c20;
+
+    }
+    .item {
+      padding: 5px 10px;
+      border-bottom: 1px solid #23282e;
+    }
+
+    .hide {
+      display: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;left&quot;&gt;
+  &lt;div class=&quot;menu&quot;&gt;
+    &lt;div class=&quot;title&quot;&gt;菜单一&lt;/div&gt;
+    &lt;div class=&quot;items&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;111&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;222&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;333&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;title&quot;&gt;菜单二&lt;/div&gt;
+    &lt;div class=&quot;items hide&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;111&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;222&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;333&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;title&quot;&gt;菜单三&lt;/div&gt;
+    &lt;div class=&quot;items hide&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;111&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;222&lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;333&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  $(&quot;.title&quot;).click(function (){  // jQuery绑定事件
+    // 隐藏所有class里有.items的标签
+    $(&quot;.items&quot;).addClass(&quot;hide&quot;);  //批量操作
+    $(this).next().removeClass(&quot;hide&quot;);
+  });
+&lt;/script&gt;
+</code></pre><p>左侧菜单示例</p><h2 id="操作标签"><a href="#操作标签" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>操作标签</h2><h3 id="样式操作"><a href="#样式操作" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>样式操作</h3><p>样式类</p><pre><code>addClass();// 添加指定的CSS类名。
+removeClass();// 移除指定的CSS类名。
+hasClass();// 判断样式存不存在
+toggleClass();// 切换CSS类名，如果有就移除，如果没有就添加。
+</code></pre><p>示例：开关灯和模态框</p><p>CSS</p><pre><code>css(&quot;color&quot;,&quot;red&quot;)//DOM操作：tag.style.color=&quot;red&quot;
+</code></pre><p>示例：</p><pre><code>$(&quot;p&quot;).css(&quot;color&quot;, &quot;red&quot;); //将所有p标签的字体设置为红色
+</code></pre><p>位置：</p><pre><code>offset()// 获取匹配元素在当前窗口的相对偏移或设置元素位置
+position()// 获取匹配元素相对父元素的偏移
+scrollTop()// 获取匹配元素相对滚动条顶部的偏移
+scrollLeft()// 获取匹配元素相对滚动条左侧的偏移
+</code></pre><p><code>.offset()</code>方法允许我们检索一个元素相对于文档（document）的当前位置。</p><p>和 <code>.position()</code>的差别在于： <code>.position()</code>是相对于相对于父级元素的位移。</p><p>示例：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;位置相关示例之返回顶部&lt;/title&gt;
+  &lt;style&gt;
+    .c1 {
+      width: 100px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .c2 {
+      height: 50px;
+      width: 50px;
+
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background-color: #2b669a;
+    }
+    .hide {
+      display: none;
+    }
+    .c3 {
+      height: 100px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;b1&quot; class=&quot;btn btn-default&quot;&gt;点我&lt;/button&gt;
+&lt;div class=&quot;c1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;1&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;2&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;3&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;4&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;5&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;6&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;7&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;8&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;9&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;10&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;11&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;12&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;13&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;14&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;15&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;16&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;17&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;18&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;19&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;20&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;21&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;22&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;23&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;24&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;25&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;26&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;27&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;28&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;29&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;30&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;31&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;32&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;33&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;34&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;35&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;36&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;37&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;38&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;39&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;40&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;41&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;42&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;43&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;44&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;45&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;46&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;47&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;48&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;49&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;50&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;51&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;52&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;53&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;54&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;55&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;56&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;57&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;58&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;59&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;60&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;61&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;62&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;63&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;64&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;65&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;66&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;67&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;68&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;69&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;70&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;71&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;72&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;73&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;74&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;75&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;76&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;77&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;78&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;79&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;80&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;81&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;82&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;83&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;84&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;85&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;86&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;87&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;88&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;89&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;90&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;91&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;92&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;93&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;94&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;95&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;96&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;97&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;98&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;99&lt;/div&gt;
+&lt;div class=&quot;c3&quot;&gt;100&lt;/div&gt;
+
+&lt;button id=&quot;b2&quot; class=&quot;btn btn-default c2 hide&quot;&gt;返回顶部&lt;/button&gt;
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;#b1&quot;).on(&quot;click&quot;, function () {
+    $(&quot;.c1&quot;).offset({left: 200, top:200});
+  });
+
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() &gt; 100) {
+      $(&quot;#b2&quot;).removeClass(&quot;hide&quot;);
+    }else {
+      $(&quot;#b2&quot;).addClass(&quot;hide&quot;);
+    }
+  });
+  $(&quot;#b2&quot;).on(&quot;click&quot;, function () {
+    $(window).scrollTop(0);
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>返回顶部示例</p><p>尺寸：</p><pre><code>height()
+width()
+innerHeight()
+innerWidth()
+outerHeight()
+outerWidth()
+</code></pre><h3 id="文本操作"><a href="#文本操作" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>文本操作</h3><p>HTML代码：</p><pre><code>html()// 取得第一个匹配元素的html内容
+html(val)// 设置所有匹配元素的html内容
+</code></pre><p>文本值：</p><pre><code>text()// 取得所有匹配元素的内容
+text(val)// 设置所有匹配元素的内容
+</code></pre><p>值：</p><pre><code>val()// 取得第一个匹配元素的当前值
+val(val)// 设置所有匹配元素的值
+val([val1, val2])// 设置checkbox、select的值
+</code></pre><p>示例：</p><p>获取被选中的checkbox或radio的值：</p><pre><code>&lt;label for=&quot;c1&quot;&gt;女&lt;/label&gt;
+&lt;input name=&quot;gender&quot; id=&quot;c1&quot; type=&quot;radio&quot; value=&quot;0&quot;&gt;
+&lt;label for=&quot;c2&quot;&gt;男&lt;/label&gt;
+&lt;input name=&quot;gender&quot; id=&quot;c2&quot; type=&quot;radio&quot; value=&quot;1&quot;&gt;
+</code></pre><p>可以使用：</p><pre><code>$(&quot;input[name='gender']:checked&quot;).val()
+</code></pre><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;jQuery val示例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;label for=&quot;s1&quot;&gt;城市&lt;/label&gt;
+&lt;select id=&quot;s1&quot;&gt;
+  &lt;option value=&quot;beijing&quot;&gt;北京市&lt;/option&gt;
+  &lt;option value=&quot;shanghai&quot;&gt;上海市&lt;/option&gt;
+  &lt;option selected value=&quot;guangzhou&quot;&gt;广州市&lt;/option&gt;
+  &lt;option value=&quot;shenzhen&quot;&gt;深圳市&lt;/option&gt;
+&lt;/select&gt;
+&lt;hr&gt;
+&lt;label for=&quot;s2&quot;&gt;爱好&lt;/label&gt;
+&lt;select id=&quot;s2&quot; multiple=&quot;multiple&quot;&gt;
+  &lt;option value=&quot;basketball&quot; selected&gt;篮球&lt;/option&gt;
+  &lt;option value=&quot;football&quot;&gt;足球&lt;/option&gt;
+  &lt;option value=&quot;doublecolorball&quot; selected&gt;双色球&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // 单选下拉框
+  $(&quot;#s1&quot;).val(&quot;shanghai&quot;);
+  // 多选下拉框
+   $(&quot;#s2&quot;).val([&quot;basketball&quot;, &quot;football&quot;]);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>jQuery val赋值示例</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;文本操作之登录验证&lt;/title&gt;
+  &lt;style&gt;
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action=&quot;&quot;&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;input-name&quot;&gt;用户名&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;input-name&quot; name=&quot;name&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;input-password&quot;&gt;密码&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;input-password&quot; name=&quot;password&quot;&gt;
+    &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;提交&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;#btn&quot;).click(function () {
+    var username = $(&quot;#input-name&quot;).val();
+    var password = $(&quot;#input-password&quot;).val();
+
+    if (username.length === 0) {
+      $(&quot;#input-name&quot;).siblings(&quot;.error&quot;).text(&quot;用户名不能为空&quot;);
+    }
+    if (password.length === 0) {
+      $(&quot;#input-password&quot;).siblings(&quot;.error&quot;).text(&quot;密码不能为空&quot;);
+    }
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>自定义登录校验示例</p><h3 id="属性操作"><a href="#属性操作" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>属性操作</h3><p>用于ID等或自定义属性：</p><pre><code>attr(attrName)// 返回第一个匹配元素的属性值
+attr(attrName, attrValue)// 为所有匹配元素设置一个属性值
+attr({k1: v1, k2:v2})// 为所有匹配元素设置多个属性值
+removeAttr()// 从每一个匹配的元素中删除一个属性
+</code></pre><p>用于checkbox和radio</p><pre><code>prop() // 获取属性
+removeProp() // 移除属性
+</code></pre><p><strong>注意：</strong></p><p>在1.x及2.x版本的jQuery中使用attr对checkbox进行复制操作时会出bug，在3.x版本的jQuery中则没有这个问题。为了兼容性，我们在处理checkbox和radio的时候尽量使用特定的prop()，不要使用attr("checked", "checked")。</p><pre><code>&lt;input type=&quot;checkbox&quot; value=&quot;1&quot;&gt;
+&lt;input type=&quot;radio&quot; value=&quot;2&quot;&gt;
+&lt;script&gt;
+  $(&quot;:checkbox[value='1']&quot;).prop(&quot;checked&quot;, true);
+  $(&quot;:radio[value='2']&quot;).prop(&quot;checked&quot;, true);
+&lt;/script&gt;
+</code></pre><p>示例：全选、反选、取消</p><h3 id="文档处理"><a href="#文档处理" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>文档处理</h3><p>添加到指定元素 <strong>内部</strong> 的后面</p><pre><code>$(A).append(B)// 把B追加到A
+$(A).appendTo(B)// 把A追加到B
+</code></pre><p>添加到指定元素 <strong>内部</strong> 的前面</p><pre><code>$(A).prepend(B)// 把B前置到A
+$(A).prependTo(B)// 把A前置到B
+</code></pre><p>添加到指定元素 <strong>外部</strong> 的后面</p><pre><code>$(A).after(B)// 把B放到A的后面
+$(A).insertAfter(B)// 把A放到B的后面
+</code></pre><p>添加到指定元素 <strong>外部</strong> 的前面</p><pre><code>$(A).before(B)// 把B放到A的前面
+$(A).insertBefore(B)// 把A放到B的前面
+</code></pre><p>移除和清空元素</p><pre><code>remove()// 从DOM中删除所有匹配的元素。
+empty()// 删除匹配的元素集合中所有的子节点。
+</code></pre><p>例子：</p><p>点击按钮在表格添加一行数据。</p><p>点击每一行的删除按钮删除当前行数据。</p><p>替换</p><pre><code>replaceWith()
+replaceAll()
+</code></pre><p>克隆</p><pre><code>clone()// 参数
+</code></pre><p>克隆示例：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;克隆&lt;/title&gt;
+  &lt;style&gt;
+    #b1 {
+      background-color: deeppink;
+      padding: 5px;
+      color: white;
+      margin: 5px;
+    }
+    #b2 {
+      background-color: dodgerblue;
+      padding: 5px;
+      color: white;
+      margin: 5px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button id=&quot;b1&quot;&gt;屠龙宝刀，点击就送&lt;/button&gt;
+&lt;hr&gt;
+&lt;button id=&quot;b2&quot;&gt;屠龙宝刀，点击就送&lt;/button&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // clone方法不加参数true，克隆标签但不克隆标签带的事件
+  $(&quot;#b1&quot;).on(&quot;click&quot;, function () {
+    $(this).clone().insertAfter(this);
+  });
+  // clone方法加参数true，克隆标签并且克隆标签带的事件
+  $(&quot;#b2&quot;).on(&quot;click&quot;, function () {
+    $(this).clone(true).insertAfter(this);
+  });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>点击复制按钮</p><h2 id="事件"><a href="#事件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>事件</h2><h3 id="常用事件"><a href="#常用事件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>常用事件</h3><pre><code>click(function(){...})
+hover(function(){...})
+blur(function(){...})
+focus(function(){...})
+change(function(){...})
+keyup(function(){...})
+</code></pre><p>keydown和keyup事件组合示例：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;键盘事件示例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;table border=&quot;1&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;#&lt;/th&gt;
+    &lt;th&gt;姓名&lt;/th&gt;
+    &lt;th&gt;操作&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Egon&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Alex&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Yuan&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;EvaJ&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;checkbox&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;Gold&lt;/td&gt;
+    &lt;td&gt;
+      &lt;select&gt;
+        &lt;option value=&quot;1&quot;&gt;上线&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;下线&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;停职&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;input type=&quot;button&quot; id=&quot;b1&quot; value=&quot;全选&quot;&gt;
+&lt;input type=&quot;button&quot; id=&quot;b2&quot; value=&quot;取消&quot;&gt;
+&lt;input type=&quot;button&quot; id=&quot;b3&quot; value=&quot;反选&quot;&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // 全选
+  $(&quot;#b1&quot;).on(&quot;click&quot;, function () {
+    $(&quot;:checkbox&quot;).prop(&quot;checked&quot;, true);
+  });
+  // 取消
+  $(&quot;#b2&quot;).on(&quot;click&quot;, function () {
+    $(&quot;:checkbox&quot;).prop(&quot;checked&quot;, false);
+  });
+  // 反选
+  $(&quot;#b3&quot;).on(&quot;click&quot;, function () {
+    $(&quot;:checkbox&quot;).each(function () {
+      var flag = $(this).prop(&quot;checked&quot;);
+      $(this).prop(&quot;checked&quot;, !flag);
+    })
+  });
+  // 按住shift键，批量操作
+  // 定义全局变量
+  var flag = false;
+  // 全局事件，监听键盘shift按键是否被按下
+  $(window).on(&quot;keydown&quot;, function (e) {
+//    alert(e.keyCode);
+    if (e.keyCode === 16){
+      flag = true;
+    }
+  });
+  // 全局事件,shift按键抬起时将全局变量置为false
+  $(window).on(&quot;keyup&quot;, function (e) {
+    if (e.keyCode === 16){
+      flag = false;
+    }
+  });
+  // select绑定change事件
+  $(&quot;table select&quot;).on(&quot;change&quot;, function () {
+    // 是否为批量操作模式
+    if (flag) {
+      var selectValue = $(this).val();
+      // 找到所有被选中的那一行的select，选中指定值
+      $(&quot;input:checked&quot;).parent().parent().find(&quot;select&quot;).val(selectValue);
+    }
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>按住shift键批量操作</p><p>实时监听input输入值变化示例：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;实时监听input输入值变化&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type=&quot;text&quot; id=&quot;i1&quot;&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  /*
+  * oninput是HTML5的标准事件
+  * 能够检测textarea,input:text,input:password和input:search这几个元素的内容变化，
+  * 在内容修改后立即被触发，不像onchange事件需要失去焦点才触发
+  * oninput事件在IE9以下版本不支持，需要使用IE特有的onpropertychange事件替代
+  * 使用jQuery库的话直接使用on同时绑定这两个事件即可。
+  * */
+  $(&quot;#i1&quot;).on(&quot;input propertychange&quot;, function () {
+    alert($(this).val());
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>input值变化事件</p><h3 id="事件绑定"><a href="#事件绑定" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>事件绑定</h3><ol><li><code>.on( events [, selector ],function(){})</code></li></ol><ul><li>events： 事件</li><li>selector: 选择器（可选的）</li><li>function: 事件处理函数</li></ul><h3 id="移除事件"><a href="#移除事件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>移除事件</h3><ol><li><code>.off( events [, selector ][,function(){}])</code></li></ol><p><code>off()</code> 方法移除用 <code>.on()</code>绑定的事件处理程序。</p><ul><li>events： 事件</li><li>selector: 选择器（可选的）</li><li>function: 事件处理函数</li></ul><h3 id="阻止后续事件执行"><a href="#阻止后续事件执行" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>阻止后续事件执行</h3><ol><li><code>return false; // 常见阻止表单提交等</code></li></ol><p>注意：</p><p>像click、keydown等DOM中定义的事件，我们都可以使用<code>.on()</code>方法来绑定事件，但是<code>hover</code>这种jQuery中定义的事件就不能用<code>.on()</code>方法来绑定了。</p><p>想使用事件委托的方式绑定hover事件处理函数，可以参照如下代码分两步绑定事件：</p><pre><code>$('ul').on('mouseenter', 'li', function() {//绑定鼠标进入事件
+    $(this).addClass('hover');
+});
+$('ul').on('mouseleave', 'li', function() {//绑定鼠标划出事件
+    $(this).removeClass('hover');
+});
+</code></pre><h3 id="页面载入"><a href="#页面载入" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>页面载入</h3><p>当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。这是事件模块中最重要的一个函数，因为它可以极大地提高web应用程序的响应速度。</p><p>两种写法：</p><pre><code>$(document).ready(function(){
+// 在这里写你的JS代码...
+})
+</code></pre><p>简写：</p><pre><code>$(function(){
+// 你在这里写你的代码
+})
+</code></pre><p>文档加载完绑定事件，并且阻止默认事件发生：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;登录注册示例&lt;/title&gt;
+  &lt;style&gt;
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form id=&quot;myForm&quot;&gt;
+  &lt;label for=&quot;name&quot;&gt;姓名&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;name&quot;&gt;
+  &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;label for=&quot;passwd&quot;&gt;密码&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;passwd&quot;&gt;
+  &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+  &lt;input type=&quot;submit&quot; id=&quot;modal-submit&quot; value=&quot;登录&quot;&gt;
+&lt;/form&gt;
+
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;s7validate.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  function myValidation() {
+    // 多次用到的jQuery对象存储到一个变量，避免重复查询文档树
+    var $myForm = $(&quot;#myForm&quot;);
+    $myForm.find(&quot;:submit&quot;).on(&quot;click&quot;, function () {
+      // 定义一个标志位，记录表单填写是否正常
+      var flag = true;
+      $myForm.find(&quot;:text, :password&quot;).each(function () {
+        var val = $(this).val();
+        if (val.length &lt;= 0 ){
+          var labelName = $(this).prev(&quot;label&quot;).text();
+          $(this).next(&quot;span&quot;).text(labelName + &quot;不能为空&quot;);
+          flag = false;
+        }
+      });
+      // 表单填写有误就会返回false，阻止submit按钮默认的提交表单事件
+      return flag;
+    });
+    // input输入框获取焦点后移除之前的错误提示信息
+    $myForm.find(&quot;input[type!='submit']&quot;).on(&quot;focus&quot;, function () {
+      $(this).next(&quot;.error&quot;).text(&quot;&quot;);
+    })
+  }
+  // 文档树就绪后执行
+  $(document).ready(function () {
+    myValidation();
+  });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>登录校验示例</p><h3 id="事件委托"><a href="#事件委托" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>事件委托</h3><p>事件委托是通过事件冒泡的原理，利用父标签去捕获子标签的事件。</p><p>示例：</p><p>表格中每一行的编辑和删除按钮都能触发相应的事件。</p><pre><code>$(&quot;table&quot;).on(&quot;click&quot;, &quot;.delete&quot;, function () {
+  // 删除按钮绑定的事件
+})
+</code></pre><h2 id="动画效果"><a href="#动画效果" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>动画效果</h2><pre><code>// 基本
+show([s,[e],[fn]])
+hide([s,[e],[fn]])
+toggle([s],[e],[fn])
+// 滑动
+slideDown([s],[e],[fn])
+slideUp([s,[e],[fn]])
+slideToggle([s],[e],[fn])
+// 淡入淡出
+fadeIn([s],[e],[fn])
+fadeOut([s],[e],[fn])
+fadeTo([[s],o,[e],[fn]])
+fadeToggle([s,[e],[fn]])
+// 自定义（了解即可）
+animate(p,[s],[e],[fn])
+</code></pre><p>自定义动画示例：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;点赞动画示例&lt;/title&gt;
+  &lt;style&gt;
+    div {
+      position: relative;
+      display: inline-block;
+    }
+    div&gt;i {
+      display: inline-block;
+      color: red;
+      position: absolute;
+      right: -16px;
+      top: -5px;
+      opacity: 1;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;d1&quot;&gt;点赞&lt;/div&gt;
+&lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;#d1&quot;).on(&quot;click&quot;, function () {
+    var newI = document.createElement(&quot;i&quot;);
+    newI.innerText = &quot;+1&quot;;
+    $(this).append(newI);
+    $(this).children(&quot;i&quot;).animate({
+      opacity: 0
+    }, 1000)
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>点赞特效简单示例</p><h2 id="补充"><a href="#补充" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>补充</h2><h3 id="each"><a href="#each" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>each</h3><p><strong>jQuery.each(collection, callback(indexInArray, valueOfElement))：</strong></p><p>描述：一个通用的迭代函数，它可以用来无缝迭代对象和数组。数组和类似数组的对象通过一个长度属性（如一个函数的参数对象）来迭代数字索引，从0到length - 1。其他对象通过其属性名进行迭代。</p><pre><code>li =[10,20,30,40]
+$.each(li,function(i, v){
+  console.log(i, v);//index是索引，ele是每次循环的具体元素。
+})
+</code></pre><p>输出：</p><pre><code>010
+120
+230
+340
+</code></pre><p><strong>.each(function(index, Element))：</strong></p><p>描述：遍历一个jQuery对象，为每个匹配元素执行一个函数。</p><p><code>.each()</code> 方法用来迭代jQuery对象中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)。由于回调函数是在当前DOM元素为上下文的语境中触发的，所以关键字 <code>this</code> 总是指向这个元素。</p><pre><code>// 为每一个li标签添加foo
+$(&quot;li&quot;).each(function(){
+  $(this).addClass(&quot;c1&quot;);
+});
+</code></pre><p>注意: jQuery的方法返回一个jQuery对象，遍历jQuery集合中的元素 - 被称为隐式 <em>迭代</em> 的过程。当这种情况发生时，它通常不需要显式地循环的 <code>.each()</code>方法：</p><p>也就是说，上面的例子没有必要使用each()方法，直接像下面这样写就可以了：</p><pre><code>$(&quot;li&quot;).addClass(&quot;c1&quot;);  // 对所有标签做统一操作
+</code></pre><p><strong>注意：</strong></p><p>在遍历过程中可以使用 <code>return false</code>提前结束each循环。</p><p><strong>终止each循环</strong></p><pre><code> return false；
+</code></pre><p>伏笔...</p><h3 id="data"><a href="#data" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>.data()</h3><p>在匹配的元素集合中的所有元素上存储任意相关数据或返回匹配的元素集合中的第一个元素的给定名称的数据存储的值。</p><p><strong>.data(key, value):</strong></p><p>描述：在匹配的元素上存储任意相关数据。</p><pre><code>$(&quot;div&quot;).data(&quot;k&quot;,100);//给所有div标签都保存一个名为k，值为100
+</code></pre><p><strong>.data(key):</strong></p><p>描述: 返回匹配的元素集合中的第一个元素的给定名称的数据存储的值--通过 <code>.data(name, value)</code>或 <code>HTML5 data-*</code>属性设置。</p><pre><code>$(&quot;div&quot;).data(&quot;k&quot;);//返回第一个div标签中保存的&quot;k&quot;的值
+</code></pre><p>.removeData(key):</p><p>描述：移除存放在元素上的数据，不加key参数表示移除所有保存的数据。</p><pre><code>$(&quot;div&quot;).removeData(&quot;k&quot;);  //移除元素上存放k对应的数据
+</code></pre><p>示例：</p><p>模态框编辑的数据回填表格</p><h3 id="插件了解即可"><a href="#插件了解即可" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>插件(了解即可)</h3><p>jQuery.extend(object)</p><p>jQuery的命名空间下添加新的功能。多用于插件开发者向 jQuery 中添加新函数时使用。</p><p>示例：</p><pre><code>&lt;script&gt;
+jQuery.extend({
+  min:function(a, b){return a &lt; b ? a : b;},
+  max:function(a, b){return a &gt; b ? a : b;}
+});
+jQuery.min(2,3);// =&gt; 2
+jQuery.max(4,5);// =&gt; 5
+&lt;/script&gt;
+</code></pre><p>jQuery.fn.extend(object)</p><p>一个对象的内容合并到jQuery的原型，以提供新的jQuery实例方法。</p><pre><code>&lt;script&gt;
+  jQuery.fn.extend({
+    check:function(){
+      return this.each(function(){this.checked =true;});
+    },
+    uncheck:function(){
+      return this.each(function(){this.checked =false;});
+    }
+  });
+// jQuery对象可以使用新添加的check()方法了。
+$(&quot;input[type='checkbox']&quot;).check();
+&lt;/script&gt;
+</code></pre><p>单独写在文件中的扩展：</p><pre><code>(function(jq){
+  jq.extend({
+    funcName:function(){
+    ...
+    },
+  });
+})(jQuery);
+</code></pre><p>例子：</p><p>自定义的jQuery登录验证插件</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;登录校验示例&lt;/title&gt;
+  &lt;style&gt;
+    .login-form {
+      margin: 100px auto 0;
+      max-width: 330px;
+    }
+    .login-form &gt; div {
+      margin: 15px 0;
+    }
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;div&gt;
+  &lt;form action=&quot;&quot; class=&quot;login-form&quot; novalidate&gt;
+
+    &lt;div&gt;
+      &lt;label for=&quot;username&quot;&gt;姓名&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;name&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;passwd&quot;&gt;密码&lt;/label&gt;
+      &lt;input id=&quot;passwd&quot; type=&quot;password&quot; name=&quot;password&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;mobile&quot;&gt;手机&lt;/label&gt;
+      &lt;input id=&quot;mobile&quot; type=&quot;text&quot; name=&quot;mobile&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;where&quot;&gt;来自&lt;/label&gt;
+      &lt;input id=&quot;where&quot; type=&quot;text&quot; name=&quot;where&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;validate.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $.validate();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>HTML文件</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&quot;use strict&quot;;
+(function ($) {
+  function check() {
+    // 定义一个标志位，表示验证通过还是验证不通过
+    var flag = true;
+    var errMsg;
+    // 校验规则
+    $(&quot;form input[type!=':submit']&quot;).each(function () {
+      var labelName = $(this).prev().text();
+      var inputName = $(this).attr(&quot;name&quot;);
+      var inputValue = $(this).val();
+      if ($(this).attr(&quot;required&quot;)) {
+        // 如果是必填项
+        if (inputValue.length === 0) {
+          // 值为空
+          errMsg = labelName + &quot;不能为空&quot;;
+          $(this).next().text(errMsg);
+          flag = false;
+          return false;
+        }
+        // 如果是密码类型，我们就要判断密码的长度是否大于6位
+        if (inputName === &quot;password&quot;) {
+          // 除了上面判断为不为空还要判断密码长度是否大于6位
+          if (inputValue.length &lt; 6) {
+            errMsg = labelName + &quot;必须大于6位&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+        // 如果是手机类型，我们需要判断手机的格式是否正确
+        if (inputName === &quot;mobile&quot;) {
+          // 使用正则表达式校验inputValue是否为正确的手机号码
+          if (!/^1[345678]\d{9}$/.test(inputValue)) {
+            // 不是有效的手机号码格式
+            errMsg = labelName + &quot;格式不正确&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+      }
+    });
+    return flag;
+  }
+
+  function clearError(arg) {
+    // 清空之前的错误提示
+    $(arg).next().text(&quot;&quot;);
+  }
+  // 上面都是我定义的工具函数
+  $.extend({
+    validate: function () {
+      $(&quot;form :submit&quot;).on(&quot;click&quot;, function () {
+      return check();
+    });
+    $(&quot;form :input[type!='submit']&quot;).on(&quot;focus&quot;, function () {
+      clearError(this);
+    });
+    }
+  });
+})(jQuery);
+</code></pre><p>JS文件</p><p>传参版插件：</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;登录校验示例&lt;/title&gt;
+  &lt;style&gt;
+    .login-form {
+      margin: 100px auto 0;
+      max-width: 330px;
+    }
+    .login-form &gt; div {
+      margin: 15px 0;
+    }
+    .error {
+      color: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;div&gt;
+  &lt;form action=&quot;&quot; class=&quot;login-form&quot; novalidate&gt;
+
+    &lt;div&gt;
+      &lt;label for=&quot;username&quot;&gt;姓名&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;name&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;passwd&quot;&gt;密码&lt;/label&gt;
+      &lt;input id=&quot;passwd&quot; type=&quot;password&quot; name=&quot;password&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;mobile&quot;&gt;手机&lt;/label&gt;
+      &lt;input id=&quot;mobile&quot; type=&quot;text&quot; name=&quot;mobile&quot; required autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;where&quot;&gt;来自&lt;/label&gt;
+      &lt;input id=&quot;where&quot; type=&quot;text&quot; name=&quot;where&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;span class=&quot;error&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;validate3.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  $.validate({&quot;name&quot;:{&quot;required&quot;: true}, &quot;password&quot;: {&quot;required&quot;: true, &quot;minLength&quot;: 8}, &quot;mobile&quot;: {&quot;required&quot;: true}});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>HTML文件</p><p><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt></p><pre><code>&quot;use strict&quot;;
+(function ($) {
+  function check(arg) {
+    // 定义一个标志位，表示验证通过还是验证不通过
+    var flag = true;
+    var errMsg;
+    // 校验规则
+    $(&quot;form input[type!=':submit']&quot;).each(function () {
+      var labelName = $(this).prev().text();
+      var inputName = $(this).attr(&quot;name&quot;);
+      var inputValue = $(this).val();
+      if (arg[inputName].required) {
+        // 如果是必填项
+        if (inputValue.length === 0) {
+          // 值为空
+          errMsg = labelName + &quot;不能为空&quot;;
+          $(this).next().text(errMsg);
+          flag = false;
+          return false;
+        }
+        // 如果是密码类型，我们就要判断密码的长度是否大于6位
+        if (inputName === &quot;password&quot;) {
+          // 除了上面判断为不为空还要判断密码长度是否大于6位
+          if (inputValue.length &lt; arg[inputName].minLength) {
+            errMsg = labelName + &quot;必须大于&quot;+arg[inputName].minLength+&quot;位&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+        // 如果是手机类型，我们需要判断手机的格式是否正确
+        if (inputName === &quot;mobile&quot;) {
+          // 使用正则表达式校验inputValue是否为正确的手机号码
+          if (!/^1[345678]\d{9}$/.test(inputValue)) {
+            // 不是有效的手机号码格式
+            errMsg = labelName + &quot;格式不正确&quot;;
+            $(this).next().text(errMsg);
+            flag = false;
+            return false;
+          }
+        }
+      }
+    });
+    return flag;
+  }
+
+  function clearError(arg) {
+    // 清空之前的错误提示
+    $(arg).next().text(&quot;&quot;);
+  }
+  // 上面都是我定义的工具函数
+  $.extend({
+    validate: function (arg) {
+      $(&quot;form :submit&quot;).on(&quot;click&quot;, function () {
+      return check(arg);
+    });
+    $(&quot;form :input[type!='submit']&quot;).on(&quot;focus&quot;, function () {
+      clearError(this);
+    });
+    }
+  });
+})(jQuery);
+</code></pre><p>JS文件</p><p>课后习题：</p><ol><li>登录+验证</li><li>左侧菜单</li><li>表格-增、删、改、查</li></ol></div><ul class="post-copyright"><li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://weii.ink/" class="p-author h-card" target="_blank" rel="noopener">weii</a></li><li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/2018/03/14/cnblog_8565153/" target="_blank" rel="noopener">https://weii.ink/2018/03/14/cnblog_8565153/</a></li><li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li></ul></article><ins class="adsbygoogle" style="display:block;text-align:center" data-ad-client="ca-pub-6222665322795328" data-ad-slot="5798301486"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><div class="updated-badge-container"><span title="Updated @ 2023-01-29 15:59:40 CST" style="cursor:help"><svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2023-01-29</text><text x="915" y="140" textLength="650" transform="scale(.1)">2023-01-29</text></g></svg></span></div><div class="post-share"><div class="share-items"><div class="share-item twitter"><a href="https://twitter.com/share?url=https://weii.ink/2018/03/14/cnblog_8565153/&text=jQuery&hashtags=%e5%8d%9a%e5%ae%a2%e5%9b%ad,%e6%90%ac%e5%ae%b6,cnblogs,&via=wevsmy" title="分享到「Twitter」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon twitter-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a></div><div class="share-item facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://weii.ink/2018/03/14/cnblog_8565153/&hashtag=%23%e5%8d%9a%e5%ae%a2%e5%9b%ad" title="分享到「Facebook」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon facebook-icon"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></div><div class="share-item linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://weii.ink/2018/03/14/cnblog_8565153/&title=jQuery&summary=%e8%bf%99%e6%98%af%f0%9f%91%89jQuery%f0%9f%91%88%e7%9a%84%e6%91%98%e8%a6%81%e2%80%a6%e2%80%a6&source=Weii%27s%20Blog" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a></div><div class="share-item telegram"><a href="https://t.me/share/url?url=https://weii.ink/2018/03/14/cnblog_8565153/&text=jQuery" title="分享到「Telegram」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon telegram-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a></div><div class="share-item weibo"><a href="https://service.weibo.com/share/share.php?&url=https://weii.ink/2018/03/14/cnblog_8565153/&title=jQuery&pic=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif&searchPic=false" title="分享到「新浪微博」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon weibo-icon"><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></a></div><div class="share-item douban"><a href="https://www.douban.com/share/service?href=https://weii.ink/2018/03/14/cnblog_8565153/&name=jQuery&text=%e8%bf%99%e6%98%af%f0%9f%91%89jQuery%f0%9f%91%88%e7%9a%84%e6%91%98%e8%a6%81%e2%80%a6%e2%80%a6" title="分享到「豆瓣」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon douban-icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 1-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03z"/></svg></a></div><div class="share-item qq"><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://weii.ink/2018/03/14/cnblog_8565153/&title=jQuery&summary=%e8%bf%99%e6%98%af%f0%9f%91%89jQuery%f0%9f%91%88%e7%9a%84%e6%91%98%e8%a6%81%e2%80%a6%e2%80%a6&pics=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif&site=Weii%27s%20Blog" title="分享到「QQ」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a></div><div class="share-item qzone"><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://weii.ink/2018/03/14/cnblog_8565153/&title=jQuery&summary=%e8%bf%99%e6%98%af%f0%9f%91%89jQuery%f0%9f%91%88%e7%9a%84%e6%91%98%e8%a6%81%e2%80%a6%e2%80%a6&pics=https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif&site=Weii%27s%20Blog" title="分享到「QQ 空间」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon qzone-icon"><path d="M23.985 9.202c-.032-.099-.127-.223-.334-.258-.207-.036-7.351-1.406-7.351-1.406s-.105-.022-.198-.07c-.092-.047-.127-.167-.127-.167S12.447.956 12.349.77C12.25.583 12.104.532 12 .532s-.251.051-.349.238c-.098.186-3.626 6.531-3.626 6.531s-.035.12-.128.167c-.092.047-.197.07-.197.07S.556 8.908.348 8.943c-.208.036-.302.16-.333.258a.477.477 0 .125.449l5.362 5.49s.072.08.119.172c.016.104.005.21.005.21s-1.189 7.242-1.22 7.45.075.369.159.43c.083.062.233.106.421.013.189-.093 6.812-3.261 6.812-3.261s.098-.044.201-.061.201.061.201.061 6.623 3.168 6.812 3.261c.188.094.338.049.421-.013a.463.463 0 .159-.43c-.021-.14-.93-5.677-.93-5.677.876-.54 1.425-1.039 1.849-1.747-2.594.969-6.006 1.717-9.415 1.866-.915.041-2.41.097-3.473-.015-.678-.071-1.17-.144-1.243-.438-.053-.215.054-.46.545-.831a2640.5 2640.5 0 12.861-2.155c1.285-.968 3.559-2.47 3.559-2.731 0-.285-2.144-.781-4.037-.781-1.945 0-2.275.132-2.811.168-.488.034-.769.005-.804-.138-.06-.248.183-.389.588-.568.709-.314 1.86-.594 1.984-.626.194-.052 3.082-.805 5.618-.535 1.318.14 3.244.668 3.244 1.276 0 .342-1.721 1.494-3.225 2.597-1.149.843-2.217 1.561-2.217 1.688 0 .342 3.533 1.241 6.689 1.01l.003-.022c.048-.092.119-.172.119-.172l5.362-5.49a.477.477 0 .127-.449z"/></svg></a></div><div class="share-item qrcode"><div class="qrcode-container" title="通过「二维码」"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qrcode-icon"><path d="M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"/></svg><div id="qrcode-img"></div></div><script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script><script>const typeNumber=0,errorCorrectionLevel="L",qr=qrcode(0,"L");qr.addData("https://weii.ink/2018/03/14/cnblog_8565153/"),qr.make(),document.getElementById("qrcode-img").innerHTML=qr.createImgTag()</script></div></div></div><div class="related-posts"><h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2><ul class="related-list"><li class="related-item"><a href="/2018/03/22/cnblog_8621513/" class="related-link">Django基础01</a></li><li class="related-item"><a href="/2018/03/21/cnblog_8616189/" class="related-link">Python连接MySQL数据库之pymysql模块使用</a></li><li class="related-item"><a href="/2018/03/14/cnblog_8565323/" class="related-link">Markdown 语法</a></li><li class="related-item"><a href="/2018/03/13/cnblog_8554604/" class="related-link">linux screen 常用命令</a></li><li class="related-item"><a href="/2018/03/12/cnblog_8550048/" class="related-link">前端基础之BOM和DOM</a></li></ul></div><div class="post-tags"><a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 10 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>博客园</a> <a href="/tags/%E6%90%AC%E5%AE%B6/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 10 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>搬家</a> <a href="/tags/cnblogs/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 10 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>cnblogs</a></div><ul class="post-nav"><li class="post-nav-prev"><a href="/2018/03/14/cnblog_8565323/" rel="prev">&lt; Markdown 语法</a></li><li class="post-nav-next"><a href="/2018/03/13/cnblog_8554604/" rel="next">linux screen 常用命令 ></a></li></ul></div></main><div id="back-to-top" class="back-to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a></div><footer id="footer" class="footer"><div class="footer-inner"><div class="site-info">©&nbsp;2014–2023&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;weii</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div><div class="custom-footer"><div style="font-size:80%" id="jinrishici-sentence">🤨<div></div></div></div></div></footer></div><script>"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("/sw.js")}))</script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script><script>let imgNodes=document.querySelectorAll("div.post-body img");imgNodes=Array.from(imgNodes).filter((o=>"A"!==o.parentNode.tagName)),mediumZoom(imgNodes,{background:"hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)"})</script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script><div class="app-refresh" id="app-refresh"><div class="app-refresh-wrap" onclick="location.reload()"><label>已更新最新版本</label> <span>点击刷新</span></div></div><script>function showNotification(){document.querySelector("meta[name=theme-color]").content="#000",document.getElementById("app-refresh").className+=" app-refresh-show"}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",(function(){showNotification()})),window.addEventListener("load",(function(){navigator.serviceWorker.register("/sw.js")})))</script><script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script></body></html>

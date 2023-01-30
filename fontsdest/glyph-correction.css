@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "glyph-correction";
+    src: url("glyph-correction.eot"); /* IE9 */
+    src: url("glyph-correction.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("glyph-correction.woff2") format("woff2"), /* chrome 36+, firefox 39+,iOS 10+, Android 67+ */
+    url("glyph-correction.woff") format("woff"), /* chrome, firefox */
+    url("glyph-correction.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("glyph-correction.svg#glyph-correction") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

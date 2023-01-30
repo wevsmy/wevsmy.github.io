@@ -9,10 +9,7 @@
     "server": "hugo server -D",
     "preview": "hugo server -D --renderToDisk --environment production",
     "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
-    "update": "git submodule update --init --recursive && git submodule update --rebase --remote",
-    "deploy:public": "sh.exe ./scripts/01-deploy-public.sh",
-    "deploy:source": "sh.exe ./scripts/02-deploy-source.sh",
-    "deploy": "git submodule update --init --recursive && git submodule update --rebase --remote"
+    "update": "git submodule update --init --recursive && git submodule update --rebase --remote"
   },
   "repository": {
     "type": "git",

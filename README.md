@@ -13,7 +13,7 @@ weii-blog-source
 ├─public           // hugo 生产的静态博客文件
 ├─static           // 博客所有文件资源
 └─themes
-   └─meme          // 博客 meme 主题 
+   └─meme          // 博客 meme 主题
 ```
 ## 新建文章、页面
 ```bash
@@ -39,12 +39,4 @@ pnpm run build
 ## 更新主题
 ```bash
 pnpm run update
-```
-## 部署
-```bash
-pnpm run deploy
-```
-## 源码
-```bash
-pnpm run deploy
 ```

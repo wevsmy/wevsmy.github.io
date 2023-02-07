@@ -8,6 +8,7 @@
     "devDependencies": {
       "@tailwindcss/line-clamp": "project",
       "autoprefixer": "project",
+      "axios": "project",
       "gulp": "project",
       "gulp-clean": "project",
       "gulp-clean-css": "project",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.3.2",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",

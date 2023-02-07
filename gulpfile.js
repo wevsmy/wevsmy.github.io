@@ -7,6 +7,9 @@ const fontmin = require('gulp-fontmin');
 const shell = require("gulp-shell");
 const terser = require('gulp-terser');
 const workbox = require("workbox-build");
+const fs = require('fs');
+const path = require('path')
+const axios = require('axios').default;
 
 // clean
 gulp.task("clean", function () {
@@ -91,8 +94,37 @@ gulp.task('minify-font', (cb) => {
     });
 });
 
+// url 是资源地址，如，http://wximg.233.com/attached/image/20160815/20160815162505_0878.png
+// filepath 是文件下载的本地目录
+// name 是下载后的文件名
+async function downloadFile(url, filepath, name) {
+  if (!fs.existsSync(filepath)) {
+      fs.mkdirSync(filepath);
+  }
+  const mypath = path.resolve(filepath, name);
+  const writer = fs.createWriteStream(mypath);
+  const response = await axios({
+      url,
+      method: "GET",
+      responseType: "stream",
+  });
+  response.data.pipe(writer);
+  return new Promise((resolve, reject) => {
+      writer.on("finish", resolve);
+      writer.on("error", reject);
+  });
+}
 
-gulp.task('greet', shell.task('echo Hello, World!'))
+function getBingWallpaperInfoFile(cb){
+  const uri = 'https://efs.coding.net/p/lab/shared-depot/BingWallpaper/git/raw/master/BingWallpaper/BingWallpaperInfo.json'
+  downloadFile(uri,'./public/bing','BingWallpaperInfo.json').then((res)=>{
+    cb()
+  })
+}
+
+gulp.task('download', (cb)=>{
+  getBingWallpaperInfoFile(cb)
+})
 
 // 运行 gulp build 命令时依次执行以下任务
 gulp.task("build", gulp.series(
@@ -102,5 +134,5 @@ gulp.task("build", gulp.series(
     "minify-css",
     "minify-html",
     "minify-font",
-    "greet",
+    "download",
 ));

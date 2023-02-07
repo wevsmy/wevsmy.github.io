@@ -1,10 +1,10 @@
 <!-- JS -->
 
 <!-- CSS -->
-{{ $scss := resources.Get "css/bing.scss" | resources.ToCSS }}
-{{ $css := resources.Get "css/bing.css" }}
+{{ $scss := resources.Get "css/bingWallpaper.scss" | resources.ToCSS }}
+{{ $css := resources.Get "css/bingWallpaper.css" }}
 
-{{ $bundle := slice ($scss) ($css) | resources.Concat "css/bing.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+{{ $bundle := slice ($scss) ($css) | resources.Concat "css/bingWallpaper.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
 
 {{- $style := $bundle | resources.Minify -}}
 {{- if .Site.Params.enableFingerprint -}}
@@ -16,7 +16,7 @@
 {{- end -}}
 
 <!-- HTML -->
-<div id="bing" class="text-blue-300 bing">
+<div id="bingWallpaper" class="text-blue-300 bingWallpaper">
     ${ message }
 </div>
 
@@ -28,7 +28,7 @@
 {{ else }}
     {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
 {{ end }}
-{{ $js := resources.Get "js/bing.jsx" | js.Build (dict "shims" $shims "defines" $defines ) }}
+{{ $js := resources.Get "js/bingWallpaper.jsx" | js.Build (dict "shims" $shims "defines" $defines ) }}
 <script src="{{ $js.RelPermalink }}"></script>
 
 

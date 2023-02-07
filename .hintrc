@@ -16,6 +16,9 @@
     "axe/text-alternatives": "off",
     "axe/language": "off",
     "no-inline-styles": "off",
-    "axe/structure": "off"
+    "axe/structure": "off",
+    "apple-touch-icons": "off",
+    "compat-api/html": "off",
+    "manifest-file-extension": "off"
   }
 }

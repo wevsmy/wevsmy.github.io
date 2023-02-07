@@ -21,4 +21,4 @@ gitinfo: false
 related: false
 ---
 
-{{< bing >}}
+{{< bingWallpaper >}}

@@ -2,8 +2,8 @@
  * @Author: wilson.wu
  * @Date: 2023-02-07 13:07:29
  * @LastEditors: wilson.wu
- * @LastEditTime: 2023-02-07 13:57:32
- * @FilePath: \blog_source\themes\bing-wallpaper\assets\js\bing.jsx
+ * @LastEditTime: 2023-02-07 14:25:23
+ * @FilePath: \blog_source\themes\bingWallpaper\assets\js\bingWallpaper.jsx
  * @Description:
  * Contact: wevsmy@gamil.com
  *
@@ -34,6 +34,6 @@ class LikeButton extends React.Component {
   }
 
 // 为提供的创建一个 React 根container并返回根。
-const root = createRoot(document.getElementById("bing"));
+const root = createRoot(document.getElementById("bingWallpaper"));
 // 根可用于将 React 元素渲染到 DOM 中
 root.render(<LikeButton />);

@@ -9,7 +9,7 @@ hasCJKLanguage = true
 copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
 
 # 主题选择
-theme = ["hugo-notice","meme","webstack","bing-wallpaper"]
+theme = ["hugo-notice","meme","webstack","bingWallpaper"]
 
 # `hugo new` 新建文章自动打开的文本编辑器
 newContentEditor = ""

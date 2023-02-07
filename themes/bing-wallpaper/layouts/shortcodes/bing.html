@@ -1,0 +1,35 @@
+<!-- JS -->
+
+<!-- CSS -->
+{{ $scss := resources.Get "css/bing.scss" | resources.ToCSS }}
+{{ $css := resources.Get "css/bing.css" }}
+
+{{ $bundle := slice ($scss) ($css) | resources.Concat "css/bing.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+
+{{- $style := $bundle | resources.Minify -}}
+{{- if .Site.Params.enableFingerprint -}}
+{{- $style = $style | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{- if .Site.Params.enableSRI }}
+    integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" {{- end -}} />
+{{- else -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{- end -}}
+
+<!-- HTML -->
+<div id="bing" class="text-blue-300 bing">
+    ${ message }
+</div>
+
+<!-- JSX -->
+{{ $shims := dict }}
+{{ $defines := dict }}
+{{ if hugo.IsProduction }}
+    {{ $shims = dict "react" "js/shims/react.js"  "react-dom" "js/shims/react-dom.js" }}
+{{ else }}
+    {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
+{{ end }}
+{{ $js := resources.Get "js/bing.jsx" | js.Build (dict "shims" $shims "defines" $defines ) }}
+<script src="{{ $js.RelPermalink }}"></script>
+
+
+

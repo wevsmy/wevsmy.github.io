@@ -1,15 +1,21 @@
 ---
 title: "关于"
+url: /about
+slug: "关于我"
+description: "关于一条狗的描述"
 date: 2018-06-01T21:33:57+08:00
 hidden: true
 draft: false
-tags: []
-keywords: ["about","关于"]
-description: ""
-slug: "关于我"
+toc: false
+meta: false
+displayCopyright: false
+badge: false
+share: false
+gitinfo: false
+related: false
 ---
 
-Summary 
+Summary
 <!--more-->
 
 # wilson

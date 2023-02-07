@@ -2,20 +2,19 @@
  * @Author: wilson.wu
  * @Date: 2022-08-31 16:44:32
  * @LastEditors: wilson.wu
- * @LastEditTime: 2022-09-05 15:16:17
- * @FilePath: \weii-blog-source\themes\webstack\layouts\partials\pages\webstack.html
- * @Description: 
+ * @LastEditTime: 2023-02-07 13:00:01
+ * @FilePath: \blog_source\themes\webstack\layouts\partials\pages\webstack.html
+ * @Description:
  * Contact: wevsmy@gamil.com
- * 
- * Copyright (c) 2022 by wilson.wu, All Rights Reserved. 
+ *
+ * Copyright (c) 2022 by wilson.wu, All Rights Reserved.
 -->
 
-
 <!-- CSS -->
-{{ $scss := resources.Match "css/**.scss" | resources.Concat "css/compiled.css" | toCSS }}
-{{ $css := resources.Match "css/**.css" | resources.Concat "css/styles.css" }}
-{{ $bundle := slice ($scss) ($css) | resources.Concat "css/webstack.bundle.css" | postCSS (dict "config"
-"./assets/css/postcss.config.js") }}
+{{ $scss := resources.Get "css/webstack.scss" | resources.ToCSS }}
+{{ $css := resources.Get "css/webstack.css" }}
+
+{{ $bundle := slice ($scss) ($css) | resources.Concat "css/webstack.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
 
 {{- $style := $bundle | resources.Minify -}}
 {{- if .Site.Params.enableFingerprint -}}

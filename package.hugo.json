@@ -1,0 +1,48 @@
+{
+  "name": "weii.ink",
+  "version": "1.0.0",
+  "description": "weii's blog",
+  "main": "index.js",
+  "scripts": {
+    "init": "pnpm install --shamefully-hoist",
+    "dev": "hugo server -D",
+    "server": "hugo server -D",
+    "preview": "hugo server -D --renderToDisk --environment production",
+    "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
+    "update": "git submodule update --init --recursive && git submodule update --rebase --remote"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:wevsmy/weii-blog-source.git"
+  },
+  "keywords": [
+    "blog",
+    "hugo",
+    "hugo-theme-meme"
+  ],
+  "author": "wevsmy",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com:wevsmy/weii-blog-source/issues"
+  },
+  "homepage": "https://github.com:wevsmy/weii-blog-source/#readme",
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "autoprefixer": "^10.4.13",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-html-minifier-terser": "7.1.0",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-shell": "^0.8.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.4",
+    "workbox-build": "^6.5.4"
+  }
+}

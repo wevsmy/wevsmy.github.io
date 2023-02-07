@@ -1,1 +1,14 @@
-{}
+{
+  "userIgnoreFilters": [
+    "node_modules/",
+    "data/",
+    "layouts/",
+    "themes/"
+  ],
+  "attachmentFolderPath": "static/static",
+  "showUnsupportedFiles": true,
+  "spellcheck": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "content/drafts",
+  "newLinkFormat": "relative"
+}

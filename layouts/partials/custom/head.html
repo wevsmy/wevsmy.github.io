@@ -1,0 +1,22 @@
+<!--
+ * @Author: wilson.wu
+ * @Date: 2023-01-30 10:16:32
+ * @LastEditors: wilson.wu
+ * @LastEditTime: 2023-02-07 14:07:11
+ * @FilePath: \blog_source\layouts\partials\custom\head.html
+ * @Description:
+ * Contact: wevsmy@gamil.com
+ *
+ * Copyright (c) 2023 by wilson.wu, All Rights Reserved.
+-->
+
+{{ if hugo.IsProduction }}
+    {{/* We import from node_modules in development to get code completion etc. working. */}}
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+{{ end }}
+{{/* We (Hugo/ESBuild) needs to improve the worker integration, but this could be a OK workaround. */}}
+{{ $worker := resources.Get "js/worker.js" | js.Build }}
+{{ $inject := slice "js/shims/process.js" }}
+{{ $js := resources.Get "js/index.js" | js.Build (dict "minify" false "params" (dict "myparam" "Hugo Rocks!" "myworker" $worker.RelPermalink) "inject" $inject ) }}
+<script src="{{ $js.RelPermalink }}"></script>

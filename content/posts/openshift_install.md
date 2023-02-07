@@ -2,7 +2,7 @@
 title: "OpenShift OKD v3.11 安装记录"
 date: 2019-09-17T17:47:49+08:00
 hidden: false
-draft: true
+draft: false
 tags: [OpenShift,Docker,K8S,OKD]
 keywords: [OpenShift,Docker,K8S,CentOS,VMware,OKD 3.11]
 description: "OpenShift安装记录"
@@ -115,12 +115,6 @@ ansible all -m copy -a "src=/etc/hosts dest=/etc/hosts"
 ansible-playbook -i inventory/hosts.localhost playbooks/prerequisites.yml
 ansible-playbook -i inventory/hosts.localhost playbooks/deploy_cluster.yml
 ```
-
-
-
-
-
-
 
 
 

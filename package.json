@@ -1,31 +1,32 @@
 {
-  "name": "weii.ink",
-  "version": "1.0.0",
-  "description": "weii's blog",
-  "main": "index.js",
-  "scripts": {
-    "init": "pnpm install --shamefully-hoist",
-    "dev": "hugo server -D",
-    "server": "hugo server -D",
-    "preview": "hugo server -D --renderToDisk --environment production",
-    "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
-    "update": "git submodule update --init --recursive && git submodule update --rebase --remote"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com:wevsmy/weii-blog-source.git"
-  },
-  "keywords": [
-    "blog",
-    "hugo",
-    "hugo-theme-meme"
-  ],
   "author": "wevsmy",
-  "license": "CC-BY-NC-SA-4.0",
   "bugs": {
     "url": "https://github.com:wevsmy/weii-blog-source/issues"
   },
-  "homepage": "https://github.com:wevsmy/weii-blog-source/#readme",
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@tailwindcss/line-clamp": "project",
+      "autoprefixer": "project",
+      "gulp": "project",
+      "gulp-clean": "project",
+      "gulp-clean-css": "project",
+      "gulp-fontmin": "project",
+      "gulp-html-minifier-terser": "project",
+      "gulp-htmlclean": "project",
+      "gulp-shell": "project",
+      "gulp-terser": "project",
+      "postcss": "project",
+      "postcss-cli": "project",
+      "postcss-import": "project",
+      "react": "project",
+      "react-dom": "project",
+      "tailwindcss": "project",
+      "workbox-build": "project"
+    }
+  },
+  "dependencies": {},
+  "description": "weii's blog",
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
@@ -40,7 +41,31 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.2.4",
     "workbox-build": "^6.5.4"
-  }
+  },
+  "homepage": "https://github.com:wevsmy/weii-blog-source/#readme",
+  "keywords": [
+    "blog",
+    "hugo",
+    "hugo-theme-meme"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "main": "index.js",
+  "name": "weii.ink",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:wevsmy/weii-blog-source.git"
+  },
+  "scripts": {
+    "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
+    "dev": "hugo server -D",
+    "init": "pnpm install --shamefully-hoist",
+    "preview": "hugo server -D --renderToDisk --environment production",
+    "server": "hugo server -D",
+    "update": "git submodule update --init --recursive && git submodule update --rebase --remote"
+  },
+  "version": "1.0.0"
 }

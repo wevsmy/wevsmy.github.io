@@ -1,10 +1,22 @@
 ---
 title: "Docker搭建DNS服务器"
 date: 2019-09-17T09:28:25+08:00
+aliases:
+- "/2019/09/17/docker_install_dnsmasq/"
 hidden: false
 draft: false
-tags: [docker,DNS,DNSMASQ]
-keywords: [docker,DNS,DNSMASQ,53,UDP,dig,local]
+tags: 
+- docker
+- dns
+- dnsmasq
+keywords: 
+- docker
+- dns
+- dnsmasq
+- udp
+- 53端口
+categories: 
+- docker
 description: "docker环境搭建DNS服务器"
 slug: ""
 ---

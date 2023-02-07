@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Weii's Blog</title><link>https://weii.ink/</link><description>个人博客网站。</description><generator>Hugo 0.101.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>wevsmy@gmail.com (weii)</managingEditor><webMaster>wevsmy@gmail.com (weii)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Mon, 30 Jan 2023 02:23:51 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://weii.ink/rss.xml"/><item><title>容器底层原理之namespace和cgroups</title><link>https://weii.ink/2021/08/23/namespace_cgroups/</link><guid isPermaLink="true">https://weii.ink/2021/08/23/namespace_cgroups/</guid><pubDate>Mon, 23 Aug 2021 10:44:22 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>Linux内核中的namespace和cgroups技术实现了各种资源的隔离与控制。&lt;/p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Weii's Blog</title><link>https://weii.ink/</link><description>个人博客网站。</description><generator>Hugo 0.101.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>wevsmy@gmail.com (weii)</managingEditor><webMaster>wevsmy@gmail.com (weii)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Tue, 07 Feb 2023 06:30:31 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://weii.ink/rss.xml"/><item><title>容器底层原理之namespace和cgroups</title><link>https://weii.ink/2021/08/23/namespace_cgroups/</link><guid isPermaLink="true">https://weii.ink/2021/08/23/namespace_cgroups/</guid><pubDate>Mon, 23 Aug 2021 10:44:22 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>Linux内核中的namespace和cgroups技术实现了各种资源的隔离与控制。&lt;/p>
 &lt;h1 id="namespace">Namespace&lt;/h1>
 &lt;p>Namespace 是将内核的全局资源做封装，使得每个namespace 都有一份独立的资源，因此不同的进程在各自的namespace内对同一种资源的使用互不干扰。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -892,8 +892,8 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp wg-api ../.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description><category domain="https://weii.ink/tags/wireguard/">wireguard</category><category domain="https://weii.ink/tags/linux/">Linux</category><category domain="https://weii.ink/tags/network/">Network</category><category domain="https://weii.ink/tags/docker/">Docker</category></item><item><title>端口转发</title><link>https://weii.ink/2020/03/19/port_forward/</link><guid isPermaLink="true">https://weii.ink/2020/03/19/port_forward/</guid><pubDate>Thu, 19 Mar 2020 15:23:33 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>利用&lt;code>socat&lt;/code>进行端口转发&lt;/p>
-&lt;p>socat.sh&lt;/p>
+&lt;/div></description><category domain="https://weii.ink/tags/wireguard/">wireguard</category><category domain="https://weii.ink/tags/linux/">Linux</category><category domain="https://weii.ink/tags/network/">Network</category><category domain="https://weii.ink/tags/docker/">Docker</category></item><item><title>端口转发</title><link>https://weii.ink/2020/03/19/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link><guid isPermaLink="true">https://weii.ink/2020/03/19/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid><pubDate>Thu, 19 Mar 2020 15:23:33 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>利用&lt;code>socat&lt;/code>来进行端口转发&lt;/p>
+&lt;h2 id="socatsh-文件">socat.sh 文件&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -907,7 +907,6 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;/span>&lt;span class="lnt"> 9
 &lt;/span>&lt;span class="lnt">10
 &lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
@@ -920,11 +919,10 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">REMOTE_PORT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$DEF_REMOTE_PORT&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">LOCAL_PORT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$DEF_LOCAL_PORT&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">socat tcp-listen:&lt;span class="nv">$LOCAL_PORT&lt;/span>,reuseaddr,fork tcp:&lt;span class="nv">$REMOTE_HOST&lt;/span>:&lt;span class="nv">$REMOTE_PORT&lt;/span> &lt;span class="p">&amp;amp;&lt;/span> &lt;span class="nv">pid&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$!&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">trap&lt;/span> &lt;span class="s2">&amp;#34;kill &lt;/span>&lt;span class="nv">$pid&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> SIGINT &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Socat started listening on &lt;/span>&lt;span class="nv">$LOCAL_PORT&lt;/span>&lt;span class="s2">: Redirecting traffic to &lt;/span>&lt;span class="nv">$REMOTE_HOST&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$REMOTE_PORT&lt;/span>&lt;span class="s2"> (&lt;/span>&lt;span class="nv">$pid&lt;/span>&lt;span class="s2">)&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">wait&lt;/span> &lt;span class="nv">$pid&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">socat tcp-listen:&lt;span class="nv">$LOCAL_PORT&lt;/span>,reuseaddr,fork tcp:&lt;span class="nv">$REMOTE_HOST&lt;/span>:&lt;span class="nv">$REMOTE_PORT&lt;/span> &lt;span class="p">&amp;amp;&lt;/span> &lt;span class="nv">pid&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$!&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">trap&lt;/span> &lt;span class="s2">&amp;#34;kill &lt;/span>&lt;span class="nv">$pid&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> SIGINT &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Socat started listening on &lt;/span>&lt;span class="nv">$LOCAL_PORT&lt;/span>&lt;span class="s2">: Redirecting traffic to &lt;/span>&lt;span class="nv">$REMOTE_HOST&lt;/span>&lt;span class="s2">:&lt;/span>&lt;span class="nv">$REMOTE_PORT&lt;/span>&lt;span class="s2"> (&lt;/span>&lt;span class="nv">$pid&lt;/span>&lt;span class="s2">)&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">wait&lt;/span> &lt;span class="nv">$pid&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>docker-compose.yml&lt;/p>
+&lt;/div>&lt;h2 id="docker-composeyml-文件">docker-compose.yml 文件&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -953,7 +951,7 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">LOCAL_PORT&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">80&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>使用方式：&lt;/p>
+&lt;/div>&lt;h2 id="使用方式">使用方式：&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -980,7 +978,10 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>&lt;a href="https://hub.docker.com/r/marcnuri/port-forward">参考链接&lt;/a>&lt;/p></description><category domain="https://weii.ink/tags/socat/">socat</category><category domain="https://weii.ink/tags/linux/">Linux</category><category domain="https://weii.ink/tags/ssh/">ssh</category><category domain="https://weii.ink/tags/network/">Network</category></item><item><title>win10 wsl2 端口转发到宿主机</title><link>https://weii.ink/2019/11/15/win10_wsl2_port_forward/</link><guid isPermaLink="true">https://weii.ink/2019/11/15/win10_wsl2_port_forward/</guid><pubDate>Fri, 15 Nov 2019 15:12:59 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>wsl2使用本地127.0.0.1访问&lt;/p>
+&lt;h2 id="参考链接">参考链接：&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://hub.docker.com/r/marcnuri/port-forward">Port Forwarding for Docker&lt;/a>&lt;/li>
+&lt;/ul></description><category domain="https://weii.ink/tags/socat/">socat</category><category domain="https://weii.ink/tags/forward/">forward</category></item><item><title>win10 wsl2 端口转发到宿主机</title><link>https://weii.ink/2019/11/15/win10_wsl2_port_forward/</link><guid isPermaLink="true">https://weii.ink/2019/11/15/win10_wsl2_port_forward/</guid><pubDate>Fri, 15 Nov 2019 15:12:59 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>wsl2使用本地127.0.0.1访问&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -1107,7 +1108,189 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">go env -w &lt;span class="nv">GOSUMDB&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;sum.golang.google.cn&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description><category domain="https://weii.ink/tags/go/">go</category><category domain="https://weii.ink/tags/proxy/">proxy</category><category domain="https://weii.ink/tags/golang/">golang</category></item><item><title>Docker搭建DNS服务器</title><link>https://weii.ink/2019/09/17/docker_install_dnsmasq/</link><guid isPermaLink="true">https://weii.ink/2019/09/17/docker_install_dnsmasq/</guid><pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
+&lt;/div></description><category domain="https://weii.ink/tags/go/">go</category><category domain="https://weii.ink/tags/proxy/">proxy</category><category domain="https://weii.ink/tags/golang/">golang</category></item><item><title>OpenShift OKD v3.11 安装记录</title><link>https://weii.ink/2019/09/17/openshift_install/</link><guid isPermaLink="true">https://weii.ink/2019/09/17/openshift_install/</guid><pubDate>Tue, 17 Sep 2019 17:47:49 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>记录OpenShift安装过程&lt;/p>
+&lt;h1 id="openshift安装过程">OpenShift安装过程&lt;/h1>
+&lt;h2 id="安装流程">安装流程&lt;/h2>
+&lt;ul>
+&lt;li>master 8 vCpu 16G RAM 60G Disk CentOS 7 IP 172.31.66.25&lt;/li>
+&lt;li>node1 4 vCpu 8G RAM 50G Disk CentOS 7 IP 172.31.66.26&lt;/li>
+&lt;li>node2 4 vCpu 8G RAM 50G Disk CentOS 7 IP 172.31.66.161&lt;/li>
+&lt;/ul>
+&lt;p>官方最低&lt;a href="https://docs.okd.io/3.11/install/prerequisites.html#hardware">硬件要求&lt;/a>&lt;/p>
+&lt;p>&lt;del>&lt;em>俺们公司网络需要配置代理&lt;/em>&lt;/del>&lt;/p>
+&lt;p>为啥?因为公司办公网段&lt;code>172.31.xx.xx&lt;/code>有权限控制，服务器网段没有。&lt;/p>
+&lt;p>yum &lt;code>vim /etc/yum.conf&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">proxy=http://10.10.192.18:3128
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>wget&lt;code>vim /etc/wgetrc&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">https_proxy = http://10.10.192.18:3128/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http_proxy = http://10.10.192.18:3128/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ftp_proxy = http://10.10.192.18:3128/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">use_proxy = on
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>pip&lt;code>vim /etc/profile&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">export https_proxy=http://10.10.192.18:3128
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">export http_proxy=http://10.10.192.18:3128
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置国内源更新源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /etc/yum.repos.d/ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> mkdir repo_bak &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> mv *.repo repo_bak/ &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> wget http://mirrors.aliyun.com/repo/Centos-7.repo -O /etc/yum.repos.d/Centos-7.repo &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> wget http://mirrors.163.com/.help/CentOS7-Base-163.repo -O /etc/yum.repos.d/CentOS7-Base-163.repo &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> yum clean all &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> yum makecache &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> yum update &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> yum -y install git python-pip &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> pip install --upgrade setuptools
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>克隆openshift-ansible代码&amp;amp;切换分支&amp;amp;安装ansible&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /tmp &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> git clone https://github.com/openshift/openshift-ansible &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">cd&lt;/span> openshift-ansible &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> git checkout release-3.11 &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span> pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置/etc/hosts&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">172.31.66.25 openshift-master
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">172.31.66.26 openshift-node1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">172.31.66.161 openshift-node2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置ssh免密&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ssh-keygen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-copy-id root@openshift-master
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-copy-id root@openshift-node1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-copy-id root@openshift-node2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>ansible ping测试&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">&lt;span class="line">&lt;span class="cl">[root@localhost openshift-ansible]# ansible all -m ping
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openshift-master | SUCCESS =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;ansible_facts&amp;#34;: {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;discovered_interpreter_python&amp;#34;: &amp;#34;/usr/bin/python&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;changed&amp;#34;: false,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;ping&amp;#34;: &amp;#34;pong&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openshift-node2 | SUCCESS =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;ansible_facts&amp;#34;: {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;discovered_interpreter_python&amp;#34;: &amp;#34;/usr/bin/python&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;changed&amp;#34;: false,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;ping&amp;#34;: &amp;#34;pong&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openshift-node1 | SUCCESS =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;ansible_facts&amp;#34;: {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;discovered_interpreter_python&amp;#34;: &amp;#34;/usr/bin/python&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> },
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;changed&amp;#34;: false,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;ping&amp;#34;: &amp;#34;pong&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>分发/etc/hosts文件至其他节点&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ansible all -m copy -a &lt;span class="s2">&amp;#34;src=/etc/hosts dest=/etc/hosts&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ansible-playbook -i inventory/hosts.localhost playbooks/prerequisites.yml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ansible-playbook -i inventory/hosts.localhost playbooks/deploy_cluster.yml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;a href="https://docs.okd.io/3.11/install">官方安装文档&lt;/a>
+&lt;a href="https://blog.csdn.net/qq_16240085/article/details/86004707">Openshift OKD v3.11 高级安装&lt;/a>&lt;/p></description><category domain="https://weii.ink/tags/openshift/">OpenShift</category><category domain="https://weii.ink/tags/docker/">Docker</category><category domain="https://weii.ink/tags/k8s/">K8S</category><category domain="https://weii.ink/tags/okd/">OKD</category></item><item><title>Docker搭建DNS服务器</title><link>https://weii.ink/2019/09/17/docker%E6%90%AD%E5%BB%BAdns%E6%9C%8D%E5%8A%A1%E5%99%A8/</link><guid isPermaLink="true">https://weii.ink/2019/09/17/docker%E6%90%AD%E5%BB%BAdns%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid><pubDate>Tue, 17 Sep 2019 09:28:25 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具。
 用docker搭建一下用用。&lt;/p>
 &lt;h1 id="docker搭建dns服务器">Docker搭建DNS服务器&lt;/h1>
 &lt;h2 id="编写docker-composeyml">编写docker-compose.yml&lt;/h2>
@@ -1189,7 +1372,7 @@ proxy_pass $forward_scheme://$server:$port;
 &lt;code>sudo lsof -i:53&lt;/code>&lt;/p>
 &lt;h2 id="启动测试">启动&amp;amp;测试&lt;/h2>
 &lt;p>启动 &lt;code>docker-compose up -d&lt;/code>
-测试 &lt;code>dig test.local&lt;/code>&lt;/p></description><category domain="https://weii.ink/tags/docker/">Docker</category><category domain="https://weii.ink/tags/dns/">DNS</category><category domain="https://weii.ink/tags/dnsmasq/">DNSMASQ</category></item><item><title>配置nginx反向代理使Docker采用域名远程访问API</title><link>https://weii.ink/2019/09/12/docker_use_domain_name/</link><guid isPermaLink="true">https://weii.ink/2019/09/12/docker_use_domain_name/</guid><pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>配置过docker开启2376采用远程访问，挺方便的，但是需要在服务器防火请放开2376端口（这是废话）
+测试 &lt;code>dig test.local&lt;/code>&lt;/p></description><category domain="https://weii.ink/categories/docker/">Docker</category><category domain="https://weii.ink/tags/docker/">Docker</category><category domain="https://weii.ink/tags/dns/">dns</category><category domain="https://weii.ink/tags/dnsmasq/">dnsmasq</category></item><item><title>配置nginx反向代理使Docker采用域名远程访问API</title><link>https://weii.ink/2019/09/12/docker_use_domain_name/</link><guid isPermaLink="true">https://weii.ink/2019/09/12/docker_use_domain_name/</guid><pubDate>Thu, 12 Sep 2019 10:00:57 +0800</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>配置过docker开启2376采用远程访问，挺方便的，但是需要在服务器防火请放开2376端口（这是废话）
 配置个nginx反向代理，直接采用域名443代理访问&lt;/p>
 &lt;h1 id="配置nginx反向代理使docker采用域名远程访问">配置nginx反向代理使Docker采用域名远程访问&lt;/h1>
 &lt;p>该方案实现的功能与&lt;a href="https://blog.weii.ink/2019/09/11/docker_ca/">放开2376端口&lt;/a>访问的效果是一毛一样的，区别在于使用代理&lt;/p>
@@ -2891,7 +3074,7 @@ SSLError: Failed to connect. Please check openssl library versions.
 &lt;li>镜像&lt;a href="https://hub.docker.com/r/namshi/smtp">namshi/smtp&lt;/a> docker hub 上 pulls 10M+&lt;/li>
 &lt;li>镜像作者的&lt;a href="https://github.com/namshi/docker-smtp">GayHub&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://zhuanlan.zhihu.com/p/34162708">使用Docker搭建SMTP服务器&lt;/a>&lt;/li>
-&lt;/ul></description><category domain="https://weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category><category domain="https://weii.ink/categories/linux/">Linux</category><category domain="https://weii.ink/categories/docker/">Docker</category><category domain="https://weii.ink/tags/smtp/">SMTP</category><category domain="https://weii.ink/tags/docker/">Docker</category><category domain="https://weii.ink/tags/%E8%AE%A2%E9%98%85/">订阅</category></item><item><title>使用N2N实现异地组网</title><link>https://weii.ink/2019/08/25/n2n_install/</link><guid isPermaLink="true">https://weii.ink/2019/08/25/n2n_install/</guid><pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>N2N 安装记录，至于N2N是用来做什么的，我也不知道，猪头保命🐷&lt;/p>
+&lt;/ul></description><category domain="https://weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category><category domain="https://weii.ink/categories/linux/">Linux</category><category domain="https://weii.ink/categories/docker/">Docker</category><category domain="https://weii.ink/tags/smtp/">SMTP</category><category domain="https://weii.ink/tags/docker/">Docker</category><category domain="https://weii.ink/tags/%E8%AE%A2%E9%98%85/">订阅</category></item><item><title>使用N2N实现异地组网</title><link>https://weii.ink/2019/08/25/n2n%E5%AE%89%E8%A3%85/</link><guid isPermaLink="true">https://weii.ink/2019/08/25/n2n%E5%AE%89%E8%A3%85/</guid><pubDate>Sun, 25 Aug 2019 12:03:06 +0000</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>N2N 安装记录，至于N2N是用来做什么的，我也不知道，猪头保命🐷&lt;/p>
 &lt;h1 id="下载源码">下载源码&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -3055,7 +3238,7 @@ SSLError: Failed to connect. Please check openssl library versions.
 &lt;li>&lt;a href="https://blog.ilemonrain.com/linux/n2n-v2-tutorial.html">异地也要玩局域网——使用N2N，实现异地服务器快速组建内网&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ysicing.me/posts/n2n-v2-tutorial/">使用N2N，实现异地服务器快速组建内网&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://sparkydogx.github.io/2018/12/20/n2n/">使用n2n搭建虚拟局域网&lt;/a>&lt;/li>
-&lt;/ul></description><category domain="https://weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category><category domain="https://weii.ink/categories/linux/">Linux</category><category domain="https://weii.ink/categories/n2n/">N2N</category><category domain="https://weii.ink/tags/linux/">Linux</category><category domain="https://weii.ink/tags/n2n/">N2N</category><category domain="https://weii.ink/tags/%E7%AC%94%E8%AE%B0/">笔记</category></item><item><title>docker使用squid搭建代理服务</title><link>https://weii.ink/2019/07/17/docker_uses_squid_to_set_up_proxy_services/</link><guid isPermaLink="true">https://weii.ink/2019/07/17/docker_uses_squid_to_set_up_proxy_services/</guid><pubDate>Wed, 17 Jul 2019 14:08:21 +0000</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>记录一下配置代理的过程。&lt;/p>
+&lt;/ul></description><category domain="https://weii.ink/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</category><category domain="https://weii.ink/categories/linux/">Linux</category><category domain="https://weii.ink/categories/n2n/">n2n</category><category domain="https://weii.ink/tags/linux/">Linux</category><category domain="https://weii.ink/tags/n2n/">n2n</category><category domain="https://weii.ink/tags/%E7%A7%91%E5%AD%A6/">科学</category></item><item><title>docker使用squid搭建代理服务</title><link>https://weii.ink/2019/07/17/docker_uses_squid_to_set_up_proxy_services/</link><guid isPermaLink="true">https://weii.ink/2019/07/17/docker_uses_squid_to_set_up_proxy_services/</guid><pubDate>Wed, 17 Jul 2019 14:08:21 +0000</pubDate><author>wevsmy@gmail.com (weii)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description>&lt;p>记录一下配置代理的过程。&lt;/p>
 &lt;h1 id="docker使用squid搭建代理服务">docker使用squid搭建代理服务&lt;/h1>
 &lt;h2 id="记录一下">记录一下&lt;/h2>
 &lt;ul>

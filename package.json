@@ -26,7 +26,6 @@
       "workbox-build": "project"
     }
   },
-  "dependencies": {},
   "description": "weii's blog",
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
@@ -62,11 +61,12 @@
     "url": "git+https://github.com:wevsmy/weii-blog-source.git"
   },
   "scripts": {
-    "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
-    "dev": "hugo server -D",
     "init": "pnpm install --shamefully-hoist",
-    "preview": "hugo server -D --renderToDisk --environment production",
+    "dev": "hugo server -D",
+    "start": "hugo server -D",
     "server": "hugo server -D",
+    "preview": "hugo server -D --renderToDisk --environment production",
+    "build": "hugo --gc --minify --cleanDestinationDir && gulp build",
     "update": "git submodule update --init --recursive && git submodule update --rebase --remote"
   },
   "version": "1.0.0"

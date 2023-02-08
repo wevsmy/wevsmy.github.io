@@ -1,0 +1,32 @@
+@import "node_modules/tailwindcss/base";
+@import "node_modules/tailwindcss/components";
+@import "node_modules/tailwindcss/utilities";
+
+.bing-wallpaper {
+  @apply w-full h-full;
+}
+
+.FullScreenWallpaper {
+  @apply absolute;
+  @apply h-full w-full top-0 left-0;
+  transition: opacity 0.3s ease 0s;
+}
+
+.FullScreenWallpaper > img {
+  @apply border-0;
+  @apply m-0;
+  @apply h-screen max-h-screen;
+  @apply select-none;
+}
+
+.FullScreenWallpaper > .picture {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  object-fit: cover;
+  padding: 0px;
+  position: absolute;
+  width: 100%;
+}

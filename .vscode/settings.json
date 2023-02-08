@@ -4,7 +4,6 @@
         "themes/meme/i18n"
     ],
     "files.associations": {
-        "*.scss": "postcss",
         "*.css": "tailwindcss"
     }
 }

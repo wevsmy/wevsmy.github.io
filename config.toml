@@ -9,7 +9,7 @@ hasCJKLanguage = true
 copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
 
 # 主题选择
-theme = ["hugo-notice","meme","webstack","bingWallpaper"]
+theme = ["hugo-notice","meme","webstack","bing-wallpaper"]
 
 # `hugo new` 新建文章自动打开的文本编辑器
 newContentEditor = ""
@@ -202,7 +202,7 @@ uglyURLs = false
         weight = 2
         pre = "internal"
         post = "archive"
-    #[[menu.main]]
+    # [[menu.main]]
     #    url = "/categories/"
     #    name = "分类"
     #    weight = 3
@@ -221,19 +221,25 @@ uglyURLs = false
         pre = "internal"
         post = "webstack"
     [[menu.main]]
+        url = "/bing/"
+        name = "壁纸"
+        weight = 6
+        pre = "internal"
+        post = "wallpaper"
+    [[menu.main]]
         url = "/about/"
         name = "关于"
-        weight = 6
+        weight = 7
         pre = "internal"
         post = "user-circle"
     [[menu.main]]
-        weight = 7
+        weight = 8
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 8
+        weight = 9
         identifier = "lang-switcher"
     # [[menu.main]]
-    #     weight = 9
+    #     weight = 10
     #     identifier = "search"
     #     post = "search"
 
@@ -1328,7 +1334,7 @@ uglyURLs = false
     # 说明：仅在生产环境（production）下渲染
 
     # 是否开启
-    enableForceHTTPS = false
+    enableForceHTTPS = true
     # 说明：使用 JavaScript 来实现跳转。如果你
     #      的服务器不支持强制 HTTPS 跳转，则可
     #      开启此选项。

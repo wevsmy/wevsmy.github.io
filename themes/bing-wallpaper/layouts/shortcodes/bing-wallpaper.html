@@ -1,0 +1,43 @@
+<!--
+ * @Author: wilson.wu
+ * @Date: 2023-02-07 10:09:42
+ * @LastEditors: wilson.wu
+ * @LastEditTime: 2023-02-08 16:32:41
+ * @FilePath: \blog_source\themes\bing-wallpaper\layouts\shortcodes\bing-wallpaper.html
+ * @Description:
+ * Contact: wevsmy@gamil.com
+ *
+ * Copyright (c) 2023 by wilson.wu, All Rights Reserved.
+-->
+<!-- JS -->
+
+<!-- CSS -->
+{{ $scss := resources.Get "css/bing-wallpaper.scss" | resources.ToCSS }}
+{{ $css := resources.Get "css/bing-wallpaper.css" }}
+
+{{ $bundle := slice ($scss) ($css) | resources.Concat "css/bing-wallpaper.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+
+{{- $style := $bundle | resources.Minify -}}
+{{- if .Site.Params.enableFingerprint -}}
+{{- $style = $style | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{- if .Site.Params.enableSRI }}
+    integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" {{- end -}} />
+{{- else -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{- end -}}
+
+
+<!-- HTML -->
+<div id="bing-wallpaper" class="bing-wallpaper"></div>
+
+
+<!-- JSX -->
+{{ $shims := dict }}
+{{ $defines := dict }}
+{{ if hugo.IsProduction }}
+    {{ $shims = dict "react" "js/shims/react.js"  "react-dom" "js/shims/react-dom.js" }}
+{{ else }}
+    {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
+{{ end }}
+{{ $js := resources.Get "js/bing-wallpaper.jsx" | js.Build (dict "shims" $shims "defines" $defines ) }}
+<script src="{{ $js.RelPermalink }}"></script>

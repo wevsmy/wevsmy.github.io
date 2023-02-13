@@ -1,0 +1,23 @@
+<!--
+ * @Author: wilson.wu
+ * @Date: 2023-02-09 11:10:01
+ * @LastEditors: wilson.wu
+ * @LastEditTime: 2023-02-09 11:15:07
+ * @FilePath: \blog_source\themes\bing-wallpaper\layouts\partials\bing-wallpaper-css.html
+ * @Description:
+ * Contact: wevsmy@gamil.com
+ *
+ * Copyright (c) 2023 by wilson.wu, All Rights Reserved.
+-->
+
+<!-- CSS -->
+{{ $scss := resources.Get "css/bing-wallpaper.scss" | resources.ToCSS }}
+{{ $css := resources.Get "css/bing-wallpaper.css" }}
+
+{{ $bundle := slice ($scss) ($css) | resources.Concat "css/bing-wallpaper.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+
+{{ $style := $bundle | resources.Minify }}
+
+{{ $style = $style | resources.Fingerprint }}
+
+{{- return printf `%s` $style.RelPermalink -}}

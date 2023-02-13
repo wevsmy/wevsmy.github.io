@@ -2,42 +2,44 @@
  * @Author: wilson.wu
  * @Date: 2023-02-07 10:09:42
  * @LastEditors: wilson.wu
- * @LastEditTime: 2023-02-08 16:32:41
+ * @LastEditTime: 2023-02-13 16:01:17
  * @FilePath: \blog_source\themes\bing-wallpaper\layouts\shortcodes\bing-wallpaper.html
  * @Description:
  * Contact: wevsmy@gamil.com
  *
  * Copyright (c) 2023 by wilson.wu, All Rights Reserved.
 -->
+
 <!-- JS -->
-
-<!-- CSS -->
-{{ $scss := resources.Get "css/bing-wallpaper.scss" | resources.ToCSS }}
-{{ $css := resources.Get "css/bing-wallpaper.css" }}
-
-{{ $bundle := slice ($scss) ($css) | resources.Concat "css/bing-wallpaper.bundle.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
-
-{{- $style := $bundle | resources.Minify -}}
-{{- if .Site.Params.enableFingerprint -}}
-{{- $style = $style | resources.Fingerprint -}}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{- if .Site.Params.enableSRI }}
-    integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" {{- end -}} />
-{{- else -}}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-{{- end -}}
-
-
-<!-- HTML -->
-<div id="bing-wallpaper" class="bing-wallpaper"></div>
-
-
-<!-- JSX -->
-{{ $shims := dict }}
-{{ $defines := dict }}
-{{ if hugo.IsProduction }}
-    {{ $shims = dict "react" "js/shims/react.js"  "react-dom" "js/shims/react-dom.js" }}
-{{ else }}
-    {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
-{{ end }}
-{{ $js := resources.Get "js/bing-wallpaper.jsx" | js.Build (dict "shims" $shims "defines" $defines ) }}
-<script src="{{ $js.RelPermalink }}"></script>
+<script>
+    {{ $jquerySrc := partial "bing-wallpaper-lib.html" (dict "$" . "type" "jquery") }}
+    {{ $lazyloadSrc := partial "bing-wallpaper-lib.html" (dict "$" . "type" "lazyload") }}
+    {{ $cssSrc := partial "bing-wallpaper-inject-css.html" }}
+    {{ $jsSrc := partial "bing-wallpaper-inject-js.html" }}
+    window.addEventListener("DOMContentLoaded", event => {
+        const div = document.createElement('div')
+        div.id='bing-wallpaper'
+        div.className='bing-wallpaper'
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = '{{ $cssSrc }}'
+        const jquerySrc = document.createElement('script')
+        jquerySrc.src = '{{ $jquerySrc }}'
+        jquerySrc.defer = true
+        jquerySrc.onload = ()=>{};
+        const lazyloadScript = document.createElement('script')
+        lazyloadScript.src = '{{ $lazyloadSrc }}'
+        lazyloadScript.defer = true
+        lazyloadScript.onload = ()=>{};
+        const jsScript = document.createElement('script')
+        jsScript.src = '{{ $jsSrc }}'
+        jsScript.defer = true
+        jsScript.onload = ()=>{};
+        const footer = document.getElementById("footer");
+        document.body.firstElementChild.insertBefore(div,footer);
+        document.head.appendChild(link);
+        document.head.appendChild(jquerySrc);
+        document.head.appendChild(lazyloadScript);
+        document.head.appendChild(jsScript);
+    }, { once: true });
+</script>

@@ -20,4 +20,6 @@
 {{ $worker := resources.Get "js/worker.js" | js.Build }}
 {{ $inject := slice "js/shims/process.js" }}
 {{ $js := resources.Get "js/index.js" | js.Build (dict "minify" false "params" (dict "myparam" "Hugo Rocks!" "myworker" $worker.RelPermalink) "inject" $inject ) }}
+{{ $js = $js | resources.Minify }}
+{{ $js = $js | resources.Fingerprint }}
 <script src="{{ $js.RelPermalink }}"></script>

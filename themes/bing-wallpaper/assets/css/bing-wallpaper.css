@@ -1,14 +1,28 @@
-@import "node_modules/tailwindcss/base";
-@import "node_modules/tailwindcss/components";
-@import "node_modules/tailwindcss/utilities";
+:root {
+  --color-bg-overlay: radial-gradient(
+      rgba(0, 0, 0, 0) 0%,
+      rgb(255 255 255 / 50%) 100%
+    ),
+    radial-gradient(rgb(255 255 255 / 0%) 33%, rgb(255 255 255 / 30%) 166%);
+}
+
+:root[data-theme="dark"] {
+  --color-bg-overlay: radial-gradient(
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.3) 166%);
+}
 
 .bing-wallpaper {
-  @apply w-full h-full;
+  @apply w-full;
+  @apply absolute;
+  @apply top-0 left-0;
 }
 
 .FullScreenWallpaper {
-  @apply absolute;
-  @apply h-full w-full top-0 left-0;
+  @apply w-full h-screen;
+  @apply relative;
   transition: opacity 0.3s ease 0s;
 }
 
@@ -29,4 +43,96 @@
   padding: 0px;
   position: absolute;
   width: 100%;
+}
+
+.FullScreenWallpaper .overlay {
+  @apply select-none;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.WallpaperGrid {
+  @apply w-full;
+}
+
+.WallpaperGrid > .gridbox {
+  @apply mx-4;
+  @apply grid gap-3;
+  @apply grid-cols-1 2xl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1;
+}
+
+.WallpaperItem {
+  @apply w-full h-full;
+  @apply my-5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.WallpaperItem > .picture {
+  @apply w-[32em];
+  @apply h-[18em];
+  @apply rounded;
+  @apply bg-cover;
+  @apply cursor-pointer;
+  @apply border;
+}
+
+.WallpaperItem > .picture:hover > .overlay {
+  @apply block;
+  background-image: var(--color-bg-overlay);
+}
+
+.WallpaperItem .overlay {
+  @apply w-full h-full;
+  @apply select-none;
+  @apply hidden;
+  @apply border;
+}
+
+.WallpaperItem .title {
+  @apply w-full;
+}
+
+.WallpaperItem .fullstartdate {
+  @apply w-full;
+}
+
+.WallpaperItem .copyright {
+  @apply w-full;
+}
+
+.WallpaperItem .download {
+  @apply w-full;
+}
+
+.WallpaperItem .download:hover {
+  color: var(--color-primary);
+}
+
+.Pagination {
+  @apply mx-20;
+  @apply my-8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pagination > button:disabled {
+  @apply cursor-not-allowed;
+  color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+}
+
+.Pagination > button:hover {
+  color: var(--color-primary);
 }

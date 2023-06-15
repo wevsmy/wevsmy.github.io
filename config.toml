@@ -1260,7 +1260,8 @@ uglyURLs = false
     displaySiteCopyright = true
 
     # 自定义页脚（支持 Markdown）
-    customFooter = "<div style='font-size:80%' id='jinrishici-sentence'>🤨<div/>"
+    # customFooter = "<div style='font-size:80%' id='jinrishici-sentence'>🤨<div/>"
+    customFooter = "<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">豫ICP备18040947号-1</a>"
 
     displayBusuanziSiteUVAndPV = false
     busuanziSiteUVText = "本站访客数"

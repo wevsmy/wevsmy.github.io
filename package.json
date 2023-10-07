@@ -39,7 +39,7 @@
     "gulp-htmlclean": "^2.7.22",
     "gulp-shell": "^0.8.0",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "react": "^18.2.0",
